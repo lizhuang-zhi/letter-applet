@@ -1,0 +1,42 @@
+.yeo-label-box {
+  width: 88%;
+  /* width: 540rpx; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx 32rpx 15rpx 32rpx;
+  box-shadow: 0 0 20rpx #dddddd;
+  margin-bottom: 30rpx;
+}
+.yeo-label-box .box-up {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 35rpx;
+}
+.yeo-label-box .box-up .looks {
+  font-size: 26rpx;
+  color: #BABABA;
+}
+.yeo-label-box .box-up .tit {
+  font-family:Arial,Helvetica,sans-serif;
+  font-size: 34rpx;
+  font-weight: bold;
+  letter-spacing: 2rpx;
+  color: #424242;
+}
+.yeo-label-box .box-up .tit .sym {
+  padding-right: 12rpx;
+  color: #52ACAA;
+  font-size: 38rpx;
+}
+
+.yeo-label-box .box-down>view:nth-child(n){
+  padding-bottom: 22rpx;
+  font-size: 29rpx;
+  color: #808080;
+  line-height: 1.5;
+  letter-spacing: 1rpx;
+}

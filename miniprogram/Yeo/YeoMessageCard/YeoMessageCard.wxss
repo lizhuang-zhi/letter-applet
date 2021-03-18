@@ -1,0 +1,39 @@
+.yeo-message-card {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.yeo-message-card .left-pic {
+  width: 75rpx;
+  height: 75rpx;
+  border-radius: 50%;
+  margin-right: 25rpx;
+  position: relative;
+}
+.yeo-message-card .left-pic image{
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+.yeo-message-card .left-pic .guajian {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  top: -15rpx;
+  left: -16rpx;
+}
+.yeo-message-card .left-pic .guajian image{
+  width: 100%;
+  height: 100%;
+}
+.yeo-message-card .right-content {
+  width: 647rpx;
+  margin-top: 15rpx;
+}
+.yeo-message-card .right-content .up-msg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 23rpx;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

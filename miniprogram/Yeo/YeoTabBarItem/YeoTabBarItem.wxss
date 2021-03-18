@@ -1,0 +1,19 @@
+.yeo-tab-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 88rpx;
+  justify-content: space-around;
+}
+.yeo-tab-bar-item .item-pic {
+  width: 40rpx;
+  height: 40rpx;
+}
+.yeo-tab-bar-item .item-pic image {
+  width: 100%;
+  height: 100%;
+}
+.yeo-tab-bar-item .item-tit {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 22rpx;
+}

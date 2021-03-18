@@ -1,0 +1,33 @@
+.yeo-simple-card {
+  width: 100%;  
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  border-radius: 13rpx;
+  
+}
+.yeo-simple-card .card-pic {
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: 30rpx;
+}
+.yeo-simple-card .card-pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 20rpx #444444;
+}
+.yeo-simple-card .card-content {
+  margin-left: 30rpx;
+  font-size: 36rpx;
+  color: white;
+  box-sizing: border-box;
+}
+.yeo-simple-card .card-content .tit {
+  letter-spacing: 3rpx;
+  margin-bottom: 13rpx;
+}
+.yeo-simple-card .card-content .desc {
+  font-size: 24rpx;
+  letter-spacing: 1rpx;
+}

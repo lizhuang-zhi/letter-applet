@@ -1,0 +1,63 @@
+.donShow{
+  display: none;
+}
+/* ***************上下结构*************** */
+.yeo-updown-fon{
+  position: relative;
+  width: 100%;
+  display: flex;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.yeo-above{
+  position: absolute;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+.yeo-below{
+  position: absolute;
+  top: 0.9em;
+  font-size: 0.9em;
+  letter-spacing: 0.08em;
+  z-index: 5;
+}
+
+/* ***************重叠结构*************** */
+.yeo-overlap-fon{
+  position: relative;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.yeo-above-ol{
+  position: relative;
+  width: 100%;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  z-index: 10;
+  top: 0;
+}
+.yeo-below-ol{
+  position: absolute;
+  top: 0.1em;
+  left: 0.14em;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  z-index: 5;
+}
+
+/* ***************字线结构*************** */
+.yeo-word-line-fon{
+  position: relative;
+  width: 100%;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.yeo-words{
+  position: absolute;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+}
+.yeo-line{
+  position: absolute;
+  /* height: 15rpx; */
+}

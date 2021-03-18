@@ -1,0 +1,11 @@
+<scroll-view class="yeo-stretch" scroll-y="{{true}}" style="width: {{boxChange.width}};height: {{boxChange.height}};border-radius: {{boxChange.bora}};transition: {{boxChange.transi}};" >
+
+  <view class="showpic" style="left: {{pic.left}};transition: {{pic.transi}};height: {{pic.height}};width: {{pic.width}};">
+    <image bindtap="stretchClick" src="{{flickPic}}"></image>
+  </view>
+
+  <view class="wordsContent" style="display: {{content.show}};">
+    <slot name='content'></slot>
+  </view>
+  
+</scroll-view>

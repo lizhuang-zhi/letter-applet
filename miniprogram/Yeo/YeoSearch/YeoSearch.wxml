@@ -1,0 +1,12 @@
+<view class="yeo-search" style="background: {{background}};border-radius: {{searBordRadius + 'rpx'}};padding: {{topPadding + 'rpx'}} {{rightPadding + 'rpx'}} {{bottomPadding + 'rpx'}} {{leftPadding + 'rpx'}};">
+  <view class="search-icon">
+    <yeo-icon IconSize='37'
+    iconUrl='{{searchImg}}'></yeo-icon>
+  </view>
+  <view class="search-input" style="margin-left: {{inputLeftMargin + 'rpx'}};margin-right: {{inputRightMargin + 'rpx'}};">
+    <input placeholder="{{placeholder}}" bindinput='inputEvent' bindfocus="focusEvent" bindblur="blurEvent" bindconfirm='confirmEvent'
+    bindkeyboardheightchange="keyboardheightchangeEvent" type="{{inputType}}"/>
+  </view>
+</view>
+
+

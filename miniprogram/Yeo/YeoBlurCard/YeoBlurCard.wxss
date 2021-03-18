@@ -1,0 +1,38 @@
+.yeo-blur-card {
+  display: flex;
+  align-items: center;
+}
+.yeo-blur-card .blur-box {
+  background: inherit;
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+}
+.yeo-blur-card .blur-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: -1;
+ 
+  background: inherit;
+  box-shadow: inset 0 0 0 400rpx rgba(255, 255, 255, 0.25);
+  filter: blur(4rpx);
+}
+.yeo-blur-card .blur-box .box-content {
+  width: 100%;
+  height: 80%;
+  padding: 15rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.yeo-blur-card .blur-box .box-btn button {
+  margin-top: 30rpx;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+}

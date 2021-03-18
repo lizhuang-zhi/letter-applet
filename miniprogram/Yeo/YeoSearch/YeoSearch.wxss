@@ -1,0 +1,12 @@
+.yeo-search{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.yeo-search .search-input{
+  width: 92%;
+}
+.yeo-search .search-input input{
+  width: 100%;
+}

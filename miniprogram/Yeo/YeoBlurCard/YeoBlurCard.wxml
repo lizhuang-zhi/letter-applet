@@ -1,0 +1,10 @@
+<view class="yeo-blur-card" style="background-image: url({{bgImgUrl}});border-radius: {{bgBordRadius + 'rpx'}};width: {{bgWidth + 'rpx'}};height: {{bgHeight + 'rpx'}};background-size: {{bgSize}};">
+  <view class="blur-box" style="width: {{blurWidth}};height: {{blurHeight}};padding: {{blurPadding}};border-radius: {{blurBordRadius + 'rpx'}};">
+    <view class="box-content" style="border-radius: {{contentBordRadius + 'rpx'}};font-size: {{contentSize + 'rpx'}};color: {{contentColor}};">
+      {{description}}
+    </view>
+    <view class="box-btn">
+       <button size='mini' bindtap="clickBtn" style="color: {{btnColor}};">{{buttonContent}}</button>
+    </view>
+  </view>
+</view> 

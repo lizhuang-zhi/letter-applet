@@ -1,0 +1,10 @@
+<view class="yeo-rotate">
+  <view class="box-rotate" animation='{{rotateAni}}' bindtouchstart="touchStart"
+  bindtouchend="touchEnd" style="background: {{roundBgColor}};border: {{roundSize + 'rpx'}} solid {{roundBgColor}};">
+
+    <view class="item-food" wx:for="{{vegtArr}}" wx:key='index' data-item="{{item}}" data-index="index" bindtap="getObj">
+      <image src="{{item}}"></image>
+    </view>
+
+  </view>
+</view> 

@@ -1,0 +1,9 @@
+<!-- 
+  SwingSpeed: 摆动频率(数值越大，摆动越慢)
+-->
+<view class="yeo-hang-swing" bindtap="clickTap">
+  <view class="yeo-img"
+  style="animation-duration: {{swingSpeed + 's'}};width: {{imgSize+'rpx'}};height: {{imgSize+'rpx'}};">
+    <image src="{{imgUrl}}"></image>
+  </view> 
+</view>

@@ -1,0 +1,21 @@
+<swiper class="yeo-swiper" autoplay="{{autoPlay}}" interval='{{intervalTime}}' next-margin='190rpx' circular
+  bindchange='changeCurrent'
+  style="height: {{swiperHeight + 'rpx'}};margin-top: {{swiperMarginTop + 'rpx'}};margin-bottom: {{swiperMarginBot + 'rpx'}};padding-top: {{swiperPaddingTop + 'rpx'}};padding-bottom: {{swiperPaddingBot + 'rpx'}};">
+  <swiper-item bindtap="tapItem" wx:for="{{dataArr}}" wx:key='index' data-index="{{index}}">
+    <view class="yeo-swiper-item {{swiperIndex == index ? 'active' : 'normal'}}"
+      style="width: {{itemWidth + 'rpx'}};height: {{itemHeight + 'rpx'}};margin-top: {{itemMarginTop + 'rpx'}};background: url({{item.bgUrl}});background-size: {{bgSize}};border-radius: {{bordRadius + 'rpx'}};">
+
+      <view class="yeo-swiper-item-v1">
+        <view class="star" bindtap="starTap" data-index="{{index}}" style="width: {{starBoxWidth + 'rpx'}};height: {{starBoxHeight + 'rpx'}};border-radius: {{starBoxBordRadius + 'rpx'}};background: {{starBoxBgColor}};top: {{starTopWithOutBox + 'rpx'}};right: {{starRightWithOutBox + 'rpx'}};">
+          <image wx:if='{{item.isStar}}' src="{{picUrlSelect}}" style="width: {{starPicSize}};height: {{starPicSize}};"></image>
+          <image wx:else src="{{picUrl}}" style="width: {{starPicSize}};height: {{starPicSize}};"></image>
+        </view>
+        <view class="bottomInfo" style="bottom: {{bottomInfoBotWithOutBox + 'rpx'}};left: {{bottomInfoLeftWithOutBox + 'rpx'}};">
+          <view class="time" style="font-size: {{timeFontSize + 'rpx'}};letter-spacing: {{timeLetterSpacing + 'rpx'}};color: {{timeColor}};font-weight: {{timeFontWeight}};">{{item.time}}</view>
+          <view class="title" style="font-size: {{titleFontSize + 'rpx'}};font-weight: {{titleFontWeight}};color: {{titleColor}};">{{item.title}}</view>
+        </view>
+      </view>
+
+    </view>
+  </swiper-item>
+</swiper>

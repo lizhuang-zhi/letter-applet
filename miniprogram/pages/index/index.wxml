@@ -1,0 +1,23 @@
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-tit">信件始于初心</view>
+  <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
+</view>
+
+<!-- 轮播图 -->
+<yeo-swiper swiperHeight='200' itemWidth='420' itemHeight='110' starBoxWidth='50' starBoxHeight='50'
+  starTopWithOutBox='15' titleFontSize='33' timeFontSize='22' starBoxBordRadius='25' bottomInfoBotWithOutBox='20'
+  bgSize='cover' swiperMarginTop='10' swiperMarginBot='31' itemMarginTop='40'></yeo-swiper>
+
+
+<!-- 解忧信件标题 -->
+<!-- 解忧他人，升华自我 -->
+
+<view class="tit-jieyou">
+  <yeo-art-font fonType='worLineFon' worLineFonCon='解忧信箱' worLinePosp='unset' lineWidthOfScreen='44%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'></yeo-art-font>
+</view>
+
+<!-- 解忧信件 -->
+<view class="tit-jieyou-box">
+
+</view>

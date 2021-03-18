@@ -1,0 +1,14 @@
+<scroll-view class="yeo-horizon-slider" scroll-x>
+
+  <view class="singleBox" wx:for="{{sliderArr}}" wx:key='index'
+  bindtap="clickObject" data-item="{{item}}">
+    <view class="pic">
+      <image src="{{item.picUrl}}"></image>
+    </view>
+    <view class="content">
+      <view class="tit">{{item.title}}</view>
+      <view class="desc">{{item.description}}</view>
+    </view>
+  </view>
+
+</scroll-view>

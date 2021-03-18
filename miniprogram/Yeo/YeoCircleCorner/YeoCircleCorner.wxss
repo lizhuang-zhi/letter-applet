@@ -1,0 +1,22 @@
+.yeo-circle-all{
+  /* position: fixed;
+  bottom: 30%;
+  right: 45rpx; */
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.yeo-circle-all .yeo-item{
+  /* z-index: 1000; */
+}
+.yeo-circle-all .yeo-cir-end{
+  /* z-index: 999; */
+  position: relative;
+}
+.yeo-circle-all .yeo-item image {
+  width: 100%;
+  height: 100%;
+}
+.yeo-circle-all .yeo-cir-start,.yeo-cir-item-1{
+  opacity: 0;
+}

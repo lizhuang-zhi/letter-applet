@@ -1,0 +1,8 @@
+<view class="yeo-category" style="background: {{bgColor}};border-radius: {{boxRadius + 'rpx'}};margin-bottom: {{boxMarginBottom + 'rpx'}};">
+  <view class="pic" style="width: {{picSize + 'rpx'}};height: {{picSize + 'rpx'}};padding-left: {{paddingLeftofPic + 'rpx'}};">
+    <image src="{{picUrl}}"></image>
+  </view>
+  <view class="tit">
+    <slot name='title'></slot>
+  </view>
+</view>

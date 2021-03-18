@@ -1,0 +1,11 @@
+<view class='yeo-tab-change' style="width: {{tabWidth}};justify-content: {{tabJustiContent}};margin: {{tabMargin}};">
+
+  <!-- 字体 -->
+  <view wx:for="{{titleArr}}" wx:key='index' class='title {{currentIndex==index?"tabTitle":""}}' bindtap='changeTab' data-index='{{index}}' style="font-size: {{fontSize + 'rpx'}};color: {{currentIndex==index?fontSelectColor:fontColor}};font-weight: {{fontWeight}};letter-spacing: {{fontLetterSpacing + 'rpx'}};z-index: {{fontZIndex}};">
+    {{item}}
+  </view>
+
+  <!-- 下划线 -->
+  <view class='line' style="left:{{left + 'rpx'}};width: {{lineWidth + 'rpx'}};height: {{lineHeight + 'rpx'}};background: {{lineColor}};border-radius: {{lineBordRadius + 'rpx'}};bottom: {{lineBottom + 'rpx'}};z-index: {{lineZIndex}};"></view>
+
+</view>

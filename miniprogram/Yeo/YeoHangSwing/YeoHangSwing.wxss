@@ -1,0 +1,17 @@
+.yeo-hang-swing .yeo-img{
+  animation: swing infinite alternate ease-in-out forwards;
+  transform-origin: center 0;
+}
+.yeo-hang-swing .yeo-img image{
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes swing{
+  from{
+    transform: rotate(-10deg);
+  }
+  to{
+    transform: rotate(10deg);
+  }
+}

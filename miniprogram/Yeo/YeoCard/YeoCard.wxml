@@ -1,0 +1,13 @@
+<view class="yeo-card">
+  <view class="card-left">
+    <view class="lt-top">
+      <view class="name">{{name}}</view>
+      <view class="btn" bindtap="clickBtn" style="background: {{BgColor}};">关注</view>
+    </view>
+    <view class="title">{{position}}</view>
+    <view class="desc">{{description}}</view>
+  </view>
+  <view class="card-right">
+    <image src="{{cardPic}}"></image>
+  </view>
+</view>

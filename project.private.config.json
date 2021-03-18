@@ -1,0 +1,36 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "广场",
+          "pathName": "pages/square/square",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "信箱",
+          "pathName": "pages/mailbox/mailbox",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

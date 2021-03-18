@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/square/square",
+    "pages/mailbox/mailbox"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Wirte",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "yeo-search": "/Yeo/YeoSearch/YeoSearch",
+    "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
+    "yeo-rotate": "/Yeo/YeoRotate/YeoRotate",
+    "yeo-art-font": "/Yeo/YeoArtFont/YeoArtFont",
+    "yeo-simple-card": "/Yeo/YeoSimpleCard/YeoSimpleCard",
+    "yeo-hang-swing": "/Yeo/YeoHangSwing/YeoHangSwing",
+    "yeo-tab-bar": "/Yeo/YeoTabBar/YeoTabBar",
+    "yeo-tab-bar-item": "/Yeo/YeoTabBarItem/YeoTabBarItem",
+    "yeo-dy-fun-bar": "/Yeo/YeoDyFunBar/YeoDyFunBar",
+    "yeo-icon": "/Yeo/YeoIcon/YeoIcon",
+    "yeo-card": "/Yeo/YeoCard/YeoCard",
+    "yeo-category": "/Yeo/YeoCategory/YeoCategory",
+    "yeo-categories": "/Yeo/YeoCategories/YeoCategories",
+    "yeo-horizon-slider": "/Yeo/YeoHorizonSlider/YeoHorizonSlider",
+    "yeo-horizon-slider-v2": "/Yeo/YeoHorizonSliderV2/YeoHorizonSliderV2",
+    "yeo-label-box": "/Yeo/YeoLabelBox/YeoLabelBox",
+    "yeo-stretch": "/Yeo/YeoStretch/YeoStretch",
+    "yeo-tools-bar": "/Yeo/YeoToolsBar/YeoToolsBar",
+    "yeo-blur-card": "/Yeo/YeoBlurCard/YeoBlurCard",
+    "yeo-comment": "/Yeo/YeoComment/YeoComment",
+    "yeo-message-card": "/Yeo/YeoMessageCard/YeoMessageCard",
+    "yeo-loading": "/Yeo/YeoLoading/YeoLoading",
+    "yeo-swiper": "/Yeo/YeoSwiper/YeoSwiper"
+  }
+}

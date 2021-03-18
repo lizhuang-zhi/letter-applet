@@ -1,0 +1,3 @@
+<view class="yeo-categories" style="padding: {{paddingTop + 'rpx'}} {{paddingSide + 'rpx'}} {{paddingBottom + 'rpx'}};">
+  <slot></slot>
+</view>
