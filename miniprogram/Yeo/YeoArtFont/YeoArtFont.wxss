@@ -50,7 +50,7 @@
   position: relative;
   width: 100%;
   display: flex;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 .yeo-words{
   position: absolute;

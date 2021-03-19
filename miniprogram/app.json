@@ -12,6 +12,13 @@
         "pages/diaryletter/diaryletter",
         "pages/complaintletter/complaintletter"
       ]
+    },
+    {
+      "root": "packageReleaseModule",
+      "pages": [
+        "pages/attention/attention",
+        "pages/write/write"
+      ]
     }
   ],
   "tabBar": {
@@ -50,8 +57,9 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "keo-letterbox": "/components/LetterSimple/LetterSimple",
-    "keo-letterview": "/components/LetterView/LetterView",
+    "keo-letter-simple": "/components/LetterSimple/LetterSimple",
+    "keo-letter-view": "/components/LetterView/LetterView",
+    "keo-fun-blocks": "/components/FunBlocks/FunBlocks",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",

@@ -3,5 +3,25 @@
   <view class="top-tit">收件箱</view>
 </view>
 
+<!-- 我的信息 -->
+<view class="my-info-bar">
+  <keo-fun-blocks></keo-fun-blocks>
+</view>
+
+
+<!-- 收件信息通知 -->
+<view class="info-bar">
+  <yeo-dy-fun-bar distractWay='between'>
+    <view class="info-left" slot='dy-left'>全部9封信件</view>
+    <view class='info-right' slot='dy-right'>全部已读</view>
+  </yeo-dy-fun-bar>
+</view>
+
 
 <!-- 收件信息 -->
+<view class="message-box">
+  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+</view>

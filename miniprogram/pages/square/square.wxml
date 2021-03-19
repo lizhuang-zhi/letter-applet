@@ -1,21 +1,22 @@
 <!-- tab切换 -->
-<yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90' tabContColor='#FFFFFF'
-  tabMargin='140rpx 40rpx 120rpx' tabChangeWidth='400rpx' isFixed='true'>
+<yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90' tabContColor='#F6F6F6'
+  tabMargin='140rpx 40rpx 120rpx' tabChangeWidth='400rpx' isFixed='true'
+  bgColor='#f9f9f9'>
   <view slot='{{tabArray[0]}}' class="tab-1">
 
     <!-- 公开日记 -->
     <yeo-flow-waterfall-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box content='日记是这样记下来的？' bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
-      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box diaryContent='算什么男人去理解' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='人生呐！' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='I Love You! My Honey' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='日记是这样记下来的？' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='为什么有过去' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='I am Leo' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='Do it' bgColor='#ffffff'></yeo-diary-box>
     </yeo-flow-waterfall-box>
 
   </view>
