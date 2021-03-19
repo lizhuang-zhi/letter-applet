@@ -1,0 +1,15 @@
+/* 内层盒子 */
+.outer-box .inner-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+  flex-wrap: wrap;
+}
+/* 功能块 */
+.outer-box .inner-box .FuncBlock{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

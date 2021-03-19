@@ -1,0 +1,13 @@
+<!-- 外层盒子 -->
+<view class="outer-box" style="width:{{OuterWidth}};margin:{{OuterMargin}}">
+  <!-- 内层盒子 -->
+  <view class="inner-box">
+    <!-- 功能块 -->
+    <view class="FuncBlock" wx:for="{{dataList}}" wx:key="index">
+      <!-- 图片 -->
+      <image style="width:{{BlockWidth}};height:{{BlockHeight}}" class="block-img" src="{{item.imgsrc}}"></image>
+      <!-- 文字 -->
+      <view class="block-txt" style="font-size:{{BlockFontSize}};color:{{BlockFontColor}};margin-top:{{BlockFontMargin}}">{{item.text}}</view>
+    </view>
+  </view>
+</view>
