@@ -1,0 +1,12 @@
+<view class="yeo-text-box">
+  <view class="content">{{content}}</view>
+  <view class="bot-bar">
+    <view class="name">{{userName}}</view>
+    <view class="comment-num">
+      <view class="comment">{{commentNum}}评论</view>
+      <view class="pic">
+        <image src="https://s3.ax1x.com/2021/03/18/62qJV1.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

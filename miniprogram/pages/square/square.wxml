@@ -1,2 +1,36 @@
-<!--miniprogram/pages/square/square.wxml-->
-<text>miniprogram/pages/square/square.wxml</text>
+<!-- tab切换 -->
+<yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90' tabContColor='#FFFFFF'
+  tabMargin='140rpx 40rpx 120rpx' tabChangeWidth='400rpx' isFixed='true'>
+  <view slot='{{tabArray[0]}}' class="tab-1">
+
+    <!-- 公开日记 -->
+    <yeo-flow-waterfall-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box content='日记是这样记下来的？' bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+      <yeo-diary-box bgColor='#F4F4F4'></yeo-diary-box>
+    </yeo-flow-waterfall-box>
+
+  </view>
+  <view slot='{{tabArray[1]}}' class="tab-2">
+
+    <!-- 吐槽大会 -->
+    <yeo-text-box content='我是一个人在游走的时候'></yeo-text-box>
+    <yeo-text-box></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='时间在走着，但是我想要停下'></yeo-text-box>
+    <yeo-text-box></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+
+
+  </view>
+</yeo-label-bar>

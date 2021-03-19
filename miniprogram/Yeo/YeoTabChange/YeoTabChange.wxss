@@ -1,3 +1,7 @@
+.yeo-tab-change-outbox {
+  position: fixed;
+  width: 100%;
+}
 .yeo-tab-change {
   display: flex;
   flex-direction: row;

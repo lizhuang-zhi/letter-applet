@@ -1,0 +1,43 @@
+/* 外框 */
+.letter-shell {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+/* 内部 */
+.letter-inner {
+  padding: 22rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+/* 头部 */
+.letter-inner .letter-head {
+  padding: 20rpx 0 40rpx 0;
+}
+/* 简略内容 */
+.letter-inner .letter-content {
+  width: 60%;
+  height: 100rpx;
+  line-height: 50rpx;
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+/* 信件logo */
+.letter-inner .letter-icon{
+  position: absolute;
+
+}
+.letter-inner .letter-icon .icon-img{
+  width: 100%;
+  height: 100%;
+}
+/* 作者名称 */
+.letter-inner .letter-writer {
+  position: absolute;
+  bottom: 20rpx;
+  right: 40rpx;
+}

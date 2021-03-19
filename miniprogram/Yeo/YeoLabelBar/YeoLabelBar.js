@@ -100,7 +100,33 @@ Component({
     lineLeft: {
       type: Number,
       value: -2
-    }
+    },
+    /* tabChange外框设置 */
+    // tabChange是否固定位置
+    isFixed: {
+      type: Boolean,
+      value: false
+    },
+    // tabChange固定位置top值
+    fixedTop: {
+      type: Number,
+      value: 0
+    },
+    // tabChange组件框顶部内边距
+    boxPaddingTop: {
+      type: Number,
+      value: 60
+    },
+    // tabChange背景色
+    bgColor: {
+      type: String,
+      value: '#eeeeee'
+    },
+    // tabChange组件框层级
+    zIndex: {
+      type: Number,
+      value: 199
+    },
 
 
   },

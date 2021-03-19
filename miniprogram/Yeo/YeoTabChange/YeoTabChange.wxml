@@ -1,3 +1,4 @@
+<view class="{{isFixed ? 'yeo-tab-change-outbox' : ''}}" style="top: {{fixedTop + 'rpx'}};padding-top: {{boxPaddingTop + 'rpx'}};background: {{bgColor}};z-index: {{zIndex}};">
 <view class='yeo-tab-change' style="width: {{tabWidth}};justify-content: {{tabJustiContent}};margin: {{tabMargin}};">
 
   <!-- 字体 -->
@@ -8,4 +9,5 @@
   <!-- 下划线 -->
   <view class='line' style="left:{{left + 'rpx'}};width: {{lineWidth + 'rpx'}};height: {{lineHeight + 'rpx'}};background: {{lineColor}};border-radius: {{lineBordRadius + 'rpx'}};bottom: {{lineBottom + 'rpx'}};z-index: {{lineZIndex}};"></view>
 
+</view>
 </view>

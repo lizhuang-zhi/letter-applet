@@ -4,6 +4,43 @@
     "pages/square/square",
     "pages/mailbox/mailbox"
   ],
+  "subpackages": [
+    {
+      "root": "packageWriteLetter",
+      "pages": [
+        "pages/sorrowletter/sorrowletter",
+        "pages/diaryletter/diaryletter",
+        "pages/complaintletter/complaintletter"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index-select.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/square/square",
+        "iconPath": "images/star.png",
+        "selectedIconPath": "images/star-select.png",
+        "text": "广场"
+      },
+      {
+        "pagePath": "pages/mailbox/mailbox",
+        "iconPath": "images/letter.png",
+        "selectedIconPath": "images/letter-select.png",
+        "text": "信箱"
+      }
+    ]
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
@@ -13,6 +50,9 @@
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
+    "keo-letterbox": "/components/LetterSimple/LetterSimple",
+    "keo-letterview": "/components/LetterView/LetterView",
+    
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
     "yeo-rotate": "/Yeo/YeoRotate/YeoRotate",
@@ -35,6 +75,13 @@
     "yeo-comment": "/Yeo/YeoComment/YeoComment",
     "yeo-message-card": "/Yeo/YeoMessageCard/YeoMessageCard",
     "yeo-loading": "/Yeo/YeoLoading/YeoLoading",
-    "yeo-swiper": "/Yeo/YeoSwiper/YeoSwiper"
+    "yeo-swiper": "/Yeo/YeoSwiper/YeoSwiper",
+    "yeo-label-bar": "/Yeo/YeoLabelBar/YeoLabelBar",
+    "yeo-tab-change": "/Yeo/YeoTabChange/YeoTabChange",
+    "yeo-flow-waterfall": "/Yeo/YeoFlowWaterfall/YeoFlowWaterfall",
+    "yeo-text-box": "/Yeo/YeoTextBox/YeoTextBox",
+    "yeo-diary-box": "/Yeo/YeoDiaryBox/YeoDiaryBox",
+    "yeo-flow-waterfall-box": "/Yeo/YeoFlowWaterfallBox/YeoFlowWaterfallBox"
+
   }
 }

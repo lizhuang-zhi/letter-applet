@@ -1,0 +1,22 @@
+<!-- 外框 -->
+<view class="letter-shell">
+  <!-- 内部 -->
+  <view class="letter-inner" style="height:{{InnerHeight}};font-size:{{InnerSize}};background-color:{{backgroundColor}}">
+    <!-- 收件人内容 -->
+    <view class="letter-head">
+      {{consignee}}
+    </view>
+    <!-- 简略内容 -->
+    <view class="letter-content">
+      {{content}}
+    </view>
+    <!-- 信件logo -->
+    <view class="letter-icon" style="width:{{IconSize}};height:{{IconSize}};top:{{IconTop}};right:{{IconRight}}">
+      <image class="icon-img" src="https://s3.ax1x.com/2021/03/18/6gvLQO.png"></image>
+    </view>
+    <!-- 作者名称 -->
+    <view class="letter-writer">
+      {{writer}}
+    </view>
+  </view>
+</view>

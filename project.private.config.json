@@ -29,6 +29,24 @@
           "pathName": "pages/mailbox/mailbox",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "解忧信内容",
+          "pathName": "packageWriteLetter/pages/sorrowletter/sorrowletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "公开日记内容",
+          "pathName": "packageWriteLetter/pages/diaryletter/diaryletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "吐槽大会内容",
+          "pathName": "packageWriteLetter/pages/complaintletter/complaintletter",
+          "query": "",
+          "scene": null
         }
       ]
     }

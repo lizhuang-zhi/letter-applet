@@ -11,13 +11,15 @@
 
 
 <!-- 解忧信件标题 -->
-<!-- 解忧他人，升华自我 -->
-
 <view class="tit-jieyou">
-  <yeo-art-font fonType='worLineFon' worLineFonCon='解忧信箱' worLinePosp='unset' lineWidthOfScreen='44%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'></yeo-art-font>
+  <yeo-art-font fonType='worLineFon' worLineFonCon='解忧信件' worLinePosp='unset' lineWidthOfScreen='44%' lineLeftRadius='3'
+    lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'></yeo-art-font>
 </view>
 
 <!-- 解忧信件 -->
 <view class="tit-jieyou-box">
-
-</view>
+  <keo-letterbox IconSize='80rpx' InnerHeight='250rpx'></keo-letterbox>
+  <keo-letterbox IconSize='80rpx' InnerHeight='250rpx'></keo-letterbox>
+  <keo-letterbox IconSize='80rpx' InnerHeight='250rpx'></keo-letterbox>
+  <keo-letterbox IconSize='80rpx' InnerHeight='250rpx'></keo-letterbox>
+</view> 

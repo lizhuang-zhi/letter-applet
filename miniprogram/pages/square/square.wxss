@@ -1,1 +1,11 @@
-/* miniprogram/pages/square/square.wxss */
+/* tab切换 */
+yeo-diary-box {
+  display: inline-block;
+}
+
+
+/* 吐槽大会 */
+yeo-text-box {
+  display: inline-block;
+  margin-bottom: 20rpx;
+}

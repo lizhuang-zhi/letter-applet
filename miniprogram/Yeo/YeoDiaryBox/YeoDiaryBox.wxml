@@ -1,0 +1,5 @@
+<view class="yeo-diary-box" bindtap="clickTap" style="color: {{fontColor}};background: {{bgColor}};border-radius: {{bordRadius + 'rpx'}};padding: {{padding + 'rpx'}};margin-bottom: {{marginBottom + 'rpx'}};" data-tit="{{diaryTit}}" data-content="{{diaryContent}}" data-date="{{diaryDate}}">
+  <view class="tit" style="font-size: {{titFontSize + 'rpx'}};font-weight: {{titFontWeight}};padding-top: {{titPaddingTop + 'rpx'}};margin-bottom: {{titMarginBottom + 'rpx'}};">{{diaryTit}}</view>
+  <view class="content" style="letter-spacing: {{contentLetterSpacing + 'rpx'}};font-size: {{contentFontSize + 'rpx'}};margin-bottom: {{contentMarginBottom + 'rpx'}};">{{diaryContent}}</view>
+  <view class="date" style="font-size: {{dateFontSize + 'rpx'}};">{{diaryDate}}</view>
+</view>

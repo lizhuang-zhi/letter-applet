@@ -1,0 +1,3 @@
+<view class="yeo-flow-waterfall-box">
+  <slot></slot>
+</view>

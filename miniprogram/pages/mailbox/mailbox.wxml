@@ -1,2 +1,7 @@
-<!--miniprogram/pages/mailbox/mailbox.wxml-->
-<text>miniprogram/pages/mailbox/mailbox.wxml</text>
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-tit">收件箱</view>
+</view>
+
+
+<!-- 收件信息 -->

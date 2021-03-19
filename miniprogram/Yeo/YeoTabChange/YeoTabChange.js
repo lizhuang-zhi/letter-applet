@@ -4,6 +4,33 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 是否固定位置
+    isFixed: {
+      type: Boolean,
+      value: false
+    },
+    // 固定位置top值
+    fixedTop: {
+      type: Number,
+      value: 0
+    },
+    // 组件框顶部内边距
+    boxPaddingTop: {
+      type: Number,
+      value: 60
+    },
+    // 背景色
+    bgColor: {
+      type: String,
+      value: '#eeeeee'
+    },
+    // 组件框层级
+    zIndex: {
+      type: Number,
+      value: 199
+    },
+
+    
     // 传入标题数组
     titleArr: {
       type: Array,

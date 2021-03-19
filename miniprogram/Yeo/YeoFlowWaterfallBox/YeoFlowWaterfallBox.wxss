@@ -1,0 +1,4 @@
+.yeo-flow-waterfall-box {
+  width: 100%;
+  column-count: 2;
+}

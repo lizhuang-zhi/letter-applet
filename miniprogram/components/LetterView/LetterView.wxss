@@ -1,0 +1,60 @@
+/* 顶部提示 */
+.OuterBox .TopTip {
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 顶部提示内容 */
+.OuterBox .TopTip .TipCont {
+  width: 280rpx;
+  height: 90rpx;
+  display: block;
+  line-height: 90rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  text-align: center;
+  background: rgba(225, 232, 233, 0.74);
+  color: rgb(54, 52, 52);
+}
+
+/* 信件 */
+.OuterBox .LetterContent {
+  width: 90vw;
+  background: rgb(255, 255, 255);
+  margin: 0 auto;
+  border-radius: 20rpx;
+  padding: 22rpx;
+  padding-bottom: 120rpx;
+  box-sizing: border-box;
+  letter-spacing: 6rpx;
+}
+
+/* 信件头部收件人 */
+.OuterBox .LetterContent .LetterHead .consignee {
+  width: 100%;
+  height: 100rpx;
+}
+/* 信件内容 */
+.OuterBox .LetterContent .LetterBody {
+  width: 100%;
+  padding-bottom: 5rpx;
+}
+
+/* 信件结尾 */
+.OuterBox .LetterContent .LetterFoot {
+  margin: 40rpx 0;
+  position: relative;
+}
+
+/* 写信作者名字 */
+.OuterBox .LetterContent .LetterFoot .writer {
+  position: absolute;
+}
+
+/* 写信日期 */
+.OuterBox .LetterContent .LetterFoot .SendTime {
+  position: absolute;
+}
