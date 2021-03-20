@@ -1,7 +1,6 @@
 /* 内层盒子 */
 .outer-box .inner-box{
   display: flex;
-  justify-content: space-around;
   align-items: center; 
   flex-wrap: wrap;
 }

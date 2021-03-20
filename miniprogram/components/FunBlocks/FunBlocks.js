@@ -62,6 +62,16 @@ Component({
     BlockFontMargin:{
       type:String,
       value:"10rpx"
+    },
+    // 图片圆角
+    BlockRadius: {
+      type: Number,
+      value: 30
+    },
+    // 内层盒子布局方式
+    InnerBoxFlexType: {
+      type: String,
+      value: 'space-around'
     }
   },
 

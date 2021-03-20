@@ -1,6 +1,6 @@
 .yeo-text-box {
   width: 100%;
-  background: #f6f6f6;
+  background: #ffffff;
   padding: 28rpx;
   box-sizing: border-box;
   border-radius: 25rpx;
