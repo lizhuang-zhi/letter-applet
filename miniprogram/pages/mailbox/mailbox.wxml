@@ -20,8 +20,8 @@
 
 <!-- 收件信息 -->
 <view class="message-box">
-  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple backgroundColor='#ffffff' IconSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
+  <keo-letter-simple backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
 </view>

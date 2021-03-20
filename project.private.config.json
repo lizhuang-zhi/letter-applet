@@ -47,6 +47,35 @@
           "pathName": "packageWriteLetter/pages/complaintletter/complaintletter",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "发布注意事项",
+          "pathName": "packageReleaseModule/pages/attention/attention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑信息",
+          "pathName": "packageReleaseModule/pages/write/write",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的日记",
+          "pathName": "packageMyInfo/pages/mydiary/mydiary",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的吐槽",
+          "pathName": "packageMyInfo/pages/mycomplaint/mycomplaint",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我回复的解忧信",
+          "pathName": "packageMyInfo/pages/myreplysorrow/myreplysorrow",
+          "scene": null
         }
       ]
     }

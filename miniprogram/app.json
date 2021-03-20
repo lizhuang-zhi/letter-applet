@@ -19,6 +19,14 @@
         "pages/attention/attention",
         "pages/write/write"
       ]
+    },
+    {
+      "root": "packageMyInfo",
+      "pages": [
+        "pages/mydiary/mydiary",
+        "pages/mycomplaint/mycomplaint",
+        "pages/myreplysorrow/myreplysorrow"
+      ]
     }
   ],
   "tabBar": {
