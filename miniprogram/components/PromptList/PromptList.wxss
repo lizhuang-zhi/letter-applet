@@ -1,0 +1,14 @@
+/* 提示主题 */
+.outer-box .prompt-title{
+  display:flex;
+  align-items: center;
+}
+/* 提示内容 */
+.outer-box .list-out .prompt-list{
+  display: flex;
+  align-items: center;
+}
+/* 提示内容列表 */
+.outer-box .list-out .prompt-list .list{
+  overflow:hidden ;
+}

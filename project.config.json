@@ -19,9 +19,8 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
+    "useMultiFrameRuntime": false,
     "useApiHook": true,
-    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -38,19 +37,18 @@
     "minifyWXSS": true
   },
   "appid": "wx45847f8c326518ee",
-  "projectname": "write",
+  "projectname": "Letter",
   "libVersion": "2.14.1",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
     "game": {
+      "list": []
+    },
+    "gamePlugin": {
       "list": []
     },
     "miniprogram": {
@@ -58,7 +56,13 @@
         {
           "id": -1,
           "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide"
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "packageReleaseModule/pages/attention/attention",
+          "pathName": "packageReleaseModule/pages/attention/attention",
+          "scene": null
         }
       ]
     }

@@ -60,6 +60,7 @@
     "keo-letter-simple": "/components/LetterSimple/LetterSimple",
     "keo-letter-view": "/components/LetterView/LetterView",
     "keo-fun-blocks": "/components/FunBlocks/FunBlocks",
+    "keo-prompt-list": "/components/PromptList/PromptList",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",

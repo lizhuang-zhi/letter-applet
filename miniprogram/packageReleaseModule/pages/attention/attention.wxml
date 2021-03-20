@@ -1,2 +1,3 @@
-<!--packageReleaseModule/pages/attention/attention.wxml-->
-<text>packageReleaseModule/pages/attention/attention.wxml</text>
+<keo-prompt-list></keo-prompt-list>
+<keo-prompt-list></keo-prompt-list>
+<keo-prompt-list></keo-prompt-list>
