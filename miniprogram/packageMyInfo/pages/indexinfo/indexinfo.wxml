@@ -1,0 +1,58 @@
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-tit">我的</view>
+  <view class="top-content">人生的旅途永远不是一帆风顺的，只有经历了，才懂得生活的苦...</view>
+</view>
+
+
+<!-- 我的信息 -->
+<!-- 
+  1. 点赞数、评论数、解忧数、名字、等级 
+  2. 添加发布按钮（yeo-tools-bar组件）
+-->
+<view class="my-info">
+
+</view>
+
+<!-- 获取设备屏幕高度，固定tab的内容高度 -->
+<!-- tab切换 -->
+<yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90'
+  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='red'>
+  <view slot='{{tabArray[0]}}' class="tab-1">
+    <view>{{tabArray[2]}}</view>
+    <view>{{tabArray[2]}}</view>
+    <view>{{tabArray[2]}}</view>
+    <view>{{tabArray[2]}}</view>
+
+
+  </view>
+  <view slot='{{tabArray[1]}}' class="tab-2">
+    <!-- 公开日记 -->
+    <yeo-flow-waterfall-box>
+      <yeo-diary-box diaryContent='算什么男人去理解' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='人生呐！' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='I Love You! My Honey' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='日记是这样记下来的？' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='为什么有过去' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='I am Leo' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#ffffff'></yeo-diary-box>
+      <yeo-diary-box diaryContent='Do it' bgColor='#ffffff'></yeo-diary-box>
+    </yeo-flow-waterfall-box>
+
+  </view>
+
+  <view slot='{{tabArray[2]}}' class="tab-3">
+    <!-- 吐槽大会 -->
+    <yeo-text-box content='我是一个人在游走的时候'></yeo-text-box>
+    <yeo-text-box></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='时间在走着，但是我想要停下'></yeo-text-box>
+    <yeo-text-box></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+    <yeo-text-box content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+  </view>
+</yeo-label-bar>
