@@ -9,11 +9,42 @@ Component({
       type: String,
       value: `我觉得我在他身上做的够好了，或许看起来很幼稚可是也是我的整个青春，同居的一年洗的我没有少洗,我知道不值得可是真的放不下太难了，也许是付出的太多了吧,我天天刷快手抖音看着关于他的一切拼命的告诉我在他身上做的够好了，我觉得我在他身上做的够好了,或许看起来很幼稚可是也是我的整个青春，同居的一年洗的我没有少洗,我知道不值得可是真的放不下太难了，也许是付出的太多了吧,我天天刷快手抖音看着关于他的一切拼命的告诉我在他身上做的够好了，我觉得我在他身上做的够好了，或许看起来很幼稚可是也是我的整个青春，同居的一年洗的我没有少洗,我知道不值得可是真的放不下太难了，也许是付出的太多了吧,我天天刷快手抖音看着关于他的一切拼命的告诉我在他身上做的够好了`
     },
+    //简略内容颜色
+    ContentColor:{
+      type:String,
+      value:""
+    },
+    // 简略内容文字大小
+    ContentSize: {
+      type: String,
+      value: "32rpx"
+    },
     // 作者名称
     writer: {
       type: String,
       value: "微小的橄榄"
     },
+    //作者文字颜色
+    WriterColor:{
+      type:String,
+      value:''
+    },
+    //作者文字大小
+    WriterSize:{
+      type:String,
+      value:'32rpx'
+    },
+    //作者位置 距离底部的距离 rpx
+    WriterBottom:{
+      type:String,
+      value:"20rpx"
+    },
+    //作者位置  离右边的距离 rpx
+    WriterRight:{
+      type:String,
+      value:'40rpx'
+    },
+
     // 卡片背景颜色
     backgroundColor: {
       type: String,
@@ -24,15 +55,37 @@ Component({
       type: String,
       value: "300rpx"
     },
+    //内部内边距 
+    InnerPadding:{
+      type:String,
+      value:'22rpx'
+    },
+    //内部圆角
+    InnerRadius:{
+      type:String,
+      value:'20rpx'
+    },
     // 收信人内容
     consignee: {
       type: String,
       value: "Tell 收"
     },
-    // 文字大小
-    InnerSize: {
-      type: String,
-      value: "32rpx"
+    // 收件人文字颜色
+    ConsigneeColor:{
+      type:String,
+      value:''
+    },
+    //收件人字体大小
+    ConsigneeSize:{
+      type:String,
+      value:'32rpx'
+    },
+
+
+    //logo链接地址
+    IconImgSrc:{
+      type:String,
+      value:'https://s4.ax1x.com/2021/03/20/6hNS6H.png'
     },
     // logo宽度大小
     IconWidthSize: {

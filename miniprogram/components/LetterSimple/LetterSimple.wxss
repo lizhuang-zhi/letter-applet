@@ -6,8 +6,6 @@
 }
 /* 内部 */
 .letter-inner {
-  padding: 22rpx;
-  border-radius: 20rpx;
   position: relative;
 }
 /* 头部 */
@@ -37,6 +35,4 @@
 /* 作者名称 */
 .letter-inner .letter-writer {
   position: absolute;
-  bottom: 20rpx;
-  right: 40rpx;
 }

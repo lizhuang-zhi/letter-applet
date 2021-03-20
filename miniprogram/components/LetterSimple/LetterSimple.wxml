@@ -1,21 +1,21 @@
 <!-- 外框 -->
 <view class="letter-shell">
   <!-- 内部 -->
-  <view class="letter-inner" style="height:{{InnerHeight}};font-size:{{InnerSize}};background-color:{{backgroundColor}}">
+  <view class="letter-inner" style="height:{{InnerHeight}};background-color:{{backgroundColor}};padding:{{InnerPadding}};border-radius:{{InnerRadius}}">
     <!-- 收件人内容 -->
-    <view class="letter-head">
+    <view class="letter-head" style="color:{{ConsigneeColor}};font-size:{{ConsigneeSize}};">
       {{consignee}}
     </view>
     <!-- 简略内容 -->
-    <view class="letter-content">
+    <view class="letter-content" style="color:{{ContentColor}};font-size:{{ContentSize}}">
       {{content}}
     </view>
     <!-- 信件logo -->
     <view class="letter-icon" style="width:{{IconWidthSize}};height:{{IconHeightSize}};top:{{IconTop}};right:{{IconRight}}">
-      <image class="icon-img" src="https://s4.ax1x.com/2021/03/20/6hNS6H.png"></image>
+      <image class="icon-img" src="{{IconImgSrc}}"></image>
     </view>
     <!-- 作者名称 -->
-    <view class="letter-writer">
+    <view class="letter-writer" style="color:{{WriterColor}}；font-size:{{WriterSize}};bottom:{{WriterBottom}};right:{{WriterRight}}">
       {{writer}}
     </view>
   </view>
