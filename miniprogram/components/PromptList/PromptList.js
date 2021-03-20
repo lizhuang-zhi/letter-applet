@@ -31,12 +31,12 @@ Component({
     // 外层外边距 上下 左右
     OuterMargin:{
       type:String,
-      value:"30rpx auto"
+      value:"40rpx auto"
     },
     // 提示主题内边距 上 右 下 左
     TitlePadding:{
       type:String,
-      value:"40rpx 40rpx 30rpx 40rpx"
+      value:"40rpx 40rpx 20rpx 40rpx"
     },
     //提示主题浮动版式 space-between/space-around
     FlexType:{
@@ -61,12 +61,12 @@ Component({
     // 箭头图片 宽度
     ImgWidth:{
       type:String,
-      value:"30rpx"
+      value:"35rpx"
     },
     //箭头图片 高度
     ImgHeight:{
       type:String,
-      value:"30rpx"
+      value:"35rpx"
     },
     //提示列表行高
     ListLineHeight:{
@@ -87,7 +87,7 @@ Component({
     //提示列表内边距 上 右 下 左
     LitsPadding:{
       type:String,
-      value:"0 40rpx 10rpx 40rpx"
+      value:"0 40rpx 20rpx 40rpx"
     }
   },
 

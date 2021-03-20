@@ -62,6 +62,18 @@
         {
           "name": "packageReleaseModule/pages/attention/attention",
           "pathName": "packageReleaseModule/pages/attention/attention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageReleaseModule/pages/attention/attention",
+          "pathName": "packageReleaseModule/pages/attention/attention",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mailbox/mailbox",
+          "pathName": "pages/mailbox/mailbox",
           "scene": null
         }
       ]

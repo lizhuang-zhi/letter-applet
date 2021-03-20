@@ -1,1 +1,27 @@
-/* packageReleaseModule/pages/attention/attention.wxss */
+/* 顶部建议 */
+.top-tips{
+  width: 90vw;
+  margin: 30rpx auto;
+}
+/* 顶部提示文字内容 */
+.top-tips .tip-text{
+    color: gray;
+}
+/*我已了解 按钮 */
+.btn-box{
+  width: 100%;
+  margin: 50rpx auto;
+  display: flex;
+  justify-content: center;
+}
+.btn-box .btn{
+  width: 360rpx;
+  height: 110rpx;
+  font-size: 34rpx;
+  line-height: 110rpx;
+  border-radius: 100rpx;
+  background: #01D25C;
+  text-align: center;
+  font-weight: 800;
+  color: white;
+}
