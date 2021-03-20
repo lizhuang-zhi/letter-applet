@@ -5,7 +5,7 @@
       <image src="https://s4.ax1x.com/2021/03/20/6hQpOf.png"></image>
     </view>
     <view class="right-pic">
-      <image src="https://s4.ax1x.com/2021/03/20/6h1kzn.png"></image>
+      <image src="{{stampPic}}"></image>
     </view>
   </view>
 

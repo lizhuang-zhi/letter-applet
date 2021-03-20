@@ -33,10 +33,10 @@
   <scroll-view class="sorrow-list" scroll-x>
     <view class="list-box">
       <yeo-stamp-text></yeo-stamp-text>
-      <yeo-stamp-text></yeo-stamp-text>
-      <yeo-stamp-text></yeo-stamp-text>
-      <yeo-stamp-text></yeo-stamp-text>
-      <yeo-stamp-text></yeo-stamp-text>
+      <yeo-stamp-text stampPic='../../images/dog.png'></yeo-stamp-text>
+      <yeo-stamp-text stampPic='../../images/cat.png'></yeo-stamp-text>
+      <yeo-stamp-text stampPic='../../images/rabbit.png'></yeo-stamp-text>
+      <yeo-stamp-text stampPic='../../images/mouse.png'></yeo-stamp-text>
     </view>
   </scroll-view>
 </view>

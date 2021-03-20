@@ -11,13 +11,47 @@
   2. 添加发布按钮（yeo-tools-bar组件）
 -->
 <view class="my-info">
-
+  <!-- 左侧信息（头像、昵称、等级） -->
+  <view class="left-info">
+    <view class="head-pic">
+      <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1001622456,2799396839&fm=26&gp=0.jpg">
+      </image>
+    </view>
+    <view class="user">
+      <view class="username">胡辣汤的朋友</view>
+      <view class="rate">解忧大师</view>
+    </view>
+  </view>
+  <!-- 右侧信息（点赞数、评论数、解忧数） -->
+  <view class="right-info">
+    <!-- data数据 -->
+    <view class="data-info-num">
+      <view class="data-num">
+        <view class="word">解忧</view>
+        <view class="num">23</view>
+      </view>
+      <view class="data-num">
+        <view class="word">点赞</view>
+        <view class="num">44</view>
+      </view>
+      <view class="data-num">
+        <view class="word">评论</view>
+        <view class="num">657</view>
+      </view>
+    </view>
+    <!-- 查看更多 -->
+    <view class="more-info">查看更多 ></view>
+  </view>
 </view>
+
+
+
+
 
 <!-- 获取设备屏幕高度，固定tab的内容高度 -->
 <!-- tab切换 -->
 <yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90'
-  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='red'>
+  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='#F6F6F6'>
   <view slot='{{tabArray[0]}}' class="tab-1">
     <view>{{tabArray[2]}}</view>
     <view>{{tabArray[2]}}</view>
