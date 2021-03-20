@@ -1,33 +1,12 @@
 .yeo-text-box {
   width: 100%;
-  background: #ffffff;
-  padding: 28rpx;
   box-sizing: border-box;
-  border-radius: 25rpx;
-}
-.yeo-text-box .content {
-  margin-bottom: 25rpx;
-  letter-spacing: 2rpx;
-  font-size: 28rpx;
-  line-height: 1.55;
 }
 .yeo-text-box .bot-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  color: #767676;
-}
-.yeo-text-box .bot-bar .name {
-  letter-spacing: 1rpx;
-  font-size: 26rpx;
 }
 .yeo-text-box .bot-bar .comment-num {
   display: flex;
   align-items: center;
-  font-size: 25rpx;
-  /* justify-content: space-between; */
-}
-.yeo-text-box .bot-bar .comment-num .pic image{
-  width: 20rpx;
-  height: 20rpx;
 }

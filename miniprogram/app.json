@@ -98,7 +98,8 @@
     "yeo-flow-waterfall": "/Yeo/YeoFlowWaterfall/YeoFlowWaterfall",
     "yeo-text-box": "/Yeo/YeoTextBox/YeoTextBox",
     "yeo-diary-box": "/Yeo/YeoDiaryBox/YeoDiaryBox",
-    "yeo-flow-waterfall-box": "/Yeo/YeoFlowWaterfallBox/YeoFlowWaterfallBox"
+    "yeo-flow-waterfall-box": "/Yeo/YeoFlowWaterfallBox/YeoFlowWaterfallBox",
+    "yeo-stamp-text": "/Yeo/YeoStampText/YeoStampText"
 
   }
 }

@@ -29,8 +29,6 @@ Component({
       type: Number,
       value: 199
     },
-
-    
     // 传入标题数组
     titleArr: {
       type: Array,
@@ -73,7 +71,7 @@ Component({
       value: '#FCFCFC'
     },
     // 字体粗细
-    fontWeight:  {
+    fontWeight: {
       type: String,
       value: 'bold'
     },
@@ -138,7 +136,7 @@ Component({
   // 数据监听
   observers: {
     // 监听currentIndex的变化
-    'currentIndex': function(currentIndex) {
+    'currentIndex': function (currentIndex) {
       this.changeline();
     }
   },
@@ -162,7 +160,9 @@ Component({
         currentIndex: tabIndex
       });
       this.changeline();
-      this.triggerEvent('changetabevent',{tabIndex})
+      this.triggerEvent('changetabevent', {
+        tabIndex
+      })
     },
     // 改变下划线事件
     changeline() {

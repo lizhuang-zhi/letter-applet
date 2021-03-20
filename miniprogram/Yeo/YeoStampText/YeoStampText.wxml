@@ -1,0 +1,20 @@
+<view class="yeo-stamp-text">
+  <!-- 顶部邮票栏 -->
+  <view class="stamp-top">
+    <view class="left-pic">
+      <image src="https://s4.ax1x.com/2021/03/20/6hQpOf.png"></image>
+    </view>
+    <view class="right-pic">
+      <image src="https://s4.ax1x.com/2021/03/20/6h1kzn.png"></image>
+    </view>
+  </view>
+
+  <!-- 内容栏 -->
+  <view class="content">这是一个关于邮票的文本框，用户可以自定义邮票与内容</view>
+
+  <!-- 信息栏 -->
+  <view class="bottom">
+    <view class="name">幸运小木头</view>
+    <view class="date">今天上午 11:32</view>
+  </view>
+</view>

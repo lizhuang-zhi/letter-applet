@@ -1,0 +1,47 @@
+.yeo-stamp-text {
+  width: 300rpx;
+  /* height: 300rpx; */
+  padding: 20rpx 30rpx;
+  background: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 0 0 10rpx #bbbbbb;
+  font-family: 'Courier New', Courier, monospace;
+}
+.yeo-stamp-text .stamp-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 30rpx;
+}
+.yeo-stamp-text .stamp-top .left-pic {
+  width: 50rpx;
+  height: 50rpx;
+}
+.yeo-stamp-text .stamp-top .left-pic image{
+  width: 100%;
+  height: 100%;
+}
+.yeo-stamp-text .stamp-top .right-pic {
+  width: 90rpx;
+  height: 120rpx;
+}
+.yeo-stamp-text .stamp-top .right-pic image{
+  width: 100%;
+  height: 100%;
+}
+.yeo-stamp-text .content {
+  color: #4B4B4B;
+  font-size: 26rpx;
+  padding: 0 0 60rpx;
+  line-height: 1.6;
+  letter-spacing: 1rpx;
+}
+.yeo-stamp-text .bottom .name {
+  font-size: 30rpx;
+  padding: 0 0 5rpx;
+  color: #24314C;
+  font-weight: bold;
+}
+.yeo-stamp-text .bottom .date {
+  font-size: 26rpx;
+  color: #878787;
+}

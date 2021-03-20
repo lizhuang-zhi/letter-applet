@@ -29,7 +29,6 @@
 /* 信件logo */
 .letter-inner .letter-icon{
   position: absolute;
-
 }
 .letter-inner .letter-icon .icon-img{
   width: 100%;

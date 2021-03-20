@@ -1,11 +1,13 @@
-<view class="yeo-text-box">
-  <view class="content">{{content}}</view>
-  <view class="bot-bar">
-    <view class="name">{{userName}}</view>
-    <view class="comment-num">
+<view class="yeo-text-box" style="background: {{bgColor}};padding: {{padding + 'rpx'}};border-radius: {{boxBordRadius + 'rpx'}};" bindtap="clickTap" data-content="{{content}}" data-user-name="{{userName}}" data-comment-num="{{commentNum}}">
+  <!-- 内容 -->
+  <view class="content" style="margin-bottom: {{contMarginBottom + 'rpx'}};letter-spacing: {{contLetterSpacing + 'rpx'}};font-size: {{contFontSize + 'rpx'}};line-height: {{contLineHeight}};">{{content}}</view>
+  <!-- 底部栏 -->
+  <view class="bot-bar" style="justify-content: {{botBarJustifyContent}};color: {{botBarFontColor}};">
+    <view class="name" style="letter-spacing: {{botBarUserNameLetterSpacing + 'rpx'}};font-size: {{botBarUserNameFontSize + 'rpx'}};">{{userName}}</view>
+    <view class="comment-num" style="font-size: 25rpx;">
       <view class="comment">{{commentNum}}评论</view>
       <view class="pic">
-        <image src="https://s3.ax1x.com/2021/03/18/62qJV1.png"></image>
+        <image style="width: {{picSize + 'rpx'}};height: {{picSize + 'rpx'}};" src="https://s3.ax1x.com/2021/03/18/62qJV1.png"></image>
       </view>
     </view>
   </view>

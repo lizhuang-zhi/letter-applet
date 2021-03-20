@@ -37,7 +37,7 @@ page {
 
 
 /* 解忧信件标题 */
-.tit-jieyou {
+.tit-sorrow {
   margin-left: var(--margin-top);
   font-size: 40rpx;
   font-weight: bold;
@@ -46,8 +46,17 @@ page {
 }
 
 /* 解忧信件 */
-.tit-jieyou-box {
+.tit-sorrow-box {
   margin: 20rpx 40rpx 260rpx;
 }
-
+.tit-sorrow-box .sorrow-list {
+  height: 500rpx;
+}
+.tit-sorrow-box .sorrow-list yeo-stamp-text {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.tit-sorrow-box .sorrow-list .list-box {
+  display: flex;
+}
 
