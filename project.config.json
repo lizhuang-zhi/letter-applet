@@ -54,12 +54,6 @@
     "miniprogram": {
       "list": [
         {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
-        },
-        {
           "name": "packageReleaseModule/pages/attention/attention",
           "pathName": "packageReleaseModule/pages/attention/attention",
           "query": "",
@@ -74,6 +68,7 @@
         {
           "name": "pages/mailbox/mailbox",
           "pathName": "pages/mailbox/mailbox",
+          "query": "",
           "scene": null
         }
       ]
