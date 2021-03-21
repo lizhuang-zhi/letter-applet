@@ -24,6 +24,7 @@ Component({
   attached() {
   },
   methods: {
+    // tabbar装换
     switchTab(e) {
       const data = e.currentTarget.dataset
       const url = data.path
@@ -31,6 +32,14 @@ Component({
       this.setData({
         selected: data.index
       })
+    },
+    // 跳转发布页面
+    toRelease() {
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/attention/attention',
+      })
+      console.log('跳转->注意事项页面');
     }
+    
   }
 })

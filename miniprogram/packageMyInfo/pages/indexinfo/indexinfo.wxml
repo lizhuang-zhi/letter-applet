@@ -4,7 +4,6 @@
   <view class="top-content">人生的旅途永远不是一帆风顺的，只有经历了，才懂得生活的苦...</view>
 </view>
 
-
 <!-- 我的信息 -->
 <!-- 
   1. 点赞数、评论数、解忧数、名字、等级 
@@ -45,19 +44,15 @@
 </view>
 
 
-
-
-
 <!-- 获取设备屏幕高度，固定tab的内容高度 -->
 <!-- tab切换 -->
 <yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90'
-  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='#F6F6F6'>
+  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='#F6F6F6' tabIsScrollY='true' tabScrollHeight='650'>
   <view slot='{{tabArray[0]}}' class="tab-1">
     <view>{{tabArray[2]}}</view>
     <view>{{tabArray[2]}}</view>
     <view>{{tabArray[2]}}</view>
     <view>{{tabArray[2]}}</view>
-
 
   </view>
   <view slot='{{tabArray[1]}}' class="tab-2">

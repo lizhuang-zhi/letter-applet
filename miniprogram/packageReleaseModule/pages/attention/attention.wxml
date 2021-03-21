@@ -4,9 +4,9 @@
 </view>
 <!-- 规则建议列表 组件 -->
 <view class="prompt-list">
-  <keo-prompt-list PromptData="{{PromptData1}}"></keo-prompt-list>
-  <keo-prompt-list PromptText="内容建议" PromptData="{{PromptData2}}"></keo-prompt-list>
-  <keo-prompt-list PromptText="其他事项" PromptData="{{PromptData3}}"></keo-prompt-list>
+  <keo-prompt-list ListFontSize='29' ListFontColor='#777777' TextSize='34rpx' ImgWidth='25rpx' ImgHeight='25rpx' PromptData="{{PromptData1}}"></keo-prompt-list>
+  <keo-prompt-list ListFontSize='29' ListFontColor='#777777' TextSize='34rpx' ImgWidth='25rpx' ImgHeight='25rpx' PromptText="内容建议" PromptData="{{PromptData2}}"></keo-prompt-list>
+  <keo-prompt-list ListFontSize='29' ListFontColor='#777777' TextSize='34rpx' ImgWidth='25rpx' ImgHeight='25rpx' PromptText="其他事项" PromptData="{{PromptData3}}"></keo-prompt-list>
 </view>
 <!--我已了解 按钮 -->
 <view class="btn-box">

@@ -24,12 +24,14 @@ Page({
       });
       tools.selectHeight('.tab-2').then(back => {
         tabHeiArr.push(back);
+        resolve('success');
       });
     }).then(res => {
       let newArr = tabHeiArr.sort((a, b) => a - b);
       // 最大高度
       let maxHeight = newArr[tabHeiArr.length - 1];
       this.setData({
+        // 乘以二是以为rpx到px
         maxHeight: maxHeight * 2
       })
     })

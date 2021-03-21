@@ -15,7 +15,7 @@
     <view class="prompt-list" wx:for="{{PromptData}}" wx:key="index"
       style="font-size:{{ListFontSize+'rpx'}};">
       <!-- 内容列表 -->
-      <view class="list" style="line-height:{{ListLineHeight+'rpx'}}">{{item}}
+      <view class="list" style="line-height:{{ListLineHeight+'rpx'}};color: {{ListFontColor}};font-size: {{ListFontSize + 'rpx'}};">{{item}}
       </view>
     </view>
   </view>

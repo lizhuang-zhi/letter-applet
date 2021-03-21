@@ -22,7 +22,7 @@ Component({
     // 背景色
     bgColor: {
       type: String,
-      value: '#f6f6f6'
+      value: '#FFFFFF'
     },
     // 内边距
     padding: {

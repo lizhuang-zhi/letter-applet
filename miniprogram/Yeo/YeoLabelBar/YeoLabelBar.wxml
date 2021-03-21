@@ -1,16 +1,35 @@
 <view class="yeo-label-bar" style="Margin: {{tabOutMargin}}">
 
   <!-- tab切换栏 -->
-  <yeo-tab-change fontSize='{{fontSize}}' fontColor='{{fontColor}}' fontWeight='{{fontWeight}}' fontLetterSpacing='{{fontLetterSpacing}}' fontSelectColor='{{fontSelectColor}}' lineWidth='{{lineWidth}}' lineHeight='{{lineHeight}}' lineColor='{{lineColor}}' lineBottom='{{lineBottom}}' lineLeft='{{lineLeft}}' tabWidth='{{tabChangeWidth}}' tabJustiContent='{{tabChangeJustiContent}}'
-  titleArr='{{tabArr}}' bind:changetabevent='bindChangeTab' currentIndex='{{currentTab}}' isFixed='{{isFixed}}' fixedTop='{{fixedTop}}' boxPaddingTop='{{boxPaddingTop}}' bgColor='{{bgColor}}' zIndex='{{zIndex}}'></yeo-tab-change>
+  <yeo-tab-change fontSize='{{fontSize}}' fontColor='{{fontColor}}' fontWeight='{{fontWeight}}'
+    fontLetterSpacing='{{fontLetterSpacing}}' fontSelectColor='{{fontSelectColor}}' lineWidth='{{lineWidth}}'
+    lineHeight='{{lineHeight}}' lineColor='{{lineColor}}' lineBottom='{{lineBottom}}' lineLeft='{{lineLeft}}'
+    tabWidth='{{tabChangeWidth}}' tabJustiContent='{{tabChangeJustiContent}}' titleArr='{{tabArr}}'
+    bind:changetabevent='bindChangeTab' currentIndex='{{currentTab}}' isFixed='{{isFixed}}' fixedTop='{{fixedTop}}'
+    boxPaddingTop='{{boxPaddingTop}}' bgColor='{{bgColor}}' zIndex='{{zIndex}}'></yeo-tab-change>
 
-  <!-- 轮动部分 -->
-  <view class="swiper-main" style="background: {{tabContColor}};margin: {{tabMargin}};border-radius: {{tabBordRadius + 'rpx'}};">
-    <swiper class="swiper-box" current="{{currentTab}}" bindchange="ChangeCurrent" style="height: {{tabContHeight + 'rpx'}};">
+  <!-- 轮动部分（不可滚动） -->
+  <view wx:if="{{!tabIsScrollY}}" class="swiper-main"
+    style="background: {{tabContColor}};margin: {{tabMargin}};border-radius: {{tabBordRadius + 'rpx'}};">
+    <swiper class="swiper-box" current="{{currentTab}}" bindchange="ChangeCurrent"
+      style="height: {{tabContHeight + 'rpx'}};">
       <swiper-item wx:for="{{tabArr}}" wx:key='index'>
         <slot name='{{item}}'></slot>
       </swiper-item>
     </swiper>
   </view>
+  <!-- 轮动部分（可滚动） -->
+  <scroll-view scroll-y class="swiper-main-scroll" style="height: {{tabScrollHeight + 'rpx'}}" wx:else>
+    <view class="swiper-main"
+      style="background: {{tabContColor}};margin: {{tabMargin}};border-radius: {{tabBordRadius + 'rpx'}};">
 
+      <swiper class="swiper-box" current="{{currentTab}}" bindchange="ChangeCurrent"
+        style="height: {{tabContHeight + 'rpx'}};">
+        <swiper-item wx:for="{{tabArr}}" wx:key='index'>
+          <slot name='{{item}}'></slot>
+        </swiper-item>
+      </swiper>
+
+    </view>
+  </scroll-view>
 </view>

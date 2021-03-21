@@ -10,10 +10,10 @@ Component({
       type: String,
       value: '40rpx 0 0 0'
     },
-    // tab内容框高度
+    // tab内容高度
     tabContHeight: {
       type: Number,
-      value: 70
+      value: 270
     },
     // tab内容框背景颜色
     tabContColor: {
@@ -29,6 +29,16 @@ Component({
     tabBordRadius: {
       type: Number,
       value: 10
+    },
+    // tab内容是否可垂直滚动
+    tabIsScrollY: {
+      type: Boolean,
+      value: false
+    },
+    // tab内容滚动的可视高度（当tab内容高度 > 此高度时，可看到滚动效果）
+    tabScrollHeight: {
+      type: Number,
+      value: 200
     },
     /* **********TabChange属性********** */
     // TabChange数组

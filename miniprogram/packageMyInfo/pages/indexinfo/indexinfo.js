@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabArray: ['我的解忧', '公开日记', '吐槽大会']
+    tabArray: ['我的解忧', '公开日记', '吐槽大会'],
   },
 
   // 2.初始化tab页面高度
@@ -38,6 +38,7 @@ Page({
       this.setData({
         maxHeight: maxHeight * 2
       })
+      console.log(maxHeight);
     })
   },
 

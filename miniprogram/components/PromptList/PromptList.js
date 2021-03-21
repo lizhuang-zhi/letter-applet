@@ -88,6 +88,16 @@ Component({
     LitsPadding:{
       type:String,
       value:"0 40rpx 20rpx 40rpx"
+    },
+    // 内容列表字体颜色
+    ListFontColor: {
+      type: String,
+      value: '#999999'
+    },
+    // 内容列表字体大小
+    ListFontSize: {
+      type: Number,
+      value: 27
     }
   },
 

@@ -1,20 +1,20 @@
-<view class="yeo-stamp-text">
+<view class="yeo-stamp-text" style="width: {{boxWidth + 'rpx'}};padding: {{boxPadding}};background: {{boxBgColor}};border-radius: {{boxBordRadius + 'rpx'}};box-shadow: {{boxShadow}};font-family: {{fontFamily}};" bindtap="clickTap" data-name="{{name}}" data-content="{{content}}" data-date="{{date}}">
   <!-- 顶部邮票栏 -->
-  <view class="stamp-top">
-    <view class="left-pic">
-      <image src="https://s4.ax1x.com/2021/03/20/6hQpOf.png"></image>
+  <view class="stamp-top" style="padding: {{stampTopPadding}};">
+    <view class="left-pic" style="width: {{stampTopLeftPicSize + 'rpx'}};height: {{stampTopLeftPicSize + 'rpx'}};">
+      <image src="{{stampTopLeftPic}}"></image>
     </view>
-    <view class="right-pic">
+    <view class="right-pic" style="width: {{stampPicWidthSize + 'rpx'}};height: {{stampPicHeightSize + 'rpx'}};">
       <image src="{{stampPic}}"></image>
     </view>
   </view>
 
   <!-- 内容栏 -->
-  <view class="content">这是一个关于邮票的文本框，用户可以自定义邮票与内容</view>
+  <view class="content" style="color: {{contentFontColor}};font-size: {{contentFontSize + 'rpx'}};padding: {{contentPadding}};line-height: {{contentLineHeight}};letter-spacing: {{contentLetterSpacing + 'rpx'}};">{{content}}</view>
 
   <!-- 信息栏 -->
   <view class="bottom">
-    <view class="name">幸运小木头</view>
-    <view class="date">今天上午 11:32</view>
+    <view class="name" style="font-size: {{infoNameFontSize + 'rpx'}};padding: {{infoNamePadding}};color: {{infoNameFontColor}};font-weight: {{infoNameFontWeight}};">{{name}}</view>
+    <view class="date" style="font-size: 26rpx;color: #878787;">{{date}}</view>
   </view>
 </view>
