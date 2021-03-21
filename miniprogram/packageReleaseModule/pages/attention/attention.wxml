@@ -10,5 +10,5 @@
 </view>
 <!--我已了解 按钮 -->
 <view class="btn-box">
-  <view class="btn">我已了解</view>
+  <view class="btn" bindtap="navToWriteArea">我已了解</view>
 </view>

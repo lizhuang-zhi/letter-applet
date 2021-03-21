@@ -1,0 +1,4 @@
+.write-box{
+  display: flex;
+  justify-content: center;
+}

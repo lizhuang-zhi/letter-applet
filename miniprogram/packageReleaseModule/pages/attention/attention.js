@@ -10,7 +10,11 @@ Page({
     PromptData3:['解答非答案，仅供参考','遇到不良内容请投诉'],
     tipcontent:'谢谢您的信任，准备将心里话说给TA。在开始前，希望您能花几分钟，了解一些注意事项。'
   },
-
+  navToWriteArea(){
+    wx.navigateTo({
+      url: '../write/write',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
