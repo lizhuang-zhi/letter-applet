@@ -1,1 +1,9 @@
-/* packageReleaseModule/pages/write/write.wxss */
+.btn-box{
+  width: 100%;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: center;
+}
+.btn-box .btn{
+  text-align: center;
+}

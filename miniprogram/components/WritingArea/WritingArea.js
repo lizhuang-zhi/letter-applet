@@ -27,7 +27,7 @@ Component({
     //书写区字体大小
     TextSize:{
       type:String,
-      value:'38rpx'
+      value:'34rpx'
     },
     //书写区行高
     LineHeight:{

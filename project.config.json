@@ -70,6 +70,12 @@
           "pathName": "pages/mailbox/mailbox",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "packageReleaseModule/pages/write/write",
+          "pathName": "packageReleaseModule/pages/write/write",
+          "query": "",
+          "scene": null
         }
       ]
     }

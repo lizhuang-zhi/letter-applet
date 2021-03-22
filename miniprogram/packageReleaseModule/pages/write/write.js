@@ -5,7 +5,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //按钮宽度
+    BtnWidth:'200rpx',
+    //按钮高度
+    BtnHeight:'80rpx',
+    //按钮圆角
+    BtnRadius:'20rpx',
+    //行高
+    LineHeight:'80rpx',
+    //背景颜色
+    BtnBackColor:'#01D25C',
+    //文字颜色
+    BtnColor:'white'
   },
 
   /**

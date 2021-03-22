@@ -1,1 +1,5 @@
 <keo-write-area></keo-write-area>
+<!-- 按钮 -->
+<view class="btn-box">
+  <view class="btn" style="width:{{BtnWidth}};height:{{BtnHeight}};border-radius:{{BtnRadius}};line-height:{{LineHeight}};background-color:{{BtnBackColor}};color:{{BtnColor}}">提交</view>
+</view>
