@@ -12,15 +12,18 @@ Component({
           // 功能块图片
           imgsrc:"https://s4.ax1x.com/2021/03/19/6WYN5D.png",
           // 功能块 文字
-          text:"wallet"
+          text:"wallet",
+          picBgColor: "#FBE9E8"
         },
         {
           imgsrc:"https://s4.ax1x.com/2021/03/19/6WrCw9.png",
-          text:"gift"
+          text:"gift",
+          picBgColor: "#FBE9E8"
         },
         {
           imgsrc:"https://s4.ax1x.com/2021/03/19/6WYYVK.png",
-          text:"news"
+          text:"news",
+          picBgColor: "#FBE9E8"
         },
         {
           imgsrc:"https://s4.ax1x.com/2021/03/19/6WYGb6.png",
@@ -38,12 +41,12 @@ Component({
       type:String,
       value:"30rpx auto"
     },
-    //功能块宽度
+    //功能块图片宽度
     BlockWidth:{
       type:String,
       value:"100rpx"
     },
-    //功能块高度
+    //功能块图片高度
     BlockHeight:{
       type:String,
       value:"100rpx"
@@ -62,6 +65,16 @@ Component({
     BlockFontMargin:{
       type:String,
       value:"10rpx"
+    },
+    // 功能块文字粗细
+    BlockFontWeight: {
+      type: String,
+      value: 'bold'
+    },
+    // 功能块文字字间距
+    BolckLetterSpacing: {
+      type: Number,
+      value: 5
     },
     // 图片圆角
     BlockRadius: {
@@ -86,6 +99,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 点击功能块
+    clickTap(e) {
+      // 获取点击索引
+      let index = e.currentTarget.dataset.index;
+      this.triggerEvent('clickevent',{index});
+    }
   }
 })

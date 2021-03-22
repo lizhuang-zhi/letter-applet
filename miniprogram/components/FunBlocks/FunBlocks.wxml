@@ -2,12 +2,18 @@
 <view class="outer-box" style="width:{{OuterWidth}};margin:{{OuterMargin}}">
   <!-- 内层盒子 -->
   <view class="inner-box" style="justify-content: {{InnerBoxFlexType}};">
+
     <!-- 功能块 -->
-    <view class="FuncBlock" wx:for="{{dataList}}" wx:key="index">
+    <view class="FuncBlock" wx:for="{{dataList}}" wx:key="index" bindtap="clickTap" data-index="{{index}}">
       <!-- 图片 -->
-      <image style="width:{{BlockWidth}};height:{{BlockHeight}};border-radius:{{BlockRadius + 'rpx'}}" class="block-img" src="{{item.imgsrc}}"></image>
+      <view class="block-img-out"
+        style="width:{{BlockWidth}};height:{{BlockHeight}};background: {{item.picBgColor}};border-radius: {{BlockRadius + 'rpx'}}">
+        <image class="block-img" src="{{item.imgsrc}}"></image>
+      </view>
       <!-- 文字 -->
-      <view class="block-txt" style="font-size:{{BlockFontSize}};color:{{BlockFontColor}};margin-top:{{BlockFontMargin}}">{{item.text}}</view>
+      <view class="block-txt"
+        style="font-size:{{BlockFontSize}};color:{{BlockFontColor}};margin-top:{{BlockFontMargin}};font-weight: {{BlockFontWeight}};letter-spacing: {{BolckLetterSpacing + 'rpx'}};">{{item.text}}</view>
     </view>
+
   </view>
 </view>

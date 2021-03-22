@@ -65,6 +65,12 @@
           "pathName": "packageMyInfo/pages/indexinfo/indexinfo",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "美文内容",
+          "pathName": "packageWriteLetter/pages/beautyletter/beautyletter",
+          "query": "",
+          "scene": null
         }
       ]
     }

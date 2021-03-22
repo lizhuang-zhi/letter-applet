@@ -10,7 +10,8 @@
       "pages": [
         "pages/sorrowletter/sorrowletter",
         "pages/diaryletter/diaryletter",
-        "pages/complaintletter/complaintletter"
+        "pages/complaintletter/complaintletter",
+        "pages/beautyletter/beautyletter"
       ]
     },
     {

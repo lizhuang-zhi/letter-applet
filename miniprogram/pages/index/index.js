@@ -1,10 +1,51 @@
+/* 
+  1. 用户审核：不良内容（暴力、传销..）
+  2. 消息提示
+  3. 解决如何推送解忧信（服务器发件的负载均衡，每个人都可以收到）
+  4. 信件量 > 用户量
+ */
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    dataArr: [{
+        bgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg',
+        title: 'Tomorr',
+        time: '2021-1-5',
+        isStar: true
+      },
+      {
+        bgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg',
+        title: 'Blue Guy',
+        time: '2021-2-13',
+        isStar: false
+      },
+      {
+        bgUrl: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1105979147,3553146784&fm=26&gp=0.jpg',
+        title: 'Red Coal',
+        time: '2021-2-3',
+        isStar: false
+      }
+    ]
+  },
 
+  // 去到美文内容页
+  ToBeautyTap(e) {
+    // 获取点击背景图
+    let bgUrl = e.detail;
+    console.log(bgUrl);
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/beautyletter/beautyletter?picUrl=' + bgUrl,
+    })
+  },
+
+  // 跳转解忧页
+  ToSorrowTap() {
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter',
+    })
   },
 
   /**

@@ -3,9 +3,9 @@
   <view class="top-tit">收件箱</view>
 </view>
 
-<!-- 我的信息 -->
+<!-- 功能模块 -->
 <view class="my-info-bar">
-  <keo-fun-blocks></keo-fun-blocks>
+  <keo-fun-blocks bind:clickevent='ToMyInfoTap' dataList='{{dataList}}' BlockFontColor='#343434' BlockRadius='35'></keo-fun-blocks>
 </view>
 
 

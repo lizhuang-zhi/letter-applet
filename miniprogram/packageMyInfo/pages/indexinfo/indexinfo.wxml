@@ -47,7 +47,7 @@
 <!-- 获取设备屏幕高度，固定tab的内容高度 -->
 <!-- tab切换 -->
 <yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90'
-  tabContColor='#F6F6F6' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='#F6F6F6' tabIsScrollY='true' tabScrollHeight='650'>
+  tabContColor='#E9E9E9' tabMargin='40rpx 40rpx 20rpx' tabChangeWidth='100%' bgColor='#E9E9E9' tabIsScrollY='true' tabScrollHeight='650'>
   <view slot='{{tabArray[0]}}' class="tab-1">
     <view>{{tabArray[2]}}</view>
     <view>{{tabArray[2]}}</view>

@@ -1,0 +1,37 @@
+<!-- 主结构 -->
+<view class="main-body">
+  <!-- 顶部栏 -->
+  <view class="top-body">
+    <!-- 时间 -->
+    <view class="time">
+      <view class="week-day">周三</view>
+      <view class="date-time">2021-03-21</view>
+    </view>
+    <!-- 学习图 -->
+    <view class="learn-pic">
+      <image src="../../images/reading-1.png"></image>
+    </view>
+  </view>
+
+  <!-- 图片 -->
+  <view class="pic">
+    <image src="{{picUrl}}"></image>
+  </view>
+
+  <!-- 文章标题 -->
+  <view class="title">
+    根基越扎实才能走的越高
+  </view>
+
+  <!-- 文章内容 -->
+  <view class="content-article">{{content}}</view>
+
+  <!-- 底部栏 -->
+  <view class="bottom-bar-out">
+    <view class="bottom-bar" wx:for="{{tagArr}}" wx:key='index'>
+      <!-- 来源 -->
+      <view class="bottom-item">{{item}}</view>
+    </view>
+  </view>
+
+</view>
