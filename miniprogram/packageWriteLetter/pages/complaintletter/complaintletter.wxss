@@ -1,0 +1,6 @@
+page {
+  background: #efefef;
+}
+.complaint {
+  margin: 20rpx 35rpx 0;
+}

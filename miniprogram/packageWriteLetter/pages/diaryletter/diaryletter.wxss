@@ -1,1 +1,16 @@
-/* packageWriteLetter/pages/diaryletter/diaryletter.wxss */
+.content-main {
+  margin: 30rpx 35rpx 50rpx;
+}
+
+.next-page {
+  margin: 40rpx 40rpx 50rpx;
+  font-size: 28rpx;
+  color: #888888;
+  text-align: right;
+  letter-spacing: 2rpx;
+}
+.next-page image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 3rpx;
+}

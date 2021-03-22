@@ -1,4 +1,6 @@
 page {
+  /* 页面背景色 */
+  background: #f4f4f4;
   /* 页面左边距 */
   --margin-top: 40rpx;
 }

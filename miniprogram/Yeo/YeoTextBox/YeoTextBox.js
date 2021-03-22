@@ -19,16 +19,6 @@ Component({
       type: Number,
       value: 265
     },
-    // 背景色
-    bgColor: {
-      type: String,
-      value: '#FFFFFF'
-    },
-    // 内边距
-    padding: {
-      type: Number,
-      value: 28
-    },
     // 外框圆角
     boxBordRadius: {
       type: Number,
@@ -37,7 +27,7 @@ Component({
     // 内容底部外边距
     contMarginBottom: {
       type: Number,
-      value: 25
+      value: 0
     },
     // 内容字间距
     contLetterSpacing: {
@@ -54,6 +44,17 @@ Component({
       type: Number,
       value: 1.55
     },
+    // 内容内边距
+    contentPadding: {
+      type: String,
+      value: '28rpx 28rpx 13rpx'
+    },
+    // 内容背景色
+    contentBgColor: {
+      type: String,
+      value: '#F9F9F9'
+    },
+    /* *********** 底部栏 *********** */
     // 底部栏布局方式
     botBarJustifyContent: {
       type: String,
@@ -78,6 +79,16 @@ Component({
     picSize: {
       type: Number,
       value: 20
+    },
+    // 底部栏内边距
+    botBarPadding: {
+      type: String,
+      value: '13rpx 28rpx 18rpx'
+    },
+    // 底部栏背景色
+    botBarBgColor: {
+      type: String,
+      value: '#F3F6F6'
     }
 
 

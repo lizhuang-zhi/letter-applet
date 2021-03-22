@@ -1,13 +1,7 @@
 <!-- 吐槽内容 -->
-
-
-
-
-
-
-
-
-
+<view class="complaint">
+  <yeo-text-content></yeo-text-content>
+</view>
 
 
 <!-- 评论组件 -->

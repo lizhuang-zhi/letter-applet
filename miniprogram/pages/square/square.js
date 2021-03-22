@@ -37,6 +37,20 @@ Page({
     })
   },
 
+  // 跳转日记内容
+  ToDiaryContent() {
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/diaryletter/diaryletter',
+    })
+  },
+
+  // 跳转吐槽内容
+  ToComplainTap() {
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/complaintletter/complaintletter',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

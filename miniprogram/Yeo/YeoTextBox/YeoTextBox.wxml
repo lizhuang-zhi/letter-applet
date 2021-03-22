@@ -1,8 +1,8 @@
 <view class="yeo-text-box" style="background: {{bgColor}};padding: {{padding + 'rpx'}};border-radius: {{boxBordRadius + 'rpx'}};" bindtap="clickTap" data-content="{{content}}" data-user-name="{{userName}}" data-comment-num="{{commentNum}}">
   <!-- 内容 -->
-  <view class="content" style="margin-bottom: {{contMarginBottom + 'rpx'}};letter-spacing: {{contLetterSpacing + 'rpx'}};font-size: {{contFontSize + 'rpx'}};line-height: {{contLineHeight}};">{{content}}</view>
+  <view class="content" style="margin-bottom: {{contMarginBottom + 'rpx'}};letter-spacing: {{contLetterSpacing + 'rpx'}};font-size: {{contFontSize + 'rpx'}};line-height: {{contLineHeight}};padding: {{contentPadding}};background: {{contentBgColor}};border-top-left-radius: {{boxBordRadius + 'rpx'}};border-top-right-radius: {{boxBordRadius + 'rpx'}};">{{content}}</view>
   <!-- 底部栏 -->
-  <view class="bot-bar" style="justify-content: {{botBarJustifyContent}};color: {{botBarFontColor}};">
+  <view class="bot-bar" style="justify-content: {{botBarJustifyContent}};color: {{botBarFontColor}};padding: {{botBarPadding}};background: {{botBarBgColor}};border-bottom-right-radius: {{boxBordRadius + 'rpx'}};border-bottom-left-radius: {{boxBordRadius + 'rpx'}};">
     <view class="name" style="letter-spacing: {{botBarUserNameLetterSpacing + 'rpx'}};font-size: {{botBarUserNameFontSize + 'rpx'}};">{{userName}}</view>
     <view class="comment-num" style="font-size: 25rpx;">
       <view class="comment">{{commentNum}}评论</view>
