@@ -5,7 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    //按钮宽度
+    BtnWidth:'240rpx',
+    //按钮高度
+    BtnHeight:'100rpx',
+    //按钮圆角
+    BtnRadius:'40rpx',
+    //行高
+    LineHeight:'100rpx',
+    //背景颜色
+    BtnBackColor:'#01D25C',
+    //文字颜色
+    BtnColor:'white',
+    //文字大小
+    BtnFontSize:"32rpx",
+    //解答次数
+    LastTimes:1,
+    //解答次数文字大小
+    TimesFontSize:"32rpx",
+    //解答次数颜色
+    TiemsColor:'grey'
   },
 
   /**

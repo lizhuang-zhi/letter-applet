@@ -9,12 +9,12 @@
     <!-- 信件头部 -->
     <view class="LetterHead">
       <!-- 收件人 -->
-      <view class="consignee" style="line-height:{{HeadLineHeight}};font-size:{{HeadFont}}">{{consignee}}</view>
+      <view class="consignee" style="line-height:{{HeadLineHeight}};font-size:{{HeadFont}};color:{{HeadColor}}">{{consignee}}</view>
       <!-- 问候语 -->
-      <view class="hello" style="line-height:{{HeadLineregardsHeight}};font-size:{{HeadregardsFont}}">{{regards}}</view>
+      <view class="hello" style="line-height:{{HeadLineregardsHeight}};font-size:{{HeadregardsFont}};color:{{HeadRegardsColor}}">{{regards}}</view>
     </view>
     <!-- 信件内容 -->
-    <view class="LetterBody" style="line-height:{{contentLineHeight}}">
+    <view class="LetterBody" style="line-height:{{contentLineHeight}};color:{{ContentLineColor}}">
   
       <text class="LetterLine" wx:for="{{lettercontentArr}}" wx:key='index'>
         {{item}}
@@ -23,9 +23,9 @@
     <!-- 信件结尾 -->
     <view class="LetterFoot">
       <!-- 作者 -->
-      <view class="writer" style="right:{{FootWriterPsitionX}};bottom:{{FootWriterPsitionY}};font-size:{{FootWriterFontSize}}">{{writer}}</view>
+      <view class="writer" style="right:{{FootWriterPsitionX}};bottom:{{FootWriterPsitionY}};font-size:{{FootWriterFontSize}};color:{{WriterColor}}">{{writer}}</view>
       <!-- 日期 -->
-      <view class="SendTime" style="right:{{FootDaterPsitionX}};bottom:{{FootDatePsitionY}};font-size:{{FootDateFontSize}}">{{date}}</view>
+      <view class="SendTime" style="right:{{FootDaterPsitionX}};bottom:{{FootDatePsitionY}};font-size:{{FootDateFontSize}};color:{{FootDateColor}}">{{date}}</view>
     </view>
   </view>
   <view>

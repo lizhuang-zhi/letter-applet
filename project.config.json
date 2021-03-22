@@ -76,6 +76,12 @@
           "pathName": "packageReleaseModule/pages/write/write",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "packageWriteLetter/pages/sorrowletter/sorrowletter",
+          "pathName": "packageWriteLetter/pages/sorrowletter/sorrowletter",
+          "query": "",
+          "scene": null
         }
       ]
     }
