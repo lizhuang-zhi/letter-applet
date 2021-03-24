@@ -1,35 +1,43 @@
+<yeo-loading-part pull="{{pull}}" push="{{push}}" bindrefresh="refresh" bindtoload="toload" top='110'>
+
 <!-- tab切换 -->
 <yeo-label-bar tabArr='{{tabArray}}' currentTab='0' tabOutMargin='0' tabContHeight='{{maxHeight}}' lineWidth='90'
-  tabContColor='#E8EAEA' tabMargin='140rpx 40rpx 120rpx' tabChangeWidth='400rpx' isFixed='true' bgColor='#E8EAEA'>
+  tabContColor='#E8EAEA' tabMargin='20rpx 40rpx 120rpx' tabChangeWidth='400rpx' isFixed='true' bgColor='#E8EAEA'>
   <view slot='{{tabArray[0]}}' class="tab-1">
 
-    <!-- 公开日记 -->
-    <yeo-flow-waterfall-box bindtap="ToDiaryContent">
-      <yeo-diary-box diaryContent='算什么男人去理解' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='人生呐！' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='I Love You! My Honey' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='日记是这样记下来的？' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='为什么有过去' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='I am Leo' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
-      <yeo-diary-box diaryContent='Do it' bgColor='#f8f8f8'></yeo-diary-box>
-    </yeo-flow-waterfall-box>
+      <!-- 公开日记 -->
+      <yeo-flow-waterfall-box bindtap="ToDiaryContent">
+        <yeo-diary-box diaryContent='算什么男人去理解' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='人生呐！' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='I Love You! My Honey' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='日记是这样记下来的？' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='为什么有过去' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='I am Leo' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box diaryContent='Do it' bgColor='#f8f8f8'></yeo-diary-box>
+      </yeo-flow-waterfall-box>
+
+
 
   </view>
   <view slot='{{tabArray[1]}}' class="tab-2">
 
-    <!-- 吐槽大会 -->
-    <yeo-text-box bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap" content='时间在走着，但是我想要停下'></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-    <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+      <!-- 吐槽大会 -->
+      <yeo-text-box bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='时间在走着，但是我想要停下'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+
 
   </view>
 </yeo-label-bar>
+
+
+</yeo-loading-part>

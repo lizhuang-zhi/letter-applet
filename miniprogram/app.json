@@ -24,7 +24,10 @@
     {
       "root": "packageMyInfo",
       "pages": [
-        "pages/indexinfo/indexinfo"
+        "pages/indexinfo/indexinfo",
+        "pages/star/star",
+        "pages/comment/comment",
+        "pages/replyletter/replyletter"
       ]
     }
   ],
@@ -101,7 +104,8 @@
     "yeo-flow-waterfall-box": "/Yeo/YeoFlowWaterfallBox/YeoFlowWaterfallBox",
     "yeo-stamp-text": "/Yeo/YeoStampText/YeoStampText",
     "yeo-diary-content": "/Yeo/YeoDiaryContent/YeoDiaryContent",
-    "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent"
+    "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent",
+    "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart"
 
 
   }

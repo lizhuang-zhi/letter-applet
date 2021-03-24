@@ -1,0 +1,35 @@
+.scroll-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.icon-refresh {
+  height: 100rpx;
+}
+
+.pull-refresh {
+  height: 140rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .5s ease-in-out;
+  overflow: hidden;
+}
+
+.chu {
+  height: 110rpx;
+}
+
+.jin {
+  height: 0rpx;
+}
+
+.f-color-666 {
+  color: #666666;
+}
+
+.fs24 {
+  font-size: 24rpx;
+}
