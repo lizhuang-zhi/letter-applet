@@ -13,12 +13,12 @@ Component({
     // 作者名字
     writer:{
       type:String,
-      value:"某某"
+      value:"不吃鱼的猫"
     },
     // 写作日期
     date:{
       type:String,
-      value:'XX月XX日'
+      value:'2月12日'
     },
     // 收件人
     consignee:{
@@ -40,7 +40,7 @@ Component({
     // 信件文字内容
     lettercontent:{
       type:String,
-      value:`请开始撒旦法地方泼我手动我爱上了你们公司东方丽景是大佛`
+      value:`我是一个高三的学生，还有不到八十天就要高考了。我知道自己应该怎么做，怎么努力，也有自己想学的专业(外语)但是我的成绩不理想，对待学习我也只是有心无力，有计划但是没有付出。但是其实我一直想学音乐，我周围的朋友都说我唱歌很好听，我自己也有强烈的爱好，从小我也在学一些乐器乐感也比较好。最近我迷上了韩团，也有想去韩国当练习生的想法，但是我又清楚这不是说当就能当的，而且我的父母都是公职人员，固有思想就是让我和他们一样找一个安定的工作，我没有和他们说过这个事情，我知道他们不会同意。而且无论如何我肯定要参加高考，现在我很迷茫，不知道应该向着哪个方向努力，是应该好好学习按父母的计划走还是去追梦。我应该怎么办呢？`
     },
     // 信件内容字体大小
     contentFont:{
@@ -50,16 +50,18 @@ Component({
     // 信件内容行高
     contentLineHeight:{
       type:String,
-      value:"50rpx"
+      value:"55rpx"
     },
     //信件内容文字颜色
     ContentLineColor:{
       type:String,
-      value:'green'
+      value:'#000'
     },
-
-
-
+    //信件内容字间距
+    ContentSpacing:{
+      type:String,
+      value:'5rpx'
+    },
     //信件头部收件人行高
     HeadLineHeight:{
       type:String,
@@ -73,7 +75,7 @@ Component({
     //信件头部收件人字体颜色
     HeadColor:{
       type:String,
-      value:"red"
+      value:"#000"
     }, 
     //信件头部问候语行高
     HeadLineregardsHeight:{
@@ -88,7 +90,7 @@ Component({
     //信件头部问候语字体颜色
     HeadRegardsColor:{
       type:String,
-      value:'skyblue'
+      value:'#111'
     },
 
 
@@ -110,7 +112,7 @@ Component({
     //信件结尾作者名字颜色
     WriterColor:{
       type:String,
-      value:'grey'
+      value:'#000'
     },
 
 

@@ -22,14 +22,13 @@
 
 /* 信件 */
 .OuterBox .LetterContent {
-  width: 90vw;
+  width: 86vw;
   background: rgb(255, 255, 255);
   margin: 0 auto;
   border-radius: 20rpx;
-  padding: 22rpx;
+  padding: 26rpx;
   padding-bottom: 120rpx;
   box-sizing: border-box;
-  letter-spacing: 6rpx;
 }
 
 /* 信件头部收件人 */
@@ -40,7 +39,8 @@
 /* 信件内容 */
 .OuterBox .LetterContent .LetterBody {
   width: 100%;
-  padding-bottom: 5rpx;
+  padding-bottom: 10rpx;
+  /* text-align: center; */
 }
 
 /* 信件结尾 */

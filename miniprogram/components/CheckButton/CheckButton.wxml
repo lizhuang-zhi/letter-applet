@@ -1,0 +1,5 @@
+<!-- 按钮盒子 -->
+<view class="btn-box" style="margin:{{BtnMargin}};justify-content:{{BtnStyle}}">
+  <!-- 按钮 -->
+  <view class="btn" style="width:{{BtnWidth}};height:{{BtnHeight}};border-radius:{{BtnRadius}};line-height:{{LineHeight}};background-color:{{BtnBackColor}};color:{{BtnColor}};font-size:{{BtnFontSize}};">{{BtnText}}</view>
+</view>
