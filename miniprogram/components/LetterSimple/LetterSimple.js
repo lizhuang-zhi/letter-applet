@@ -12,7 +12,7 @@ Component({
     //简略内容颜色
     ContentColor:{
       type:String,
-      value:""
+      value:"#1D1C1A"
     },
     // 简略内容文字大小
     ContentSize: {
@@ -27,7 +27,7 @@ Component({
     //作者文字颜色
     WriterColor:{
       type:String,
-      value:''
+      value:'#606572'
     },
     //作者文字大小
     WriterSize:{
@@ -44,11 +44,10 @@ Component({
       type:String,
       value:'40rpx'
     },
-
     // 卡片背景颜色
-    backgroundColor: {
+    bgColor: {
       type: String,
-      value: "#F6F6F6"
+      value: '#f6f6f6'
     },
     // 内部高度
     InnerHeight: {
@@ -68,12 +67,12 @@ Component({
     // 收信人内容
     consignee: {
       type: String,
-      value: "Tell 收"
+      value: "陌生人 收"
     },
     // 收件人文字颜色
     ConsigneeColor:{
       type:String,
-      value:''
+      value:'#626774'
     },
     //收件人字体大小
     ConsigneeSize:{
@@ -85,7 +84,7 @@ Component({
     //logo链接地址
     IconImgSrc:{
       type:String,
-      value:'https://s4.ax1x.com/2021/03/20/6hNS6H.png'
+      value:'https://z3.ax1x.com/2021/03/25/6LeCcQ.png'
     },
     // logo宽度大小
     IconWidthSize: {

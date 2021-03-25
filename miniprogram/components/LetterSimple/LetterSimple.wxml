@@ -1,7 +1,7 @@
 <!-- 外框 -->
 <view class="letter-shell">
   <!-- 内部 -->
-  <view class="letter-inner" style="height:{{InnerHeight}};background-color:{{backgroundColor}};padding:{{InnerPadding}};border-radius:{{InnerRadius}}">
+  <view class="letter-inner" style="height:{{InnerHeight}};background:{{bgColor}};padding:{{InnerPadding}};border-radius:{{InnerRadius}}">
     <!-- 收件人内容 -->
     <view class="letter-head" style="color:{{ConsigneeColor}};font-size:{{ConsigneeSize}};">
       {{consignee}}
@@ -15,7 +15,7 @@
       <image class="icon-img" src="{{IconImgSrc}}"></image>
     </view>
     <!-- 作者名称 -->
-    <view class="letter-writer" style="color:{{WriterColor}}；font-size:{{WriterSize}};bottom:{{WriterBottom}};right:{{WriterRight}}">
+    <view class="letter-writer" style="color:{{WriterColor}};font-size:{{WriterSize}};bottom:{{WriterBottom}};right:{{WriterRight}}">
       {{writer}}
     </view>
   </view>

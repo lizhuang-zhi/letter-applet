@@ -105,7 +105,10 @@
     "yeo-stamp-text": "/Yeo/YeoStampText/YeoStampText",
     "yeo-diary-content": "/Yeo/YeoDiaryContent/YeoDiaryContent",
     "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent",
-    "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart"
+    "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart",
+
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
 
 
   }
