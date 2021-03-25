@@ -4,6 +4,7 @@ page {
   /* 页面左边距 */
   --margin-top: 40rpx;
 }
+/* 顶部文字 */
 .top-content-box {
   margin: 60rpx 0 0 var(--margin-top);
   font-family: 'Courier New', Courier, monospace;
@@ -16,7 +17,7 @@ page {
 
 
 /* 收件信息通知 */
-.info-bar {
+/* .info-bar {
   margin: 10rpx 40rpx 0;
 }
 .info-bar .info-left {
@@ -34,9 +35,15 @@ page {
   text-align: center;
   line-height: 40rpx;
   color: #666666;
-}
+} */
 
 /* 收件信息 */
-.message-box {
+/* .message-box {
   margin: 30rpx 40rpx 20rpx;
+} */
+
+
+/* 消息通知 */
+.message-info-box {
+  margin: 50rpx 40rpx 0;
 }

@@ -3,25 +3,46 @@
   <view class="top-tit">收件箱</view>
 </view>
 
-<!-- 功能模块 -->
-<view class="my-info-bar">
-  <keo-fun-blocks bind:clickevent='ToMyInfoTap' dataList='{{dataList}}' BlockFontColor='#343434' BlockRadius='35'></keo-fun-blocks>
-</view>
+<!-- loading组件 -->
+<yeo-loading-part pull="{{pull}}" push="{{push}}" bindrefresh="refresh" bindtoload="toload" top='100'>
+  <!-- 功能模块 -->
+  <view class="my-info-bar">
+    <keo-fun-blocks dataList='{{dataList}}' BlockFontColor='#343434' BlockRadius='35'>
+    </keo-fun-blocks>
+  </view>
 
 
-<!-- 收件信息通知 -->
-<view class="info-bar">
+  <!-- 收件信息通知 -->
+  <!-- <view class="info-bar">
   <yeo-dy-fun-bar distractWay='between'>
     <view class="info-left" slot='dy-left'>全部9封信件</view>
     <view class='info-right' slot='dy-right'>全部已读</view>
   </yeo-dy-fun-bar>
-</view>
+</view> -->
 
 
-<!-- 收件信息 -->
-<view class="message-box">
+  <!-- 收件信息 -->
+  <!-- <view class="message-box">
   <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
   <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
   <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
   <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-</view>
+</view> -->
+
+
+
+  <!-- 消息通知 -->
+  <view class="message-info-box">
+    <yeo-message-notification boxBgColor='#FEF7E2' leftPic='https://z3.ax1x.com/2021/03/25/6OoQPO.png' infoTit='个人档案'
+      notifiNum='0' infoDesc='我是一个通知好友' bindtap='ToMyInfoTap'></yeo-message-notification>
+    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='3' infoDesc='我是一个'>
+    </yeo-message-notification>
+    <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://z3.ax1x.com/2021/03/25/6O0PZn.png' infoTit='最新活动'
+      infoDesc='我是一个通知好友是否撒旦法的的水电费方法'></yeo-message-notification>
+    <yeo-message-notification infoTit='我的邮票' notifiNum='99' leftPic='https://z3.ax1x.com/2021/03/25/6O0prj.png'
+      boxBgColor='#FCF1E9' infoDesc='我是一个，我沙发扫发送风骚'></yeo-message-notification>
+    <yeo-message-notification infoTit='我的成就' notifiNum='1' leftPic='https://z3.ax1x.com/2021/03/25/6OTSQH.png'
+      infoDesc='我是一个，我沙发扫发送风骚' boxBgColor='#E6F8F0'></yeo-message-notification>
+  </view>
+
+</yeo-loading-part>

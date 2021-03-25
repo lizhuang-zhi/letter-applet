@@ -27,7 +27,8 @@
         "pages/indexinfo/indexinfo",
         "pages/star/star",
         "pages/comment/comment",
-        "pages/replyletter/replyletter"
+        "pages/replyletter/replyletter",
+        "pages/replylist/replylist"
       ]
     }
   ],
@@ -106,6 +107,8 @@
     "yeo-diary-content": "/Yeo/YeoDiaryContent/YeoDiaryContent",
     "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent",
     "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart",
+    "yeo-message-notification": "/Yeo/YeoMessageNotification/YeoMessageNotification",
+
 
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
