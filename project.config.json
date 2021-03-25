@@ -82,6 +82,17 @@
           "pathName": "packageWriteLetter/pages/sorrowletter/sorrowletter",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/star/star",
+          "pathName": "packageMyInfo/pages/star/star",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mailbox/mailbox",
+          "pathName": "pages/mailbox/mailbox",
+          "scene": null
         }
       ]
     }

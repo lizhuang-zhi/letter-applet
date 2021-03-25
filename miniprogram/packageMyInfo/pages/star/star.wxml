@@ -1,2 +1,2 @@
-<!--packageMyInfo/pages/star/star.wxml-->
-<text>packageMyInfo/pages/star/star.wxml</text>
+<keo-star-card></keo-star-card>
+<keo-star-card></keo-star-card>

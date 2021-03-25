@@ -1,0 +1,20 @@
+/* 点赞卡片 */
+.card{
+  box-sizing: border-box;
+}
+/* 点赞信息 */
+.tip{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+/* 点赞信件简略内容 */
+.star-letter{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.icon{
+  width: 100%;
+  height: 100%;
+}
