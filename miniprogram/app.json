@@ -27,7 +27,8 @@
         "pages/indexinfo/indexinfo",
         "pages/star/star",
         "pages/comment/comment",
-        "pages/replyletter/replyletter"
+        "pages/replyletter/replyletter",
+        "pages/replylist/replylist"
       ]
     }
   ],
@@ -72,8 +73,6 @@
     "keo-fun-blocks": "/components/FunBlocks/FunBlocks",
     "keo-prompt-list": "/components/PromptList/PromptList",
     "keo-write-area":"/components/WritingArea/WritingArea",
-    "keo-check-button":"/components/CheckButton/CheckButton",
-    "keo-star-card":"/components/StarCard/StarCard",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
@@ -108,6 +107,8 @@
     "yeo-diary-content": "/Yeo/YeoDiaryContent/YeoDiaryContent",
     "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent",
     "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart",
+    "yeo-message-notification": "/Yeo/YeoMessageNotification/YeoMessageNotification",
+
 
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
