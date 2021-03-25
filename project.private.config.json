@@ -71,6 +71,11 @@
           "pathName": "packageWriteLetter/pages/beautyletter/beautyletter",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "收信列表",
+          "pathName": "packageMyInfo/pages/replylist/replylist",
+          "scene": null
         }
       ]
     }

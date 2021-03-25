@@ -21,16 +21,6 @@
 </view> -->
 
 
-  <!-- 收件信息 -->
-  <!-- <view class="message-box">
-  <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-  <keo-letter-simple WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx' InnerHeight='250rpx'></keo-letter-simple>
-</view> -->
-
-
-
   <!-- 消息通知 -->
   <view class="message-info-box">
     <yeo-message-notification boxBgColor='#FEF7E2' leftPic='https://z3.ax1x.com/2021/03/25/6OoQPO.png' infoTit='个人档案'
