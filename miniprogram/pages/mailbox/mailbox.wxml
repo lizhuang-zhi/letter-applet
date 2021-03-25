@@ -7,18 +7,9 @@
 <yeo-loading-part pull="{{pull}}" push="{{push}}" bindrefresh="refresh" bindtoload="toload" top='100'>
   <!-- 功能模块 -->
   <view class="my-info-bar">
-    <keo-fun-blocks dataList='{{dataList}}' BlockFontColor='#343434' BlockRadius='35'>
+    <keo-fun-blocks dataList='{{dataList}}' BlockFontColor='#343434' bind:clickevent='ToReplyListTap' BlockRadius='35'>
     </keo-fun-blocks>
   </view>
-
-
-  <!-- 收件信息通知 -->
-  <!-- <view class="info-bar">
-  <yeo-dy-fun-bar distractWay='between'>
-    <view class="info-left" slot='dy-left'>全部9封信件</view>
-    <view class='info-right' slot='dy-right'>全部已读</view>
-  </yeo-dy-fun-bar>
-</view> -->
 
 
   <!-- 消息通知 -->

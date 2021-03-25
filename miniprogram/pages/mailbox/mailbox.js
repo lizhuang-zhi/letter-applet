@@ -39,7 +39,17 @@ Page({
     wx.navigateTo({
       url: '/packageMyInfo/pages/indexinfo/indexinfo',
     })
+  },
 
+  // 跳转收信列表页面
+  ToReplyListTap(e) {
+    // 获取索引
+    let index = e.detail.index;
+    if(index == 1) {
+      wx.navigateTo({
+        url: '/packageMyInfo/pages/replylist/replylist',
+      })
+    }
   },
 
   // 监听下拉刷新事件
