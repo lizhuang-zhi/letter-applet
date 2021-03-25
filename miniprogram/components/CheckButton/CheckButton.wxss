@@ -1,0 +1,9 @@
+/* 按钮盒子 */
+.btn-box{
+  width: 100%;
+  display: flex;
+}
+/* 按钮 */
+.btn-box .btn{
+  text-align: center;
+}

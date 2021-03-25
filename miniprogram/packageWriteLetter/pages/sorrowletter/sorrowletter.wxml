@@ -1,11 +1,9 @@
+<!-- 信件内容组件 -->
 <keo-letter-view contentLineHeight='30rpx'></keo-letter-view>
-<!-- 按钮盒子 -->
-<view class="btn-box">
-  <!-- 按钮 -->
-  <view class="btn" style="width:{{BtnWidth}};height:{{BtnHeight}};border-radius:{{BtnRadius}};line-height:{{LineHeight}};background-color:{{BtnBackColor}};color:{{BtnColor}};font-size:{{BtnFontSize}}">我要解答</view>
-</view>
+<!-- 按钮组件 -->
+<keo-check-button BtnText="我要解答"></keo-check-button>
 <!-- 解答次数 -->
-<view class="last-times">
+<view class="last-times" style="margin-bottom:30rpx">
   <!-- 次数 -->
   <view class="text" style="font-size:{{TimesFontSize}};color:{{TiemsColor}}">今日还可以解答{{LastTimes}}次</view>
 </view>

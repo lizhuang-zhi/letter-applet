@@ -1,14 +1,3 @@
-/* 按钮盒子 */
-.btn-box{
-  width: 100%;
-  margin: 30rpx auto;
-  display: flex;
-  justify-content: center;
-}
-/* 按钮 */
-.btn-box .btn{
-  text-align: center;
-}
 /* 解答次数 */
 .last-times{
   width: 100%;
