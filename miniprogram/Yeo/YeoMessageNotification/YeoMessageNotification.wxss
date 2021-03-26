@@ -1,0 +1,61 @@
+.yeo-message-notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 左侧配图 */
+.yeo-message-notification .left-pic {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0 0 20rpx #dddddd;
+}
+.yeo-message-notification .left-pic image{
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+/* 消息提示 */
+.yeo-message-notification .left-pic .notification {
+  width: 33rpx;
+  height: 33rpx;
+  background: #EA3F49;
+  font-size: 23rpx;
+  border-radius: 50%;
+  text-align: center;
+  color: #FFFFFF;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* 右侧信息 */
+/* 上部分 */
+.yeo-message-notification .right-info {
+  width: 550rpx;
+}
+.yeo-message-notification .right-info .top-part {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+.yeo-message-notification .right-info .top-part .tit {
+  font-size: 34rpx;
+  color: #333333;
+  font-weight: bold;
+  letter-spacing: 1rpx;
+}
+.yeo-message-notification .right-info .top-part .time {
+  font-size: 27rpx;
+  color: #999999;
+}
+/* 下部分 */
+.yeo-message-notification .right-info .bot-part {
+  font-size: 30rpx;
+  color: #999999;
+  letter-spacing: 2rpx;
+}

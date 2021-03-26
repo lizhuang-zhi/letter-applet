@@ -73,6 +73,8 @@
     "keo-fun-blocks": "/components/FunBlocks/FunBlocks",
     "keo-prompt-list": "/components/PromptList/PromptList",
     "keo-write-area":"/components/WritingArea/WritingArea",
+    "keo-check-button":"/components/CheckButton/CheckButton",
+    "keo-star-card":"/components/StarCard/StarCard",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
