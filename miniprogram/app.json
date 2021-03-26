@@ -76,6 +76,7 @@
     "keo-write-area":"/components/WritingArea/WritingArea",
     "keo-check-button":"/components/CheckButton/CheckButton",
     "keo-star-card":"/components/StarCard/StarCard",
+    "keo-switch-row":"/components/SwitchRow/SwitchRow",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",

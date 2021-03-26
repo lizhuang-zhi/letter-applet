@@ -1,0 +1,11 @@
+/* 盒子模型排版 */
+.switch-box{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+/* 文字内容排版 */
+.text{
+  display:flex;
+  flex-direction: column;
+}

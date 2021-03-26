@@ -1,0 +1,18 @@
+<!-- 单选框盒子 -->
+<view class='switch-box'style="width:{{BoxWidth}};margin:{{BoxMargin}};background-color:{{BoxBackColor}};border-radius:{{BoxRadius}};padding:{{BoxPadding}}">
+  <!-- 文字提示内容 -->
+  <view class="text">
+    <!-- 文字标题 -->
+    <view class="title" style="font-size:{{TitleSize}};color:{{TitleColor}}">
+      {{TitleText}}
+    </view>
+    <!-- 小提示 -->
+    <view class="tip" style="font-size:{{TipSize}};color:{{TipColor}}">
+      {{TipContent}}
+    </view>
+  </view>
+  <!-- 单选框 -->
+  <view class="switch-own">
+    <switch color="{{SwitchColor}}" checked="{{switchdata}}" bindtap="switchChenge"></switch>
+  </view>
+</view>

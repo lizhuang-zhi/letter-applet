@@ -1,2 +1,1 @@
-<!--packageReleaseModule/pages/lettertype/lettertype.wxml-->
-<text>packageReleaseModule/pages/lettertype/lettertype.wxml</text>
+<keo-switch-row></keo-switch-row>

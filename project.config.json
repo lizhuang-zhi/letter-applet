@@ -93,6 +93,12 @@
         {
           "name": "pages/mailbox/mailbox",
           "pathName": "pages/mailbox/mailbox",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageReleaseModule/pages/lettertype/lettertype",
+          "pathName": "packageReleaseModule/pages/lettertype/lettertype",
           "scene": null
         }
       ]
