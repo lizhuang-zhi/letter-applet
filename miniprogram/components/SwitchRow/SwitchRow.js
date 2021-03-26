@@ -84,18 +84,19 @@ Component({
    */
   methods: {
     // switch发生改变
-    switchChenge(){
-      if(this.data.switchdata==true){
+    changeSwitch(e){
+      // 获取switch改变后的类型
+      let switchValue = e.detail.value;
+      if(switchValue == false){
         this.setData({
-          switchdata:false
+          switchdata:switchValue
         })
-        console.log('switch发生了改变,值为:'+this.data.switchdata)
       }else{
         this.setData({
-          switchdata:true
+          switchdata:switchValue
         })
-        console.log('switch发生了改变,值为:'+this.data.switchdata)
       }
-    }
+    },
+
   }
 })

@@ -75,6 +75,12 @@
         {
           "name": "收信列表",
           "pathName": "packageMyInfo/pages/replylist/replylist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "信件类型选择",
+          "pathName": "packageReleaseModule/pages/lettertype/lettertype",
           "scene": null
         }
       ]

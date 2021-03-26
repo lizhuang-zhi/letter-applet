@@ -13,6 +13,6 @@
   </view>
   <!-- 单选框 -->
   <view class="switch-own">
-    <switch color="{{SwitchColor}}" checked="{{switchdata}}" bindtap="switchChenge"></switch>
+    <switch color="{{SwitchColor}}" checked="{{switchdata}}" bindchange="changeSwitch"></switch>
   </view>
 </view>
