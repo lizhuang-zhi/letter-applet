@@ -18,7 +18,8 @@
       "root": "packageReleaseModule",
       "pages": [
         "pages/attention/attention",
-        "pages/write/write"
+        "pages/write/write",
+        "pages/lettertype/lettertype"
       ]
     },
     {
