@@ -36,10 +36,10 @@ Component({
       type:String,
       value:'rgb(100,100,100)'
     },
-    //点赞信件简略内容外边距距  上
-    StarLetterMargin:{
+    //点赞信件简略内容内边距
+    StarLetterPadding:{
       type:String,
-      value:'36rpx'
+      value:'10rpx'
     },
     //点赞信件简略内容圆角
     StarLetterRadius:{
@@ -100,6 +100,11 @@ Component({
     TipPadding:{
       type:String,
       value:'20rpx 0'
+    },
+    //点赞信息下外边距、
+    TipMargin:{
+      type:String,
+      value:'15rpx'
     },
 
     //点赞的人

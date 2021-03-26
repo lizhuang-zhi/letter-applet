@@ -45,7 +45,11 @@ Page({
   ToReplyListTap(e) {
     // 获取索引
     let index = e.detail.index;
-    if(index == 1) {
+    if(index == 0) {
+      wx.navigateTo({
+        url: '/packageMyInfo/pages/star/star',
+      })
+    }else if(index==1){
       wx.navigateTo({
         url: '/packageMyInfo/pages/replylist/replylist',
       })
