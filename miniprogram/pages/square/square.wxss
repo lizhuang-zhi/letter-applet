@@ -2,44 +2,47 @@ page {
   /* 页面背景色 */
   background: #E8EAEA;
 
-  /* 页面左右边距 */
+  /* 日记和吐槽左右边距 */
   --padding-size: 40rpx;
-  /* 页面下内边距 */
-  --padding-bottom: 70rpx;
+  /* 日记和吐槽下内边距 */
+  --padding-bottom: 110rpx;
+  /* 日记和吐槽上内边距 */
+  --padding-top: 10rpx;
+
 
 
 }
+
 /* 公开日记 */
 .diary {
-  padding: 0 var(--padding-size) var(--padding-bottom);
+  padding: var(--padding-top) var(--padding-size) var(--padding-bottom);
 }
+
+/* 吐槽大会 */
 .complain {
-  padding: 0 var(--padding-size) var(--padding-bottom);
+  padding: var(--padding-top) var(--padding-size) var(--padding-bottom);
 }
+
 /* 顶部tab栏设置 */
 .van-tabs__nav {
   width: 500rpx;
 }
+
 /* 标签样式类 */
 .tab-class {
-  font-size: 30rpx!important;
-  color: #888888!important;
+  font-size: 30rpx !important;
+  color: #888888 !important;
 }
+
 /* 标签激活样式 */
 .tab-active-class {
-  font-size: 40rpx!important;
-  font-weight: bold!important;
-  color: #444444!important;
+  font-size: 40rpx !important;
+  font-weight: bold !important;
+  color: #444444 !important;
 }
 
 
 /* tab切换 */
-yeo-diary-box {
+yeo-diary-box-v2 {
   display: inline-block;
-}
-
-/* 吐槽大会 */
-yeo-text-box {
-  display: inline-block;
-  margin-bottom: 20rpx;
 }

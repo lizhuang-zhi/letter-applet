@@ -6,17 +6,14 @@
     <view class="diary">
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box bindtap="ToDiaryContent">
-        <yeo-diary-box diaryContent='算什么男人去理解' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='人生呐！' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='I Love You! My Honey' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='日记是这样记下来的？' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='为什么有过去' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='I am Leo' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='大学的生活是充实可爱的' bgColor='#f8f8f8'></yeo-diary-box>
-        <yeo-diary-box diaryContent='Do it' bgColor='#f8f8f8'></yeo-diary-box>
+        <yeo-diary-box-v2 content='我是一篇日记，记录我的心情'></yeo-diary-box-v2>
+        <yeo-diary-box-v2></yeo-diary-box-v2>
+        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XlDyV.png'></yeo-diary-box-v2>
+        <yeo-diary-box-v2 content='自从我进入大学，我感觉我们有了更多的时间去学习'></yeo-diary-box-v2>
+        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XgOhj.png'></yeo-diary-box-v2>
+        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XlyeU.png'></yeo-diary-box-v2>
+        <yeo-diary-box-v2></yeo-diary-box-v2>
+        <yeo-diary-box-v2></yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
 
@@ -32,14 +29,12 @@
       <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！东山街道发哦哦我洗涤敌对势力飒飒是佛维拉搜词安扫扫地王安东非法发哦啊覅无额额无人机'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
     </view>
-
-
 
   </van-tab>
 

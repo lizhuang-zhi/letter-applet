@@ -110,6 +110,8 @@
     "yeo-text-content": "/Yeo/YeoTextContent/YeoTextContent",
     "yeo-loading-part": "/Yeo/YeoLoadingPart/YeoLoadingPart",
     "yeo-message-notification": "/Yeo/YeoMessageNotification/YeoMessageNotification",
+    "yeo-diary-box-v2": "/Yeo/YeoDiaryBoxV2/YeoDiaryBoxV2",
+
 
 
     "van-tab": "@vant/weapp/tab/index",
