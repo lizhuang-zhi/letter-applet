@@ -6,6 +6,7 @@
 
   莫忧 借忧 寻觅
  */
+let tools = require('../../utils/timeTools');
 Page({
 
   /**
@@ -50,11 +51,23 @@ Page({
     })
   },
 
+  // 初始化数据
+  Start() {
+    // 设置解忧杂货店显示时间
+    let time = '2021-03-24 20:39:00';
+
+    // 显示时间
+    let finalShowTime = tools.indexPostBoxTime(time);
+    console.log(finalShowTime);
+
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start();
   },
 
   /**

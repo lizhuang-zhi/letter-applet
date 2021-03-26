@@ -24,7 +24,7 @@
 
 <!-- 解忧信件标题 -->
 <view class="tit-sorrow">
-  <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='解忧杂货间' wordWieight='bold' worLinePosp='unset'
+  <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='解忧信箱' wordWieight='bold' worLinePosp='unset'
     lineWidthOfScreen='44%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'>
   </yeo-art-font>
 </view>
