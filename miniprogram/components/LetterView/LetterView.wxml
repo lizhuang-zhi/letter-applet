@@ -1,7 +1,7 @@
 <!-- 外部容器 -->
 <view class="OuterBox" style="background:{{BckColor}}">
   <!-- 顶部小提示 -->
-  <view class="TopTip">
+  <view class="TopTip" style="display:{{TopTipDisplay}}">
     <view class="TipCont">{{TopTip}}</view>
   </view>
   <!-- 信件 -->

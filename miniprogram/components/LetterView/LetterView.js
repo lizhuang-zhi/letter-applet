@@ -4,6 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 顶部小提示 是否存在
+    TopTipDisplay:{
+      type:String,
+      value:'flex'
+    },
     // 页面背景颜色
     BckColor:{
       type:String,

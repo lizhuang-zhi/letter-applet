@@ -19,9 +19,8 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
+    "useMultiFrameRuntime": false,
     "useApiHook": true,
-    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -99,6 +98,18 @@
         {
           "name": "packageReleaseModule/pages/lettertype/lettertype",
           "pathName": "packageReleaseModule/pages/lettertype/lettertype",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/replylist/replylist",
+          "pathName": "packageMyInfo/pages/replylist/replylist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/replyletter/replyletter",
+          "pathName": "packageMyInfo/pages/replyletter/replyletter",
           "scene": null
         }
       ]
