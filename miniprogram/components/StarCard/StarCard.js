@@ -131,6 +131,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 触发点击事件
+    bindTap(e) {
+      // 获取点击对象的数据
+      let info = e.currentTarget.dataset;
+
+      // 传出一个detail对象
+      this.triggerEvent('clickevent',{info});
+
+    }
+
 
   }
 })

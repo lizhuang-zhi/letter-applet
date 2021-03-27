@@ -1,5 +1,5 @@
 <!-- 卡片外部 -->
-<view class="card-out" style="width:{{CardWidth}};margin:{{CardMargin}}">
+<view class="card-out" style="width:{{CardWidth}};margin:{{CardMargin}}" bindtap="bindTap" data-TipOwnerName="{{TipOwnerName}}" data-StarLetter="{{StarLetter}}">
   <!-- 点赞时间 -->
   <view class="star-time" style="color:{{TimeColor}};margin:{{TimeMargin}}">{{StarTime}}</view>
   <!-- 点赞卡片 -->

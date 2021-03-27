@@ -1,2 +1,3 @@
-<!--packageMyInfo/pages/comment/comment.wxml-->
-<text>packageMyInfo/pages/comment/comment.wxml</text>
+<block wx:for="{{dataArr}}" wx:key="index">
+  <keo-star-card StarLetter='{{item.StarLetter}}' TipContent='评论了你' bind:clickevent='clickObjTap'></keo-star-card>
+</block>

@@ -128,6 +128,24 @@
         {
           "name": "packageMyInfo/pages/replyletter/replyletter",
           "pathName": "packageMyInfo/pages/replyletter/replyletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/comment/comment",
+          "pathName": "packageMyInfo/pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageWriteLetter/pages/complaintletter/complaintletter",
+          "pathName": "packageWriteLetter/pages/complaintletter/complaintletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/comment/comment",
+          "pathName": "packageMyInfo/pages/comment/comment",
           "scene": null
         }
       ]

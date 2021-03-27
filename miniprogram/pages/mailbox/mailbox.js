@@ -50,9 +50,13 @@ Page({
       wx.navigateTo({
         url: '/packageMyInfo/pages/star/star',
       })
-    }else if(index==1){
+    }else if(index == 1){
       wx.navigateTo({
         url: '/packageMyInfo/pages/replylist/replylist',
+      })
+    }else if(index == 2){
+      wx.navigateTo({
+        url: '/packageMyInfo/pages/comment/comment',
       })
     }
   },
