@@ -1,1 +1,3 @@
-<keo-letter-view></keo-letter-view>
+<keo-original-content></keo-original-content>
+<keo-letter-view TopTipDisplay="none" lettercontent="{{letterContent}}" consignee="{{consignee}}" writer='{{writer}}'></keo-letter-view>
+<keo-check-button BtnText="回信" bindtap="replyLetter"></keo-check-button>

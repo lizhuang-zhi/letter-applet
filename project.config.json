@@ -110,6 +110,24 @@
         {
           "name": "packageMyInfo/pages/replyletter/replyletter",
           "pathName": "packageMyInfo/pages/replyletter/replyletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/replyletter/replyletter",
+          "pathName": "packageMyInfo/pages/replyletter/replyletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/star/star",
+          "pathName": "packageMyInfo/pages/star/star",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/replyletter/replyletter",
+          "pathName": "packageMyInfo/pages/replyletter/replyletter",
           "scene": null
         }
       ]
