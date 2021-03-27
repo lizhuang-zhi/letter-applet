@@ -37,7 +37,7 @@ Page({
     })
 
 
-    
+
 
   },
 
@@ -122,7 +122,11 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('触底了');
+    if(this.data.tabCurIndex == 0) {
+      console.log('公开日记触底了');
+    }else if(this.data.tabCurIndex == 1) {
+      console.log('吐槽大会触底了');
+    }
 
   },
 

@@ -28,7 +28,6 @@
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
     </view>
-
   </van-tab>
 
 </van-tabs>

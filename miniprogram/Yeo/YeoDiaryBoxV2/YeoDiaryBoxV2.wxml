@@ -21,7 +21,7 @@
       <view class="bot-part-inner">
         <image src="https://z3.ax1x.com/2021/03/25/6XKHoj.png" style="width: 35rpx;height: 30rpx;margin: 0 8rpx 0 0;">
         </image>
-        <text style="font-size: 28rpx;color: #707070;">{{looksNum}}</text>
+        <text style="font-size: 28rpx;color: {{looksNumColor}};">{{looksNum > 9999 ? '1w+' : looksNum}}</text>
       </view>
 
     </view>

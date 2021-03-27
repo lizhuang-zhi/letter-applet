@@ -1,5 +1,5 @@
 // components/FunBlocks/FunBlocks.js
-Component({
+Component({ 
   /**
    * 组件的属性列表
    */

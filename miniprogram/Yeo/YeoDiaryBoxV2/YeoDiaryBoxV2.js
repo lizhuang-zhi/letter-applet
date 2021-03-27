@@ -22,15 +22,26 @@ Component({
     // 浏览量
     looksNum: {
       type: Number,
-      value: 3928
+      value: 9928
     },
     // 外框宽度
     boxWidth: {
       type: String,
       value: '100%'
+    },
+    // 浏览量字体颜色
+    looksNumColor: {
+      type: String,
+      value: '#707070'
     }
 
 
+  },
+
+  lifetimes: {
+    attached() {
+
+    }
   },
 
   /**
