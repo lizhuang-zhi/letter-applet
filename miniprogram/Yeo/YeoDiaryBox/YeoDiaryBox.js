@@ -19,6 +19,11 @@ Component({
       type: String,
       value: '3月5日'
     },
+    // 外框阴影
+    boxShadow: {
+      type: String,
+      value: '0 0 20rpx #dddddd'
+    },
     // 字体颜色
     fontColor: {
       type: String,

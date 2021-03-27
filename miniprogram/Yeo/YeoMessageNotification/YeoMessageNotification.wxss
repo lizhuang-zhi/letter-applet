@@ -12,7 +12,6 @@
   position: relative;
   display: flex;
   align-items: center;
-
   box-shadow: 0 0 20rpx #dddddd;
 }
 .yeo-message-notification .left-pic image{

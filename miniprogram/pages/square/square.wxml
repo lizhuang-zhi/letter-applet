@@ -6,14 +6,7 @@
     <view class="diary">
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box bindtap="ToDiaryContent">
-        <yeo-diary-box-v2 content='我是一篇日记，记录我的心情'></yeo-diary-box-v2>
-        <yeo-diary-box-v2></yeo-diary-box-v2>
-        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XlDyV.png'></yeo-diary-box-v2>
-        <yeo-diary-box-v2 content='自从我进入大学，我感觉我们有了更多的时间去学习'></yeo-diary-box-v2>
-        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XgOhj.png'></yeo-diary-box-v2>
-        <yeo-diary-box-v2 wheatherPicUrl='https://z3.ax1x.com/2021/03/25/6XlyeU.png'></yeo-diary-box-v2>
-        <yeo-diary-box-v2></yeo-diary-box-v2>
-        <yeo-diary-box-v2></yeo-diary-box-v2>
+        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' content='{{item.content}}' weatherPicUrl='{{item.weather}}' boxWidth='320rpx'></yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
 

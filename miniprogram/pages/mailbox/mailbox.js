@@ -1,4 +1,5 @@
 // miniprogram/pages/mailbox/mailbox.js
+let tools = require('../../utils/timeTools');
 Page({
 
   /**
@@ -34,14 +35,14 @@ Page({
     moveTime: 0,
   },
 
-  // 跳转我的页面
+  // 跳转个人档案
   ToMyInfoTap() {
     wx.navigateTo({
       url: '/packageMyInfo/pages/indexinfo/indexinfo',
     })
   },
 
-  // 跳转收信列表页面
+  // 跳转顶栏页面
   ToReplyListTap(e) {
     // 获取索引
     let index = e.detail.index;
@@ -95,11 +96,21 @@ Page({
     }, 5000)
   },
 
+  // 初始化数据
+  Start() {
+    let time = '2020-03-2 14:26:39';
+
+    // 最终显示时间
+    let finalTime = tools.mailboxShowMessageTime(time);
+    console.log(finalTime);
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start();
   },
 
   /**
