@@ -6,10 +6,11 @@ Page({
    */
   data: {
     dataArr: [
-      {StarLetter: '我是第一个评论'},
-      {StarLetter: '我是第二个评论'},
-      {StarLetter: '我是第三个评论'},
+      // {StarLetter: '我是第一个评论'},
+      // {StarLetter: '我是第二个评论'},
+      // {StarLetter: '我是第三个评论'},
     ]
+
   },
 
   // 点击具体评论组件对象

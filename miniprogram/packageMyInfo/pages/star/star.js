@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dataArr: [
+      // {StarLetter: '我是第一个评论'},
+      // {StarLetter: '我是第二个评论'},
+      // {StarLetter: '我是第三个评论'},
+    ]
   },
 
   /**

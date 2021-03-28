@@ -1,3 +1,4 @@
-<block wx:for="{{dataArr}}" wx:key="index">
+<keo-empty-display wx:if="{{dataArr.length==0}}"></keo-empty-display>
+<block wx:for="{{dataArr}}" wx:key="index" wx:if="{{dataArr.length!=0}}">
   <keo-star-card StarLetter='{{item.StarLetter}}' TipContent='评论了你' bind:clickevent='clickObjTap'></keo-star-card>
 </block>

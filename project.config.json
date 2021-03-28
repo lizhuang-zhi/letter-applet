@@ -146,6 +146,12 @@
         {
           "name": "packageMyInfo/pages/comment/comment",
           "pathName": "packageMyInfo/pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/comment/comment",
+          "pathName": "packageMyInfo/pages/comment/comment",
           "scene": null
         }
       ]

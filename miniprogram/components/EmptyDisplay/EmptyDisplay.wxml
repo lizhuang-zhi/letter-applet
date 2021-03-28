@@ -1,0 +1,9 @@
+<!-- 无记录盒子 -->
+<view class='box' style="margin:{{BoxMargin}};text-align:center">
+  <!-- 无记录图片 -->
+  <image mode='widthFix' src="{{Src}}" style="width:{{ImgWidth}}"></image>
+  <!-- 无记录文字 -->
+  <view class="text" style="font-size:{{TextSize}};color:{{TextColor}}">
+    {{Text}}
+  </view>
+</view>

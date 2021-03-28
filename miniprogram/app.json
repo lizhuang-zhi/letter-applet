@@ -78,6 +78,7 @@
     "keo-star-card":"/components/StarCard/StarCard",
     "keo-switch-row":"/components/SwitchRow/SwitchRow",
     "keo-original-content":"/components/OriginalContent/OriginalContent",
+    "keo-empty-display":"/components/EmptyDisplay/EmptyDisplay",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
