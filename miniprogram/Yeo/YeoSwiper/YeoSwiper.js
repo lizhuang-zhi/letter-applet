@@ -21,7 +21,7 @@ Component({
         },
         {
           bgUrl: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1105979147,3553146784&fm=26&gp=0.jpg',
-          title: 'Red Coal',
+          title: 'Red Coal 我是一个手动阀手动阀手动阀零零零零',
           time: '2021-2-3',
           isStar: false
         }
@@ -167,6 +167,16 @@ Component({
     titleFontWeight: {
       type: String,
       value: 'bold'
+    },
+    // 显示标题文字数量
+    titleFontNum: {
+      type: Number,
+      value: 8
+    },
+    // 是否显示收藏图标
+    isShowStarPic: {
+      type: Boolean,
+      value: true
     }
 
   },
@@ -179,6 +189,8 @@ Component({
     attached() {
       // dataArr数组
       let dataArr = this.data.dataArr;
+      // 获取显示标题文字数量
+      let titNum = this.properties.titleFontNum;
       dataArr.forEach(item => {
         // time 
         let time = new Date(item.time);
@@ -191,6 +203,10 @@ Component({
         // 美化后的时间
         let beautyTime = date + ' ' + month + '.' + year;
         item.time = beautyTime;
+
+        // 砍掉多余title文字
+        item.title = item.title.length > titNum ? item.title.substring(0,titNum) : item.title;
+        console.log(item.title);
       });
       this.setData({
         dataArr: this.data.dataArr

@@ -90,6 +90,22 @@ let tools = {
   },
 
   /* 
+    首页“赏美文”时间显示
+  */
+  indexBeautyTime(time) {
+    // 定义英文月份
+    let enMonthArr = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"];  
+    // 获取传入时间并转化
+    let showTime = new Date(time);
+    let showYears = showTime.getFullYear();
+    let showMonth = enMonthArr[showTime.getMonth()];
+    let showDate = showTime.getDate();
+
+    return showDate + ' ' + showMonth + '.' + showYears;
+  },
+
+
+  /* 
     信箱“消息通知”时间转化显示
   */
   mailboxShowMessageTime(time) {

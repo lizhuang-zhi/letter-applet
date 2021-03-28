@@ -1,9 +1,9 @@
 // 请求路径前缀
-const prefix = 'https://yundingxikj.cn/';
+const prefix = 'https://rayss.host/';
 
 
 // 首页美文
-const IndexBeautyUrl = prefix + 'index';
+const IndexBeautyUrl = prefix + '/get_beauty_article';
 
 
 // 返回对象
