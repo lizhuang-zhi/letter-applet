@@ -58,6 +58,11 @@ Component({
     inputType: {
       type: String,
       value: 'text'
+    },
+    // 输入的起始内容 
+    initValue: {
+      type: String,
+      value: '我是起始内容'
     }
   },
 
