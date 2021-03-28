@@ -1,7 +1,7 @@
-<view class="yeo-search" style="background: {{background}};border-radius: {{searBordRadius + 'rpx'}};padding: {{topPadding + 'rpx'}} {{rightPadding + 'rpx'}} {{bottomPadding + 'rpx'}} {{leftPadding + 'rpx'}};">
+<view class="yeo-search" style="background: {{background}};border-radius: {{searBordRadius + 'rpx'}};padding: {{topPadding + 'rpx'}} {{rightPadding + 'rpx'}} {{bottomPadding + 'rpx'}} {{leftPadding + 'rpx'}};width:{{boxWidth}};">
 
   <!-- 搜索图标 -->
-  <view class="search-icon">
+  <view class="search-icon" wx:if="{{isShowIcon}}">
     <yeo-icon IconSize='37'
     iconUrl='{{searchImg}}'></yeo-icon>
   </view>

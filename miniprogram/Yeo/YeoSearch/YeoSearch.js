@@ -4,6 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 外框宽度
+    boxWidth: {
+      type: String,
+      value: '100%'
+    },
     // 搜索图标
     searchImg: {
       type: String,
@@ -63,6 +68,11 @@ Component({
     initValue: {
       type: String,
       value: '我是起始内容'
+    },
+    // 是否显示图标
+    isShowIcon: {
+      type: Boolean,
+      value: true
     }
   },
 

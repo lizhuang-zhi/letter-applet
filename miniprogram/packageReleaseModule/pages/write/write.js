@@ -14,10 +14,18 @@ Page({
     //行高
     LineHeight:'80rpx',
     //背景颜色
-    BtnBackColor:'#01D25C',
+    BtnBackColor:'#F0934F',
     //文字颜色
     BtnColor:'white'
   },
+
+  // 跳转标签选择页面
+  ToChooseTag() {
+    wx.navigateTo({
+      url: '/packageReleaseModule/pages/lettertype/lettertype',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

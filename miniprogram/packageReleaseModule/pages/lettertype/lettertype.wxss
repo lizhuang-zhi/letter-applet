@@ -1,1 +1,38 @@
-/* packageReleaseModule/pages/lettertype/lettertype.wxss */
+page {
+  background: #F7F7F7;
+}
+
+/* 外层主体 */
+.lettertype-container {
+  margin: 50rpx 30rpx 70rpx;
+}
+
+
+/* 设计笔名 */
+.lettertype-container .choose-name .title-name {
+  margin-bottom: 30rpx;
+}
+.lettertype-container .choose-name .pen-name yeo-dy-fun-bar yeo-search {
+  width: 400rpx;
+}
+.lettertype-container .choose-name .pen-name yeo-dy-fun-bar .random yeo-dy-fun-bar .words{
+  font-size: 28rpx;
+  color: #F0934F;
+  margin-left: 10rpx;
+  letter-spacing: 2rpx;
+}
+
+
+/* 选择标签 */
+.lettertype-container .choose-tag, .lettertype-container .choose-name {
+  padding: 20rpx 30rpx;
+  background: #FFFFFF;
+  margin: 35rpx 0;
+  border-radius: 30rpx;
+}
+.lettertype-container .choose-tag .title-tag {
+  margin-bottom: 30rpx;
+}
+.lettertype-container .choose-tag keo-check-button {
+  margin-right: 20rpx;
+}

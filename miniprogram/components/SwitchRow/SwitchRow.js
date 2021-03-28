@@ -19,6 +19,16 @@ Component({
       type:String,
       value:'black'
     },
+    // 文字标题粗细
+    TitleFontWeight: {
+      type: String,
+      value: 'bold'
+    },
+    // 文字标题外边距
+    TitleMargin: {
+      type: String,
+      value: '0 0 10rpx'
+    },
 
 
     //小提示
@@ -29,7 +39,7 @@ Component({
     //小提示大小
     TipSize:{
       type:String,
-      value:'28rpx'
+      value:'26rpx'
     },
     //小提示颜色
     TipColor:{
@@ -41,12 +51,12 @@ Component({
     //盒子宽度
     BoxWidth:{
       type:String,
-      value:'90vw'
+      value:'100%'
     },
     //盒子外边距
     BoxMargin:{
       type:String,
-      value:'10rpx auto'
+      value:'0'
     },
     //盒子背景颜色
     BoxBackColor:{
@@ -61,14 +71,15 @@ Component({
     //盒子内边距
     BoxPadding:{
       type:String,
-      value:'20rpx'
+      value:'20rpx 30rpx'
     },
 
     //switch的颜色
     SwitchColor:{
       type:String,
       value:'#F0934F'
-    }
+    },
+    
 
   },
 

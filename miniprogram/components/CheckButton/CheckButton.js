@@ -49,6 +49,23 @@ Component({
       type:String,
       value:'white'
     },
+    // 文字大小
+    BtnFontSize: {
+      type: String,
+      value: 30
+    },
+    // 文字字间距
+    BtnFontLetterSpacing: {
+      type: Number,
+      value: 1
+    },
+    // 按钮边框
+    btnBorder: {
+      type: String,
+      value: ''
+    }
+
+
   },
 
   /**
@@ -64,6 +81,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 触发点击事件
+    clickBtn(e) {
+      // 获取点击对象信息
+      let btnInfo = e.currentTarget.dataset;
+      this.triggerEvent('clickevent', {btnInfo});
+    }
 
   }
 })

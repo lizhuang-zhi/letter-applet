@@ -3,7 +3,7 @@
   <!-- 文字提示内容 -->
   <view class="text">
     <!-- 文字标题 -->
-    <view class="title" style="font-size:{{TitleSize}};color:{{TitleColor}}">
+    <view class="title" style="font-size:{{TitleSize}};color:{{TitleColor}};font-weight: {{TitleFontWeight}};margin: {{TitleMargin}};">
       {{TitleText}}
     </view>
     <!-- 小提示 -->

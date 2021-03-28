@@ -1,0 +1,3 @@
+<view class="yeo-frame">
+  <slot></slot>
+</view>
