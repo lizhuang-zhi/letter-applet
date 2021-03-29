@@ -24,18 +24,17 @@ Page({
   data: {
     // 赏美文数组
     dataBeautyArr: [],
-    // 存储请求到的美文数组数据
-    dataArr: []
   },
 
   // 去到美文内容页
   ToBeautyTap(e) {
+    // 获取点击对象的文章id
+
     // 获取点击背景图
-    let bgUrl = e.detail;
-    console.log(bgUrl);
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/beautyletter/beautyletter?picUrl=' + bgUrl,
+      url: '/packageWriteLetter/pages/beautyletter/beautyletter?articleId=' + articleId,
     })
+
   },
 
   // 跳转解忧页
@@ -43,6 +42,7 @@ Page({
     wx.navigateTo({
       url: '/packageWriteLetter/pages/sorrowletter/sorrowletter',
     })
+
   },
 
   // 初始化数据
@@ -60,10 +60,7 @@ Page({
     }).then(res => {
       // 获取美文集合
       requestData.indexBeauty().then(res => {
-        // 存储请求数据
-        this.setData({
-          dataArr: res.data
-        }) 
+        
         // 获取数组
         let artArr = res.data;
         // 计数器
@@ -82,14 +79,16 @@ Page({
           count++;
 
           // 修改标题
-          item.title = item.title.length > 5 ? item.title.substring(0,5) + '..' : item.title;
+          item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
         });
 
         this.setData({
           dataBeautyArr: artArr
         })
 
+
       })
+
     }).then(res => {
       wx.hideLoading({});
     })

@@ -17,9 +17,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   picUrl: options
-    // })
+    // 解码
+    let decodeObj = decodeURIComponent(options.articleObj);
+    // 解析Json字符串
+    let artObj = JSON.parse(decodeObj); 
+
+    console.log(artObj);
+
+
   },
 
   /**

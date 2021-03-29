@@ -187,6 +187,7 @@ Component({
 
   lifetimes: {
     attached() {
+      console.log('我来了');
       // dataArr数组
       let dataArr = this.data.dataArr;
       // 获取显示标题文字数量
@@ -205,18 +206,27 @@ Component({
         item.time = beautyTime;
 
         // 砍掉多余title文字
-        item.title = item.title.length > titNum ? item.title.substring(0,titNum) : item.title;
+        item.title = item.title.length > titNum ? item.title.substring(0, titNum) : item.title;
         console.log(item.title);
       });
       this.setData({
         dataArr: this.data.dataArr
       })
-      
+
     },
     detached() {
       this.sendDataArr();
+    },
+    created() {
+
+    },
+    ready() {
+
     }
+
   },
+
+
 
   /**
    * 组件的初始数据
@@ -261,7 +271,9 @@ Component({
     sendDataArr() {
       // dataArr
       let dataArr = this.data.dataArr;
-      this.triggerEvent('sendarrevent',{dataArr});
+      this.triggerEvent('sendarrevent', {
+        dataArr
+      });
     }
 
   }

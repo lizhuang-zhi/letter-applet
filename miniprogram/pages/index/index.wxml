@@ -18,9 +18,9 @@
   </yeo-dy-fun-bar>
 </view>
 <!-- 轮播图 -->
-<yeo-swiper bind:clickevent="ToBeautyTap" swiperHeight='200' itemWidth='420' itemHeight='110' starBoxWidth='50' starBoxHeight='50'
+<yeo-swiper dataArr='{{dataBeautyArr}}' bind:clickevent="ToBeautyTap" swiperHeight='200' itemWidth='420' itemHeight='110' starBoxWidth='50' starBoxHeight='50'
   starTopWithOutBox='15' titleFontSize='33' timeFontSize='22' starBoxBordRadius='25' bottomInfoBotWithOutBox='20'
-  bgSize='cover' swiperMarginTop='10' swiperMarginBot='31' itemMarginTop='40' dataArr='{{dataBeautyArr}}' isShowStarPic='{{false}}'></yeo-swiper>
+  bgSize='cover' swiperMarginTop='10' swiperMarginBot='31' itemMarginTop='40'  isShowStarPic='{{false}}'></yeo-swiper>
 
 
 <!-- 解忧信件标题 -->
