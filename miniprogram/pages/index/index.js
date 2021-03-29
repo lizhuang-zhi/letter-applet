@@ -14,7 +14,7 @@ let requestData = require('../../utils/request');
 let bgArr = [
   "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg",
   "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
-  "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1105979147,3553146784&fm=26&gp=0.jpg"
+  "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
 ];
 Page({
 
@@ -60,9 +60,8 @@ Page({
     }).then(res => {
       // 获取美文集合
       requestData.indexBeauty().then(res => {
-        
         // 获取数组
-        let artArr = res.data;
+        let artArr = res.data.data;
         // 计数器
         let count = 0;
 

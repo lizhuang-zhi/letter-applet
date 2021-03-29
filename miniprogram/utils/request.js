@@ -8,11 +8,12 @@ let requestData = {
       wx.request({
         url: apiUrl.getIndexBeautyUrl(),
         success: res => {
-          resolve(res.data);
+          resolve(res);
         },
         fail: res => {
-          reject(res.data);
+          reject(res);
         }
+
       });
     });
   },

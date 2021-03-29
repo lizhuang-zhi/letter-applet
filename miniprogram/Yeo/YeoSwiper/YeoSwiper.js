@@ -187,7 +187,6 @@ Component({
 
   lifetimes: {
     attached() {
-      console.log('我来了');
       // dataArr数组
       let dataArr = this.data.dataArr;
       // 获取显示标题文字数量
