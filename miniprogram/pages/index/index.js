@@ -60,6 +60,7 @@ Page({
     }).then(res => {
       // 获取美文集合
       requestData.indexBeauty().then(res => {
+        console.log(res);
         // 获取数组
         let artArr = res.data.data;
         // 计数器
@@ -85,6 +86,12 @@ Page({
           dataBeautyArr: artArr
         })
 
+
+      })
+
+      // 首页信件 
+      requestData.indexLetters().then(res => {
+        console.log(res);
 
       })
 

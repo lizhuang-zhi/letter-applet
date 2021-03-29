@@ -108,13 +108,35 @@ Page({
     let finalTime = tools.mailboxShowMessageTime(time);
     console.log(finalTime);
 
+
+
+    /* webSocket获取回信 */
+    // 1. 建立连接
+    wx.connectSocket({
+      url: 'wss://rayss.host/reply/我的openid',
+    });
+    // 2. 监听连接打开
+    // wx.onSocketOpen((result) => {
+
+    // })
+
+    // 监听 WebSocket 接受到服务器的消息事件
+    wx.onSocketMessage((result) => {
+      console.log(result);
+    })
+    
+
   },
+
+  //
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.Start();
+
   },
 
   /**
@@ -134,6 +156,7 @@ Page({
         selected: 2
       })
     }
+
   },
 
   /**
