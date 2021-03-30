@@ -81,6 +81,7 @@
     "keo-switch-row":"/components/SwitchRow/SwitchRow",
     "keo-original-content":"/components/OriginalContent/OriginalContent",
     "keo-empty-display":"/components/EmptyDisplay/EmptyDisplay",
+    "keo-notify":"/components/Notify/Notify",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",

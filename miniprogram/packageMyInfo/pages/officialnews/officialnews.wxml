@@ -1,2 +1,1 @@
-<!--packageMyInfo/pages/officialnews/officialnews.wxml-->
-<text>packageMyInfo/pages/officialnews/officialnews.wxml</text>
+<keo-notify></keo-notify>

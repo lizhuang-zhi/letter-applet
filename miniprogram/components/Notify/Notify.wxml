@@ -1,0 +1,17 @@
+<!-- 盒子外 -->
+<view class="box-out" style="width:{{BoxWidth}};margin:{{BoxMargin}};">
+  <!-- 时间 -->
+  <view class="time" style="font-size:{{TimeSize}};color:{{TimeColor}};text-align:center">{{SendTime}}</view>
+  <!-- 盒子 -->
+  <view class="box">
+    <!-- 图片盒子 -->
+    <view class="box-img" style="width:{{ImgWidth}};">
+      <image mode="widthFix" src="{{Img}}" style="width:{{ImgWidth}};border-radius:{{ImgRadius}};"></image>
+    </view>
+    <!-- 消息通知内容 -->
+    <view class="content"
+      style="font-size:{{ContentSize}};color:{{ContentColor}};padding:{{ContentPadding}};background-color:{{BoxBackColor}};border-radius:{{CentRadius}};">
+      {{ContentText}}
+    </view>
+  </view>
+</view>
