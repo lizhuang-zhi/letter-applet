@@ -2,39 +2,30 @@
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
+    "scopeDataCheck": false,
+    "coverView": true,
     "es6": true,
-    "enhance": true,
     "postcss": true,
+    "compileHotReLoad": false,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
     "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
+    "newFeature": false,
     "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
     "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "useMultiFrameRuntime": false,
-    "useApiHook": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "bundle": false,
     "useIsolateContext": true,
+    "nodeModules": false,
+    "enhance": false,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
-    "userConfirmedBundleSwitch": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "bundle": false
   },
   "appid": "wx45847f8c326518ee",
   "projectname": "Letter",
@@ -158,6 +149,42 @@
         {
           "name": "packageMyInfo/pages/officialnews/officialnews",
           "pathName": "packageMyInfo/pages/officialnews/officialnews",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/officialnews/officialnews",
+          "pathName": "packageMyInfo/pages/officialnews/officialnews",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/latestevents/latestevents",
+          "pathName": "packageMyInfo/pages/latestevents/latestevents",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/replylist/replylist",
+          "pathName": "packageMyInfo/pages/replylist/replylist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/indexinfo/indexinfo",
+          "pathName": "packageMyInfo/pages/indexinfo/indexinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/star/star",
+          "pathName": "packageMyInfo/pages/star/star",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/comment/comment",
+          "pathName": "packageMyInfo/pages/comment/comment",
           "scene": null
         }
       ]

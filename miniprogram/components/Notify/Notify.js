@@ -53,7 +53,6 @@ Component({
       value: 'https://s1.ax1x.com/2020/11/01/Bwp6Z4.png'
     },
 
-
     //通知内容
     ContentText: {
       type: String,

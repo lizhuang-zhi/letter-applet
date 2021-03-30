@@ -1,1 +1,3 @@
-/* packageMyInfo/pages/star/star.wxss */
+page{
+  background:#ffffff;
+}

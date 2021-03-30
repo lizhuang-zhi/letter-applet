@@ -7,17 +7,17 @@ Component({
     //盒子外边距
     BoxMargin: {
       type: String,
-      value: '20vw auto'
+      value: '30vw auto'
     },
     //无记录图片
     Src: {
       type: String,
-      value: "https://z3.ax1x.com/2021/03/27/6ziqtx.png"
+      value: "https://z3.ax1x.com/2021/03/30/cF3icV.png"
     },
     //图片宽度
     ImgWidth: {
       type: String,
-      value: '80vw'
+      value: '100%'
     },
 
     //无记录文字内容
@@ -28,7 +28,7 @@ Component({
     //无记录文字大小
     TextSize: {
       type: String,
-      value: '40rpx'
+      value: '32rpx'
     },
     //无记录文字颜色
     TextColor:{

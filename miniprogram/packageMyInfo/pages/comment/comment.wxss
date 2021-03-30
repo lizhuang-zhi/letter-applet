@@ -1,1 +1,3 @@
-/* packageMyInfo/pages/comment/comment.wxss */
+page{
+  background:#ffffff;
+}

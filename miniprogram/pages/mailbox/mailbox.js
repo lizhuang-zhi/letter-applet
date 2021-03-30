@@ -60,7 +60,18 @@ Page({
       })
     }
   },
-
+  //挑转到官方消息
+  ToOfficialnews(){
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/officialnews/officialnews',
+    })
+  },
+//挑转到最新活动
+ToLatestevents(){
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/latestevents/latestevents',
+    })
+  },
   // 监听下拉刷新事件
   refresh(e) {
     console.log('刷新', e)
