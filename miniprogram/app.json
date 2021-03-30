@@ -29,7 +29,9 @@
         "pages/star/star",
         "pages/comment/comment",
         "pages/replyletter/replyletter",
-        "pages/replylist/replylist"
+        "pages/replylist/replylist",
+        "pages/officialnews/officialnews",
+        "pages/latestevents/latestevents"
       ]
     }
   ],
