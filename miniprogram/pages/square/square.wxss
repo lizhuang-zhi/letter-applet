@@ -46,3 +46,16 @@ page {
 yeo-diary-box-v2 {
   display: inline-block;
 }
+
+
+
+/* 回到顶部高度 */
+.bot-fix-group {
+  position: fixed;
+  bottom: 200rpx;
+  right: 50rpx;
+}
+.bot-fix-group .back-top image {
+  width: 60rpx;
+  height: 60rpx;
+}

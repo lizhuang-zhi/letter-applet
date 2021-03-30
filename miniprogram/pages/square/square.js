@@ -41,6 +41,26 @@ Page({
 
   },
 
+  // 监听页面滚动
+  onPageScroll(e) {
+    if (e.scrollTop > 400) { // 页面上卷高度 大于页面固定按钮位置
+      this.setData({
+        fixedInputPhone: true // 显示指定区域
+      })
+    } else {
+      this.setData({
+        fixedInputPhone: false // 隐藏指定区域
+      })
+    }
+  },
+  // 回到顶部事件
+  backToTop() {
+    wx.pageScrollTo({
+      duration: 600,
+      scrollTop: 0
+    })
+  },
+
   // 初始化数据
   Start() {
     // 获取日记数组数据
