@@ -7,41 +7,34 @@
   莫忧 借忧 寻觅
  */
 let tools = require('../../utils/timeTools');
+let publicTools = require('../../utils/public');
+// 引入加载数据
+let requestData = require('../../utils/request');
+// 存储背景图的数组
+let bgArr = [
+  "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg",
+  "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
+  "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
+];
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    dataArr: [{
-        bgUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg',
-        title: 'Tomorr',
-        time: '2021-1-5',
-        isStar: true
-      },
-      {
-        bgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg',
-        title: 'Blue Guy',
-        time: '2021-2-13',
-        isStar: false
-      },
-      {
-        bgUrl: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1105979147,3553146784&fm=26&gp=0.jpg',
-        title: 'Red Coal',
-        time: '2021-2-3',
-        isStar: false
-      }
-    ]
+    // 赏美文数组
+    dataBeautyArr: [],
   },
 
   // 去到美文内容页
   ToBeautyTap(e) {
+    // 获取点击对象的文章id
+
     // 获取点击背景图
-    let bgUrl = e.detail;
-    console.log(bgUrl);
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/beautyletter/beautyletter?picUrl=' + bgUrl,
+      url: '/packageWriteLetter/pages/beautyletter/beautyletter?articleId=' + articleId,
     })
+
   },
 
   // 跳转解忧页
@@ -49,6 +42,7 @@ Page({
     wx.navigateTo({
       url: '/packageWriteLetter/pages/sorrowletter/sorrowletter',
     })
+
   },
 
   // 初始化数据
@@ -58,7 +52,52 @@ Page({
 
     // 显示时间
     let finalShowTime = tools.indexPostBoxTime(time);
-    console.log(finalShowTime);
+    // console.log(finalShowTime);
+
+    // 请求数据
+    wx.showLoading({
+      title: '数据加载中',
+    }).then(res => {
+      // 获取美文集合
+      requestData.indexBeauty().then(res => {
+        console.log(res);
+        // 获取数组
+        let artArr = res.data.data;
+        // 计数器
+        let count = 0;
+
+        // 处理数据
+        artArr.forEach(item => {
+          // 修改对象键名
+          publicTools.renameKey(item, 'articleTime', 'time');
+          publicTools.renameKey(item, 'articleTitle', 'title');
+
+          // 格式化时间
+          item.time = tools.indexBeautyTime(item.time);
+          // 添加背景
+          item.bgUrl = bgArr[count];
+          count++;
+
+          // 修改标题
+          item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+        });
+
+        this.setData({
+          dataBeautyArr: artArr
+        })
+
+
+      })
+
+      // 首页信件 
+      requestData.indexLetters().then(res => {
+        console.log(res);
+
+      })
+
+    }).then(res => {
+      wx.hideLoading({});
+    })
 
 
   },

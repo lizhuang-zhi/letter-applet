@@ -10,8 +10,8 @@ Page({
 
 
     // 记录当前tab所在标题的索引
-    tabCurIndex: 0 
-  
+    tabCurIndex: 0
+
   },
 
   // 跳转日记内容
@@ -41,22 +41,62 @@ Page({
 
   },
 
+  // 监听页面滚动
+  onPageScroll(e) {
+    if (e.scrollTop > 400) { // 页面上卷高度 大于页面固定按钮位置
+      this.setData({
+        fixedInputPhone: true // 显示指定区域
+      })
+    } else {
+      this.setData({
+        fixedInputPhone: false // 隐藏指定区域
+      })
+    }
+  },
+  // 回到顶部事件
+  backToTop() {
+    wx.pageScrollTo({
+      duration: 600,
+      scrollTop: 0
+    })
+  },
+
   // 初始化数据
   Start() {
     // 获取日记数组数据
-    let diaryArr = [
-      {content: '我是一篇日记，记录我的心情',weather: '多云'},
-      {content: '我是一篇日记，记录我的心情',weather: '晴'},
-      {content: '记录我的心情',weather: '雨天'},
-      {content: '我是一篇日记，记录我的心情',weather: '多云'},
-      {content: '我是一篇日记，记录我的心情',weather: '多云'},
-      {content: '我是一篇日记，记录我的心情',weather: '多云'},
-      {content: '注册小程序中的一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。我是一篇日记，记录我的心情',weather: '阴'},
+    let diaryArr = [{
+        content: '我是一篇日记，记录我的心情',
+        weather: '多云'
+      },
+      {
+        content: '我是一篇日记，记录我的心情',
+        weather: '晴'
+      },
+      {
+        content: '记录我的心情',
+        weather: '雨天'
+      },
+      {
+        content: '我是一篇日记，记录我的心情',
+        weather: '多云'
+      },
+      {
+        content: '我是一篇日记，记录我的心情',
+        weather: '多云'
+      },
+      {
+        content: '我是一篇日记，记录我的心情',
+        weather: '多云'
+      },
+      {
+        content: '注册小程序中的一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。我是一篇日记，记录我的心情',
+        weather: '阴'
+      },
     ];
 
     // 天气转化工具类
-    diaryArr.forEach((item,index,array) => {
-      item.weather = weather.weatherWordsToPic(item.weather); 
+    diaryArr.forEach((item, index, array) => {
+      item.weather = weather.weatherWordsToPic(item.weather);
     });
 
     this.setData({
@@ -67,7 +107,7 @@ Page({
     // requestData.indexBeauty().then(res => { 
     //   console.log(res);
     // });
-    
+
 
   },
 
@@ -77,7 +117,7 @@ Page({
   onLoad: function (options) {
     this.Start();
   },
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -122,9 +162,9 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.tabCurIndex == 0) {
+    if (this.data.tabCurIndex == 0) {
       console.log('公开日记触底了');
-    }else if(this.data.tabCurIndex == 1) {
+    } else if (this.data.tabCurIndex == 1) {
       console.log('吐槽大会触底了');
     }
 

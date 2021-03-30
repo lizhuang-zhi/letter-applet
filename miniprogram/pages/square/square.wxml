@@ -6,7 +6,8 @@
     <view class="diary">
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box bindtap="ToDiaryContent">
-        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' content='{{item.content}}' weatherPicUrl='{{item.weather}}' boxWidth='320rpx'></yeo-diary-box-v2>
+        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' content='{{item.content}}'
+          weatherPicUrl='{{item.weather}}' boxWidth='320rpx'></yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
 
@@ -22,7 +23,8 @@
       <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！东山街道发哦哦我洗涤敌对势力飒飒是佛维拉搜词安扫扫地王安东非法发哦啊覅无额额无人机'></yeo-text-box>
+      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！东山街道发哦哦我洗涤敌对势力飒飒是佛维拉搜词安扫扫地王安东非法发哦啊覅无额额无人机'>
+      </yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
       <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
@@ -31,3 +33,12 @@
   </van-tab>
 
 </van-tabs>
+
+
+
+<!-- 回到顶部按钮 -->
+<view class="bot-fix-group" wx:if="{{fixedInputPhone}}">
+  <view class="back-top" bindtap="backToTop">
+    <image src="https://z3.ax1x.com/2021/03/30/cPB42Q.png"></image>
+  </view>
+</view>
