@@ -19,7 +19,8 @@
       "pages": [
         "pages/attention/attention",
         "pages/write/write",
-        "pages/lettertype/lettertype"
+        "pages/lettertype/lettertype",
+        "pages/choosemodule/choosemodule"
       ]
     },
     {

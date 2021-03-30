@@ -19,7 +19,10 @@ Component({
       iconPath: "/images/letter.png",
       selectedIconPath: "/images/letter-select.png",
       text: "信箱"
-    }]
+    }],
+
+    // 定义动画
+    floatAnimation: {}
   },
   attached() {
   },
@@ -39,7 +42,8 @@ Component({
         url: '/packageReleaseModule/pages/attention/attention',
       })
       console.log('跳转->注意事项页面');
-    }
-    
+    },
+
+
   }
 })

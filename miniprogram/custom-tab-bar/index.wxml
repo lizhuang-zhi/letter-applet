@@ -7,8 +7,9 @@
   </cover-view>
 
   <!-- add图标 -->
-  <cover-view class="add-item" bindtap="toRelease">
-    <cover-image src="../images/add.png"></cover-image>
+  <cover-view class="add-item">
+    <cover-image bindtap="toRelease" src="../images/add.png"></cover-image>
   </cover-view>
 
 </cover-view>
+
