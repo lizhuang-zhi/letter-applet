@@ -41,3 +41,7 @@
     </view>
   </scroll-view>
 </view>
+
+
+<!-- loading组件 -->
+<yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>

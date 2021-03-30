@@ -14,6 +14,20 @@
     "newFeature": false,
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
+<<<<<<< Updated upstream
+=======
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+>>>>>>> Stashed changes
     "useIsolateContext": true,
     "nodeModules": false,
     "enhance": false,

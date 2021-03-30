@@ -1,7 +1,11 @@
-<view class="yeo-category" style="background: {{bgColor}};border-radius: {{boxRadius + 'rpx'}};margin-bottom: {{boxMarginBottom + 'rpx'}};">
-  <view class="pic" style="width: {{picSize + 'rpx'}};height: {{picSize + 'rpx'}};padding-left: {{paddingLeftofPic + 'rpx'}};">
+<view class="yeo-category"
+  style="background: {{bgColor}};border-radius: {{boxRadius + 'rpx'}};margin-bottom: {{boxMarginBottom + 'rpx'}};width:{{boxWidth}};">
+  <!-- 左侧配图 -->
+  <view class="pic" wx:if="{{isShowPic}}"
+    style="width: {{picSize + 'rpx'}};height: {{picSize + 'rpx'}};padding-left: {{paddingLeftofPic + 'rpx'}};">
     <image src="{{picUrl}}"></image>
   </view>
+  <!-- 右侧文字 -->
   <view class="tit">
     <slot name='title'></slot>
   </view>

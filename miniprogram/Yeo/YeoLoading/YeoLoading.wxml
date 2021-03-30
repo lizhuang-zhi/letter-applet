@@ -1,4 +1,4 @@
-<view class="yeo-loading-bg" style="display: {{isShowLoading ? 'block' : 'none'}};background: {{loadingBgColor}};">
+<view class="yeo-loading-bg" style="display: {{isShowLoading ? 'block' : 'none'}};background: {{loadingBgColor}};" catchtouchmove='ture'>
   <view class="yeo-loading" style="top: {{loadingTop}};">
     <view class="yeo-dot"
       style="background: {{dotColor}};width: {{dotSize + 'rpx'}};height: {{dotSize + 'rpx'}};border-radius: {{dotBordRadius + 'rpx'}};margin: 0 {{dotMarginSize + 'rpx'}};"

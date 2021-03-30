@@ -24,6 +24,9 @@ Page({
   data: {
     // 赏美文数组
     dataBeautyArr: [],
+
+    // loading组件（覆盖层）
+    isShowLoading: true
   },
 
   // 去到美文内容页
@@ -54,50 +57,52 @@ Page({
     let finalShowTime = tools.indexPostBoxTime(time);
     // console.log(finalShowTime);
 
-    // 请求数据
-    wx.showLoading({
-      title: '数据加载中',
-    }).then(res => {
-      // 获取美文集合
-      requestData.indexBeauty().then(res => {
-        console.log(res);
-        // 获取数组
-        let artArr = res.data.data;
-        // 计数器
-        let count = 0;
+    // 获取美文集合
+    requestData.indexBeauty().then(res => {
+      console.log(res);
 
-        // 处理数据
-        artArr.forEach(item => {
-          // 修改对象键名
-          publicTools.renameKey(item, 'articleTime', 'time');
-          publicTools.renameKey(item, 'articleTitle', 'title');
+      if(res.statusCode == 404) {
+        
+      }
 
-          // 格式化时间
-          item.time = tools.indexBeautyTime(item.time);
-          // 添加背景
-          item.bgUrl = bgArr[count];
-          count++;
+      // 获取数组
+      let artArr = res.data.data;
+      // 计数器
+      let count = 0;
 
-          // 修改标题
-          item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
-        });
+      // 处理数据
+      // artArr.forEach(item => {
+      //   // 修改对象键名
+      //   publicTools.renameKey(item, 'articleTime', 'time');
+      //   publicTools.renameKey(item, 'articleTitle', 'title');
 
-        this.setData({
-          dataBeautyArr: artArr
-        })
+      //   // 格式化时间
+      //   item.time = tools.indexBeautyTime(item.time);
+      //   // 添加背景
+      //   item.bgUrl = bgArr[count];
+      //   count++;
 
+      //   // 修改标题
+      //   item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+      // });
 
+      this.setData({
+        dataBeautyArr: artArr
       })
 
-      // 首页信件 
-      requestData.indexLetters().then(res => {
-        console.log(res);
-
-      })
+      // 首页三封信件 
+      return requestData.indexLetters();
 
     }).then(res => {
-      wx.hideLoading({});
+      console.log(res);
+
+      // 关闭loading覆盖层
+      this.setData({
+        isShowLoading: false
+      })
+
     })
+
 
 
   },

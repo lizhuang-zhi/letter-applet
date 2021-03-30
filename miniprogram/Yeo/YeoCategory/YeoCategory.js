@@ -4,6 +4,16 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 外框宽度
+    boxWidth: {
+      type: String,
+      value: '250rpx'
+    },
+    // 是否显示左侧配图
+    isShowPic: {
+      type: Boolean,
+      value: true
+    },
     // 背景颜色
     bgColor: {
       type: String,
