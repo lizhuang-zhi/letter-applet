@@ -1,2 +1,1 @@
-<!--packageMyInfo/pages/latestevents/latestevents.wxml-->
-<text>packageMyInfo/pages/latestevents/latestevents.wxml</text>
+<keo-notify ContentText="发送你的第一封信"></keo-notify>

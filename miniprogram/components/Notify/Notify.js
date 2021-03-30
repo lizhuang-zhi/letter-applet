@@ -50,7 +50,7 @@ Component({
     //图片连接
     Img: {
       type: String,
-      value: 'https://z3.ax1x.com/2021/03/30/cPgOmQ.png'
+      value: 'https://s1.ax1x.com/2020/11/01/Bwp6Z4.png'
     },
 
 
