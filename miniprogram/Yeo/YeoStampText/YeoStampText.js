@@ -9,6 +9,11 @@ Component({
       type: Number,
       value: 300
     },
+    // 外框高度
+    boxHeight: {
+      type: Number,
+      value: 410
+    },
     // 内边距
     boxPadding: {
       type: String,
@@ -61,6 +66,11 @@ Component({
     },
     // 顶部邮票栏邮票图片高度
     stampPicHeightSize: {
+      type: Number,
+      value: 120
+    },
+    // 内容高度
+    contentHeight: {
       type: Number,
       value: 120
     },

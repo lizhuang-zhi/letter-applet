@@ -11,11 +11,11 @@ let publicTools = require('../../utils/public');
 // 引入加载数据
 let requestData = require('../../utils/request');
 // 存储背景图的数组
-let bgArr = [
-  "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg",
-  "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
-  "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
-];
+// let bgArr = [
+//   "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg",
+//   "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
+//   "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
+// ];
 Page({
 
   /**
@@ -31,11 +31,12 @@ Page({
 
   // 去到美文内容页
   ToBeautyTap(e) {
-    // 获取点击对象的文章id
+    // 获取点击对象的文章index
+    let articleIndex = e.detail.index;
 
     // 获取点击背景图
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/beautyletter/beautyletter?articleId=' + articleId,
+      url: '/packageWriteLetter/pages/beautyletter/beautyletter?articleIndex=' + articleIndex,
     })
 
   },
@@ -50,60 +51,63 @@ Page({
 
   // 初始化数据
   Start() {
-    // 设置解忧杂货店显示时间
-    let time = '2021-03-24 20:39:00';
-
-    // 显示时间
-    let finalShowTime = tools.indexPostBoxTime(time);
-    // console.log(finalShowTime);
-
     // 获取美文集合
     requestData.indexBeauty().then(res => {
-      console.log(res);
+      console.log(res.data.data);
 
-      if(res.statusCode == 404) {
-        
+      // 404与500
+      if (res.statusCode == 404 || res.statusCode == 500) {
+        return new Promise((resolve, reject) => {
+          resolve('error');
+        });
+      } else {
+        // 获取数组
+        let artArr = res.data.data;
+        // 处理数据
+        artArr.forEach(item => {
+          // 修改对象键名
+          // publicTools.renameKey(item, 'articleTime', 'time');
+          publicTools.renameKey(item, 'img_url', 'bgUrl');
+          publicTools.renameKey(item, 'articleTitle', 'title');
+
+          // 格式化时间
+          item.time = tools.indexBeautyTime(item.time);
+
+          // 修改标题
+          item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+        });
+        this.setData({
+          dataBeautyArr: artArr
+        })
+        // 首页三封信件 
+        return requestData.indexLetters();
       }
 
-      // 获取数组
-      let artArr = res.data.data;
-      // 计数器
-      let count = 0;
-
-      // 处理数据
-      // artArr.forEach(item => {
-      //   // 修改对象键名
-      //   publicTools.renameKey(item, 'articleTime', 'time');
-      //   publicTools.renameKey(item, 'articleTitle', 'title');
-
-      //   // 格式化时间
-      //   item.time = tools.indexBeautyTime(item.time);
-      //   // 添加背景
-      //   item.bgUrl = bgArr[count];
-      //   count++;
-
-      //   // 修改标题
-      //   item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
-      // });
-
-      this.setData({
-        dataBeautyArr: artArr
-      })
-
-      // 首页三封信件 
-      return requestData.indexLetters();
 
     }).then(res => {
-      console.log(res);
+      console.log(res.data.data);
+      if (res == 'error') {
+        console.log('404 or 500，请检查请求');
+      } else {
+        // 获取返回信件数组
+        let letterArr = res.data.data;
+        letterArr.forEach(item => {
+          // 时间格式化
+          item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
+          // 内容格式化
+          item.content = item.content.substring(0, 25) + '..';
+          // 笔名格式化
+          item.penName = item.penName.substring(0,8);
+        });
 
-      // 关闭loading覆盖层
-      this.setData({
-        isShowLoading: false
-      })
+        // 关闭loading覆盖层
+        this.setData({
+          letterArr: letterArr,
+          isShowLoading: false
+        })
+      }
 
     })
-
-
 
   },
 

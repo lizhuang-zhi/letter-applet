@@ -33,11 +33,10 @@
 <view class="tit-sorrow-box" bindtap="ToSorrowTap">
   <scroll-view class="sorrow-list" scroll-x>
     <view class="list-box">
-      <yeo-stamp-text></yeo-stamp-text>
-      <yeo-stamp-text stampPic='../../images/dog.png'></yeo-stamp-text>
-      <yeo-stamp-text stampPic='../../images/cat.png'></yeo-stamp-text>
-      <yeo-stamp-text stampPic='../../images/rabbit.png'></yeo-stamp-text>
-      <yeo-stamp-text stampPic='../../images/mouse.png'></yeo-stamp-text>
+
+      <!-- 信件数组 -->
+      <yeo-stamp-text wx:for="{{letterArr}}" wx:key='index' stampPic='{{item.stampUrl}}' name='{{item.penName}}' content='{{item.content}}' date='{{item.releaseTime}}'></yeo-stamp-text>
+
     </view>
   </scroll-view>
 </view>

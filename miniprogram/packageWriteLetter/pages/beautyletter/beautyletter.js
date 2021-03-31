@@ -1,4 +1,5 @@
 // packageWriteLetter/pages/beautyletter/beautyletter.js
+let requestData = require('../../../utils/request');
 Page({
 
   /**
@@ -13,16 +14,21 @@ Page({
     tagArr: ['文章来源：雨点美文网','文章标签：美文摘抄']
   },
 
+
+  // 初始化数据
+  Start(index) {
+    requestData.beautyletter(index).then(res => {
+      console.log(res.data.data);
+
+    })
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 解码
-    let decodeObj = decodeURIComponent(options.articleObj);
-    // 解析Json字符串
-    let artObj = JSON.parse(decodeObj); 
-
-    console.log(artObj);
+    this.Start(options.articleIndex);
 
 
   },

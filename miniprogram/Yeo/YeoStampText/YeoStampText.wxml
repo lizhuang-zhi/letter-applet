@@ -1,4 +1,4 @@
-<view class="yeo-stamp-text" style="width: {{boxWidth + 'rpx'}};padding: {{boxPadding}};background: {{boxBgColor}};border-radius: {{boxBordRadius + 'rpx'}};box-shadow: {{boxShadow}};font-family: {{fontFamily}};" bindtap="clickTap" data-name="{{name}}" data-content="{{content}}" data-date="{{date}}">
+<view class="yeo-stamp-text" style="width: {{boxWidth + 'rpx'}};height: {{boxHeight + 'rpx'}};padding: {{boxPadding}};background: {{boxBgColor}};border-radius: {{boxBordRadius + 'rpx'}};box-shadow: {{boxShadow}};font-family: {{fontFamily}};" bindtap="clickTap" data-name="{{name}}" data-content="{{content}}" data-date="{{date}}">
   <!-- 顶部邮票栏 -->
   <view class="stamp-top" style="padding: {{stampTopPadding}};">
     <view class="left-pic" style="width: {{stampTopLeftPicSize + 'rpx'}};height: {{stampTopLeftPicSize + 'rpx'}};">
@@ -10,7 +10,7 @@
   </view>
 
   <!-- 内容栏 -->
-  <view class="content" style="color: {{contentFontColor}};font-size: {{contentFontSize + 'rpx'}};padding: {{contentPadding}};line-height: {{contentLineHeight}};letter-spacing: {{contentLetterSpacing + 'rpx'}};">{{content}}</view>
+  <view class="content" style="color: {{contentFontColor}};font-size: {{contentFontSize + 'rpx'}};padding: {{contentPadding}};line-height: {{contentLineHeight}};letter-spacing: {{contentLetterSpacing + 'rpx'}};height: {{contentHeight + 'rpx'}};">{{content}}</view>
 
   <!-- 信息栏 -->
   <view class="bottom">
