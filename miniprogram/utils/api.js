@@ -13,6 +13,9 @@ const Beautyletter = prefix + '/beauty_article/get_beauty_article';
 // 广场吐槽大会
 const SquareComplain = prefix + '/spitting-grooves/selectAllVo';
 
+// 吐槽大会的内容详情页
+const Complainletter = prefix  + '/spitting-grooves/selectDetailsById';
+
 
 
 
@@ -33,6 +36,10 @@ let url = {
   // 广场吐槽大会
   getSquareComplain() {
     return SquareComplain;
+  },
+  // 吐槽大会的内容详情页
+  getComplainletter() {
+    return  Complainletter;
   }
 
 

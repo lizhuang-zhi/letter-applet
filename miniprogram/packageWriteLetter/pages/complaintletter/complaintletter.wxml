@@ -1,8 +1,12 @@
 <!-- 吐槽内容 -->
 <view class="complaint">
-  <yeo-text-content></yeo-text-content>
+  <yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.}}' content='{{complianObj.content}}'></yeo-text-content>
 </view>
 
 
 <!-- 评论组件 -->
 <yeo-comment></yeo-comment>
+
+
+<!-- loading组件 -->
+<yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>

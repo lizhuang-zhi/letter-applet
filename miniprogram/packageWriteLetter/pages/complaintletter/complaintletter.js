@@ -1,18 +1,54 @@
 // packageWriteLetter/pages/complaintletter/complaintletter.js
+let requestData = require('../../../utils/request');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // loading组件
+    isShowLoading: true,
 
+  },
+
+  // 初始化数据
+  Start(id) {
+    requestData.complainDetail(id).then(res => {
+      return new Promise((resolve, reject) => {
+        if (res.statusCode == 200) {
+          // 存储对象
+          let complianObj = res.data.data;
+          console.log(complianObj);
+          // 处理数据
+          this.setData({
+            complianObj: complianObj
+          })
+
+          resolve('success');
+        } else {
+          reject('error');
+        }
+
+      });
+
+    }).then(res => {
+      if (res == 'success') {
+        // loading加载完毕
+        this.setData({
+          isShowLoading: false
+        })
+      } else {
+        console.log(res);
+      }
+
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.id);
   },
 
   /**

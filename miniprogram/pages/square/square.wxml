@@ -17,7 +17,7 @@
     <!-- 吐槽大会 -->
     <view class="complain">
 
-      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' userName='{{item.penName}}' commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
+      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}' commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
       
     </view>
   </van-tab>

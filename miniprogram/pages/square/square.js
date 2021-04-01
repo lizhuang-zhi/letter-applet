@@ -28,9 +28,11 @@ Page({
   },
 
   // 跳转吐槽内容
-  ToComplainTap() {
+  ToComplainTap(e) {
+    // 获取吐槽对象id
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/complaintletter/complaintletter',
+      url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
     })
   },
 

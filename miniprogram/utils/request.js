@@ -68,6 +68,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 吐槽大会的内容详情页
+  complainDetail(id) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getComplainletter(),
+        data: {
+          id: id
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 
