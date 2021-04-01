@@ -1,24 +1,24 @@
 <!-- 选择盒子 -->
-<cover-cover-view class="box" style="width:{{BoxWidth}};height:{{BoxHeight+'px'}};">
+<view class="box" style="width:{{BoxWidth}};height:{{BoxHeight+'px'}}">
   <!-- 第一个选择 日记 -->
-  <cover-view class="first-choose">
+  <view class="first-choose">
     <!-- logo -->
-    <cover-image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[0]}}"></cover-image>
+    <image bindtap="NavTo" data-index='1' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[0]}}"></image>
     <!-- 文字 -->
-    <cover-view class="text">日记</cover-view>
-  </cover-view>
+    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">日记</view>
+  </view>
   <!-- 第二个选择 解忧 -->
-  <cover-view class="second-choose">
+  <view class="second-choose">
     <!-- logo -->
-    <cover-image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[1]}}"></cover-image>
+    <image bindtap="NavTo" data-index='2' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[1]}}"></image>
     <!-- 文字 -->
-    <cover-view class="text">解忧</cover-view>
-  </cover-view>
+    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">解忧</view>
+  </view>
   <!-- 第三个选择 吐槽 -->
-  <cover-view class="third-choose">
+  <view class="third-choose">
     <!-- logo -->
-    <cover-image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[2]}}"></cover-image>
+    <image bindtap="NavTo" data-index='3' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[2]}}"></image>
     <!-- 文字 -->
-    <cover-view class="text">吐槽</cover-view>
-  </cover-view>
-</cover-cover-view>
+    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">吐槽</view>
+  </view>
+</view>

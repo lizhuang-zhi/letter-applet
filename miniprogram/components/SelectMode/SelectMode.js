@@ -32,6 +32,16 @@ Component({
     ImgHeight:{
       type:String,
       value:'100rpx'
+    },
+    //文字颜色
+    TextColor:{
+      type:String,
+      value:'black'
+    },
+    //文字大小
+    TextSize:{
+      type:String,
+      value:'32rpx'
     }
   },
 
@@ -46,15 +56,30 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    NavTo(e){
+      let index=e.currentTarget.dataset.index;
+      if(index==1){
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/write/write?type="日记"',
+        })
+      }else if(index==2){
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/attention/attention?type="解忧"',
+        })
+      }else if(index==3){
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/attention/attention?type="吐糟"',
+        })
+      }
+    }
   },
   lifetimes: {
     attached: function() {
       //获取手机高度
-    //  let info = wx.getSystemInfoSync();
-    //   this.setData({
-    //     BoxHeight:info.windowHeight/2
-    //   })      
+     let info = wx.getSystemInfoSync();
+      this.setData({
+        BoxHeight:info.windowHeight
+      })      
     },
     detached: function() {
       // 在组件实例被从页面节点树移除时执行

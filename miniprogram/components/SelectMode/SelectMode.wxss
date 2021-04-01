@@ -1,11 +1,12 @@
+page{
+  background-color:white;
+}
 /* 选择盒子 */
 .box{
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   text-align:center;
-  transform: translateY(600rpx);
-
 }
 /* 每一个小选项 */
 .first-choose,.second-choose,.third-choose{
@@ -16,4 +17,5 @@
 /* 图片 */
 .img{
   border-radius: 50%;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx;
 }
