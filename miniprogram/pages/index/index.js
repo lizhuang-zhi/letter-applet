@@ -66,7 +66,7 @@ Page({
         // 处理数据
         artArr.forEach(item => {
           // 修改对象键名
-          // publicTools.renameKey(item, 'articleTime', 'time');
+          publicTools.renameKey(item, 'articleTime', 'time');
           publicTools.renameKey(item, 'img_url', 'bgUrl');
           publicTools.renameKey(item, 'articleTitle', 'title');
 

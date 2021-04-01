@@ -1,15 +1,12 @@
 // packageWriteLetter/pages/beautyletter/beautyletter.js
 let requestData = require('../../../utils/request');
+const tools = require('../../../utils/timeTools');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 文章配图
-    picUrl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg',
-    // 文章内容 
-    content: `与游泳一样，当人们要进入陌生而困苦的环境里时，有些人先小心地探测，以做万全的准备，但许多人就因为知道，由于急着应付眼前重重险阻又有些人，先一脚踏入那个环境，但仍留许多后路，看着情况不妙，就抽身而退。当然更有些人心存破釜沉舟之想，打定主意，便全身投入，由于急着应付眼前重重险阻，反倒能忘掉许多痛苦。如果是年轻力壮的人，我鼓励他做第三种人，虽然可能有些危险，但是你会发现，当别人还在池边犹豫，或半身站在池里喊冷时，那敢于一跃入池的人，早已“浪里白条”地来来往往，把这周遭的冷，忘的一干二净了；在陌生的环境里，也就由于这种人比别人快，较别人狠，而且敢于冒险，所以往往是成功者。`,
     // 底部标签
     tagArr: ['文章来源：雨点美文网','文章标签：美文摘抄']
   },
@@ -19,6 +16,15 @@ Page({
   Start(index) {
     requestData.beautyletter(index).then(res => {
       console.log(res.data.data);
+      // 存储对象
+      let dataObj = res.data.data;
+      // 修改时间显示
+      dataObj.articleTime = dataObj.articleTime.split(' ')[0]
+      // 给对象添加周几
+      dataObj.days = tools.beautyletterTime(dataObj.articleTime);
+      this.setData({
+        articleObj: dataObj
+      })
 
     })
 

@@ -51,6 +51,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 广场吐槽大会
+  squareComplain(pageNum) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getSquareComplain(),
+        data: {
+          pageNum: pageNum
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

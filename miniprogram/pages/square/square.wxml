@@ -16,19 +16,9 @@
   <van-tab title="吐槽大会" name='1'>
     <!-- 吐槽大会 -->
     <view class="complain">
-      <yeo-text-box bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='时间在走着，但是我想要停下'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap"></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！东山街道发哦哦我洗涤敌对势力飒飒是佛维拉搜词安扫扫地王安东非法发哦啊覅无额额无人机'>
-      </yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
-      <yeo-text-box bindtap="ToComplainTap" content='面对人生，我们有许多的选择，请加油！'></yeo-text-box>
+
+      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' userName='{{item.penName}}' commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
+      
     </view>
   </van-tab>
 
