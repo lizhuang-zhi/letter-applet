@@ -1,3 +1,24 @@
+/* 
+  1. 在api.js定义请求路径
+    const 页面+具体部分 = prefix + '复制接口'；
+    再在url对象中定义一个 get + 页面 + 具体部分 () { return 页面 + 具体部分 ;}
+  2. 在request.js中定义方法，请求数据
+    在requestData对象中，添加请求方法（ 页面 + 请求部分 ）（小驼峰）
+    * 改变url
+    * 有请求参数的需要在data中写出来
+  3. 在对应的页面中引入request.js，并调用其方法获取数据
+    requestData.它的方法().then(res => {
+      console.log(res);
+
+      // 处理数据
+      ...
+
+      
+    }) 
+  
+
+*/
+
 // 请求路径前缀
 const prefix = 'https://rayss.host/';
 
@@ -17,6 +38,7 @@ const SquareComplain = prefix + '/spitting-grooves/selectAllVo';
 const Complainletter = prefix  + '/spitting-grooves/selectDetailsById';
 // 吐槽大会的内容详情页评论集合 
 const ComplainletterComment = prefix + '/comments/selectAll';
+
 
 
 

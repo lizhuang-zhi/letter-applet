@@ -46,28 +46,28 @@ Page({
   ToReplyListTap(e) {
     // 获取索引
     let index = e.detail.index;
-    if(index == 0) {
+    if (index == 0) {
       wx.navigateTo({
         url: '/packageMyInfo/pages/star/star',
       })
-    }else if(index == 1){
+    } else if (index == 1) {
       wx.navigateTo({
         url: '/packageMyInfo/pages/replylist/replylist',
       })
-    }else if(index == 2){
+    } else if (index == 2) {
       wx.navigateTo({
         url: '/packageMyInfo/pages/comment/comment',
       })
     }
   },
   //挑转到官方消息
-  ToOfficialnews(){
+  ToOfficialnews() {
     wx.navigateTo({
       url: '/packageMyInfo/pages/officialnews/officialnews',
     })
   },
-//挑转到最新活动
-ToLatestevents(){
+  //挑转到最新活动
+  ToLatestevents() {
     wx.navigateTo({
       url: '/packageMyInfo/pages/latestevents/latestevents',
     })
@@ -135,12 +135,12 @@ ToLatestevents(){
     wx.onSocketMessage((result) => {
       console.log(result);
     })
-    
+
 
   },
 
   //
-  
+
 
   /**
    * 生命周期函数--监听页面加载
