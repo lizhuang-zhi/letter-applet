@@ -85,6 +85,24 @@ let requestData = {
         }
       })
     })
+  },
+  // 吐槽大会的内容详情页评论集合
+  complainDetailComment(id,pageNum) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getComplainletterComment(),
+        data: {
+          id: id,
+          pageNum: pageNum
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

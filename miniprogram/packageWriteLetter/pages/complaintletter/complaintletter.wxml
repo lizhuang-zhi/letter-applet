@@ -1,6 +1,6 @@
 <!-- 吐槽内容 -->
 <view class="complaint">
-  <yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.}}' content='{{complianObj.content}}'></yeo-text-content>
+  <yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.date}}' content='{{complianObj.content}}'></yeo-text-content>
 </view>
 
 
@@ -9,4 +9,4 @@
 
 
 <!-- loading组件 -->
-<yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>
+<yeo-loading dotColor='#FD8F00' isShowLoading='{{isShowLoading}}'></yeo-loading>

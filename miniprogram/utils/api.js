@@ -15,7 +15,8 @@ const SquareComplain = prefix + '/spitting-grooves/selectAllVo';
 
 // 吐槽大会的内容详情页
 const Complainletter = prefix  + '/spitting-grooves/selectDetailsById';
-
+// 吐槽大会的内容详情页评论集合 
+const ComplainletterComment = prefix + '/comments/selectAll';
 
 
 
@@ -39,7 +40,11 @@ let url = {
   },
   // 吐槽大会的内容详情页
   getComplainletter() {
-    return  Complainletter;
+    return Complainletter;
+  },
+  // 吐槽大会的内容详情页评论集合
+  getComplainletterComment() {
+    return ComplainletterComment;
   }
 
 

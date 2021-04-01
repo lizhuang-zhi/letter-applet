@@ -1,5 +1,6 @@
 // packageWriteLetter/pages/complaintletter/complaintletter.js
 let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools.js');
 Page({
 
   /**
@@ -9,27 +10,52 @@ Page({
     // loading组件
     isShowLoading: true,
 
+    // 评论数组
+    commentArr: []
+
   },
 
   // 初始化数据
   Start(id) {
+    // 请求后台数据
     requestData.complainDetail(id).then(res => {
-      return new Promise((resolve, reject) => {
-        if (res.statusCode == 200) {
-          // 存储对象
-          let complianObj = res.data.data;
-          console.log(complianObj);
-          // 处理数据
-          this.setData({
-            complianObj: complianObj
-          })
+      // 处理评论对象数据
+      if (res.statusCode == 200) {
+        // 存储对象
+        let complianObj = res.data.data;
+        // 处理对象时间
+        complianObj.date = timeTools.indexBeautyTime(complianObj.date);
+        // 处理数据
+        this.setData({
+          complianObj: complianObj
+        })
+        // 请求评论数据
+        return requestData.complainDetailComment(id, 1);
+      } else {
+        return new Promise((resolve, reject) => {
+          resolve('error');
+        })
+      }
 
-          resolve('success');
-        } else {
+    }).then(res => {
+      return new Promise((resolve, reject) => {
+        if (res == 'error') {
+          console.log(res);
           reject('error');
+        } else {
+          // 处理评论数据
+          // 评论对象
+          let commentObj = res.data.data;
+          // 评论集合
+          let commentList = commentObj.list;
+          console.log(commentList);
+          this.setData({
+            commentArr: commentList
+          })
+          resolve('success');
         }
 
-      });
+      })
 
     }).then(res => {
       if (res == 'success') {
@@ -38,7 +64,7 @@ Page({
           isShowLoading: false
         })
       } else {
-        console.log(res);
+        console.log('服务器请求错误！！');
       }
 
     })
