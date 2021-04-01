@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //日记数组
     diaryArr: [],
     // 吐槽大会数组
     complianArr: [],
@@ -72,44 +73,59 @@ Page({
   // 初始化数据
   Start() {
     // 获取日记数组数据
-    let diaryArr = [{
-        content: '我是一篇日记，记录我的心情',
-        weather: '多云'
-      },
-      {
-        content: '我是一篇日记，记录我的心情',
-        weather: '晴'
-      },
-      {
-        content: '记录我的心情',
-        weather: '雨天'
-      },
-      {
-        content: '我是一篇日记，记录我的心情',
-        weather: '多云'
-      },
-      {
-        content: '我是一篇日记，记录我的心情',
-        weather: '多云'
-      },
-      {
-        content: '我是一篇日记，记录我的心情',
-        weather: '多云'
-      },
-      {
-        content: '注册小程序中的一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。我是一篇日记，记录我的心情',
-        weather: '阴'
-      },
-    ];
+    // let diaryArr = [{
+    //     content: '我是一篇日记，记录我的心情',
+    //     weather: '多云'
+    //   },
+    //   {
+    //     content: '我是一篇日记，记录我的心情',
+    //     weather: '晴'
+    //   },
+    //   {
+    //     content: '记录我的心情',
+    //     weather: '雨天'
+    //   },
+    //   {
+    //     content: '我是一篇日记，记录我的心情',
+    //     weather: '多云'
+    //   },
+    //   {
+    //     content: '我是一篇日记，记录我的心情',
+    //     weather: '多云'
+    //   },
+    //   {
+    //     content: '我是一篇日记，记录我的心情',
+    //     weather: '多云'
+    //   },
+    //   {
+    //     content: '注册小程序中的一个页面。接受一个 Object 类型参数，其指定页面的初始数据、生命周期回调、事件处理函数等。我是一篇日记，记录我的心情',
+    //     weather: '阴'
+    //   },
+    // ];
 
     // 天气转化工具类
-    diaryArr.forEach((item, index, array) => {
-      item.weather = weather.weatherWordsToPic(item.weather);
-    });
+    // diaryArr.forEach((item, index, array) => {
+    //   item.weather = weather.weatherWordsToPic(item.weather);
+    // });
 
-    this.setData({
-      diaryArr: diaryArr
+    // this.setData({
+    //   diaryArr: diaryArr
+    // })
+    
+    //公开日记数据
+    requestData.squareDiary().then(res => {
+      //日记数组
+      let diaryList=res.data.data;
+      console.log(res);
+      diaryList.forEach(item => {
+        item.weather = weather.weatherWordsToPic(item.weather);
+      })
+      this.setData({
+        diaryArr:diaryList
+      })
     })
+
+
 
     // 吐槽大会请求数据
     requestData.squareComplain(1).then(res => {

@@ -103,9 +103,21 @@ let requestData = {
         }
       })
     })
+  },
+  // 广场页面公开日记
+  squareDiary(){
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getSquareDiary(),
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
-
-
 }
 
 
