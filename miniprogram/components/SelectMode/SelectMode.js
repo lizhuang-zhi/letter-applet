@@ -23,6 +23,11 @@ Component({
       type:Number,
       value:400
     },
+    //盒子外边距
+    BoxMargin:{
+      type:Number,
+      value:100
+    },
     //图片大小 宽度
     ImgWidth:{
       type:String,
@@ -78,8 +83,9 @@ Component({
       //获取手机高度
      let info = wx.getSystemInfoSync();
       this.setData({
-        BoxHeight:info.windowHeight
-      })      
+        BoxHeight:info.windowHeight/2,
+        BoxMargin:info.windowWidth/2
+      })
     },
     detached: function() {
       // 在组件实例被从页面节点树移除时执行

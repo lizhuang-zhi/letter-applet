@@ -23,7 +23,7 @@ Component({
     //盒子背景颜色
     BoxBackColor: {
       type: String,
-      value: "white"
+      value: "#E8EAEA"
     },
 
     //时间文字大小

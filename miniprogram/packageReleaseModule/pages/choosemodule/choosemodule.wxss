@@ -1,1 +1,3 @@
-/* packageReleaseModule/pages/choosemodule/choosemodule.wxss */
+page{
+  background-color: white;
+}

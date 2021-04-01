@@ -1,6 +1,3 @@
-page{
-  background-color:white;
-}
 /* 选择盒子 */
 .box{
   display: flex;
@@ -17,5 +14,5 @@ page{
 /* 图片 */
 .img{
   border-radius: 50%;
-  box-shadow: 2rpx 2rpx 2rpx 2rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx .8;
 }

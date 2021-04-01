@@ -1,5 +1,5 @@
 <!-- 选择盒子 -->
-<view class="box" style="width:{{BoxWidth}};height:{{BoxHeight+'px'}}">
+<view class="box" style="width:{{BoxWidth}};height:{{BoxHeight+'px'}};margin-top:{{BoxMargin+'rpx'}}">
   <!-- 第一个选择 日记 -->
   <view class="first-choose">
     <!-- logo -->
