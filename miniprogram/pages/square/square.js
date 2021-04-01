@@ -1,5 +1,10 @@
 let weather = require('../../utils/weatherTools');
 let requestData = require('../../utils/request');
+
+// 记录当前请求页是否为最后一页
+let isLastComplianPageNum = null;
+// 获取吐槽大会当前页
+let complianPageNum = null;
 Page({
 
   /**
@@ -7,7 +12,8 @@ Page({
    */
   data: {
     diaryArr: [],
-
+    // 吐槽大会数组
+    complianArr: [],
 
     // 记录当前tab所在标题的索引
     tabCurIndex: 0
@@ -103,11 +109,75 @@ Page({
       diaryArr: diaryArr
     })
 
-    // 处理请求数据
-    // requestData.indexBeauty().then(res => { 
-    //   console.log(res);
-    // });
+    // 吐槽大会请求数据
+    requestData.squareComplain(1).then(res => {
+      // 获取吐槽大会对象
+      let complianObj = res.data.data;
+      // 获取吐槽数组
+      let complianList = complianObj.list;
+      // 获取吐槽大会当前页
+      complianPageNum = complianObj.pageNum;
+      // 记录当前请求页是否为最后一页
+      isLastComplianPageNum = complianObj.isLastPage;
 
+      console.log(complianObj);
+      this.setData({
+        complianArr: complianList
+      })
+
+    });
+
+
+  },
+
+  // 下拉触底事件（吐槽大会）
+  onReachBottomComplain() {
+    // 判断是否为最后一页数据并请求
+    if (!isLastComplianPageNum) {
+      // 再次请求下一页数据
+      requestData.squareComplain(++complianPageNum).then(res => {
+        // 获取吐槽大会对象
+        let complianObj = res.data.data;
+        // 获取吐槽数组
+        let complianList = complianObj.list;
+        // 原吐槽大会数组
+        let complianArr = this.data.complianArr;
+        // 记录当前请求页是否为最后一页
+        isLastComplianPageNum = complianObj.isLastPage;
+
+        console.log(complianList);
+        // 合并二次请求对象与原对象
+        this.setData({
+          complianArr: complianArr.concat(complianList)
+        })
+
+      })
+
+    } else {
+      wx.showToast({
+        title: '没有更多吐槽了',
+        icon: 'none'
+      })
+    }
+
+  },
+
+  // 下拉触底事件（公开日记）
+  onReachBottomDiary() {
+    // 判断是否为最后一页数据并请求
+    if (true) {
+      // 再次请求下一页数据
+      // requestData.squareComplain(++complianPageNum).then(res => {
+
+
+      // })
+
+    } else {
+      wx.showToast({
+        title: '没有更多日记了',
+        icon: 'none'
+      })
+    }
 
   },
 
@@ -164,8 +234,12 @@ Page({
   onReachBottom: function () {
     if (this.data.tabCurIndex == 0) {
       console.log('公开日记触底了');
+      // 再次请求数据
+      this.onReachBottomDiary();
     } else if (this.data.tabCurIndex == 1) {
       console.log('吐槽大会触底了');
+      // 再次请求数据
+      this.onReachBottomComplain();
     }
 
   },

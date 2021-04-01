@@ -4,8 +4,8 @@
   <view class="top-body">
     <!-- 时间 -->
     <view class="time">
-      <view class="week-day">周三</view>
-      <view class="date-time">2021-03-21</view>
+      <view class="week-day">{{articleObj.days}}</view>
+      <view class="date-time">{{articleObj.articleTime}}</view>
     </view>
     <!-- 学习图 -->
     <view class="learn-pic">
@@ -15,16 +15,16 @@
 
   <!-- 图片 -->
   <view class="pic">
-    <image src="{{picUrl}}"></image>
+    <image src="{{articleObj.img_url}}"></image>
   </view>
 
   <!-- 文章标题 -->
   <view class="title">
-    根基越扎实才能走的越高
+    {{articleObj.articleTitle}}
   </view>
 
   <!-- 文章内容 -->
-  <view class="content-article">{{content}}</view>
+  <view class="content-article">{{articleObj.articleContent}}</view>
 
   <!-- 底部栏 -->
   <view class="bottom-bar-out">

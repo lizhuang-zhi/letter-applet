@@ -10,6 +10,9 @@ const IndexLetters = prefix + '/letter/getLetter';
 // 获取美文内容
 const Beautyletter = prefix + '/beauty_article/get_beauty_article';
 
+// 广场吐槽大会
+const SquareComplain = prefix + '/spitting-grooves/selectAllVo';
+
 
 
 
@@ -26,6 +29,10 @@ let url = {
   // 获取美文内容
   getBeautyletter() {
     return Beautyletter;
+  },
+  // 广场吐槽大会
+  getSquareComplain() {
+    return SquareComplain;
   }
 
 

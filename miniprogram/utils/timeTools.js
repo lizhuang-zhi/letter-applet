@@ -106,6 +106,15 @@ let tools = {
 
 
   /* 
+    美文内容页时间显示 
+  */
+  beautyletterTime(time) {
+    // 获取时间对象
+    let days = new Date(time);
+    return '周' + this.changeWeekDaysToChinese(days.getDay());
+  },
+
+  /* 
     信箱“消息通知”时间转化显示
   */
   mailboxShowMessageTime(time) {
