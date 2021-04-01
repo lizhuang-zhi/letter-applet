@@ -83,6 +83,7 @@
     "keo-original-content":"/components/OriginalContent/OriginalContent",
     "keo-empty-display":"/components/EmptyDisplay/EmptyDisplay",
     "keo-notify":"/components/Notify/Notify",
+    "keo-select-mode":"/components/SelectMode/SelectMode",
     
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
