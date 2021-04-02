@@ -123,18 +123,18 @@ Page({
 
     /* webSocket获取回信 */
     // 1. 建立连接
-    wx.connectSocket({
-      url: 'wss://rayss.host/reply/我的openid',
-    });
+    // wx.connectSocket({
+    //   url: 'wss://rayss.host/reply/我的openid',
+    // });
     // 2. 监听连接打开
     // wx.onSocketOpen((result) => {
 
     // })
 
     // 监听 WebSocket 接受到服务器的消息事件
-    wx.onSocketMessage((result) => {
-      console.log(result);
-    })
+    // wx.onSocketMessage((result) => {
+    //   console.log(result);
+    // })
 
 
   },

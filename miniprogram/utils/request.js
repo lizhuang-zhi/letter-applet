@@ -126,6 +126,7 @@ let requestData = {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getComplainletterSendComment(),
+        method: 'POST',
         data: {
           content: commentObj.content,
           date: commentObj.date,

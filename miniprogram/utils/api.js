@@ -20,7 +20,7 @@
 */
 
 // 请求路径前缀
-const prefix = 'https://rayss.host/';
+const prefix = 'https://rayss.host';
 
 
 // 首页美文

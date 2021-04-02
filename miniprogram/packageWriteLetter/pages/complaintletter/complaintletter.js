@@ -1,5 +1,23 @@
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
+
+// 用户openId
+let openId = 'vx001';
+// 发送评论的评论状态
+let state = 0;
+// 获取评论对象
+let commentPerInfo = {
+  // 用户名
+  userName: '荒野大道',
+  // 头像挂件等级
+  headPendant: 0,
+  // 用户头像
+  userImg: 'https://s3.ax1x.com/2021/03/09/63FNEn.jpg',
+};
+// 分页请求评论页码
+let commentPageNum = 1;
+// 赋值判断是否为最后一页评论
+let isLastPageNum = null;
 Page({
 
   /**
@@ -11,6 +29,12 @@ Page({
 
     // 评论数组
     commentArr: [],
+
+    // 具体某一个吐槽评论的id
+    id: '',
+
+    // 吐槽作者openId
+    sgId: '',
 
     // 输入框输入内容
     inputContent: '',
@@ -63,15 +87,6 @@ Page({
     let preViousTime = this.data.preViousTime;
     // 获取当前时间
     let nowTime = new Date();
-    // 获取评论对象
-    let objInfo = {
-      // 用户名
-      userName: '荒野大道',
-      // 头像挂件等级
-      headPendant: 0,
-      // 用户头像
-      userImg: 'https://s3.ax1x.com/2021/03/09/63FNEn.jpg',
-    };
     // 限制用户评论间隔时长 5000ms
     if (nowTime - preViousTime >= 5000) {
       // 新建评论对象
@@ -79,31 +94,63 @@ Page({
         content,
         date: nowTime.toString(),
         userVo: {
-          penName: objInfo.userName,
-          avatarUrl: objInfo.userImg,
+          penName: commentPerInfo.userName,
+          avatarUrl: commentPerInfo.userImg,
         },
       };
-      this.data.commentArr.push(newCont);
-      this.setData({
-        commentArr: this.data.commentArr,
-        preViousTime: new Date(),
-        initValue: '',
-        inputContent: ''
-      })
-      wx.showToast({
-        title: '发布成功',
-      })
+
+      // 插入数据库的评论对象数据
+      let sendCommentObj = {
+        id: this.data.id,
+        openId: openId,
+        sgId: this.data.sgId,
+        state: state
+      };
+
+      // 合并对象
+      let finalSendObj = Object.assign(newCont, sendCommentObj);
+
+      // 插入评论数据到后台
+      let resStatus = this.sendMsgInsert(finalSendObj);
+      console.log(resStatus);
+      if (resStatus) {
+        this.data.commentArr.push(newCont);
+        this.setData({
+          commentArr: this.data.commentArr,
+          preViousTime: new Date(),
+          initValue: '',
+          inputContent: ''
+        })
+        wx.showToast({
+          title: '发布成功',
+          icon: 'none'
+        })
+      } else {
+        wx.showToast({
+          title: '服务器开了个小差',
+          icon: 'none'
+        })
+      }
+
     } else {
       wx.showToast({
         title: '输入频繁，请稍后再试',
         icon: 'none'
       })
     }
+
+  },
+
+  // 发送评论请求接口
+  sendMsgInsert(commentObj) {
+    requestData.complainletterSendComment(commentObj).then(res => {
+      return res;
+    })
   },
 
   // 初始化数据
   Start(id) {
-    // 评论内容数据
+    // 评论内容数据接口
     requestData.complainDetail(id).then(res => {
       // 处理吐槽对象数据
       if (res.statusCode == 200) {
@@ -113,10 +160,11 @@ Page({
         complianObj.date = timeTools.indexBeautyTime(complianObj.date);
         // 处理数据
         this.setData({
-          complianObj: complianObj
+          complianObj: complianObj,
+          sgId: complianObj.openId
         })
-        // 请求评论数据
-        return requestData.complainDetailComment(id, 1);
+        // 请求评论数据接口
+        return requestData.complainDetailComment(id, commentPageNum);
       } else {
         return new Promise((resolve, reject) => {
           resolve('error');
@@ -134,6 +182,8 @@ Page({
           let commentObj = res.data.data;
           // 评论集合
           let commentList = commentObj.list;
+          // 赋值判断是否为最后一页评论
+          isLastPageNum = commentObj.isLastPage;
           console.log(commentList);
           this.setData({
             commentArr: commentList
@@ -162,6 +212,9 @@ Page({
    */
   onLoad: function (options) {
     this.Start(options.id);
+    this.setData({
+      id: options.id
+    })
   },
 
   /**
@@ -204,6 +257,34 @@ Page({
    */
   onReachBottom: function () {
     console.log('触底了！！！');
+
+    // 非最后一页数据
+    if (!isLastPageNum) {
+      // 具体某一个吐槽评论的id
+      let id = this.data.id;
+      // 再次请求评论数据接口
+      requestData.complainDetailComment(id, ++commentPageNum).then(res => {
+        // 评论对象
+        let commentObj = res.data.data;
+        // 评论集合
+        let commentList = commentObj.list;
+        // 赋值判断是否为最后一页评论
+        isLastPageNum = commentObj.isLastPage;
+        console.log(commentList);
+        // 将请求数据添加至原数组后
+        this.setData({
+          commentArr: this.data.commentArr.concat(commentList)
+        })
+
+      })
+
+    } else {
+      wx.showToast({
+        title: '我是有底线的',
+        icon: 'none'
+      })
+    }
+
   },
 
   /**

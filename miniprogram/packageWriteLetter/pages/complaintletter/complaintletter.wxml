@@ -1,13 +1,15 @@
 <!-- 吐槽内容 -->
 <view class="complaint">
-  <yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.date}}' content='{{complianObj.content}}'></yeo-text-content>
+  <yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.date}}'
+    content='{{complianObj.content}}'></yeo-text-content>
 </view>
 
 
 <!-- 评论组件 -->
-<yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent' initValue='{{initValue}}'>
-  <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}'
-    userName='{{item.userVo.penName}}' userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index'></yeo-message-card>
+<yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent'
+  initValue='{{initValue}}'>
+  <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}' userName='{{item.userVo.penName}}'
+    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index'></yeo-message-card>
 </yeo-comment>
 
 
