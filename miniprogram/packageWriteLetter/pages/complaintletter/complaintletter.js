@@ -109,6 +109,7 @@ Page({
 
       // 合并对象
       let finalSendObj = Object.assign(newCont, sendCommentObj);
+      console.log(finalSendObj);
 
       // 插入评论数据到后台
       let resStatus = this.sendMsgInsert(finalSendObj);
