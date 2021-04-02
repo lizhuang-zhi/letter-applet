@@ -4,6 +4,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    //无文字 提示语
+    Holder:{
+      type:String,
+      value:"叙事为主，人名，地名均用别名代替"
+    },
     //书写区外层盒子宽度
     WriteWidth:{
       type:String,

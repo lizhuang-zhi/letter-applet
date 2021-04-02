@@ -71,7 +71,7 @@ Component({
     //提示列表行高
     ListLineHeight:{
       type:Number,
-      value:0
+      value:38
     },
     //提示列表字体大小
    ListFontSize:{

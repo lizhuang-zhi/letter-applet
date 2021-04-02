@@ -73,7 +73,7 @@ Component({
         })
       }else if(index==3){
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/attention/attention?type="吐糟"',
+          url: '/packageReleaseModule/pages/attention/attention?type="吐槽"',
         })
       }
     }

@@ -5,18 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    //按钮宽度
-    BtnWidth:'200rpx',
-    //按钮高度
-    BtnHeight:'80rpx',
-    //按钮圆角
-    BtnRadius:'20rpx',
-    //行高
-    LineHeight:'80rpx',
-    //背景颜色
-    BtnBackColor:'#F0934F',
-    //文字颜色
-    BtnColor:'white'
+    //选择的类型
+    chooseType:''
   },
 
   // 跳转标签选择页面
@@ -31,7 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      chooseType:options.type
+    })
   },
 
   /**
