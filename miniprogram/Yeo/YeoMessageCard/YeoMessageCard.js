@@ -42,7 +42,7 @@ Component({
     // 时间
     time: {
       type: String,
-      value: '2021-02-20'
+      value: '2021-2-20'
     },
     // 时间颜色
     timeColor: {
@@ -152,7 +152,7 @@ Component({
       let commentDate = new Date(timeDate).getTime();
       // 历经时长
       let days = (dateNow - commentDate) / (1000* 24 * 3600);
-      // 取整时长
+      // 取整时长(天数)
       let parseIntDays = parseInt(days);
       if(parseIntDays > 0 && parseIntDays <= 10) {
         this.setData({
@@ -161,10 +161,6 @@ Component({
       }else if(parseIntDays === 0) {
         this.setData({
           commentDay: '刚刚'
-        })
-      }else if(parseIntDays > 10) {
-        this.setData({
-          commentDay: timeDate
         })
       }else {
         this.setData({

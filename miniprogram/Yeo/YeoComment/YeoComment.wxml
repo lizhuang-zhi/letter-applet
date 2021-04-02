@@ -14,7 +14,7 @@
 
   <!-- 评论内容 -->
   <view class="comment-main">
-    <yeo-message-card wx:for="{{commentArr}}" time='{{item.time}}' headPendant='{{item.headPendant}}' userName='{{item.userName}}' userImg='{{item.userImg}}'  content="{{item.content}}" bind:userimgclick='clickUserImg' bind:contentclick='clickContent' wx:key='index'></yeo-message-card>
+    <slot></slot>
   </view>
 
 </view>

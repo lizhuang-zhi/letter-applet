@@ -106,6 +106,16 @@ let tools = {
 
 
   /* 
+    公开日记的时间显示
+  */
+  squareDiaryTime(time) {
+    // 新建时间对象
+    let date = new Date(time);
+    return (date.getMonth() + 1) + '月' + date.getDate() + '日';
+  },
+
+
+  /* 
     美文内容页时间显示 
   */
   beautyletterTime(time) {

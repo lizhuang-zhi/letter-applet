@@ -7,7 +7,7 @@
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box bindtap="ToDiaryContent">
         <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' content='{{item.content}}'
-          weatherPicUrl='{{item.weather}}' boxWidth='320rpx'></yeo-diary-box-v2>
+          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'></yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
 
@@ -17,7 +17,7 @@
     <!-- 吐槽大会 -->
     <view class="complain">
 
-      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}' commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' bindtap="ToComplainTap" content='我是一个人在游走的时候'></yeo-text-box>
+      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}' commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap"></yeo-text-box>
       
     </view>
   </van-tab>

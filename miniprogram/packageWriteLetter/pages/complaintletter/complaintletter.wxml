@@ -5,7 +5,10 @@
 
 
 <!-- 评论组件 -->
-<yeo-comment></yeo-comment>
+<yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent' initValue='{{initValue}}'>
+  <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}'
+    userName='{{item.userVo.penName}}' userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index'></yeo-message-card>
+</yeo-comment>
 
 
 <!-- loading组件 -->

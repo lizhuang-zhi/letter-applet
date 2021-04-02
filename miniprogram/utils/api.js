@@ -38,6 +38,8 @@ const SquareComplain = prefix + '/spitting-grooves/selectAllVo';
 const Complainletter = prefix  + '/spitting-grooves/selectDetailsById';
 // 吐槽大会的内容详情页评论集合 
 const ComplainletterComment = prefix + '/comments/selectAll';
+// 吐槽大会的内容详情页中发送评论
+const ComplainletterSendComment = prefix + '/comments/insert';
 
 // 广场页面公开日记
 const SquareDiary = prefix + '/diary/getAllDiary';
@@ -73,6 +75,10 @@ let url = {
   //广场页面公开日记
   getSquareDiary() {
     return SquareDiary;
+  },
+  // 吐槽大会的内容详情页中发送评论
+  getComplainletterSendComment() {
+    return ComplainletterSendComment;
   }
 
 

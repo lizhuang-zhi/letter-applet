@@ -1,4 +1,3 @@
-// packageWriteLetter/pages/complaintletter/complaintletter.js
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
 Page({
@@ -11,15 +10,102 @@ Page({
     isShowLoading: true,
 
     // 评论数组
-    commentArr: []
+    commentArr: [],
 
+    // 输入框输入内容
+    inputContent: '',
+
+    // 函数节流前一个判断时间
+    preViousTime: 0
+
+  },
+
+  // 回车事件
+  enterEvent(e) {
+    // 获取输入内容
+    let comment_cont = e.detail.comment_cont;
+    if (comment_cont == '') {
+      wx.showToast({
+        title: '请输入评论内容',
+        icon: 'none'
+      })
+    } else {
+      this.sendMsg(comment_cont);
+    }
+  },
+
+  // 键盘输入事件
+  inputEvent(e) {
+    // 获取输入内容
+    let input_cont = e.detail.realtime_comment;
+    this.setData({
+      inputContent: input_cont
+    })
+  },
+
+  // 点击发送图片事件
+  sendmessageEvent(e) {
+    // 获取输入内容
+    let input_cont = this.data.inputContent;
+    if (input_cont == '') {
+      wx.showToast({
+        title: '请输入评论内容',
+        icon: 'none'
+      })
+    } else {
+      this.sendMsg(input_cont);
+    }
+  },
+
+  // 发送评论
+  sendMsg(content) {
+    // 获取以前的时间
+    let preViousTime = this.data.preViousTime;
+    // 获取当前时间
+    let nowTime = new Date();
+    // 获取评论对象
+    let objInfo = {
+      // 用户名
+      userName: '荒野大道',
+      // 头像挂件等级
+      headPendant: 0,
+      // 用户头像
+      userImg: 'https://s3.ax1x.com/2021/03/09/63FNEn.jpg',
+    };
+    // 限制用户评论间隔时长 5000ms
+    if (nowTime - preViousTime >= 5000) {
+      // 新建评论对象
+      let newCont = {
+        content,
+        date: nowTime.toString(),
+        userVo: {
+          penName: objInfo.userName,
+          avatarUrl: objInfo.userImg,
+        },
+      };
+      this.data.commentArr.push(newCont);
+      this.setData({
+        commentArr: this.data.commentArr,
+        preViousTime: new Date(),
+        initValue: '',
+        inputContent: ''
+      })
+      wx.showToast({
+        title: '发布成功',
+      })
+    } else {
+      wx.showToast({
+        title: '输入频繁，请稍后再试',
+        icon: 'none'
+      })
+    }
   },
 
   // 初始化数据
   Start(id) {
-    // 请求后台数据
+    // 评论内容数据
     requestData.complainDetail(id).then(res => {
-      // 处理评论对象数据
+      // 处理吐槽对象数据
       if (res.statusCode == 200) {
         // 存储对象
         let complianObj = res.data.data;
@@ -43,7 +129,7 @@ Page({
           console.log(res);
           reject('error');
         } else {
-          // 处理评论数据
+          /* 处理评论数据 */
           // 评论对象
           let commentObj = res.data.data;
           // 评论集合
@@ -68,6 +154,7 @@ Page({
       }
 
     })
+
   },
 
   /**
@@ -116,7 +203,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    console.log('触底了！！！');
   },
 
   /**

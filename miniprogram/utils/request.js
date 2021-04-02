@@ -105,10 +105,35 @@ let requestData = {
     })
   },
   // 广场页面公开日记
-  squareDiary(){
+  squareDiary(pageNum){
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getSquareDiary(),
+        data: {
+          pageNum: pageNum
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 吐槽大会的内容详情页中发送评论
+  complainletterSendComment(commentObj) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getComplainletterSendComment(),
+        data: {
+          content: commentObj.content,
+          date: commentObj.date,
+          id: commentObj.id,
+          openId: commentObj.openId,
+          sgId: commentObj.sgId,
+          state: commentObj.state
+        },
         success: res => {
           resolve(res)
         },
@@ -118,6 +143,17 @@ let requestData = {
       })
     })
   }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
