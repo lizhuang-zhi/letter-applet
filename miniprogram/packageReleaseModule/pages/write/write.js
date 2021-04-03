@@ -24,6 +24,8 @@ Page({
     this.setData({
       chooseType:options.type
     })
+    console.log(this.data.chooseType);
+
   },
 
   /**

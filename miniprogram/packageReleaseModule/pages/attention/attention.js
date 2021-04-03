@@ -12,16 +12,15 @@ Page({
     tipcontent: '谢谢您的信任，准备将心里话说给TA。但请注意，为了维护良好的环境，请遵循以下规则'
   },
   //跳转页面
-  ToWriteArea(e) {
-    let type = this.data.chooseType;
-    console.log(type);
-    if (type=='解忧') {
+  ToWriteArea() {
+    let type = this.data.chooseType;   
+    if (type=='解忧'){
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/write/write?type="解忧"',
+        url: '/packageReleaseModule/pages/write/write?type=解忧',
       })
-    } else if(type=='吐槽') {
+    } else if(type=='吐槽'){
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/write/write?type="吐槽"',
+        url: '/packageReleaseModule/pages/write/write?type=吐槽',
       })
     }
   },

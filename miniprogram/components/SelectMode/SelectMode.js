@@ -65,15 +65,15 @@ Component({
       let index=e.currentTarget.dataset.index;
       if(index==1){
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/write/write?type="日记"',
+          url: '/packageReleaseModule/pages/write/write?type=日记',
         })
       }else if(index==2){
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/attention/attention?type="解忧"',
+          url: '/packageReleaseModule/pages/attention/attention?type=解忧',
         })
       }else if(index==3){
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/attention/attention?type="吐槽"',
+          url: '/packageReleaseModule/pages/attention/attention?type=吐槽',
         })
       }
     }

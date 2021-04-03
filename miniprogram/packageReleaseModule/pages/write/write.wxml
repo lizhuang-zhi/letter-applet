@@ -1,5 +1,5 @@
-<keo-write-area wx:if="chooseType=='日记'" Holder="这是属于你自己的故事，Ta才刚刚开始,"></keo-write-area>
-<keo-write-area wx:elif="chooseType=='解忧'" Holder="有什么烦恼就说出来吧,小伙伴会为你解答"></keo-write-area>
-<keo-write-area wx:elif="chooseType=='吐槽'"></keo-write-area>
+<keo-write-area wx:if="{{chooseType=='日记'}}" Holder="这是属于你自己的故事，Ta才刚刚开始,"></keo-write-area>
+<keo-write-area wx:elif="{{chooseType=='解忧'}}" Holder="请诉说你的烦恼,小伙伴会为你解答"></keo-write-area>
+<keo-write-area wx:elif="{{chooseType=='吐槽'}}"></keo-write-area>
 <!-- 按钮 -->
 <keo-check-button BtnText="完成" bindtap="ToChooseTag"></keo-check-button>
