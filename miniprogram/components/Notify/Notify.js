@@ -77,6 +77,31 @@ Component({
     CentRadius:{
       type:String,
       value:'0 0 30rpx 30rpx'
+    },
+    //发布者图片
+    ProImgSrc:{
+      type:String,
+      value:'https://z3.ax1x.com/2021/04/03/cunM2d.png'
+    },
+    //发布者图片大小 宽度
+    ProImgSrcWidth:{
+      type:String,
+      value:'40rpx'
+    },
+    //发布者图片大小 高度
+    ProImgSrcHeight:{
+      type:String,
+      value:'40rpx'
+    },
+    //发布者 文字内容
+    promulgatorText:{
+      type:String,
+      value:'社区推荐'
+    },
+    //发布者上边距
+    ProTopMargin:{
+      type:String,
+      value:'10rpx'
     }
   },
 

@@ -36,3 +36,11 @@ page {
 .lettertype-container .choose-tag keo-check-button {
   margin-right: 20rpx;
 }
+
+.btn-part {
+  margin: 0 auto;
+  width: 240rpx;
+}
+.btn-part keo-check-button {
+  display: inline-block;
+}

@@ -219,6 +219,12 @@
         {
           "name": "packageReleaseModule/pages/choosemodule/choosemodule",
           "pathName": "packageReleaseModule/pages/choosemodule/choosemodule",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mailbox/mailbox",
+          "pathName": "pages/mailbox/mailbox",
           "scene": null
         }
       ]

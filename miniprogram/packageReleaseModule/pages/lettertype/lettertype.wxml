@@ -11,7 +11,8 @@
     <view class="pen-name">
       <yeo-dy-fun-bar distractWay='between'>
         <!-- 笔名输入框 -->
-        <yeo-search slot='dy-center' isShowIcon='{{false}}' leftPadding='0' background='#FFFFFF' inputLeftMargin='0' searBordRadius='10' initValue='{{initValue}}'></yeo-search>
+        <yeo-search slot='dy-center' isShowIcon='{{false}}' leftPadding='0' background='#FFFFFF' inputLeftMargin='0'
+          searBordRadius='10' initValue='{{initValue}}'></yeo-search>
 
         <!-- 随机笔名 -->
         <view class="random" slot='dy-right' bindtap="RandomNameTap">
@@ -44,8 +45,8 @@
 
   <!-- 是否收录选择开关 -->
   <keo-switch-row></keo-switch-row>
-
-  <!-- 确认按钮 -->
-  <keo-check-button BtnText="确认提交" BtnBackColor="#F0934F"></keo-check-button>
-
+  <view class="btn-part">
+    <!-- 确认按钮 -->
+    <keo-check-button BtnText="确认提交" BtnBackColor="#F0934F"></keo-check-button>
+  </view>
 </view>

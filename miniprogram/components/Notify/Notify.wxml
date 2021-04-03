@@ -8,10 +8,22 @@
     <view class="box-img" style="width:{{ImgWidth}};">
       <image mode="widthFix" src="{{Img}}" style="width:{{ImgWidth}};border-radius:{{ImgRadius}};"></image>
     </view>
-    <!-- 消息通知内容 -->
+    <!-- 消息通知 -->
     <view class="content"
-      style="font-size:{{ContentSize}};color:{{ContentColor}};padding:{{ContentPadding}};background-color:{{BoxBackColor}};border-radius:{{CentRadius}};">
-      {{ContentText}}
+      style="font-size:{{ContentSize}};color:{{ContentColor}};padding:{{ContentPadding}};background-color:{{BoxBackColor}};border-radius:{{CentRadius}}">
+      <!-- 内容 -->
+      <view class='content-text'>
+        {{ContentText}}
+      </view>
+      <!-- 发布人 -->
+      <view class="promulgator" style="margin-top:{{ProTopMargin}}">
+        <!-- 发布人图片 -->
+        <image style="width:{{ProImgSrcWidth}};height:{{ProImgSrcHeight}};border-radius:50%;" class="pro-imgsrc" src="{{ProImgSrc}}">
+        </image>
+        <!-- 发布人文字 -->
+        <view class="proor" style="padding-left:10rpx">{{promulgatorText}}</view>
+      </view>
     </view>
+
   </view>
 </view>
