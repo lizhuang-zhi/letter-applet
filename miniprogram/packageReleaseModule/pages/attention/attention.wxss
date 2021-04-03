@@ -7,21 +7,3 @@
 .top-tips .tip-text{
     color: gray;
 }
-/*我已了解 按钮 */
-.btn-box{
-  width: 100%;
-  margin: 50rpx auto;
-  display: flex;
-  justify-content: center;
-}
-.btn-box .btn{
-  width: 360rpx;
-  height: 110rpx;
-  font-size: 34rpx;
-  line-height: 110rpx;
-  border-radius: 100rpx;
-  background: #F0934F;
-  text-align: center;
-  font-weight: 800;
-  color: white;
-}

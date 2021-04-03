@@ -199,6 +199,12 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageReleaseModule/pages/lettertype/lettertype",
+          "pathName": "packageReleaseModule/pages/lettertype/lettertype",
           "scene": null
         }
       ]

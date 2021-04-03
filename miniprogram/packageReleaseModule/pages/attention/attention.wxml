@@ -14,7 +14,5 @@
     PromptText="跟随内心" PromptData="{{PromptData3}}">
   </keo-prompt-list>
 </view>
-<!--我已了解 按钮 -->
-<view class="btn-box">
-  <view class="btn" bindtap="navToWriteArea">我已了解</view>
-</view>
+<!-- 按钮 -->
+<keo-check-button bindtap="ToWriteArea" BtnText="我以了解"  BtnWidth='300rpx'></keo-check-button>

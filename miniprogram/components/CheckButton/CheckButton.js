@@ -42,7 +42,7 @@ Component({
     //背景颜色
     BtnBackColor:{
       type:String,
-      value:'#01D25C'
+      value:'#F0934F'
     },
     //文字颜色
     BtnColor:{
@@ -87,6 +87,5 @@ Component({
       let btnInfo = e.currentTarget.dataset;
       this.triggerEvent('clickevent', {btnInfo});
     }
-
   }
 })
