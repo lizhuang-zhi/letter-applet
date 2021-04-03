@@ -15,6 +15,11 @@
 
       
     }) 
+
+
+  // 接口配置注意事项
+  1. 每个接口的id不用传
+  2. sgid是针对于此条评论的id
   
 
 */
@@ -43,7 +48,8 @@ const ComplainletterSendComment = prefix + '/comments/insert';
 
 // 广场页面公开日记
 const SquareDiary = prefix + '/diary/getAllDiary';
-
+// 广场日记具体内容
+ 
 
 
 // 返回对象

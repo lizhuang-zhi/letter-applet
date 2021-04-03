@@ -7,7 +7,7 @@ Component({
     //按钮外边距
     BtnMargin:{
       type:String,
-      value:'30rpx auto'
+      value:'30rpx 0'
     },
     //按钮排版格式 space-around space-between center 
     BtnStyle:{

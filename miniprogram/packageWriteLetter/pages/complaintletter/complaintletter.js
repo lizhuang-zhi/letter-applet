@@ -2,7 +2,7 @@ let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
 
 // 用户openId
-let openId = 'vx001';
+let openId = '01673b49-52f7-45b6-bd75-16d39c01419c';
 // 发送评论的评论状态
 let state = 0;
 // 获取评论对象
@@ -40,7 +40,10 @@ Page({
     inputContent: '',
 
     // 函数节流前一个判断时间
-    preViousTime: 0
+    preViousTime: 0,
+
+    // 插入评论返回信息
+    commentBackInfo: ""
 
   },
 
@@ -109,29 +112,37 @@ Page({
 
       // 合并对象
       let finalSendObj = Object.assign(newCont, sendCommentObj);
-      console.log(finalSendObj);
 
       // 插入评论数据到后台
-      let resStatus = this.sendMsgInsert(finalSendObj);
-      console.log(resStatus);
-      if (resStatus) {
-        this.data.commentArr.push(newCont);
-        this.setData({
-          commentArr: this.data.commentArr,
-          preViousTime: new Date(),
-          initValue: '',
-          inputContent: ''
-        })
-        wx.showToast({
-          title: '发布成功',
-          icon: 'none'
-        })
-      } else {
-        wx.showToast({
-          title: '服务器开了个小差',
-          icon: 'none'
-        })
-      }
+      let resStatus = this.sendMsgInsert(finalSendObj).then(res => {
+        console.log(res);
+
+        // 记录返回信息
+        let backInfo = res.data.message;
+
+        if (backInfo == '发布成功') {
+          this.data.commentArr.push(newCont);
+          this.setData({
+            commentArr: this.data.commentArr,
+            preViousTime: new Date(),
+            initValue: '',
+            inputContent: ''
+          })
+          wx.showToast({
+            title: '发布成功',
+            icon: 'none'
+          })
+        } else {
+          wx.showToast({
+            title: '服务器开了个小差',
+            icon: 'none'
+          })
+        }
+
+
+      });
+
+
 
     } else {
       wx.showToast({
@@ -144,9 +155,7 @@ Page({
 
   // 发送评论请求接口
   sendMsgInsert(commentObj) {
-    requestData.complainletterSendComment(commentObj).then(res => {
-      return res;
-    })
+    return requestData.complainletterSendComment(commentObj);
   },
 
   // 初始化数据

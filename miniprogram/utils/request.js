@@ -125,6 +125,9 @@ let requestData = {
   complainletterSendComment(commentObj) {
     return new Promise((resolve,reject) => {
       wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
         method: "POST",
         url: apiUrl.getComplainletterSendComment(),
         data: {

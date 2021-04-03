@@ -2,8 +2,10 @@ let weather = require('../../utils/weatherTools');
 let requestData = require('../../utils/request');
 let timeTools = require('../../utils/timeTools');
 
-// 记录当前请求页是否为最后一页
+// 记录当前请求页是否为最后一页（吐槽大会）
 let isLastComplianPageNum = null;
+// 记录当前请求页是否为最后一页（公开日记）
+let isLastDiaryPage = null;
 // 获取吐槽大会当前页
 let complianPageNum = null;
 Page({
@@ -70,20 +72,24 @@ Page({
 
   // 初始化数据
   Start() {
-    
+
     //公开日记数据
     requestData.squareDiary(1).then(res => {
       // 日记对象
       let diaryObj = res.data.data;
-      //日记数组
+      // 日记数组
       let diaryList = diaryObj.list;
+      // 记录公开日记是否为最后一页
+      isLastDiaryPage = diaryObj.isLastPage;
       console.log(diaryObj);
       diaryList.forEach(item => {
         item.weather = weather.weatherWordsToPic(item.weather);
         item.date = timeTools.squareDiaryTime(item.date);
+        // 暂时添加的数据内容
+        item.content = '我搜的啥佛山东欧到的手动到哦地方大师傅是豆腐是东方四大'
       })
       this.setData({
-        diaryArr:diaryList
+        diaryArr: diaryList
       })
     })
 
@@ -143,12 +149,27 @@ Page({
   // 下拉触底事件（公开日记）
   onReachBottomDiary() {
     // 判断是否为最后一页数据并请求
-    if (true) {
+    if (!isLastDiaryPage) {
       // 再次请求下一页数据
-      // requestData.squareComplain(++complianPageNum).then(res => {
+      requestData.squareDiary(++complianPageNum).then(res => {
+        // 日记对象
+        let diaryObj = res.data.data;
+        // 日记数组
+        let diaryList = diaryObj.list;
+        // 记录公开日记是否为最后一页
+        isLastDiaryPage = diaryObj.isLastPage;
+        console.log(diaryObj);
+        diaryList.forEach(item => {
+          item.weather = weather.weatherWordsToPic(item.weather);
+          item.date = timeTools.squareDiaryTime(item.date);
+          // 暂时添加的数据内容
+          item.content = '我是新数据';
+        })
+        this.setData({
+          diaryArr: this.data.diaryArr.concat(diaryList)
+        })
 
-
-      // })
+      })
 
     } else {
       wx.showToast({
