@@ -1,10 +1,30 @@
 // packageWriteLetter/pages/diaryletter/diaryletter.js
+let requestData = require('../../../utils/request');
+const tools = require('../../../utils/timeTools');
+let timeTools = require('../../../utils/timeTools');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    
+  },
+
+  // 初始化数据
+  Start(id) {
+    requestData.squareDiaryDetail(id).then(res => {
+      // 获取日记对象
+      let diaryObj = res.data.data;
+      console.log(diaryObj);
+      // 修改时间显示格式
+      diaryObj.weekDay = '星期' + tools.changeWeekDaysToChinese(new Date(diaryObj.date).getDay());
+      diaryObj.dateNum = new Date(diaryObj.date).getDate();
+      
+      this.setData({
+        diaryObj: diaryObj
+      })
+    })
 
   },
 
@@ -12,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.id);
   },
 
   /**

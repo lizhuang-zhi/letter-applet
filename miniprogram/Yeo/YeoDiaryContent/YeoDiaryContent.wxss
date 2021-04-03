@@ -40,6 +40,7 @@
   line-height: 2;
   letter-spacing: 1rpx;
   font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
 }
 
 .yeo-diary-content .main-bottom {

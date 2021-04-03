@@ -49,7 +49,7 @@ const ComplainletterSendComment = prefix + '/comments/insert';
 // 广场页面公开日记
 const SquareDiary = prefix + '/diary/getAllDiary';
 // 广场日记具体内容
- 
+const SquareDiaryDetail = prefix + '/diary/getDetailForDiary'; 
 
 
 // 返回对象
@@ -85,6 +85,10 @@ let url = {
   // 吐槽大会的内容详情页中发送评论
   getComplainletterSendComment() {
     return ComplainletterSendComment;
+  },
+  // 广场日记具体内容
+  getSquareDiaryDetail() {
+    return SquareDiaryDetail;
   }
 
 

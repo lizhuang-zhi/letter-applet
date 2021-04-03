@@ -22,8 +22,7 @@ App({
     }
 
     console.log(this.globalData);
-    this.globalData = {}
-    console.log(this.globalData);
+    // this.globalData = {}
   },
 
 
@@ -54,26 +53,23 @@ App({
 
                 wx.request({
                   //获取openid接口
-                  url: 'https://mrkleo.top/justyou/publish/getKey?js_code=' + code,
+                  url: 'https://rayss.host/user/getKey' + code,
                   data: {},
                   method: 'GET',
                   success: function (res) {
                     console.log('app.js中的返回的openid： ' + res.data.openid)
                     that.globalData.openid = res.data.openid
                     resolve('success')
-
                   },
                   fail: res => {
                     console.log(res);
                     reject('error')
-
                   }
 
                 })
               }
 
             })
-
 
           },
         })

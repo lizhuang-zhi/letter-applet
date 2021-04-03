@@ -1,6 +1,6 @@
 <!-- 信件主体 -->
 <view class="content-main">
-  <yeo-diary-content content='就满足个人生存条件而言，钱财的多与寡和对物质的需求是一样的，过与不足都是人生的悲哀，就如林清玄描述的那个收藏家，过度收藏的古董，会使人仿佛置身在垃圾堆中。贫穷会造成生活的不便，所谓三文钱难倒英雄汉，而过度的贪欲则会造惨的。不要想着怎样挣得百万家产留于后代，自古富不过三代，家产越多后代越无能的比比皆是，所谓儿孙自有儿孙福，莫为儿孙作牛马。贪欲是无法满足的，欲壑是难以填平的，对金钱的过度追求只会造就贪婪、腐败和人格的丧失。'></yeo-diary-content>
+  <yeo-diary-content content='{{diaryObj.content}}' authorName='{{diaryObj.penName}}' weekDay='{{diaryObj.weekDay}}' dateNum='{{diaryObj.dateNum}}'></yeo-diary-content>
 </view>
 
 

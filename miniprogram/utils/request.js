@@ -145,6 +145,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 广场日记具体内容
+  squareDiaryDetail(id) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getSquareDiaryDetail(),
+        data: {
+          id: id
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

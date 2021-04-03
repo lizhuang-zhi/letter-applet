@@ -25,9 +25,11 @@ Page({
   },
 
   // 跳转日记内容
-  ToDiaryContent() {
+  ToDiaryContent(e) {
+    // 获取点击的日记对象的id
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/diaryletter/diaryletter',
+      url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
     })
   },
 
