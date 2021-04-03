@@ -211,6 +211,12 @@
         {
           "name": "pages/index/index",
           "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageReleaseModule/pages/choosemodule/choosemodule",
+          "pathName": "packageReleaseModule/pages/choosemodule/choosemodule",
           "scene": null
         }
       ]

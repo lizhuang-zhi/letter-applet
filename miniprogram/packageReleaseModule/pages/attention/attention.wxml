@@ -15,4 +15,4 @@
   </keo-prompt-list>
 </view>
 <!-- 按钮 -->
-<keo-check-button BtnText="我以了解" bindtap="ToWriteArea" BtnWidth='300rpx'></keo-check-button>
+<keo-check-button BtnText="我已了解" bindtap="ToWriteArea" BtnWidth='300rpx'></keo-check-button>

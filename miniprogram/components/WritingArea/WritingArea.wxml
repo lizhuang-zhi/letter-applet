@@ -1,5 +1,5 @@
 <!-- 书写区外层盒子 -->
 <view class="write-box" style="width:{{WriteWidth}};box-sizing:border-box;margin:{{WriteMargin}}">
   <!-- 多文本组件 -->
-  <textarea name="" id="" cols="30" rows="10" maxlength='{{TextNumber}}' auto-focus auto-height placeholder="{{Holder}}" style="background-color:{{TextBgColor}};font-size:{{TextSize}};padding:{{TextPadding}};border-radius:{{TextRadius}};min-height:{{TextMinHeight}};line-height:{{LineHeight}};color:{{TextFontColor}}"></textarea>
+  <textarea bindblur='TextAreaValue' name="" id="" cols="30" rows="10" maxlength='{{TextNumber}}' auto-focus auto-height placeholder="{{Holder}}" style="background-color:{{TextBgColor}};font-size:{{TextSize}};padding:{{TextPadding}};border-radius:{{TextRadius}};min-height:{{TextMinHeight}};line-height:{{LineHeight}};color:{{TextFontColor}}"></textarea>
 </view>

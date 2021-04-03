@@ -73,6 +73,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
-  }
+    //失去焦点时，获取输入内容
+    TextAreaValue(e){
+      let textvalue = e.detail.value
+      this.triggerEvent('textAreaValue', {textvalue});
+    }
+  },
 })

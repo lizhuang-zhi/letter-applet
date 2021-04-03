@@ -1,5 +1,8 @@
 <!-- 按钮盒子 -->
-<view class="btn-box" style="margin:{{BtnMargin}};justify-content:{{BtnStyle}}" bindtap="clickBtn" data-BtnText="{{BtnText}}" data-BtnColor="{{BtnColor}}" data-BtnBackColor="{{BtnBackColor}}"> 
+<view class="btn-box" style="margin:{{BtnMargin}};justify-content:{{BtnStyle}}" bindtap="clickBtn"
+  data-BtnText="{{BtnText}}" data-BtnColor="{{BtnColor}}" data-BtnBackColor="{{BtnBackColor}}">
   <!-- 按钮 -->
-  <view class="btn" style="width:{{BtnWidth}};height:{{BtnHeight}};border-radius:{{BtnRadius}};line-height:{{LineHeight}};background-color:{{BtnBackColor}};color:{{BtnColor}};font-size:{{BtnFontSize + 'rpx'}};letter-spacing: {{BtnFontLetterSpacing + 'rpx'}};border: {{btnBorder}}">{{BtnText}}</view>
+  <view class="btn"
+    style="width:{{BtnWidth}};height:{{BtnHeight}};border-radius:{{BtnRadius}};line-height:{{LineHeight}};background-color:{{BtnBackColor}};color:{{BtnColor}};font-size:{{BtnFontSize + 'rpx'}};letter-spacing: {{BtnFontLetterSpacing + 'rpx'}};border: {{btnBorder}}">
+    {{BtnText}}</view>
 </view>

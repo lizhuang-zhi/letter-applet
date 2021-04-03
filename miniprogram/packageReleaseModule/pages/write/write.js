@@ -6,13 +6,22 @@ Page({
    */
   data: {
     //选择的类型
-    chooseType:''
+    chooseType:'',
+    //用户输入的内容
+    textValue:''
   },
-
+  //获取用户输入的内容
+  getTextValue(e){
+    let textvalue = e.detail.textvalue;
+    this.setData({
+      textValue:textvalue
+    })
+  },
   // 跳转标签选择页面
-  ToChooseTag() {
+  ToChooseTag(e) {
+    let subvalue = e.currentTarget.dataset.value;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/lettertype/lettertype',
+      url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue,
     })
   },
 
@@ -24,8 +33,6 @@ Page({
     this.setData({
       chooseType:options.type
     })
-    console.log(this.data.chooseType);
-
   },
 
   /**
