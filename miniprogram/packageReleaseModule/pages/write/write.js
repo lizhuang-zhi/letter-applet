@@ -21,8 +21,10 @@ Page({
   ToChooseTag(e) {
     // 获取输入内容
     let subvalue = e.currentTarget.dataset.value;
+    // 获取类型选择
+    let chooseType = this.data.chooseType;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue,
+      url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue + '&type=' + chooseType,
     })
   },
 
@@ -31,9 +33,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取选择类型
     this.setData({
       chooseType:options.type
     })
+    console.log(this.data.chooseType);
   },
 
   /**

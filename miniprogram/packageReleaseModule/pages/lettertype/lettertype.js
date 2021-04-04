@@ -19,6 +19,12 @@ let selectArr = [];
 let tools = require('../../utils/tools');
 // 引入数据接口
 let requestData = require('../../../utils/request');
+// 单选框显示内容
+let swithArr = [
+  {isShow: true, tit: '允许收录到解忧信箱', cont: '保存历史足迹'},
+  {isShow: true, tit: '允许公开日记', cont: '开放自我心路'},
+  {isShow: false}
+]
 Page({
 
   /**
@@ -184,7 +190,9 @@ Page({
     /* 
      ************ 提交日记 *************
     */
-
+   requestData.lettertypeDiarySend().then(res => {
+     
+   })
 
     /* 
      ************ 提交吐槽 *************
@@ -205,6 +213,22 @@ Page({
     this.setData({
       inputValue: options.subvalue
     })
+
+    // 获取用户选择类型
+    let type = options.type;
+    if(type == '解忧') {
+      this.setData({
+        swithObj: swithArr[0] 
+      })
+    }else if(type == '日记') {
+      this.setData({
+        swithObj: swithArr[1] 
+      })
+    }else if(type == '吐槽') {
+      this.setData({
+        swithObj: swithArr[2] 
+      })
+    }
 
   },
 

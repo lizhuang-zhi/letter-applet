@@ -31,6 +31,10 @@ Page({
     this.setData({
       chooseType: options.type
     })
+
+    // 用户选择类型
+    let type = options.type;
+    console.log(type);
   },
 
   /**

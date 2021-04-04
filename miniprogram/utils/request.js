@@ -188,6 +188,31 @@ let requestData = {
         }
       })
     })
+  },
+  // 保存日记
+  lettertypeDiarySend(diaryObj) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        url: apiUrl.getLettertypeDiarySend(),
+        data: {
+          content: diaryObj.content,
+          openId: openId,
+          penName: diaryObj.penName,
+          state: diaryObj.state,
+          weather: diaryObj.weather
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

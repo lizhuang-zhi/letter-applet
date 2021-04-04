@@ -44,7 +44,9 @@
 
 
   <!-- 是否收录选择开关 -->
-  <keo-switch-row></keo-switch-row>
+  <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}'></keo-switch-row>
+
+  <!-- 按钮部分 -->
   <view class="btn-part">
     <!-- 确认按钮 -->
     <keo-check-button BtnText="确认提交" BtnBackColor="#F0934F" bindtap="ConfirmSend"></keo-check-button>
