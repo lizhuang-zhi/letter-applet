@@ -52,6 +52,9 @@ const SquareDiary = prefix + '/diary/getAllDiary';
 const SquareDiaryDetail = prefix + '/diary/getDetailForDiary'; 
 
 
+// 保存信件 
+const LettertypeLetterSend = prefix + '/letter/send';
+
 // 返回对象
 let url = {
   // 首页美文
@@ -89,7 +92,12 @@ let url = {
   // 广场日记具体内容
   getSquareDiaryDetail() {
     return SquareDiaryDetail;
+  },
+  // 保存信件
+  getLettertypeLetterSend() {
+    return LettertypeLetterSend;
   }
+
 
 
 

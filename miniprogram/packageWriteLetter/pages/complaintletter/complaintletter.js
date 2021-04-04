@@ -18,6 +18,8 @@ let commentPerInfo = {
 let commentPageNum = 1;
 // 赋值判断是否为最后一页评论
 let isLastPageNum = null;
+// 全局变量（判断用户登录）
+let app = getApp();
 Page({
 
   /**
@@ -225,6 +227,12 @@ Page({
     this.setData({
       id: options.id
     })
+
+    // 获取用户信息
+    app.getUserInfo().then(res => {
+      console.log(res);
+    })
+    console.log('获取的openId为 ---> ' + app.globalData.openid);
   },
 
   /**

@@ -132,7 +132,6 @@ let requestData = {
         url: apiUrl.getComplainletterSendComment(),
         data: {
           content: commentObj.content,
-          id: commentObj.id,
           openId: commentObj.openId,
           sgId: commentObj.sgId,
           state: commentObj.state
@@ -153,6 +152,33 @@ let requestData = {
         url: apiUrl.getSquareDiaryDetail(),
         data: {
           id: id
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 保存信件
+  lettertypeLetterSend(letterObj) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        url: apiUrl.getLettertypeLetterSend(),
+        data: {
+          content: letterObj.content,
+          openId: openId,
+          penName: letterObj.penName,
+          releaseTime: letterObj.releaseTime,
+          stampUrl: letterObj.stampUrl,
+          state: letterObj.state,
+          tapIds: letterObj.tapIds
         },
         success: res => {
           resolve(res)

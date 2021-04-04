@@ -17,6 +17,8 @@ let selectArr = [];
 
 // 引入工具类
 let tools = require('../../utils/tools');
+// 引入数据接口
+let requestData = require('../../../utils/request');
 Page({
 
   /**
@@ -66,11 +68,16 @@ Page({
         BtnColor: initFontColor,
         btnBorder: initTagBorder
       },
-    ]
+    ],
+
+    // 随机笔名
+    initValue: '',
+    // 上一页面用户输入内容
+    inputValue: ''
   },
 
   // 点击按钮
-  bindTap(e) {
+  bindTapTag(e) {
     // 获取点击按钮索引
     let btnIndex = e.currentTarget.dataset.index;
     // 获取按钮标签数组
@@ -113,6 +120,79 @@ Page({
     })
   },
 
+  // 确认提交
+  ConfirmSend() {
+    /* 
+     ************ 保存信件 *************
+    */
+    // 笔名
+    let penName = this.data.initValue;
+    // 内容
+    let content = this.data.inputValue;
+    // 用户openId
+    // 发布时间
+    let releaseTime = new Date();
+    // 邮票图片地址
+    let stampUrl = 'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=254&h=160&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2';
+    // 状态
+    let state = 1;
+    // 	标签id集合
+    let tapIds = selectArr.toString();
+    // 声明对象保存上面的值
+    let letterObj = {
+      penName,
+      content,
+      releaseTime,
+      stampUrl,
+      state,
+      tapIds
+    }
+    requestData.lettertypeLetterSend(letterObj).then(res => {
+      console.log(res.data);
+
+      return new Promise((resolve, reject) => {
+        // 发布返回信息
+        let resCode = res.data.resultCode;
+        if (resCode == 200) {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'none',
+            duration: 1000,
+            image: '../../images/confirm.png'
+          });
+          resolve('success');
+        } else {
+          wx.showToast({
+            title: '服务器开了个小差',
+            icon: 'none'
+          })
+          reject('error');
+        }
+      })
+
+    }).then(res => {
+      if (res == 'success') {
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        }, 1000)
+      }
+    })
+
+
+    /* 
+     ************ 提交日记 *************
+    */
+
+
+    /* 
+     ************ 提交吐槽 *************
+    */
+
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -121,6 +201,11 @@ Page({
     this.setData({
       initValue: '酒醉的蝴蝶'
     })
+    // 获取上一个页面的输入内容
+    this.setData({
+      inputValue: options.subvalue
+    })
+
   },
 
   /**

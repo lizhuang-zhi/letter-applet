@@ -2,6 +2,8 @@
 let requestData = require('../../../utils/request');
 const tools = require('../../../utils/timeTools');
 let timeTools = require('../../../utils/timeTools');
+// 全局变量（判断用户登录）
+let app = getApp();
 Page({
 
   /**
@@ -32,7 +34,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 初始化数据
     this.Start(options.id);
+
+    // 获取用户信息
+    app.getUserInfo().then(res => {
+      console.log(res);
+    })
+    console.log('获取的openId为 ---> ' + app.globalData.openid);
   },
 
   /**

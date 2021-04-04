@@ -19,6 +19,7 @@ Page({
   },
   // 跳转标签选择页面
   ToChooseTag(e) {
+    // 获取输入内容
     let subvalue = e.currentTarget.dataset.value;
     wx.navigateTo({
       url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue,

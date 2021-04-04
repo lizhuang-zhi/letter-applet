@@ -25,9 +25,6 @@ App({
     // this.globalData = {}
   },
 
-
-
-
   // 获取用户信息 与 openid
   getUserInfo: function (cb) {
     var that = this
@@ -40,8 +37,8 @@ App({
         //调用登录接口
         wx.login({
           success: function (res) {
-            // console.log(res);
-            var code = res.code
+            console.log(res);
+            let code = res.code
 
             // 获取用户信息
             wx.getUserInfo({
@@ -51,12 +48,15 @@ App({
                 that.globalData.userInfo = res.userInfo
                 typeof cb == "function" && cb(that.globalData.userInfo)
 
+                //获取openid接口
                 wx.request({
-                  //获取openid接口
-                  url: 'https://rayss.host/user/getKey' + code,
-                  data: {},
+                  url: 'https://rayss.host/user/getKey',
+                  data: {
+                    jsCode: code
+                  },
                   method: 'GET',
                   success: function (res) {
+                    console.log(res.data.message);
                     console.log('app.js中的返回的openid： ' + res.data.openid)
                     that.globalData.openid = res.data.openid
                     resolve('success')

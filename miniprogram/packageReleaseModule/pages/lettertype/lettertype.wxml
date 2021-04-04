@@ -38,7 +38,7 @@
       <keo-check-button wx:for="{{tagArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
         BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
         BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
-        bindtap="bindTap" data-index="{{index}}"></keo-check-button>
+        bindtap="bindTapTag" data-index="{{index}}"></keo-check-button>
     </yeo-frame>
   </view>
 
@@ -47,6 +47,6 @@
   <keo-switch-row></keo-switch-row>
   <view class="btn-part">
     <!-- 确认按钮 -->
-    <keo-check-button BtnText="确认提交" BtnBackColor="#F0934F"></keo-check-button>
+    <keo-check-button BtnText="确认提交" BtnBackColor="#F0934F" bindtap="ConfirmSend"></keo-check-button>
   </view>
 </view>
