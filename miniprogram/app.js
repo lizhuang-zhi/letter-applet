@@ -1,11 +1,11 @@
 //app.js
 App({
   // 定义全局变量
-  globalData: { 
+  globalData: {
     openid: null,
-    token: '', 
+    token: '',
     userInfo: null
-  }, 
+  },
 
   onLaunch: function () {
     if (!wx.cloud) {
@@ -23,7 +23,26 @@ App({
 
     console.log(this.globalData);
     // this.globalData = {}
+
+
+
   },
+
+  /* 
+    创建webSocket连接
+  */
+  connectWebSocket() {
+    wx.connectSocket({
+      url: 'wss://rayss.host/reply/' + this.globalData.openid,
+      success: res => {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
+  },
+
 
   // 获取用户信息 与 openid
   getUserInfo: function (cb) {
@@ -31,6 +50,7 @@ App({
     // 使用Promise完成同步！！
     return new Promise(function (resolve, reject) {
 
+      // 已获取用户信息
       if (that.globalData.userInfo) {
         typeof cb == "function" && cb(that.globalData.userInfo)
       } else {
@@ -56,9 +76,13 @@ App({
                   },
                   method: 'GET',
                   success: function (res) {
-                    console.log(res.data.message);
-                    console.log('app.js中的返回的openid： ' + res.data.openid)
-                    that.globalData.openid = res.data.openid
+                    console.log('app.js中的返回的openid： ' + res.data.data);
+                    // 获取返回数据
+                    let backInfo = JSON.parse(res.data.data);
+                    // 将openid赋值全局变量
+                    that.globalData.openid = backInfo.openid;
+                    // 连接webSocket
+                    that.connectWebSocket();
                     resolve('success')
                   },
                   fail: res => {
@@ -73,8 +97,8 @@ App({
 
           },
         })
-      }
 
+      }
 
     })
 
