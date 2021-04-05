@@ -426,6 +426,64 @@ Page({
     /* 
      ************ 提交吐槽 *************
      */
+    // 吐槽人头像
+    let avatarUrl = 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1950846641,3729028697&fm=26&gp=0.jpg';
+    // 内容
+    let content = this.data.inputValue;
+    // 发布时间
+    let date = new Date();
+    // 吐槽评论数量 ？？？？？？？？？？？？？
+    let number = 666;
+    // 用户openId
+    // 笔名
+    let penName = this.data.initValue;
+    // 状态
+    let state = 0;
+    /* 
+      天气 (这里需要第二版本更新时添加)
+    */
+    // let weather = selectComplainWeatherArr.toString();
+    // 吐槽描述
+    let title = content.substring(0,'。'.indexOf(content) == -1 ? 30 : '。'.indexOf(content));
+    // 日记对象
+    let complainObj = {
+      avatarUrl,
+      date,
+      penName,
+      content,
+      state,
+      title
+    };
+    requestData.lettertypeComplainSend(complainObj).then(res => {
+      console.log(res);
+      return new Promise((resolve, reject) => {
+        // 获取提交返回信息
+        let msgCode = res.data.resultCode;
+        if (msgCode == 200) {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'none',
+            duration: 1000,
+            image: '../../images/confirm.png'
+          });
+          resolve('success');
+        } else {
+          wx.showToast({
+            title: '服务器开了个小差',
+            icon: 'none'
+          })
+          reject('error');
+        }
+      })
+    }).then(res => {
+      if (res == 'success') {
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        }, 1000)
+      }
+    })
 
 
   },

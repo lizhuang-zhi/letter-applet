@@ -213,6 +213,34 @@ let requestData = {
         }
       })
     })
+  },
+  // 保存吐槽
+  lettertypeComplainSend(complainObj) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        url: apiUrl.getLettertypeDiarySend(),
+        data: {
+          avatarUrl: complainObj.avatarUrl,
+          content: complainObj.content,
+          date: complainObj.date,
+          number: complainObj.number,
+          openId: openId,
+          penName: complainObj.penName,
+          state: complainObj.state,
+          title: complainObj.title,
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

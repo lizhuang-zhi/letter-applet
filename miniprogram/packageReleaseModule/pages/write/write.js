@@ -23,9 +23,23 @@ Page({
     let subvalue = e.currentTarget.dataset.value;
     // 获取类型选择
     let chooseType = this.data.chooseType;
-    wx.navigateTo({
-      url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue + '&type=' + chooseType,
-    })
+    if(subvalue.length == 0) {
+      wx.showToast({
+        title: '请输入内容',
+        icon: 'none',
+        image: '../../images/input.png'
+      })
+    }else if(subvalue.length < 50){
+      wx.showToast({
+        title: '多写几句吧',
+        icon: 'none',
+      })
+    }else {
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue + '&type=' + chooseType,
+      })
+    }
+   
   },
 
 
