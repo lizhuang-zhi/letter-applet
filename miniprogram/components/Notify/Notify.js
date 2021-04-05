@@ -41,6 +41,11 @@ Component({
       type: String,
       value: '2021-3-30'
     },
+    //时间下边距
+    TimeMargin:{
+      type:String,
+      value:'26rpx'
+    },
 
     //图片宽度
     ImgWidth: {

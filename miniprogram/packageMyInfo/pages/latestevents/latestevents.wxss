@@ -1,1 +1,3 @@
-/* packageMyInfo/pages/latestevents/latestevents.wxss */
+.box{
+  margin-bottom:60rpx;
+}

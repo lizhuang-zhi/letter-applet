@@ -1,1 +1,3 @@
-/* packageMyInfo/pages/officialnews/officialnews.wxss */
+.box{
+  margin-bottom:60rpx;
+}

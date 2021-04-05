@@ -1,7 +1,7 @@
 <!-- 盒子外 -->
 <view class="box-out" style="width:{{BoxWidth}};margin:{{BoxMargin}};">
   <!-- 时间 -->
-  <view class="time" style="font-size:{{TimeSize}};color:{{TimeColor}};text-align:center">{{SendTime}}</view>
+  <view class="time" style="font-size:{{TimeSize}};color:{{TimeColor}};text-align:center;margin-bottom:{{TimeMargin}}">{{SendTime}}</view>
   <!-- 盒子 -->
   <view class="box">
     <!-- 图片盒子 -->

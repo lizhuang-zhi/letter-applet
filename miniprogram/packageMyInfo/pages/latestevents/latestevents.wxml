@@ -1,2 +1,8 @@
-<keo-notify ContentText="记录生活，记录美好事物，记录感动，就写在公开日记中吧 —— 公开日记" Img="https://s1.ax1x.com/2020/10/24/BVQuVS.jpg"></keo-notify>
-<keo-notify ContentText="生如逆旅，人生不过是登山涉水，途中艰辛，悄然而已，累了，倦了，抱怨吐槽两句当作下酒菜 —— 吐槽大会" Img="https://s1.ax1x.com/2020/10/24/BVq2nS.jpg" SendTime="2021-4-5"></keo-notify>
+<view class="box">
+  <keo-notify ContentText="记录生活，记录美好事物，记录感动，就写在公开日记中吧 —— 公开日记" Img="https://s1.ax1x.com/2020/10/24/BVQuVS.jpg">
+  </keo-notify>
+</view>
+<view class="box">
+  <keo-notify ContentText="生如逆旅，人生不过是登山涉水，途中艰辛，悄然而已，累了，倦了，抱怨吐槽两句当作下酒菜 —— 吐槽大会"
+    Img="https://s1.ax1x.com/2020/10/24/BVq2nS.jpg" SendTime="2021-4-5"></keo-notify>
+</view>
