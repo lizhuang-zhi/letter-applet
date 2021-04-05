@@ -96,7 +96,17 @@ Component({
     //发布者 文字内容
     promulgatorText:{
       type:String,
-      value:'社区推荐'
+      value:'官方推荐'
+    },
+    //发布者文字大小
+    ProorSize:{
+      type:String,
+      value:'28rpx'
+    },
+    //发布者文字颜色
+    ProorColor:{
+      type:String,
+      value:'grey'
     },
     //发布者上边距
     ProTopMargin:{

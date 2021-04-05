@@ -21,7 +21,7 @@
         <image style="width:{{ProImgSrcWidth}};height:{{ProImgSrcHeight}};border-radius:50%;" class="pro-imgsrc" src="{{ProImgSrc}}">
         </image>
         <!-- 发布人文字 -->
-        <view class="proor" style="padding-left:10rpx">{{promulgatorText}}</view>
+        <view class="proor" style="padding-left:10rpx;font-size:{{ProorSize}};color:{{ProorColor}}">{{promulgatorText}}</view>
       </view>
     </view>
 
