@@ -1,5 +1,5 @@
 <!-- 外框 -->
-<view class="letter-shell">
+<view class="letter-shell" bindtap="ToReplyLetter">
   <!-- 内部 -->
   <view class="letter-inner" style="height:{{InnerHeight}};background:{{bgColor}};padding:{{InnerPadding}};border-radius:{{InnerRadius}}">
     <!-- 收件人内容 -->

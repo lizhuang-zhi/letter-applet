@@ -3,6 +3,7 @@
 <keo-write-area bind:textAreaValue="getTextValue" wx:elif="{{chooseType=='解忧'}}" Holder="请诉说你的烦恼,小伙伴会为你解答">
 </keo-write-area>
 <keo-write-area bind:textAreaValue="getTextValue" wx:elif="{{chooseType=='吐槽'}}"></keo-write-area>
+<keo-write-area bind:textAreaValue="getTextValue" wx:elif="{{chooseType=='回信'}}" Holder="给ta回信，再次为ta解忧吧"></keo-write-area>
 
 <!-- 按钮 -->
 <view class="btn-part">

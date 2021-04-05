@@ -117,6 +117,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 跳转到回信页面
+    ToReplyLetter(){
+      wx.navigateTo({
+        url: '/packageMyInfo/pages/replyletter/replyletter',
+      })
+    }
   }
 })
