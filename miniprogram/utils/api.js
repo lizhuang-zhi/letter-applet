@@ -61,6 +61,8 @@ const LettertypeDiarySend = prefix + '/diary/saveDiary';
 // 保存吐槽 
 const LettertypeComplainSend = prefix + '/spitting-grooves/insert';
 
+//信箱页面回复信件
+const MailboxReplylist = prefix + '/letter/reply';
 
 // 返回对象
 let url = {
@@ -111,13 +113,11 @@ let url = {
   // 保存吐槽 
   getLettertypeComplainSend() {
     return LettertypeComplainSend;
+  },
+  //信箱页面回复信件
+  getMailboxReplylist(){
+    return MailboxReplylist;
   }
-
-
-
-
-
-
 
 }
 

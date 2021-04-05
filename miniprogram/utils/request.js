@@ -241,6 +241,31 @@ let requestData = {
         }
       })
     })
+  },
+  //信箱页面回复信件
+  mailboxReplylist(replyObj){
+    return new Promise((resolve,reject) => {
+      wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        url: apiUrl.getMailboxReplylist(),
+        data: {
+          letterId:replyObj.letterId,
+          message:replyObj.message,
+          penName:replyObj.penName,
+          recipient:replyObj.recipient,
+          sender:replyObj.sender
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 
