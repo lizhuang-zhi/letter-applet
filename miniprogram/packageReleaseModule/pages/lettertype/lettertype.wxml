@@ -35,16 +35,30 @@
     </view>
     <!-- 标签选择 -->
     <yeo-frame>
-      <keo-check-button wx:for="{{tagArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
+      <!-- 解忧 -->
+      <keo-check-button wx:if="{{type == '解忧'}}" wx:for="{{tagArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
         BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
         BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
-        bindtap="bindTapTag" data-index="{{index}}"></keo-check-button>
+        bindtap="bindTapSorrowTag" data-index="{{index}}"></keo-check-button>
+
+      <!-- 日记 -->
+      <keo-check-button wx:if="{{type == '日记'}}"  wx:for="{{weatherDiaryArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
+        BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
+        BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
+        bindtap="bindTapDiaryWeather" data-index="{{index}}"></keo-check-button>
+
+      <!-- 吐槽 -->
+      <keo-check-button wx:if="{{type == '吐槽'}}" wx:for="{{weatherComplainArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
+        BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
+        BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
+        bindtap="bindTapComplainWeather" data-index="{{index}}"></keo-check-button>
     </yeo-frame>
   </view>
 
 
   <!-- 是否收录选择开关 -->
-  <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}'></keo-switch-row>
+  <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}' bind:switchevent='switchEvent'>
+  </keo-switch-row>
 
   <!-- 按钮部分 -->
   <view class="btn-part">

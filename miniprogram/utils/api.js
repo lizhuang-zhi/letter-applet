@@ -58,6 +58,9 @@ const LettertypeLetterSend = prefix + '/letter/send';
 // 保存日记
 const LettertypeDiarySend = prefix + '/diary/saveDiary';
 
+// 保存吐槽 
+const LettertypeComplainSend = prefix + '/spitting-grooves/insert';
+
 
 // 返回对象
 let url = {
@@ -104,6 +107,10 @@ let url = {
   // 保存日记
   getLettertypeDiarySend() {
     return LettertypeDiarySend;
+  },
+  // 保存吐槽 
+  getLettertypeComplainSend() {
+    return LettertypeComplainSend;
   }
 
 

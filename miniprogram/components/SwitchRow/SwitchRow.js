@@ -107,6 +107,7 @@ Component({
           switchdata:switchValue
         })
       }
+      this.triggerEvent('switchevent',{switchValue})
     },
 
   }

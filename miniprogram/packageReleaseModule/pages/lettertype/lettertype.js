@@ -12,26 +12,39 @@ const chooseTagColor = '#F0934F';
 // 标签选中时的边框
 const chooseTagBorder = '1rpx solid ' + chooseTagColor;
 
-// 声明数组(存储选择的标签，最多三个)
-let selectArr = [];
+// 声明解忧标签数组(存储选择的标签，最多三个)
+let selectSorrowArr = [];
+// 声明日记天气数组(存储选择的标签，最多一个)
+let selectDiaryWeatherArr = [];
+// 声明吐槽天气数组(存储选择的标签，最多一个)
+let selectComplainWeatherArr = [];
 
 // 引入工具类
 let tools = require('../../utils/tools');
 // 引入数据接口
 let requestData = require('../../../utils/request');
 // 单选框显示内容
-let swithArr = [
-  {isShow: true, tit: '允许收录到解忧信箱', cont: '保存历史足迹'},
-  {isShow: true, tit: '允许公开日记', cont: '开放自我心路'},
-  {isShow: false}
-]
+let swithArr = [{
+    isShow: true,
+    tit: '允许收录到解忧信箱',
+    cont: '保存历史足迹'
+  },
+  {
+    isShow: true,
+    tit: '允许公开日记',
+    cont: '开放自我心路'
+  },
+  {
+    isShow: false
+  }
+];
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    // 标签数组
+    // 解忧标签数组
     tagArr: [{
         tagName: '校园',
         btnBgColor: initTagBgColor,
@@ -75,33 +88,90 @@ Page({
         btnBorder: initTagBorder
       },
     ],
+    // 日记天气数组
+    weatherDiaryArr: [{
+        tagName: '晴天',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '多云',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '下雨',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '阴天',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      }
+    ],
+    // 吐槽天气数组
+    weatherComplainArr: [{
+        tagName: '晴天',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '多云',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '下雨',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      },
+      {
+        tagName: '阴天',
+        btnBgColor: initTagBgColor,
+        BtnColor: initFontColor,
+        btnBorder: initTagBorder
+      }
+    ],
 
     // 随机笔名
     initValue: '',
     // 上一页面用户输入内容
-    inputValue: ''
+    inputValue: '',
+    // 选择类型
+    type: '',
+    // 获取开关当前类型
+    switchVal: null
+
   },
 
-  // 点击按钮
-  bindTapTag(e) {
+  // 解忧标签选择点击按钮
+  bindTapSorrowTag(e) {
     // 获取点击按钮索引
     let btnIndex = e.currentTarget.dataset.index;
     // 获取按钮标签数组
     let tagArr = this.data.tagArr;
-    if (tagArr[btnIndex].btnBorder == initTagBorder && selectArr.length < 3) {
+    if (tagArr[btnIndex].btnBorder == initTagBorder && selectSorrowArr.length < 3) {
       // 选中时边框颜色
       tagArr[btnIndex].btnBgColor = chooseTagBgColor;
       tagArr[btnIndex].BtnColor = chooseTagColor;
       tagArr[btnIndex].btnBorder = chooseTagBorder;
       // 存入数组
-      selectArr.push(tagArr[btnIndex].tagName);
-    } else if (selectArr.indexOf(tagArr[btnIndex].tagName) != -1) {
+      selectSorrowArr.push(tagArr[btnIndex].tagName);
+    } else if (selectSorrowArr.indexOf(tagArr[btnIndex].tagName) != -1) {
       // 边框为未选中时颜色
       tagArr[btnIndex].btnBgColor = initTagBgColor;
       tagArr[btnIndex].BtnColor = initFontColor;
       tagArr[btnIndex].btnBorder = initTagBorder;
       // 删除元素
-      selectArr.splice(selectArr.indexOf(tagArr[btnIndex].tagName), 1);
+      selectSorrowArr.splice(selectSorrowArr.indexOf(tagArr[btnIndex].tagName), 1);
     } else {
       wx.showToast({
         title: '最多只能选择三个标签',
@@ -111,6 +181,74 @@ Page({
 
     this.setData({
       tagArr: this.data.tagArr
+    })
+
+
+  },
+
+  // 日记天气选择点击按钮
+  bindTapDiaryWeather(e) {
+    // 获取点击按钮索引
+    let btnIndex = e.currentTarget.dataset.index;
+    // 获取按钮标签数组
+    let weatherDiaryArr = this.data.weatherDiaryArr;
+    if (weatherDiaryArr[btnIndex].btnBorder == initTagBorder && selectDiaryWeatherArr.length < 1) {
+      // 选中时边框颜色
+      weatherDiaryArr[btnIndex].btnBgColor = chooseTagBgColor;
+      weatherDiaryArr[btnIndex].BtnColor = chooseTagColor;
+      weatherDiaryArr[btnIndex].btnBorder = chooseTagBorder;
+      // 存入数组
+      selectDiaryWeatherArr.push(weatherDiaryArr[btnIndex].tagName);
+    } else if (selectDiaryWeatherArr.indexOf(weatherDiaryArr[btnIndex].tagName) != -1) {
+      // 边框为未选中时颜色
+      weatherDiaryArr[btnIndex].btnBgColor = initTagBgColor;
+      weatherDiaryArr[btnIndex].BtnColor = initFontColor;
+      weatherDiaryArr[btnIndex].btnBorder = initTagBorder;
+      // 删除元素
+      selectDiaryWeatherArr.splice(selectDiaryWeatherArr.indexOf(weatherDiaryArr[btnIndex].tagName), 1);
+    } else {
+      wx.showToast({
+        title: '最多只能选择一种天气',
+        icon: 'none'
+      })
+    }
+
+    this.setData({
+      weatherDiaryArr: this.data.weatherDiaryArr
+    })
+
+
+  },
+
+  // 解忧天气选择点击按钮
+  bindTapComplainWeather(e) {
+    // 获取点击按钮索引
+    let btnIndex = e.currentTarget.dataset.index;
+    // 获取按钮标签数组
+    let weatherComplainArr = this.data.weatherComplainArr;
+    if (weatherComplainArr[btnIndex].btnBorder == initTagBorder && selectComplainWeatherArr.length < 1) {
+      // 选中时边框颜色
+      weatherComplainArr[btnIndex].btnBgColor = chooseTagBgColor;
+      weatherComplainArr[btnIndex].BtnColor = chooseTagColor;
+      weatherComplainArr[btnIndex].btnBorder = chooseTagBorder;
+      // 存入数组
+      selectComplainWeatherArr.push(weatherComplainArr[btnIndex].tagName);
+    } else if (selectComplainWeatherArr.indexOf(weatherComplainArr[btnIndex].tagName) != -1) {
+      // 边框为未选中时颜色
+      weatherComplainArr[btnIndex].btnBgColor = initTagBgColor;
+      weatherComplainArr[btnIndex].BtnColor = initFontColor;
+      weatherComplainArr[btnIndex].btnBorder = initTagBorder;
+      // 删除元素
+      selectComplainWeatherArr.splice(selectComplainWeatherArr.indexOf(weatherComplainArr[btnIndex].tagName), 1);
+    } else {
+      wx.showToast({
+        title: '最多只能选择一种天气',
+        icon: 'none'
+      })
+    }
+
+    this.setData({
+      weatherComplainArr: this.data.weatherComplainArr
     })
 
 
@@ -126,11 +264,36 @@ Page({
     })
   },
 
+  // 获取开关选择值
+  switchEvent(e) {
+    this.setData({
+      switchVal: e.detail.switchValue
+    })
+  },
+
   // 确认提交
   ConfirmSend() {
+    // 获取类型
+    let type = this.data.type;
+    if (type == '解忧') {
+      // 提交解忧信件
+      this.ConfirmSendSorrow();
+    } else if (type == '日记') {
+      // 提交日记信件
+      this.ConfirmSendDiary();
+    } else if (type == '吐槽') {
+      // 提交吐槽
+      this.ConfirmSendComplain();
+    }
+
+
+  },
+
+  // 提交解忧信件
+  ConfirmSendSorrow() {
     /* 
      ************ 保存信件 *************
-    */
+     */
     // 笔名
     let penName = this.data.initValue;
     // 内容
@@ -143,7 +306,7 @@ Page({
     // 状态
     let state = 1;
     // 	标签id集合
-    let tapIds = selectArr.toString();
+    let tapIds = selectSorrowArr.toString();
     // 声明对象保存上面的值
     let letterObj = {
       penName,
@@ -152,51 +315,117 @@ Page({
       stampUrl,
       state,
       tapIds
-    }
-    requestData.lettertypeLetterSend(letterObj).then(res => {
-      console.log(res.data);
+    };
 
-      return new Promise((resolve, reject) => {
-        // 发布返回信息
-        let resCode = res.data.resultCode;
-        if (resCode == 200) {
-          wx.showToast({
-            title: '发布成功',
-            icon: 'none',
-            duration: 1000,
-            image: '../../images/confirm.png'
-          });
-          resolve('success');
-        } else {
-          wx.showToast({
-            title: '服务器开了个小差',
-            icon: 'none'
-          })
-          reject('error');
+    // 标签选择不能为空
+    if (selectSorrowArr.length == 0) {
+      wx.showToast({
+        title: '请选择标签',
+        icon: 'none'
+      })
+    } else {
+      requestData.lettertypeLetterSend(letterObj).then(res => {
+        console.log(res.data);
+
+        return new Promise((resolve, reject) => {
+          // 发布返回信息
+          let resCode = res.data.resultCode;
+          if (resCode == 200) {
+            wx.showToast({
+              title: '发布成功',
+              icon: 'none',
+              duration: 1000,
+              image: '../../images/confirm.png'
+            });
+            resolve('success');
+          } else {
+            wx.showToast({
+              title: '服务器开了个小差',
+              icon: 'none'
+            })
+            reject('error');
+          }
+        })
+
+      }).then(res => {
+        if (res == 'success') {
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }, 1000)
         }
       })
+    }
 
-    }).then(res => {
-      if (res == 'success') {
-        setTimeout(() => {
-          wx.switchTab({
-            url: '/pages/index/index',
-          })
-        }, 1000)
-      }
-    })
+  },
 
-
+  // 提交日记
+  ConfirmSendDiary() {
     /* 
      ************ 提交日记 *************
-    */
-   requestData.lettertypeDiarySend().then(res => {
-     
-   })
+     */
+    // 笔名
+    let penName = this.data.initValue;
+    // 内容
+    let content = this.data.inputValue;
+    // 用户openId
+    // 状态
+    let state = this.data.switchVal == true ? 1 : 0;
+    // 天气 
+    let weather = selectDiaryWeatherArr.toString();
+    // 日记对象
+    let diaryObj = {
+      penName,
+      content,
+      state,
+      weather,
+    }
+    if (selectDiaryWeatherArr.length == 0) {
+      wx.showToast({
+        title: '请选择标签',
+        icon: 'none'
+      })
+    } else {
+      requestData.lettertypeDiarySend(diaryObj).then(res => {
+        console.log(res);
+        return new Promise((resolve, reject) => {
+          // 获取提交返回信息
+          let msgCode = res.data.resultCode;
+          if (msgCode == 200) {
+            wx.showToast({
+              title: '发布成功',
+              icon: 'none',
+              duration: 1000,
+              image: '../../images/confirm.png'
+            });
+            resolve('success');
+          } else {
+            wx.showToast({
+              title: '服务器开了个小差',
+              icon: 'none'
+            })
+            reject('error');
+          }
+        })
+      }).then(res => {
+        if (res == 'success') {
+          setTimeout(() => {
+            wx.switchTab({
+              url: '/pages/index/index',
+            })
+          }, 1000)
+        }
+      })
+    }
 
+  },
+
+  // 提交吐槽 
+  ConfirmSendComplain() {
     /* 
      ************ 提交吐槽 *************
-    */
+     */
 
 
   },
@@ -216,20 +445,26 @@ Page({
 
     // 获取用户选择类型
     let type = options.type;
-    if(type == '解忧') {
+    this.setData({
+      type: type
+    })
+    if (type == '解忧') {
       this.setData({
-        swithObj: swithArr[0] 
+        swithObj: swithArr[0],
       })
-    }else if(type == '日记') {
+    } else if (type == '日记') {
       this.setData({
-        swithObj: swithArr[1] 
+        swithObj: swithArr[1],
       })
-    }else if(type == '吐槽') {
+    } else if (type == '吐槽') {
       this.setData({
-        swithObj: swithArr[2] 
+        swithObj: swithArr[2],
       })
     }
 
+    console.log(selectSorrowArr);
+    console.log(selectDiaryWeatherArr);
+    console.log(selectComplainWeatherArr);
   },
 
   /**
@@ -249,15 +484,16 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
+  onHide: function () {},
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    // 置空选择数组
+    selectSorrowArr = [];
+    selectDiaryWeatherArr = [];
+    selectComplainWeatherArr = [];
   },
 
   /**
