@@ -1,1 +1,12 @@
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
+</view>
+
+
+
+
+
+
+
 <keo-select-mode></keo-select-mode>

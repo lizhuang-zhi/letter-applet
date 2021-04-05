@@ -57,15 +57,18 @@ App({
         //调用登录接口
         wx.login({
           success: function (res) {
-            console.log(res);
+            // 获取jsCode
             let code = res.code
 
             // 获取用户信息
             wx.getUserInfo({
               success: function (res) {
-                console.log(res.userInfo);
+                /* 
+                  还没授权
+                */
+                console.log(res);
 
-                that.globalData.userInfo = res.userInfo
+                that.globalData.userInfo = res.userInfo;
                 typeof cb == "function" && cb(that.globalData.userInfo)
 
                 //获取openid接口
