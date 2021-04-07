@@ -9,15 +9,18 @@ Page({
     dataList: [{
       imgsrc: "../../images/love.png",
       text: "点赞",
-      picBgColor: "#FBE9E8"
+      picBgColor: "#FBE9E8",
+      notifiNum: 6
     }, {
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
       text: "回信",
-      picBgColor: "#E9F1FE"
+      picBgColor: "#E9F1FE",
+      notifiNum: 23
     }, {
       imgsrc: "../../images/message.png",
       text: "评论",
-      picBgColor: "#E6F8F0"
+      picBgColor: "#E6F8F0",
+      notifiNum: 8
     }],
 
     // loading组件
@@ -91,7 +94,7 @@ Page({
         'pull.isLoading': false,
       })
       console.log('+++++ 刷新完成 +++++')
-    }, 6000)
+    }, 3000)
   },
   // 监听上拉加载更多
   toload(e) {

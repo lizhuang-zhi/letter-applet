@@ -8,6 +8,8 @@
       <!-- 图片 -->
       <view class="block-img-out"
         style="width:{{BlockWidth}};height:{{BlockHeight}};background: {{item.picBgColor}};border-radius: {{BlockRadius + 'rpx'}}">
+        <!-- 通知提示 -->
+        <view class="block-notifi-num">{{item.notifiNum}}</view>
         <image class="block-img" src="{{item.imgsrc}}"></image>
       </view>
       <!-- 文字 -->

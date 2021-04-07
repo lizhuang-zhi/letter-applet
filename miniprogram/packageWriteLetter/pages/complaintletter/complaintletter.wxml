@@ -14,4 +14,4 @@
 
 
 <!-- loading组件 -->
-<yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>
+<yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>

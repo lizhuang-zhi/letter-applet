@@ -15,6 +15,20 @@
 .outer-box .inner-box .FuncBlock .block-img-out {
   padding: 20rpx;
   box-sizing: border-box;
+  position: relative;
+}
+/* 通知提示 */
+.outer-box .inner-box .FuncBlock .block-img-out .block-notifi-num {
+  position: absolute;
+  top: -8rpx;
+  right: -8rpx;
+  background: #EA3F49;
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 23rpx;
+  text-align: center;
 }
 .outer-box .inner-box .FuncBlock .block-img-out .block-img{
   width: 100%;

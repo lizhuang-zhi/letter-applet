@@ -36,16 +36,16 @@
     <!-- 标签选择 -->
     <yeo-frame>
       <!-- 解忧 -->
-      <keo-check-button wx:if="{{type == '解忧'}}" wx:for="{{tagArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
-        BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
-        BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
-        bindtap="bindTapSorrowTag" data-index="{{index}}"></keo-check-button>
+      <keo-check-button wx:if="{{type == '解忧'}}" wx:for="{{tagArr}}" wx:key='index' BtnText="{{item.tagName}}"
+        BtnBackColor="{{item.btnBgColor}}" BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx'
+        BtnWidth='120rpx' BtnFontSize='27' BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap'
+        btnBorder='{{item.btnBorder}}' bindtap="bindTapSorrowTag" data-index="{{index}}"></keo-check-button>
 
       <!-- 日记 -->
-      <keo-check-button wx:if="{{type == '日记'}}"  wx:for="{{weatherDiaryArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
-        BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
-        BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
-        bindtap="bindTapDiaryWeather" data-index="{{index}}"></keo-check-button>
+      <keo-check-button wx:if="{{type == '日记'}}" wx:for="{{weatherDiaryArr}}" wx:key='index' BtnText="{{item.tagName}}"
+        BtnBackColor="{{item.btnBgColor}}" BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx'
+        BtnWidth='120rpx' BtnFontSize='27' BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap'
+        btnBorder='{{item.btnBorder}}' bindtap="bindTapDiaryWeather" data-index="{{index}}"></keo-check-button>
 
       <!-- 吐槽 -->
       <!-- <keo-check-button wx:if="{{type == '吐槽'}}" wx:for="{{weatherComplainArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
@@ -56,8 +56,24 @@
   </view>
 
 
+  <!-- 选择邮票 -->
+  <view class="choose-stamp">
+    <!-- 标题 -->
+    <view class="title-name">
+      <yeo-title title='落款笔名' description='填写属于你的独特笔名'></yeo-title>
+    </view>
+    <!-- 邮票集合 -->
+    <view class="stamp-list">
+      
+    </view>
+
+  </view>
+
+
+
   <!-- 是否收录选择开关 -->
-  <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}' bind:switchevent='switchEvent'>
+  <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}'
+    bind:switchevent='switchEvent'>
   </keo-switch-row>
 
   <!-- 按钮部分 -->
