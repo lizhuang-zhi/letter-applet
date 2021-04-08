@@ -4,50 +4,78 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    //图片集合
-    ImageList:{
-      type:Array,
-      value:[
-        'https://z3.ax1x.com/2021/04/01/cEeKMD.png',
-        'https://z3.ax1x.com/2021/04/01/cEenxO.png',
-        'https://z3.ax1x.com/2021/04/01/cEemRK.png'
-      ]
+    ImageSrc: {
+      type: String,
+      value: 'https://z3.ax1x.com/2021/04/01/cEeKMD.png',
     },
-    //盒子宽度
-    BoxWidth:{
-      type:String,
-      value:'100vw'
+    //选择的模式
+    ChooseType: {
+      type: String,
+      value: '日记'
     },
-    //盒子高度
-    BoxHeight:{
-      type:Number,
-      value:400
+    //选择模式的意译
+    ChooseText: {
+      type: String,
+      value: '记录每一天'
     },
-    //盒子外边距
-    BoxMargin:{
-      type:Number,
-      value:100
+    //选择盒子内边距
+    ChoosePadding: {
+      type: String,
+      value: '20rpx'
     },
+    //选择盒子外边距
+    ChooseMargin: {
+      type: String,
+      value: '60rpx'
+    },
+    //选择盒子圆角
+    ChooseRadius: {
+      type: String,
+      value: '20rpx'
+    },
+
+
     //图片大小 宽度
-    ImgWidth:{
-      type:String,
-      value:'100rpx'
+    ImgWidth: {
+      type: String,
+      value: '140rpx'
     },
     //图片大小 高度
-    ImgHeight:{
-      type:String,
-      value:'100rpx'
+    ImgHeight: {
+      type: String,
+      value: '140rpx'
+    },
+    //文字左padding
+    ContentPadding: {
+      type: String,
+      value: '20rpx'
     },
     //文字颜色
-    TextColor:{
-      type:String,
-      value:'black'
+    TextColor: {
+      type: String,
+      value: 'black'
+    },
+    //文字2颜色
+    Text2Color: {
+      type: String,
+      value: 'grey'
     },
     //文字大小
-    TextSize:{
-      type:String,
-      value:'32rpx'
+    TextSize: {
+      type: String,
+      value: '32rpx'
+    },
+    //文字2大小
+    Text2Size: {
+      type: String,
+      value: '28rpx'
+    },
+    //文字2内边距
+    Text2Padding: {
+      type: String,
+      value: '10rpx'
     }
+
   },
 
   /**
@@ -61,33 +89,23 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    NavTo(e){
-      let index=e.currentTarget.dataset.index;
-      if(index==1){
-        wx.navigateTo({
-          url: '/packageReleaseModule/pages/write/write?type=日记',
-        })
-      }else if(index==2){
-        wx.navigateTo({
-          url: '/packageReleaseModule/pages/attention/attention?type=解忧',
-        })
-      }else if(index==3){
-        wx.navigateTo({
-          url: '/packageReleaseModule/pages/attention/attention?type=吐槽',
-        })
-      }
+    //跳转到书写页面
+    NavTo() {
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/write/write?type=' + this.properties.ChooseType,
+      })
     }
   },
   lifetimes: {
-    attached: function() {
+    attached: function () {
       //获取手机高度
-     let info = wx.getSystemInfoSync();
+      let info = wx.getSystemInfoSync();
       this.setData({
-        BoxHeight:info.windowHeight/2,
-        BoxMargin:info.windowWidth/2
+        BoxHeight: info.windowHeight / 2,
+        BoxMargin: info.windowWidth / 2
       })
     },
-    detached: function() {
+    detached: function () {
       // 在组件实例被从页面节点树移除时执行
     },
   },

@@ -1,12 +1,13 @@
 <!-- 顶部文字 -->
 <view class="top-content-box">
+  <view class="top-title">写信</view>
   <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
 </view>
 
 
-
-
-
-
-
-<keo-select-mode></keo-select-mode>
+<!-- 选择页面 -->
+<view class="choose-type">
+  <keo-select-mode></keo-select-mode>
+  <keo-select-mode ImageSrc='https://z3.ax1x.com/2021/04/01/cEenxO.png' ChooseType='解忧' ChooseText='忧愁只是暂时的'></keo-select-mode>
+  <keo-select-mode ImageSrc='https://z3.ax1x.com/2021/04/01/cEemRK.png' ChooseType='吐槽' ChooseText='发泄情绪'></keo-select-mode>
+</view>

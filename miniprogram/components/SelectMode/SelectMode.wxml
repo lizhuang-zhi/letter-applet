@@ -1,24 +1,11 @@
-<!-- 选择盒子 -->
-<view class="box" style="width:{{BoxWidth}};height:{{BoxHeight+'px'}};margin-top:{{BoxMargin+'rpx'}}">
-  <!-- 第一个选择 日记 -->
-  <view class="first-choose">
-    <!-- logo -->
-    <image bindtap="NavTo" data-index='1' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[0]}}"></image>
-    <!-- 文字 -->
-    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">日记</view>
-  </view>
-  <!-- 第二个选择 解忧 -->
-  <view class="second-choose">
-    <!-- logo -->
-    <image bindtap="NavTo" data-index='2' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[1]}}"></image>
-    <!-- 文字 -->
-    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">解忧</view>
-  </view>
-  <!-- 第三个选择 吐槽 -->
-  <view class="third-choose">
-    <!-- logo -->
-    <image bindtap="NavTo" data-index='3' style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img" src="{{ImageList[2]}}"></image>
-    <!-- 文字 -->
-    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">吐槽</view>
+<!-- 选择 -->
+<view class="choose" style="padding:{{ChoosePadding}};border-radius:{{ChooseRadius}};margin-top:{{ChooseMargin}}">
+  <!-- logo -->
+  <image bindtap="NavTo" style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img"
+    src="{{ImageSrc}}"></image>
+  <!-- 文字 -->
+  <view class="content" style="padding-left:{{ContentPadding}}">
+    <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">{{ChooseType}}</view>
+    <view class="text2" style="color:{{Text2Color}};font-size:{{Text2Size}};padding-top:{{Text2Padding}}">{{ChooseText}}</view>
   </view>
 </view>

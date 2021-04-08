@@ -1,18 +1,17 @@
-/* 选择盒子 */
-.box{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  text-align:center;
-}
+
 /* 每一个小选项 */
-.first-choose,.second-choose,.third-choose{
+.choose{
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
   align-items: center;
+  box-shadow:0rpx 10rpx 10rpx 2rpx grey;
 }
+.content {
+  text-align: left;
+}
+
 /* 图片 */
-.img{
+.img {
   border-radius: 50%;
   box-shadow: 2rpx 2rpx 2rpx 2rpx .8;
 }
