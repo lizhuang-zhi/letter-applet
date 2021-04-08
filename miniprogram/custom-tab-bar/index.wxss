@@ -26,12 +26,26 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  /* position: relative; */
 }
 
 .tab-bar-item cover-image {
   width: 27px;
   height: 27px;
 }
+
+/* 回信提示数量 */
+/* .tab-bar-item .notifi-num {
+  width: 30rpx;
+  height: 30rpx;
+  color: #ffffff;
+  background: #FF1D23;
+  border-radius: 50%;
+  position: absolute;
+  top: 6rpx;
+  right: 40rpx;
+} */
 
 .tab-bar-item cover-view {
   margin-top: 10rpx;
