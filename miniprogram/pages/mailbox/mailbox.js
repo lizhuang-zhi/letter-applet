@@ -151,12 +151,17 @@ Page({
   onLoad: function (options) {
     this.Start();
 
+    console.log('监听页面加载');
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
+    console.log('监听页面初次渲染完成');
+
 
   },
 
@@ -171,12 +176,19 @@ Page({
       })
     }
 
+    console.log('监听页面显示');
+
+    // wx.getStorage({
+    //   key: 'key',
+    // })
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    console.log('监听页面隐藏');
 
   },
 
@@ -184,6 +196,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('监听页面卸载');
 
   },
 
