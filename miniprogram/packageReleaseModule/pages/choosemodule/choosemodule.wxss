@@ -7,7 +7,6 @@ page {
 .top-content-box {
   width: var( --width--);
   margin: 60rpx 0 0 var(--margin-top);
-
   font-family: 'Courier New', Courier, monospace;
 }
 .top-content-box .top-content {
@@ -15,13 +14,10 @@ page {
   color: #A0A0A0;
   margin-top: 15rpx;
   margin-right: 70rpx;
-}
-.top-content-box .top-title{
-  font-size: 40rpx;
-  color: black;
+  line-height: 1.6;
 }
 /* 选择页面 */
 .choose-type{
   width:var( --width--);
-  margin: 100rpx auto;
+  margin: 70rpx auto 40rpx;
 }

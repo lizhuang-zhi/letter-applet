@@ -21,12 +21,12 @@ Component({
     //选择盒子内边距
     ChoosePadding: {
       type: String,
-      value: '20rpx'
+      value: '30rpx 40rpx'
     },
     //选择盒子外边距
     ChooseMargin: {
       type: String,
-      value: '60rpx'
+      value: '50rpx'
     },
     //选择盒子圆角
     ChooseRadius: {

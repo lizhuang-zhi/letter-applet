@@ -1,13 +1,12 @@
 <!-- 顶部文字 -->
 <view class="top-content-box">
-  <view class="top-title">写信</view>
   <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
 </view>
 
 
 <!-- 选择页面 -->
 <view class="choose-type">
-  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/28a123ce2b1f472192e6f5b020d528f1.jpg!sswm'></keo-select-mode>
-  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/474186c3a74740989b7fb8156f28d683.jpg!sswm' ChooseType='解忧' ChooseText='忧愁只是暂时的'></keo-select-mode>
-  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/3554d6fe5b844ac7821a4a4b9adcbbfd.jpg!sswm' ChooseType='吐槽' ChooseText='发泄情绪'></keo-select-mode>
+  <keo-select-mode ImgHeight='120rpx' ImgWidth='120rpx' ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/28a123ce2b1f472192e6f5b020d528f1.jpg!sswm' ChooseText='记录每一天' ></keo-select-mode>
+  <keo-select-mode ImgHeight='120rpx' ImgWidth='120rpx' ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/474186c3a74740989b7fb8156f28d683.jpg!sswm' ChooseType='解忧' ChooseText='忧愁只是暂时，用信件书写惆怅'></keo-select-mode>
+  <keo-select-mode ImgHeight='120rpx' ImgWidth='120rpx' ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/3554d6fe5b844ac7821a4a4b9adcbbfd.jpg!sswm' ChooseType='吐槽' ChooseText='发泄情绪，倾诉心声'></keo-select-mode>
 </view>
