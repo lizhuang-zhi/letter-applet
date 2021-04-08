@@ -166,6 +166,18 @@ Page({
       console.log('我拉取了数据');
     },5000);
 
+
+    // 拉取缓存
+    wx.getStorage({
+      key: 'testObj',
+      success: res => {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+      }
+    })
+
   },
 
   /**

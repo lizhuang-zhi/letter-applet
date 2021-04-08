@@ -6,22 +6,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    replyData:{}
+    replyData: {}
   },
   //初始化数据 
-  Start(){
+  Start() {
     /**
      * 写在index
      */
     //获取回信数据
-    requestData.mailboxReplylist(this.data.replyData).then(res=>{
+    requestData.mailboxReplylist(this.data.replyData).then(res => {
       console.log(res);
       // 404与500
       if (res.statusCode == 404 || res.statusCode == 500) {
         return new Promise((resolve, reject) => {
           resolve('error');
         });
-      } else{
+      } else {
         let replyArr = res.data.data;
         console.log(replyArr);
       }
@@ -32,6 +32,8 @@ Page({
    */
   onLoad: function (options) {
     this.Start();
+
+
   },
 
   /**1
@@ -52,13 +54,8 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    /* 
-      当页面隐藏时，判断信件是否已读，存储未读信件到缓存
-    */
-    wx.setStorage({
-      data: data,
-      key: 'key',
-    })
+    console.log('----- 监听页面隐藏 ------');
+
 
   },
 
@@ -66,7 +63,25 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('----- 监听页面卸载 ------');
+    /* 
+      当页面卸载时，判断信件是否已读，存储未读信件到缓存
+    */
+    let obj = {
+      name: 'leo',
+      age: 20
+    };
+    let JsonData = JSON.stringify(obj);
+    wx.setStorage({
+      key: 'testObj',
+      data: JsonData,
+      success: res => {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+      }
+    });
   },
 
   /**
