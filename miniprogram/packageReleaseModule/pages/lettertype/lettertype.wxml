@@ -57,7 +57,7 @@
 
 
   <!-- 选择邮票 -->
-  <view class="choose-stamp">
+  <view class="choose-stamp" wx:if="{{type == '解忧'}}">
     <!-- 标题 -->
     <view class="title-name">
       <yeo-title title='选择邮票' description='选择一个属于信件的邮票'></yeo-title>
