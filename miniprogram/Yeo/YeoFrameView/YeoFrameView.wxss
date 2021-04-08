@@ -1,0 +1,14 @@
+.yeo-frame-view {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 行 */
+.yeo-row {
+  flex-direction: column;
+}
+
+/* 列 */
+.yeo-col {
+  flex-direction: row;
+}

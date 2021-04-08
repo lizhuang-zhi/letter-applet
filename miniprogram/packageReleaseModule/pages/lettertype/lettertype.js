@@ -12,6 +12,14 @@ const chooseTagColor = '#F0934F';
 // 标签选中时的边框
 const chooseTagBorder = '1rpx solid ' + chooseTagColor;
 
+
+// 邮票初始化边框
+const stampInitBorder = '8rpx solid #F7F7F7';
+// 邮票选择边框
+const stampChooseBorder = '8rpx solid #F0934F'
+// 选中邮票
+let stampPic = '';
+
 // 声明解忧标签数组(存储选择的标签，最多三个)
 let selectSorrowArr = [];
 // 声明日记天气数组(存储选择的标签，最多一个)
@@ -140,6 +148,32 @@ Page({
         btnBorder: initTagBorder
       }
     ],
+    // 邮票数组
+    stampArr: [{
+        picUrl: '../../images/mouse.png',
+        title: '松鼠邮票',
+        description: '第一版',
+        picBorder: stampInitBorder
+      },
+      {
+        picUrl: '../../images/rabbit.png',
+        title: '兔子邮票',
+        description: '第一版',
+        picBorder: stampInitBorder
+      },
+      {
+        picUrl: '../../images/cat.png',
+        title: '猫咪邮票',
+        description: '第一版',
+        picBorder: stampInitBorder
+      },
+      {
+        picUrl: '../../images/dog.png',
+        title: '小狗邮票',
+        description: '第一版',
+        picBorder: stampInitBorder
+      },
+    ],
 
     // 随机笔名
     initValue: '',
@@ -264,6 +298,36 @@ Page({
     })
   },
 
+  // 邮票选择
+  stampClickObj(e) {
+    console.log(e.detail.clickObj);
+    // 获取点击邮票索引
+    let index = e.detail.clickObj.index;
+    // 获取邮票数组
+    let stampArr = this.data.stampArr;
+    // 当没有选择时
+    if (stampPic == '' && stampArr[index].picBorder == stampInitBorder) {
+      // 给点击对象加边框
+      stampArr[index].picBorder = stampChooseBorder;
+      // 存储点击对象图片地址
+      stampPic = stampArr[index].picUrl;
+    } else if (stampPic != '' && stampArr[index].picBorder == stampInitBorder) {
+      wx.showToast({
+        title: '最多只能选择一张邮票',
+        icon: 'none'
+      })
+    } else if (stampPic != '' && stampArr[index].picBorder == stampChooseBorder) {
+      // 取消选中邮票
+      stampArr[index].picBorder = stampInitBorder;
+      // 消去点击对象图片地址
+      stampPic = '';
+    }
+    // 重新渲染stampArr
+    this.setData({
+      stampArr: stampArr
+    })
+  },
+
   // 获取开关选择值
   switchEvent(e) {
     this.setData({
@@ -302,7 +366,7 @@ Page({
     // 发布时间
     let releaseTime = new Date();
     // 邮票图片地址
-    let stampUrl = 'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=254&h=160&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2';
+    let stampUrl = stampPic;
     // 状态
     let state = 1;
     // 	标签id集合
@@ -321,6 +385,11 @@ Page({
     if (selectSorrowArr.length == 0) {
       wx.showToast({
         title: '请选择标签',
+        icon: 'none'
+      })
+    } else if (stampUrl == '') {
+      wx.showToast({
+        title: '请选择邮票',
         icon: 'none'
       })
     } else {
@@ -444,7 +513,7 @@ Page({
     */
     // let weather = selectComplainWeatherArr.toString();
     // 吐槽描述
-    let title = content.substring(0,'。'.indexOf(content) == -1 ? 30 : '。'.indexOf(content));
+    let title = content.substring(0, '。'.indexOf(content) == -1 ? 30 : '。'.indexOf(content));
     // 日记对象
     let complainObj = {
       avatarUrl,

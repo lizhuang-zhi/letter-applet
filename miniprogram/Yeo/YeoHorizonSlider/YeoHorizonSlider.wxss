@@ -1,6 +1,5 @@
 .yeo-horizon-slider {
   white-space: nowrap;
-  margin-left: 34rpx;
 }
 .yeo-horizon-slider .singleBox{
   width: 240rpx;

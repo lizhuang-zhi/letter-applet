@@ -1,5 +1,8 @@
 page {
   background: #F7F7F7;
+
+  /* 标题下外边距 */
+  --tit-margin-bottom: 30rpx; 
 }
 
 /* 外层主体 */
@@ -10,7 +13,7 @@ page {
 
 /* 设计笔名 */
 .lettertype-container .choose-name .title-name {
-  margin-bottom: 30rpx;
+  margin-bottom: var(--tit-margin-bottom);
 }
 .lettertype-container .choose-name .pen-name yeo-dy-fun-bar yeo-search {
   width: 400rpx;
@@ -24,19 +27,26 @@ page {
 
 
 /* 选择标签 */
-.lettertype-container .choose-tag, .lettertype-container .choose-name {
+.lettertype-container .choose-tag, .lettertype-container .choose-name, .lettertype-container .choose-stamp {
   padding: 20rpx 30rpx;
   background: #FFFFFF;
   margin: 35rpx 0;
   border-radius: 30rpx;
 }
 .lettertype-container .choose-tag .title-tag {
-  margin-bottom: 30rpx;
+  margin-bottom: var(--tit-margin-bottom);
 }
 .lettertype-container .choose-tag keo-check-button {
   margin-right: 20rpx;
 }
 
+/* 邮票集合 */
+.lettertype-container .choose-stamp .title-name {
+  margin-bottom: var(--tit-margin-bottom);
+}
+
+
+/* 按钮 */
 .btn-part {
   margin: 0 auto;
   width: 240rpx;

@@ -60,11 +60,12 @@
   <view class="choose-stamp">
     <!-- 标题 -->
     <view class="title-name">
-      <yeo-title title='落款笔名' description='填写属于你的独特笔名'></yeo-title>
+      <yeo-title title='选择邮票' description='选择一个属于信件的邮票'></yeo-title>
     </view>
     <!-- 邮票集合 -->
     <view class="stamp-list">
-      
+      <yeo-horizon-slider sliderArr='{{stampArr}}' bind:clickevent='stampClickObj' boxMargin='0' isShowContent='{{false}}'>
+      </yeo-horizon-slider>
     </view>
 
   </view>
