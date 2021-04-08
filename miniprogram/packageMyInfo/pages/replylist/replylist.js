@@ -52,6 +52,13 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    /* 
+      当页面隐藏时，判断信件是否已读，存储未读信件到缓存
+    */
+    wx.setStorage({
+      data: data,
+      key: 'key',
+    })
 
   },
 

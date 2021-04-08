@@ -4,10 +4,16 @@
     <view class="top-left">
       <view class="date">{{dateNum}}</view>
       <view class="week-day">{{weekDay}}</view>
-    </view>  
-    <view class="top-right" bindtap="starTap">
+    </view> 
+
+    <view class="top-right" wx:if="{{isAddStarTap}}" bindtap="starTap">
       <image src="{{starUrl}}"></image>
     </view>
+
+    <view class="top-right" wx:else>
+      <image src="https://z3.ax1x.com/2021/03/21/65gmJe.png"></image>
+    </view>
+
   </view>
 
   <!-- 中部分（文字内容） -->

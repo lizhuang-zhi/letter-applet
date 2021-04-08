@@ -1,5 +1,9 @@
 // miniprogram/pages/mailbox/mailbox.js
 let tools = require('../../utils/timeTools');
+/*
+  设置论循定时器 
+*/
+let setTimeInterVal = null;
 Page({
 
   /**
@@ -83,17 +87,11 @@ Page({
       'pull.loading': '../../images/loading-2.gif',
       'pull.pullText': '正在加载',
     })
-    // setTimeout(() => {
-    //   this.setData({
-    //     'pull.loading': '../../images/loading-1.gif',
-    //     'pull.pullText': '刷新完成'
-    //   })
-    // }, 4000)
     setTimeout(() => {
       this.setData({
         'pull.isLoading': false,
       })
-      console.log('+++++ 刷新完成 +++++')
+      console.log('-------- 刷新完成 ---------')
     }, 3000)
   },
   // 监听上拉加载更多
@@ -110,8 +108,8 @@ Page({
         'push.pullText': '- 上拉加载更多 -',
         'push.loading': '../../images/loading-2.gif',
       })
-      console.log('===== 加载完成 =====')
-    }, 5000)
+      console.log('===== 加载完成 =====');
+    }, 3000)
   },
 
   // 初始化数据
@@ -121,24 +119,6 @@ Page({
     // 最终显示时间
     let finalTime = tools.mailboxShowMessageTime(time);
     console.log(finalTime);
-
-
-
-    /* webSocket获取回信 */
-    // 1. 建立连接
-    // wx.connectSocket({
-    //   url: 'wss://rayss.host/reply/我的openid',
-    // });
-    // 2. 监听连接打开
-    // wx.onSocketOpen((result) => {
-
-    // })
-
-    // 监听 WebSocket 接受到服务器的消息事件
-    // wx.onSocketMessage((result) => {
-    //   console.log(result);
-    // })
-
 
   },
 
@@ -152,16 +132,17 @@ Page({
     this.Start();
 
     console.log('监听页面加载');
-
+    /* 
+      进入页面拉取数据接口
+    */
+    this.refresh();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
     console.log('监听页面初次渲染完成');
-
 
   },
 
@@ -175,12 +156,15 @@ Page({
         selected: 2
       })
     }
-
     console.log('监听页面显示');
 
-    // wx.getStorage({
-    //   key: 'key',
-    // })
+    /* 
+      设置轮循进行接口拉取
+    */
+    setTimeInterVal = setInterval(() => {
+      /* 拉取数据 */
+      console.log('我拉取了数据');
+    },5000);
 
   },
 
@@ -190,6 +174,10 @@ Page({
   onHide: function () {
     console.log('监听页面隐藏');
 
+    /* 
+      当页面被隐藏时，清除定时器
+    */
+    clearInterval(setTimeInterVal);
   },
 
   /**

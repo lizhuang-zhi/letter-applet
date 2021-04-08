@@ -23,6 +23,11 @@ Component({
     authorName: {
       type: String,
       value: '消失的胡辣汤'
+    },
+    // 是否添加点赞事件
+    isAddStarTap: {
+      type: Boolean,
+      value: true
     }
   },
 

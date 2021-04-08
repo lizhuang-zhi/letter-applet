@@ -1,6 +1,6 @@
 <!-- 信件主体 -->
 <view class="content-main">
-  <yeo-diary-content content='{{diaryObj.content}}' authorName='{{diaryObj.penName}}' weekDay='{{diaryObj.weekDay}}' dateNum='{{diaryObj.dateNum}}'></yeo-diary-content>
+  <yeo-diary-content content='{{diaryObj.content}}' authorName='{{diaryObj.penName}}' weekDay='{{diaryObj.weekDay}}' dateNum='{{diaryObj.dateNum}}' isAddStarTap='{{false}}'></yeo-diary-content>
 </view>
 
 
