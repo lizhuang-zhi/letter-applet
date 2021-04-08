@@ -7,7 +7,7 @@
 
 <!-- 选择页面 -->
 <view class="choose-type">
-  <keo-select-mode ImageSrc='https://z3.ax1x.com/2021/04/08/cJts2D.png'></keo-select-mode>
-  <keo-select-mode ImageSrc='https://z3.ax1x.com/2021/04/08/cJtcKH.png' ChooseType='解忧' ChooseText='忧愁只是暂时的'></keo-select-mode>
-  <keo-select-mode ImageSrc='https://z3.ax1x.com/2021/04/08/cJNLlD.png' ChooseType='吐槽' ChooseText='发泄情绪'></keo-select-mode>
+  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/28a123ce2b1f472192e6f5b020d528f1.jpg!sswm'></keo-select-mode>
+  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/474186c3a74740989b7fb8156f28d683.jpg!sswm' ChooseType='解忧' ChooseText='忧愁只是暂时的'></keo-select-mode>
+  <keo-select-mode ImageSrc='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/3554d6fe5b844ac7821a4a4b9adcbbfd.jpg!sswm' ChooseType='吐槽' ChooseText='发泄情绪'></keo-select-mode>
 </view>
