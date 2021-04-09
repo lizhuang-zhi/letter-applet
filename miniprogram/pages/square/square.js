@@ -8,6 +8,8 @@ let isLastComplianPageNum = null;
 let isLastDiaryPage = null;
 // 获取吐槽大会当前页
 let complianPageNum = null;
+// 存储日记id与日记浏览量的map集合
+// let diaryMap = new Map();
 Page({
 
   /**
@@ -31,8 +33,12 @@ Page({
     /* 
       将对应日记浏览量存储至缓存
     */
-    
-    wx.setStorageSync('diaryView', 123);
+    // 修改点击日记对象的浏览量
+    // 修改后的Map集合存入缓存
+    // wx.setStorage({
+    //   key: 'diaryView',
+    //   data: diaryMap,
+    // })
 
     wx.navigateTo({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
@@ -100,6 +106,12 @@ Page({
       this.setData({
         diaryArr: diaryList
       })
+      /* 
+        将日记id与浏览量存入map集合
+      */
+      for(let ele of diaryList) {
+        diaryMap.set(ele.id,ele.number);
+      }
     })
 
     // 吐槽大会请求数据
@@ -194,6 +206,7 @@ Page({
    */
   onLoad: function (options) {
     this.Start();
+
   },
 
   /**
@@ -213,6 +226,22 @@ Page({
         selected: 1
       })
     }
+    /* 
+      从缓存中获取改后的浏览量
+    */
+    // 获取日记数组
+    // let diaryArr = this.data.diaryArr;
+    // wx.getStorage({
+    //   key: 'diaryView',
+    //   success: res => {
+    //     console.log(res);
+
+    //     // 修改浏览量
+    //     for(let ele of diaryArr) {
+    //     }
+
+    //   }
+    // })
   },
 
   /**
