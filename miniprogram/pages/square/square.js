@@ -28,6 +28,12 @@ Page({
   ToDiaryContent(e) {
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
+    /* 
+      将对应日记浏览量存储至缓存
+    */
+    
+    wx.setStorageSync('diaryView', 123);
+
     wx.navigateTo({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
     })
@@ -74,7 +80,6 @@ Page({
 
   // 初始化数据
   Start() {
-
     //公开日记数据
     requestData.squareDiary(1).then(res => {
       // 日记对象
@@ -85,7 +90,9 @@ Page({
       isLastDiaryPage = diaryObj.isLastPage;
       console.log(diaryObj);
       diaryList.forEach(item => {
+        // 修改天气显示格式
         item.weather = weather.weatherWordsToPic(item.weather);
+        // 修改日期显示格式
         item.date = timeTools.squareDiaryTime(item.date);
         // 暂时添加的数据内容
         item.content = '我搜的啥佛山东欧到的手动到哦地方大师傅是豆腐是东方四大'
@@ -213,10 +220,13 @@ Page({
    */
   onHide: function () {
     /* 
-      页面隐藏时将浏览量发送至后台？
+      页面隐藏时将浏览量发送至后台
     */
-    
+    console.log('广场 -- 监听页面隐藏');
+    // requestData.squareDiaryLooksNum().then(res => {
 
+
+    // })
 
   },
 
@@ -224,6 +234,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('广场 -- 监听页面卸载');
 
   },
 

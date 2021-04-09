@@ -284,6 +284,59 @@ let requestData = {
       })
     })
 
+  },
+  // 获取未读信件
+  replylist() {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getReplylist(),
+        data: {
+          openId: openId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 获取具体信件信息
+  replyletter(letterId) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getReplyletter(),
+        data: {
+          letterId: letterId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 广场日记浏览量
+  squareDiaryLooksNum(id,viewNum) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getSquareDiaryLooksNum(),
+        data: {
+          id: id,
+          viewNum: viewNum
+        },
+        method: "PUT",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

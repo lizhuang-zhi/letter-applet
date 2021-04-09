@@ -6,15 +6,15 @@ Page({
    */
   data: {
     //选择的类型
-    chooseType:'',
+    chooseType: '',
     //用户输入的内容
-    textValue:''
+    textValue: ''
   },
   //获取用户输入的内容
-  getTextValue(e){
+  getTextValue(e) {
     let textvalue = e.detail.textvalue;
     this.setData({
-      textValue:textvalue
+      textValue: textvalue
     })
   },
   // 跳转标签选择页面
@@ -23,23 +23,40 @@ Page({
     let subvalue = e.currentTarget.dataset.value;
     // 获取类型选择
     let chooseType = this.data.chooseType;
-    if(subvalue.length == 0) {
+    if (subvalue.length == 0) {
       wx.showToast({
         title: '请输入内容',
         icon: 'none',
         image: '../../images/input.png'
       })
-    }else if(subvalue.length < 50){
+    } else if (subvalue.length < 50) {
       wx.showToast({
         title: '多写几句吧',
         icon: 'none',
       })
-    }else {
+    } else if (chooseType == '回信') {
+      /* 
+        调用回信接口
+      */
+
+
+      // 显示回信成功（同步）
+      wx.showToast({
+        title: '回信成功',
+        image: '../../images/confirm.png',
+        duration: 1000
+      });
+
+      // 接口请求成功后跳转（同步）
+      wx.redirectTo({
+        url: '/packageMyInfo/pages/replylist/replylist'
+      });
+    } else {
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue='+ subvalue + '&type=' + chooseType,
+        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + subvalue + '&type=' + chooseType,
       })
     }
-   
+
   },
 
 
@@ -49,7 +66,7 @@ Page({
   onLoad: function (options) {
     // 获取选择类型
     this.setData({
-      chooseType:options.type
+      chooseType: options.type
     })
     console.log(this.data.chooseType);
   },

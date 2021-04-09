@@ -50,6 +50,8 @@ const ComplainletterSendComment = prefix + '/comments/insert';
 const SquareDiary = prefix + '/diary/getAllDiary';
 // 广场日记具体内容
 const SquareDiaryDetail = prefix + '/diary/getDetailForDiary'; 
+// 广场日记浏览量
+const SquareDiaryLooksNum = prefix + '/diary/setViews';
 
 
 // 保存信件 
@@ -65,6 +67,14 @@ const LettertypeComplainSend = prefix + '/spitting-grooves/insert';
 const MailboxReplylist = prefix + '/letter/reply';
 // 获取未读信件数量
 const MailboxNumberOfLetter = prefix + '/letter/getNumberOfLetter';
+
+// 获取未读信件
+const Replylist = prefix + '/letter/getAllUnreadLetter';
+
+// 获取具体信件信息
+const Replyletter  = prefix + '/letter/getDetailOfLetter';
+
+
 
 // 返回对象
 let url = {
@@ -123,7 +133,21 @@ let url = {
   // 获取未读信件数量
   getMailboxNumberOfLetter() {
     return MailboxNumberOfLetter;
+  },
+  // 获取未读信件
+  getReplylist() {
+    return Replylist;
+  },
+  // 获取具体信件信息
+  getReplyletter() {
+    return Replyletter;
+  },
+  // 广场日记浏览量
+  getSquareDiaryLooksNum() {
+    return SquareDiaryLooksNum;
   }
+
+
 
 }
 

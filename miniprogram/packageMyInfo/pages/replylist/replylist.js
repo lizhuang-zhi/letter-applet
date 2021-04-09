@@ -8,31 +8,49 @@ Page({
   data: {
     replyData: {}
   },
+
+  // 点击跳转信件内容
+  clickEvent() {
+    // 获取信件letterId
+    let letterId = null;
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/replyletter/replyletter?letterId=' + letterId,
+    })
+  },
+
   //初始化数据 
   Start() {
     /**
-     * 写在index
+     * 接口应该写在具体的回信页面 -- 李壮志
      */
     //获取回信数据
-    requestData.mailboxReplylist(this.data.replyData).then(res => {
-      console.log(res);
-      // 404与500
-      if (res.statusCode == 404 || res.statusCode == 500) {
-        return new Promise((resolve, reject) => {
-          resolve('error');
-        });
-      } else {
-        let replyArr = res.data.data;
-        console.log(replyArr);
-      }
+    // requestData.mailboxReplylist(this.data.replyData).then(res => {
+    //   console.log(res);
+    //   // 404与500
+    //   if (res.statusCode == 404 || res.statusCode == 500) {
+    //     return new Promise((resolve, reject) => {
+    //       resolve('error');
+    //     });
+    //   } else {
+    //     let replyArr = res.data.data;
+    //     console.log(replyArr);
+    //   }
+    // })
+
+    // 获取未读信件
+    requestData.replylist().then(res => {
+      console.log(res.data);
+      // 获取未读消息数组
+      let unReadLetterArr = res.data.data;
     })
+
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.Start();
-
 
   },
 

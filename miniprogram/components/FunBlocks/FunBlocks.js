@@ -31,11 +31,6 @@ Component({
         }
       ]
     },
-    // 通知提示数
-    notifiNum: {
-      type: Number,
-      value: 23
-    },
     // 外层宽度
     OuterWidth:{
       type:String,

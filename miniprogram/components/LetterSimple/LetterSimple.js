@@ -118,10 +118,8 @@ Component({
    */
   methods: {
     // 跳转到回信页面
-    ToReplyLetter(){
-      wx.navigateTo({
-        url: '/packageMyInfo/pages/replyletter/replyletter',
-      })
+    tapBox(){
+      this.triggerEvent('clickevent',{});
     }
   }
 })

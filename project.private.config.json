@@ -87,6 +87,12 @@
         {
           "name": "选择发布类型页面",
           "pathName": "packageReleaseModule/pages/choosemodule/choosemodule",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "回信具体内容页面",
+          "pathName": "packageMyInfo/pages/replyletter/replyletter",
           "scene": null
         }
       ]

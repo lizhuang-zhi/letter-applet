@@ -56,6 +56,7 @@
   </view>
 
 
+
   <!-- 选择邮票 -->
   <view class="choose-stamp" wx:if="{{type == '解忧'}}">
     <!-- 标题 -->
@@ -64,7 +65,8 @@
     </view>
     <!-- 邮票集合 -->
     <view class="stamp-list">
-      <yeo-horizon-slider sliderArr='{{stampArr}}' bind:clickevent='stampClickObj' boxMargin='0' isShowContent='{{false}}'>
+      <yeo-horizon-slider sliderArr='{{stampArr}}' bind:clickevent='stampClickObj' boxMargin='0'
+        isShowContent='{{false}}'>
       </yeo-horizon-slider>
     </view>
 

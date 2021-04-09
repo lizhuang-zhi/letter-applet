@@ -1,4 +1,6 @@
 // packageMyInfo/pages/replyletter/replyletter.js
+// api
+let requestData = require('../../../utils/request');
 Page({
 
   /**
@@ -18,11 +20,20 @@ Page({
       url: '/packageReleaseModule/pages/write/write?type=回信',
     })
   },
+
+  // 初始化数据
+  Start(letterId) {
+    requestData.replyletter(letterId).then(res => {
+      console.log(res);
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.letterId);
+    
   },
 
   /**
