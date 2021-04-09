@@ -266,6 +266,24 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取未读信件数量
+  mailboxNumberOfLetter() {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getMailboxNumberOfLetter(),
+        data: {
+          openId: openId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+
   }
 
 
