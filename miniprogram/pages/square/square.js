@@ -8,8 +8,8 @@ let isLastComplianPageNum = null;
 let isLastDiaryPage = null;
 // 获取吐槽大会当前页
 let complianPageNum = null;
-// 存储日记id与日记浏览量的map集合
-// let diaryMap = new Map();
+// 存储修改的日记键值对数组
+let changeDiary = {};
 Page({
 
   /**
@@ -31,14 +31,23 @@ Page({
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
     /* 
-      将对应日记浏览量存储至缓存
+      将对应日记浏览量修改，并存储至缓存
     */
-    // 修改点击日记对象的浏览量
-    // 修改后的Map集合存入缓存
-    // wx.setStorage({
-    //   key: 'diaryView',
-    //   data: diaryMap,
-    // })
+    wx.getStorage({
+      key: 'diaryView',
+      success: res => {
+        // 获取缓存数据
+        let dataObj = res.data;
+        // 为新增数据添加浏览量
+        dataObj[id]++;
+
+        /* 将改动存入缓存 */
+        wx.setStorage({
+          key: 'diaryView',
+          data: dataObj
+        });
+      }
+    })
 
     wx.navigateTo({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
@@ -106,12 +115,19 @@ Page({
       this.setData({
         diaryArr: diaryList
       })
+
       /* 
-        将日记id与浏览量存入map集合
+        数据存储至缓存
       */
+      let newObj = {};
       for(let ele of diaryList) {
-        // diaryMap.set(ele.id,ele.number);
-      }
+        newObj[ele.id] = parseInt(ele.number);
+      };
+      console.log(newObj);
+      wx.setStorage({
+        key: 'diaryView',
+        data: newObj,
+      })
     })
 
     // 吐槽大会请求数据
@@ -131,7 +147,6 @@ Page({
       })
 
     });
-
 
   },
 
@@ -229,33 +244,32 @@ Page({
     /* 
       从缓存中获取改后的浏览量
     */
-    // 获取日记数组
-    // let diaryArr = this.data.diaryArr;
-    // wx.getStorage({
-    //   key: 'diaryView',
-    //   success: res => {
-    //     console.log(res);
-
-    //     // 修改浏览量
-    //     for(let ele of diaryArr) {
-    //     }
-
-    //   }
-    // })
+    wx.getStorage({
+      key: 'diaryView',
+      success: res => {
+        // 获取缓存数据
+        let data = res.data;
+        console.log(data);
+        // 获取缓存数据中的属性值并转为数组
+        let changeViewArr = Object.values(data);
+        // 获取日记数组
+        let diaryArr = this.data.diaryArr;
+        for(let i = 0; i < diaryArr.length; i++) {
+          diaryArr[i].number = changeViewArr[i];
+        }
+        // 渲染到页面
+        this.setData({
+          diaryArr: diaryArr
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    /* 
-      页面隐藏时将浏览量发送至后台
-    */
     console.log('广场 -- 监听页面隐藏');
-    // requestData.squareDiaryLooksNum().then(res => {
-
-
-    // })
 
   },
 

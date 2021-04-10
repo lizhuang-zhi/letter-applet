@@ -1,4 +1,5 @@
 //app.js
+let requestData = require('./utils/request');
 App({
   // 定义全局变量
   globalData: {
@@ -8,40 +9,45 @@ App({
   },
 
   onLaunch: function () {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        // env 参数说明：
-        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        //   如不填则使用默认环境（第一个创建的环境）
-        // env: 'my-env-id',
-        traceUser: true,
-      })
-    }
+    console.log('App  --> onLaunch执行了');
 
     console.log(this.globalData);
     // this.globalData = {}
 
+  },
 
+  onHide() {
+    console.log('App  --> onHide执行了');
+    /* 
+      调用日记浏览量接口
+    */
+    // 获取本地缓存中改变过的浏览量
 
+    // 请求api
+    requestData.squareDiaryLooksNum().then(res => {
+
+    })
+
+  },
+
+  onShow() {
+    console.log('App  --> onShow执行了');
   },
 
   /* 
     创建webSocket连接
   */
-  connectWebSocket() {
-    wx.connectSocket({
-      url: 'wss://rayss.host/reply/' + this.globalData.openid,
-      success: res => {
-        console.log(res);
-      },
-      fail: res => {
-        console.log(res);
-      }
-    });
-  },
+  // connectWebSocket() {
+  //   wx.connectSocket({
+  //     url: 'wss://rayss.host/reply/' + this.globalData.openid,
+  //     success: res => {
+  //       console.log(res);
+  //     },
+  //     fail: res => {
+  //       console.log(res);
+  //     }
+  //   });
+  // },
 
 
   // 获取用户信息 与 openid
@@ -85,7 +91,7 @@ App({
                     // 将openid赋值全局变量
                     that.globalData.openid = backInfo.openid;
                     // 连接webSocket
-                    that.connectWebSocket();
+                    // that.connectWebSocket();
                     resolve('success')
                   },
                   fail: res => {

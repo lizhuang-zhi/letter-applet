@@ -6,7 +6,7 @@
     <view class="diary">
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box>
-        <yeo-diary-box-v2 bindtap="ToDiaryContent" wx:for="{{diaryArr}}" wx:key='index' data-id="{{item.id}}" content='{{item.content}}'
+        <yeo-diary-box-v2 bindtap="ToDiaryContent" wx:for="{{diaryArr}}" wx:key='index' data-id="{{item.id}}" data-index="{{index}}" content='{{item.content}}'
           weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'></yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
