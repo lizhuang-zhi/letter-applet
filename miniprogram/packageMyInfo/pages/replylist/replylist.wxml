@@ -10,8 +10,8 @@
 <!-- 收件信息 -->
 <view class="message-box">
 
-  <keo-letter-simple wx:for='{{3}}' wx:key='index' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
-    InnerHeight='250rpx' bind:clickevent='clickEvent'></keo-letter-simple>
+  <keo-letter-simple wx:for='{{replyList}}' wx:key='index' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
+    InnerHeight='250rpx' bind:clickevent='clickEvent' content='{{item.message}}' writer='{{item.penName}}' consignee='{{item.recipient}}'></keo-letter-simple>
   
 </view>
 

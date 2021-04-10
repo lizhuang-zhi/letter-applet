@@ -110,7 +110,7 @@ Page({
         将日记id与浏览量存入map集合
       */
       for(let ele of diaryList) {
-        diaryMap.set(ele.id,ele.number);
+        // diaryMap.set(ele.id,ele.number);
       }
     })
 

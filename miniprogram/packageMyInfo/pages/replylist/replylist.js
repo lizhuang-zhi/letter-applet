@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    replyData: {}
+    replyList: []
   },
 
   // 点击跳转信件内容
@@ -20,7 +20,21 @@ Page({
 
   //初始化数据 
   Start() {
-    
+    // 获取未读信件
+    requestData.replylist().then(res => {
+      console.log(res.data.data);
+      // 获取未读消息数组
+      let unReadLetterArr = res.data.data;
+
+      this.setData({
+        replyList: unReadLetterArr
+      })
+
+      /* 
+        缓存后台请求的未读信件
+      */
+
+    })
   },
 
   /**
@@ -58,25 +72,22 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log('----- 监听页面卸载 ------');
+    console.log('replylist页面 ----- 监听页面卸载 ------');
     /* 
       当页面卸载时，判断信件是否已读，存储未读信件到缓存
     */
-    let obj = {
-      name: 'leo',
-      age: 20
-    };
-    let JsonData = JSON.stringify(obj);
-    wx.setStorage({
-      key: 'testObj',
-      data: JsonData,
-      success: res => {
-        console.log(res);
-      },
-      fail: res => {
-        console.log(res);
-      }
-    });
+    // wx.setStorage({
+    //   key: 'testObj',
+    //   data: JsonData,
+    //   success: res => {
+    //     console.log(res);
+    //   },
+    //   fail: res => {
+    //     console.log(res);
+    //   }
+    // });
+
+    
   },
 
   /**
