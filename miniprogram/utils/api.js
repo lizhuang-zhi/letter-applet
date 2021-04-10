@@ -64,7 +64,8 @@ const LettertypeDiarySend = prefix + '/diary/saveDiary';
 const LettertypeComplainSend = prefix + '/spitting-grooves/insert';
 
 //信箱页面回复信件
-const MailboxReplylist = prefix + '/letter/reply';
+const IndexStampReply = prefix + '/letter/reply';
+
 // 获取未读信件数量
 const MailboxNumberOfLetter = prefix + '/letter/getNumberOfLetter';
 
@@ -126,9 +127,9 @@ let url = {
   getLettertypeComplainSend() {
     return LettertypeComplainSend;
   },
-  //信箱页面回复信件
-  getMailboxReplylist(){
-    return MailboxReplylist;
+  //首页回复信件
+  getIndexStampReply(){
+    return IndexStampReply;
   },
   // 获取未读信件数量
   getMailboxNumberOfLetter() {

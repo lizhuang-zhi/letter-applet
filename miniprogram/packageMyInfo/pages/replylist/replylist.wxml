@@ -10,7 +10,7 @@
 <!-- 收件信息 -->
 <view class="message-box">
 
-  <keo-letter-simple wx:for='{{3}}' wx:key='index' WriterColor='#606572' backgroundColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
+  <keo-letter-simple wx:for='{{3}}' wx:key='index' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
     InnerHeight='250rpx' bind:clickevent='clickEvent'></keo-letter-simple>
   
 </view>

@@ -106,7 +106,30 @@ Page({
           isShowLoading: false
         })
       }
+    })
 
+    /**
+     * 接口应该写在具体的回信页面 -- 李壮志
+     */
+    //获取回信数据
+    requestData.getIndexStampReply(this.data.replyData).then(res => {
+      console.log(res);
+      // 404与500
+      if (res.statusCode == 404 || res.statusCode == 500) {
+        return new Promise((resolve, reject) => {
+          resolve('error');
+        });
+      } else {
+        let replyArr = res.data.data;
+        console.log(replyArr);
+      }
+    })
+
+    // 获取未读信件
+    requestData.replylist().then(res => {
+      console.log(res.data);
+      // 获取未读消息数组
+      let unReadLetterArr = res.data.data;
     })
 
   },

@@ -1,3 +1,6 @@
+page{
+  background: #E8EAEA;
+}
 /* 解答次数 */
 .last-times{
   width: 100%;
@@ -5,4 +8,11 @@
 /* 次数 */
 .text{
   text-align: center;
+}
+.btn-part {
+  margin: 0 auto;
+  width: 240rpx;
+}
+.btn-part keo-check-button {
+  display: inline-block;
 }

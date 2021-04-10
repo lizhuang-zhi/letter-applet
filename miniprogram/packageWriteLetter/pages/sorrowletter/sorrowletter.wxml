@@ -1,9 +1,11 @@
 <!-- 信件内容组件 -->
 <keo-letter-view contentLineHeight='30rpx'></keo-letter-view>
 <!-- 按钮组件 -->
-<keo-check-button BtnText="我要解答"></keo-check-button>
+<view class="btn-part">
+<keo-check-button BtnText="我要解答" bindtap="replyLetter"></keo-check-button>
+</view>
 <!-- 解答次数 -->
-<view class="last-times" style="margin-bottom:30rpx">
+<view class="last-times" style="margin-bottom:70rpx;">
   <!-- 次数 -->
   <view class="text" style="font-size:{{TimesFontSize}};color:{{TiemsColor}}">今日还可以解答{{LastTimes}}次</view>
 </view>

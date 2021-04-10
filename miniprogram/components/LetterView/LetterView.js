@@ -12,7 +12,7 @@ Component({
     // 页面背景颜色
     BckColor:{
       type:String,
-      value:"rgb(241, 236, 241)"
+      value:"#E8EAEA"
     },
 
     // 作者名字
@@ -28,7 +28,7 @@ Component({
     // 收件人
     consignee:{
       type:String,
-      value:"Tell 收"
+      value:"xxx"+" 收"
     },
     // 开头问候语
     regards:{
@@ -50,17 +50,17 @@ Component({
     // 信件内容字体大小
     contentFont:{
       type:String,
-      value:"38rpx"
+      value:"30rpx"
     },
     // 信件内容行高
     contentLineHeight:{
       type:String,
-      value:"55rpx"
+      value:"30rpx"
     },
     //信件内容文字颜色
     ContentLineColor:{
       type:String,
-      value:'#000'
+      value:'#444'
     },
     //信件内容字间距
     ContentSpacing:{
@@ -75,7 +75,7 @@ Component({
     //信件头部收件人字体大小
     HeadFont:{
       type:String,
-      value:"38rpx"
+      value:"35rpx"
     },
     //信件头部收件人字体颜色
     HeadColor:{
@@ -90,7 +90,7 @@ Component({
     //信件头部问候语字体大小
      HeadregardsFont:{
       type:String,
-      value:"38rpx"
+      value:"34rpx"
     },
     //信件头部问候语字体颜色
     HeadRegardsColor:{
@@ -112,7 +112,7 @@ Component({
     //信件结尾作者名字大小
     FootWriterFontSize:{
       type:String,
-      value:"36rpx"
+      value:"32rpx"
     },
     //信件结尾作者名字颜色
     WriterColor:{
@@ -134,7 +134,7 @@ Component({
     //信件结尾日期大小
     FootDateFontSize:{
       type:String,
-      value:"36rpx"
+      value:"32rpx"
     },
     //信件结尾日期颜色
     FootDateColor:{
@@ -150,7 +150,7 @@ Component({
     // 行数组
     lettercontentArr:[],
     // 行字数
-    lineNum: 14
+    lineNum: 17
   },
 
   /**
