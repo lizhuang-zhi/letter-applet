@@ -320,13 +320,12 @@ let requestData = {
     })
   },
   // 广场日记浏览量
-  squareDiaryLooksNum(id,viewNum) {
+  squareDiaryLooksNum(infoArr) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getSquareDiaryLooksNum(),
         data: {
-          id: id,
-          viewNum: viewNum
+          infoArr
         },
         method: "PUT",
         success: res => {

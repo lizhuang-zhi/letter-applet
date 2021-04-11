@@ -22,10 +22,20 @@ App({
       调用日记浏览量接口
     */
     // 获取本地缓存中改变过的浏览量
-
-    // 请求api
-    requestData.squareDiaryLooksNum().then(res => {
-
+    wx.getStorage({
+      key: 'changeDiaryArr',
+      success: res => {
+        console.log(res);
+        // 获取数组
+        let infoArr = res.data;
+        // 请求api
+        requestData.squareDiaryLooksNum(infoArr).then(res => {
+          console.log(res);
+        })
+      },
+      fail: res => {
+        console.log(res);
+      }
     })
 
   },

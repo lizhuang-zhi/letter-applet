@@ -30,6 +30,52 @@ Page({
   ToDiaryContent(e) {
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
+    // 获取点击的日记对象的浏览量
+    let viewNum = e.currentTarget.dataset.viewnum;
+    // 将改动存入改动缓存
+    wx.getStorage({
+      key: 'changeDiaryArr',
+      success: res => {
+        console.log(res);
+        // 获取数组
+        let changeArr = res.data;
+        let isHavDiaryId = changeArr.some((val, index) => {
+          return val.diaryId == id;
+        });
+        if (isHavDiaryId) { // 如果此id存在
+          // 改变其浏览量
+          changeArr.forEach(item => {
+            if (item.diaryId == id) {
+              item.viewNum++;
+            }
+          })
+        } else {
+          // 新建对象存入数组
+          let obj = {
+            diaryId: id,
+            viewNum: parseInt(viewNum) + 1
+          };
+          changeArr.push(obj);
+
+        }
+
+        wx.setStorage({
+          key: 'changeDiaryArr',
+          data: changeArr,
+        })
+      },
+      fail: res => {
+        // 建立数组
+        let arr = [{
+          diaryId: id,
+          viewNum: parseInt(viewNum) + 1
+        }];
+        wx.setStorage({
+          key: 'changeDiaryArr',
+          data: arr,
+        })
+      }
+    })
     /* 
       将对应日记浏览量修改，并存储至缓存
     */
@@ -41,7 +87,7 @@ Page({
         // 为新增数据添加浏览量
         dataObj[id]++;
 
-        /* 将改动存入缓存 */
+        /* 将改动存入显示总缓存 */
         wx.setStorage({
           key: 'diaryView',
           data: dataObj
@@ -120,7 +166,7 @@ Page({
         数据存储至缓存
       */
       let newObj = {};
-      for(let ele of diaryList) {
+      for (let ele of diaryList) {
         newObj[ele.id] = parseInt(ele.number);
       };
       console.log(newObj);
@@ -203,7 +249,11 @@ Page({
         })
         this.setData({
           diaryArr: this.data.diaryArr.concat(diaryList)
-        })
+        });
+        /* 
+          缓存下拉刷新数据
+        */
+
 
       })
 
@@ -254,7 +304,7 @@ Page({
         let changeViewArr = Object.values(data);
         // 获取日记数组
         let diaryArr = this.data.diaryArr;
-        for(let i = 0; i < diaryArr.length; i++) {
+        for (let i = 0; i < diaryArr.length; i++) {
           diaryArr[i].number = changeViewArr[i];
         }
         // 渲染到页面
