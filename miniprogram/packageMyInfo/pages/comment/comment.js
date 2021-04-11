@@ -18,8 +18,14 @@ Page({
   //初始化数据
   Start(){
     //获取评论信息
-    requestData.mailboxMessageList().then(res=>{
-
+    requestData.mailboxMessageList(this.data.openid).then(res=>{
+      return new Promise((resolve,reject)=>{
+        console.log(res);
+        this.setData({
+          dataArr:res.data.data
+        })
+        resolve('success')
+      })
     })
   },
   // 点击具体评论组件对象

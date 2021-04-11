@@ -146,7 +146,6 @@ Page({
           dataList: dataList
         });
         resolve('success');
-
       })
     }).then(res => {
       if (res == 'success') {
