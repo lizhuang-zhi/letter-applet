@@ -44,22 +44,6 @@ App({
     console.log('App  --> onShow执行了');
   },
 
-  /* 
-    创建webSocket连接
-  */
-  // connectWebSocket() {
-  //   wx.connectSocket({
-  //     url: 'wss://rayss.host/reply/' + this.globalData.openid,
-  //     success: res => {
-  //       console.log(res);
-  //     },
-  //     fail: res => {
-  //       console.log(res);
-  //     }
-  //   });
-  // },
-
-
   // 获取用户信息 与 openid
   getUserInfo: function (cb) {
     var that = this
