@@ -31,7 +31,13 @@ App({
         // 请求api
         requestData.squareDiaryLooksNum(infoArr).then(res => {
           console.log(res);
+          /* 请求成功，清除缓存 */
+          wx.setStorage({
+            key: 'changeDiaryArr',
+            data: [],
+          })
         })
+
       },
       fail: res => {
         console.log(res);
