@@ -328,6 +328,7 @@ let requestData = {
           infoArr
         },
         header: {
+          'Accept-Encoding':'gzip,deflate,br',
           'content-type':'application/json'
         },
         method: "POST",
