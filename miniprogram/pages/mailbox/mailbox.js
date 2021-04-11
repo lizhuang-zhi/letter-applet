@@ -2,6 +2,8 @@
 let tools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
+
+let app = getApp();
 /*
   设置论循定时器 
 */
@@ -12,20 +14,25 @@ Page({
    * 页面的初始数据
    */
   data: {
+    //openid
+    openId: '',
     dataList: [{
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OoQPO.png",
       text: "我的",
       picBgColor: "#FEF7E2",
+      isShowNum: 'block',
       notifiNum: 1
     }, {
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
       text: "回信",
       picBgColor: "#E9F1FE",
+      isShowNum: 'block',
       notifiNum: 2
     }, {
       imgsrc: "../../images/message.png",
       text: "评论",
       picBgColor: "#E6F8F0",
+      isShowNum: 'block',
       notifiNum: 8
     }],
 
@@ -58,7 +65,7 @@ Page({
       })
     } else if (index == 2) {
       wx.navigateTo({
-        url: '/packageMyInfo/pages/comment/comment',
+        url: '/packageMyInfo/pages/comment/comment?openid=' + this.data.openId,
       })
     }
   },
@@ -138,7 +145,6 @@ Page({
         this.setData({
           dataList: dataList
         });
-
         resolve('success');
 
       })
@@ -147,13 +153,23 @@ Page({
         /* 
           获取收到评论请求个数
         */
-        return new Promise((resolve,reject) => {
-          // requestData.方法().then(res => {
-          //   // 操作赋值代码
-
-          //   resolve('success');
-  
-          // })
+        return new Promise((resolve, reject) => {
+          let openId = this.data.openId;
+          requestData.mailboxNumberOfmessage(openId).then(res => {
+            let arrList = this.data.dataList;
+            if (res.data.data == null) {
+              arrList[2].isShowNum = 'none';
+              this.setData({
+                dataList: arrList
+              })
+            } else {
+              arrList[2].notifiNum = res.data.data;
+              this.setData({
+                dataList: arrList
+              });
+            }
+            resolve('success');
+          })
         })
       }
     }).then(res => {
@@ -171,8 +187,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start();
+    // this.Start();
     console.log('监听页面加载');
+    /* 
+      获取openid
+    */
+    app.getUserInfo().then(res => {
+      // 获取openid
+      let openid = app.globalData.openid;
+      this.setData({
+        openId: openid
+      })
+    })
   },
 
   /**
