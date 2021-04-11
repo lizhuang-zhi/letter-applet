@@ -327,7 +327,10 @@ let requestData = {
         data: {
           infoArr
         },
-        method: "PUT",
+        header: {
+          'content-type':'application/json'
+        },
+        method: "POST",
         success: res => {
           resolve(res)
         },

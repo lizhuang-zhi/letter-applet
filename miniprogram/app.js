@@ -31,7 +31,13 @@ App({
         // 请求api
         requestData.squareDiaryLooksNum(infoArr).then(res => {
           console.log(res);
+          /* 请求成功，清除缓存 */
+          wx.setStorage({
+            key: 'changeDiaryArr',
+            data: [],
+          })
         })
+
       },
       fail: res => {
         console.log(res);
@@ -43,22 +49,6 @@ App({
   onShow() {
     console.log('App  --> onShow执行了');
   },
-
-  /* 
-    创建webSocket连接
-  */
-  // connectWebSocket() {
-  //   wx.connectSocket({
-  //     url: 'wss://rayss.host/reply/' + this.globalData.openid,
-  //     success: res => {
-  //       console.log(res);
-  //     },
-  //     fail: res => {
-  //       console.log(res);
-  //     }
-  //   });
-  // },
-
 
   // 获取用户信息 与 openid
   getUserInfo: function (cb) {
