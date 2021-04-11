@@ -138,8 +138,24 @@ Page({
         this.setData({
           dataList: dataList
         });
+
         resolve('success');
+
       })
+    }).then(res => {
+      if (res == 'success') {
+        /* 
+          获取收到评论请求个数
+        */
+        return new Promise((resolve,reject) => {
+          // requestData.方法().then(res => {
+          //   // 操作赋值代码
+
+          //   resolve('success');
+  
+          // })
+        })
+      }
     }).then(res => {
       if (res == 'success') {
         // 关闭下拉加载

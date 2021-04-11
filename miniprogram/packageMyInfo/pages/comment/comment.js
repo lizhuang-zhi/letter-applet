@@ -1,4 +1,5 @@
 // packageMyInfo/pages/comment/comment.js
+let app = getApp();
 Page({
 
   /**
@@ -17,11 +18,22 @@ Page({
   clickObjTap(e) {
     console.log(e.detail);
   },
+  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.Start()
+    /* 
+      获取openid
+    */
+    app.getUserInfo().then(res => {
+      // 获取openid
+      let openid = app.globalData.openid;
+      console.log(openid);
+    })
+    
 
   },
 

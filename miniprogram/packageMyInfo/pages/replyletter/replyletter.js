@@ -10,9 +10,12 @@ Page({
     //回信内容
     letterContent:`既然你觉得你的成绩差，想要改变那么从现在开始就集中精力好好学习.你要好好努力，然后惊艳所有人，包括你自己.虽然过程是很漫长且煎熬的，但是功不唐捐，你会要到自己想要的结果.所以啊，朋友，从现在开始，自己制定个计划，然后每天去完成.我很喜欢的一句话送给你:如果梦想有捷径的话，那么这条路的名字一定叫坚.持。别回头卯足劲儿向前冲。`,
     //收件人
-    consignee:'不吃鱼的猫'+' 收',
+    consignee:'不吃鱼的猫',
     //回信者
-    writer:'房东的猫'
+    writer:'房东的猫',
+
+    // 信件信息
+    letterInfo: {}
   },
   //点击跳转写信
   replyLetter(){
@@ -25,6 +28,11 @@ Page({
   Start(letterId) {
     requestData.replyletter(letterId).then(res => {
       console.log(res);
+      // 获取信件信息
+      let letterInfo = res.data.data;
+      this.setData({
+        letterInfo: letterInfo
+      })
     })
   },
 
