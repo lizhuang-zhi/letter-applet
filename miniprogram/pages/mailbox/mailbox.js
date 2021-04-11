@@ -21,19 +21,19 @@ Page({
       text: "我的",
       picBgColor: "#FEF7E2",
       isShowNum: 'block',
-      notifiNum: 1
+      notifiNum: 0
     }, {
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
       text: "回信",
       picBgColor: "#E9F1FE",
       isShowNum: 'block',
-      notifiNum: 2
+      notifiNum: 0
     }, {
       imgsrc: "../../images/message.png",
       text: "评论",
       picBgColor: "#E6F8F0",
       isShowNum: 'block',
-      notifiNum: 8
+      notifiNum: 0
     }],
 
     // loading组件
@@ -186,7 +186,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.Start();
+    this.Start();
     console.log('监听页面加载');
     /* 
       获取openid

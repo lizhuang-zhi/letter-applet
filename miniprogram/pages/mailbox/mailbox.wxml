@@ -18,7 +18,7 @@
     <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://z3.ax1x.com/2021/03/25/6O0PZn.png' infoTit='最新活动'
       infoDesc='我是一个通知好友是否撒旦法的的水电费方法' bindtap="ToLatestevents"></yeo-message-notification>
     <!-- 官方消息 -->
-    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='3' infoDesc='我是一个'
+    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='2' infoDesc='我是一个'
       bindtap="ToOfficialnews">
     </yeo-message-notification>
     <!-- 我的邮票 -->
