@@ -75,7 +75,11 @@ const Replylist = prefix + '/letter/getAllUnreadLetter';
 // 获取具体信件信息
 const Replyletter  = prefix + '/letter/getDetailOfLetter';
 
+//获取未读评论个数
+const MailboxNumberOfmessage = prefix + '/user/getCommNum';
 
+//获取评论信息
+const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
 
 // 返回对象
 let url = {
@@ -146,10 +150,15 @@ let url = {
   // 广场日记浏览量
   getSquareDiaryLooksNum() {
     return SquareDiaryLooksNum;
+  },
+  //获取未读评论个数
+  getMailboxNumberOfmessage(){
+    return MailboxNumberOfmessage;
+  },
+  //获取评论信息
+  getMailboxMessageList(){
+    return MailboxMessageList;
   }
-
-
-
 }
 
 
