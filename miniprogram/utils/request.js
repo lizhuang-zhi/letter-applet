@@ -376,8 +376,33 @@ let requestData = {
         }
       })
     })
+  },
+  // 回复信件
+  indexStampReply(infoObj) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getIndexStampReply(),
+        data: {
+          letterId: infoObj.letterId,
+          message: infoObj.message,
+          recipient: infoObj.recipient,
+          recipientPenName: infoObj.recipientPenName,
+          sender: infoObj.sender,
+          senderPenName: infoObj.senderPenName
+        },
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
-
 
 
 

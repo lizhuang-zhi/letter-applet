@@ -15,7 +15,7 @@ Page({
  //点击跳转写信
  replyLetter(){
   wx.navigateTo({
-    url: '/packageReleaseModule/pages/write/write?type=解忧',
+    url: '/packageReleaseModule/pages/write/write?type=解答',
   })
 },
   /**

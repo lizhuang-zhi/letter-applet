@@ -572,6 +572,7 @@ Page({
 
     // 获取用户选择类型
     let type = options.type;
+    console.log(type);
     this.setData({
       type: type
     })

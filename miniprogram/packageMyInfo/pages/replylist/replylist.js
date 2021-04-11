@@ -13,6 +13,12 @@ Page({
   clickEvent(e) {
     // 获取信件letterId
     let letterId = e.currentTarget.dataset.letterid;
+    // 获取发送者的openId
+    let senderOpenId = e.currentTarget.dataset.senderopenid;
+    // 获取接收者的笔名
+    let recipientPenName = e.currentTarget.dataset.recipientpenname;
+    // 获取发送者的笔名
+    let senderPenName = e.currentTarget.dataset.senderpenname;
     // 获取信件索引
     // let index = e.currentTarget.dataset.index;
     /* 将点击的信件在缓存中设置为已读 */
@@ -27,7 +33,7 @@ Page({
           3. 存入缓存
         */
         unReadList.forEach(item => {
-          if(item.letterId == letterId) {
+          if (item.letterId == letterId) {
             item.isRead = true;
           }
         });
@@ -41,7 +47,7 @@ Page({
       }
     })
     wx.navigateTo({
-      url: '/packageMyInfo/pages/replyletter/replyletter?letterId=' + letterId,
+      url: '/packageMyInfo/pages/replyletter/replyletter?letterId=' + letterId + '&senderOpenId=' + senderOpenId + '&recipientPenName=' + recipientPenName + '&senderPenName=' + senderPenName,
     })
 
 
@@ -59,7 +65,7 @@ Page({
           icon: 'none'
         });
         this.setData({
-          replyList: [] 
+          replyList: []
         })
       },
     })
@@ -90,8 +96,6 @@ Page({
           }
         })
       }).then(res => {
-        //unReadLetterArr
-        //unReadList
         console.log(res);
         let newUnread = null;
         if (unReadLetterArr != null) { // 从后台拉取到未读消息
@@ -110,7 +114,7 @@ Page({
             data: newUnread,
           })
         }
-        
+
         this.setData({
           replyList: newUnread
         })
@@ -146,7 +150,7 @@ Page({
         // 获取全部缓存数组
         let allInfoArr = res.data;
         // 存取所有isRead属性为true的数据
-        let newInfoArr = allInfoArr.filter((val,index) => {
+        let newInfoArr = allInfoArr.filter((val, index) => {
           return val.isRead == false;
         });
         // 渲染到页面 

@@ -131,7 +131,7 @@ let url = {
   getLettertypeComplainSend() {
     return LettertypeComplainSend;
   },
-  //首页回复信件
+  //回复信件
   getIndexStampReply(){
     return IndexStampReply;
   },

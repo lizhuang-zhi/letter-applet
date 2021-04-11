@@ -15,12 +15,23 @@ Page({
     writer:'房东的猫',
 
     // 信件信息
-    letterInfo: {}
+    letterInfo: {},
+
+    // 信件id
+    letterId: ''
   },
   //点击跳转写信
   replyLetter(){
+    // 获取letterId
+    let letterId = this.data.letterId;
+    // 获取发送者openId
+    let senderOpenId = this.data.senderOpenId;
+    // 获取我原文的笔名
+    let recipientPenName = this.data.recipientPenName;
+    // 获取我原文回复者的笔名
+    let senderPenName = this.data.senderPenName;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/write/write?type=回信',
+      url: '/packageReleaseModule/pages/write/write?type=回信&letterId=' + letterId + '&senderOpenId=' + senderOpenId + '&recipientPenName=' + recipientPenName + '&senderPenName=' + senderPenName,
     })
   },
 
@@ -41,6 +52,12 @@ Page({
    */
   onLoad: function (options) {
     this.Start(options.letterId);
+    this.setData({
+      letterId: options.letterId,
+      senderOpenId: options.senderOpenId,
+      recipientPenName: options.recipientPenName,
+      senderPenName: options.senderPenName
+    })
     
   },
 

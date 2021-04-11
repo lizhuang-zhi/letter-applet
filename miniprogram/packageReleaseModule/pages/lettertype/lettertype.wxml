@@ -28,7 +28,7 @@
 
 
   <!-- 选择标签 -->
-  <view class="choose-tag" wx:if="{{type != '吐槽'}}">
+  <view class="choose-tag" wx:if="{{type == '解忧' || type == '日记'}}">
     <!-- 标题 -->
     <view class="title-tag">
       <yeo-title></yeo-title>
@@ -53,6 +53,9 @@
         BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
         bindtap="bindTapComplainWeather" data-index="{{index}}"></keo-check-button> -->
     </yeo-frame>
+  </view>
+  <!-- 选择标签 -->
+  <view class="choose-tag-none" wx:if="{{type == '解答' || type == '回信' || type == '吐槽'}}">
   </view>
 
 

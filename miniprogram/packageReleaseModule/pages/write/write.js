@@ -1,4 +1,6 @@
 // packageReleaseModule/pages/write/write.js
+let requestData = require('../../../utils/request');
+let app = getApp();
 Page({
 
   /**
@@ -8,7 +10,9 @@ Page({
     //选择的类型
     chooseType: '',
     //用户输入的内容
-    textValue: ''
+    textValue: '',
+    // 信件id
+    letterId: ''
   },
   //获取用户输入的内容
   getTextValue(e) {
@@ -38,19 +42,35 @@ Page({
       /* 
         调用回信接口
       */
+      let infoObj = {
+        letterId: this.data.letterId,
+        message: this.data.textValue,
+        recipient: this.data.senderOpenId,
+        recipientPenName: this.data.senderPenName,
+        sender: this.data.openId,
+        senderPenName: this.data.recipientPenName
+      };
+      requestData.indexStampReply(infoObj).then(res => {
+        return new Promise((resolve, reject) => {
+          // 显示回信成功（同步）
+          wx.showToast({
+            title: '回信成功',
+            image: '../../images/confirm.png',
+            duration: 1300
+          });
+          resolve('success');
+        })
+      }).then(res => {
+        if (res == 'success') {
+          // 接口请求成功后跳转（同步）
+          setTimeout(() => {
+            wx.redirectTo({
+              url: '/packageMyInfo/pages/replylist/replylist'
+            });
+          },1300)
+        }
+      })
 
-
-      // 显示回信成功（同步）
-      wx.showToast({
-        title: '回信成功',
-        image: '../../images/confirm.png',
-        duration: 1000
-      });
-
-      // 接口请求成功后跳转（同步）
-      wx.redirectTo({
-        url: '/packageMyInfo/pages/replylist/replylist'
-      });
     } else {
       wx.navigateTo({
         url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + subvalue + '&type=' + chooseType,
@@ -64,9 +84,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取本人openId
+    app.getUserInfo().then(res => {
+      this.setData({
+        openId: app.globalData.openid
+      })
+    });
     // 获取选择类型
     this.setData({
-      chooseType: options.type
+      chooseType: options.type,
+      letterId: options.letterId,
+      senderOpenId: options.senderOpenId,
+      recipientPenName: options.recipientPenName,
+      senderPenName: options.senderPenName
     })
     console.log(this.data.chooseType);
   },
