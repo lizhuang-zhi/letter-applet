@@ -1,9 +1,11 @@
 <!-- 信件内容组件 -->
-<keo-letter-view contentLineHeight='30rpx'></keo-letter-view>
+<keo-letter-view lettercontent='{{letterInfo.replyContent}}' contentLineHeight='30rpx' writer='{{letterInfo.senderPenName}}' date='{{letterInfo.releaseTime}}' consignee='{{letterInfo.recipientPenName == "" ? "陌生人 收" : letterInfo.recipientPenName + " 收"}}'></keo-letter-view>
+
 <!-- 按钮组件 -->
 <view class="btn-part">
-<keo-check-button BtnText="我要解答" bindtap="replyLetter"></keo-check-button>
+  <keo-check-button BtnText="我要解答" bindtap="replyLetter"></keo-check-button>
 </view>
+
 <!-- 解答次数 -->
 <view class="last-times" style="margin-bottom:70rpx;">
   <!-- 次数 -->

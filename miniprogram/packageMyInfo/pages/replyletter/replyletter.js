@@ -1,6 +1,7 @@
 // packageMyInfo/pages/replyletter/replyletter.js
 // api
 let requestData = require('../../../utils/request');
+let app = getApp();
 Page({
 
   /**
@@ -18,7 +19,9 @@ Page({
     letterInfo: {},
 
     // 信件id
-    letterId: ''
+    letterId: '',
+    // 用户openId
+    openId: ''
   },
   //点击跳转写信
   replyLetter(){
@@ -37,7 +40,9 @@ Page({
 
   // 初始化数据
   Start(letterId) {
-    requestData.replyletter(letterId).then(res => {
+    // 获取用户的openId
+    let openId = this.data.openId;
+    requestData.replyletter(letterId,true,openId).then(res => {
       console.log(res);
       // 获取信件信息
       let letterInfo = res.data.data;
@@ -57,6 +62,12 @@ Page({
       senderOpenId: options.senderOpenId,
       recipientPenName: options.recipientPenName,
       senderPenName: options.senderPenName
+    });
+    // 获取用户openId
+    app.getUserInfo().then(res => {
+      this.setData({
+        openId: app.globalData.openid
+      })
     })
     
   },

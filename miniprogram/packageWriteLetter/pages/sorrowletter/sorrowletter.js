@@ -1,4 +1,6 @@
 // packageWriteLetter/pages/sorrowletter/sorrowletter.js
+let requestData = require('../../../utils/request');
+let app = getApp();
 Page({
 
   /**
@@ -6,23 +8,52 @@ Page({
    */
   data: {
     //解答次数
-    LastTimes:1,
+    LastTimes: 1,
     //解答次数文字大小
-    TimesFontSize:"32rpx",
+    TimesFontSize: "32rpx",
     //解答次数颜色
-    TiemsColor:'grey'
+    TiemsColor: 'grey',
+    // 用户openId
+    openId: '',
+    // 信件信息
+    letterInfo: {}
   },
- //点击跳转写信
- replyLetter(){
-  wx.navigateTo({
-    url: '/packageReleaseModule/pages/write/write?type=解答',
-  })
-},
+  //点击跳转写信
+  replyLetter() {
+    wx.navigateTo({
+      url: '/packageReleaseModule/pages/write/write?type=解答',
+    })
+  },
+
+
+  // 初始化数据
+  Start(letterId) {
+    // 获取用户的openId
+    let openId = this.data.openId;
+    requestData.replyletter(letterId, false, openId).then(res => {
+      console.log(res.data.data);
+      // 获取信件信息
+      let letterInfo = res.data.data;
+      console.log(letterInfo.replyContent);
+      this.setData({
+        letterInfo: letterInfo
+      })
+    })
+
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.letterId);
+    // 获取用户openId
+    app.getUserInfo().then(res => {
+      this.setData({
+        openId: app.globalData.openid
+      })
+    })
   },
 
   /**

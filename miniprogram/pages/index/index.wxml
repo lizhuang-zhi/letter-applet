@@ -30,12 +30,12 @@
   </yeo-art-font>
 </view>
 <!-- 解忧信件 -->
-<view class="tit-sorrow-box" bindtap="ToSorrowTap">
+<view class="tit-sorrow-box">
   <scroll-view class="sorrow-list" scroll-x>
     <view class="list-box">
 
       <!-- 信件数组 -->
-      <yeo-stamp-text wx:for="{{letterArr}}" wx:key='index' stampPic='{{item.stampUrl}}' name='{{item.penName}}' content='{{item.content}}' date='{{item.releaseTime}}'></yeo-stamp-text>
+      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}" stampPic='{{item.stampUrl}}' name='{{item.penName}}' content='{{item.content}}' date='{{item.releaseTime}}'></yeo-stamp-text>
 
     </view>
   </scroll-view>

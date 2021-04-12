@@ -303,12 +303,14 @@ let requestData = {
     })
   },
   // 获取具体信件信息
-  replyletter(letterId) {
+  replyletter(letterId,isReply,openId) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getReplyletter(),
         data: {
-          letterId: letterId
+          letterId: letterId,
+          isReply: isReply,
+          openId: openId
         },
         success: res => {
           resolve(res)

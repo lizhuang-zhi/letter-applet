@@ -42,9 +42,11 @@ Page({
   },
 
   // 跳转解忧页
-  ToSorrowTap() {
+  ToSorrowTap(e) {
+    // 信件id
+    let letterId = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter',
+      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?letterId=' + letterId,
     })
 
   },

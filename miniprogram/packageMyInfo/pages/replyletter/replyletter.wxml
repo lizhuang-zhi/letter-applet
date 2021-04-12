@@ -1,6 +1,6 @@
-<keo-original-content OriginalText='"我是一个高三的学生，还有不到八十天就要高考了。'></keo-original-content>
+<keo-original-content OriginalText='"{{letterInfo.lastContent}}'></keo-original-content>
 
-<keo-letter-view TopTipDisplay="none" lettercontent="{{letterInfo.content}}" consignee="{{consignee + ' 收'}}" writer='{{letterInfo.penName}}' date='{{letterInfo.releaseTime}}'></keo-letter-view>
+<keo-letter-view TopTipDisplay="none" lettercontent="{{letterInfo.replyContent}}" consignee="{{letterInfo.recipientPenName+ ' 收'}}" writer='{{letterInfo.senderPenName}}' date='{{letterInfo.releaseTime}}'></keo-letter-view>
 
 <!-- 按钮 -->
 <view class="btn-part">
