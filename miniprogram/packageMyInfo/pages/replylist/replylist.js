@@ -58,16 +58,19 @@ Page({
     /* 
       将所有信息，在此页清除掉，提示用户可在历史信息中查看
     */
-    wx.clearStorage({
-      success: (res) => {
+    let that = this;
+    wx.removeStorage({
+      key: 'unReadLetterList',
+      success (res) {
+        console.log(res);
         wx.showToast({
           title: '全部已读，可在历史信息中再次查看',
           icon: 'none'
         });
-        this.setData({
+        that.setData({
           replyList: []
-        })
-      },
+        });
+      }
     })
   },
 
@@ -76,9 +79,9 @@ Page({
     // 获取未读信件
     requestData.replylist().then(res => {
       console.log(res.data.data);
-      // 获取未读消息数组
+      // 获取未读消息数组（后台数据）
       let unReadLetterArr = res.data.data;
-      //存储最开始缓存中的数据
+      //存储最开始缓存中的数据（缓存数据）
       let unReadList = null;
       new Promise((resolve, reject) => {
         wx.getStorage({
@@ -87,7 +90,7 @@ Page({
             // 获取缓存数组
             unReadList = res.data;
             console.log(unReadList);
-            resolve('success')
+            resolve('success');
           },
           fail: res => {
             unReadList = null;

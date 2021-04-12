@@ -8,7 +8,9 @@ Page({
    */
   data: {
     // 底部标签
-    tagArr: ['文章来源：雨点美文网','文章标签：美文摘抄']
+    tagArr: ['文章来源：雨点美文网', '文章标签：美文摘抄'],
+    // loading组件
+    isShowLoading: true
   },
 
 
@@ -16,16 +18,25 @@ Page({
   Start(index) {
     requestData.beautyletter(index).then(res => {
       console.log(res.data.data);
-      // 存储对象
-      let dataObj = res.data.data;
-      // 修改时间显示
-      dataObj.articleTime = dataObj.articleTime.split(' ')[0]
-      // 给对象添加周几
-      dataObj.days = tools.beautyletterTime(dataObj.articleTime);
-      this.setData({
-        articleObj: dataObj
+      return new Promise((resolve, reject) => {
+        // 存储对象
+        let dataObj = res.data.data;
+        // 修改时间显示
+        dataObj.articleTime = dataObj.articleTime.split(' ')[0]
+        // 给对象添加周几
+        dataObj.days = tools.beautyletterTime(dataObj.articleTime);
+        this.setData({
+          articleObj: dataObj
+        })
+        resolve('success');
       })
 
+    }).then(res => {
+      if (res == 'success') {
+        this.setData({
+          isShowLoading: false
+        })
+      }
     })
 
   },

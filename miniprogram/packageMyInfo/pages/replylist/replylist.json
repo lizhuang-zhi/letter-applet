@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarBackgroundColor": "#E8EAEA"
+  "navigationBarBackgroundColor": "#E8EAEA",
+  "navigationBarTitleText":"回信"
 }

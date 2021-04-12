@@ -32,9 +32,11 @@ App({
         requestData.squareDiaryLooksNum(infoArr).then(res => {
           console.log(res);
           /* 请求成功，清除缓存 */
-          wx.setStorage({
+          wx.removeStorage({
             key: 'changeDiaryArr',
-            data: [],
+            success: res => {
+              console.log('清理公开日记浏览量本地缓存');
+            }
           })
         })
 
