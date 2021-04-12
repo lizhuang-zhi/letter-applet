@@ -14,7 +14,7 @@
         lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5' wordWieight='bold'></yeo-art-font>
     </view>
 
-    <view class='info-right' slot='dy-right'>更多></view>
+    <view class='info-right' slot='dy-right'>心自静</view>
   </yeo-dy-fun-bar>
 </view>
 <!-- 轮播图 -->

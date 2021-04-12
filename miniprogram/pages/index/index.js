@@ -95,7 +95,7 @@ Page({
           // 时间格式化
           item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
           // 内容格式化
-          item.content = item.content.substring(0, 25) + '..';
+          item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
           // 笔名格式化
           item.penName = item.penName.substring(0,8);
         });

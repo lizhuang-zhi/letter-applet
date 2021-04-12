@@ -169,7 +169,7 @@ Page({
       for (let ele of diaryList) {
         newObj[ele.id] = parseInt(ele.number);
       };
-      console.log(newObj);
+      console.log(newObj);  
       wx.setStorage({
         key: 'diaryView',
         data: newObj,

@@ -16,17 +16,17 @@
   <view class="message-info-box">
     <!-- 最新活动 -->
     <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://z3.ax1x.com/2021/03/25/6O0PZn.png' infoTit='最新活动'
-      infoDesc='我是一个通知好友是否撒旦法的的水电费方法' bindtap="ToLatestevents"></yeo-message-notification>
+      infoDesc='公开日记、吐槽大会等你加入！' bindtap="ToLatestevents"></yeo-message-notification>
     <!-- 官方消息 -->
-    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='2' infoDesc='我是一个'
+    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='2' infoDesc='文明用语、理性回信，期待与你共同成长'
       bindtap="ToOfficialnews">
     </yeo-message-notification>
     <!-- 我的邮票 -->
     <yeo-message-notification infoTit='我的邮票' notifiNum='99' leftPic='https://z3.ax1x.com/2021/03/25/6O0prj.png'
-      boxBgColor='#FCF1E9' infoDesc='我是一个，我沙发扫发送风骚'></yeo-message-notification>
+      boxBgColor='#FCF1E9' infoDesc='快来解锁属于你的邮票吧'></yeo-message-notification>
     <!-- 我的成就 -->
     <yeo-message-notification infoTit='我的成就' notifiNum='1' leftPic='https://z3.ax1x.com/2021/03/25/6OTSQH.png'
-      infoDesc='我是一个，我沙发扫发送风骚' boxBgColor='#E6F8F0'></yeo-message-notification>
+      infoDesc='电亮你的成就' boxBgColor='#E6F8F0'></yeo-message-notification>
   </view>
 
 </yeo-loading-part>

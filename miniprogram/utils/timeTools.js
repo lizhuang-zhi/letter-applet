@@ -24,11 +24,16 @@ let tools = {
 
     // 获取当前时间为星期几（1-7）
     let nowTimeStamp = nowTime.getDay() == 0 ? 7 : nowTime.getDay();
-    // 获取传入时间为星期几
-    let timeWeekDays = new Date(time).getDay() == 0 ? 7 : new Date(time).getDay();
 
+    // 获取传入时间
+    let argTime = new Date(time);
+    // 获取传入时间月份和日期
+    let argTimeMonth = (argTime.getMonth() + 1) < 10 ? '0' + (argTime.getMonth() + 1) : argTime.getMonth();
+    let argTimeDate = argTime.getDate() < 10 ? '0' + argTime.getDate() : argTime.getDate();
+    // 获取传入时间为星期几
+    let timeWeekDays = argTime.getDay() == 0 ? 7 : argTime.getDay();
     // 获取传入时间的时间戳
-    let timeStamp = new Date(time).getTime();
+    let timeStamp = argTime.getTime();
     // 获取当前时间的时间戳
     let timeStampNow = nowTime.getTime();
     // 当前时间与传入时间的时间戳差值
@@ -41,15 +46,16 @@ let tools = {
     // 判断一天里的具体时间（上午、下午、晚上）
     let judgeConcreteTime = this.judgeAmOrPm(new Date(time).getHours());
 
-
     if (disVal < oneWeekStamp && nowTimeStamp >= timeWeekDays) {
       return '星期' + this.changeWeekDaysToChinese(timeWeekDays) + judgeConcreteTime + ' ' + hours + ':' + minutes;
     } else if (disVal < oneWeekStamp && nowTimeStamp < timeWeekDays) {
       return '上周' + this.changeWeekDaysToChinese(timeWeekDays) + judgeConcreteTime + ' ' + hours + ':' + minutes;
     } else if (disVal >= oneWeekStamp && disVal < oneWeekStamp * 2) {
       return '一周前';
-    } else {
-      return time;
+    } else if(argTime.getFullYear() == nowTime.getFullYear()){
+      return argTimeMonth + "-" + argTimeDate;
+    }else {
+      return argTime.getFullYear() + "-" + argTimeMonth + "-" + argTimeDate;
     }
 
 
