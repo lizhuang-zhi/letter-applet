@@ -19,6 +19,9 @@ Page({
     // 信件信息
     letterInfo: {},
 
+    /* 
+      keo ------------
+    */
     //信件内容
     lettercontent:'我是信件行数测试数据,我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据',
     // 行数组
@@ -48,13 +51,14 @@ Page({
       })
     })
     /*
-      获取信件行信息
+      获取信件行信息  -----   keo
     */
     //获取信件行
     let content = this.data.lettercontent;
     let contentArr = this.data.lettercontentArr;
     let linenum = this.data.lineNum;
     let resultArr = requestLetterline.Interceptletterline(content,contentArr,linenum)
+    console.log(requestLetterline.Interceptletterline(content,contentArr,linenum));
     this.setData({
       lettercontentArr:resultArr
     })
@@ -65,6 +69,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('sorrowletter页面 ----------- 监听页面加载');
     // 获取用户openId
     app.getUserInfo().then(res => {
       this.setData({
@@ -80,13 +85,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log('sorrowletter页面 ----------- 监听页面显示');
 
   },
 
