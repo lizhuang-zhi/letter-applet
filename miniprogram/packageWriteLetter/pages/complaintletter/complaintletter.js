@@ -120,9 +120,9 @@ Page({
         console.log(res);
 
         // 记录返回信息
-        let backInfo = res.data.message;
+        let backInfoCode = res.data.resultCode;
 
-        if (backInfo == '发布成功') {
+        if (backInfoCode == 200) {
           this.data.commentArr.push(newCont);
           this.setData({
             commentArr: this.data.commentArr,

@@ -268,12 +268,12 @@ let requestData = {
     })
   },
   // 获取未读信件数量
-  mailboxNumberOfLetter() {
+  mailboxNumberOfLetter(userOpenId) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getMailboxNumberOfLetter(),
         data: {
-          openId: openId
+          openId: userOpenId
         },
         success: res => {
           resolve(res)
@@ -286,12 +286,12 @@ let requestData = {
 
   },
   // 获取未读信件
-  replylist() {
+  replylist(UserOpenId) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getReplylist(),
         data: {
-          openId: openId
+          openId: UserOpenId
         },
         success: res => {
           resolve(res)
@@ -303,14 +303,14 @@ let requestData = {
     })
   },
   // 获取具体信件信息
-  replyletter(letterId,isReply,openId) {
+  replyletter(openId,replyId,letterId = null) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getReplyletter(),
         data: {
+          openId: openId,
+          replyId: replyId,
           letterId: letterId,
-          isReply: isReply,
-          openId: openId
         },
         success: res => {
           resolve(res)
@@ -333,7 +333,7 @@ let requestData = {
           'Accept-Encoding':'gzip,deflate,br',
           'content-type':'application/json'
         },
-        method: "POST",
+        method: "PUT",
         success: res => {
           resolve(res)
         },

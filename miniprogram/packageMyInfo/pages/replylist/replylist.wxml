@@ -1,7 +1,7 @@
 <!-- 收件信息通知 -->
 <view class="info-bar">
   <yeo-dy-fun-bar distractWay='between'>
-    <view class="info-left" slot='dy-left'>全部{{replyList.length}}封信件</view>
+    <view class="info-left" slot='dy-left'>全部{{replyList == null ? 0 : replyList.length}}封信件</view>
     <view class='info-right' slot='dy-right' bindtap="tapAllRead">全部已读</view>
   </yeo-dy-fun-bar>
 </view>
@@ -11,7 +11,7 @@
 <view class="message-box">
 
   <keo-letter-simple wx:for='{{replyList}}' wx:key='index' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
-    InnerHeight='250rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}" data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}" data-senderpenname="{{item.senderPenName}}" content='{{item.message}}' writer='{{item.senderPenName}}' consignee='{{item.recipientPenName}}'></keo-letter-simple>
+    InnerHeight='250rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}" data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}"  data-senderpenname="{{item.senderPenName}}" data-replyid="{{item.replyId}}" content='{{item.message}}' writer='{{item.senderPenName}}' consignee='{{item.recipientPenName}}'></keo-letter-simple>
   
 </view>
 

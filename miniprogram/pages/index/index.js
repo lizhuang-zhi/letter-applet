@@ -44,9 +44,9 @@ Page({
   // 跳转解忧页
   ToSorrowTap(e) {
     // 信件id
-    let letterId = e.currentTarget.dataset.id;
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?letterId=' + letterId,
+      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?id=' + id,
     })
 
   },
@@ -97,9 +97,9 @@ Page({
           // 时间格式化
           item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
           // 内容格式化
-          item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
+          item.content = item.replyContent.length > 25 ? item.replyContent.substring(0, 25) + '..' : item.replyContent;
           // 笔名格式化
-          item.penName = item.penName.substring(0,8);
+          item.penName = item.senderPenName.substring(0,8);
         });
 
         // 关闭loading覆盖层

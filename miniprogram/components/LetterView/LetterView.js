@@ -45,7 +45,7 @@ Component({
     // 信件文字内容
     lettercontent:{
       type:String,
-      value: '我很无语'
+      value:'我很无语'
     },
     // 信件内容字体大小
     contentFont:{
@@ -176,10 +176,9 @@ Component({
       this.setData({
         lettercontentArr: this.data.lettercontentArr
       })
- 
     },
     detached: function() {
-      // 在组件实例被从页面节点树移除时执行
+      //在组件实例被从页面节点树移除时执行
     },
   },
 })

@@ -55,14 +55,22 @@ Page({
   ToReplyListTap(e) {
     // 获取索引
     let index = e.detail.index;
+    // 获取openId
+    let openId = this.data.openId;
     if (index == 0) {
       wx.navigateTo({
         url: '/packageMyInfo/pages/indexinfo/indexinfo',
       })
     } else if (index == 1) {
       wx.navigateTo({
-        url: '/packageMyInfo/pages/replylist/replylist',
-      })
+        url: '/packageMyInfo/pages/replylist/replylist?openId=' + openId,
+      });
+      // 将消息提示数量置为0
+      let dataList = this.data.dataList;
+      dataList[1].notifiNum = 0;
+      this.setData({
+        dataList: dataList
+      });
     } else if (index == 2) {
       wx.navigateTo({
         url: '/packageMyInfo/pages/comment/comment?openid=' + this.data.openId,
@@ -109,7 +117,7 @@ Page({
   },
 
   // 初始化数据
-  Start() {
+  Start(openId) {
     // let time = '2020-03-2 14:26:39';
 
     // // 最终显示时间
@@ -122,24 +130,27 @@ Page({
     // 开启下拉加载
     this.refresh();
     // 获取接口数据
-    this.apiData();
+    this.apiNumberData(openId);
 
   },
 
   // 轮循方法
   timeToGetData() {
+    // 获取opneId
+    let openId = this.data.openId;
     // 获取接口数据
-    this.apiData();
+    this.apiNumberData(openId);
   },
 
   // API方法
-  apiData() {
+  apiNumberData(openId) {
     // 获取未读信件数量
-    requestData.mailboxNumberOfLetter().then(res => {
+    requestData.mailboxNumberOfLetter(openId).then(res => {
+      console.log(res.data.data);
       return new Promise((resolve, reject) => {
         // 获取回信数量
         let letterNum = res.data.data[1];
-        // 赋值消息
+        // 赋值消息提示数量
         let dataList = this.data.dataList;
         dataList[1].notifiNum = letterNum;
         this.setData({
@@ -186,18 +197,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start();
     console.log('监听页面加载');
     /* 
       获取openid
     */
-    app.getUserInfo().then(res => {
-      // 获取openid
-      let openid = app.globalData.openid;
-      this.setData({
-        openId: openid
+    if (app.globalData.openid == null) {
+      app.getUserInfo().then(res => {
+        // 获取openid
+        let openid = app.globalData.openid;
+        this.setData({
+          openId: openid
+        })
+        console.log(openid);
+        this.Start(openid);
       })
-    })
+    } else {
+      this.setData({
+        openId: app.globalData.openid
+      })
+      console.log(app.globalData.openid);
+      this.Start(app.globalData.openid);
+    }
+
+    // app.getUserAuthor();
   },
 
   /**
@@ -226,7 +248,7 @@ Page({
     setTimeInterVal = setInterval(() => {
       /* 拉取数据 */
       this.timeToGetData();
-    }, 20000);
+    }, 10000);
 
   },
 
