@@ -43,9 +43,9 @@ Component({
 
 
     // 信件文字内容
-    lettercontent:{
-      type:String,
-      value: '我很无语'
+    lettercontentArr:{
+      type:Array,
+      value:[]
     },
     // 信件内容字体大小
     contentFont:{
@@ -147,10 +147,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    // 行数组
-    lettercontentArr:[],
-    // 行字数
-    lineNum: 17
+
   },
 
   /**
@@ -158,28 +155,5 @@ Component({
    */
   methods: {
     
-  },
-  lifetimes: {
-    attached: function() {
-      // 在组件实例进入页面节点树时执行
-      let content=this.properties.lettercontent;
-      // 行字数
-      let lineNum = this.data.lineNum;
-      let start=0;
-      let end=lineNum;
-      // 截取每行，放入数组中
-      for(var i=0;i<content.length/lineNum;i++){
-        this.data.lettercontentArr[i]=content.substring(start,end);
-        start+=lineNum;
-        end+=lineNum;
-      }
-      this.setData({
-        lettercontentArr: this.data.lettercontentArr
-      })
- 
-    },
-    detached: function() {
-      // 在组件实例被从页面节点树移除时执行
-    },
   },
 })

@@ -9,6 +9,20 @@ let publicTools = {
         Object.getOwnPropertyDescriptor(obj, old_key));
       delete obj[old_key]; // 删除旧键
     }
+  },
+  
+  //截取信件内容 keo
+  Interceptletterline(lettercontent,lettercontentArr,lineNum){
+      // 行字数
+      let start=0;
+      let end=lineNum;
+      // 截取每行，放入数组中
+      for(var i=0;i<lettercontent.length/lineNum;i++){
+        lettercontentArr[i]=lettercontent.substring(start,end);
+        start+=lineNum;
+        end+=lineNum;
+      }
+      return lettercontentArr;
   }
 
 

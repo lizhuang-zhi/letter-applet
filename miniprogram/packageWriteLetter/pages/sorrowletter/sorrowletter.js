@@ -1,5 +1,6 @@
 // packageWriteLetter/pages/sorrowletter/sorrowletter.js
 let requestData = require('../../../utils/request');
+let requestLetterline = require('../../../utils/public');
 let app = getApp();
 Page({
 
@@ -16,7 +17,14 @@ Page({
     // 用户openId
     openId: '',
     // 信件信息
-    letterInfo: {}
+    letterInfo: {},
+
+    //信件内容
+    lettercontent:'我是信件行数测试数据,我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据',
+    // 行数组
+    lettercontentArr:[],
+    // 行字数
+    lineNum: 17
   },
 
   //点击跳转写信
@@ -39,7 +47,17 @@ Page({
         letterInfo: letterInfo
       })
     })
-
+    /*
+      获取信件行信息
+    */
+    //获取信件行
+    let content = this.data.lettercontent;
+    let contentArr = this.data.lettercontentArr;
+    let linenum = this.data.lineNum;
+    let resultArr = requestLetterline.Interceptletterline(content,contentArr,linenum)
+    this.setData({
+      lettercontentArr:resultArr
+    })
   },
 
 
