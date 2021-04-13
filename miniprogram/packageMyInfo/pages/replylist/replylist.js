@@ -19,6 +19,8 @@ Page({
     let recipientPenName = e.currentTarget.dataset.recipientpenname;
     // 获取发送者的笔名
     let senderPenName = e.currentTarget.dataset.senderpenname;
+    // 获取replyId
+    let replyId = e.currentTarget.dataset.replyid;
     // 获取信件索引
     // let index = e.currentTarget.dataset.index;
     /* 将点击的信件在缓存中设置为已读 */
@@ -32,9 +34,10 @@ Page({
           2. 将其isRead属性设置为true
           3. 存入缓存
         */
-        unReadList.forEach(item => {
-          if (item.letterId == letterId) {
-            item.isRead = true;
+        unReadList.forEach((item,index) => {
+          if (item.letterId == letterId && item.sender == senderOpenId) {
+            // 删除具体的信件
+            unReadList.splice(index,1);
           }
         });
         wx.setStorage({
@@ -47,9 +50,8 @@ Page({
       }
     })
     wx.navigateTo({
-      url: '/packageMyInfo/pages/replyletter/replyletter?letterId=' + letterId + '&senderOpenId=' + senderOpenId + '&recipientPenName=' + recipientPenName + '&senderPenName=' + senderPenName,
+      url: '/packageMyInfo/pages/replyletter/replyletter?letterId=' + letterId + '&senderOpenId=' + senderOpenId + '&recipientPenName=' + recipientPenName + '&senderPenName=' + senderPenName + '&replyId=' + replyId,
     })
-
 
   },
 
@@ -61,7 +63,7 @@ Page({
     let that = this;
     wx.removeStorage({
       key: 'unReadLetterList',
-      success (res) {
+      success(res) {
         console.log(res);
         wx.showToast({
           title: '全部已读，可在历史信息中再次查看',
@@ -75,9 +77,9 @@ Page({
   },
 
   //初始化数据 
-  Start() {
+  Start(openId) {
     // 获取未读信件
-    requestData.replylist().then(res => {
+    requestData.replylist(openId).then(res => {
       console.log(res.data.data);
       // 获取未读消息数组（后台数据）
       let unReadLetterArr = res.data.data;
@@ -100,8 +102,8 @@ Page({
         })
       }).then(res => {
         console.log(res);
-        let newUnread = null;
-        if (unReadLetterArr != null) { // 从后台拉取到未读消息
+        let newUnread = unReadList;
+        if (unReadLetterArr != null) { // 从后台拉取到了未读消息
           /* 
             1. 为数据添加标记（判断是否已读）
             2. 将数据存入缓存 
@@ -110,14 +112,13 @@ Page({
           unReadLetterArr.forEach(item => {
             item.isRead = false;
           });
-          newUnread = unReadList == null ? unReadLetterArr : unReadLetterArr.concat(unReadList);
+          newUnread = newUnread == null ? unReadLetterArr : unReadLetterArr.concat(newUnread);
           /* 将未读消息存入缓存 */
           wx.setStorage({
             key: 'unReadLetterList',
             data: newUnread,
           })
         }
-
         this.setData({
           replyList: newUnread
         })
@@ -130,8 +131,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start();
+    this.Start(options.openId);
 
+    console.log('replylist ---- 监听页面加载');
   },
 
   /**1
@@ -146,21 +148,16 @@ Page({
    */
   onShow: function () {
     console.log('replylist页面 -- 监听页面显示');
-    /* 重新从缓存中取出isRead为true的 */
+
+    /* 重新从缓存中取出isRead为false的 */
     wx.getStorage({
       key: 'unReadLetterList',
       success: res => {
         // 获取全部缓存数组
         let allInfoArr = res.data;
-        // 存取所有isRead属性为true的数据
-        let newInfoArr = allInfoArr.filter((val, index) => {
-          return val.isRead == false;
-        });
-        // 渲染到页面 
         this.setData({
-          replyList: newInfoArr
+          replyList: allInfoArr
         })
-        console.log(newInfoArr);
       },
       fail: res => {
         console.log(res);

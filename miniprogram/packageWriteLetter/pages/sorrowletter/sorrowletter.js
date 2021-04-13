@@ -18,6 +18,7 @@ Page({
     // 信件信息
     letterInfo: {}
   },
+
   //点击跳转写信
   replyLetter() {
     wx.navigateTo({
@@ -25,12 +26,11 @@ Page({
     })
   },
 
-
   // 初始化数据
-  Start(letterId) {
+  Start(id) {
     // 获取用户的openId
     let openId = this.data.openId;
-    requestData.replyletter(letterId, false, openId).then(res => {
+    requestData.replyletter(openId, id).then(res => {
       console.log(res.data.data);
       // 获取信件信息
       let letterInfo = res.data.data;
@@ -47,12 +47,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start(options.letterId);
     // 获取用户openId
     app.getUserInfo().then(res => {
       this.setData({
         openId: app.globalData.openid
       })
+    }).then(res => {
+      // 登陆成功后（获取用户openId），获取信件信息
+      this.Start(options.id);
     })
   },
 

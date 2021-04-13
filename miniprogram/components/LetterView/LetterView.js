@@ -158,5 +158,28 @@ Component({
    */
   methods: {
     
-  }
+  },
+  lifetimes: {
+    attached: function() {
+      // 在组件实例进入页面节点树时执行
+      let content=this.properties.lettercontent;
+      // 行字数
+      let lineNum = this.data.lineNum;
+      let start=0;
+      let end=lineNum;
+      // 截取每行，放入数组中
+      for(var i=0;i<content.length/lineNum;i++){
+        this.data.lettercontentArr[i]=content.substring(start,end);
+        start+=lineNum;
+        end+=lineNum;
+      }
+      this.setData({
+        lettercontentArr: this.data.lettercontentArr
+      })
+ 
+    },
+    detached: function() {
+      // 在组件实例被从页面节点树移除时执行
+    },
+  },
 })

@@ -1,4 +1,3 @@
-// packageMyInfo/pages/replyletter/replyletter.js
 // api
 let requestData = require('../../../utils/request');
 let app = getApp();
@@ -9,14 +8,14 @@ Page({
    */
   data: {
     //回信内容
-    letterContent:`既然你觉得你的成绩差，想要改变那么从现在开始就集中精力好好学习.你要好好努力，然后惊艳所有人，包括你自己.虽然过程是很漫长且煎熬的，但是功不唐捐，你会要到自己想要的结果.所以啊，朋友，从现在开始，自己制定个计划，然后每天去完成.我很喜欢的一句话送给你:如果梦想有捷径的话，那么这条路的名字一定叫坚.持。别回头卯足劲儿向前冲。`,
+    letterContent: `既然你觉得你的成绩差，想要改变那么从现在开始就集中精力好好学习.你要好好努力，然后惊艳所有人，包括你自己.虽然过程是很漫长且煎熬的，但是功不唐捐，你会要到自己想要的结果.所以啊，朋友，从现在开始，自己制定个计划，然后每天去完成.我很喜欢的一句话送给你:如果梦想有捷径的话，那么这条路的名字一定叫坚.持。别回头卯足劲儿向前冲。`,
     //收件人
-    consignee:'不吃鱼的猫',
+    consignee: '不吃鱼的猫',
     //回信者
-    writer:'房东的猫',
+    writer: '房东的猫',
 
     // 信件信息
-    letterInfo: {},
+    letterInfo:{},
 
     // 信件id
     letterId: '',
@@ -24,7 +23,7 @@ Page({
     openId: ''
   },
   //点击跳转写信
-  replyLetter(){
+  replyLetter() {
     // 获取letterId
     let letterId = this.data.letterId;
     // 获取发送者openId
@@ -39,11 +38,11 @@ Page({
   },
 
   // 初始化数据
-  Start(letterId) {
-    // 获取用户的openId
-    let openId = this.data.openId;
-    requestData.replyletter(letterId,true,openId).then(res => {
+  Start(openId,replyId,letterId) {
+    requestData.replyletter(openId, replyId, letterId).then(res => {
       console.log(res);
+      console.log(res.data.data.replyContent);
+      console.log(typeof res.data.data.replyContent);
       // 获取信件信息
       let letterInfo = res.data.data;
       this.setData({
@@ -56,20 +55,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start(options.letterId);
+    // 获取用户openId
+    let openId = app.globalData.openid;
+    this.Start(openId,options.replyId,options.letterId);
     this.setData({
       letterId: options.letterId,
       senderOpenId: options.senderOpenId,
       recipientPenName: options.recipientPenName,
       senderPenName: options.senderPenName
     });
-    // 获取用户openId
-    app.getUserInfo().then(res => {
-      this.setData({
-        openId: app.globalData.openid
-      })
-    })
-    
+
   },
 
   /**
