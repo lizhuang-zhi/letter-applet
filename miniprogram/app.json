@@ -76,15 +76,14 @@
     "keo-letter-view": "/components/LetterView/LetterView",
     "keo-fun-blocks": "/components/FunBlocks/FunBlocks",
     "keo-prompt-list": "/components/PromptList/PromptList",
-    "keo-write-area":"/components/WritingArea/WritingArea",
-    "keo-check-button":"/components/CheckButton/CheckButton",
-    "keo-star-card":"/components/StarCard/StarCard",
-    "keo-switch-row":"/components/SwitchRow/SwitchRow",
-    "keo-original-content":"/components/OriginalContent/OriginalContent",
-    "keo-empty-display":"/components/EmptyDisplay/EmptyDisplay",
-    "keo-notify":"/components/Notify/Notify",
-    "keo-select-mode":"/components/SelectMode/SelectMode",
-    
+    "keo-write-area": "/components/WritingArea/WritingArea",
+    "keo-check-button": "/components/CheckButton/CheckButton",
+    "keo-star-card": "/components/StarCard/StarCard",
+    "keo-switch-row": "/components/SwitchRow/SwitchRow",
+    "keo-original-content": "/components/OriginalContent/OriginalContent",
+    "keo-empty-display": "/components/EmptyDisplay/EmptyDisplay",
+    "keo-notify": "/components/Notify/Notify",
+    "keo-select-mode": "/components/SelectMode/SelectMode",
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
     "yeo-rotate": "/Yeo/YeoRotate/YeoRotate",
@@ -122,12 +121,7 @@
     "yeo-diary-box-v2": "/Yeo/YeoDiaryBoxV2/YeoDiaryBoxV2",
     "yeo-frame": "/Yeo/YeoFrame/YeoFrame",
     "yeo-title": "/Yeo/YeoTitle/YeoTitle",
-
-
-
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
-
-
   }
 }
