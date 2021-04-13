@@ -2,7 +2,7 @@ let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
 
 // 用户openId
-let openId = '01673b49-52f7-45b6-bd75-16d39c01419c';
+let openId = '';
 // 发送评论的评论状态
 let state = 0;
 // 获取评论对象
@@ -32,11 +32,8 @@ Page({
     // 评论数组
     commentArr: [],
 
-    // 具体某一个吐槽评论的id
+    // 具体某一个吐槽的id
     id: '',
-
-    // 吐槽作者openId
-    sgId: '',
 
     // 输入框输入内容
     inputContent: '',
@@ -106,9 +103,9 @@ Page({
 
       // 插入数据库的评论对象数据
       let sendCommentObj = {
-        id: this.data.id,
+        // id: this.data.id,
         openId: openId,
-        sgId: this.data.sgId,
+        sgId: this.data.id,
         state: state
       };
 
@@ -172,8 +169,7 @@ Page({
         complianObj.date = timeTools.indexBeautyTime(complianObj.date);
         // 处理数据
         this.setData({
-          complianObj: complianObj,
-          sgId: complianObj.openId
+          complianObj: complianObj
         })
         // 请求评论数据接口
         return requestData.complainDetailComment(id, commentPageNum);
@@ -197,6 +193,9 @@ Page({
           // 赋值判断是否为最后一页评论
           isLastPageNum = commentObj.isLastPage;
           console.log(commentList);
+          commentList.forEach(item => {
+            item.date = timeTools.indexPostBoxTime(item.date);
+          })
           this.setData({
             commentArr: commentList
           })
@@ -227,12 +226,26 @@ Page({
     this.setData({
       id: options.id
     })
+    console.log(options.id);
 
-    // 获取用户信息
-    app.getUserInfo().then(res => {
-      console.log(res);
-    })
-    console.log('获取的openId为 ---> ' + app.globalData.openid);
+    if (app.globalData.openid == null) {
+      // 获取用户信息
+      app.getUserInfo().then(res => {
+        return new Promise((resolve,reject) => {
+          resolve('success');
+        })
+      }).then(res => {
+        if(res == 'success') {
+          openId = app.globalData.openid;
+          console.log(openId);
+        }
+      })
+    } else {
+      console.log('获取的openId为 ---> ' + app.globalData.openid);
+      openId = app.globalData.openid;
+    }
+
+
   },
 
   /**

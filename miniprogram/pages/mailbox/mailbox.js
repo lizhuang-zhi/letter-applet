@@ -248,7 +248,7 @@ Page({
     setTimeInterVal = setInterval(() => {
       /* 拉取数据 */
       this.timeToGetData();
-    }, 10000);
+    }, 6000);
 
   },
 
