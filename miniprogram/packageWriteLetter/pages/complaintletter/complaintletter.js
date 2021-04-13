@@ -1,5 +1,6 @@
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
+let yeoTools = require('../../../Yeo/utils/tools');
 
 // 用户openId
 let openId = '';
@@ -94,7 +95,7 @@ Page({
       // 新建评论对象
       let newCont = {
         content,
-        date: nowTime.toString(),
+        date: timeTools.indexPostBoxTime(nowTime),
         userVo: {
           penName: commentPerInfo.userName,
           avatarUrl: commentPerInfo.userImg,

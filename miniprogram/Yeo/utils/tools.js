@@ -50,9 +50,35 @@ let tools = {
         resolve(res[0].height);
       });
     });
+  },
+  // 时间显示（“刚刚”、“几天前”）
+  showTimeFormat(time) {
+    /* 
+        设置时间显示
+      */
+    // 当前时间戳
+    let dateNow = new Date();
+    // 当前时间
+    let dataNowTime = dateNow.getFullYear() + '-' + (dateNow.getMonth() + 1) + '-' + dateNow.getDate();
+    // 当前时间（格式化）
+    let dateNowAll = this.changeTimeFormat(dataNowTime);
+    // 发布时间
+    let timeDate = tools.changeTimeFormat(time);
+    // 发布时间戳
+    let commentDate = new Date(timeDate).getTime();
+    // 历经时长
+    let days = (dateNow - commentDate) / (1000 * 24 * 3600);
+    // 取整时长(天数)
+    let parseIntDays = parseInt(days);
+    if (parseIntDays > 0 && parseIntDays <= 10) {
+      return `${parseIntDays}天前`;
+    } else if (parseIntDays === 0) {
+      return "刚刚";
+    } else {
+      return dateNowAll;
+    }
+
   }
-
-
 
 
 

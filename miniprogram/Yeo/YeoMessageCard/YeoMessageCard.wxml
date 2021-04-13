@@ -1,14 +1,16 @@
 <view class="yeo-message-card" style="margin-bottom: {{cardBotMargin + 'rpx'}};">
+  <!-- 左边配图 -->
   <view class="left-pic" bindtap="userImgTap" data-userimg="{{userImg}}" data-username="{{userName}}">
     <image src="{{userImg}}"></image>
     <view class="guajian">
       <image src="{{headPendantUrl}}"></image>
     </view>
   </view>
+  <!-- 右边信息 -->
   <view class="right-content" style="border-bottom: 1rpx solid {{lineColor}};padding-bottom: {{contentPaddingBot + 'rpx'}};" bindtap="contentTap" data-username="{{userName}}" data-time="{{commentDay}}" data-content="{{content}}">
     <view class="up-msg">
       <view class="name" style="color: {{userNameColor}};font-size: {{userNameSize + 'rpx'}};">{{userName}}</view>
-      <view class="time" style="color: {{timeColor}};font-size: {{timeSize + 'rpx'}};">{{commentDay}}</view>
+      <view class="time" style="color: {{timeColor}};font-size: {{timeSize + 'rpx'}};">{{time}}</view>
     </view>
     <view class="down-cont" style="color: {{contentColor}};letter-spacing: {{contentLetSpacing + 'rpx'}};font-size: {{contentSize + 'rpx'}}">
       {{content}}
