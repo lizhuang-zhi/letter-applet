@@ -16,6 +16,7 @@ let requestData = require('../../utils/request');
 //   "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
 //   "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
 // ];
+let app = getApp();
 Page({
 
   /**
@@ -24,6 +25,15 @@ Page({
   data: {
     // 赏美文数组
     dataBeautyArr: [],
+
+    // 信件数组
+    letterArr: [],
+
+    // 是否显示提示框
+    isShowToastBox: 'block',
+
+    // 是否已经打开信箱
+    isOpenStampBox: false,
 
     // loading组件（覆盖层）
     isShowLoading: true
@@ -51,46 +61,40 @@ Page({
 
   },
 
-  // 初始化数据
-  Start() {
-    // 获取美文集合
-    requestData.indexBeauty().then(res => {
-      console.log(res.data.data);
 
-      // 404与500
-      if (res.statusCode == 404 || res.statusCode == 500) {
-        return new Promise((resolve, reject) => {
-          resolve('error');
+  // 获取解忧信件点击事件
+  obtainLetter() {
+    console.log(app.globalData.userInfo);
+    /* 
+      先授权登录，然后获取信件
+    */
+    if (app.globalData.userInfo == null && this.data.isOpenStampBox == false) {
+      app.getUserProfile().then(res => {
+        // 获取三封信件
+        requestData.indexLetters().then(res => {
+          console.log(res);
+          // 获取返回信件数组
+          let letterArr = res.data.data;
+          letterArr.forEach(item => {
+            // 时间格式化
+            item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
+            // 内容格式化
+            item.content = item.replyContent.length > 25 ? item.replyContent.substring(0, 25) + '..' : item.replyContent;
+            // 笔名格式化
+            item.penName = item.senderPenName.substring(0, 8);
+          });
+
+          this.setData({
+            letterArr: letterArr,
+            isShowToastBox: 'none',
+            isOpenStampBox: true
+          })
         });
-      } else {
-        // 获取数组
-        let artArr = res.data.data;
-        // 处理数据
-        artArr.forEach(item => {
-          // 修改对象键名
-          publicTools.renameKey(item, 'articleTime', 'time');
-          publicTools.renameKey(item, 'img_url', 'bgUrl');
-          publicTools.renameKey(item, 'articleTitle', 'title');
-
-          // 格式化时间
-          item.time = tools.indexBeautyTime(item.time);
-
-          // 修改标题
-          item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
-        });
-        this.setData({
-          dataBeautyArr: artArr
-        })
-        // 首页三封信件 
-        return requestData.indexLetters();
-      }
-
-
-    }).then(res => {
-      console.log(res.data.data);
-      if (res == 'error') {
-        console.log('404 or 500，请检查请求');
-      } else {
+      })
+    } else if (app.globalData.userInfo && this.data.isOpenStampBox == false) {
+      // 获取三封信件
+      requestData.indexLetters().then(res => {
+        console.log(res);
         // 获取返回信件数组
         let letterArr = res.data.data;
         letterArr.forEach(item => {
@@ -99,12 +103,63 @@ Page({
           // 内容格式化
           item.content = item.replyContent.length > 25 ? item.replyContent.substring(0, 25) + '..' : item.replyContent;
           // 笔名格式化
-          item.penName = item.senderPenName.substring(0,8);
+          item.penName = item.senderPenName.substring(0, 8);
         });
 
-        // 关闭loading覆盖层
         this.setData({
           letterArr: letterArr,
+          isShowToastBox: 'none',
+          isOpenStampBox: true
+        })
+      });
+    } else if(app.globalData.userInfo != null && this.data.isOpenStampBox == true){
+      wx.showToast({
+        title: '暂时没有更多信件',
+        icon: 'none'
+      })
+    }
+  },
+
+  // 初始化数据
+  Start() {
+    // 获取美文集合
+    requestData.indexBeauty().then(res => {
+      console.log(res.data.data);
+
+      return new Promise((resolve, reject) => {
+        // 404与500
+        if (res.statusCode == 404 || res.statusCode == 500) {
+          resolve('error');
+        } else {
+          // 获取数组
+          let artArr = res.data.data;
+          // 处理数据
+          artArr.forEach(item => {
+            // 修改对象键名
+            publicTools.renameKey(item, 'articleTime', 'time');
+            publicTools.renameKey(item, 'img_url', 'bgUrl');
+            publicTools.renameKey(item, 'articleTitle', 'title');
+
+            // 格式化时间
+            item.time = tools.indexBeautyTime(item.time);
+
+            // 修改标题
+            item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+          });
+          this.setData({
+            dataBeautyArr: artArr
+          });
+          resolve('success');
+        }
+      })
+
+    }).then(res => {
+      console.log(res);
+      if (res == 'error') {
+        console.log('404 or 500，请检查请求');
+      } else {
+        // 关闭loading覆盖层
+        this.setData({
           isShowLoading: false
         })
       }
@@ -134,6 +189,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 初始化美文集合
     this.Start();
   },
 

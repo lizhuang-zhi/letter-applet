@@ -1,6 +1,8 @@
 page {
   /* 页面左边距 */
   --margin-top: 40rpx;
+  /* 提示框颜色 */
+  --notifi-box-bg-color: #FFFFFF;
 }
 
 /* 顶部文字 */
@@ -38,11 +40,67 @@ page {
 
 /* 解忧信件标题 */
 .tit-sorrow {
-  margin-left: var(--margin-top);
+  margin: 40rpx 40rpx 20rpx;
+}
+.tit-sorrow .info-left {
   font-size: 40rpx;
-  font-weight: bold;
-  color: #293939;
   font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  width: 500rpx;
+}
+.tit-sorrow .info-right {
+  font-size: 26rpx;
+  letter-spacing: 2rpx;
+
+  position: relative;
+}
+.tit-sorrow .info-right .letter-btn {
+  border: 3rpx solid #FFA82E;
+  padding: 5rpx 10rpx;
+  border-radius: 10rpx;
+  color: #FFA82E;
+}
+
+/* 提示框 */
+.tit-sorrow .info-right .notifi-box {
+  width: 380rpx; 
+  height: 140rpx;
+  background: var(--notifi-box-bg-color);
+  border-radius: 10px;
+  margin-left:20px;
+
+  position: absolute;
+  top: 100rpx;
+  right: 0;
+
+  animation: upDown 1.2s ease-in-out 5;
+
+  z-index: 999;
+}
+.tit-sorrow .info-right .notifi-box:before {
+  content: "";
+  position: absolute;
+  bottom: 100%; 
+  right: 45rpx;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+  border-bottom: 13px solid var(--notifi-box-bg-color);
+}
+
+.tit-sorrow .info-right .notifi-box .desc {
+  font-size: 33rpx;
+  color: #7F7F7F;
+
+  position: absolute;
+  top: 40rpx;
+  left: 50rpx;
+}
+.tit-sorrow .info-right .notifi-box .pic image {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 100rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
 }
 
 /* 解忧信件 */
@@ -58,5 +116,17 @@ page {
 }
 .tit-sorrow-box .sorrow-list .list-box {
   display: flex;
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20rpx);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 

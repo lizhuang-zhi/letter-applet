@@ -6,15 +6,6 @@ let yeoTools = require('../../../Yeo/utils/tools');
 let openId = '';
 // 发送评论的评论状态
 let state = 0;
-// 获取评论对象
-let commentPerInfo = {
-  // 用户名
-  userName: '荒野大道',
-  // 头像挂件等级
-  headPendant: 0,
-  // 用户头像
-  userImg: 'https://s3.ax1x.com/2021/03/09/63FNEn.jpg',
-};
 // 分页请求评论页码
 let commentPageNum = 1;
 // 赋值判断是否为最后一页评论
@@ -97,8 +88,8 @@ Page({
         content,
         date: timeTools.indexPostBoxTime(nowTime),
         userVo: {
-          penName: commentPerInfo.userName,
-          avatarUrl: commentPerInfo.userImg,
+          penName: app.globalData.userInfo.nickName,
+          avatarUrl: app.globalData.userInfo.avatarUrl,
         },
       };
 

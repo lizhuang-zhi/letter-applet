@@ -91,7 +91,7 @@ App({
 
   },
 
-  // 获取用户授权登陆
+  // 获取用户授权登陆（此方法调用getUserOpenId）
   getUserProfile() {
     let that = this;
     return new Promise((resolve,reject) => {

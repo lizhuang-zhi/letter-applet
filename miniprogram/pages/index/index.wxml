@@ -14,20 +14,39 @@
         lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5' wordWieight='bold'></yeo-art-font>
     </view>
 
-    <view class='info-right' slot='dy-right'>心自静</view>
+    <!-- <view class='info-right' slot='dy-right'>心自静</view> -->
   </yeo-dy-fun-bar>
 </view>
 <!-- 轮播图 -->
-<yeo-swiper dataArr='{{dataBeautyArr}}' bind:clickevent="ToBeautyTap" swiperHeight='200' itemWidth='420' itemHeight='110' starBoxWidth='50' starBoxHeight='50'
-  starTopWithOutBox='15' titleFontSize='33' timeFontSize='22' starBoxBordRadius='25' bottomInfoBotWithOutBox='20'
-  bgSize='cover' swiperMarginTop='10' swiperMarginBot='31' itemMarginTop='40'  isShowStarPic='{{false}}'></yeo-swiper>
+<yeo-swiper dataArr='{{dataBeautyArr}}' bind:clickevent="ToBeautyTap" swiperHeight='200' itemWidth='420'
+  itemHeight='110' starBoxWidth='50' starBoxHeight='50' starTopWithOutBox='15' titleFontSize='33' timeFontSize='22'
+  starBoxBordRadius='25' bottomInfoBotWithOutBox='20' bgSize='cover' swiperMarginTop='10' swiperMarginBot='31'
+  itemMarginTop='40' isShowStarPic='{{false}}'></yeo-swiper>
 
 
 <!-- 解忧信件标题 -->
 <view class="tit-sorrow">
-  <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='解忧信箱' wordWieight='bold' worLinePosp='unset'
-    lineWidthOfScreen='44%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'>
-  </yeo-art-font>
+
+  <yeo-dy-fun-bar distractWay='between'>
+    <view class="info-left" slot='dy-left'>
+      <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='解忧信箱' wordWieight='bold' worLinePosp='unset'
+        lineWidthOfScreen='44%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'>
+      </yeo-art-font>
+    </view>
+
+    <view class='info-right' slot='dy-right'>
+      <view class="letter-btn" bindtap="obtainLetter">打开信箱</view>
+      <!-- 提示框 -->
+      <view class="notifi-box" style="display: {{isShowToastBox}};">
+        <view class="desc">快来打开你的信箱</view>
+        <view class="pic">
+          <image src="../../images/flower.png"></image>
+        </view>
+      </view>
+    </view>
+
+  </yeo-dy-fun-bar>
+  
 </view>
 <!-- 解忧信件 -->
 <view class="tit-sorrow-box">
@@ -35,7 +54,9 @@
     <view class="list-box">
 
       <!-- 信件数组 -->
-      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}" stampPic='{{item.stampUrl}}' name='{{item.penName}}' content='{{item.content}}' date='{{item.releaseTime}}'></yeo-stamp-text>
+      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}"
+        stampPic='{{item.stampUrl}}' name='{{item.penName}}' content='{{item.content}}' date='{{item.releaseTime}}'>
+      </yeo-stamp-text>
 
     </view>
   </scroll-view>
