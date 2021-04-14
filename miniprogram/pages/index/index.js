@@ -79,9 +79,9 @@ Page({
             // 时间格式化
             item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
             // 内容格式化
-            item.content = item.replyContent.length > 25 ? item.replyContent.substring(0, 25) + '..' : item.replyContent;
+            item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
             // 笔名格式化
-            item.penName = item.senderPenName.substring(0, 8);
+            item.senderPenName = item.senderPenName.substring(0, 8);
           });
 
           this.setData({

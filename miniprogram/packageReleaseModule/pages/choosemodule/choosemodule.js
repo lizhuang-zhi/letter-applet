@@ -1,4 +1,5 @@
 // packageReleaseModule/pages/choosemodule/choosemodule.js
+let app = getApp();
 Page({
 
   /**
@@ -7,6 +8,67 @@ Page({
   data: {
 
   },
+
+  // 跳转发布日记
+  toDiary(e) {
+    if (app.globalData.userInfo == null) {
+      app.getUserProfile().then(res => {
+        // 获取类型
+        let ChooseType = e.detail.chooseType;
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+        });
+      })
+    } else {
+      // 获取类型
+      let ChooseType = e.detail.chooseType;
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+      });
+    }
+
+  },
+
+  // 跳转发布解忧
+  toSolveSorrow(e) {
+    if (app.globalData.userInfo == null) {
+      app.getUserProfile().then(res => {
+        // 获取类型
+        let ChooseType = e.detail.chooseType;
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+        });
+      })
+    } else {
+      // 获取类型
+      let ChooseType = e.detail.chooseType;
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+      });
+    }
+
+  },
+
+  // 跳转发布吐槽
+  toComplian(e) {
+    if (app.globalData.userInfo == null) {
+      app.getUserProfile().then(res => {
+        // 获取类型
+        let ChooseType = e.detail.chooseType;
+        wx.navigateTo({
+          url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+        });
+      })
+    } else {
+      // 获取类型
+      let ChooseType = e.detail.chooseType;
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+      });
+    }
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载

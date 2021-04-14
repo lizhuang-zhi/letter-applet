@@ -14,8 +14,6 @@ Page({
     TimesFontSize: "32rpx",
     //解答次数颜色
     TiemsColor: 'grey',
-    // 用户openId
-    openId: '',
     // 信件信息
     letterInfo: {},
 
@@ -23,9 +21,9 @@ Page({
       keo ------------
     */
     //信件内容
-    lettercontent:'我是信件行数测试数据,我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据',
+    lettercontent: '我是信件行数测试数据,我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据',
     // 行数组
-    lettercontentArr:[],
+    lettercontentArr: [],
     // 行字数
     lineNum: 17
   },
@@ -40,7 +38,7 @@ Page({
   // 初始化数据
   Start(id) {
     // 获取用户的openId
-    let openId = this.data.openId;
+    let openId = app.globalData.openid;
     requestData.replyletter(openId, id).then(res => {
       console.log(res.data.data);
       // 获取信件信息
@@ -50,6 +48,7 @@ Page({
         letterInfo: letterInfo
       })
     })
+    
     /*
       获取信件行信息  -----   keo
     */
@@ -57,10 +56,10 @@ Page({
     let content = this.data.lettercontent;
     let contentArr = this.data.lettercontentArr;
     let linenum = this.data.lineNum;
-    let resultArr = requestLetterline.Interceptletterline(content,contentArr,linenum)
-    console.log(requestLetterline.Interceptletterline(content,contentArr,linenum));
+    let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum)
+    console.log(requestLetterline.Interceptletterline(content, contentArr, linenum));
     this.setData({
-      lettercontentArr:resultArr
+      lettercontentArr: resultArr
     })
   },
 
@@ -70,24 +69,18 @@ Page({
    */
   onLoad: function (options) {
     console.log('sorrowletter页面 ----------- 监听页面加载');
-    // 获取用户openId
-    app.getUserInfo().then(res => {
-      this.setData({
-        openId: app.globalData.openid
-      })
-    }).then(res => {
-      // 登陆成功后（获取用户openId），获取信件信息
-      this.Start(options.id);
-    })
+
+    // 登陆成功后（获取用户openId），获取信件信息
+    this.Start(options.id);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
-  
+
   /**
    * 生命周期函数--监听页面显示
    */

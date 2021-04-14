@@ -91,9 +91,9 @@ Component({
   methods: {
     //跳转到书写页面
     NavTo() {
-      wx.navigateTo({
-        url: '/packageReleaseModule/pages/write/write?type=' + this.properties.ChooseType,
-      })
+      // 获取类型
+      let chooseType = this.properties.ChooseType;
+      this.triggerEvent('navtoevent',{chooseType});
     }
   },
   lifetimes: {

@@ -40,36 +40,36 @@ Page({
       })
     } else if (chooseType == '回信') {
       /* 
-        调用回信接口
+        调用回信接口 ---- 暂时去除此接口 2021.4.14
       */
-      let infoObj = {
-        letterId: this.data.letterId,
-        message: this.data.textValue,
-        recipient: this.data.senderOpenId,
-        recipientPenName: this.data.senderPenName,
-        sender: this.data.openId,
-        senderPenName: this.data.recipientPenName
-      };
-      requestData.indexStampReply(infoObj).then(res => {
-        return new Promise((resolve, reject) => {
-          // 显示回信成功（同步）
-          wx.showToast({
-            title: '回信成功',
-            image: '../../images/confirm.png',
-            duration: 1300
-          });
-          resolve('success');
-        })
-      }).then(res => {
-        if (res == 'success') {
-          // 接口请求成功后跳转（同步）
-          setTimeout(() => {
-            wx.redirectTo({
-              url: '/packageMyInfo/pages/replylist/replylist'
-            });
-          },1300)
-        }
-      })
+      // let infoObj = {
+      //   letterId: this.data.letterId,
+      //   message: this.data.textValue,
+      //   recipient: this.data.senderOpenId,
+      //   recipientPenName: this.data.senderPenName,
+      //   sender: app.globalData.openid,
+      //   senderPenName: this.data.recipientPenName
+      // };
+      // requestData.indexStampReply(infoObj).then(res => {
+      //   return new Promise((resolve, reject) => {
+      //     // 显示回信成功（同步）
+      //     wx.showToast({
+      //       title: '回信成功',
+      //       image: '../../images/confirm.png',
+      //       duration: 1300
+      //     });
+      //     resolve('success');
+      //   })
+      // }).then(res => {
+      //   if (res == 'success') {
+      //     // 接口请求成功后跳转（同步）
+      //     setTimeout(() => {
+      //       wx.redirectTo({
+      //         url: '/packageMyInfo/pages/replylist/replylist'
+      //       });
+      //     },1300)
+      //   }
+      // })
 
     } else {
       wx.navigateTo({
@@ -84,12 +84,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 获取本人openId
-    app.getUserInfo().then(res => {
-      this.setData({
-        openId: app.globalData.openid
-      })
-    });
     // 获取选择类型
     this.setData({
       chooseType: options.type,
