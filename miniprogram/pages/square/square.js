@@ -10,6 +10,7 @@ let isLastDiaryPage = null;
 let complianPageNum = null;
 // 存储修改的日记键值对数组
 let changeDiary = {};
+let app = getApp();
 Page({
 
   /**
@@ -104,9 +105,19 @@ Page({
   ToComplainTap(e) {
     // 获取吐槽对象id
     let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
-    })
+    // 未获取授权
+    if (!app.globalData.userInfo) {
+      app.getUserProfile().then(res => {
+        wx.navigateTo({
+          url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+        })
+      })
+    } else { // 已授权
+      wx.navigateTo({
+        url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+      })
+    }
+
   },
 
   // 标签tab切换事件
@@ -169,7 +180,7 @@ Page({
       for (let ele of diaryList) {
         newObj[ele.id] = parseInt(ele.number);
       };
-      console.log(newObj);  
+      console.log(newObj);
       wx.setStorage({
         key: 'diaryView',
         data: newObj,

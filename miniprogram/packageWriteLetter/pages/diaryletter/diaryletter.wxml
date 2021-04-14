@@ -2,11 +2,3 @@
 <view class="content-main">
   <yeo-diary-content content='{{diaryObj.content}}' authorName='{{diaryObj.penName}}' weekDay='{{diaryObj.weekDay}}' dateNum='{{diaryObj.dateNum}}' isAddStarTap='{{false}}'></yeo-diary-content>
 </view>
-
-
-
-<!-- 下一篇 -->
-<view class="next-page">
-  <text>下一篇</text>
-  <image src="../../images/arrow.png"></image>
-</view>

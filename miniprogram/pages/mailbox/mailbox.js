@@ -55,27 +55,56 @@ Page({
   ToReplyListTap(e) {
     // 获取索引
     let index = e.detail.index;
-    // 获取openId
-    let openId = this.data.openId;
-    if (index == 0) {
-      wx.navigateTo({
-        url: '/packageMyInfo/pages/indexinfo/indexinfo',
+
+    // 未获取用户信息与openId
+    if (!app.globalData.userInfo) {
+      app.getUserProfile().then(res => {
+        // 获取openId
+        let openId = app.globalData.openid;
+        if (index == 0) {
+          wx.navigateTo({
+            url: '/packageMyInfo/pages/indexinfo/indexinfo',
+          })
+        } else if (index == 1) {
+          wx.navigateTo({
+            url: '/packageMyInfo/pages/replylist/replylist?openId=' + openId,
+          });
+          // 将消息提示数量置为0
+          let dataList = this.data.dataList;
+          dataList[1].notifiNum = 0;
+          this.setData({
+            dataList: dataList
+          });
+        } else if (index == 2) {
+          wx.navigateTo({
+            url: '/packageMyInfo/pages/comment/comment?openid=' + openId,
+          })
+        }
       })
-    } else if (index == 1) {
-      wx.navigateTo({
-        url: '/packageMyInfo/pages/replylist/replylist?openId=' + openId,
-      });
-      // 将消息提示数量置为0
-      let dataList = this.data.dataList;
-      dataList[1].notifiNum = 0;
-      this.setData({
-        dataList: dataList
-      });
-    } else if (index == 2) {
-      wx.navigateTo({
-        url: '/packageMyInfo/pages/comment/comment?openid=' + this.data.openId,
-      })
+    } else { // 已获取用户信息与openId
+      // 获取openId
+      let openId = app.globalData.openid;
+      if (index == 0) {
+        wx.navigateTo({
+          url: '/packageMyInfo/pages/indexinfo/indexinfo',
+        })
+      } else if (index == 1) {
+        wx.navigateTo({
+          url: '/packageMyInfo/pages/replylist/replylist?openId=' + openId,
+        });
+        // 将消息提示数量置为0
+        let dataList = this.data.dataList;
+        dataList[1].notifiNum = 0;
+        this.setData({
+          dataList: dataList
+        });
+      } else if (index == 2) {
+        wx.navigateTo({
+          url: '/packageMyInfo/pages/comment/comment?openid=' + openId,
+        })
+      }
     }
+
   },
   //挑转到官方消息
   ToOfficialnews() {
@@ -134,14 +163,6 @@ Page({
 
   },
 
-  // 轮循方法
-  timeToGetData() {
-    // 获取opneId
-    let openId = this.data.openId;
-    // 获取接口数据
-    this.apiNumberData(openId);
-  },
-
   // API方法
   apiNumberData(openId) {
     // 获取未读信件数量
@@ -193,33 +214,20 @@ Page({
     })
   },
 
+  // 轮循方法
+  timeToGetData() {
+    // 获取opneId
+    let openId = this.data.openId;
+    // 获取接口数据
+    this.apiNumberData(openId);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('监听页面加载');
-    /* 
-      获取openid
-    */
-    if (app.globalData.openid == null) {
-      app.getUserInfo().then(res => {
-        // 获取openid
-        let openid = app.globalData.openid;
-        this.setData({
-          openId: openid
-        })
-        console.log(openid);
-        this.Start(openid);
-      })
-    } else {
-      this.setData({
-        openId: app.globalData.openid
-      })
-      console.log(app.globalData.openid);
-      this.Start(app.globalData.openid);
-    }
+    console.log('mailbox页面 ------ 监听页面加载');
 
-    // app.getUserAuthor();
   },
 
   /**
@@ -240,7 +248,12 @@ Page({
         selected: 2
       })
     }
-    console.log('监听页面显示');
+    console.log('mailbox页面  ------- 监听页面显示');
+
+    // 页面显示时，若用户已登录授权则拉取一次信息
+    if(app.globalData.userInfo) {
+      this.Start();
+    }
 
     /* 
       设置轮循进行接口拉取
@@ -248,7 +261,7 @@ Page({
     setTimeInterVal = setInterval(() => {
       /* 拉取数据 */
       this.timeToGetData();
-    }, 6000);
+    }, 15000);
 
   },
 
@@ -256,7 +269,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log('监听页面隐藏');
+    console.log('mailbox页面 ----- 监听页面隐藏');
 
     /* 
       当页面被隐藏时，清除定时器

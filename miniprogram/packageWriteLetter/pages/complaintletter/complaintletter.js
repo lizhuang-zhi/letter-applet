@@ -232,11 +232,11 @@ Page({
     if (app.globalData.openid == null) {
       // 获取用户信息
       app.getUserInfo().then(res => {
-        return new Promise((resolve,reject) => {
+        return new Promise((resolve, reject) => {
           resolve('success');
         })
       }).then(res => {
-        if(res == 'success') {
+        if (res == 'success') {
           openId = app.globalData.openid;
           console.log(openId);
         }

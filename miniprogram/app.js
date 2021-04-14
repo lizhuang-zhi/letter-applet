@@ -52,115 +52,81 @@ App({
     console.log('App  --> onShow执行了');
   },
 
-  // 获取用户信息 与 openid
-  getUserInfo: function (cb) {
+  // 获取用户openid
+  getUserOpenId() {
     var that = this
     // 使用Promise完成同步！！
     return new Promise(function (resolve, reject) {
+      //调用登录接口
+      wx.login({
+        success: function (res) {
+          // 获取jsCode
+          let code = res.code;
 
-      // 已获取用户信息
-      if (that.globalData.userInfo) {
-        typeof cb == "function" && cb(that.globalData.userInfo)
-      } else {
-        //调用登录接口
-        wx.login({
-          success: function (res) {
-            // 获取jsCode
-            let code = res.code
+          //获取openid接口
+          wx.request({
+            url: 'https://rayss.host/user/getKey',
+            data: {
+              jsCode: code
+            },
+            method: 'GET',
+            success: function (res) {
+              // 获取返回数据
+              let backInfo = JSON.parse(res.data.data);
+              // 将openid赋值全局变量
+              that.globalData.openid = backInfo.openid;
+              resolve('success')
+            },
+            fail: res => {
+              console.log(res);
+              reject('error')
+            }
 
-            // 获取用户信息
-            wx.getUserInfo({
-              success: function (res) {
-                /* 
-                  还没授权
-                */
+          });
+
+        },
+      })
+
+    })
+
+  },
+
+  // 获取用户授权登陆
+  getUserProfile() {
+    let that = this;
+    return new Promise((resolve,reject) => {
+      wx.getSetting({
+        success(res) {
+          // 未授权用户信息
+          if (!res.authSetting['scope.userInfo']) {
+            wx.authorize({
+              scope: 'scope.userInfo',
+              success: res => {
                 console.log(res);
-
+              },
+              fail: res => {
+                console.log(res);
+              }
+            })
+          } else { // 授权用户信息
+            wx.getUserProfile({
+              desc: '获取用户信息',
+              success: res => {
+                console.log(res);
+                // 将获取的用户信息赋值全局变量
                 that.globalData.userInfo = res.userInfo;
-                typeof cb == "function" && cb(that.globalData.userInfo)
-
-                //获取openid接口
-                wx.request({
-                  url: 'https://rayss.host/user/getKey',
-                  data: {
-                    jsCode: code
-                  },
-                  method: 'GET',
-                  success: function (res) {
-                    // 获取返回数据
-                    let backInfo = JSON.parse(res.data.data);
-                    // 将openid赋值全局变量
-                    that.globalData.openid = backInfo.openid;
-                    resolve('success')
-                  },
-                  fail: res => {
-                    console.log(res);
-                    reject('error')
-                  }
-
+                // 获取用户openId
+                that.getUserOpenId().then(res => {
+                  resolve('获取用户信息成功');
                 })
               },
               fail: res => {
                 console.log(res);
               }
-
-            })
-
-          },
-        })
-
-      }
-
-    })
-
-
-  },
-
-  // 获取用户授权登陆
-  getUserAuthor() {
-    // 可以通过 wx.getSetting 先查询一下用户是否授权了 "scope.record" 这个 scope
-    wx.getSetting({
-      success(res) {
-        console.log(res);
-        console.log(res.authSetting['scope.userInfo']);  // undefined
-        if (res.authSetting['scope.userInfo']) {
-          console.log("已授权=====")
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          // wx.getUserInfo({
-          //   success(res) {
-          //     console.log("获取用户信息成功", res)
-          //     that.setData({
-          //       name: res.userInfo.nickName
-          //     })
-          //   },
-          //   fail(res) {
-          //     console.log("获取用户信息失败", res)
-          //   }
-          // })
-          wx.getUserProfile({
-            success: res => {
-              console.log(res);
-            },
-            fail: res => {
-              console.log(res);
-            }
-          });
-        
-        } else {
-          console.log("未授权=====");
-          wx.authorize({
-            scope: 'scope.userInfo',
-            success () {
-              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
-              wx.startRecord()
-              console.log(res);
-            },
-            fail: res => {
-              console.log(res);
-            }
-          })
+            });
+          }
         }
-      }
+      })
     })
   }
 
