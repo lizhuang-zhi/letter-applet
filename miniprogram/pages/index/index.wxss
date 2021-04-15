@@ -75,7 +75,7 @@ page {
 
   animation: upDown 1.2s ease-in-out 5;
 
-  z-index: 999;
+  z-index: -1;
 }
 .tit-sorrow .info-right .notifi-box:before {
   content: "";
