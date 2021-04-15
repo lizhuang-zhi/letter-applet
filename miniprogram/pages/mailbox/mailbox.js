@@ -20,19 +20,19 @@ Page({
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OoQPO.png",
       text: "我的",
       picBgColor: "#FEF7E2",
-      isShowNum: 'block',
+      // isShowNum: 'block',
       notifiNum: 0
     }, {
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
       text: "回信",
       picBgColor: "#E9F1FE",
-      isShowNum: 'block',
+      // isShowNum: 'block',
       notifiNum: 0
     }, {
       imgsrc: "../../images/message.png",
       text: "评论",
       picBgColor: "#E6F8F0",
-      isShowNum: 'block',
+      // isShowNum: 'block',
       notifiNum: 0
     }],
 
