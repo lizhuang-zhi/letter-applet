@@ -185,7 +185,6 @@ Page({
     // 获取开关当前类型
     switchVal: null,
 
-
     // 信件id
     letterId: '',
     // 接收者的openId
@@ -374,6 +373,7 @@ Page({
     // 内容
     let content = this.data.inputValue;
     // 用户openId
+    let openId = app.globalData.openid;
     // 发布时间
     let releaseTime = new Date();
     // 邮票图片地址
@@ -389,7 +389,8 @@ Page({
       releaseTime,
       stampUrl,
       state,
-      tapIds
+      tapIds,
+      openId
     };
 
     // 标签选择不能为空
@@ -406,7 +407,6 @@ Page({
     } else {
       requestData.lettertypeLetterSend(letterObj).then(res => {
         console.log(res.data);
-
         return new Promise((resolve, reject) => {
           // 发布返回信息
           let resCode = res.data.resultCode;
@@ -450,6 +450,7 @@ Page({
     // 内容
     let content = this.data.inputValue;
     // 用户openId
+    let openId = app.globalData.openid;
     // 状态
     let state = this.data.switchVal == true ? 1 : 0;
     // 天气 
@@ -460,6 +461,7 @@ Page({
       content,
       state,
       weather,
+      openId
     }
     if (selectDiaryWeatherArr.length == 0) {
       wx.showToast({
@@ -507,14 +509,13 @@ Page({
      ************ 提交吐槽 *************
      */
     // 吐槽人头像
-    let avatarUrl = 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1950846641,3729028697&fm=26&gp=0.jpg';
+    let avatarUrl = app.globalData.userInfo.avatarUrl;
     // 内容
     let content = this.data.inputValue;
-    // 发布时间
-    let date = new Date();
-    // 吐槽评论数量 ？？？？？？？？？？？？？
-    let number = 666;
+    // 吐槽评论数量 
+    let number = 0;
     // 用户openId
+    let openId = app.globalData.openid;
     // 笔名
     let penName = this.data.initValue;
     // 状态
@@ -528,12 +529,14 @@ Page({
     // 日记对象
     let complainObj = {
       avatarUrl,
-      date,
       penName,
       content,
       state,
-      title
+      title,
+      number,
+      openId
     };
+    console.log(complainObj);
     requestData.lettertypeComplainSend(complainObj).then(res => {
       console.log(res);
       return new Promise((resolve, reject) => {

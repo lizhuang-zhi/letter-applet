@@ -1,18 +1,13 @@
 import apiUrl from '../utils/api';
 
-// 用户openId
-const openId = 'vx001';
 
 let requestData = {
   // 用户注册
   userAccount(userInfo) {
     return new Promise((resolve,reject)=>{
       wx.request({
-        // header: {
-        //   'content-type':'application/x-www-form-urlencoded'
-        // },
         header: {
-          'content-type': 'application/json;charset=utf-8' // 默认值
+          'content-type':'application/x-www-form-urlencoded'
         },
         url: apiUrl.userAccountApi(),
         method: "POST",
@@ -45,7 +40,7 @@ let requestData = {
     });
   },
   // 首页三封信件
-  indexLetters() {
+  indexLetters(openId) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getIndexLetters(),
@@ -199,7 +194,7 @@ let requestData = {
         url: apiUrl.getLettertypeLetterSend(),
         data: {
           content: letterObj.content,
-          openId: openId,
+          openId: letterObj.openId,
           penName: letterObj.penName,
           releaseTime: letterObj.releaseTime,
           stampUrl: letterObj.stampUrl,
@@ -226,7 +221,7 @@ let requestData = {
         url: apiUrl.getLettertypeDiarySend(),
         data: {
           content: diaryObj.content,
-          openId: openId,
+          openId: diaryObj.openId,
           penName: diaryObj.penName,
           state: diaryObj.state,
           weather: diaryObj.weather
@@ -248,13 +243,12 @@ let requestData = {
           'content-type':'application/x-www-form-urlencoded'
         },
         method: "POST",
-        url: apiUrl.getLettertypeDiarySend(),
+        url: apiUrl.getLettertypeComplainSend(),
         data: {
           avatarUrl: complainObj.avatarUrl,
           content: complainObj.content,
-          date: complainObj.date,
           number: complainObj.number,
-          openId: openId,
+          openId: complainObj.openId,
           penName: complainObj.penName,
           state: complainObj.state,
           title: complainObj.title,

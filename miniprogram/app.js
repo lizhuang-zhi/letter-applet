@@ -78,8 +78,7 @@ App({
               // 用户注册
               // that.accountUserInfo().then(res => {
               // })
-              resolve('success')
-              
+              resolve('success');
             },
             fail: res => {
               console.log(res);

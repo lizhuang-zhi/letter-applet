@@ -7,7 +7,7 @@
 <yeo-loading-part pull="{{pull}}" push="{{push}}" bindrefresh="refresh" bindtoload="toload" top='100'>
   <!-- 功能模块 -->
   <view class="my-info-bar">
-    <keo-fun-blocks dataList='{{dataList}}' BlockFontColor='#343434' bind:clickevent='ToReplyListTap' BlockRadius='35'   IsDisplay='{{isShowNum}}'>
+    <keo-fun-blocks dataList='{{dataList}}' BlockFontColor='#343434' bind:clickevent='ToReplyListTap' BlockRadius='35'>
     </keo-fun-blocks>
   </view>
 

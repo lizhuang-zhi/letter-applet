@@ -62,17 +62,17 @@ Page({
     })
   },
 
-
   // 获取解忧信件点击事件
   obtainLetter() {
-    console.log(app.globalData.userInfo);
     /* 
       先授权登录，然后获取信件
     */
     if (app.globalData.userInfo == null && this.data.isOpenStampBox == false) {
+      // 获取用户openId
+      let openId = app.globalData.openid;
       app.getUserProfile().then(res => {
         // 获取三封信件
-        requestData.indexLetters().then(res => {
+        requestData.indexLetters(openId).then(res => {
           // console.log(res);
           console.log(res.data.data);
           // 获取返回信件数组
@@ -94,8 +94,10 @@ Page({
         });
       })
     } else if (app.globalData.userInfo && this.data.isOpenStampBox == false) {
+      // 获取用户openId
+      let openId = app.globalData.openid;
       // 获取三封信件
-      requestData.indexLetters().then(res => {
+      requestData.indexLetters(openId).then(res => {
         // console.log(res);
         console.log(res.data.data);
         // 获取返回信件数组
@@ -115,7 +117,7 @@ Page({
           isOpenStampBox: true
         })
       });
-    } else if(app.globalData.userInfo != null && this.data.isOpenStampBox == true){
+    } else if (app.globalData.userInfo != null && this.data.isOpenStampBox == true) {
       wx.showToast({
         title: '暂时没有更多信件',
         icon: 'none'

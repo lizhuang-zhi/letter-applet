@@ -95,7 +95,6 @@ Page({
 
       // 插入数据库的评论对象数据
       let sendCommentObj = {
-        // id: this.data.id,
         openId: openId,
         sgId: this.data.id,
         state: state
@@ -105,12 +104,10 @@ Page({
       let finalSendObj = Object.assign(newCont, sendCommentObj);
 
       // 插入评论数据到后台
-      let resStatus = this.sendMsgInsert(finalSendObj).then(res => {
+      requestData.complainletterSendComment(finalSendObj).then(res => {
         console.log(res);
-
         // 记录返回信息
         let backInfoCode = res.data.resultCode;
-
         if (backInfoCode == 200) {
           this.data.commentArr.push(newCont);
           this.setData({
@@ -130,10 +127,7 @@ Page({
           })
         }
 
-
       });
-
-
 
     } else {
       wx.showToast({
@@ -142,11 +136,6 @@ Page({
       })
     }
 
-  },
-
-  // 发送评论请求接口
-  sendMsgInsert(commentObj) {
-    return requestData.complainletterSendComment(commentObj);
   },
 
   // 初始化数据

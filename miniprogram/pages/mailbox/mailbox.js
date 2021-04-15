@@ -119,12 +119,15 @@ Page({
     })
   },
   // 监听下拉刷新事件
-  refresh() {
+  refresh(openId) {
+    // 下拉动作
     this.setData({
       'pull.isLoading': true,
       'pull.loading': '../../images/loading-2.gif',
       'pull.pullText': '正在加载',
     })
+    // 获取接口数据
+    this.apiNumberData(openId);
   },
   // 监听上拉加载更多
   toload(e) {
@@ -141,7 +144,7 @@ Page({
         'push.loading': '../../images/loading-2.gif',
       })
       console.log('===== 加载完成 =====');
-    }, 3000)
+    }, 2000)
   },
 
   // 初始化数据
@@ -155,10 +158,8 @@ Page({
     /* 
       进入页面拉取数据接口
     */
-    // 开启下拉加载
-    this.refresh();
-    // 获取接口数据
-    this.apiNumberData(openId);
+    // 开启下拉加载并请求数据
+    this.refresh(openId);
 
   },
 
@@ -186,22 +187,18 @@ Page({
         return new Promise((resolve, reject) => {
           let openId = this.data.openId;
           requestData.mailboxNumberOfmessage(openId).then(res => {
+            console.log(res);
             let arrList = this.data.dataList;
-            if (res.data.data == null) {
-              arrList[2].isShowNum = 'none';
-              this.setData({
-                dataList: arrList
-              })
-            } else {
-              arrList[2].notifiNum = res.data.data;
-              this.setData({
-                dataList: arrList
-              });
-            }
+            arrList[2].notifiNum = res.data.data;
+            this.setData({
+              dataList: arrList
+            });
             resolve('success');
           })
         })
+
       }
+
     }).then(res => {
       if (res == 'success') {
         // 关闭下拉加载
@@ -250,7 +247,7 @@ Page({
     console.log('mailbox页面  ------- 监听页面显示');
 
     // 页面显示时，若用户已登录授权则拉取一次信息
-    if(app.globalData.userInfo) {
+    if (app.globalData.userInfo) {
       this.Start(app.globalData.openid);
     }
 
@@ -260,7 +257,7 @@ Page({
     setTimeInterVal = setInterval(() => {
       /* 拉取数据 */
       this.timeToGetData();
-    }, 5000);
+    }, 12000);
 
   },
 
