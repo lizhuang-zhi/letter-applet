@@ -348,6 +348,10 @@ Page({
     } else if (type == '吐槽') {
       // 提交吐槽
       this.ConfirmSendComplain();
+    }else if(type == '解答') {
+      this
+    }else {
+      console.log('位置类型，未作处理！！！');
     }
 
 
@@ -555,6 +559,13 @@ Page({
     })
 
 
+  },
+
+  // 提交解答
+  ConfirmSendAnswer() {
+    requestData.indexStampReply().then(res => {
+      console.log(res);
+    })
   },
 
   /**

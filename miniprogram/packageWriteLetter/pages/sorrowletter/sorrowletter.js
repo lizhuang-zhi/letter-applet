@@ -1,6 +1,7 @@
 // packageWriteLetter/pages/sorrowletter/sorrowletter.js
 let requestData = require('../../../utils/request');
 let requestLetterline = require('../../../utils/public');
+let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 Page({
 
@@ -20,8 +21,6 @@ Page({
     /* 
       keo ------------
     */
-    //信件内容
-    lettercontent: '我是信件行数测试数据,我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据我是信件行数测试数据',
     // 行数组
     lettercontentArr: [],
     // 行字数
@@ -39,28 +38,27 @@ Page({
   Start(id) {
     // 获取用户的openId
     let openId = app.globalData.openid;
-    requestData.replyletter(openId, id).then(res => {
+    requestData.sorrowletter(id, openId).then(res => {
       console.log(res.data.data);
       // 获取信件信息
       let letterInfo = res.data.data;
-      console.log(letterInfo.replyContent);
+      // 处理显示时间
+      letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
+      /*
+        获取信件行信息  -----   keo
+      */
+      //获取信件行
+      let content = letterInfo.content;
+      let contentArr = this.data.lettercontentArr;
+      let linenum = this.data.lineNum;
+      let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
       this.setData({
-        letterInfo: letterInfo
+        letterInfo: letterInfo,
+        lettercontentArr: resultArr
       })
+
     })
-    
-    /*
-      获取信件行信息  -----   keo
-    */
-    //获取信件行
-    let content = this.data.lettercontent;
-    let contentArr = this.data.lettercontentArr;
-    let linenum = this.data.lineNum;
-    let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum)
-    console.log(requestLetterline.Interceptletterline(content, contentArr, linenum));
-    this.setData({
-      lettercontentArr: resultArr
-    })
+
   },
 
 

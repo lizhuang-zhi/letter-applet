@@ -302,8 +302,8 @@ let requestData = {
       })
     })
   },
-  // 获取具体信件信息
-  replyletter(openId,replyId,letterId = null) {
+  // 获取具体信件信息（回信列表点进去的）
+  replyletter(openId,replyId,letterId) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getReplyletter(),
@@ -396,6 +396,24 @@ let requestData = {
           'content-type':'application/x-www-form-urlencoded'
         },
         method: "POST",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 首页点击信件（获取信件信息）
+  sorrowletter(letterId,openId) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getSorrowletter(),
+        data: {
+          openId: openId,
+          letterId: letterId,
+        },
         success: res => {
           resolve(res)
         },

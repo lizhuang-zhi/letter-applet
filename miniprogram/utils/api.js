@@ -32,6 +32,8 @@ const prefix = 'https://rayss.host';
 const IndexBeautyUrl = prefix + '/beauty_article/getBeautyArticleVo';
 // 首页三封信件
 const IndexLetters = prefix + '/letter/getLetter';
+// 首页点击信件（获取信件信息）
+const Sorrowletter = prefix + '/letter/getDetailOfLetterById';
 
 // 获取美文内容
 const Beautyletter = prefix + '/beauty_article/get_beauty_article';
@@ -72,7 +74,7 @@ const MailboxNumberOfLetter = prefix + '/letter/getNumberOfLetter';
 // 获取未读信件
 const Replylist = prefix + '/letter/getAllUnreadLetter';
 
-// 获取具体信件信息
+// 获取具体信件信息（回信列表点进去的）
 const Replyletter  = prefix + '/letter/getDetailOfLetter';
 
 //获取未读评论个数
@@ -158,6 +160,10 @@ let url = {
   //获取评论信息
   getMailboxMessageList(){
     return MailboxMessageList;
+  },
+  // 首页点击信件（获取信件信息）
+  getSorrowletter() {
+    return Sorrowletter;
   }
 }
 
