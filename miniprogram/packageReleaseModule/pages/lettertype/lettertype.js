@@ -182,7 +182,11 @@ Page({
     // 选择类型
     type: '',
     // 获取开关当前类型
-    switchVal: null
+    switchVal: null,
+
+
+    // 信件id
+    letterId: '',
 
   },
 
@@ -348,9 +352,9 @@ Page({
     } else if (type == '吐槽') {
       // 提交吐槽
       this.ConfirmSendComplain();
-    }else if(type == '解答') {
-      this
-    }else {
+    } else if (type == '解答') {
+      this.ConfirmSendAnswer();
+    } else {
       console.log('位置类型，未作处理！！！');
     }
 
@@ -563,8 +567,37 @@ Page({
 
   // 提交解答
   ConfirmSendAnswer() {
-    requestData.indexStampReply().then(res => {
-      console.log(res);
+    /* 
+        调用回信接口
+      */
+    let infoObj = {
+      letterId: this.data.letterId,
+      message: this.data.inputValue,
+      sender: app.globalData.openid,
+      senderPenName: this.data.initValue,
+      recipient: this.data.senderOpenId
+    };
+    requestData.indexStampReply(infoObj).then(res => {
+      return new Promise((resolve, reject) => {
+        // 显示回信成功（同步）
+        wx.showToast({
+          title: '回信成功',
+          image: '../../images/confirm.png',
+          duration: 1300
+        });
+        resolve('success');
+      })
+    }).then(res => {
+      if (res == 'success') {
+        // 接口请求成功后跳转（同步）
+        let timeToJumpPage = setTimeout(() => {
+          wx.redirectTo({
+            url: '/packageMyInfo/pages/replylist/replylist'
+          });
+          // 清除计时器
+          clearTimeout(timeToJumpPage);
+        }, 1300)
+      }
     })
   },
 
@@ -578,7 +611,9 @@ Page({
     })
     // 获取上一个页面的输入内容
     this.setData({
-      inputValue: options.subvalue
+      inputValue: options.subvalue,
+      letterId: options.letterId,
+      senderOpenId: options.senderOpenId
     })
 
     // 获取用户选择类型

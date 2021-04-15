@@ -17,6 +17,8 @@ Page({
     TiemsColor: 'grey',
     // 信件信息
     letterInfo: {},
+    // 信件id
+    letterId: '',
 
     /* 
       keo ------------
@@ -29,8 +31,10 @@ Page({
 
   //点击跳转写信
   replyLetter() {
+    // 获取信件id
+    let letterId = this.data.letterId;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/write/write?type=解答',
+      url: '/packageReleaseModule/pages/write/write?type=解答' + '&letterId=' + letterId,
     })
   },
 
@@ -68,8 +72,13 @@ Page({
   onLoad: function (options) {
     console.log('sorrowletter页面 ----------- 监听页面加载');
 
+    this.setData({
+      letterId: options.id
+    })
+
     // 登陆成功后（获取用户openId），获取信件信息
     this.Start(options.id);
+
   },
 
   /**

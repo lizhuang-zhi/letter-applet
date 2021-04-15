@@ -27,6 +27,10 @@ Page({
     let subvalue = e.currentTarget.dataset.value;
     // 获取类型选择
     let chooseType = this.data.chooseType;
+    // 信件id
+    let letterId = this.data.letterId;
+    // 原信件发送者id
+    let senderOpenId = this.data.senderOpenId;
     if (subvalue.length == 0) {
       wx.showToast({
         title: '请输入内容',
@@ -73,7 +77,7 @@ Page({
 
     } else {
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + subvalue + '&type=' + chooseType,
+        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + subvalue + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
       })
     }
 
@@ -88,6 +92,8 @@ Page({
     this.setData({
       chooseType: options.type,
       letterId: options.letterId,
+      senderOpenId: options.senderOpenId,
+
       senderOpenId: options.senderOpenId,
       recipientPenName: options.recipientPenName,
       senderPenName: options.senderPenName

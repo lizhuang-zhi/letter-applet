@@ -54,7 +54,7 @@
     <view class="list-box">
 
       <!-- 信件数组 -->
-      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}"
+      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}" data-senderOpenId="{{item.senderOpenId}}"
         stampPic='{{item.stampUrl}}' name='{{item.senderPenName}}' content='{{item.content}}' date='{{item.releaseTime}}'>
       </yeo-stamp-text>
 

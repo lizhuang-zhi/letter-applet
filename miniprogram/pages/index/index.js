@@ -55,8 +55,10 @@ Page({
   ToSorrowTap(e) {
     // 信件id
     let id = e.currentTarget.dataset.id;
+    // 信件发送者id
+    let senderOpenId = e.currentTarget.dataset.senderopenid;
     wx.navigateTo({
-      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?id=' + id,
+      url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?id=' + id + '&senderOpenId=' + senderOpenId,
     })
   },
 
