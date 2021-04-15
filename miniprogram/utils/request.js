@@ -4,6 +4,32 @@ import apiUrl from '../utils/api';
 const openId = 'vx001';
 
 let requestData = {
+  // 用户注册
+  userAccount(userInfo) {
+    return new Promise((resolve,reject)=>{
+      wx.request({
+        // header: {
+        //   'content-type':'application/x-www-form-urlencoded'
+        // },
+        header: {
+          'content-type': 'application/json;charset=utf-8' // 默认值
+        },
+        url: apiUrl.userAccountApi(),
+        method: "POST",
+        data: {
+          avatarUrl: userInfo.avatarUrl,
+          gender: userInfo.gender,
+          nickName: userInfo.nickName
+        },
+        success: res => {
+          resolve(res);
+        },
+        fail: res => {
+          reject(res);
+        }
+      });
+    });
+  },
   // 首页美文
   indexBeauty() {
     return new Promise((resolve,reject)=>{

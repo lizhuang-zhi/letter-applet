@@ -107,6 +107,7 @@ Page({
     let id = e.currentTarget.dataset.id;
     // 未获取授权
     if (!app.globalData.userInfo) {
+      // 弹窗用户授权
       app.getUserProfile().then(res => {
         wx.navigateTo({
           url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,

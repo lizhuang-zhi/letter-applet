@@ -75,7 +75,11 @@ App({
               let backInfo = JSON.parse(res.data.data);
               // 将openid赋值全局变量
               that.globalData.openid = backInfo.openid;
+              // 用户注册
+              // that.accountUserInfo().then(res => {
+              // })
               resolve('success')
+              
             },
             fail: res => {
               console.log(res);
@@ -89,6 +93,18 @@ App({
 
     })
 
+  },
+
+  // 用户注册（userInfo)
+  accountUserInfo() {
+    let that = this;
+    // 获取用户信息
+    let userInfo = that.globalData.userInfo;
+    return new Promise((resolve,reject) => {
+      requestData.userAccount(userInfo).then(res => {
+        console.log(res);
+      })
+    })
   },
 
   // 获取用户授权登陆（此方法调用getUserOpenId）

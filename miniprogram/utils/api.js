@@ -27,6 +27,8 @@
 // 请求路径前缀
 const prefix = 'https://rayss.host';
 
+// 用户注册
+const userAccount = prefix + '/user/registeredUser';
 
 // 首页美文
 const IndexBeautyUrl = prefix + '/beauty_article/getBeautyArticleVo';
@@ -85,6 +87,10 @@ const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
 
 // 返回对象
 let url = {
+  // 用户注册
+  userAccountApi() {
+    return userAccount;
+  },
   // 首页美文
   getIndexBeautyUrl() {
     return IndexBeautyUrl;
