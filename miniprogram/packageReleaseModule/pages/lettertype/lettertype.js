@@ -46,6 +46,7 @@ let swithArr = [{
     isShow: false
   }
 ];
+let app = getApp();
 Page({
 
   /**
@@ -187,6 +188,8 @@ Page({
 
     // 信件id
     letterId: '',
+    // 接收者的openId
+    senderOpenId: ''
 
   },
 
@@ -577,6 +580,7 @@ Page({
       senderPenName: this.data.initValue,
       recipient: this.data.senderOpenId
     };
+    console.log(infoObj);
     requestData.indexStampReply(infoObj).then(res => {
       return new Promise((resolve, reject) => {
         // 显示回信成功（同步）
@@ -591,8 +595,8 @@ Page({
       if (res == 'success') {
         // 接口请求成功后跳转（同步）
         let timeToJumpPage = setTimeout(() => {
-          wx.redirectTo({
-            url: '/packageMyInfo/pages/replylist/replylist'
+          wx.reLaunch({
+            url: '/pages/index/index'
           });
           // 清除计时器
           clearTimeout(timeToJumpPage);
@@ -614,7 +618,8 @@ Page({
       inputValue: options.subvalue,
       letterId: options.letterId,
       senderOpenId: options.senderOpenId
-    })
+    });
+    console.log('----> ' + options.senderOpenId);
 
     // 获取用户选择类型
     let type = options.type;

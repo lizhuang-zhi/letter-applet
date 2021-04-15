@@ -33,8 +33,10 @@ Page({
   replyLetter() {
     // 获取信件id
     let letterId = this.data.letterId;
+    // 获取首页原信件 发送者openId
+    let senderOpenId = this.data.senderOpenId;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/write/write?type=解答' + '&letterId=' + letterId,
+      url: '/packageReleaseModule/pages/write/write?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
     })
   },
 
@@ -73,7 +75,8 @@ Page({
     console.log('sorrowletter页面 ----------- 监听页面加载');
 
     this.setData({
-      letterId: options.id
+      letterId: options.id,
+      senderOpenId: options.senderOpenId
     })
 
     // 登陆成功后（获取用户openId），获取信件信息

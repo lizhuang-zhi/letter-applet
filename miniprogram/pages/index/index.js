@@ -73,7 +73,8 @@ Page({
       app.getUserProfile().then(res => {
         // 获取三封信件
         requestData.indexLetters().then(res => {
-          console.log(res);
+          // console.log(res);
+          console.log(res.data.data);
           // 获取返回信件数组
           let letterArr = res.data.data;
           letterArr.forEach(item => {
@@ -95,7 +96,8 @@ Page({
     } else if (app.globalData.userInfo && this.data.isOpenStampBox == false) {
       // 获取三封信件
       requestData.indexLetters().then(res => {
-        console.log(res);
+        // console.log(res);
+        console.log(res.data.data);
         // 获取返回信件数组
         let letterArr = res.data.data;
         letterArr.forEach(item => {

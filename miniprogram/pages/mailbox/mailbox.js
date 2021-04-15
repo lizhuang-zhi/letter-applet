@@ -119,8 +119,7 @@ Page({
     })
   },
   // 监听下拉刷新事件
-  refresh(e) {
-    console.log('刷新', e)
+  refresh() {
     this.setData({
       'pull.isLoading': true,
       'pull.loading': '../../images/loading-2.gif',
@@ -252,7 +251,7 @@ Page({
 
     // 页面显示时，若用户已登录授权则拉取一次信息
     if(app.globalData.userInfo) {
-      this.Start();
+      this.Start(app.globalData.openid);
     }
 
     /* 
@@ -261,7 +260,7 @@ Page({
     setTimeInterVal = setInterval(() => {
       /* 拉取数据 */
       this.timeToGetData();
-    }, 15000);
+    }, 5000);
 
   },
 
