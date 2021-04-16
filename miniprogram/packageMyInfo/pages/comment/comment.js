@@ -1,5 +1,6 @@
 // 接口Api
 let requestData = require('../../../utils/request')
+let app = getApp();
 Page({
 
   /**
@@ -16,12 +17,14 @@ Page({
   },
   //初始化数据
   Start(openId){
-    //获取评论信息
+    //获取评论列表信息
     requestData.mailboxMessageList(openId).then(res=>{
       return new Promise((resolve,reject)=>{
         console.log(res.data.data);
+        // 获取数组
+        let dataArr = res.data.data;
         this.setData({
-          dataArr:res.data.data
+          dataArr: dataArr
         })
         resolve('success')
       })
