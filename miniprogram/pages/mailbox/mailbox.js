@@ -20,19 +20,16 @@ Page({
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OoQPO.png",
       text: "我的",
       picBgColor: "#FEF7E2",
-      // isShowNum: 'block',
       notifiNum: 0
     }, {
       imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
       text: "回信",
       picBgColor: "#E9F1FE",
-      // isShowNum: 'block',
       notifiNum: 0
     }, {
       imgsrc: "../../images/message.png",
       text: "评论",
       picBgColor: "#E6F8F0",
-      // isShowNum: 'block',
       notifiNum: 0
     }],
 
@@ -61,6 +58,7 @@ Page({
       app.getUserProfile().then(res => {
         // 获取openId
         let openId = app.globalData.openid;
+        console.log('《----》' + openId);
         if (index == 0) {
           wx.navigateTo({
             url: '/packageMyInfo/pages/indexinfo/indexinfo',
@@ -120,14 +118,22 @@ Page({
   },
   // 监听下拉刷新事件
   refresh(openId) {
-    // 下拉动作
-    this.setData({
-      'pull.isLoading': true,
-      'pull.loading': '../../images/loading-2.gif',
-      'pull.pullText': '正在加载',
-    })
-    // 获取接口数据
-    this.apiNumberData(openId);
+    // 授权成功
+    if (app.globalData.userInfo) {
+      // 下拉动作
+      this.setData({
+        'pull.isLoading': true,
+        'pull.loading': '../../images/loading-2.gif',
+        'pull.pullText': '正在加载',
+      })
+      // 获取接口数据
+      this.apiNumberData(openId);
+    }else {  
+      wx.showToast({
+        title: '请先完成授权',
+        image: '../../images/fail.png'
+      })
+    }
   },
   // 监听上拉加载更多
   toload(e) {
@@ -185,11 +191,10 @@ Page({
           获取收到评论请求个数
         */
         return new Promise((resolve, reject) => {
-          let openId = this.data.openId;
           requestData.mailboxNumberOfmessage(openId).then(res => {
             console.log(res);
             let arrList = this.data.dataList;
-            arrList[2].notifiNum = res.data.data;
+            arrList[2].notifiNum = res.data.data == null ? 0 : res.data.data;
             this.setData({
               dataList: arrList
             });
@@ -211,9 +216,7 @@ Page({
   },
 
   // 轮循方法
-  timeToGetData() {
-    // 获取opneId
-    let openId = this.data.openId;
+  timeToGetData(openId) {
     // 获取接口数据
     this.apiNumberData(openId);
   },
@@ -254,10 +257,15 @@ Page({
     /* 
       设置轮循进行接口拉取
     */
-    setTimeInterVal = setInterval(() => {
-      /* 拉取数据 */
-      this.timeToGetData();
-    }, 12000);
+    if (app.globalData.userInfo) {
+      setTimeInterVal = setInterval(() => {
+        /* 拉取数据 */
+        this.timeToGetData(app.globalData.openid);
+      }, 12000);
+    } else {
+      console.log('--- 未授权！不进行轮询拉取 ---');
+    }
+
 
   },
 

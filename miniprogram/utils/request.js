@@ -369,9 +369,8 @@ let requestData = {
       wx.request({
         url: apiUrl.getMailboxNumberOfmessage(),
         data: {
-          openId
+          openId: openId
         },
-        method: "GET",
         success: res => {
           resolve(res)
         },
@@ -389,7 +388,7 @@ let requestData = {
         data: {
           openId
         },
-        method: "GET",
+        // method: "GET",
         success: res => {
           resolve(res)
         },

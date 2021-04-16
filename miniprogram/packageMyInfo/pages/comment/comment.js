@@ -1,4 +1,3 @@
-// packageMyInfo/pages/comment/comment.js
 // 接口Api
 let requestData = require('../../../utils/request')
 Page({
@@ -16,11 +15,11 @@ Page({
 
   },
   //初始化数据
-  Start(){
+  Start(openId){
     //获取评论信息
-    requestData.mailboxMessageList(this.data.openid).then(res=>{
+    requestData.mailboxMessageList(openId).then(res=>{
       return new Promise((resolve,reject)=>{
-        console.log(res);
+        console.log(res.data.data);
         this.setData({
           dataArr:res.data.data
         })
@@ -38,10 +37,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start();
-    this.setData({
-      openid:options.openid
-    })
+    this.Start(options.openid);
   },
 
   /**

@@ -82,7 +82,7 @@ const Replyletter  = prefix + '/letter/getDetailOfLetter';
 //获取未读评论个数
 const MailboxNumberOfmessage = prefix + '/user/getCommNum';
 
-//获取评论信息
+//获取评论信息列表
 const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
 
 // 返回对象
