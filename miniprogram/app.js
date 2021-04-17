@@ -76,9 +76,9 @@ App({
               // 将openid赋值全局变量
               that.globalData.openid = backInfo.openid;
               // 用户注册
-              that.accountUserInfo().then(res => {
-                resolve('success');
-              })
+              // that.accountUserInfo().then(res => {
+              // })
+              resolve('success');
             },
             fail: res => {
               console.log(res);

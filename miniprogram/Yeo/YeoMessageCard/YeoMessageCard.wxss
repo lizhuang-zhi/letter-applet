@@ -5,7 +5,7 @@
 }
 .yeo-message-card .left-pic {
   width: 75rpx;
-  height: 75rpx;
+  height: 65rpx;
   border-radius: 50%;
   margin-right: 25rpx;
   position: relative;
@@ -13,7 +13,7 @@
 .yeo-message-card .left-pic image{
   width: 100%;
   height: 100%;
-  border-radius: inherit;
+  border-radius: 50%;
 }
 .yeo-message-card .left-pic .guajian {
   width: 100rpx;
