@@ -90,17 +90,12 @@ page {
 }
 
 
-
-
-
-
-/* tab切换 */
-yeo-diary-box {
-  display: inline-block;
+/* 图表展示用户数据 */
+.data-container {
+  width: 100%;
+  height: 700rpx;
 }
 
-/* 吐槽大会 */
-yeo-text-box {
-  display: inline-block;
-  margin-bottom: 20rpx;
-}
+
+
+

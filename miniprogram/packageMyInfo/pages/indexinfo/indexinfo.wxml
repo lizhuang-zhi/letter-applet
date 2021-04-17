@@ -43,3 +43,8 @@
 </view>
 
 
+<!-- 图表展示用户数据 -->
+<view class="data-container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
