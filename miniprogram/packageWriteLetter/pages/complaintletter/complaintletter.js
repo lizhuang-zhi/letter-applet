@@ -281,6 +281,9 @@ Page({
         let commentList = commentObj.list;
         // 赋值判断是否为最后一页评论
         isLastPageNum = commentObj.isLastPage;
+        commentList.forEach(item => {
+          item.date = timeTools.indexPostBoxTime(item.date);
+        })    
         console.log(commentList);
         // 将请求数据添加至原数组后
         this.setData({
