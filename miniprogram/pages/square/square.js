@@ -284,6 +284,8 @@ Page({
   onLoad: function (options) {
     this.Start();
 
+
+
   },
 
   /**
@@ -341,13 +343,15 @@ Page({
   onUnload: function () {
     console.log('广场 -- 监听页面卸载');
 
+  
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('我上拉了');
+    console.log('广场  ---->  监听用户下拉动作');
+
   },
 
   /**

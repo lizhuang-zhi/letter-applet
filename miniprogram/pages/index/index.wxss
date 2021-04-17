@@ -59,6 +59,16 @@ page {
   padding: 5rpx 10rpx;
   border-radius: 10rpx;
   color: #FFA82E;
+  display: flex;
+  align-items: center;
+}
+.tit-sorrow .info-right .letter-btn image {
+  display: inline-block;
+  width: 28rpx;
+  height: 28rpx;
+}
+.tit-sorrow .info-right .letter-btn image text{
+  display: inline-block;
 }
 
 /* 提示框 */
@@ -86,7 +96,6 @@ page {
   border-right: 13px solid transparent;
   border-bottom: 13px solid var(--notifi-box-bg-color);
 }
-
 .tit-sorrow .info-right .notifi-box .desc {
   font-size: 33rpx;
   color: #7F7F7F;

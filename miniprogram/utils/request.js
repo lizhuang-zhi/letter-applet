@@ -349,11 +349,14 @@ let requestData = {
       wx.request({
         url: apiUrl.getSquareDiaryLooksNum(),
         data: {
-          infoArr
+          infoArr: JSON.stringify(infoArr)
         },
+        // header: {
+        //   'Accept-Encoding':'gzip,deflate,br',
+        //   'content-type':'application/json'
+        // },
         header: {
-          'Accept-Encoding':'gzip,deflate,br',
-          'content-type':'application/json'
+          'content-type':'application/x-www-form-urlencoded'
         },
         method: "PUT",
         success: res => {

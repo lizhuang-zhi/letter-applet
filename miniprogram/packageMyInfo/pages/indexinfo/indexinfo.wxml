@@ -38,7 +38,7 @@
       </view>
     </view>
     <!-- 查看更多 -->
-    <view class="more-info">查看更多 ></view>
+    <view class="more-info" bindtap="lookMore">查看更多 ></view>
   </view>
 </view>
 

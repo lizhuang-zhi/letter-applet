@@ -35,7 +35,10 @@
     </view>
 
     <view class='info-right' slot='dy-right'>
-      <view class="letter-btn" bindtap="obtainLetter">打开信箱</view>
+      <view class="letter-btn" bindtap="obtainLetter">
+        <image src="../../images/stampbox.png"></image>
+        <text>打开信箱</text>
+      </view>
       <!-- 提示框 -->
       <view class="notifi-box" style="display: {{isShowToastBox}};">
         <view class="desc">快来打开你的信箱</view>

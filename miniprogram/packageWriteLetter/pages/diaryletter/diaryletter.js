@@ -37,11 +37,6 @@ Page({
     // 初始化数据
     this.Start(options.id);
 
-    // 获取用户信息
-    app.getUserInfo().then(res => {
-      console.log(res);
-    })
-    console.log('获取的openId为 ---> ' + app.globalData.openid);
   },
 
   /**

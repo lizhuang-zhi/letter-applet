@@ -23,7 +23,7 @@ function initChart(canvas, width, height) {
     tooltip: {
       trigger: 'item'
     },
-    /* 模块元素 */
+    /* 模块元素颜色 */
     color: [
       '#EE6666',
       '#73C0DE',
@@ -77,6 +77,13 @@ Page({
     ec: {
       onInit: initChart
     }
+  },
+
+  // 查看更多
+  lookMore() {
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/myinfomore/myinfomore',
+    })
   },
 
   /**

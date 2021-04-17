@@ -93,6 +93,12 @@
         {
           "name": "回信具体内容页面",
           "pathName": "packageMyInfo/pages/replyletter/replyletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的页面 - 查看更多(数据)",
+          "pathName": "packageMyInfo/pages/myinfomore/myinfomore",
           "scene": null
         }
       ]
