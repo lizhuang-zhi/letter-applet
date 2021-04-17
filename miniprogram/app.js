@@ -99,8 +99,13 @@ App({
     let that = this;
     // 获取用户信息
     let userInfo = that.globalData.userInfo;
+    let userInfoNew = Object.assign(userInfo,{
+      openId: that.globalData.openid,
+      state: 0,
+    });
+    console.log(userInfoNew);
     return new Promise((resolve,reject) => {
-      requestData.userAccount(userInfo).then(res => {
+      requestData.userAccount(userInfoNew).then(res => {
         console.log(res);
       })
     })

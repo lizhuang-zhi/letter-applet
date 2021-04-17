@@ -92,26 +92,25 @@ Page({
           avatarUrl: app.globalData.userInfo.avatarUrl,
         },
       };
-
       // 插入数据库的评论对象数据
       let sendCommentObj = {
         openId: openId,
         sgId: this.data.id,
         state: state
       };
-
       // 合并对象
       let finalSendObj = Object.assign(newCont, sendCommentObj);
-
       // 插入评论数据到后台
       requestData.complainletterSendComment(finalSendObj).then(res => {
         console.log(res);
         // 记录返回信息
         let backInfoCode = res.data.resultCode;
+        // 获取评论数组
+        let commentArr = this.data.commentArr;
         if (backInfoCode == 200) {
-          this.data.commentArr.push(newCont);
+          commentArr.push(newCont);
           this.setData({
-            commentArr: this.data.commentArr,
+            commentArr: commentArr,
             preViousTime: new Date(),
             initValue: '',
             inputContent: ''

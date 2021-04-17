@@ -14,7 +14,9 @@ let requestData = {
         data: {
           avatarUrl: userInfo.avatarUrl,
           gender: userInfo.gender,
-          nickName: userInfo.nickName
+          penName: userInfo.nickName,
+          openId: userInfo.openId,
+          state: userInfo.state,
         },
         success: res => {
           resolve(res);
