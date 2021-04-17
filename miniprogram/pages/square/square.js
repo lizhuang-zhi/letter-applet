@@ -351,6 +351,7 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('广场  ---->  监听用户下拉动作');
+    // this.Start();
 
   },
 
