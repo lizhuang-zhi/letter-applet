@@ -46,6 +46,18 @@ App({
       }
     })
 
+    /* 
+      用户退出，更新登陆时间接口
+    */
+    // 获取用户openId
+    let openId = this.globalData.openid;
+    console.log(openId);
+    if(openId != null) {
+      requestData.userSignOut(openId).then(res => {
+        console.log(res);
+      })
+    }
+    
   },
 
   onShow() {

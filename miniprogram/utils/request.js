@@ -27,6 +27,27 @@ let requestData = {
       });
     });
   },
+  // 用户退出，更新登陆时间
+  userSignOut(openId) {
+    return new Promise((resolve,reject)=>{
+      wx.request({
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        url: apiUrl.getUserSignOut(),
+        method: "POST",
+        data: {
+          openId: openId,
+        },
+        success: res => {
+          resolve(res);
+        },
+        fail: res => {
+          reject(res);
+        }
+      });
+    });
+  },
   // 首页美文
   indexBeauty() {
     return new Promise((resolve,reject)=>{

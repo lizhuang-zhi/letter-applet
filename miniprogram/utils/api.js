@@ -29,6 +29,8 @@ const prefix = 'https://rayss.host';
 
 // 用户注册
 const userAccount = prefix + '/user/registeredUser';
+// 用户退出，更新登陆时间
+const UserSignOut = prefix + '/user/updateOutDate';
 
 // 首页美文
 const IndexBeautyUrl = prefix + '/beauty_article/getBeautyArticleVo';
@@ -90,6 +92,10 @@ let url = {
   // 用户注册
   userAccountApi() {
     return userAccount;
+  },
+  // 用户退出，更新登陆时间
+  getUserSignOut() {
+    return UserSignOut;
   },
   // 首页美文
   getIndexBeautyUrl() {

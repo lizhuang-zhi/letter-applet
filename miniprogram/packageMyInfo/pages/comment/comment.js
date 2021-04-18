@@ -1,5 +1,6 @@
 // 接口Api
-let requestData = require('../../../utils/request')
+let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 Page({
 
@@ -23,6 +24,10 @@ Page({
         console.log(res.data.data);
         // 获取数组
         let dataArr = res.data.data;
+        // 修改时间显示
+        dataArr.forEach(item => {
+          item.date = timeTools.commentListShowTime(item.date);
+        });
         this.setData({
           dataArr: dataArr
         })
@@ -31,8 +36,12 @@ Page({
     })
   },
   // 点击具体评论组件对象
-  clickObjTap(e) {
-    console.log(e.detail);
+  toComplainPage(e) {
+    // 吐槽对象id
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+    })
   },
   
 
