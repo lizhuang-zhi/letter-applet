@@ -6,7 +6,7 @@ import * as echarts from '../../ec-canvas/echarts';
 let chart_all = null;
 let option_all = null;
 
-/* 切换的折线图 */
+/* 总数据图 */
 function initChart(canvas, width, height) {
   chart_all = echarts.init(canvas, null, {
     width: width,
@@ -17,7 +17,7 @@ function initChart(canvas, width, height) {
   option_all = {
     /* 图表类型说明 */
     legend: {
-      top: 'bottom'
+      top: 'bottom',
     },
     /* 点击模块提示 */
     tooltip: {

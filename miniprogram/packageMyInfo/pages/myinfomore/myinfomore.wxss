@@ -1,0 +1,20 @@
+.data-container {
+  margin: 20rpx auto 0;
+}
+
+
+
+
+/* 情感分析内容 */
+.emotion-analysis {
+  margin: 45rpx 40rpx 70rpx;
+}
+.emotion-analysis .item-emotion {
+  margin: 35rpx 0 0;
+}
+.emotion-analysis .item-emotion .tit {
+  border-left: 10rpx solid #FFA82E;
+  margin: 0 0 20rpx;
+  padding-left: 15rpx;
+  /* line-height: 30rpx; */
+}
