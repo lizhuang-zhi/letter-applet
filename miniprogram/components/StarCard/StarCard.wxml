@@ -20,6 +20,10 @@
         {{TipContent}}
       </view>
     </view>
+    <!-- 评论具体内容 -->
+    <view class="comment-content">
+      {{commentContent}}
+    </view>
     <!-- 点赞信件简略内容 -->
     <view class="star-letter"
       style="background-color:{{StarLetterBackColor}};color:{{StarLetterColor}};padding:{{StarLetterPadding}};border-radius:{{StarLetterRadius}};box-style:border-box">

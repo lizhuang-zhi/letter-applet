@@ -51,7 +51,6 @@ Page({
       this.sendMsg(comment_cont);
     }
   },
-
   // 键盘输入事件
   inputEvent(e) {
     // 获取输入内容
@@ -60,7 +59,6 @@ Page({
       inputContent: input_cont
     })
   },
-
   // 点击发送图片事件
   sendmessageEvent(e) {
     // 获取输入内容
@@ -74,7 +72,6 @@ Page({
       this.sendMsg(input_cont);
     }
   },
-
   // 发送评论
   sendMsg(content) {
     // 获取以前的时间
@@ -136,7 +133,6 @@ Page({
     }
 
   },
-
   // 初始化数据
   Start(id) {
     // 评论内容数据接口
@@ -151,7 +147,6 @@ Page({
         this.setData({
           complianObj: complianObj
         })
-        console.log('-------》 ' + commentPageNum);
         // 请求评论数据接口
         return requestData.complainDetailComment(id, commentPageNum);
       } else {
@@ -207,9 +202,7 @@ Page({
     this.setData({
       id: options.id
     })
-
     console.log('complaintletter页面  --->  监听页面加载');
-
   },
 
   /**

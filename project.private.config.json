@@ -99,6 +99,12 @@
         {
           "name": "我的页面 - 查看更多(数据)",
           "pathName": "packageMyInfo/pages/myinfomore/myinfomore",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "评论列表",
+          "pathName": "packageMyInfo/pages/comment/comment",
           "scene": null
         }
       ]

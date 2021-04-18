@@ -8,6 +8,12 @@
   justify-content: right;
   align-items: center;
 }
+/* 评论具体内容 */
+.card-out .card .comment-content {
+  margin: 0 0 25rpx 5rpx;
+  letter-spacing: 2rpx;
+  color: #333333;
+}
 /* 点赞信件简略内容 */
 .star-letter{
   overflow: hidden;

@@ -62,6 +62,11 @@ Component({
       type:String,
       value:'30rpx 0'
     },
+    // 评论内容
+    commentContent: {
+      type: String,
+      value: '评论内容，评论内容，评论内容，评论内容，评论内容，评论内容'
+    },
 
 
     //卡片宽度

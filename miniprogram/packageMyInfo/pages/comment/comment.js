@@ -31,7 +31,7 @@ Page({
         this.setData({
           dataArr: dataArr.reverse()
         })
-        resolve('success')
+        resolve('success');
       })
     })
   },

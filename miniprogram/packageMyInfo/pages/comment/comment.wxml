@@ -5,5 +5,5 @@
 
 <!-- 不为空显示数组列表 -->
 <block wx:for="{{dataArr}}" wx:key="index" wx:if="{{dataArr.length!=0}}">
-  <keo-star-card StarLetter='{{item.title}}' TipContent='评论了你' TipOwnerName='{{item.userVo.penName}}' IconSrc='{{item.userVo.avatarUrl}}' StarTime="{{item.date}}" bindtap="toComplainPage" data-id="{{item.sgId}}"></keo-star-card>
+  <keo-star-card StarLetter='{{item.title}}' TipContent='评论了你' TipOwnerName='{{item.userVo.penName}}' IconSrc='{{item.userVo.avatarUrl}}' StarTime="{{item.date}}" commentContent='{{item.content}}' bindtap="toComplainPage" data-id="{{item.sgId}}"></keo-star-card>
 </block>

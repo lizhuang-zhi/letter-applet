@@ -366,20 +366,17 @@ let requestData = {
   },
   // 广场日记浏览量
   squareDiaryLooksNum(infoArr) {
+    // 将数据转为Json串
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getSquareDiaryLooksNum(),
         data: {
-          infoArr: JSON.stringify(infoArr)
+          diaryViewJson: infoArr
         },
-        // header: {
-        //   'Accept-Encoding':'gzip,deflate,br',
-        //   'content-type':'application/json'
-        // },
         header: {
           'content-type':'application/x-www-form-urlencoded'
         },
-        method: "PUT",
+        method: "POST",
         success: res => {
           resolve(res)
         },
