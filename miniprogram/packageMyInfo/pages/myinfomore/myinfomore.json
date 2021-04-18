@@ -2,6 +2,5 @@
   "usingComponents": {
     "ec-canvas": "../../ec-canvas/ec-canvas"
   },
-  "pageOrientation": "auto",
-  "navigationStyle": "custom"
+  "navigationBarTitleText": "信盒"
 }

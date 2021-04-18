@@ -3,8 +3,6 @@
 }
 
 
-
-
 /* 情感分析内容 */
 .emotion-analysis {
   margin: 45rpx 40rpx 70rpx;
@@ -16,5 +14,4 @@
   border-left: 10rpx solid #FFA82E;
   margin: 0 0 20rpx;
   padding-left: 15rpx;
-  /* line-height: 30rpx; */
 }
