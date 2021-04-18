@@ -151,6 +151,7 @@ Page({
         this.setData({
           complianObj: complianObj
         })
+        console.log('-------》 ' + commentPageNum);
         // 请求评论数据接口
         return requestData.complainDetailComment(id, commentPageNum);
       } else {
@@ -175,7 +176,7 @@ Page({
           console.log(commentList);
           commentList.forEach(item => {
             item.date = timeTools.indexPostBoxTime(item.date);
-          })
+          });
           this.setData({
             commentArr: commentList
           })
@@ -206,25 +207,8 @@ Page({
     this.setData({
       id: options.id
     })
-    console.log(options.id);
 
-    if (app.globalData.openid == null) {
-      // 获取用户信息
-      app.getUserInfo().then(res => {
-        return new Promise((resolve, reject) => {
-          resolve('success');
-        })
-      }).then(res => {
-        if (res == 'success') {
-          openId = app.globalData.openid;
-          console.log(openId);
-        }
-      })
-    } else {
-      console.log('获取的openId为 ---> ' + app.globalData.openid);
-      openId = app.globalData.openid;
-    }
-
+    console.log('complaintletter页面  --->  监听页面加载');
 
   },
 
@@ -239,6 +223,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    console.log('complaintletter页面  --->  监听页面显示');
 
   },
 
@@ -253,6 +238,14 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('complaintletter页面  --->  监听页面卸载');
+    /* 
+      重新赋值基础值
+    */
+    // 分页请求评论页码
+    commentPageNum = 1;
+    // 赋值判断是否为最后一页评论
+    isLastPageNum = null;
 
   },
 
@@ -273,23 +266,34 @@ Page({
     if (!isLastPageNum) {
       // 具体某一个吐槽评论的id
       let id = this.data.id;
-      // 再次请求评论数据接口
-      requestData.complainDetailComment(id, ++commentPageNum).then(res => {
-        // 评论对象
-        let commentObj = res.data.data;
-        // 评论集合
-        let commentList = commentObj.list;
-        // 赋值判断是否为最后一页评论
-        isLastPageNum = commentObj.isLastPage;
-        commentList.forEach(item => {
-          item.date = timeTools.indexPostBoxTime(item.date);
-        })    
-        console.log(commentList);
-        // 将请求数据添加至原数组后
-        this.setData({
-          commentArr: this.data.commentArr.concat(commentList)
-        })
 
+      wx.showLoading({
+        title: '加载数据...',
+      }).then(res => {
+        // 再次请求评论数据接口
+        return requestData.complainDetailComment(id, ++commentPageNum);
+      }).then(res => {
+        return new Promise((resolve, reject) => {
+          // 评论对象
+          let commentObj = res.data.data;
+          // 评论集合
+          let commentList = commentObj.list;
+          // 赋值判断是否为最后一页评论
+          isLastPageNum = commentObj.isLastPage;
+          commentList.forEach(item => {
+            item.date = timeTools.indexPostBoxTime(item.date);
+          });
+          console.log(commentList);
+          // 将请求数据添加至原数组后
+          this.setData({
+            commentArr: this.data.commentArr.concat(commentList)
+          })
+          resolve('success');
+        })
+      }).then(res => {
+        if (res == 'success') {
+          wx.hideLoading({});
+        }
       })
 
     } else {

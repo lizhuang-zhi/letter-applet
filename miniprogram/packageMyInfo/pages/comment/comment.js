@@ -29,7 +29,7 @@ Page({
           item.date = timeTools.commentListShowTime(item.date);
         });
         this.setData({
-          dataArr: dataArr
+          dataArr: dataArr.reverse()
         })
         resolve('success')
       })

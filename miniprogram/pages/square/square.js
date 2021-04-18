@@ -9,7 +9,7 @@ let isLastDiaryPage = null;
 // 获取吐槽大会当前页
 let complianPageNum = null;
 // 存储修改的日记键值对数组
-let changeDiary = {};
+// let changeDiary = {};
 let app = getApp();
 Page({
 
@@ -100,7 +100,6 @@ Page({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
     })
   },
-
   // 跳转吐槽内容
   ToComplainTap(e) {
     // 获取吐槽对象id
@@ -120,7 +119,6 @@ Page({
     }
 
   },
-
   // 标签tab切换事件
   changeTap(e) {
     // 获得改变后的tab索引
@@ -130,7 +128,6 @@ Page({
     })
 
   },
-
   // 监听页面滚动
   onPageScroll(e) {
     if (e.scrollTop > 400) { // 页面上卷高度 大于页面固定按钮位置
@@ -167,15 +164,13 @@ Page({
         item.weather = weather.weatherWordsToPic(item.weather);
         // 修改日期显示格式
         item.date = timeTools.squareDiaryTime(item.date);
-        // 暂时添加的数据内容
-        item.content = '我搜的啥佛山东欧到的手动到哦地方大师傅是豆腐是东方四大'
-      })
+      });
       this.setData({
         diaryArr: diaryList
       })
 
       /* 
-        数据存储至缓存
+        日记浏览量 --> 数据存储至缓存
       */
       let newObj = {};
       for (let ele of diaryList) {
@@ -208,7 +203,7 @@ Page({
 
   },
 
-  // 下拉触底事件（吐槽大会）
+  // 上拉触底事件（吐槽大会）
   onReachBottomComplain() {
     // 判断是否为最后一页数据并请求
     if (!isLastComplianPageNum) {
@@ -239,8 +234,7 @@ Page({
     }
 
   },
-
-  // 下拉触底事件（公开日记）
+  // 上拉触底事件（公开日记）
   onReachBottomDiary() {
     // 判断是否为最后一页数据并请求
     if (!isLastDiaryPage) {
@@ -277,14 +271,65 @@ Page({
     }
 
   },
+  // 下拉刷新（公开日记）
+  onPullDownDiary() {
+    //公开日记数据
+    requestData.squareDiary(1).then(res => {
+      // 日记对象
+      let diaryObj = res.data.data;
+      // 日记数组
+      let diaryList = diaryObj.list;
+      // 记录公开日记是否为最后一页
+      isLastDiaryPage = diaryObj.isLastPage;
+      console.log(diaryObj);
+      diaryList.forEach(item => {
+        // 修改天气显示格式
+        item.weather = weather.weatherWordsToPic(item.weather);
+        // 修改日期显示格式
+        item.date = timeTools.squareDiaryTime(item.date);
+      });
+      this.setData({
+        diaryArr: diaryList
+      })
+
+      /* 
+        日记浏览量 --> 数据存储至缓存
+      */
+      let newObj = {};
+      for (let ele of diaryList) {
+        newObj[ele.id] = parseInt(ele.number);
+      };
+      console.log(newObj);
+      wx.setStorage({
+        key: 'diaryView',
+        data: newObj,
+      })
+    })
+  },
+  // 下拉刷新（吐槽大会）
+  onPullDownComplain() {
+    // 吐槽大会请求数据
+    requestData.squareComplain(1).then(res => {
+      // 获取吐槽大会对象
+      let complianObj = res.data.data;
+      // 获取吐槽数组
+      let complianList = complianObj.list;
+      // 获取吐槽大会当前页
+      complianPageNum = complianObj.pageNum;
+      // 记录当前请求页是否为最后一页
+      isLastComplianPageNum = complianObj.isLastPage;
+      console.log(complianObj);
+      this.setData({
+        complianArr: complianList
+      })
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.Start();
-
-
 
   },
 
@@ -327,6 +372,8 @@ Page({
         })
       }
     })
+
+
   },
 
   /**
@@ -334,7 +381,12 @@ Page({
    */
   onHide: function () {
     console.log('广场 -- 监听页面隐藏');
-
+    // 记录当前请求页是否为最后一页（吐槽大会）
+    isLastComplianPageNum = null;
+    // 记录当前请求页是否为最后一页（公开日记）
+    isLastDiaryPage = null;
+    // 获取吐槽大会当前页
+    complianPageNum = null;
   },
 
   /**
@@ -343,7 +395,6 @@ Page({
   onUnload: function () {
     console.log('广场 -- 监听页面卸载');
 
-  
   },
 
   /**
@@ -351,7 +402,17 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('广场  ---->  监听用户下拉动作');
-    // this.Start();
+    if (this.data.tabCurIndex == 0) {
+      console.log('公开日记下拉刷新');
+      // 刷新公开日记
+      this.onPullDownDiary();
+      // 将缓存中的浏览量数据发送后台
+      app.updateDiaryLooksNum();
+    } else if (this.data.tabCurIndex == 1) {
+      console.log('吐槽大会下拉刷新');
+      // 刷新吐槽大会
+      this.onPullDownComplain();
+    }
 
   },
 

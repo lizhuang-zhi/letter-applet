@@ -15,36 +15,12 @@ App({
     // this.globalData = {}
 
   },
-
   onHide() {
     console.log('App  --> onHide执行了');
     /* 
-      调用日记浏览量接口
+      更新日记浏览量接口
     */
-    // 获取本地缓存中改变过的浏览量
-    wx.getStorage({
-      key: 'changeDiaryArr',
-      success: res => {
-        console.log(res);
-        // 获取数组
-        let infoArr = res.data;
-        // 请求api
-        requestData.squareDiaryLooksNum(infoArr).then(res => {
-          console.log(res);
-          /* 请求成功，清除缓存 */
-          wx.removeStorage({
-            key: 'changeDiaryArr',
-            success: res => {
-              console.log('清理公开日记浏览量本地缓存');
-            }
-          })
-        })
-
-      },
-      fail: res => {
-        console.log(res);
-      }
-    })
+    this.updateDiaryLooksNum();
 
     /* 
       用户退出，更新登陆时间接口
@@ -52,18 +28,16 @@ App({
     // 获取用户openId
     let openId = this.globalData.openid;
     console.log(openId);
-    if(openId != null) {
+    if (openId != null) {
       requestData.userSignOut(openId).then(res => {
         console.log(res);
       })
     }
-    
-  },
 
+  },
   onShow() {
     console.log('App  --> onShow执行了');
   },
-
   // 获取用户openid
   getUserOpenId() {
     var that = this
@@ -105,28 +79,26 @@ App({
     })
 
   },
-
   // 用户注册（userInfo)
   accountUserInfo() {
     let that = this;
     // 获取用户信息
     let userInfo = that.globalData.userInfo;
-    let userInfoNew = Object.assign(userInfo,{
+    let userInfoNew = Object.assign(userInfo, {
       openId: that.globalData.openid,
       state: 0,
     });
     console.log(userInfoNew);
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       requestData.userAccount(userInfoNew).then(res => {
         console.log(res);
       })
     })
   },
-
   // 获取用户授权登陆（此方法调用getUserOpenId）
   getUserProfile() {
     let that = this;
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.getSetting({
         success(res) {
           // 未授权用户信息
@@ -160,8 +132,33 @@ App({
         }
       })
     })
+  },
+  // 更新公开日记浏览量
+  updateDiaryLooksNum() {
+    // 获取本地缓存中改变过的浏览量
+    wx.getStorage({
+      key: 'changeDiaryArr',
+      success: res => {
+        console.log(res);
+        // 获取数组
+        let infoArr = res.data;
+        // 请求api
+        requestData.squareDiaryLooksNum(infoArr).then(res => {
+          console.log(res);
+          /* 请求成功，清除缓存 */
+          wx.removeStorage({
+            key: 'changeDiaryArr',
+            success: res => {
+              console.log('清理公开日记浏览量本地缓存');
+            }
+          })
+        })
+
+      },
+      fail: res => {
+        console.log(res);
+      }
+    })
   }
-
-
 
 })
