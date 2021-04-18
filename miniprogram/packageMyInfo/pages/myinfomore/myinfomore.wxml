@@ -1,4 +1,10 @@
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-tit">信桶</view>
+  <view class="top-content">每一次忧愁都伴随着成长，每一封日记都书写着生活，每一次吐槽都发表着见解</view>
+</view>
+
 <!-- 图表展示用户数据 -->
-<view class="data-container" style="width: {{windowWidth + 'rpx'}};height: {{windowHeight + 'rpx'}};">
+<view class="data-container" style="width: {{475 + 'rpx'}};height: {{600 + 'rpx'}};">
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>

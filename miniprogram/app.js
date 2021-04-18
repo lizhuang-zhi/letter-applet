@@ -142,8 +142,13 @@ App({
         console.log(res);
         // 获取数组
         let infoArr = res.data;
+        // 新数组
+        let newInfoArr = [];
+        for(let ele of infoArr) {
+          newInfoArr.push(JSON.stringify(ele));
+        };
         // 请求api
-        requestData.squareDiaryLooksNum(infoArr).then(res => {
+        requestData.squareDiaryLooksNum(newInfoArr).then(res => {
           console.log(res);
           /* 请求成功，清除缓存 */
           wx.removeStorage({

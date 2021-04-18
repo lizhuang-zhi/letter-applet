@@ -366,6 +366,7 @@ let requestData = {
   },
   // 广场日记浏览量
   squareDiaryLooksNum(infoArr) {
+    console.log(infoArr);
     // 将数据转为Json串
     return new Promise((resolve,reject) => {
       wx.request({

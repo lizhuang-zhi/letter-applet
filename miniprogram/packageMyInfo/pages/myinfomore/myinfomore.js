@@ -69,9 +69,9 @@ Page({
       onInit: initChart
     },
     // 屏幕宽度
-    windowWidth: 0,
+    windowWidth: 375,
     // 屏幕高度
-    windowHeight: 0,
+    windowHeight: 667,
   },
 
   // 监听屏幕旋转
@@ -82,8 +82,8 @@ Page({
     console.log(res.size.windowWidth);
     console.log(res.size.windowHeight);
     this.setData({
-      windowWidth: (res.size.windowWidth * 2),
-      windowHeight: (res.size.windowHeight * 2)
+      windowWidth: (res.size.windowWidth),
+      windowHeight: (res.size.windowHeight)
     })
   },
 

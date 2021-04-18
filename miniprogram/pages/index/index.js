@@ -138,19 +138,27 @@ Page({
         } else {
           // 获取数组
           let artArr = res.data.data;
-          // 处理数据
-          artArr.forEach(item => {
-            // 修改对象键名
-            publicTools.renameKey(item, 'articleTime', 'time');
-            publicTools.renameKey(item, 'img_url', 'bgUrl');
-            publicTools.renameKey(item, 'articleTitle', 'title');
+          try {
+            // 处理数据
+            artArr.forEach(item => {
+              // 修改对象键名
+              publicTools.renameKey(item, 'articleTime', 'time');
+              publicTools.renameKey(item, 'img_url', 'bgUrl');
+              publicTools.renameKey(item, 'articleTitle', 'title');
 
-            // 格式化时间
-            item.time = tools.indexBeautyTime(item.time);
+              // 格式化时间
+              item.time = tools.indexBeautyTime(item.time);
 
-            // 修改标题
-            item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
-          });
+              // 修改标题
+              item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+            });
+          } catch (error) {
+            /* 
+              从前端拉取默认假数据
+            */
+            console.log('---------------------------> 美文异常');
+            
+          };
           this.setData({
             dataBeautyArr: artArr
           });
