@@ -11,8 +11,23 @@ page {
   background-size: cover;
 }
 
+/* 进入 */
+.go-index {
+  width: 100rpx;
+  height: 50rpx;
+  background: #717879;
+  border-radius: 30rpx;
+  color: #F4F4F4;
+  opacity: 0.7;
+  letter-spacing: 3rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 50rpx;
 
-
+  position: fixed;
+  bottom: 230rpx;
+  right: 35rpx;
+}
 
 /* 底部框 */
 .bottom-bar {
@@ -27,6 +42,7 @@ page {
   font-size: 37rpx;
   color: #FEFDFD;
   margin: 35rpx 0 10rpx;
+  letter-spacing: 7rpx;
 }
 .bottom-bar .tech {
   font-size: 23rpx;

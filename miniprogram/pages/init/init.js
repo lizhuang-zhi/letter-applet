@@ -8,11 +8,21 @@ Page({
 
   },
 
+  // 去首页
+  goIndex() {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let goIndexPageTime = setTimeout(() => {
+      this.goIndex();
+      clearTimeout(goIndexPageTime);
+    }, 5000);
   },
 
   /**
