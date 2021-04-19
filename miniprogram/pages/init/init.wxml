@@ -1,0 +1,9 @@
+
+
+<!-- 跳过 -->
+
+<!-- 底部框 -->
+<view class="bottom-bar">
+  <view class="title">信栈</view>
+  <view class="tech">-犀牛工作室版权所有-</view>
+</view>

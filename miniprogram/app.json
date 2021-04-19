@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/square/square",
-    "pages/mailbox/mailbox"
+    "pages/mailbox/mailbox",
+    "pages/init/init"
   ],
   "subpackages": [
     {

@@ -1,0 +1,31 @@
+page {
+  background-image: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/92f3e27c931b42e1be995448f425ee66.jpg!sswm');
+  /* 
+    备用图片
+    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/617bb3e22c7b413a865f984b60b75109.jpg!sswm
+
+    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/92f3e27c931b42e1be995448f425ee66.jpg!sswm
+
+    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/567c237cb4b245859b6cbd8467d75e65.jpg!sswm
+  */
+  background-size: cover;
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 200rpx;
+  background: #CB3F2E;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+.bottom-bar .title {
+  font-size: 37rpx;
+  color: #FEFDFD;
+  margin: 35rpx 0 10rpx;
+}
+.bottom-bar .tech {
+  font-size: 23rpx;
+  color: #E1968F;
+  letter-spacing: 5rpx;
+}

@@ -105,6 +105,13 @@
         {
           "name": "评论列表",
           "pathName": "packageMyInfo/pages/comment/comment",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "初始",
+          "pathName": "pages/init/init",
+          "query": "",
           "scene": null
         }
       ]
