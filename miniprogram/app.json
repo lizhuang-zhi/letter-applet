@@ -87,6 +87,7 @@
     "keo-empty-display": "/components/EmptyDisplay/EmptyDisplay",
     "keo-notify": "/components/Notify/Notify",
     "keo-select-mode": "/components/SelectMode/SelectMode",
+
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
     "yeo-rotate": "/Yeo/YeoRotate/YeoRotate",
@@ -124,6 +125,9 @@
     "yeo-diary-box-v2": "/Yeo/YeoDiaryBoxV2/YeoDiaryBoxV2",
     "yeo-frame": "/Yeo/YeoFrame/YeoFrame",
     "yeo-title": "/Yeo/YeoTitle/YeoTitle",
+    "yeo-frame-view": "/Yeo/YeoFrameView/YeoFrameView",
+
+
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index"
   }
