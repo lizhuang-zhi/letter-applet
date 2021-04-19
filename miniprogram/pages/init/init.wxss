@@ -11,6 +11,10 @@ page {
   background-size: cover;
 }
 
+
+
+
+/* 底部框 */
 .bottom-bar {
   width: 100%;
   height: 200rpx;

@@ -1,6 +1,9 @@
 
 
-<!-- 跳过 -->
+<!-- 进入 -->
+<view class="go-index">
+  进入
+</view>
 
 <!-- 底部框 -->
 <view class="bottom-bar">
