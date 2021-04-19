@@ -33,7 +33,9 @@
         "pages/replylist/replylist",
         "pages/officialnews/officialnews",
         "pages/latestevents/latestevents",
-        "pages/myinfomore/myinfomore"
+        "pages/myinfomore/myinfomore",
+        "pages/mystamp/mystamp",
+        "pages/myachievements/myachievements"
       ]
     }
   ],
@@ -68,7 +70,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "Wirte",
+    "navigationBarTitleText": "信栈",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",

@@ -113,6 +113,17 @@
           "pathName": "pages/init/init",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "我的邮票",
+          "pathName": "packageMyInfo/pages/mystamp/mystamp",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的成就",
+          "pathName": "packageMyInfo/pages/myachievements/myachievements",
+          "scene": null
         }
       ]
     }
