@@ -82,6 +82,7 @@ page {
   color: #888888;
   line-height: 1.7;
   letter-spacing: 3rpx;
+  text-indent: 2em;
 }
 
 /* 底部栏 */

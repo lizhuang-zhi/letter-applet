@@ -13,8 +13,6 @@
       <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='赏美文' worLinePosp='unset' lineWidthOfScreen='34%'
         lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5' wordWieight='bold'></yeo-art-font>
     </view>
-
-    <!-- <view class='info-right' slot='dy-right'>心自静</view> -->
   </yeo-dy-fun-bar>
 </view>
 <!-- 轮播图 -->

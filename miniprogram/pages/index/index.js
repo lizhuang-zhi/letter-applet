@@ -10,12 +10,6 @@ let tools = require('../../utils/timeTools');
 let publicTools = require('../../utils/public');
 // 引入加载数据
 let requestData = require('../../utils/request');
-// 存储背景图的数组
-// let bgArr = [
-//   "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2738668818,2590397852&fm=26&gp=0.jpg",
-//   "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg",
-//   "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg"
-// ];
 let app = getApp();
 Page({
 
@@ -43,14 +37,11 @@ Page({
   ToBeautyTap(e) {
     // 获取点击对象的文章index
     let articleIndex = e.detail.index;
-
     // 获取点击背景图
     wx.navigateTo({
       url: '/packageWriteLetter/pages/beautyletter/beautyletter?articleIndex=' + articleIndex,
     })
-
   },
-
   // 跳转解忧页
   ToSorrowTap(e) {
     // 信件id
@@ -61,7 +52,6 @@ Page({
       url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?id=' + id + '&senderOpenId=' + senderOpenId,
     })
   },
-
   // 获取解忧信件点击事件
   obtainLetter() {
     /* 
@@ -124,7 +114,6 @@ Page({
       })
     }
   },
-
   // 初始化数据
   Start() {
     // 获取美文集合
@@ -145,10 +134,8 @@ Page({
               publicTools.renameKey(item, 'articleTime', 'time');
               publicTools.renameKey(item, 'img_url', 'bgUrl');
               publicTools.renameKey(item, 'articleTitle', 'title');
-
               // 格式化时间
               item.time = tools.indexBeautyTime(item.time);
-
               // 修改标题
               item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
             });
@@ -157,7 +144,7 @@ Page({
               从前端拉取默认假数据
             */
             console.log('---------------------------> 美文异常');
-            
+            artArr = publicTools.indexBeautyArticleError();
           };
           this.setData({
             dataBeautyArr: artArr

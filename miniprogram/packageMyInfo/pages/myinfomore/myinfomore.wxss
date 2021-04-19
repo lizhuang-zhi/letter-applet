@@ -1,5 +1,5 @@
 .data-container {
-  margin: 20rpx auto 0;
+  margin: 20rpx auto 50rpx;
 }
 
 
