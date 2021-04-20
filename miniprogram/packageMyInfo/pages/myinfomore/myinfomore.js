@@ -1,4 +1,4 @@
-import echarts from '../../ec-canvas/echarts'
+import echarts from '../../ec-canvas/echarts';
 /* 
   总数据显示
 */

@@ -220,7 +220,7 @@ let requestData = {
           openId: letterObj.openId,
           penName: letterObj.penName,
           stampUrl: letterObj.stampUrl,
-          tabIds: letterObj.tapIds
+          tapIds: letterObj.tapIds
         },
         success: res => {
           resolve(res)

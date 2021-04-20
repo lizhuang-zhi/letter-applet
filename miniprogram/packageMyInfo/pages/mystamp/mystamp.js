@@ -12,7 +12,7 @@ Page({
 
     // 邮票信息数组
     stampArr: [{
-        stampPic: '../../images/Ed2-1.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7I5Ke.png',
         tit: '球鞋漫步',
         stampNumber: 'YDX2104201',
         desc: '球鞋邮票',
@@ -20,7 +20,7 @@ Page({
         edition: 'Edition 2.0'
       },
       {
-        stampPic: '../../images/Ed2-2.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IRC6.png',
         tit: '潮流穿搭',
         stampNumber: 'YDX2104202',
         desc: '球鞋邮票',
@@ -28,7 +28,7 @@ Page({
         edition: 'Edition 2.0'
       },
       {
-        stampPic: '../../images/Ed2-3.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IhvD.png',
         tit: '实战利器',
         stampNumber: 'YDX2104203',
         desc: '球鞋邮票',
@@ -36,7 +36,7 @@ Page({
         edition: 'Edition 2.0'
       },
       {
-        stampPic: '../../images/Ed2-4.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IfgO.png',
         tit: '混搭潮款',
         stampNumber: 'YDX2104204',
         desc: '球鞋邮票',
@@ -44,7 +44,7 @@ Page({
         edition: 'Edition 2.0'
       },
       {
-        stampPic: '../../images/Ed3-1.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IW8K.png',
         tit: '美国队长',
         stampNumber: 'YDX2104251',
         desc: '最强打药人',
@@ -52,7 +52,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
-        stampPic: '../../images/Ed3-2.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IIDH.png',
         tit: '雷神',
         stampNumber: 'YDX2104252',
         desc: '站在地球上的神',
@@ -60,7 +60,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
-        stampPic: '../../images/Ed3-3.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7Iobd.png',
         tit: '钢铁侠',
         stampNumber: 'YDX2104253',
         desc: '有钱的都是靠科技',
@@ -68,7 +68,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
-        stampPic: '../../images/Ed3-4.png',
+        stampPic: 'https://z3.ax1x.com/2021/04/20/c7IHUI.png',
         tit: '绿巨人浩克',
         stampNumber: 'YDX2104254',
         desc: '没钱的都是靠变异',

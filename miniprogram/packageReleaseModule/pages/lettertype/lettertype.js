@@ -151,25 +151,25 @@ Page({
     ],
     // 邮票数组
     stampArr: [{
-        picUrl: '../../images/mouse.png',
+        picUrl: 'https://z3.ax1x.com/2021/04/20/c7Isb9.png',
         title: '松鼠邮票',
         description: '第一版',
         picBorder: stampInitBorder
       },
       {
-        picUrl: '../../images/rabbit.png',
+        picUrl: 'https://z3.ax1x.com/2021/04/20/c7IrDJ.png',
         title: '兔子邮票',
         description: '第一版',
         picBorder: stampInitBorder
       },
       {
-        picUrl: '../../images/cat.png',
+        picUrl: 'https://z3.ax1x.com/2021/04/20/c7IDu4.png',
         title: '猫咪邮票',
         description: '第一版',
         picBorder: stampInitBorder
       },
       {
-        picUrl: '../../images/dog.png',
+        picUrl: 'https://z3.ax1x.com/2021/04/20/c7I6ER.png',
         title: '小狗邮票',
         description: '第一版',
         picBorder: stampInitBorder

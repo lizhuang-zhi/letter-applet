@@ -121,27 +121,27 @@ Page({
     /* 
       判断登陆与否（真机调试无反应）
     */
-    // wx.getStorage({
-    //   key: 'userInfo',
-    //   success: res => {
-    //     console.log(res.data);
-    //     if(res.data != null) {
-    //       wx.navigateTo({
-    //         url: '/packageMyInfo/pages/mystamp/mystamp',
-    //       }) 
-    //     }else {
-    //       // 先授权
-    //       app.getUserProfile().then(res => {
-    //         wx.navigateTo({
-    //           url: '/packageMyInfo/pages/mystamp/mystamp',
-    //         }) 
-    //       })
-    //     }
-    //   }
-    // })
-    wx.navigateTo({
-      url: '/packageMyInfo/pages/mystamp/mystamp',
-    }) 
+    wx.getStorage({
+      key: 'userInfo',
+      success: res => {
+        console.log(res.data);
+        if (res.data != null) {
+          wx.navigateTo({
+            url: '/packageMyInfo/pages/mystamp/mystamp',
+          })
+        }
+      },
+      fail: res => {
+        console.log(res);
+        // 先授权
+        app.getUserProfile().then(res => {
+          wx.navigateTo({
+            url: '/packageMyInfo/pages/mystamp/mystamp',
+          })
+        })
+      }
+    })
+
 
   },
   // 监听下拉刷新事件

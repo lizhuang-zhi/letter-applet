@@ -58,8 +58,6 @@
   <view class="choose-tag-none" wx:if="{{type == '解答' || type == '回信' || type == '吐槽'}}">
   </view>
 
-
-
   <!-- 选择邮票 -->
   <view class="choose-stamp" wx:if="{{type == '解忧'}}">
     <!-- 标题 -->
@@ -74,8 +72,6 @@
     </view>
 
   </view>
-
-
 
   <!-- 是否收录选择开关 -->
   <keo-switch-row wx:if="{{swithObj.isShow}}" TitleText='{{swithObj.tit}}' TipContent='{{swithObj.cont}}'

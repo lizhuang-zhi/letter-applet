@@ -91,7 +91,7 @@ App({
     /* 
       将用户信息存入缓存
     */
-    // wx.setStorageSync('userInfo', userInfoNew);
+    wx.setStorageSync('userInfo', userInfoNew);
     console.log(userInfoNew);
     return new Promise((resolve, reject) => {
       requestData.userAccount(userInfoNew).then(res => {
