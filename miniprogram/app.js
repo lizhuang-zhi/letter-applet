@@ -151,34 +151,38 @@ App({
   },
   // 更新公开日记浏览量
   updateDiaryLooksNum() {
-    // 获取本地缓存中改变过的浏览量
-    wx.getStorage({
-      key: 'changeDiaryArr',
-      success: res => {
-        console.log(res);
-        // 获取数组
-        let infoArr = res.data;
-        // 新数组
-        // let newInfoArr = [];
-        // for(let ele of infoArr) {
-        //   newInfoArr.push(JSON.stringify(ele));
-        // };
-        // 请求api
-        requestData.squareDiaryLooksNum(infoArr).then(res => {
+    return new Promise((resolve, reject) => {
+      // 获取本地缓存中改变过的浏览量
+      wx.getStorage({
+        key: 'changeDiaryArr',
+        success: res => {
           console.log(res);
-          /* 请求成功，清除缓存 */
-          wx.removeStorage({
-            key: 'changeDiaryArr',
-            success: res => {
-              console.log('清理公开日记浏览量本地缓存');
-            }
-          })  
-        })
+          // 获取数组
+          let infoArr = res.data;
+          // 新数组
+          // let newInfoArr = [];
+          // for(let ele of infoArr) {
+          //   newInfoArr.push(JSON.stringify(ele));
+          // };
+          // 请求api
+          requestData.squareDiaryLooksNum(infoArr).then(res => {
+            console.log(res);
+            /* 请求成功，清除缓存 */
+            wx.removeStorage({
+              key: 'changeDiaryArr',
+              success: res => {
+                console.log('清理公开日记浏览量本地缓存');
+              }
+            })
+            resolve('success');
+          })
 
-      },
-      fail: res => {
-        console.log(res);
-      }
+        },
+        fail: res => {
+          console.log(res);
+          resolve('fail');
+        }
+      })
     })
   }
 

@@ -404,10 +404,12 @@ Page({
     console.log('广场  ---->  监听用户下拉动作');
     if (this.data.tabCurIndex == 0) {
       console.log('公开日记下拉刷新');
-      // 刷新公开日记
-      this.onPullDownDiary();
       // 将缓存中的浏览量数据发送后台
-      app.updateDiaryLooksNum();
+      app.updateDiaryLooksNum().then(res => {
+        console.log(res);
+        // 刷新公开日记
+        this.onPullDownDiary();
+      });
     } else if (this.data.tabCurIndex == 1) {
       console.log('吐槽大会下拉刷新');
       // 刷新吐槽大会

@@ -370,7 +370,7 @@ let requestData = {
       wx.request({
         url: apiUrl.getSquareDiaryLooksNum(),
         data: {
-          diaryViewJson: infoArr
+          diaryViewJson: JSON.stringify(infoArr)
         },
         header: {
           'content-type':'application/x-www-form-urlencoded'

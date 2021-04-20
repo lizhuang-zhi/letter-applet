@@ -29,11 +29,11 @@
         <view class="num">23</view>
       </view>
       <view class="data-num">
-        <view class="word">点赞</view>
+        <view class="word">日记</view>
         <view class="num">44</view>
       </view>
       <view class="data-num">
-        <view class="word">评论</view>
+        <view class="word">吐槽</view>
         <view class="num">657</view>
       </view>
     </view>
