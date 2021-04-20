@@ -58,12 +58,12 @@ Component({
         初始化行列背景色（易于区分）
       */
       // 获取行列信息
-      let RowOrCol = this.properties.direction;
-      if(RowOrCol == 'row') {
-        this.setData({
-          frameBgColor: 'red'
-        })
-      }
+      // let RowOrCol = this.properties.direction;
+      // if(RowOrCol == 'row') {
+      //   this.setData({
+      //     frameBgColor: 'red'
+      //   })
+      // }
 
     }
   },

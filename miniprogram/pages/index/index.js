@@ -58,13 +58,12 @@ Page({
       先授权登录，然后获取信件
     */
     if (app.globalData.userInfo == null && this.data.isOpenStampBox == false) {
-      // 获取用户openId
-      let openId = app.globalData.openid;
       app.getUserProfile().then(res => {
+        // 获取用户openId
+        let openId = app.globalData.openid;
         // 获取三封信件
         requestData.indexLetters(openId).then(res => {
-          // console.log(res);
-          console.log(res.data.data);
+          console.log(res);
           // 获取返回信件数组
           let letterArr = res.data.data;
           letterArr.forEach(item => {
@@ -88,7 +87,7 @@ Page({
       let openId = app.globalData.openid;
       // 获取三封信件
       requestData.indexLetters(openId).then(res => {
-        // console.log(res);
+        // console.log(res); 
         console.log(res.data.data);
         // 获取返回信件数组
         let letterArr = res.data.data;
