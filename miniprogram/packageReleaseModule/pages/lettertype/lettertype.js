@@ -374,21 +374,15 @@ Page({
     let content = this.data.inputValue;
     // 用户openId
     let openId = app.globalData.openid;
-    // 发布时间
-    let releaseTime = new Date();
     // 邮票图片地址
     let stampUrl = stampPic;
-    // 状态
-    let state = 1;
     // 	标签id集合
     let tapIds = selectSorrowArr.toString();
     // 声明对象保存上面的值
     let letterObj = {
       penName,
       content,
-      releaseTime,
       stampUrl,
-      state,
       tapIds,
       openId
     };

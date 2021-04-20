@@ -23,7 +23,7 @@
     </yeo-message-notification>
     <!-- 我的邮票 -->
     <yeo-message-notification infoTit='我的邮票' notifiNum='8' leftPic='https://z3.ax1x.com/2021/03/25/6O0prj.png'
-      boxBgColor='#FCF1E9' infoDesc='快来解锁属于你的邮票吧'></yeo-message-notification>
+      boxBgColor='#FCF1E9' infoDesc='快来解锁属于你的邮票吧' bindtap="ToMyStamp"></yeo-message-notification>
     <!-- 我的成就 -->
     <yeo-message-notification infoTit='我的成就' notifiNum='1' leftPic='https://z3.ax1x.com/2021/03/25/6OTSQH.png'
       infoDesc='电亮你的成就' boxBgColor='#E6F8F0'></yeo-message-notification>

@@ -219,10 +219,8 @@ let requestData = {
           content: letterObj.content,
           openId: letterObj.openId,
           penName: letterObj.penName,
-          releaseTime: letterObj.releaseTime,
           stampUrl: letterObj.stampUrl,
-          state: letterObj.state,
-          tapIds: letterObj.tapIds
+          tabIds: letterObj.tapIds
         },
         success: res => {
           resolve(res)

@@ -1,7 +1,7 @@
 <view class="stamp-container">
   <!-- 邮票item -->
   <yeo-frame-view class="item-stamp" framePadding='30rpx 30rpx' frameBgColor='{{boxColor}}' frameAlignItems='center'
-    frameBoxSizing='border-box' frameBordRadius='0rpx' wx:for="{{stampArr}}">
+    frameBoxSizing='border-box' frameBordRadius='0rpx' wx:for="{{stampArr}}" bindtap="showStampPopup" data-tit="{{item.tit}}" data-desc="{{item.desc}}" data-edition="{{item.edition}}" data-pic="{{item.stampPic}}">
     <!-- 左侧配图 -->
     <view class="left-pic">
       <image src="{{item.stampPic}}"></image>
@@ -33,3 +33,22 @@
     </view>
   </yeo-frame-view>
 </view>
+
+
+<!-- 弹出层 -->
+<van-popup show="{{ isShowPop }}" closeable  bind:close="onStampClose"
+  close-icon="close" custom-style='border-radius: 25rpx;' catchtouchmove>
+  <!-- 展示邮票 -->
+  <view class="showpop-box">
+    <!-- 邮票图片 -->
+    <view class="stamp-pic">
+      <image src="{{stampPic}}"></image>
+    </view>
+    <!-- 邮票信息 -->
+    <view class="info">
+      <view class="tit">{{stampTit}}</view>
+      <view class="desc">{{stampDesc}}</view>
+      <view class="edition">{{stampEdition}}</view>
+    </view>
+  </view>
+</van-popup>
