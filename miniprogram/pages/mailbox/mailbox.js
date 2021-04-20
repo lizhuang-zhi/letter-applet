@@ -54,7 +54,7 @@ Page({
     let index = e.detail.index;
 
     // 未获取用户信息与openId
-    if (!app.globalData.userInfo) {
+    if (app.globalData.userInfo == null) {
       app.getUserProfile().then(res => {
         // 获取openId
         let openId = app.globalData.openid;
@@ -125,6 +125,7 @@ Page({
       key: 'userInfo',
       success: res => {
         console.log(res.data);
+        // 缓存中存在用户信息（已授权）
         if (res.data != null) {
           wx.navigateTo({
             url: '/packageMyInfo/pages/mystamp/mystamp',
@@ -141,7 +142,6 @@ Page({
         })
       }
     })
-
 
   },
   // 监听下拉刷新事件

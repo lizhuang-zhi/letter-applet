@@ -188,6 +188,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('index页面 ======> 监听页面加载');
     // 初始化美文集合
     this.Start();
   },

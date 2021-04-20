@@ -10,10 +10,22 @@ App({
 
   onLaunch: function () {
     console.log('App  --> onLaunch执行了');
+    let that = this;
 
-    console.log(this.globalData);
-    // this.globalData = {}
-
+    /* 
+      去缓存中获取用户授权
+    */
+    wx.getStorage({
+      key: 'userInfo',
+      success: res => {
+        console.log(res.data);
+        // 存储信息到全局变量
+        that.globalData.userInfo = res.data;
+      },
+      fail: res => {
+        console.log('---- 缓存中无用户信息 ----');
+      }
+    })
   },
   onHide() {
     console.log('App  --> onHide执行了');
@@ -147,12 +159,12 @@ App({
         // 获取数组
         let infoArr = res.data;
         // 新数组
-        let newInfoArr = [];
-        for(let ele of infoArr) {
-          newInfoArr.push(JSON.stringify(ele));
-        };
+        // let newInfoArr = [];
+        // for(let ele of infoArr) {
+        //   newInfoArr.push(JSON.stringify(ele));
+        // };
         // 请求api
-        requestData.squareDiaryLooksNum(newInfoArr).then(res => {
+        requestData.squareDiaryLooksNum(infoArr).then(res => {
           console.log(res);
           /* 请求成功，清除缓存 */
           wx.removeStorage({
@@ -160,7 +172,7 @@ App({
             success: res => {
               console.log('清理公开日记浏览量本地缓存');
             }
-          })
+          })  
         })
 
       },
