@@ -105,7 +105,7 @@ Page({
         // 获取评论数组
         let commentArr = this.data.commentArr;
         if (backInfoCode == 200) {
-          commentArr.push(newCont);
+          commentArr.unshift(newCont);
           this.setData({
             commentArr: commentArr,
             preViousTime: new Date(),
