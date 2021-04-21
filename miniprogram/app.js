@@ -21,6 +21,7 @@ App({
         console.log(res.data);
         // 存储信息到全局变量
         that.globalData.userInfo = res.data;
+        that.globalData.openid = res.data.openId;
       },
       fail: res => {
         console.log('---- 缓存中无用户信息 ----');

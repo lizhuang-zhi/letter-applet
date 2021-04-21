@@ -385,23 +385,6 @@ let requestData = {
       })
     })
   },
-  //获取未读评论个数
-  mailboxNumberOfmessage(openId) {
-    return new Promise((resolve,reject) => {
-      wx.request({
-        url: apiUrl.getMailboxNumberOfmessage(),
-        data: {
-          openId: openId
-        },
-        success: res => {
-          resolve(res)
-        },
-        fail: res => {
-          reject(res)
-        }
-      })
-    })
-  },
   //获取评论信息
   mailboxMessageList(openId){
     return new Promise((resolve,reject) => {

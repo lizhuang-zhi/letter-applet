@@ -180,7 +180,6 @@ Page({
       console.log('===== 加载完成 =====');
     }, 2000)
   },
-
   // 初始化数据
   Start(openId) {
     // let time = '2020-03-2 14:26:39';
@@ -196,7 +195,6 @@ Page({
     this.refresh(openId);
 
   },
-
   // API方法
   apiNumberData(openId) {
     // 获取未读信件数量
@@ -205,33 +203,17 @@ Page({
       return new Promise((resolve, reject) => {
         // 获取回信数量
         let letterNum = res.data.data[1];
+        // 获取评论数量
+        let commentNum = res.data.data[2];
         // 赋值消息提示数量
         let dataList = this.data.dataList;
         dataList[1].notifiNum = letterNum;
+        dataList[2].notifiNum = commentNum;
         this.setData({
           dataList: dataList
         });
         resolve('success');
       })
-    }).then(res => {
-      if (res == 'success') {
-        /* 
-          获取收到评论请求个数
-        */
-        return new Promise((resolve, reject) => {
-          requestData.mailboxNumberOfmessage(openId).then(res => {
-            console.log(res);
-            let arrList = this.data.dataList;
-            arrList[2].notifiNum = res.data.data == null ? 0 : res.data.data;
-            this.setData({
-              dataList: arrList
-            });
-            resolve('success');
-          })
-        })
-
-      }
-
     }).then(res => {
       if (res == 'success') {
         // 关闭下拉加载
@@ -241,8 +223,8 @@ Page({
         console.log('-------- 刷新完成 ---------');
       }
     })
-  },
 
+  },
   // 轮循方法
   timeToGetData(openId) {
     // 获取接口数据

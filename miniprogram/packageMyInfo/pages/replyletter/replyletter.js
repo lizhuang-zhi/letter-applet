@@ -1,5 +1,6 @@
 // api
 let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 Page({
 
@@ -45,6 +46,8 @@ Page({
       console.log(typeof res.data.data.replyContent);
       // 获取信件信息
       let letterInfo = res.data.data;
+      // 修改展示时间
+      letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
       this.setData({
         letterInfo: letterInfo
       })

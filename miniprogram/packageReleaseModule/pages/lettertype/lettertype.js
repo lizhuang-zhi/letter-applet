@@ -225,7 +225,6 @@ Page({
 
 
   },
-
   // 日记天气选择点击按钮
   bindTapDiaryWeather(e) {
     // 获取点击按钮索引
@@ -259,7 +258,6 @@ Page({
 
 
   },
-
   // 解忧天气选择点击按钮
   bindTapComplainWeather(e) {
     // 获取点击按钮索引
@@ -293,7 +291,6 @@ Page({
 
 
   },
-
   // 获取随机笔名
   RandomNameTap() {
     // 获取随机笔名
@@ -303,7 +300,6 @@ Page({
       initValue: randomName
     })
   },
-
   // 邮票选择
   stampClickObj(e) {
     console.log(e.detail.clickObj);
@@ -333,7 +329,6 @@ Page({
       stampArr: stampArr
     })
   },
-
   // 获取开关选择值
   switchEvent(e) {
     this.setData({
@@ -592,7 +587,7 @@ Page({
       if (res == 'success') {
         // 接口请求成功后跳转（同步）
         let timeToJumpPage = setTimeout(() => {
-          wx.reLaunch({
+          wx.switchTab({
             url: '/pages/index/index'
           });
           // 清除计时器
