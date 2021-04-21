@@ -103,7 +103,8 @@ function initSorrowChart(canvas, width, height) {
         /* 微信小程序设置此圆角属性无效 */
         borderRadius: 0,
       },
-      data: [{
+      data: [
+        {
           value: 4,
           name: '温和'
         },

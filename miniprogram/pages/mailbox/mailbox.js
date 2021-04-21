@@ -48,6 +48,10 @@ Page({
     moveTime: 0,
   },
 
+  // 跳转历史信件
+  ToHistoryLetter() {
+    
+  },
   // 跳转顶栏页面
   ToReplyListTap(e) {
     // 获取索引
@@ -104,13 +108,13 @@ Page({
     }
 
   },
-  //挑转到官方消息
+  //跳转到官方消息
   ToOfficialnews() {
     wx.navigateTo({
       url: '/packageMyInfo/pages/officialnews/officialnews',
     })
   },
-  //挑转到最新活动
+  //跳转到最新活动
   ToLatestevents() {
     wx.navigateTo({
       url: '/packageMyInfo/pages/latestevents/latestevents',
