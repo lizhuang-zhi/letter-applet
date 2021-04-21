@@ -1,6 +1,8 @@
 // api
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools');
+let requestLetterline = require('../../../utils/public');
+
 let app = getApp();
 Page({
 
@@ -14,14 +16,20 @@ Page({
     consignee: '不吃鱼的猫',
     //回信者
     writer: '房东的猫',
-
     // 信件信息
-    letterInfo:{},
-
+    letterInfo: {},
     // 信件id
     letterId: '',
     // 用户openId
-    openId: ''
+    openId: '',
+
+    /* 
+      keo ------------
+    */
+    // 行数组
+    lettercontentArr: [],
+    // 行字数
+    lineNum: 17
   },
   //点击跳转写信
   replyLetter() {
@@ -39,18 +47,27 @@ Page({
   },
 
   // 初始化数据
-  Start(openId,replyId,letterId) {
+  Start(openId, replyId, letterId) {
     requestData.replyletter(openId, replyId, letterId).then(res => {
       console.log(res);
-      console.log(res.data.data.replyContent);
-      console.log(typeof res.data.data.replyContent);
       // 获取信件信息
       let letterInfo = res.data.data;
       // 修改展示时间
       letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
+      /*
+        获取信件行信息  -----   keo
+      */
+      //获取信件行
+      let content = letterInfo.replyContent;
+      console.log(content);
+      let contentArr = this.data.lettercontentArr;
+      let linenum = this.data.lineNum;
+      let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
       this.setData({
-        letterInfo: letterInfo
+        letterInfo: letterInfo,
+        lettercontentArr: resultArr
       })
+
     })
   },
 
@@ -60,7 +77,7 @@ Page({
   onLoad: function (options) {
     // 获取用户openId
     let openId = app.globalData.openid;
-    this.Start(openId,options.replyId,options.letterId);
+    this.Start(openId, options.replyId, options.letterId);
     this.setData({
       letterId: options.letterId,
       senderOpenId: options.senderOpenId,

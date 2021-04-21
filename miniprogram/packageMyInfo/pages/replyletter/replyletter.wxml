@@ -1,8 +1,5 @@
 <keo-original-content OriginalText='"{{letterInfo.lastContent}}'></keo-original-content>
 
-<keo-letter-view TopTipDisplay="none" lettercontent="{{letterInfo.replyContent}}" consignee="{{letterInfo.recipientPenName+ ' 收'}}" writer='{{letterInfo.senderPenName}}' date='{{letterInfo.releaseTime}}'></keo-letter-view>
-
-<!-- 按钮 -->
-<!-- <view class="btn-part">
-  <keo-check-button BtnText="回信" bindtap="replyLetter"></keo-check-button>
-</view> -->
+<keo-letter-view TopTipDisplay="none" lettercontentArr="{{lettercontentArr}}"
+  consignee="{{letterInfo.recipientPenName+ ' 收'}}" writer='{{letterInfo.senderPenName}}'
+  date='{{letterInfo.releaseTime}}'></keo-letter-view>

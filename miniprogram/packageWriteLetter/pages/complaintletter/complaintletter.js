@@ -2,8 +2,6 @@ let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
 let yeoTools = require('../../../Yeo/utils/tools');
 
-// 用户openId
-let openId = '';
 // 发送评论的评论状态
 let state = 0;
 // 分页请求评论页码
@@ -20,22 +18,16 @@ Page({
   data: {
     // loading组件
     isShowLoading: true,
-
     // 评论数组
     commentArr: [],
-
     // 具体某一个吐槽的id
     id: '',
-
     // 输入框输入内容
     inputContent: '',
-
     // 函数节流前一个判断时间
     preViousTime: 0,
-
     // 插入评论返回信息
     commentBackInfo: ""
-
   },
 
   // 回车事件
@@ -91,7 +83,7 @@ Page({
       };
       // 插入数据库的评论对象数据
       let sendCommentObj = {
-        openId: openId,
+        openId: app.globalData.openid,
         sgId: this.data.id,
         state: state
       };

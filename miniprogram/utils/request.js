@@ -167,6 +167,7 @@ let requestData = {
   },
   // 吐槽大会的内容详情页中发送评论
   complainletterSendComment(commentObj) {
+    console.log(commentObj);
     return new Promise((resolve,reject) => {
       wx.request({
         header: {
