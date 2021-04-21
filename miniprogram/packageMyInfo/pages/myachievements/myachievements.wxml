@@ -1,0 +1,34 @@
+<view class="stamp-container">
+  <!-- 邮票item -->
+  <yeo-frame-view class="item-stamp" framePadding='30rpx 30rpx' frameBgColor='{{boxColor}}' frameAlignItems='center'
+    frameBoxSizing='border-box' frameBordRadius='0rpx' wx:for="{{achievementsArr}}">
+    <!-- 左侧配图 -->
+    <view class="left-pic">
+      <image src="{{item.achievementsPic}}"></image>
+    </view>
+    <!-- 右侧信息 -->
+    <view class="right-info" style="width: 80%;">
+      <yeo-frame-view direction='row' frameBgColor='{{boxColor}}'>
+        <!-- 右侧上部分 -->
+        <view class="top-part">
+          <text class="tit">{{item.tit}}</text>
+          <view class="desc">{{item.desc}}</view>
+        </view>
+        <!-- 右侧下部分 -->
+        <view class="bot-part">
+          <yeo-frame-view frameBgColor='{{boxColor}}' frameAlignItems='center'>
+            <!-- 解锁时间 -->
+            <yeo-frame-view frameBgColor='{{boxColor}}' frameAlignItems='center'>
+              <view class="lock-pic">
+                <image src="../../images/solve_lock.png"></image>
+              </view>
+              <view class="cont">{{item.lockTime}}</view>
+            </yeo-frame-view>
+            <!-- 邮票版本号 -->
+            <view class="edition">{{item.edition}}</view>
+          </yeo-frame-view>
+        </view>
+      </yeo-frame-view>
+    </view>
+  </yeo-frame-view>
+</view>

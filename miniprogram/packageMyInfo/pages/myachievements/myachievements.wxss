@@ -1,0 +1,47 @@
+page {
+  /* 页面背景色 */
+  background: #FFFFFF;
+
+  /* 图片与右侧信息总高度 */
+  --pic-right-height: 160rpx;
+}
+
+/* 左侧配图 */
+.stamp-container .left-pic image {
+  width: 220rpx;
+  height: var(--pic-right-height);
+  padding: 0 30rpx 0 0;
+}
+
+/* 右侧信息 */
+.stamp-container .right-info {
+  height: var(--pic-right-height);
+}
+
+/* 右侧上部分 */
+.stamp-container .right-info .top-part .tit{
+  font-size: 37rpx;
+  color: #0E1D3D;
+  font-weight: bold;
+  letter-spacing: 1rpx;
+}
+.stamp-container .right-info .top-part .desc{
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+}
+
+/* 右侧下部分 */
+.stamp-container .right-info .bot-part{
+  font-size: 25rpx;
+}
+.stamp-container .right-info .bot-part .cont{
+  letter-spacing: 0.2rpx;
+  margin-left: 5rpx;
+}
+.stamp-container .right-info .bot-part .lock-pic image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-top: 7rpx;
+}
+
+
