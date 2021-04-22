@@ -2,13 +2,18 @@ page {
   /* 页面背景色 */
   background: #FFFFFF;
 
+  /* 解锁背景色 */
+  --solveLockBgColor: #FFFFFF;
+  /* 未解锁背景色  */
+  --LockBgColor: #EEEEEE;
+
   /* 图片与右侧信息总高度 */
   --pic-right-height: 160rpx;
 }
 
 /* 左侧配图 */
 .stamp-container .left-pic image {
-  width: 220rpx;
+  width: 130rpx;
   height: var(--pic-right-height);
   padding: 0 30rpx 0 0;
 }

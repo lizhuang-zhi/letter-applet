@@ -5,26 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 框架背景颜色
-    // boxColor: '#FFFFFF',
-    boxColor: '#EEEEEE',
 
-    // 邮票信息数组
+    // 成就信息数组
     achievementsArr: [{
-        achievementsPic: '../../images/lock-achievements.webp',
+        isLock: false,
+        achievementsPic: '../../images/lock.png',
         tit: '解答专家',
         desc: '解答30封信件',
         lockTime: '2021年04月11日 23:40',
         edition: 'Edition 2.0'
       },
       {
-        achievementsPic: '../../images/lock-achievements.webp',
+        isLock: true,
+        achievementsPic: 'https://z3.ax1x.com/2021/04/22/cLY7ad.png',
         tit: '解答大师',
         desc: '解答100封信件',
         lockTime: '2021年04月20日 08:40',
         edition: 'Edition 2.0'
       },
       {
+        isLock: false,
         achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IhvD.png',
         tit: '老朋友',
         desc: '收到一封回信',
@@ -32,13 +32,15 @@ Page({
         edition: 'Edition 2.0'
       },
       {
-        achievementsPic: '../../images/lock-achievements.webp',
+        isLock: false,
+        achievementsPic: '../../images/lock.png',
         tit: '吐槽名家',
         desc: '发布20篇吐槽',
         lockTime: '2021年04月13日 03:40',
         edition: 'Edition 2.0'
       },
       {
+        isLock: false,
         achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IW8K.png',
         tit: '日记小能手',
         desc: '完成30篇日记',
@@ -46,6 +48,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
+        isLock: false,
         achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IIDH.png',
         tit: '集邮达人',
         desc: '收集到10枚邮票',
@@ -53,6 +56,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
+        isLock: false,
         achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7Iobd.png',
         tit: '校园专家',
         desc: '解答关于10封校园的解忧信',
@@ -60,6 +64,7 @@ Page({
         edition: 'Edition 3.0'
       },
       {
+        isLock: false,
         achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IHUI.png',
         tit: '痛苦面具',
         desc: '发布20篇解忧信件',
