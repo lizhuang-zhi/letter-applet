@@ -63,6 +63,7 @@ Component({
       //   this.setData({
       //     frameBgColor: 'red'
       //   })
+      //   console.log('变红是因为组件的attend()生命周期中执行了操作');
       // }
 
     }

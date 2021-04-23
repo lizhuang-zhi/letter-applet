@@ -23,7 +23,49 @@ Page({
     complianArr: [],
 
     // 记录当前tab所在标题的索引
-    tabCurIndex: 0
+    tabCurIndex: 0,
+
+    // 页面距离顶部高度
+    pageScrollTop: 0,
+
+
+    /* 
+      loading-part组件
+    */
+    pull: {
+      isLoading: false,
+      loading: '../../images/loading-2.gif',
+      pullText: '正在加载'
+    },
+    push: {
+      isLoading: false,
+      loading: '../../images/loading-2.gif',
+      pullText: '-上拉加载更多-'
+    },
+    slideStart: [],
+    moveTime: 0,
+
+  },
+
+  // 监听下拉刷新事件
+  refresh(e) {
+    // 获取页面的ScrollTop
+    let pageScrollTop = this.data.pageScrollTop;
+    // 当距离顶部距离小于等于30px才可以触发下拉刷新
+    if (pageScrollTop <= 30) {
+      console.log('刷新', e)
+      this.setData({
+        'pull.isLoading': true,
+        'pull.loading': '../../images/loading-2.gif',
+        'pull.pullText': '正在加载',
+      })
+      setTimeout(() => {
+        this.setData({
+          'pull.isLoading': false,
+        })
+        console.log('+++++ 刷新完成 +++++')
+      }, 3000)
+    }
 
   },
 
@@ -130,6 +172,10 @@ Page({
   },
   // 监听页面滚动
   onPageScroll(e) {
+    // 设置页面的scrollTop（实时）
+    this.setData({
+      pageScrollTop: e.scrollTop
+    });
     if (e.scrollTop > 400) { // 页面上卷高度 大于页面固定按钮位置
       this.setData({
         fixedInputPhone: true // 显示指定区域
@@ -405,15 +451,15 @@ Page({
     if (this.data.tabCurIndex == 0) {
       console.log('公开日记下拉刷新');
       // 将缓存中的浏览量数据发送后台
-      app.updateDiaryLooksNum().then(res => {
-        console.log(res);
-        // 刷新公开日记
-        this.onPullDownDiary();
-      });
+      // app.updateDiaryLooksNum().then(res => {
+      //   console.log(res);
+      //   // 刷新公开日记
+      //   this.onPullDownDiary();
+      // });
     } else if (this.data.tabCurIndex == 1) {
       console.log('吐槽大会下拉刷新');
       // 刷新吐槽大会
-      this.onPullDownComplain();
+      // this.onPullDownComplain();
     }
 
   },

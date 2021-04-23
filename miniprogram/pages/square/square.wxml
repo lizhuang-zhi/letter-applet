@@ -43,3 +43,9 @@
     <image src="https://z3.ax1x.com/2021/03/30/cPB42Q.png"></image>
   </view>
 </view>
+
+
+<!-- loading加载 -->
+<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400' gifBoxShadow='0 0 20rpx #ddd' gifBordRadius='50rpx'  bindrefresh="refresh">
+
+</yeo-loading-part>

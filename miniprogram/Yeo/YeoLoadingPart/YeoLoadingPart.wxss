@@ -5,10 +5,6 @@
   bottom: 0;
 }
 
-.icon-refresh {
-  height: 100rpx;
-}
-
 .pull-refresh {
   height: 140rpx;
   display: flex;
@@ -18,8 +14,17 @@
   overflow: hidden;
 }
 
-.chu {
+.chu-110 {
   height: 110rpx;
+}
+.chu-200 {
+  height: 200rpx;
+}
+.chu-300 {
+  height: 300rpx;
+}
+.chu-400 {
+  height: 400rpx;
 }
 
 .jin {

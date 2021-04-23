@@ -22,10 +22,25 @@ Component({
 			value: {}
 		},
 		/* 设置样式 */
-		// 加载gif图片宽度(图片高度为100rpx)
+		// 加载gif图片宽度
 		gifWidth: {
 			type: Number,
 			value: 140
+		},
+		// 加载gif图片高度
+		gifHeight: {
+			type: Number,
+			value: 100
+		},
+		// 加载gif图片的圆角
+		gifBordRadius: {
+			type: String,
+			value: '0rpx'
+		},
+		// 加载gif图片的阴影
+		gifBoxShadow: {
+			type: String,
+			value: ''
 		},
 		// 组件距离顶部高度（绝对定位）
 		top: {
@@ -36,6 +51,16 @@ Component({
 		pushLoadMargin: {
 			type: String,
 			value: '0 0 200rpx 0;'
+		},
+		// 是否显示上拉加载更多
+		isShowBottom: {
+			type: Boolean,
+			value: true
+		},
+		// 展示下拉加载的高度('chu-110','chu-200','chu-300','chu-400')
+		chuHeight: {
+			type: String,
+			value: 'chu-110'
 		}
 	},
 	pageLifetimes: {

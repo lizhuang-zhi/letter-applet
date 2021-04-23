@@ -1,7 +1,7 @@
 <view class="yeo-loading-part">
 	<scroll-view class="message scroll-view client-pool-list" scroll-y="{{true}}" lower-threshold="1" bindtouchstart="touchstart" bindtouchmove="touchmove" style="top: {{top + 'rpx'}};">
-		<view class="pull-refresh {{pull.isLoading ? 'chu' : 'jin'}}" id="pull-refresh">
-			<image class="icon-refresh z-index-1" src="{{pull.loading}}" style="width: {{gifWidth + 'rpx'}};"/>
+		<view class="pull-refresh {{pull.isLoading ? chuHeight : 'jin'}}" id="pull-refresh">
+			<image class="icon-refresh z-index-1" src="{{pull.loading}}" style="width: {{gifWidth + 'rpx'}};height: {{gifHeight + 'rpx'}};border-radius: {{gifBordRadius}};box-shadow: {{gifBoxShadow}};"/>
 
 			<!-- 加载文字 -->
 			<!-- <view class="fs24 pt20 f-color-666 z-index-1">{{pull.pullText}}</view> -->
@@ -12,11 +12,12 @@
 		<slot></slot>
 
 
-		<view class="pull-refresh" style="margin: {{pushLoadMargin}};">
-			<image class="icon-refresh z-index-1" wx:if="{{push.isLoading}}" src="{{push.loading}}" style="width: {{gifWidth + 'rpx'}};"/>
+		<view wx:if="{{isShowBottom}}" class="pull-refresh" style="margin: {{pushLoadMargin}};">
+			<image class="icon-refresh z-index-1" wx:if="{{push.isLoading}}" src="{{push.loading}}" style="width: {{gifWidth + 'rpx'}};height: {{gifHeight + 'rpx'}};border-radius: {{gifBordRadius}};"/>
 
 			<!-- 加载文字 -->
 			<view class="fs24 f-color-666 z-index-1">{{push.pullText}}</view>
 		</view>
+
 	</scroll-view>
 </view>
