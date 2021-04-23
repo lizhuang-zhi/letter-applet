@@ -13,10 +13,6 @@ page {
   font-weight: bold;
   width: 500rpx;
 }
-.beauty-article .info-right {
-  font-size: 26rpx;
-  letter-spacing: 2rpx;
-}
 
 /* 解忧信件标题 */
 .tit-sorrow {
@@ -94,10 +90,10 @@ page {
 
 /* 解忧信件 */
 .tit-sorrow-box {
-  margin: 20rpx 40rpx 260rpx;
+  margin: 20rpx 40rpx 10rpx;
 }
 .tit-sorrow-box .sorrow-list {
-  height: 500rpx;
+  height: 470rpx;
 }
 .tit-sorrow-box .sorrow-list yeo-stamp-text {
   display: inline-block;
@@ -106,6 +102,18 @@ page {
 .tit-sorrow-box .sorrow-list .list-box {
   display: flex;
 }
+
+/* 信栈故事栏 */
+.letter-station {
+  margin: 40rpx 40rpx 20rpx;
+}
+.letter-station .info-left {
+  font-size: 40rpx;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  width: 500rpx;
+}
+
 
 @keyframes upDown {
   0% {

@@ -46,6 +46,6 @@
 
 
 <!-- loading加载 -->
-<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400' gifBoxShadow='0 0 20rpx #ddd' gifBordRadius='50rpx'  bindrefresh="refresh">
+<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400' gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx'  bindrefresh="refresh">
 
 </yeo-loading-part>

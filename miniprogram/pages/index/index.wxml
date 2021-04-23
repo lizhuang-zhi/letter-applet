@@ -47,7 +47,7 @@
     </view>
 
   </yeo-dy-fun-bar>
-  
+
 </view>
 <!-- 解忧信件 -->
 <view class="tit-sorrow-box">
@@ -55,12 +55,29 @@
     <view class="list-box">
 
       <!-- 信件数组 -->
-      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}" data-senderOpenId="{{item.senderOpenId}}"
-        stampPic='{{item.stampUrl}}' name='{{item.senderPenName}}' content='{{item.content}}' date='{{item.releaseTime}}'>
+      <yeo-stamp-text bindtap="ToSorrowTap" wx:for="{{letterArr}}" wx:key='index' data-id="{{item.id}}"
+        data-senderOpenId="{{item.senderOpenId}}" stampPic='{{item.stampUrl}}' name='{{item.senderPenName}}'
+        content='{{item.content}}' date='{{item.releaseTime}}'>
       </yeo-stamp-text>
 
     </view>
   </scroll-view>
+</view>
+
+
+<!-- 信栈故事栏 -->
+<view class="letter-station">
+  <yeo-dy-fun-bar distractWay='between'>
+    <view class="info-left" slot='dy-left'>
+      <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='信栈故事栏' worLinePosp='unset'
+        lineWidthOfScreen='57%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'
+        wordWieight='bold'></yeo-art-font>
+    </view>
+  </yeo-dy-fun-bar>
+</view>
+<!-- 信栈故事 -->
+<view class="letter-station-box">
+  
 </view>
 
 

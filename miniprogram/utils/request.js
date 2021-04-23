@@ -387,12 +387,13 @@ let requestData = {
     })
   },
   //获取评论信息
-  mailboxMessageList(openId){
+  mailboxMessageList(openId,pageNum){
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getMailboxMessageList(),
         data: {
-          openId
+          openId,
+          pageNum: pageNum
         },
         // method: "GET",
         success: res => {

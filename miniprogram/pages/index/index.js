@@ -1,11 +1,3 @@
-/* 
-  1. 用户审核：不良内容（暴力、传销..）
-  2. 消息提示
-  3. 解决如何推送解忧信（服务器发件的负载均衡，每个人都可以收到）
-  4. 信件量 > 用户量
-
-  莫忧 借忧 寻觅
- */
 let tools = require('../../utils/timeTools');
 let publicTools = require('../../utils/public');
 // 引入加载数据
@@ -19,16 +11,12 @@ Page({
   data: {
     // 赏美文数组
     dataBeautyArr: [],
-
     // 信件数组
     letterArr: [],
-
     // 是否显示提示框
     isShowToastBox: 'block',
-
     // 是否已经打开信箱
     isOpenStampBox: false,
-
     // loading组件（覆盖层）
     isShowLoading: true
   },
@@ -109,6 +97,7 @@ Page({
     } else if (app.globalData.userInfo != null && this.data.isOpenStampBox == true) {
       wx.showToast({
         title: '暂时没有更多信件',
+        image: '../../images/empty-letter.png',
         icon: 'none'
       })
     }

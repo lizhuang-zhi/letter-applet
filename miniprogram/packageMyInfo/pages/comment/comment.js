@@ -1,6 +1,8 @@
 // 接口Api
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools');
+// 请求页数
+let pageNum = 1;
 let app = getApp();
 Page({
 
@@ -8,19 +10,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid:'',
-    dataArr: [
-      {StarLetter: '我是第一个评论'},
-      {StarLetter: '我是第二个评论'},
-      {StarLetter: '我是第三个评论'},
-    ]
+    openid: '',
+    // 评论列表数组
+    dataArr: []
 
   },
   //初始化数据
-  Start(openId){
+  Start(openId) {
     //获取评论列表信息
-    requestData.mailboxMessageList(openId).then(res=>{
-      return new Promise((resolve,reject)=>{
+    requestData.mailboxMessageList(openId, pageNum).then(res => {
+      return new Promise((resolve, reject) => {
         console.log(res.data.data);
         // 获取数组
         let dataArr = res.data.data;
@@ -43,6 +42,25 @@ Page({
       url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
     })
   },
+  // 上拉触底
+  // onReachButtomTap(openId,pageNum) {
+  //   //获取评论列表信息
+  //   requestData.mailboxMessageList(openId, pageNum).then(res => {
+  //     return new Promise((resolve, reject) => {
+  //       console.log(res.data.data);
+  //       // 获取数组
+  //       let dataArr = res.data.data;
+  //       // 修改时间显示
+  //       dataArr.forEach(item => {
+  //         item.date = timeTools.commentListShowTime(item.date);
+  //       });
+  //       this.setData({
+  //         dataArr: dataArr.reverse()
+  //       })
+  //       resolve('success');
+  //     })
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面加载
@@ -76,6 +94,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    // 重置请求页数全局变量
+    pageNum = 1;
 
   },
 
@@ -90,6 +110,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    // // 获取openId
+    // let openId = app.globalData.openid;
+    // // 触底请求事件
+    // this.onReachButtomTap(openId,++pageNum);    
 
   },
 
