@@ -9,22 +9,21 @@ Component({
       type: String,
       value: '90vw'
     },
-    //图片圆角
-    ImgRadius: {
-      type: String,
-      value:'30rpx 30rpx 0 0'
-    },
     //盒子外边距
     BoxMargin: {
       type: String,
       value: '30rpx auto'
     },
-    
     //盒子背景颜色
     BoxBackColor: {
       type: String,
       value: "white"
     },
+    //盒子圆角
+    BoxRadius:{
+      type:String, 
+      value:'30rpx'
+     },
 
     //时间文字大小
     TimeSize: {
@@ -78,11 +77,7 @@ Component({
       type: String,
       value: '20rpx'
     },
-    //文字圆角
-    CentRadius:{
-      type:String,
-      value:'0 0 30rpx 30rpx'
-    },
+
     //发布者图片
     ProImgSrc:{
       type:String,

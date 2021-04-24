@@ -3,14 +3,14 @@
   <!-- 时间 -->
   <view class="time" style="font-size:{{TimeSize}};color:{{TimeColor}};text-align:center;margin-bottom:{{TimeMargin}}">{{SendTime}}</view>
   <!-- 盒子 -->
-  <view class="box">
+  <view class="box" style="background-color:{{BoxBackColor}};border-radius:{{BoxRadius}};">
     <!-- 图片盒子 -->
     <view class="box-img" style="width:{{ImgWidth}};">
-      <image mode="widthFix" src="{{Img}}" style="width:{{ImgWidth}};border-radius:{{ImgRadius}};"></image>
+      <image mode="widthFix" src="{{Img}}" style="width:{{ImgWidth}};"></image>
     </view>
     <!-- 消息通知 -->
     <view class="content"
-      style="font-size:{{ContentSize}};color:{{ContentColor}};padding:{{ContentPadding}};background-color:{{BoxBackColor}};border-radius:{{CentRadius}}">
+      style="font-size:{{ContentSize}};color:{{ContentColor}};padding:{{ContentPadding}};background-color:{{BoxBackColor}};">
       <!-- 内容 -->
       <view class='content-text'>
         {{ContentText}}

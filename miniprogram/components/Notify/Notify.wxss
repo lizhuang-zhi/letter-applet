@@ -2,5 +2,7 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  
+}
+.box{
+  overflow: hidden;
 }
