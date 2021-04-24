@@ -97,7 +97,7 @@
           "scene": null
         },
         {
-          "name": "我的页面 - 查看更多(数据)",
+          "name": "月报 ",
           "pathName": "packageMyInfo/pages/myinfomore/myinfomore",
           "query": "",
           "scene": null
@@ -123,6 +123,7 @@
         {
           "name": "我的成就",
           "pathName": "packageMyInfo/pages/myachievements/myachievements",
+          "query": "",
           "scene": null
         }
       ]

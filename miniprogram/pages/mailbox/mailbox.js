@@ -186,12 +186,6 @@ Page({
   },
   // 初始化数据
   Start(openId) {
-    // let time = '2020-03-2 14:26:39';
-
-    // // 最终显示时间
-    // let finalTime = tools.mailboxShowMessageTime(time);
-    // console.log(finalTime);
-
     /* 
       进入页面拉取数据接口
     */
