@@ -20,7 +20,16 @@ Page({
     // loading组件（覆盖层）
     isShowLoading: true,
     // 信栈小贴士显示
-    showTipPop: false
+    showTipPop: false,
+
+    // 弹出层
+    imgUrls: [
+      'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=163&h=100&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2',
+      'https://tse3-mm.cn.bing.net/th/id/OIP.NpjlURBAxQUuTLRF6VU_5QHaEK?w=285&h=180&c=7&o=5&dpr=1.25&pid=1.7',
+      'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=163&h=100&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2',
+    ],
+    swiperIdx: 0,
+
   },
 
   // 去到美文内容页
@@ -134,6 +143,13 @@ Page({
   onTipClose() {
     this.setData({
       showTipPop: false
+    })
+  },
+  // 轮播图改变事件 
+  bindchange(e) {
+    console.log(e);
+    this.setData({
+      swiperIdx: e.detail.current
     })
   },
   // 初始化数据

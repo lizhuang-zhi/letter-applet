@@ -103,5 +103,17 @@
 
 <!-- 信栈小贴士弹出层 -->
 <van-popup show="{{ showTipPop }}" custom-style="height: 50%;" bind:close="onTipClose">
-  
+  <!-- 轮播图 -->
+  <view class='pageBox pageTwo'>
+    <swiper class='swiperClass' autoplay indicator-color="#a39f99" indicator-active-color="#f49641" indicator-dots
+      interval="3000" duration="1000" previous-margin="60px" next-margin="60px" circular bindchange="bindchange"
+      style='height: 200px'>
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image {{swiperIdx == index ? 'active' : 'quiet'}}" mode='aspectFill'>
+          </image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
 </van-popup>
