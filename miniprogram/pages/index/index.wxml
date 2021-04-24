@@ -65,6 +65,20 @@
 </view>
 
 
+
+
+<!-- 小提示 -->
+<view class="tip-box">
+  <yeo-frame-view direction='row'>
+    <view>123</view>
+    <view>123</view>
+    <view>123</view>
+  </yeo-frame-view>
+</view>
+
+
+
+
 <!-- 信栈故事栏 -->
 <view class="letter-station">
   <yeo-dy-fun-bar distractWay='between'>

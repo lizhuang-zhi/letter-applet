@@ -48,10 +48,6 @@ Page({
     moveTime: 0,
   },
 
-  // 跳转历史信件
-  ToHistoryLetter() {
-    
-  },
   // 跳转顶栏页面
   ToReplyListTap(e) {
     // 获取索引
@@ -65,7 +61,7 @@ Page({
         console.log('《----》' + openId);
         if (index == 0) {
           wx.navigateTo({
-            url: '/packageMyInfo/pages/indexinfo/indexinfo',
+            url: '/packageMyInfo/pages/indexinfo/indexinfo?openId=' + openId,
           })
         } else if (index == 1) {
           wx.navigateTo({
@@ -88,7 +84,7 @@ Page({
       let openId = app.globalData.openid;
       if (index == 0) {
         wx.navigateTo({
-          url: '/packageMyInfo/pages/indexinfo/indexinfo',
+          url: '/packageMyInfo/pages/indexinfo/indexinfo?openId=' + openId,
         })
       } else if (index == 1) {
         wx.navigateTo({
@@ -106,6 +102,10 @@ Page({
         })
       }
     }
+
+  },
+  // 跳转历史信件
+  ToHistoryLetter() {
 
   },
   //跳转到官方消息

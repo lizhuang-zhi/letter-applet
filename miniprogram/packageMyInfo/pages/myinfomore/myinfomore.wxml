@@ -6,7 +6,7 @@
 
 <!-- 往年回顾标题 -->
 <view class="top-content-box">
-  <view class="top-tit">往年回顾</view>
+  <view class="top-tit">上月回顾</view>
 </view>
 <!-- 往年回顾用户数据 -->
 <view class="data-container" style="width: {{675 + 'rpx'}};height: {{400 + 'rpx'}};">

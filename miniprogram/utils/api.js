@@ -84,6 +84,9 @@ const Replyletter  = prefix + '/letter/getDetailOfLetter';
 //获取评论信息列表
 const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
 
+// 获取历史发布数量
+const PackageMyInfoIndexInfo = prefix + '/user/getNumOfHistory';
+
 // 返回对象
 let url = {
   // 用户注册
@@ -169,6 +172,10 @@ let url = {
   // 首页点击信件（获取信件信息）
   getSorrowletter() {
     return Sorrowletter;
+  },
+  // 获取历史发布数量
+  getPackageMyInfoIndexInfo() {
+    return PackageMyInfoIndexInfo;
   }
 }
 

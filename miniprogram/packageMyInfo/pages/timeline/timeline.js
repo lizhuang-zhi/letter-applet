@@ -1,4 +1,4 @@
-// packageMyInfo/pages/officialnews/officialnews.js
+// miniprogram/packageMyInfo/pages/timeline/timeline.js
 Page({
 
   /**
@@ -6,13 +6,6 @@ Page({
    */
   data: {
 
-  },
-
-  // 去查看月报
-  ToCheckOutReport() {
-    wx.navigateTo({
-      url: '/packageMyInfo/pages/myinfomore/myinfomore',
-    })
   },
 
   /**

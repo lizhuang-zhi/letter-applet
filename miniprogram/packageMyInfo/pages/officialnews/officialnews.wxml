@@ -7,3 +7,8 @@
 <view class="box">
   <keo-notify ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/bede418dde15429d97ad12d4ddd3adec.jpg!sswm"></keo-notify>
 </view>
+<view class="box">
+  <keo-notify ContentText="小主，您上一周的月报已出炉，请查收！！" Img="https://s1.ax1x.com/2020/10/24/BVq66f.jpg" bindtap="ToCheckOutReport"></keo-notify>
+
+  <keo-notify ContentText="小主，您上一周的月报已出炉，请查收！！" Img="https://s1.ax1x.com/2020/10/24/BVq66f.jpg"></keo-notify>
+</view>

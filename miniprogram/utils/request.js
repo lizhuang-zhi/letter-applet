@@ -448,6 +448,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取历史发布数量
+  packageMyInfoIndexInfo(openId) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getPackageMyInfoIndexInfo(),
+        data: {
+          openId: openId,
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

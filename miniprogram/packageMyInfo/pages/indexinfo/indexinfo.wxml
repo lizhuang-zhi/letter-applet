@@ -24,17 +24,9 @@
   <view class="right-info">
     <!-- data数据 -->
     <view class="data-info-num">
-      <view class="data-num">
-        <view class="word">解忧</view>
-        <view class="num">23</view>
-      </view>
-      <view class="data-num">
-        <view class="word">日记</view>
-        <view class="num">44</view>
-      </view>
-      <view class="data-num">
-        <view class="word">吐槽</view>
-        <view class="num">657</view>
+      <view class="data-num" wx:for="{{releaseArr}}" wx:key='index'>
+        <view class="word">{{item.name}}</view>
+        <view class="num">{{item.value}}</view>
       </view>
     </view>
     <!-- 查看更多 -->

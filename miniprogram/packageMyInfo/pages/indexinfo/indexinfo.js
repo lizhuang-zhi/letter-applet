@@ -1,4 +1,5 @@
 import * as echarts from '../../ec-canvas/echarts';
+let requestData = require('../../../utils/request');
 
 /* 
   总数据显示
@@ -80,10 +81,22 @@ Page({
     }
   },
 
-  // 查看更多
+  // 查看更多（时间线）
   lookMore() {
     wx.navigateTo({
-      url: '/packageMyInfo/pages/myinfomore/myinfomore',
+      url: '/packageMyInfo/pages/timeline/timeline',
+    })
+  },
+
+  // 初始化数据
+  Start(openId) {
+    requestData.packageMyInfoIndexInfo(openId).then(res => {
+      console.log(res.data.data);
+      // 获取数组
+      let releaseArr = res.data.data;
+      this.setData({
+        releaseArr: releaseArr
+      })
     })
   },
 
@@ -91,7 +104,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.openId);
   },
 
   /**
