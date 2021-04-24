@@ -21,9 +21,12 @@ function initChart(canvas, width, height) {
     tooltip: {},
     /* 模块元素颜色 */
     color: [
-      '#EE6666',
-      '#73C0DE',
-      '#FAC858'
+      // '#EE6666',
+      // '#73C0DE',
+      // '#FAC858'
+      '#ED6B63',
+      '#4C84F7',
+      '#F0934F'
     ],
     dataset: {
       source: [
@@ -87,10 +90,14 @@ function initSorrowChart(canvas, width, height) {
     },
     /* 模块元素颜色 */
     color: [
-      '#EE6666',
-      '#73C0DE',
-      '#FAC858',
-      '#5470C6'
+      // '#EE6666',
+      // '#73C0DE',
+      // '#FAC858',
+      // '#5470C6'
+      '#F0934F',
+      '#6CD69C',
+      '#4C84F7',
+      '#ED6B63'
     ],
     series: [{
       name: '发布数量',
