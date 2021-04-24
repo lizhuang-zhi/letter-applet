@@ -18,7 +18,9 @@ Page({
     // 是否已经打开信箱
     isOpenStampBox: false,
     // loading组件（覆盖层）
-    isShowLoading: true
+    isShowLoading: true,
+    // 信栈小贴士显示
+    showTipPop: false
   },
 
   // 去到美文内容页
@@ -52,6 +54,42 @@ Page({
         // 获取三封信件
         requestData.indexLetters(openId).then(res => {
           console.log(res);
+          return new Promise((resolve, reject) => {
+            // 获取返回信件数组
+            let letterArr = res.data.data;
+            letterArr.forEach(item => {
+              // 时间格式化
+              item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
+              // 内容格式化
+              item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
+              // 笔名格式化
+              item.senderPenName = item.senderPenName.substring(0, 8);
+            });
+
+            this.setData({
+              letterArr: letterArr,
+              isShowToastBox: 'none',
+              isOpenStampBox: true
+            })
+            resolve('success');
+          })
+        }).then(res => {
+          if (res == 'success') {
+            wx.showToast({
+              title: '小主，您的信件已送达~',
+              image: '../../images/send-car.png'
+            })
+          }
+        })
+      })
+    } else if (app.globalData.userInfo && this.data.isOpenStampBox == false) {
+      // 获取用户openId
+      let openId = app.globalData.openid;
+      // 获取三封信件
+      requestData.indexLetters(openId).then(res => {
+        console.log(res.data.data);
+        return new Promise((resolve, reject) => {
+
           // 获取返回信件数组
           let letterArr = res.data.data;
           letterArr.forEach(item => {
@@ -60,7 +98,7 @@ Page({
             // 内容格式化
             item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
             // 笔名格式化
-            item.senderPenName = item.senderPenName.substring(0, 8);
+            item.penName = item.senderPenName.substring(0, 8);
           });
 
           this.setData({
@@ -68,32 +106,16 @@ Page({
             isShowToastBox: 'none',
             isOpenStampBox: true
           })
-        });
-      })
-    } else if (app.globalData.userInfo && this.data.isOpenStampBox == false) {
-      // 获取用户openId
-      let openId = app.globalData.openid;
-      // 获取三封信件
-      requestData.indexLetters(openId).then(res => {
-        // console.log(res); 
-        console.log(res.data.data);
-        // 获取返回信件数组
-        let letterArr = res.data.data;
-        letterArr.forEach(item => {
-          // 时间格式化
-          item.releaseTime = tools.indexPostBoxTime(item.releaseTime);
-          // 内容格式化
-          item.content = item.content.length > 25 ? item.content.substring(0, 25) + '..' : item.content;
-          // 笔名格式化
-          item.penName = item.senderPenName.substring(0, 8);
-        });
-
-        this.setData({
-          letterArr: letterArr,
-          isShowToastBox: 'none',
-          isOpenStampBox: true
+          resolve('success');
         })
-      });
+      }).then(res => {
+        if (res == 'success') {
+          wx.showToast({
+            title: '小主，您的信件已送达~',
+            image: '../../images/send-car.png'
+          })
+        }
+      })
     } else if (app.globalData.userInfo != null && this.data.isOpenStampBox == true) {
       wx.showToast({
         title: '暂时没有更多信件',
@@ -101,6 +123,18 @@ Page({
         icon: 'none'
       })
     }
+  },
+  // 信栈小贴士
+  tipTap() {
+    this.setData({
+      showTipPop: true
+    })
+  },
+  // 关闭弹出层
+  onTipClose() {
+    this.setData({
+      showTipPop: false
+    })
   },
   // 初始化数据
   Start() {

@@ -3,6 +3,9 @@ page {
 
   /* 页面左边距 */
   --margin-top: 40rpx;
+
+  /* 首页标题margin */
+  --index-tit-margin: 40rpx 40rpx 20rpx;
 }
 /* 顶部文字 */
 .top-content-box {

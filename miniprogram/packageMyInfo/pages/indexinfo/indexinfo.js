@@ -41,20 +41,7 @@ function initChart(canvas, width, height) {
         /* 微信小程序设置此圆角属性无效 */
         borderRadius: 0,
       },
-      data: [
-        {
-          value: 4,
-          name: '解忧'
-        },
-        {
-          value: 2,
-          name: '日记'
-        },
-        {
-          value: 3,
-          name: '吐槽'
-        },
-      ],
+      data: [],
       /* 点击强调阴影颜色 */
       emphasis: {
         itemStyle: {
@@ -94,6 +81,14 @@ Page({
       console.log(res.data.data);
       // 获取数组
       let releaseArr = res.data.data;
+
+      /* 
+        解忧图表数据
+      */
+      let options = chart_all.getOption();
+      options.series[0].data = releaseArr;
+      chart_all.setOption(options);
+      // 渲染显示
       this.setData({
         releaseArr: releaseArr
       })

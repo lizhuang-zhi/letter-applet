@@ -67,33 +67,41 @@
 
 
 
-<!-- 小提示 -->
-<view class="tip-box">
-  <yeo-frame-view direction='row'>
-    <view>123</view>
-    <view>123</view>
-    <view>123</view>
-  </yeo-frame-view>
-</view>
 
 
 
-
-<!-- 信栈故事栏 -->
+<!-- 信栈小贴士 -->
 <view class="letter-station">
   <yeo-dy-fun-bar distractWay='between'>
     <view class="info-left" slot='dy-left'>
-      <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='信栈故事栏' worLinePosp='unset'
+      <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='信栈小贴士' worLinePosp='unset'
         lineWidthOfScreen='57%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'
         wordWieight='bold'></yeo-art-font>
     </view>
   </yeo-dy-fun-bar>
 </view>
-<!-- 信栈故事 -->
-<view class="letter-station-box">
-  
+<!-- 小提示 -->
+<view class="tip-box">
+  <!-- 小贴士图标 -->
+  <view class="tip-pic">
+    <image src="../../images/tips.png"></image>
+  </view>
+  <!-- 主体内容 -->
+  <yeo-frame-view direction='row' frameBgColor='#FEA051' frameAlignItems='center' frameHeight='234rpx' bindtap="tipTap">
+    <view class="item-1">文明用语，礼貌回信</view>
+    <view class="item-2">对TA坦诚相待</view>
+    <view class="item-3">以好的心态去帮助他人，你也会收获满满</view>
+  </yeo-frame-view>
 </view>
+
 
 
 <!-- loading组件 -->
 <yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>
+
+
+
+<!-- 信栈小贴士弹出层 -->
+<van-popup show="{{ showTipPop }}" custom-style="height: 50%;" bind:close="onTipClose">
+  
+</van-popup>

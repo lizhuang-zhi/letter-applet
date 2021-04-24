@@ -1,4 +1,3 @@
-// packageWriteLetter/pages/sorrowletter/sorrowletter.js
 let requestData = require('../../../utils/request');
 let requestLetterline = require('../../../utils/public');
 let timeTools = require('../../../utils/timeTools');
@@ -36,7 +35,7 @@ Page({
     // 获取首页原信件 发送者openId
     let senderOpenId = this.data.senderOpenId;
     wx.navigateTo({
-      url: '/packageReleaseModule/pages/write/write?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+      url: '/packageReleaseModule/pages/attention/attention?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
     })
   },
 

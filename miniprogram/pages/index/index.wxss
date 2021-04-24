@@ -5,7 +5,7 @@ page {
 
 /* 美文欣赏栏 */
 .beauty-article {
-  margin: 40rpx 40rpx 20rpx;
+  margin: var(--index-tit-margin);
 }
 .beauty-article .info-left {
   font-size: 40rpx;
@@ -16,7 +16,7 @@ page {
 
 /* 解忧信件标题 */
 .tit-sorrow {
-  margin: 40rpx 40rpx 20rpx;
+  margin: var(--index-tit-margin);
 }
 .tit-sorrow .info-left {
   font-size: 40rpx;
@@ -60,7 +60,6 @@ page {
   right: 0;
 
   animation: upDown 1.2s ease-in-out 5;
-
   z-index: -1;
 }
 .tit-sorrow .info-right .notifi-box:before {
@@ -103,9 +102,17 @@ page {
   display: flex;
 }
 
-/* 信栈故事栏 */
+/* 小提示 */
+.tip-box {
+  margin: var(--index-tit-margin);
+  color: #FFEAD9;
+  font-size: 32rpx;
+  position: relative;
+}
+
+/* 信栈小贴士 */
 .letter-station {
-  margin: 40rpx 40rpx 20rpx;
+  margin: var(--index-tit-margin);
 }
 .letter-station .info-left {
   font-size: 40rpx;
@@ -114,6 +121,38 @@ page {
   width: 500rpx;
 }
 
+/* 小贴士图标 */
+.tip-box {
+  height: 400rpx;
+}
+.tip-box .tip-pic {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  background: #FDA051;  
+  border-radius: 50%;
+  border: 4rpx solid #E8EAEA;
+  padding: 10rpx 12rpx 5rpx;
+}
+.tip-box .tip-pic image{
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 主体内容 */
+.tip-box .item-1 {
+  letter-spacing: 3rpx;
+  margin-top: 60rpx;
+}
+.tip-box .item-2 {
+  letter-spacing: 3rpx;
+  margin: 10rpx 0;
+}
+.tip-box .item-3 {
+  font-size: 22rpx;
+  letter-spacing: 3rpx;
+  margin-bottom: 40rpx;
+  color: #FFD4B1;
+}
 
 @keyframes upDown {
   0% {

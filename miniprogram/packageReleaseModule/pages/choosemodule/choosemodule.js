@@ -28,7 +28,6 @@ Page({
     }
 
   },
-
   // 跳转发布解忧
   toSolveSorrow(e) {
     if (app.globalData.userInfo == null) {
@@ -36,19 +35,18 @@ Page({
         // 获取类型
         let ChooseType = e.detail.chooseType;
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+          url: '/packageReleaseModule/pages/attention/attention?type=' + ChooseType,
         });
       })
     } else {
       // 获取类型
       let ChooseType = e.detail.chooseType;
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+        url: '/packageReleaseModule/pages/attention/attention?type=' + ChooseType,
       });
     }
 
   },
-
   // 跳转发布吐槽
   toComplian(e) {
     if (app.globalData.userInfo == null) {
@@ -56,18 +54,17 @@ Page({
         // 获取类型
         let ChooseType = e.detail.chooseType;
         wx.navigateTo({
-          url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+          url: '/packageReleaseModule/pages/attention/attention?type=' + ChooseType,
         });
       })
     } else {
       // 获取类型
       let ChooseType = e.detail.chooseType;
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/write/write?type=' + ChooseType,
+        url: '/packageReleaseModule/pages/attention/attention?type=' + ChooseType,
       });
     }
   },
-
 
 
   /**

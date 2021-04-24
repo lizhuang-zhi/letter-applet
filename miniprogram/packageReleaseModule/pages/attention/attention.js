@@ -5,7 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 发布类型
     chooseType: '',
+    // 发送者openId
+    senderOpenId: '',
+    letterId: '',
+
     PromptData1: ["请文明用语", "违规内容会屏蔽", "小伙伴会解答您的内容"],
     PromptData2: ['叙事为主，抒情为辅', '人名、地点使用别名'],
     PromptData3: ['解答并非答案，仅供参考，自行斟酌', '遇到不良内容请投诉'],
@@ -13,14 +18,22 @@ Page({
   },
   //跳转页面
   ToWriteArea() {
-    let type = this.data.chooseType;   
-    if (type=='解忧'){
+    let type = this.data.chooseType;
+    if (type == '解忧') {
       wx.navigateTo({
         url: '/packageReleaseModule/pages/write/write?type=解忧',
       })
-    } else if(type=='吐槽'){
+    } else if (type == '吐槽') {
       wx.navigateTo({
         url: '/packageReleaseModule/pages/write/write?type=吐槽',
+      })
+    } else if (type == '解答') {
+      // 获取信件id
+      let letterId = this.data.letterId;
+      // 获取首页原信件 发送者openId
+      let senderOpenId = this.data.senderOpenId;
+      wx.navigateTo({
+        url: '/packageReleaseModule/pages/write/write?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
       })
     }
   },
@@ -29,7 +42,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      chooseType: options.type
+      chooseType: options.type,
+      senderOpenId: options.senderOpenId,
+      letterId: options.letterId
     })
 
     // 用户选择类型
