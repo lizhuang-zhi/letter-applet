@@ -24,9 +24,10 @@ Page({
 
     // 弹出层
     imgUrls: [
-      'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=163&h=100&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2',
-      'https://tse3-mm.cn.bing.net/th/id/OIP.NpjlURBAxQUuTLRF6VU_5QHaEK?w=285&h=180&c=7&o=5&dpr=1.25&pid=1.7',
-      'https://tse1-mm.cn.bing.net/th?id=OIP.OgOpMxiUe8_DNQxqXdOfzgHaEK&w=163&h=100&c=8&rs=1&qlt=90&dpr=1.25&pid=3.1&rm=2',
+      {title: '文明书写，不伤害他人', picUrl: '../../images/tips-send.png'},
+      {title: '正视他人言论，吸取有益之处', picUrl: '../../images/tips-mailbox.png'},
+      {title: '善于思考，学会日记', picUrl: '../../images/tips-diary.png'},
+      {title: '集邮票，解成就，完成你的历练之路', picUrl: '../../images/tips-achievement.png'}
     ],
     swiperIdx: 0,
 
@@ -145,11 +146,10 @@ Page({
       showTipPop: false
     })
   },
-  // 轮播图改变事件 
-  bindchange(e) {
-    console.log(e);
+  // 我已了解事件
+  understandTap() {
     this.setData({
-      swiperIdx: e.detail.current
+      showTipPop: false
     })
   },
   // 初始化数据
