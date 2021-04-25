@@ -32,6 +32,8 @@ Page({
       picBgColor: "#E6F8F0",
       notifiNum: 0
     }],
+    // 列表消息的消息个数
+    messageList: [],
 
     // loading组件
     pull: {
@@ -191,6 +193,13 @@ Page({
     */
     // 开启下拉加载并请求数据
     this.refresh(openId);
+    // 获取缓存中的消息数组
+    wx.getStorage({
+      key: 'mailboxMessageList',
+      success: res => {
+
+      }
+    })
 
   },
   // API方法

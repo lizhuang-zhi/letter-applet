@@ -27,6 +27,26 @@ App({
         console.log('---- 缓存中无用户信息 ----');
       }
     })
+    /* 
+      设置mailbox页面消息缓存
+    */
+    wx.getStorage({
+      key: 'mailboxMessageList',
+      success: res => {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+        // 存储消息列表数量
+        let messageList = [2,3,8,1];
+        wx.setStorage({
+          key: 'mailboxMessageList',
+          data: messageList
+        })
+      }
+    })
+
+
   },
   onHide() {
     console.log('App  --> onHide执行了');
