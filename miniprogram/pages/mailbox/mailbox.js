@@ -110,45 +110,33 @@ Page({
   ToHistoryLetter() {
 
   },
-  //跳转到官方消息
-  ToOfficialnews() {
-    wx.navigateTo({
-      url: '/packageMyInfo/pages/officialnews/officialnews',
-    })
-  },
   //跳转到最新活动
   ToLatestevents() {
-    wx.navigateTo({
-      url: '/packageMyInfo/pages/latestevents/latestevents',
-    })
+    /* 置0最新活动数量 */
+    this.setMessageListNum(0);
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/latestevents/latestevents');
+  },
+  //跳转到官方消息
+  ToOfficialnews() {
+    /* 置0官方消息数量 */
+    this.setMessageListNum(1);
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/officialnews/officialnews');
   },
   // 跳转我的邮票
   ToMyStamp() {
-    /* 
-      判断登陆与否（真机调试无反应）
-    */
-    wx.getStorage({
-      key: 'userInfo',
-      success: res => {
-        console.log(res.data);
-        // 缓存中存在用户信息（已授权）
-        if (res.data != null) {
-          wx.navigateTo({
-            url: '/packageMyInfo/pages/mystamp/mystamp',
-          })
-        }
-      },
-      fail: res => {
-        console.log(res);
-        // 先授权
-        app.getUserProfile().then(res => {
-          wx.navigateTo({
-            url: '/packageMyInfo/pages/mystamp/mystamp',
-          })
-        })
-      }
-    })
-
+    /* 置0我的邮票数量 */
+    this.setMessageListNum(2);
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/mystamp/mystamp');
+  },
+  // 跳转我的成就
+  ToMyAchievement() {
+    /* 置0我的邮票数量 */
+    this.setMessageListNum(3);
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/myachievements/myachievements');
   },
   // 监听下拉刷新事件
   refresh(openId) {
@@ -197,10 +185,54 @@ Page({
     wx.getStorage({
       key: 'mailboxMessageList',
       success: res => {
-
+        this.setData({
+          messageList: res.data.messageList
+        })
+      }
+    });
+    // 判断缓存时间，是否拉取官方消息中的月报
+    wx.getStorage({
+      key: 'mailboxMessageList',
+      success: res => {
+        // 获取缓存时间
+        let beforeTime = res.data.nowTime;
+        // 时间差大于一个月就请求接口
+        this.isGetMonthReport(beforeTime);
       }
     })
+  },
+  // 判断是否拉取官方消息月报
+  isGetMonthReport(time) {
+    // 一分钟的时长（毫秒）
+    let timeLong = 60 * 1000;
+    // 时间差（毫秒）
+    let timeDifference = new Date() - new Date(time);
+    if (timeDifference >= timeLong) {
+      /* 
+        请求获取月报接口
+       */
 
+      // 将月报数据存储进缓存
+      wx.getStorage({
+        key: 'officialNewList',
+        success: res => {
+          console.log(res);
+          // 存储请求到的月报对象到数组
+          // wx.setStorage({
+          //   key: 'officialNewList',
+          //   data: data,
+          // })
+        },
+        fail: res => {
+          console.log(res);
+          // 第一次存储请求到的月报对象到数组
+          // wx.setStorage({
+          //   key: 'officialNewList',
+          //   data: [],
+          // })
+        }
+      })
+    }
   },
   // API方法
   apiNumberData(openId) {
@@ -236,6 +268,54 @@ Page({
   timeToGetData(openId) {
     // 获取接口数据
     this.apiNumberData(openId);
+  },
+  // 置空消息列表数量
+  setMessageListNum(index) {
+    wx.getStorage({
+      key: 'mailboxMessageList',
+      success: res => {
+        // 获取数组列表
+        let list = res.data.messageList;
+        list[index] = 0;
+        // 获取缓存时间并存储
+        let time = res.data.nowTime;
+        let obj = {
+          messageList: list,
+          nowTime: time
+        }
+        wx.setStorage({
+          key: 'mailboxMessageList',
+          data: obj,
+        })
+      }
+    })
+  },
+  // 判断用户登陆，并跳转
+  judgeUserInfoToJump(pageUrl) {
+    /* 
+        判断登陆与否
+      */
+    wx.getStorage({
+      key: 'userInfo',
+      success: res => {
+        console.log(res.data);
+        // 缓存中存在用户信息（已授权）
+        if (res.data != null) {
+          wx.navigateTo({
+            url: pageUrl,
+          })
+        }
+      },
+      fail: res => {
+        console.log(res);
+        // 先授权
+        app.getUserProfile().then(res => {
+          wx.navigateTo({
+            url: pageUrl,
+          })
+        })
+      }
+    })
   },
 
   /**
@@ -278,7 +358,7 @@ Page({
       setTimeInterVal = setInterval(() => {
         /* 拉取数据 */
         this.timeToGetData(app.globalData.openid);
-      }, 12000);
+      }, 15000);
     } else {
       console.log('--- 未授权！不进行轮询拉取 ---');
     }

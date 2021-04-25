@@ -39,9 +39,16 @@ App({
         console.log(res);
         // 存储消息列表数量
         let messageList = [2,3,8,1];
+        // 存储当前的时间
+        let nowTime = new Date();
+        // 封存整体对象
+        let mailMessObject = {
+          messageList,
+          nowTime
+        };
         wx.setStorage({
           key: 'mailboxMessageList',
-          data: messageList
+          data: mailMessObject
         })
       }
     })

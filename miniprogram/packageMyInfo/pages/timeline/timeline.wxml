@@ -1,0 +1,26 @@
+<!-- 顶部文字 -->
+<view class="top-content-box">
+  <view class="top-tit">时光机</view>
+  <view class="top-content">回首过去，我们心怀坦荡；回首过去，了解最真实的自我，看清今后的方向</view>
+</view>
+
+
+
+<!-- 时间轴 -->
+<view class='weui-cell-box'>
+  <!-- 开始线条 -->
+  <view class="cell-start-line"></view>
+  <!-- 主体列表 -->
+  <block wx:for="{{axis}}" wx:key="index">
+    <view class='weui-cell-list'>
+
+      <view class='weui-cell-circle'></view>
+
+      <view class='weui-cell-line'>
+        <view class='weui-cell-time'>{{item.time}}</view>
+        <view class='weui-cell-event'>{{item.event}}</view>
+      </view>
+
+    </view>
+  </block>
+</view>

@@ -1,0 +1,38 @@
+page {
+  /* 线条颜色 */
+  --line-color: #ccc;
+}
+.weui-cell-box {
+  margin-top: 40rpx;
+}
+.weui-cell-box .cell-start-line {
+  width: 50rpx;
+  height: 30rpx;
+  border-top: 1rpx solid var(--line-color);
+  border-right: 1rpx solid var(--line-color);
+}
+.weui-cell-list {
+  margin: 0 0 8rpx 40rpx;
+}
+.weui-cell-circle {
+  border-radius: 5px;
+  width: 20rpx;
+  height: 20rpx;
+  border-color: #F3D36C;
+  background: #FFA82E;
+}
+.weui-cell-line {
+  margin-left: 5px;
+  border-left: 1rpx solid var(--line-color);
+  height: 160rpx;
+  color: #444444;
+}
+.weui-cell-time {
+  font-size: 14px;
+  padding-left: 15px;
+}
+.weui-cell-event {
+  padding-top: 15px;
+  padding-left: 15px;
+  letter-spacing: 3rpx;
+}

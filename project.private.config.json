@@ -125,6 +125,12 @@
           "pathName": "packageMyInfo/pages/myachievements/myachievements",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "时间线",
+          "pathName": "packageMyInfo/pages/timeline/timeline",
+          "query": "",
+          "scene": null
         }
       ]
     }
