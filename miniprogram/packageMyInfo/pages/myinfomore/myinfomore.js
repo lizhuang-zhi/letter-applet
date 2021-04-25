@@ -1,4 +1,6 @@
 import echarts from '../../ec-canvas/echarts';
+let requestData = require('../../../utils/request');
+
 /* 
   总数据显示
 */
@@ -167,11 +169,26 @@ Page({
     ]
   },
 
+  // 初始化数据
+  Start(openId) {
+    requestData.monthReport(openId).then(res => {
+      console.log(res);
+
+      // 赋值数据
+      // this.handleData();
+      
+    })
+  },
+  // 赋值后台数据集
+  handleData(data) {
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(options.openId);
   },
 
   /**

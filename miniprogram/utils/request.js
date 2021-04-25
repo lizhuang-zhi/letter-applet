@@ -465,12 +465,24 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取个人数据分析内容
+  monthReport(openId) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getMonthReport(),
+        data: {
+          openId: openId,
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
-
-
-
-
-
 
 
 

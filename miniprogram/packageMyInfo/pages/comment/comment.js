@@ -43,24 +43,33 @@ Page({
     })
   },
   // 上拉触底
-  // onReachButtomTap(openId,pageNum) {
-  //   //获取评论列表信息
-  //   requestData.mailboxMessageList(openId, pageNum).then(res => {
-  //     return new Promise((resolve, reject) => {
-  //       console.log(res.data.data);
-  //       // 获取数组
-  //       let dataArr = res.data.data;
-  //       // 修改时间显示
-  //       dataArr.forEach(item => {
-  //         item.date = timeTools.commentListShowTime(item.date);
-  //       });
-  //       this.setData({
-  //         dataArr: dataArr.reverse()
-  //       })
-  //       resolve('success');
-  //     })
-  //   })
-  // },
+  onReachButtomTap(openId, pageNum) {
+    //获取评论列表信息
+    requestData.mailboxMessageList(openId, pageNum).then(res => {
+      return new Promise((resolve, reject) => {
+        console.log(res.data.data);
+        // 获取数组
+        let dataArr = res.data.data;
+        // 无更多数据
+        if (dataArr == null) {
+          wx.showToast({
+            title: '没有更多评论了',
+            icon: 'none'
+          })
+        } else {
+          // 修改时间显示
+          // dataArr.forEach(item => {
+          //   item.date = timeTools.commentListShowTime(item.date);
+          // });
+          // this.setData({
+          //   dataArr: this.data.dataArr.push(dataArr.reverse()) 
+          // })
+        }
+
+        resolve('success');
+      })
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -111,9 +120,9 @@ Page({
    */
   onReachBottom: function () {
     // // 获取openId
-    // let openId = app.globalData.openid;
+    let openId = app.globalData.openid;
     // // 触底请求事件
-    // this.onReachButtomTap(openId,++pageNum);    
+    this.onReachButtomTap(openId, ++pageNum);
 
   },
 

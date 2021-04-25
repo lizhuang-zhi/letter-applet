@@ -71,21 +71,19 @@ const LettertypeComplainSend = prefix + '/spitting-grooves/insert';
 
 //信箱页面回复信件
 const IndexStampReply = prefix + '/letter/reply';
-
 // 获取未读信件数量
 const MailboxNumberOfLetter = prefix + '/letter/getNumberOfLetter';
-
 // 获取未读信件
 const Replylist = prefix + '/letter/getAllUnreadLetter';
-
 // 获取具体信件信息（回信列表点进去的）
 const Replyletter  = prefix + '/letter/getDetailOfLetter';
-
 //获取评论信息列表
 const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
-
 // 获取历史发布数量
 const PackageMyInfoIndexInfo = prefix + '/user/getNumOfHistory';
+
+// 获取个人数据分析内容
+const MonthReport = prefix + '/user/getDataAnalysis';
 
 // 返回对象
 let url = {
@@ -176,7 +174,13 @@ let url = {
   // 获取历史发布数量
   getPackageMyInfoIndexInfo() {
     return PackageMyInfoIndexInfo;
+  },
+  // 获取个人数据分析内容
+  getMonthReport() {
+    return MonthReport;
   }
+
+
 }
 
 

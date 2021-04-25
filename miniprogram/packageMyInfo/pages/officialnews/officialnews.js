@@ -1,4 +1,4 @@
-// packageMyInfo/pages/officialnews/officialnews.js
+let app = getApp();
 Page({
 
   /**
@@ -12,8 +12,10 @@ Page({
 
   // 去查看月报
   ToCheckOutReport() {
+    // 获取openId
+    let openId = app.globalData.openid;
     wx.navigateTo({
-      url: '/packageMyInfo/pages/myinfomore/myinfomore',
+      url: '/packageMyInfo/pages/myinfomore/myinfomore?openId=' + openId,
     })
   },
 
