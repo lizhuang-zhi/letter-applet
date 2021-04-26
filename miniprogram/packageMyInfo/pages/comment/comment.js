@@ -58,12 +58,14 @@ Page({
           })
         } else {
           // 修改时间显示
-          // dataArr.forEach(item => {
-          //   item.date = timeTools.commentListShowTime(item.date);
-          // });
-          // this.setData({
-          //   dataArr: this.data.dataArr.push(dataArr.reverse()) 
-          // })
+          dataArr.forEach(item => {
+            item.date = timeTools.commentListShowTime(item.date);
+          });
+          // 获取原数组
+          let beforeArr = this.data.dataArr;
+          this.setData({
+            dataArr: beforeArr.concat(dataArr.reverse())
+          })
         }
 
         resolve('success');

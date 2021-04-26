@@ -73,6 +73,7 @@ Page({
 
   // 跳转日记内容
   ToDiaryContent(e) {
+    console.log('???????????? ');
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
     // 获取点击的日记对象的浏览量
@@ -137,6 +138,9 @@ Page({
           key: 'diaryView',
           data: dataObj
         });
+      },
+      fail: res => {
+        console.log(res);
       }
     })
 
