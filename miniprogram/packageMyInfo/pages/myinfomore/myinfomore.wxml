@@ -10,7 +10,7 @@
 </view>
 <!-- 往年回顾用户数据 -->
 <view class="data-container" style="width: {{675 + 'rpx'}};height: {{400 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <ec-canvas id="all_chart" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>
 
 
@@ -19,26 +19,26 @@
   <view class="top-tit">解忧评测</view>
 </view>
 <view class="data-container" style="width:100%;height: {{500 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_sorrow }}"></ec-canvas>
+  <ec-canvas id="sorrow_chart" canvas-id="mychart-bar" ec="{{ ec_sorrow }}"></ec-canvas>
 </view>
 
 
 <!-- 日记评测 -->
-<!-- <view class="top-content-box">
+<view class="top-content-box">
   <view class="top-tit">日记评测</view>
 </view>
 <view class="data-container" style="width:100%;height: {{500 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_diary }}"></ec-canvas>
-</view> -->
+  <ec-canvas id="diary_chart" canvas-id="mychart-bar" ec="{{ ec_diary }}"></ec-canvas>
+</view>
 
 
 <!-- 吐槽评测 -->
-<!-- <view class="top-content-box">
+<view class="top-content-box">
   <view class="top-tit">吐槽评测</view>
 </view>
 <view class="data-container" style="width:100%;height: {{500 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_complain }}"></ec-canvas>
-</view> -->
+  <ec-canvas id="complain_chart" canvas-id="mychart-bar" ec="{{ ec_complain }}"></ec-canvas>
+</view>
 
 
 <!-- 情感分析标题 -->

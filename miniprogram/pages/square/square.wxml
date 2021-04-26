@@ -7,15 +7,17 @@
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box>
         <!-- 奇数左列 -->
-        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 == 0}}"
-          data-id="{{item.id}}" data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
-          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx' bindtap="ToDiaryContent">
+        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 == 0}}" data-id="{{item.id}}"
+          data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
+          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
+          bindtap="ToDiaryContent">
         </yeo-diary-box-v2>
 
         <!-- 偶数右列 -->
-        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 != 0}}" 
-          data-id="{{item.id}}" data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
-          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx' bindtap="ToDiaryContent">
+        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 != 0}}" data-id="{{item.id}}"
+          data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
+          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
+          bindtap="ToDiaryContent">
         </yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
     </view>
@@ -36,7 +38,6 @@
 </van-tabs>
 
 
-
 <!-- 回到顶部按钮 -->
 <view class="bot-fix-group" wx:if="{{fixedInputPhone}}">
   <view class="back-top" bindtap="backToTop">
@@ -46,6 +47,7 @@
 
 
 <!-- loading加载 -->
-<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400' gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx'  bindrefresh="refresh">
+<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400'
+  gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx' bindrefresh="refresh">
 
 </yeo-loading-part>

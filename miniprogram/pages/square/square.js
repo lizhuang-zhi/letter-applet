@@ -21,10 +21,8 @@ Page({
     diaryArr: [],
     // 吐槽大会数组
     complianArr: [],
-
     // 记录当前tab所在标题的索引
     tabCurIndex: 0,
-
     // 页面距离顶部高度
     pageScrollTop: 0,
 
@@ -73,7 +71,6 @@ Page({
 
   // 跳转日记内容
   ToDiaryContent(e) {
-    console.log('???????????? ');
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
     // 获取点击的日记对象的浏览量
@@ -165,7 +162,6 @@ Page({
         url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
       })
     }
-
   },
   // 标签tab切换事件
   changeTap(e) {
@@ -452,7 +448,6 @@ Page({
       }
     })
 
-
   },
 
   /**
@@ -473,7 +468,6 @@ Page({
    */
   onUnload: function () {
     console.log('广场 -- 监听页面卸载');
-
   },
 
   /**
