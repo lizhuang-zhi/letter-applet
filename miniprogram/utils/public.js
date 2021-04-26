@@ -1,3 +1,4 @@
+
 let publicTools = {
 
   // 更改对象的'键名'
@@ -38,7 +39,7 @@ let publicTools = {
         bgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3569081884,3982453064&fm=26&gp=0.jpg',
         index: '2-1',
         time: '11 Apr.2021',
-        title: '经典美文中的优美文段摘抄'
+        title: '经典美文段落摘抄'
       },
       {
         bgUrl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg',
@@ -47,6 +48,10 @@ let publicTools = {
         title: '多给几秒镜头，给出不一样的人生'
       },
     ];
+    // 显示标题处理
+    arrList.forEach(item => {
+      item.title = item.title.length > 8 ? item.title.substring(0, 8) + ' ..' : item.title;
+    })
     return arrList;
   },
   // 点击进入美文内容（附和上一个方法）

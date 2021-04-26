@@ -1,53 +1,55 @@
-<van-tabs active="0" swipeable animated color="#EC625C" line-height='10px' offset-top='0' title-active-color='#444444'
-  sticky='true' title-inactive-color='#888888' custom-class='custom-class' tab-active-class='tab-active-class'
-  tab-class='tab-class' bind:change='changeTap'>
-
-  <van-tab title="公开日记" name='0'>
-    <view class="diary">
-      <!-- 公开日记 -->
-      <yeo-flow-waterfall-box>
-        <!-- 奇数左列 -->
-        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 == 0}}" data-id="{{item.id}}"
-          data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
-          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
-          bindtap="ToDiaryContent">
-        </yeo-diary-box-v2>
-
-        <!-- 偶数右列 -->
-        <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 != 0}}" data-id="{{item.id}}"
-          data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
-          weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
-          bindtap="ToDiaryContent">
-        </yeo-diary-box-v2>
-      </yeo-flow-waterfall-box>
-    </view>
-
-  </van-tab>
-
-  <van-tab title="吐槽大会" name='1'>
-    <!-- 吐槽大会 -->
-    <view class="complain">
-
-      <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}'
-        commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap">
-      </yeo-text-box>
-
-    </view>
-  </van-tab>
-
-</van-tabs>
-
-
-<!-- 回到顶部按钮 -->
-<view class="bot-fix-group" wx:if="{{fixedInputPhone}}">
-  <view class="back-top" bindtap="backToTop">
-    <image src="https://z3.ax1x.com/2021/03/30/cPB42Q.png"></image>
-  </view>
-</view>
-
-
 <!-- loading加载 -->
-<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-400'
+<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-300'
   gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx' bindrefresh="refresh">
+
+
+  <van-tabs active="0" swipeable animated color="#EC625C" line-height='10px' offset-top='0' title-active-color='#444444'
+    sticky='true' title-inactive-color='#888888' custom-class='custom-class' tab-active-class='tab-active-class'
+    tab-class='tab-class' bind:change='changeTap'>
+
+    <van-tab title="公开日记" name='0'>
+      <view class="diary">
+        <!-- 公开日记 -->
+        <yeo-flow-waterfall-box>
+          <!-- 奇数左列 -->
+          <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 == 0}}" data-id="{{item.id}}"
+            data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
+            weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
+            bindtap="ToDiaryContent">
+          </yeo-diary-box-v2>
+
+          <!-- 偶数右列 -->
+          <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 != 0}}" data-id="{{item.id}}"
+            data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
+            weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
+            bindtap="ToDiaryContent">
+          </yeo-diary-box-v2>
+        </yeo-flow-waterfall-box>
+      </view>
+
+    </van-tab>
+
+    <van-tab title="吐槽大会" name='1'>
+      <!-- 吐槽大会 -->
+      <view class="complain">
+
+        <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}'
+          commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap">
+        </yeo-text-box>
+
+      </view>
+    </van-tab>
+
+  </van-tabs>
+
+
+  <!-- 回到顶部按钮 -->
+  <view class="bot-fix-group" wx:if="{{fixedInputPhone}}">
+    <view class="back-top" bindtap="backToTop">
+      <image src="https://z3.ax1x.com/2021/03/30/cPB42Q.png"></image>
+    </view>
+  </view>
+
+
 
 </yeo-loading-part>

@@ -46,13 +46,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.articleIndex);
     if(options.articleIndex == '0' || options.articleIndex == '1' || options.articleIndex == '2') {
       this.Start(options.articleIndex);
     }else {
       // 获取预备美文对象
       let arrObj = publicTools.beautyArticleContent(options.articleIndex);
       this.setData({
-        articleObj: arrObj
+        articleObj: arrObj,
+        isShowLoading: false
       })
     }
 

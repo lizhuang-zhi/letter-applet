@@ -3,7 +3,7 @@
   style="height: {{swiperHeight + 'rpx'}};margin-top: {{swiperMarginTop + 'rpx'}};margin-bottom: {{swiperMarginBot + 'rpx'}};padding-top: {{swiperPaddingTop + 'rpx'}};padding-bottom: {{swiperPaddingBot + 'rpx'}};">
 
   <!-- 单个轮播对象 -->
-  <swiper-item bindtap="tapItem" wx:for="{{dataArr}}" wx:key='index' data-index="{{index}}">
+  <swiper-item bindtap="tapItem" wx:for="{{dataArr}}" wx:key='index' data-index="{{item.index}}">
     <view class="yeo-swiper-item {{swiperIndex == index ? 'active' : 'normal'}}"
       style="width: {{itemWidth + 'rpx'}};height: {{itemHeight + 'rpx'}};margin-top: {{itemMarginTop + 'rpx'}};background: url({{item.bgUrl}});background-size: {{bgSize}};border-radius: {{bordRadius + 'rpx'}};">
 

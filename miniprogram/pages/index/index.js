@@ -44,6 +44,7 @@ Page({
   },
   // 跳转解忧页
   ToSorrowTap(e) {
+    console.log(e);
     // 信件id
     let id = e.currentTarget.dataset.id;
     // 信件发送者id
@@ -183,6 +184,7 @@ Page({
             */
             console.log('---------------------------> 美文异常');
             artArr = publicTools.indexBeautyArticleError();
+            console.log(artArr);
           };
           this.setData({
             dataBeautyArr: artArr
