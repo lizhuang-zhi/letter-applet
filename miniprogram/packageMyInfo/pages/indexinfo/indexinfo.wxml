@@ -12,11 +12,11 @@
   <!-- 左侧信息（头像、昵称、等级） -->
   <view class="left-info">
     <view class="head-pic">
-      <image src="https://dss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1001622456,2799396839&fm=26&gp=0.jpg">
+      <image src="{{avatarUrl}}">
       </image>
     </view>
     <view class="user">
-      <view class="username">胡辣汤的朋友</view>
+      <view class="username">{{nickName}}</view>
       <view class="rate">解忧大师</view>
     </view>
   </view>
@@ -37,6 +37,6 @@
 
 <!-- 图表展示用户数据 -->
 <view class="data-container">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <ec-canvas id="chart_all" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>
 

@@ -4,8 +4,8 @@ let requestData = require('../../../utils/request');
 /* 
   总数据显示
 */
-let chart = null;
-let option = null;
+let chart_all = null;
+let option_all = null;
 /* 
   解忧
 */
@@ -23,13 +23,13 @@ let chart_complain = null;
 let option_complain = null;
 /* 总表的折线图 */
 function initChart(canvas, width, height) {
-  chart = echarts.init(canvas, null, {
+  chart_all = echarts.init(canvas, null, {
     width: width,
     height: height
   });
-  canvas.setChart(chart);
+  canvas.setChart(chart_all);
 
-  option = {
+  option_all = {
     /* 图表类型说明 */
     legend: {
       // left: '0'
@@ -47,18 +47,10 @@ function initChart(canvas, width, height) {
     dataset: {
       source: [
         ['发布数量', '解忧', '日记', '吐槽'],
-        ['第一周', '0', '0', '0'],
-        ['第二周', '0', '0', '0'],
-        ['第三周', '0', '0', '0'],
-        ['第四周', '0', '0', '0'],
-        // ['五月', 12, 0, 39],
-        // ['六月', 72, 10, 31],
-        // ['七月', 0, 20, 39],
-        // ['八月', 72.4, 53.9, 39.1],
-        // ['九月', 72.4, 53.9, 39.1],
-        // ['十月', 72.4, 53.9, 39.1],
-        // ['十一月', 72.4, 53.9, 39.1],
-        // ['十二月', 72.4, 53.9, 39.1],
+        ['第一周', '10', '0', '0'],
+        ['第二周', '10', '0', '0'],
+        ['第三周', '10', '0', '0'],
+        ['第四周', '10', '0', '0'],
       ]
     },
     xAxis: {
@@ -77,8 +69,8 @@ function initChart(canvas, width, height) {
     ]
   };
 
-  chart.setOption(option);
-  return chart;
+  chart_all.setOption(option_all);
+  return chart_all;
 }
 /* 解忧数据图 */
 function initSorrowChart(canvas, width, height) {
@@ -338,21 +330,24 @@ Page({
   handleData(data) {
     console.log(data);
     /* 总表 */
-    let option_all = chart.getOption();
+    // let option_all = ;
     option_all.dataset.source = data.firstValue;
-    chart.setOption(option_all);
-    /* 解忧 */
-    let option_sorrow = chart_sorrow.getOption();
-    option_sorrow.series[0].data = data.lastValue.letter;
-    chart_sorrow.setOption(option_sorrow);
-    /* 日记 */
-    let option_diary = chart_diary.getOption();
-    option_diary.series[0].data = data.lastValue.diary;
-    chart_diary.setOption(option_diary);
-    /* 吐槽 */
-    let option_complain = chart_complain.getOption();
-    option_complain.series[0].data = data.lastValue.spit_groove;
-    chart_complain.setOption(option_complain);
+    chart_all.setOption(option_all);
+
+
+
+    // /* 解忧 */
+    // let option_sorrow = chart_sorrow.getOption();
+    // option_sorrow.series[0].data = data.lastValue.letter;
+    // chart_sorrow.setOption(option_sorrow);
+    // /* 日记 */
+    // let option_diary = chart_diary.getOption();
+    // option_diary.series[0].data = data.lastValue.diary;
+    // chart_diary.setOption(option_diary);
+    // /* 吐槽 */
+    // let option_complain = chart_complain.getOption();
+    // option_complain.series[0].data = data.lastValue.spit_groove;
+    // chart_complain.setOption(option_complain);
 
   },
 

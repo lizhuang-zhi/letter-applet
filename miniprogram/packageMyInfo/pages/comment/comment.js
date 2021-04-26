@@ -28,7 +28,7 @@ Page({
           item.date = timeTools.commentListShowTime(item.date);
         });
         this.setData({
-          dataArr: dataArr.reverse()
+          dataArr: dataArr
         })
         resolve('success');
       })

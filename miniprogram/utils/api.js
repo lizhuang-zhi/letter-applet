@@ -80,7 +80,7 @@ const Replyletter  = prefix + '/letter/getDetailOfLetter';
 //获取评论信息列表
 const MailboxMessageList = prefix + '/user/getAllUserCommentVo';
 // 获取历史发布数量
-const PackageMyInfoIndexInfo = prefix + '/user/getNumOfHistory';
+const PackageMyInfoIndexInfo = prefix + '/user/getProfile';
 
 // 获取个人数据分析内容
 const MonthReport = prefix + '/user/getDataAnalysis';

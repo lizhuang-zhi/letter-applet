@@ -65,7 +65,10 @@ Page({
   data: {
     ec: {
       onInit: initChart
-    }
+    },
+    // 用户
+    nickName: '',
+    avatarUrl: ''
   },
 
   // 查看更多（时间线）
@@ -79,18 +82,30 @@ Page({
   Start(openId) {
     requestData.packageMyInfoIndexInfo(openId).then(res => {
       console.log(res.data.data);
+      // 后台对象
+      let releaseObj = res.data.data;
       // 获取数组
-      let releaseArr = res.data.data;
+      let releaseArr = releaseObj.models;
 
       /* 
         解忧图表数据
       */
       let options = chart_all.getOption();
-      options.series[0].data = releaseArr;
-      chart_all.setOption(options);
+      console.log(options);
+      if (options == null) {
+        wx.showToast({
+          title: '数据渲染出错',
+        })
+      } else {
+        options.series[0].data = releaseArr;
+        chart_all.setOption(options);
+      }
+
       // 渲染显示
       this.setData({
-        releaseArr: releaseArr
+        releaseArr: releaseArr,
+        nickName: releaseObj.nickName,
+        avatarUrl: releaseObj.avatarUrl
       })
     })
   },

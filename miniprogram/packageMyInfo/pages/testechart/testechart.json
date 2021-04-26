@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../../ec-canvas/ec-canvas"
+  },
+  "navigationBarTitleText": "表格测试",
+  "navigationBarBackgroundColor": "#E8EAEA"
+}

@@ -36,7 +36,8 @@
         "pages/myinfomore/myinfomore",
         "pages/mystamp/mystamp",
         "pages/myachievements/myachievements",
-        "pages/timeline/timeline"
+        "pages/timeline/timeline",
+        "pages/testechart/testechart"
       ]
     }
   ],
