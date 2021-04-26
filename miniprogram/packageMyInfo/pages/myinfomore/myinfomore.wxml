@@ -32,7 +32,7 @@
 </view>
 <!-- 日记评测数据 -->
 <view class="data-container" style="width:100%;height: {{500 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_sorrow }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_diary }}"></ec-canvas>
 </view>
 
 
@@ -42,10 +42,8 @@
 </view>
 <!-- 吐槽评测数据 -->
 <view class="data-container" style="width:100%;height: {{500 + 'rpx'}};">
-  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_sorrow }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec_complain }}"></ec-canvas>
 </view>
-
-
 
 
 <!-- 情感分析标题 -->

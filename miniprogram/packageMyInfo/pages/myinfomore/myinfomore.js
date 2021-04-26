@@ -6,8 +6,22 @@ let requestData = require('../../../utils/request');
 */
 let chart = null;
 let option = null;
-
-/* 切换的折线图 */
+/* 
+  解忧
+*/
+let chart_sorrow = null;
+let option_sorrow = null;
+/* 
+  日记
+*/
+let chart_diary = null;
+let option_diary = null;
+/* 
+  吐槽
+*/
+let chart_complain = null;
+let option_complain = null;
+/* 总表的折线图 */
 function initChart(canvas, width, height) {
   chart = echarts.init(canvas, null, {
     width: width,
@@ -66,13 +80,6 @@ function initChart(canvas, width, height) {
   chart.setOption(option);
   return chart;
 }
-
-/* 
-  解忧
-*/
-let chart_sorrow = null;
-let option_sorrow = null;
-
 /* 解忧数据图 */
 function initSorrowChart(canvas, width, height) {
   chart_sorrow = echarts.init(canvas, null, {
@@ -112,8 +119,7 @@ function initSorrowChart(canvas, width, height) {
         /* 微信小程序设置此圆角属性无效 */
         borderRadius: 0,
       },
-      data: [
-        {
+      data: [{
           value: 4,
           name: '温和'
         },
@@ -144,6 +150,142 @@ function initSorrowChart(canvas, width, height) {
   chart_sorrow.setOption(option_sorrow);
   return chart_sorrow;
 }
+/* 日记数据图 */
+function initDiaryChart(canvas, width, height) {
+  chart_diary = echarts.init(canvas, null, {
+    width: width,
+    height: height
+  });
+  canvas.setChart(chart_diary);
+
+  option_diary = {
+    /* 图表类型说明 */
+    legend: {
+      top: 'bottom',
+    },
+    /* 点击模块提示 */
+    tooltip: {
+      trigger: 'item'
+    },
+    /* 模块元素颜色 */
+    color: [
+      '#F0934F',
+      '#6CD69C',
+      '#4C84F7',
+      '#ED6B63'
+    ],
+    series: [{
+      name: '发布数量',
+      type: 'pie',
+      top: '-10%',
+      radius: [20, 80],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        /* 微信小程序设置此圆角属性无效 */
+        borderRadius: 0,
+      },
+      data: [{
+          value: 4,
+          name: '温和'
+        },
+        {
+          value: 2,
+          name: '喜悦'
+        },
+        {
+          value: 3,
+          name: '低落'
+        },
+        {
+          value: 3,
+          name: '愤怒'
+        },
+      ],
+      /* 点击强调阴影颜色 */
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }]
+  };
+
+  chart_diary.setOption(option_diary);
+  return chart_diary;
+}
+/* 吐槽数据图 */
+function initComplainChart(canvas, width, height) {
+  chart_complain = echarts.init(canvas, null, {
+    width: width,
+    height: height
+  });
+  canvas.setChart(chart_complain);
+
+  option_complain = {
+    /* 图表类型说明 */
+    legend: {
+      top: 'bottom',
+    },
+    /* 点击模块提示 */
+    tooltip: {
+      trigger: 'item'
+    },
+    /* 模块元素颜色 */
+    color: [
+      // '#EE6666',
+      // '#73C0DE',
+      // '#FAC858',
+      // '#5470C6'
+      '#F0934F',
+      '#6CD69C',
+      '#4C84F7',
+      '#ED6B63'
+    ],
+    series: [{
+      name: '发布数量',
+      type: 'pie',
+      top: '-10%',
+      radius: [20, 80],
+      center: ['50%', '50%'],
+      roseType: 'area',
+      itemStyle: {
+        /* 微信小程序设置此圆角属性无效 */
+        borderRadius: 0,
+      },
+      data: [{
+          value: 4,
+          name: '温和'
+        },
+        {
+          value: 2,
+          name: '喜悦'
+        },
+        {
+          value: 3,
+          name: '低落'
+        },
+        {
+          value: 3,
+          name: '愤怒'
+        },
+      ],
+      /* 点击强调阴影颜色 */
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }]
+  };
+
+  chart_complain.setOption(option_complain);
+  return chart_complain;
+}
 
 Page({
 
@@ -158,14 +300,27 @@ Page({
     ec_sorrow: {
       onInit: initSorrowChart
     },
-
+    ec_diary: {
+      onInit: initDiaryChart
+    },
+    ec_complain: {
+      onInit: initComplainChart
+    },
 
 
     /* 情感分析数组 */
-    emotionArr: [
-      {tit: '解忧', cont: '在去年一年的时间里，您一共帮助19位朋友解答了忧愁，综合分析您的解答方向，评测您为积极性情感。'},
-      {tit: '日记', cont: '在生活中，您总是喜欢记录着点滴，用鼓励带动自我积极，您做的很棒！'},
-      {tit: '吐槽', cont: '吐槽虽然可以发泄出自己想说的话，但是需要自我斟酌后再吐槽，希望您能在今后的言语中多带积极性的词汇，这样可以正面的影响自己。'},
+    emotionArr: [{
+        tit: '解忧',
+        cont: '在去年一年的时间里，您一共帮助19位朋友解答了忧愁，综合分析您的解答方向，评测您为积极性情感。'
+      },
+      {
+        tit: '日记',
+        cont: '在生活中，您总是喜欢记录着点滴，用鼓励带动自我积极，您做的很棒！'
+      },
+      {
+        tit: '吐槽',
+        cont: '吐槽虽然可以发泄出自己想说的话，但是需要自我斟酌后再吐槽，希望您能在今后的言语中多带积极性的词汇，这样可以正面的影响自己。'
+      },
     ]
   },
 
@@ -173,14 +328,31 @@ Page({
   Start(openId) {
     requestData.monthReport(openId).then(res => {
       console.log(res);
-
+      // 获取数据集合
+      let dataList = res.data.data;
       // 赋值数据
-      // this.handleData();
-      
+      this.handleData(dataList);
     })
   },
   // 赋值后台数据集
   handleData(data) {
+    console.log(data);
+    /* 总表 */
+    let option_all = chart.getOption();
+    option_all.dataset.source = data.firstValue;
+    chart.setOption(option_all);
+    /* 解忧 */
+    let option_sorrow = chart_sorrow.getOption();
+    option_sorrow.series[0].data = data.lastValue.letter;
+    chart_sorrow.setOption(option_sorrow);
+    /* 日记 */
+    let option_diary = chart_diary.getOption();
+    option_diary.series[0].data = data.lastValue.diary;
+    chart_diary.setOption(option_diary);
+    /* 吐槽 */
+    let option_complain = chart_complain.getOption();
+    option_complain.series[0].data = data.lastValue.spit_groove;
+    chart_complain.setOption(option_complain);
 
   },
 
