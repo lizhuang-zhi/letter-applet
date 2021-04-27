@@ -2,6 +2,8 @@ let requestData = require('../../../utils/request');
 let requestLetterline = require('../../../utils/public');
 let timeTools = require('../../../utils/timeTools');
 let app = getApp();
+// 设定定时器轮询今日解答次数
+let backNumTimeOut = null;
 Page({
 
   /**
@@ -95,6 +97,17 @@ Page({
     this.setData({
       letterId: options.id,
       senderOpenId: options.senderOpenId
+    });
+
+    // 缓存中获取解答次数
+    wx.getStorage({
+      key: 'userBackLetterNum',
+      success: res => {
+        // 获取解答次数
+        this.setData({
+          LastTimes: res.data.letterBackNum
+        })
+      }
     })
 
     // 登陆成功后（获取用户openId），获取信件信息
@@ -114,6 +127,34 @@ Page({
    */
   onShow: function () {
     console.log('sorrowletter页面 ----------- 监听页面显示');
+    backNumTimeOut = setInterval(() => {
+      wx.getStorage({
+        key: 'userBackLetterNum',
+        success: res => {
+          // 获取上一次解答时间
+          let beTime = res.data.judgeTime;
+          // 获取上一次解答时间戳
+          let beforeTime = new Date(beTime).getTime();
+          // 获取当前时间
+          let nowTime = new Date().getTime();
+          // 一天的时间戳(毫秒)
+          let oneDayTime = 24 * 3600 * 1000;
+          if(nowTime - beforeTime >= oneDayTime) {
+            wx.setStorage({
+              key: 'userBackLetterNum',
+              data: {
+                letterBackNum: 1,
+                judgeTime: beTime
+              }
+            })
+            this.setData({
+              LastTimes: 1
+            })
+          }
+
+        }
+      })
+    },15000)
 
   },
 
@@ -128,7 +169,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('sorrowletter页面 ---> 监听页面卸载');
+    // 消掉计时器
+    clearTimeout(backNumTimeOut);
+    
   },
 
   /**

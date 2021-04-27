@@ -38,7 +38,7 @@ Component({
     // 顶部提示语
     TopTip:{
       type:String,
-      value:"这封信只发给你"
+      value:"赠人书信，手留余香"
     },
 
 

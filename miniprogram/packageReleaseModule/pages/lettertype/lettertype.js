@@ -581,6 +581,14 @@ Page({
           image: '../../images/confirm.png',
           duration: 1300
         });
+        // 置0解答时间并记录当前信件解答时间
+        wx.setStorage({
+          key: 'userBackLetterNum',
+          data: {
+            letterBackNum: 0,
+            judgeTime: new Date()
+          }
+        })
         resolve('success');
       })
     }).then(res => {
