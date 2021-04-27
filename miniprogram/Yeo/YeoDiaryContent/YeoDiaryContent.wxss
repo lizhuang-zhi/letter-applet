@@ -1,4 +1,5 @@
 .yeo-diary-content {
+
   border-radius: 15rpx;
 }
 .yeo-diary-content .main-top {
@@ -41,6 +42,8 @@
   letter-spacing: 1rpx;
   font-family: 'Courier New', Courier, monospace;
   overflow: hidden;
+  /* 添加数字换行 */
+  word-break: break-all;
 }
 
 .yeo-diary-content .main-bottom {

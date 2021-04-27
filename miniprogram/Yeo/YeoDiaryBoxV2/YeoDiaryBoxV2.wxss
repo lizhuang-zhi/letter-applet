@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+/* 内容 */
+.yeo-diary-box-v2 .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* 顶栏布局 */
 .yeo-diary-box-v2 .top-part {
   display: flex;

@@ -15,7 +15,7 @@
           <yeo-diary-box-v2 wx:for="{{diaryArr}}" wx:key='index' wx:if="{{index % 2 == 0}}" data-id="{{item.id}}"
             data-index="{{index}}" data-viewnum='{{item.number}}' content='{{item.content}}'
             weatherPicUrl='{{item.weather}}' looksNum='{{item.number}}' date='{{item.date}}' boxWidth='320rpx'
-            bindtap="ToDiaryContent">
+            bindtap="ToDiaryContent" class="diary-single-box">
           </yeo-diary-box-v2>
 
           <!-- 偶数右列 -->

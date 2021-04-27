@@ -55,6 +55,7 @@ yeo-diary-box-v2 {
   bottom: 200rpx;
   right: 50rpx;
 }
+
 .bot-fix-group .back-top image {
   width: 60rpx;
   height: 60rpx;
