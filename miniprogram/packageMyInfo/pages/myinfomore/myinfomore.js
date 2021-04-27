@@ -1,6 +1,6 @@
 import echarts from '../../ec-canvas/echarts';
 let requestData = require('../../../utils/request');
-
+let app = getApp();
 Page({
 
   /**
@@ -60,7 +60,8 @@ Page({
       // 初始化图表
       const Chart = echarts.init(canvas, null, {
         width: width,
-        height: height
+        height: height,
+        devicePixelRatio: app.globalData.pixelRatio
       });
       // 获取图表数据
       Chart.setOption(this.getAllChartOption());
@@ -72,7 +73,8 @@ Page({
       // 初始化图表
       const Chart = echarts.init(canvas, null, {
         width: width,
-        height: height
+        height: height,
+        devicePixelRatio: app.globalData.pixelRatio
       });
       // 获取图表数据
       Chart.setOption(this.getSorrowChartOption());
@@ -84,7 +86,8 @@ Page({
       // 初始化图表
       const Chart = echarts.init(canvas, null, {
         width: width,
-        height: height
+        height: height,
+        devicePixelRatio: app.globalData.pixelRatio
       });
       // 获取图表数据
       Chart.setOption(this.getDiaryChartOption());
@@ -96,7 +99,8 @@ Page({
       // 初始化图表
       const Chart = echarts.init(canvas, null, {
         width: width,
-        height: height
+        height: height,
+        devicePixelRatio: app.globalData.pixelRatio
       });
       // 获取图表数据
       Chart.setOption(this.getComplainChartOption());
@@ -267,11 +271,18 @@ Page({
   // 点击查询按钮调用接口获取折线图数据
   getChartData: function (openId) {
     requestData.monthReport(openId).then(res => {
-      console.log(res);
-      // 获取数据集合
-      let dataList = res.data.data;
-      // 赋值数据
-      this.handleData(dataList);
+      return new Promise((resolve,reject) => {
+        console.log(res);
+        // 获取数据集合
+        let dataList = res.data.data;
+        // 赋值数据
+        this.handleData(dataList);
+        resolve('success');
+      })
+    }).then(res => {
+      if(res == 'success') {
+        wx.hideLoading({ });
+      }
     })
   },
 
@@ -279,6 +290,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '数据加载中~',
+    })
     // 获取dom元素
     this.echartsAllComponnet = this.selectComponent('#all_chart');
     this.echartsSorrowComponnet = this.selectComponent('#sorrow_chart');

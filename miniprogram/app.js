@@ -5,7 +5,9 @@ App({
   globalData: {
     openid: null,
     token: '',
-    userInfo: null
+    userInfo: null,
+    // 设置像素比
+    pixelRatio: 0
   },
 
   onLaunch: function () {
@@ -70,6 +72,18 @@ App({
           }
         })
       }
+    })
+
+    /* 
+      获取设备像素比 
+    */
+    wx.getSystemInfo({
+      success: (result) => {
+        console.log(result);
+        // 获取设备像素比
+        let pixelRatio = result.pixelRatio;
+        that.globalData.pixelRatio = pixelRatio;
+      },
     })
 
   },

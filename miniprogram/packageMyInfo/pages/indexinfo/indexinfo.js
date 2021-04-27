@@ -1,7 +1,7 @@
 import * as echarts from '../../ec-canvas/echarts';
 let requestData = require('../../../utils/request');
 
-
+let app = getApp();
 Page({
 
   /**
@@ -29,7 +29,8 @@ Page({
       // 初始化图表
       const Chart = echarts.init(canvas, null, {
         width: width,
-        height: height
+        height: height,
+        devicePixelRatio: app.globalData.pixelRatio
       });
       // 获取图表数据
       Chart.setOption(this.getOption());
