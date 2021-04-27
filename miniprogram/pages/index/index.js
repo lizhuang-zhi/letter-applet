@@ -206,24 +206,6 @@ Page({
       }
     })
 
-    /**
-     * 接口应该写在具体的回信页面 -- 李壮志
-     */
-    //获取回信数据
-    // requestData.getIndexStampReply(this.data.replyData).then(res => {
-    //   console.log(res);
-    //   // 404与500
-    //   if (res.statusCode == 404 || res.statusCode == 500) {
-    //     return new Promise((resolve, reject) => {
-    //       resolve('error');
-    //     });
-    //   } else {
-    //     let replyArr = res.data.data;
-    //     console.log(replyArr);
-    //   }
-    // })
-
-
   },
 
   /**
@@ -258,6 +240,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    console.log('index页面 ======> 监听页面隐藏');
 
   },
 
@@ -265,6 +248,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('index页面 ======> 监听页面卸载');
 
   },
 
