@@ -27,7 +27,9 @@ Page({
     // 函数节流前一个判断时间
     preViousTime: 0,
     // 插入评论返回信息
-    commentBackInfo: ""
+    commentBackInfo: "",
+    // 第一次点击发送图片的时间
+    sendMsgBeforeTime: 0
   },
 
   // 回车事件
@@ -53,15 +55,29 @@ Page({
   },
   // 点击发送图片事件
   sendmessageEvent(e) {
-    // 获取输入内容
-    let input_cont = this.data.inputContent;
-    if (input_cont == '') {
+    // 获取第一次点击的时间戳
+    let sendMsgBeforeTime = this.data.sendMsgBeforeTime;
+    // 记录当前时间
+    let nowTime = new Date().getTime();
+    if (nowTime - sendMsgBeforeTime >= 1000) {
+      // 获取输入内容
+      let input_cont = this.data.inputContent;
+      if (input_cont == '') {
+        wx.showToast({
+          title: '请输入评论内容',
+          icon: 'none'
+        })
+      } else {
+        this.setData({
+          sendMsgBeforeTime: new Date()
+        })
+        this.sendMsg(input_cont);
+      }
+    } else {
       wx.showToast({
-        title: '请输入评论内容',
+        title: '点击过于频繁',
         icon: 'none'
       })
-    } else {
-      this.sendMsg(input_cont);
     }
   },
   // 发送评论
@@ -71,7 +87,7 @@ Page({
     // 获取当前时间
     let nowTime = new Date();
     // 限制用户评论间隔时长 5000ms
-    if (nowTime - preViousTime >= 5000) {
+    if (nowTime - preViousTime >= 3000) {
       // 新建评论对象
       let newCont = {
         content,
@@ -119,7 +135,7 @@ Page({
 
     } else {
       wx.showToast({
-        title: '输入频繁，请稍后再试',
+        title: '发送过于频繁',
         icon: 'none'
       })
     }
