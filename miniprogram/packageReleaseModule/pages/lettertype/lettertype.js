@@ -451,7 +451,8 @@ Page({
       state,
       weather,
       openId
-    }
+    };
+    console.log(diaryObj);
     if (selectDiaryWeatherArr.length == 0) {
       wx.showToast({
         title: '请选择标签',
@@ -615,10 +616,11 @@ Page({
     })
     // 获取上一个页面的输入内容
     this.setData({
-      inputValue: options.subvalue,
+      inputValue: JSON.parse(decodeURIComponent(options.subvalue)),
       letterId: options.letterId,
       senderOpenId: options.senderOpenId
     });
+    console.log(JSON.parse(decodeURIComponent(options.subvalue)));
     console.log('----> ' + options.senderOpenId);
 
     // 获取用户选择类型

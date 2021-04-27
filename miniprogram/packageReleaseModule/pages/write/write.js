@@ -20,6 +20,7 @@ Page({
     this.setData({
       textValue: textvalue
     })
+    console.log(this.data.textValue);
   },
   // 跳转标签选择页面
   ToChooseTag(e) {
@@ -76,8 +77,11 @@ Page({
       // })
 
     } else {
+      console.log(subvalue);
+      // Json传输内容
+      let JsonSubvalue = JSON.stringify(subvalue);
       wx.navigateTo({
-        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + subvalue + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
       })
       console.log('执行跳转 ---> ' + senderOpenId);
     }

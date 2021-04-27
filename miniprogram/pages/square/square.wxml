@@ -1,6 +1,6 @@
 <!-- loading加载 -->
-<yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-300'
-  gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx' bindrefresh="refresh">
+<!-- <yeo-loading-part pull="{{pull}}" push="{{push}}" isShowBottom='{{false}}' chuHeight='chu-300'
+  gifBoxShadow='0 0 20rpx #dddddd' gifBordRadius='50rpx' bindrefresh="refresh"> -->
 
 
   <van-tabs active="0" swipeable animated color="#EC625C" line-height='10px' offset-top='0' title-active-color='#444444'
@@ -50,6 +50,4 @@
     </view>
   </view>
 
-
-
-</yeo-loading-part>
+<!-- </yeo-loading-part> -->

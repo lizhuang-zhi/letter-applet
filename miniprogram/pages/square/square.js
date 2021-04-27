@@ -4,10 +4,7 @@ let timeTools = require('../../utils/timeTools');
 
 // 记录当前请求页是否为最后一页（吐槽大会）
 let isLastComplianPageNum = null;
-// 记录当前请求页是否为最后一页（公开日记）
-let isLastDiaryPage = null;
-// 获取吐槽大会当前页
-let complianPageNum = null;
+
 // 存储修改的日记键值对数组
 // let changeDiary = {};
 let app = getApp();
@@ -25,8 +22,10 @@ Page({
     tabCurIndex: 0,
     // 页面距离顶部高度
     pageScrollTop: 0,
+    // complianPageNum
+    complianPageNum: 1,
 
-
+    isLastDiaryPage: false,
     /* 
       loading-part组件
     */
@@ -55,7 +54,7 @@ Page({
         'pull.pullText': '正在加载',
       });
       // 下拉刷新请求日记
-      this.onPullDownDiary();
+      // this.onPullDownDiary();
     } else if (pageScrollTop <= 30 && currentTab == 1) {
       console.log('刷新吐槽', e)
       this.setData({
@@ -64,7 +63,7 @@ Page({
         'pull.pullText': '正在加载',
       });
       // 下拉刷新请求吐槽
-      this.onPullDownComplain();
+      // this.onPullDownComplain();
     }
 
   },
@@ -205,7 +204,9 @@ Page({
       // 日记数组
       let diaryList = diaryObj.list;
       // 记录公开日记是否为最后一页
-      isLastDiaryPage = diaryObj.isLastPage;
+      this.setData({
+        isLastDiaryPage: diaryObj.isLastPage
+      })
       console.log(diaryObj);
       diaryList.forEach(item => {
         // 修改天气显示格式
@@ -238,7 +239,9 @@ Page({
       // 获取吐槽数组
       let complianList = complianObj.list;
       // 获取吐槽大会当前页
-      complianPageNum = complianObj.pageNum;
+      this.setData({
+        complianPageNum: complianObj.pageNum
+      });
       // 记录当前请求页是否为最后一页
       isLastComplianPageNum = complianObj.isLastPage;
 
@@ -256,7 +259,7 @@ Page({
     // 判断是否为最后一页数据并请求
     if (!isLastComplianPageNum) {
       // 再次请求下一页数据
-      requestData.squareComplain(++complianPageNum).then(res => {
+      requestData.squareComplain(++this.data.complianPageNum).then(res => {
         // 获取吐槽大会对象
         let complianObj = res.data.data;
         // 获取吐槽数组
@@ -285,15 +288,17 @@ Page({
   // 上拉触底事件（公开日记）
   onReachBottomDiary() {
     // 判断是否为最后一页数据并请求
-    if (!isLastDiaryPage) {
+    if (!this.data.isLastDiaryPage) {
       // 再次请求下一页数据
-      requestData.squareDiary(++complianPageNum).then(res => {
+      requestData.squareDiary(++this.data.complianPageNum).then(res => {
         // 日记对象
         let diaryObj = res.data.data;
         // 日记数组
         let diaryList = diaryObj.list;
         // 记录公开日记是否为最后一页
-        isLastDiaryPage = diaryObj.isLastPage;
+        this.setData({
+          isLastDiaryPage: diaryObj.isLastPage
+        })
         console.log(diaryObj);
         diaryList.forEach(item => {
           item.weather = weather.weatherWordsToPic(item.weather);
@@ -319,91 +324,92 @@ Page({
     }
 
   },
-  // 下拉刷新（公开日记）
-  onPullDownDiary() {
-    //公开日记数据
-    requestData.squareDiary(1).then(res => {
-      return new Promise((resolve, reject) => {
-        // 日记对象
-        let diaryObj = res.data.data;
-        // 日记数组
-        let diaryList = diaryObj.list;
-        // 记录公开日记是否为最后一页
-        isLastDiaryPage = diaryObj.isLastPage;
-        console.log(diaryObj);
-        diaryList.forEach(item => {
-          // 修改天气显示格式
-          item.weather = weather.weatherWordsToPic(item.weather);
-          // 修改日期显示格式
-          item.date = timeTools.squareDiaryTime(item.date);
-        });
-        this.setData({
-          diaryArr: diaryList
-        })
+  // // 下拉刷新（公开日记）
+  // onPullDownDiary() {
+  //   //公开日记数据
+  //   requestData.squareDiary(1).then(res => {
+  //     return new Promise((resolve, reject) => {
+  //       // 日记对象
+  //       let diaryObj = res.data.data;
+  //       // 日记数组
+  //       let diaryList = diaryObj.list;
+  //       // 记录公开日记是否为最后一页
+  //       isLastDiaryPage = diaryObj.isLastPage;
+  //       console.log(diaryObj);
+  //       diaryList.forEach(item => {
+  //         // 修改天气显示格式
+  //         item.weather = weather.weatherWordsToPic(item.weather);
+  //         // 修改日期显示格式
+  //         item.date = timeTools.squareDiaryTime(item.date);
+  //       });
+  //       this.setData({
+  //         diaryArr: diaryList
+  //       })
 
-        /* 
-          日记浏览量 --> 数据存储至缓存
-        */
-        let newObj = {};
-        for (let ele of diaryList) {
-          newObj[ele.id] = parseInt(ele.number);
-        };
-        console.log(newObj);
-        wx.setStorage({
-          key: 'diaryView',
-          data: newObj,
-        });
+  //       /* 
+  //         日记浏览量 --> 数据存储至缓存
+  //       */
+  //       let newObj = {};
+  //       for (let ele of diaryList) {
+  //         newObj[ele.id] = parseInt(ele.number);
+  //       };
+  //       console.log(newObj);
+  //       wx.setStorage({
+  //         key: 'diaryView',
+  //         data: newObj,
+  //       });
 
-        resolve('success')
-      })
-    }).then(res => {
-      if (res == 'success') {
-        this.setData({
-          'pull.isLoading': false
-        });
-        wx.showToast({
-          title: '刷新成功',
-          icon: 'none'
-        })
-      }
-    })
-  },
-  // 下拉刷新（吐槽大会）
-  onPullDownComplain() {
-    // 吐槽大会请求数据
-    requestData.squareComplain(1).then(res => {
-      return new Promise((resolve, reject) => {
-        // 获取吐槽大会对象
-        let complianObj = res.data.data;
-        // 获取吐槽数组
-        let complianList = complianObj.list;
-        // 获取吐槽大会当前页
-        complianPageNum = complianObj.pageNum;
-        // 记录当前请求页是否为最后一页
-        isLastComplianPageNum = complianObj.isLastPage;
-        console.log(complianObj);
-        this.setData({
-          complianArr: complianList
-        });
-        resolve('success');
-      })
-    }).then(res => {
-      if (res == 'success') {
-        this.setData({
-          'pull.isLoading': false
-        })
-        wx.showToast({
-          title: '刷新成功',
-          icon: 'none'
-        })
-      }
-    })
-  },
+  //       resolve('success')
+  //     })
+  //   }).then(res => {
+  //     if (res == 'success') {
+  //       this.setData({
+  //         'pull.isLoading': false
+  //       });
+  //       wx.showToast({
+  //         title: '刷新成功',
+  //         icon: 'none'
+  //       })
+  //     }
+  //   })
+  // },
+  // // 下拉刷新（吐槽大会）
+  // onPullDownComplain() {
+  //   // 吐槽大会请求数据
+  //   requestData.squareComplain(1).then(res => {
+  //     return new Promise((resolve, reject) => {
+  //       // 获取吐槽大会对象
+  //       let complianObj = res.data.data;
+  //       // 获取吐槽数组
+  //       let complianList = complianObj.list;
+  //       // 获取吐槽大会当前页
+  //       complianPageNum = complianObj.pageNum;
+  //       // 记录当前请求页是否为最后一页
+  //       isLastComplianPageNum = complianObj.isLastPage;
+  //       console.log(complianObj);
+  //       this.setData({
+  //         complianArr: complianList
+  //       });
+  //       resolve('success');
+  //     })
+  //   }).then(res => {
+  //     if (res == 'success') {
+  //       this.setData({
+  //         'pull.isLoading': false
+  //       })
+  //       wx.showToast({
+  //         title: '刷新成功',
+  //         icon: 'none'
+  //       })
+  //     }
+  //   })
+  // },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('广场页面  ---- >   监听页面加载');
     this.Start();
 
   },
@@ -448,6 +454,10 @@ Page({
       }
     })
 
+    /* 
+      发布日记成功后,再次进入,拉取一次
+    */
+    console.log(this.data.diaryArr);
   },
 
   /**
@@ -457,10 +467,7 @@ Page({
     console.log('广场 -- 监听页面隐藏');
     // 记录当前请求页是否为最后一页（吐槽大会）
     isLastComplianPageNum = null;
-    // 记录当前请求页是否为最后一页（公开日记）
-    isLastDiaryPage = null;
-    // 获取吐槽大会当前页
-    complianPageNum = null;
+
   },
 
   /**
@@ -482,11 +489,11 @@ Page({
    */
   onReachBottom: function () {
     if (this.data.tabCurIndex == 0) {
-      console.log('公开日记触底了');
+      console.log('---- 公开日记触底了 -----');
       // 再次请求数据
       this.onReachBottomDiary();
     } else if (this.data.tabCurIndex == 1) {
-      console.log('吐槽大会触底了');
+      console.log('---- 吐槽大会触底了 ----');
       // 再次请求数据
       this.onReachBottomComplain();
     }

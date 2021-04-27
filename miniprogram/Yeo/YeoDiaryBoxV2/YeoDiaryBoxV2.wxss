@@ -4,8 +4,7 @@
 
 /* 内容 */
 .yeo-diary-box-v2 .content {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 
 /* 顶栏布局 */
