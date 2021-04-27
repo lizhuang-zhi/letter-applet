@@ -30,12 +30,31 @@ Page({
 
   //点击跳转写信
   replyLetter() {
-    // 获取信件id
-    let letterId = this.data.letterId;
-    // 获取首页原信件 发送者openId
-    let senderOpenId = this.data.senderOpenId;
-    wx.navigateTo({
-      url: '/packageReleaseModule/pages/attention/attention?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+    /* 
+      从缓存中获取今日可解答次数
+    */
+    wx.getStorage({
+      key: 'userBackLetterNum',
+      success: res => {
+        console.log(res.data);
+        // 获取对象数据
+        let dataObj = res.data;
+        if (dataObj.letterBackNum == 1) {
+          // 获取信件id
+          let letterId = this.data.letterId;
+          // 获取首页原信件 发送者openId
+          let senderOpenId = this.data.senderOpenId;
+          wx.navigateTo({
+            url: '/packageReleaseModule/pages/attention/attention?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+          })
+        }else {
+          wx.showToast({
+            title: '今日已没有解答次数~',
+            icon: 'none'
+          })
+        }
+
+      }
     })
   },
 

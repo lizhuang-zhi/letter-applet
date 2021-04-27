@@ -52,7 +52,25 @@ App({
         })
       }
     })
-
+    /* 
+      存储用户每日解答次数缓存
+    */
+    wx.getStorage({
+      key: 'userBackLetterNum',
+      success: res => {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+        wx.setStorage({
+          key: 'userBackLetterNum',
+          data: {
+            letterBackNum: 1,
+            judgeTime: new Date()
+          }
+        })
+      }
+    })
 
   },
   onHide() {

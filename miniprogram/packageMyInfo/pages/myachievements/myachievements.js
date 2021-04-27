@@ -17,23 +17,23 @@ Page({
       },
       {
         isLock: true,
-        achievementsPic: 'https://z3.ax1x.com/2021/04/22/cLY7ad.png',
+        achievementsPic: 'https://z3.ax1x.com/2021/04/27/gphqoV.png',
         tit: '解答大师',
         desc: '解答100封信件',
         lockTime: '2021年04月20日 08:40',
         edition: 'Edition 2.0'
       },
       {
-        isLock: false,
-        achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IhvD.png',
+        isLock: true,
+        achievementsPic: 'https://z3.ax1x.com/2021/04/27/gphOiT.png',
         tit: '老朋友',
         desc: '收到一封回信',
         lockTime: '2021年03月20日 12:40',
         edition: 'Edition 2.0'
       },
       {
-        isLock: false,
-        achievementsPic: '../../images/lock.png',
+        isLock: true,
+        achievementsPic: 'https://z3.ax1x.com/2021/04/27/gphXJU.png',
         tit: '吐槽名家',
         desc: '发布20篇吐槽',
         lockTime: '2021年04月13日 03:40',
@@ -48,8 +48,8 @@ Page({
         edition: 'Edition 3.0'
       },
       {
-        isLock: false,
-        achievementsPic: 'https://z3.ax1x.com/2021/04/20/c7IIDH.png',
+        isLock: true,
+        achievementsPic: 'https://z3.ax1x.com/2021/04/27/gphbd0.png',
         tit: '集邮达人',
         desc: '收集到10枚邮票',
         lockTime: '2021年04月13日 03:40',

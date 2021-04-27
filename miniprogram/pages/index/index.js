@@ -52,6 +52,7 @@ Page({
     wx.navigateTo({
       url: '/packageWriteLetter/pages/sorrowletter/sorrowletter?id=' + id + '&senderOpenId=' + senderOpenId,
     })
+
   },
   // 获取解忧信件点击事件
   obtainLetter() {

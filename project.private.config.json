@@ -131,11 +131,6 @@
           "pathName": "packageMyInfo/pages/timeline/timeline",
           "query": "",
           "scene": null
-        },
-        {
-          "name": "图表测试",
-          "pathName": "packageMyInfo/pages/testechart/testechart",
-          "scene": null
         }
       ]
     }

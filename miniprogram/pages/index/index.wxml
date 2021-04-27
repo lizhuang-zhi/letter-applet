@@ -4,8 +4,6 @@
   <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
 </view>
 
-
-
 <!-- 美文欣赏栏 -->
 <view class="beauty-article">
   <yeo-dy-fun-bar distractWay='between'>
@@ -20,7 +18,6 @@
   itemHeight='110' starBoxWidth='50' starBoxHeight='50' starTopWithOutBox='15' titleFontSize='33' timeFontSize='22'
   starBoxBordRadius='25' bottomInfoBotWithOutBox='20' bgSize='cover' swiperMarginTop='10' swiperMarginBot='31'
   itemMarginTop='40' isShowStarPic='{{false}}'></yeo-swiper>
-
 
 <!-- 解忧信件标题 -->
 <view class="tit-sorrow">
@@ -88,11 +85,8 @@
   </yeo-frame-view>
 </view>
 
-
-
 <!-- loading组件 -->
 <yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>
-
 
 <!-- 信栈小贴士弹出层 -->
 <van-popup show="{{ showTipPop }}" bind:close="onTipClose" custom-style='border-radius: 20rpx;' catchtouchmove="{{true}}">
