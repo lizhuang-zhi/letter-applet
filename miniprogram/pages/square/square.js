@@ -2,9 +2,6 @@ let weather = require('../../utils/weatherTools');
 let requestData = require('../../utils/request');
 let timeTools = require('../../utils/timeTools');
 
-// 记录当前请求页是否为最后一页（吐槽大会）
-let isLastComplianPageNum = null;
-
 // 存储修改的日记键值对数组
 // let changeDiary = {};
 let app = getApp();
@@ -24,8 +21,10 @@ Page({
     pageScrollTop: 0,
     // complianPageNum
     complianPageNum: 1,
-
+    // 记录当前请求页是否为最后一页（公开日记）
     isLastDiaryPage: false,
+    // 记录当前请求页是否为最后一页（吐槽大会）
+    isLastComplianPageNum: false,
     /* 
       loading-part组件
     */
@@ -238,17 +237,14 @@ Page({
       let complianObj = res.data.data;
       // 获取吐槽数组
       let complianList = complianObj.list;
+      console.log(complianObj);
       // 获取吐槽大会当前页
       this.setData({
-        complianPageNum: complianObj.pageNum
-      });
-      // 记录当前请求页是否为最后一页
-      isLastComplianPageNum = complianObj.isLastPage;
-
-      console.log(complianObj);
-      this.setData({
+        complianPageNum: complianObj.pageNum,
+        // 记录当前请求页是否为最后一页
+        isLastComplianPageNum: complianObj.isLastPage,
         complianArr: complianList
-      })
+      });
 
     });
 
@@ -257,7 +253,7 @@ Page({
   // 上拉触底事件（吐槽大会）
   onReachBottomComplain() {
     // 判断是否为最后一页数据并请求
-    if (!isLastComplianPageNum) {
+    if (!this.data.isLastComplianPageNum) {
       // 再次请求下一页数据
       requestData.squareComplain(++this.data.complianPageNum).then(res => {
         // 获取吐槽大会对象
@@ -266,12 +262,12 @@ Page({
         let complianList = complianObj.list;
         // 原吐槽大会数组
         let complianArr = this.data.complianArr;
-        // 记录当前请求页是否为最后一页
-        isLastComplianPageNum = complianObj.isLastPage;
-
+        
         console.log(complianList);
         // 合并二次请求对象与原对象
         this.setData({
+          // 记录当前请求页是否为最后一页
+          isLastComplianPageNum: complianObj.isLastPage,
           complianArr: complianArr.concat(complianList)
         })
 
@@ -465,8 +461,6 @@ Page({
    */
   onHide: function () {
     console.log('广场 -- 监听页面隐藏');
-    // 记录当前请求页是否为最后一页（吐槽大会）
-    isLastComplianPageNum = null;
 
   },
 
