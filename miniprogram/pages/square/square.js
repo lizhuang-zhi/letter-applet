@@ -299,8 +299,6 @@ Page({
         diaryList.forEach(item => {
           item.weather = weather.weatherWordsToPic(item.weather);
           item.date = timeTools.squareDiaryTime(item.date);
-          // 暂时添加的数据内容
-          item.content = '我是新数据';
         })
         this.setData({
           diaryArr: this.data.diaryArr.concat(diaryList)

@@ -352,7 +352,7 @@ Page({
     } else if (type == '解答') {
       this.ConfirmSendAnswer();
     } else {
-      console.log('位置类型，未作处理！！！');
+      console.log('未知类型，未做处理！！！');
     }
 
 
@@ -484,7 +484,7 @@ Page({
         if (res == 'success') {
           setTimeout(() => {
             wx.switchTab({
-              url: '/pages/index/index',
+              url: '/pages/square/square',
             })
           }, 1000)
         }
@@ -552,7 +552,7 @@ Page({
       if (res == 'success') {
         setTimeout(() => {
           wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/square/square',
           })
         }, 1000)
       }

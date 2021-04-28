@@ -38,7 +38,7 @@ Component({
     //时间文字内容
     SendTime: {
       type: String,
-      value: '2021-3-30'
+      value: '2021-03-30'
     },
     //时间下边距
     TimeMargin:{
