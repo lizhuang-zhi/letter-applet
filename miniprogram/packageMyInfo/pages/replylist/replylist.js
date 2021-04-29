@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    replyList: []
+    replyList: [],
   },
 
   // 点击跳转信件内容

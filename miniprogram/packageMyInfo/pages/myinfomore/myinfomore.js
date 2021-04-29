@@ -275,7 +275,7 @@ Page({
       key: 'officialNewsReportList',
       success: res => {
         // 获取对应月报对象
-        let dataObj = res.data.reportList[reportIndex];
+        let dataObj = res.data.reportList[reportIndex].data;
         // 赋值数据
         this.handleData(dataObj);
       },

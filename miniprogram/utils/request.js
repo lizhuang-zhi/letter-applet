@@ -468,12 +468,13 @@ let requestData = {
     })
   },
   // 获取个人数据分析内容
-  monthReport(openId) {
+  monthReport(openId, currentTimeStamp) {
     return new Promise((resolve,reject) => {
       wx.request({
         url: apiUrl.getMonthReport(),
         data: {
           openId: openId,
+          currentTimeStamp: currentTimeStamp
         },
         success: res => {
           resolve(res)

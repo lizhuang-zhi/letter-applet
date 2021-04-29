@@ -3,14 +3,14 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 10;
+const getReportTime = 1000 * 60 * 10;
 let app = getApp();
 /*
   设置论循定时器 
 */
 let setTimeInterVal = null;
 // 轮循间隔时长（毫秒）
-let timeInterVal = 12 * 1000;
+let timeInterVal = 13 * 1000;
 Page({
 
   /**
@@ -243,12 +243,15 @@ Page({
        */
       // 获取openId
       let openId = app.globalData.openid;
-      let reportItem = null;
-      requestData.monthReport(openId).then(res => {
+      // 获取当前时间
+      let nowTime = new Date().getTime();
+      let reportItem = {};
+      reportItem.time = nowTime;
+      requestData.monthReport(openId,nowTime).then(res => {
         return new Promise((resolve, reject) => {
           console.log(res);
           // 获取数据集合
-          reportItem = res.data.data;
+          reportItem.data = res.data.data;
           // 赋值数据
           resolve('success');
         })

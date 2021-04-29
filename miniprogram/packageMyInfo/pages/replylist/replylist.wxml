@@ -15,8 +15,10 @@
   
 </view>
 
+
+
 <!-- 当信件为空时 -->
 <view class="letter-empty">
-  <keo-empty-display wx:if="{{replyList.length==0}}" Text='暂无回信'></keo-empty-display>
+  <keo-empty-display wx:if="{{replyList.length == 0 || replyList == null}}" Text='暂无回信'></keo-empty-display>
 </view>
 

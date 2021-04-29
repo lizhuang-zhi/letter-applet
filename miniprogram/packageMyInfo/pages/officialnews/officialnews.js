@@ -1,3 +1,4 @@
+let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 Page({
 
@@ -27,6 +28,11 @@ Page({
       key: 'officialNewsReportList',
       success: res => {
         console.log(res);
+        let reportList = res.data.reportList;
+        // 修改显示时间格式
+        reportList.forEach(item => {
+          item.time = timeTools.mailboxShowMessageTime(item.time);
+        }) 
         // 设置月报数组
         this.setData({
           monthReportList: res.data.reportList
