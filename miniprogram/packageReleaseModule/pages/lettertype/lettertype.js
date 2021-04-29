@@ -343,7 +343,6 @@ Page({
       initValue: penName
     })
   },
-
   // 确认提交
   ConfirmSend() {
     // 获取类型

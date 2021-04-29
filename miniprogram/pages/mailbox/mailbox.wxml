@@ -16,7 +16,7 @@
   <view class="message-info-box">
     <!-- 历史信件 -->
     <yeo-message-notification infoTit='历史信件' leftPic='https://z3.ax1x.com/2021/04/21/cbH5S1.png' notifiNum='0'
-      boxBgColor='#DFE7FD' infoDesc='回顾信件，找回真我' bindtap="ToHistoryLetter">
+      boxBgColor='#DFE7FD' infoDesc='回顾信件，找回真我' bindtap="ToHistoryLetter" infoTime=''>
     </yeo-message-notification>
     <!-- 最新活动 -->
     <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://z3.ax1x.com/2021/03/25/6O0PZn.png' infoTit='最新活动'
