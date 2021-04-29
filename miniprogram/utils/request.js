@@ -234,6 +234,7 @@ let requestData = {
   },
   // 保存日记
   lettertypeDiarySend(diaryObj) {
+    console.log(diaryObj.penName);
     return new Promise((resolve,reject) => {
       wx.request({
         header: {

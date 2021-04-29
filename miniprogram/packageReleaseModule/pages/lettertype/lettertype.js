@@ -335,6 +335,14 @@ Page({
       switchVal: e.detail.switchValue
     })
   },
+  // 获取随机名输入
+  inputeventTap(e) {
+    // 获取实时输入
+    let penName = e.detail.obj.value;
+    this.setData({
+      initValue: penName
+    })
+  },
 
   // 确认提交
   ConfirmSend() {
