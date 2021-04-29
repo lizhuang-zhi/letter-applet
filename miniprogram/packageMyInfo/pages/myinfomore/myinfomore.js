@@ -52,6 +52,7 @@ Page({
     })
     // 初始化图表
     this.init_echarts();
+    wx.hideLoading({ });
   },
   //初始化图表
   init_echarts: function () {
@@ -269,19 +270,17 @@ Page({
     return option_complain;
   },
   // 点击查询按钮调用接口获取折线图数据
-  getChartData: function (openId) {
-    requestData.monthReport(openId).then(res => {
-      return new Promise((resolve,reject) => {
-        console.log(res);
-        // 获取数据集合
-        let dataList = res.data.data;
+  getChartData: function (reportIndex) {
+    wx.getStorage({
+      key: 'officialNewsReportList',
+      success: res => {
+        // 获取对应月报对象
+        let dataObj = res.data.reportList[reportIndex];
         // 赋值数据
-        this.handleData(dataList);
-        resolve('success');
-      })
-    }).then(res => {
-      if(res == 'success') {
-        wx.hideLoading({ });
+        this.handleData(dataObj);
+      },
+      fail: res =>{
+        console.log(res);
       }
     })
   },
@@ -299,7 +298,7 @@ Page({
     this.echartsDiaryComponnet = this.selectComponent('#diary_chart');
     this.echartsComplainComponnet = this.selectComponent('#complain_chart');
     // 异步请求数据
-    this.getChartData(options.openId);
+    this.getChartData(options.reportIndex);
 
   },
 

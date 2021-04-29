@@ -165,6 +165,17 @@ App({
     */
     wx.setStorageSync('userInfo', userInfoNew);
     console.log(userInfoNew);
+    /* 
+      官方消息缓存（月报）
+    */
+    wx.setStorageSync('officialNewsReportList', {
+      // 月报数组
+      reportList: [],
+      // 获取用户注册时间
+      time: new Date().getTime(),
+      // 未读消息数量
+      unReadNum: 0
+    });
     return new Promise((resolve, reject) => {
       requestData.userAccount(userInfoNew).then(res => {
         resolve('success');

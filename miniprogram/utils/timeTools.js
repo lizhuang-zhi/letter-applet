@@ -140,15 +140,15 @@ let tools = {
     // 获取当前时间
     let nowTime = new Date();
 
-    // 获取传入时间的时间戳
-    let timeStamp = new Date(time).getTime();
-    // 获取当前时间的时间戳
-    let timeStampNow = nowTime.getTime();
-    // 当前时间与传入时间的时间戳差值
-    let disVal = timeStampNow - timeStamp;
+    // // 获取传入时间的时间戳
+    // let timeStamp = new Date(time).getTime();
+    // // 获取当前时间的时间戳
+    // let timeStampNow = nowTime.getTime();
+    // // 当前时间与传入时间的时间戳差值
+    // let disVal = timeStampNow - timeStamp;
 
-    // 获取传入时间为星期几
-    let timeWeekDays = new Date(time).getDay() == 0 ? 7 : new Date(time).getDay();
+    // // 获取传入时间为星期几
+    // let timeWeekDays = new Date(time).getDay() == 0 ? 7 : new Date(time).getDay();
 
     // 获取传入时间的年份
     let timeYears = new Date(time).getFullYear();
@@ -160,16 +160,11 @@ let tools = {
     // 获取传入时间的日期
     let timeDate = new Date(time).getDate() < 10 ? '0' + new Date(time).getDate() : new Date(time).getDate();
 
-    if (disVal <= oneWeekStamp) {
-      return '星期' + this.changeWeekDaysToChinese(timeWeekDays);
-    }else if(disVal > oneWeekStamp && timeYears == timeYearsNow) {
-      return timeMonth + '-' + timeDate;
-    }else if(disVal > oneWeekStamp && timeYears != timeYearsNow) {
+    if(timeYears != timeYearsNow) {
       return timeYears + '-' + timeMonth + '-' + timeDate;
     }else {
-      return timeYears + '-' + timeMonth + '-' + timeDate;
+      return timeMonth + '-' + timeDate;
     }
-
 
   },
 

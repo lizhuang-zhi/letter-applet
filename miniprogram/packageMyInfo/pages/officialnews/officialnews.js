@@ -11,11 +11,12 @@ Page({
   },
 
   // 去查看月报
-  ToCheckOutReport() {
-    // 获取openId
-    let openId = app.globalData.openid;
+  ToCheckOutReport(e) {
+    // 获取点击月报对象的索引
+    let reportIndex = e.currentTarget.dataset.index;
+    console.log(reportIndex);
     wx.navigateTo({
-      url: '/packageMyInfo/pages/myinfomore/myinfomore?openId=' + openId,
+      url: '/packageMyInfo/pages/myinfomore/myinfomore?reportIndex=' + reportIndex,
     })
   },
 
@@ -23,13 +24,13 @@ Page({
   Start() {
     // 从缓存中获取月报数组
     wx.getStorage({
-      key: 'officialNewList',
+      key: 'officialNewsReportList',
       success: res => {
         console.log(res);
-        // 设置月报时间
-        // this.setData({
-        //   monthReportList: res.data.monthList
-        // })
+        // 设置月报数组
+        this.setData({
+          monthReportList: res.data.reportList
+        })
       },
       fail: res => {
         console.log(res);

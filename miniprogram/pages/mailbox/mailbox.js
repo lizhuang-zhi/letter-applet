@@ -1,13 +1,16 @@
 // miniprogram/pages/mailbox/mailbox.js
-let tools = require('../../utils/timeTools');
+let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
-
+// 月报拉取的间隔时间（毫秒）
+const getReportTime = 1000 * 10;
 let app = getApp();
 /*
   设置论循定时器 
 */
 let setTimeInterVal = null;
+// 轮循间隔时长（毫秒）
+let timeInterVal = 12 * 1000;
 Page({
 
   /**
@@ -34,6 +37,10 @@ Page({
     }],
     // 列表消息的消息个数
     messageList: [],
+    // 官方消息个数
+    officialNewsNum: 0,
+    // 官方消息的最新消息时间
+    officialNewsTime: '03-21',
 
     // loading组件
     pull: {
@@ -120,7 +127,22 @@ Page({
   //跳转到官方消息
   ToOfficialnews() {
     /* 置0官方消息数量 */
-    this.setMessageListNum(1);
+    wx.getStorage({
+      key: 'officialNewsReportList',
+      success: res => {
+        // 获取原数据
+        let reportList = res.data.reportList;
+        let time = res.data.time;
+        wx.setStorage({
+          key: 'officialNewsReportList',
+          data: {
+            reportList: reportList,
+            time: time,
+            unReadNum: 0
+          },
+        })
+      }
+    })
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/officialnews/officialnews');
   },
@@ -190,48 +212,87 @@ Page({
         })
       }
     });
-    // 判断缓存时间，是否拉取官方消息中的月报
+    // 获取官方消息的缓存
     wx.getStorage({
-      key: 'mailboxMessageList',
+      key: 'officialNewsReportList',
       success: res => {
-        // 获取缓存时间
-        let beforeTime = res.data.nowTime;
-        // 时间差大于一个月就请求接口
-        this.isGetMonthReport(beforeTime);
+        // 获取消息数量
+        let newsNum = res.data.unReadNum;
+        console.log(timeTools.mailboxShowMessageTime(res.data.time));
+        this.setData({
+          officialNewsNum: newsNum,
+          // 获取记录时间
+          officialNewsLastTime: res.data.time,
+          // 官方消息显示时间
+          officialNewsTime: timeTools.mailboxShowMessageTime(res.data.time)
+        })
       }
     })
   },
+
+
   // 判断是否拉取官方消息月报
   isGetMonthReport(time) {
-    // 一分钟的时长（毫秒）
-    let timeLong = 60 * 1000;
+    // 月报拉取的间隔时间（毫秒）
+    let timeLong = getReportTime;
     // 时间差（毫秒）
     let timeDifference = new Date() - new Date(time);
     if (timeDifference >= timeLong) {
       /* 
-        请求获取月报接口
+        请求获取月报接口 
        */
-
-      // 将月报数据存储进缓存
-      wx.getStorage({
-        key: 'officialNewList',
-        success: res => {
+      // 获取openId
+      let openId = app.globalData.openid;
+      let reportItem = null;
+      requestData.monthReport(openId).then(res => {
+        return new Promise((resolve, reject) => {
           console.log(res);
-          // 存储请求到的月报对象到数组
-          // wx.setStorage({
-          //   key: 'officialNewList',
-          //   data: data,
-          // })
-        },
-        fail: res => {
-          console.log(res);
-          // 第一次存储请求到的月报对象到数组
-          // wx.setStorage({
-          //   key: 'officialNewList',
-          //   data: [],
-          // })
+          // 获取数据集合
+          reportItem = res.data.data;
+          // 赋值数据
+          resolve('success');
+        })
+      }).then(res => {
+        if (res == 'success') {
+          // 将月报数据存储进缓存
+          wx.getStorage({
+            key: 'officialNewsReportList',
+            success: res => {
+              console.log(res);
+              // 当前时间戳
+              let nowTime = new Date().getTime();
+              // 消息个数
+              let unReadNum = res.data.unReadNum + 1;
+              // 设置页面显示信息
+              this.setData({
+                // 官方消息显示消息数量
+                officialNewsNum: unReadNum,
+                // 官方消息显示最新消息时间
+                officialNewsTime: timeTools.mailboxShowMessageTime(nowTime)
+              })
+              // 将拉取到的月报对象存入数组
+              res.data.reportList.unshift(reportItem);
+              // 存储请求到的月报对象到数组
+              wx.setStorage({
+                key: 'officialNewsReportList',
+                data: {
+                  time: nowTime,
+                  unReadNum: unReadNum,
+                  reportList: res.data.reportList
+                },
+              })
+            },
+            fail: res => {
+              console.log(res);
+            }
+          })
         }
       })
+
+
+
+    } else {
+      console.log('--- 时间未满，不拉取月报 ---');
     }
   },
   // API方法
@@ -268,6 +329,8 @@ Page({
   timeToGetData(openId) {
     // 获取接口数据
     this.apiNumberData(openId);
+    // 拉取官方消息
+    this.isGetMonthReport(this.data.officialNewsLastTime);
   },
   // 置空消息列表数量
   setMessageListNum(index) {
@@ -358,7 +421,7 @@ Page({
       setTimeInterVal = setInterval(() => {
         /* 拉取数据 */
         this.timeToGetData(app.globalData.openid);
-      }, 15000);
+      }, timeInterVal);
     } else {
       console.log('--- 未授权！不进行轮询拉取 ---');
     }

@@ -1,6 +1,6 @@
 // Yeo/YeoMessageNotification/YeoMessageNotification.js
 // 最大显示字数
-let MaxNum = 15;
+let MaxNum = 16;
 Component({
   /**
    * 组件的属性列表
