@@ -33,7 +33,12 @@ Page({
     isLoading: '',
     slideStart: [],
     // 记录上一次的touchMove时间戳
-    beforeTime: 0
+    beforeTime: 0,
+
+    // isLoading: '',
+    slideStart_Complain: [],
+    // 记录上一次的touchMove时间戳
+    beforeTime_Complain: 0
 
   },
 
@@ -68,7 +73,42 @@ Page({
         isLoading: 'yeo-start-loading'
       })
       this.onPullDownDiary();
-      console.log('------------------ 下拉刷新 ------------------');
+      console.log('------------------ 下拉刷新 公开日记 ------------------');
+    }
+
+  },
+  // 吐槽大会loading的touchMove
+  touchComplainStartTap(e) {
+    this.setData({
+      slideStart_Complain: e.touches[0],
+    })
+  },
+  // 吐槽大会loading开始触摸事件
+  touchComplainMoveTap(e) {
+    // 获取当前滑动时间
+    let nowTime = new Date().getTime();
+    if (nowTime - this.data.beforeTime_Complain <= 2000) {
+      return;
+    } else {
+      this.setData({
+        beforeTime_Complain: nowTime
+      })
+    }
+    let slideStart = this.data.slideStart_Complain;
+    let slideMove = e.touches[0];
+    let startX = slideStart.pageX;
+    let startY = slideStart.pageY;
+    let moveEndX = slideMove.pageX;
+    let moveEndY = slideMove.pageY;
+    let X = moveEndX - startX;
+    let Y = moveEndY - startY;
+    if (Math.abs(Y) > Math.abs(X) && Y > 0 && this.data.pageScrollTop <= 30) {
+      // 下拉刷新
+      this.setData({
+        isLoading: 'yeo-start-loading'
+      })
+      this.onPullDownComplain();
+      console.log('------------------ 下拉刷新 吐槽大会 ------------------');
     }
 
   },
@@ -172,9 +212,10 @@ Page({
     // 获得改变后的tab索引
     let curIndex = e.detail.index;
     this.setData({
-      tabCurIndex: curIndex
+      tabCurIndex: curIndex,
+      // 取消当前正在loading的图标
+      isLoading: 'yeo-end-loading'
     })
-
   },
   // 监听页面滚动
   onPageScroll(e) {
@@ -370,37 +411,33 @@ Page({
       }
     })
   },
-  // // 下拉刷新（吐槽大会）
-  // onPullDownComplain() {
-  //   // 吐槽大会请求数据
-  //   requestData.squareComplain(1).then(res => {
-  //     return new Promise((resolve, reject) => {
-  //       // 获取吐槽大会对象
-  //       let complianObj = res.data.data;
-  //       // 获取吐槽数组
-  //       let complianList = complianObj.list;
-  //       // 获取吐槽大会当前页
-  //       complianPageNum = complianObj.pageNum;
-  //       // 记录当前请求页是否为最后一页
-  //       isLastComplianPageNum = complianObj.isLastPage;
-  //       console.log(complianObj);
-  //       this.setData({
-  //         complianArr: complianList
-  //       });
-  //       resolve('success');
-  //     })
-  //   }).then(res => {
-  //     if (res == 'success') {
-  //       this.setData({
-  //         'pull.isLoading': false
-  //       })
-  //       wx.showToast({
-  //         title: '刷新成功',
-  //         icon: 'none'
-  //       })
-  //     }
-  //   })
-  // },
+  // 下拉刷新（吐槽大会）
+  onPullDownComplain() {
+    // 吐槽大会请求数据
+    requestData.squareComplain(1).then(res => {
+      return new Promise((resolve, reject) => {
+        // 获取吐槽大会对象
+        let complianObj = res.data.data;
+        // 获取吐槽数组
+        let complianList = complianObj.list;
+        console.log(complianObj);
+        this.setData({
+          // 获取吐槽大会当前页
+          complianPageNum: complianObj.pageNum,
+          // 记录当前请求页是否为最后一页
+          isLastComplianPageNum: complianObj.isLastPage,
+          complianArr: complianList
+        });
+        resolve('success');
+      })
+    }).then(res => {
+      if (res == 'success') {
+        this.setData({
+          isLoading: 'yeo-end-loading'
+        })
+      }
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

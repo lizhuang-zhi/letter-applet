@@ -26,7 +26,7 @@
 
   <van-tab title="吐槽大会" name='1'>
     <!-- 吐槽大会 -->
-    <view class="complain">
+    <view class="complain" bindtouchmove="touchComplainMoveTap" bindtouchstart="touchComplainStartTap">
 
       <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}'
         commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap">
@@ -48,4 +48,4 @@
 
 
 <!-- loading组件 -->
-<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='../../images/loader-2.gif'></yeo-pull-refresh>
+<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='../../images/loader.gif'></yeo-pull-refresh>
