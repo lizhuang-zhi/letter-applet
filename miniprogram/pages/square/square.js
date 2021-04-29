@@ -25,44 +25,50 @@ Page({
     isLastDiaryPage: false,
     // 记录当前请求页是否为最后一页（吐槽大会）
     isLastComplianPageNum: false,
+
+
     /* 
       loading-part组件
     */
-    pull: {
-      isLoading: false,
-      loading: '../../images/loading-2.gif',
-      pullText: '正在加载'
-    },
+    isLoading: '',
     slideStart: [],
-    moveTime: 0,
+    // 记录上一次的touchMove时间戳
+    beforeTime: 0
 
   },
 
-  // 监听下拉刷新事件
-  refresh(e) {
-    // 获取页面的ScrollTop
-    let pageScrollTop = this.data.pageScrollTop;
-    // 获取当前tab索引
-    let currentTab = this.data.tabCurIndex;
-    // 当距离顶部距离小于等于30px才可以触发下拉刷新
-    if (pageScrollTop <= 30 && currentTab == 0) {
-      console.log('刷新日记', e)
+  // 公开日记loading的touchMove
+  touchDiaryStartTap(e) {
+    this.setData({
+      slideStart: e.touches[0],
+    })
+  },
+  // 公开日记loading开始触摸事件
+  touchDiaryMoveTap(e) {
+    // 获取当前滑动时间
+    let nowTime = new Date().getTime();
+    if (nowTime - this.data.beforeTime <= 2000) {
+      return;
+    } else {
       this.setData({
-        'pull.isLoading': true,
-        'pull.loading': '../../images/loading-2.gif',
-        'pull.pullText': '正在加载',
-      });
-      // 下拉刷新请求日记
-      // this.onPullDownDiary();
-    } else if (pageScrollTop <= 30 && currentTab == 1) {
-      console.log('刷新吐槽', e)
+        beforeTime: nowTime
+      })
+    }
+    let slideStart = this.data.slideStart;
+    let slideMove = e.touches[0];
+    let startX = slideStart.pageX;
+    let startY = slideStart.pageY;
+    let moveEndX = slideMove.pageX;
+    let moveEndY = slideMove.pageY;
+    let X = moveEndX - startX;
+    let Y = moveEndY - startY;
+    if (Math.abs(Y) > Math.abs(X) && Y > 0 && this.data.pageScrollTop <= 30) {
+      // 下拉刷新
       this.setData({
-        'pull.isLoading': true,
-        'pull.loading': '../../images/loading-2.gif',
-        'pull.pullText': '正在加载',
-      });
-      // 下拉刷新请求吐槽
-      // this.onPullDownComplain();
+        isLoading: 'yeo-start-loading'
+      })
+      this.onPullDownDiary();
+      console.log('------------------ 下拉刷新 ------------------');
     }
 
   },
@@ -262,7 +268,7 @@ Page({
         let complianList = complianObj.list;
         // 原吐槽大会数组
         let complianArr = this.data.complianArr;
-        
+
         console.log(complianList);
         // 合并二次请求对象与原对象
         this.setData({
@@ -318,55 +324,52 @@ Page({
     }
 
   },
-  // // 下拉刷新（公开日记）
-  // onPullDownDiary() {
-  //   //公开日记数据
-  //   requestData.squareDiary(1).then(res => {
-  //     return new Promise((resolve, reject) => {
-  //       // 日记对象
-  //       let diaryObj = res.data.data;
-  //       // 日记数组
-  //       let diaryList = diaryObj.list;
-  //       // 记录公开日记是否为最后一页
-  //       isLastDiaryPage = diaryObj.isLastPage;
-  //       console.log(diaryObj);
-  //       diaryList.forEach(item => {
-  //         // 修改天气显示格式
-  //         item.weather = weather.weatherWordsToPic(item.weather);
-  //         // 修改日期显示格式
-  //         item.date = timeTools.squareDiaryTime(item.date);
-  //       });
-  //       this.setData({
-  //         diaryArr: diaryList
-  //       })
+  // 下拉刷新（公开日记）
+  onPullDownDiary() {
+    //公开日记数据
+    requestData.squareDiary(1).then(res => {
+      return new Promise((resolve, reject) => {
+        // 日记对象
+        let diaryObj = res.data.data;
+        // 日记数组
+        let diaryList = diaryObj.list;
+        console.log(diaryObj);
+        diaryList.forEach(item => {
+          // 修改天气显示格式
+          item.weather = weather.weatherWordsToPic(item.weather);
+          // 修改日期显示格式
+          item.date = timeTools.squareDiaryTime(item.date);
+        });
+        this.setData({
+          // 记录公开日记是否为最后一页
+          isLastDiaryPage: diaryObj.isLastPage,
+          diaryArr: diaryList
+        })
 
-  //       /* 
-  //         日记浏览量 --> 数据存储至缓存
-  //       */
-  //       let newObj = {};
-  //       for (let ele of diaryList) {
-  //         newObj[ele.id] = parseInt(ele.number);
-  //       };
-  //       console.log(newObj);
-  //       wx.setStorage({
-  //         key: 'diaryView',
-  //         data: newObj,
-  //       });
+        /* 
+          日记浏览量 --> 数据存储至缓存
+        */
+        let newObj = {};
+        for (let ele of diaryList) {
+          newObj[ele.id] = parseInt(ele.number);
+        };
+        console.log(newObj);
+        wx.setStorage({
+          key: 'diaryView',
+          data: newObj,
+        });
 
-  //       resolve('success')
-  //     })
-  //   }).then(res => {
-  //     if (res == 'success') {
-  //       this.setData({
-  //         'pull.isLoading': false
-  //       });
-  //       wx.showToast({
-  //         title: '刷新成功',
-  //         icon: 'none'
-  //       })
-  //     }
-  //   })
-  // },
+        resolve('success')
+      })
+    }).then(res => {
+      if (res == 'success') {
+        // 结束刷新
+        this.setData({
+          isLoading: 'yeo-end-loading'
+        })
+      }
+    })
+  },
   // // 下拉刷新（吐槽大会）
   // onPullDownComplain() {
   //   // 吐槽大会请求数据

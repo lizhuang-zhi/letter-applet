@@ -126,6 +126,8 @@
     "yeo-frame": "/Yeo/YeoFrame/YeoFrame",
     "yeo-title": "/Yeo/YeoTitle/YeoTitle",
     "yeo-frame-view": "/Yeo/YeoFrameView/YeoFrameView",
+    "yeo-pull-refresh": "/Yeo/YeoPullRefresh/YeoPullRefresh",
+
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-popup": "@vant/weapp/popup/index"
