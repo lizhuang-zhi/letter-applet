@@ -36,7 +36,8 @@
         "pages/myinfomore/myinfomore",
         "pages/mystamp/mystamp",
         "pages/myachievements/myachievements",
-        "pages/timeline/timeline"
+        "pages/timeline/timeline",
+        "pages/historyletter/historyletter"
       ]
     }
   ],
@@ -127,7 +128,6 @@
     "yeo-title": "/Yeo/YeoTitle/YeoTitle",
     "yeo-frame-view": "/Yeo/YeoFrameView/YeoFrameView",
     "yeo-pull-refresh": "/Yeo/YeoPullRefresh/YeoPullRefresh",
-
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-popup": "@vant/weapp/popup/index"

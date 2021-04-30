@@ -484,6 +484,24 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取历史信件
+  historyLetter(openId,pageNum) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getHistoryLetter(),
+        data: {
+          openId: openId,
+          pageNum: pageNum
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

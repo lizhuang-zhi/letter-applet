@@ -91,7 +91,7 @@ Page({
       // 渲染显示
       this.setData({
         releaseArr: releaseArr,
-        nickName: releaseObj.nickName,
+        nickName: releaseObj.nickname,
         avatarUrl: releaseObj.avatarUrl
       })
       /* 初始化图表 */

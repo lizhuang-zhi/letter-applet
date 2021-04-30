@@ -1,12 +1,18 @@
 /* 顶部建议 */
 .top-tips{
-  width: 90vw;
-  margin: 30rpx auto;
+  /* width: 90vw; */
+  margin: 30rpx 40rpx;
 }
 /* 顶部提示文字内容 */
 .top-tips .tip-text{
     color: gray;
 }
+/* 规则建议列表 */
+.prompt-list {
+  margin: 0 40rpx;
+}
+
+/* 我已了解 */
 .btn-part {
   margin: 0 auto;
   width: 240rpx;

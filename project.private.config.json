@@ -131,6 +131,11 @@
           "pathName": "packageMyInfo/pages/timeline/timeline",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "历史信件",
+          "pathName": "packageMyInfo/pages/historyletter/historyletter",
+          "scene": null
         }
       ]
     }

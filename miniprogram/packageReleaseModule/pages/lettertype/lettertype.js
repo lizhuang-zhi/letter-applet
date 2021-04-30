@@ -388,7 +388,7 @@ Page({
       tapIds,
       openId
     };
-
+    console.log(letterObj);
     // 标签选择不能为空
     if (selectSorrowArr.length == 0) {
       wx.showToast({

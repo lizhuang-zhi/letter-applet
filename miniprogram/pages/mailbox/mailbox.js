@@ -115,7 +115,8 @@ Page({
   },
   // 跳转历史信件
   ToHistoryLetter() {
-
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/historyletter/historyletter');
   },
   //跳转到最新活动
   ToLatestevents() {
@@ -247,7 +248,7 @@ Page({
       let nowTime = new Date().getTime();
       let reportItem = {};
       reportItem.time = nowTime;
-      requestData.monthReport(openId,nowTime).then(res => {
+      requestData.monthReport(openId, nowTime).then(res => {
         return new Promise((resolve, reject) => {
           console.log(res);
           // 获取数据集合

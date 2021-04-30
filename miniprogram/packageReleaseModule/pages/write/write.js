@@ -83,7 +83,7 @@ Page({
       wx.navigateTo({
         url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
       })
-      console.log('执行跳转 ---> ' + senderOpenId);
+      console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
     }
 
   },

@@ -1,0 +1,4 @@
+/* 收件信息 */
+.message-box {
+  margin: 30rpx 40rpx 20rpx;
+}

@@ -338,16 +338,14 @@ Page({
         let diaryObj = res.data.data;
         // 日记数组
         let diaryList = diaryObj.list;
-        // 记录公开日记是否为最后一页
-        this.setData({
-          isLastDiaryPage: diaryObj.isLastPage
-        })
         console.log(diaryObj);
         diaryList.forEach(item => {
           item.weather = weather.weatherWordsToPic(item.weather);
           item.date = timeTools.squareDiaryTime(item.date);
         })
         this.setData({
+          // 记录公开日记是否为最后一页
+          isLastDiaryPage: diaryObj.isLastPage,
           diaryArr: this.data.diaryArr.concat(diaryList)
         });
         /* 
@@ -367,6 +365,10 @@ Page({
   },
   // 下拉刷新（公开日记）
   onPullDownDiary() {
+    // 将请求页数重置为1
+    this.setData({
+      complianPageNum: 1
+    })
     //公开日记数据
     requestData.squareDiary(1).then(res => {
       return new Promise((resolve, reject) => {
@@ -413,6 +415,10 @@ Page({
   },
   // 下拉刷新（吐槽大会）
   onPullDownComplain() {
+    // 将请求页数重置为1
+    this.setData({
+      complianPageNum: 1
+    })
     // 吐槽大会请求数据
     requestData.squareComplain(1).then(res => {
       return new Promise((resolve, reject) => {
