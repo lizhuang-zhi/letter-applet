@@ -583,20 +583,29 @@ Page({
     console.log(infoObj);
     requestData.indexStampReply(infoObj).then(res => {
       return new Promise((resolve, reject) => {
-        // 显示回信成功（同步）
-        wx.showToast({
-          title: '回信成功',
-          image: '../../images/confirm.png',
-          duration: 1300
-        });
-        // 置0解答时间并记录当前信件解答时间
-        wx.setStorage({
-          key: 'userBackLetterNum',
-          data: {
-            letterBackNum: 0,
-            judgeTime: new Date()
-          }
-        })
+        console.log(res.data);
+        if (res.data.resultCode == 200) {
+          // 显示回信成功（同步）
+          wx.showToast({
+            title: '回信成功',
+            image: '../../images/confirm.png',
+            duration: 1300
+          });
+          // 置0解答时间并记录当天晚12点时间
+          wx.setStorage({
+            key: 'userBackLetterNum',
+            data: {
+              letterBackNum: 0,
+              judgeTime: new Date(new Date().setHours(0, 0, 0, 0))
+            }
+          })
+        }else if(res.data.resultCode == 500){
+          wx.showToast({
+            title: '服务器出了个小差~',
+            icon: 'none'
+          })
+        }
+
         resolve('success');
       })
     }).then(res => {

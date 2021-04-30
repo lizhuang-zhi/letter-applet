@@ -1,5 +1,6 @@
 import echarts from '../../ec-canvas/echarts';
 let requestData = require('../../../utils/request');
+let pubTools = require('../../../utils/public');
 let app = getApp();
 Page({
 
@@ -22,19 +23,7 @@ Page({
     },
 
     /* 情感分析数组 */
-    emotionArr: [{
-        tit: '解忧',
-        cont: '在去年一年的时间里，您一共帮助19位朋友解答了忧愁，综合分析您的解答方向，评测您为积极性情感。'
-      },
-      {
-        tit: '日记',
-        cont: '在生活中，您总是喜欢记录着点滴，用鼓励带动自我积极，您做的很棒！'
-      },
-      {
-        tit: '吐槽',
-        cont: '吐槽虽然可以发泄出自己想说的话，但是需要自我斟酌后再吐槽，希望您能在今后的言语中多带积极性的词汇，这样可以正面的影响自己。'
-      },
-    ]
+    emotionArr: []
   },
 
   // 赋值后台数据集
@@ -52,7 +41,29 @@ Page({
     })
     // 初始化图表
     this.init_echarts();
-    wx.hideLoading({ });
+    wx.hideLoading({});
+  },
+  // 渲染文字数据
+  setStringData(dataObj) {
+    this.setData({
+      emotionArr: [{
+          tit: '解忧',
+          cont: '小主，上个月一共发布了12篇解忧，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+        },
+        {
+          tit: '日记',
+          cont: '小主，上个月一共发布了12篇日记，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+        },
+        {
+          tit: '吐槽',
+          cont: '小主，上个月一共发布了12篇吐槽，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+        },
+        {
+          tit: '小结',
+          cont: '亲爱的小主，通过数据分析，上月您的情绪倾向为' + '积极，状态良好，希望小主继续保持这样的情绪'
+        }
+      ]
+    })
   },
   //初始化图表
   init_echarts: function () {
@@ -278,8 +289,10 @@ Page({
         let dataObj = res.data.reportList[reportIndex].data;
         // 赋值数据
         this.handleData(dataObj);
+        // 渲染描述文字
+        this.setStringData(dataObj.lastValue);
       },
-      fail: res =>{
+      fail: res => {
         console.log(res);
       }
     })

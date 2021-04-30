@@ -3,7 +3,7 @@ let requestLetterline = require('../../../utils/public');
 let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 // 设定定时器轮询今日解答次数
-let backNumTimeOut = null;
+// let backNumTimeOut = null;
 Page({
 
   /**
@@ -49,7 +49,7 @@ Page({
           wx.navigateTo({
             url: '/packageReleaseModule/pages/attention/attention?type=解答' + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
           })
-        }else {
+        } else {
           wx.showToast({
             title: '今日已没有解答次数~',
             icon: 'none'
@@ -127,34 +127,32 @@ Page({
    */
   onShow: function () {
     console.log('sorrowletter页面 ----------- 监听页面显示');
-    backNumTimeOut = setInterval(() => {
-      wx.getStorage({
-        key: 'userBackLetterNum',
-        success: res => {
-          // 获取上一次解答时间
-          let beTime = res.data.judgeTime;
-          // 获取上一次解答时间戳
-          let beforeTime = new Date(beTime).getTime();
-          // 获取当前时间
-          let nowTime = new Date().getTime();
-          // 一天的时间戳(毫秒)
-          let oneDayTime = 24 * 3600 * 1000;
-          if(nowTime - beforeTime >= oneDayTime) {
-            wx.setStorage({
-              key: 'userBackLetterNum',
-              data: {
-                letterBackNum: 1,
-                judgeTime: beTime
-              }
-            })
-            this.setData({
-              LastTimes: 1
-            })
-          }
 
+    wx.getStorage({
+      key: 'userBackLetterNum',
+      success: res => {
+        // 获取缓存时间
+        let beforeTime = res.data.judgeTime;
+        // 获取缓存可解答次数
+        let letterBackNum = res.data.letterBackNum;
+        // 获取当前时间
+        let nowTime = new Date().getTime();
+        if (nowTime > beforeTime && letterBackNum == 0) {
+          console.log('-- 重刷新解答次数 --');
+          wx.setStorage({
+            key: 'userBackLetterNum',
+            data: {
+              letterBackNum: 1,
+              judgeTime: new Date()
+            }
+          })
+          this.setData({
+            LastTimes: 1
+          })
         }
-      })
-    },15000)
+
+      }
+    })
 
   },
 
@@ -171,8 +169,8 @@ Page({
   onUnload: function () {
     console.log('sorrowletter页面 ---> 监听页面卸载');
     // 消掉计时器
-    clearTimeout(backNumTimeOut);
-    
+    // clearTimeout(backNumTimeOut);
+
   },
 
   /**

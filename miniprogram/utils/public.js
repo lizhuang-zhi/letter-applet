@@ -84,6 +84,15 @@ let publicTools = {
         img_url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1284039363,2759537733&fm=26&gp=0.jpg'
       }
     }
+  },
+
+  // 数据分析返回情绪
+  dataAnalysisBackString() {
+    
+  },
+  // 情绪文字数据集
+  dataBaseString() {
+
   }
 
 
