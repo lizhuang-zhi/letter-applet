@@ -129,6 +129,7 @@ App({
             },
             method: 'GET',
             success: function (res) {
+              console.log(res);
               // 获取返回数据
               let backInfo = JSON.parse(res.data.data);
               // 将openid赋值全局变量
