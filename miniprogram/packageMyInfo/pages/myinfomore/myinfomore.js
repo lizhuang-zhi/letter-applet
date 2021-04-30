@@ -45,22 +45,41 @@ Page({
   },
   // 渲染文字数据
   setStringData(dataObj) {
+    // 获取解忧数组
+    let sorrowArr = dataObj.letter;
+    // 获取日记数组
+    let diaryArr = dataObj.diary;
+    // 获取吐槽数组
+    let complainArr = dataObj.spit_groove;
+    // 解忧的总和
+    let sum_sorrow = dataObj.letter.reduce((preVal, curVal) => {
+      return preVal + curVal.value;
+    }, 0);
+    // 日记的总和
+    let sum_diary = dataObj.diary.reduce((preVal, curVal) => {
+      return preVal + curVal.value;
+    }, 0);
+    // 吐槽的总和
+    let sum_complain = dataObj.spit_groove.reduce((preVal, curVal) => {
+      return preVal + curVal.value;
+    }, 0);
+
     this.setData({
       emotionArr: [{
           tit: '解忧',
-          cont: '小主，上个月一共发布了12篇解忧，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+          cont: '小主，上个月一共发布了' + sum_sorrow + '篇解忧，其中' + sorrowArr[0].value + '篇的情感倾向为愤怒状态，' + sorrowArr[1].value + '篇为低落状态，' + sorrowArr[2].value + '篇为温和状态，' + sorrowArr[3].value + '篇为喜悦状态。'
         },
         {
           tit: '日记',
-          cont: '小主，上个月一共发布了12篇日记，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+          cont: '小主，上个月一共发布了' + sum_diary + '篇日记，其中' + diaryArr[0].value + '篇的情感倾向为愤怒状态，' + diaryArr[1].value + '篇为低落状态，' + diaryArr[2].value + '篇为温和状态，' + diaryArr[3].value + '篇为喜悦状态。'
         },
         {
           tit: '吐槽',
-          cont: '小主，上个月一共发布了12篇吐槽，其中7篇的情感倾向为温和状态，3篇为喜悦状态，2篇为低落状态。'
+          cont: '小主，上个月一共发布了' + sum_complain + '篇吐槽，其中' + complainArr[0].value + '篇的情感倾向为愤怒状态，' + complainArr[1].value + '篇为低落状态，' + complainArr[2].value + '篇为温和状态，' + complainArr[3].value + '篇为喜悦状态。'
         },
         {
           tit: '小结',
-          cont: '亲爱的小主，通过数据分析，上月您的情绪倾向为' + '积极，状态良好，希望小主继续保持这样的情绪'
+          cont: '亲爱的小主，通过数据分析，上月您的情绪倾向为' + pubTools.dataAnalysisBackString(dataObj)
         }
       ]
     })
