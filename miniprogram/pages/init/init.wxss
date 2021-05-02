@@ -1,13 +1,17 @@
 page {
-  background-image: url('https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/92f3e27c931b42e1be995448f425ee66.jpg!sswm');
-  /* 
-    备用图片
-    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/617bb3e22c7b413a865f984b60b75109.jpg!sswm
+  /* 背景图 */
+  --bg-0: 'https://z3.ax1x.com/2021/05/02/gZT958.jpg';
+  --bg-1: 'https://z3.ax1x.com/2021/05/02/gZTpUf.jpg';
+  --bg-2: 'https://z3.ax1x.com/2021/05/02/gZTSVP.jpg';
+  --bg-3: 'https://z3.ax1x.com/2021/05/02/gZTPPS.jpg';
+  --bg-4: 'https://z3.ax1x.com/2021/05/02/gZTi8g.png';
+  --bg-5: 'https://z3.ax1x.com/2021/05/02/gZTVrn.png';
+  --bg-6: 'https://z3.ax1x.com/2021/05/02/gZTkvj.jpg';
+  --bg-7: 'https://z3.ax1x.com/2021/05/02/gZTF2Q.jpg';
+  --bg-8: 'https://z3.ax1x.com/2021/05/02/gZTEKs.jpg';
+  --bg-9: 'https://z3.ax1x.com/2021/05/02/gZTZbq.jpg';
 
-    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/92f3e27c931b42e1be995448f425ee66.jpg!sswm
-
-    https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/567c237cb4b245859b6cbd8467d75e65.jpg!sswm
-  */
+  background-image: url('https://z3.ax1x.com/2021/05/02/gZTi8g.png');
   background-size: cover;
 }
 
