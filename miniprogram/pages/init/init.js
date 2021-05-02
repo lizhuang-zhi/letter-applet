@@ -19,10 +19,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // let goIndexPageTime = setTimeout(() => {
-    //   this.goIndex();
-    //   clearTimeout(goIndexPageTime);
-    // }, 5000);
+    let goIndexPageTime = setTimeout(() => {
+      this.goIndex();
+      clearTimeout(goIndexPageTime);
+    }, 5000);
   },
 
   /**
