@@ -18,13 +18,10 @@ let tools = {
   indexPostBoxTime(time) {
     // 一周的时间戳
     let oneWeekStamp = 24 * 60 * 60 * 1000 * 7;
-
     // 获取当前时间
     let nowTime = new Date();
-
     // 获取当前时间为星期几（1-7）
     let nowTimeStamp = nowTime.getDay() == 0 ? 7 : nowTime.getDay();
-
     // 获取传入时间
     let argTime = new Date(time);
     // 获取传入时间月份和日期

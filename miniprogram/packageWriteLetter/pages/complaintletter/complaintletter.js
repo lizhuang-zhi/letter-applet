@@ -176,6 +176,7 @@ Page({
           // 评论集合
           let commentList = commentObj.list;
           console.log(commentList);
+          // 修改评论时间显示
           commentList.forEach(item => {
             item.date = timeTools.indexPostBoxTime(item.date);
           });
@@ -186,7 +187,6 @@ Page({
           })
           resolve('success');
         }
-
       })
 
     }).then(res => {
@@ -260,7 +260,6 @@ Page({
     if (!this.data.isLastPageNum) {
       // 具体某一个吐槽评论的id
       let id = this.data.id;
-
       wx.showLoading({
         title: '加载数据...',
       }).then(res => {
@@ -272,6 +271,7 @@ Page({
           let commentObj = res.data.data;
           // 评论集合
           let commentList = commentObj.list;
+          // 修改评论显示时间
           commentList.forEach(item => {
             item.date = timeTools.indexPostBoxTime(item.date);
           });

@@ -93,6 +93,36 @@ Component({
     model: {
       type: String,
       value: 'white'
+    },
+    // 是否显示文字审核
+    isShowStatus: {
+      type: Boolean,
+      value: true
+    },
+    // 审核文字状态
+    statusWords: {
+      type: String,
+      value: '待审核'
+    },
+    // 审核文字位置
+    statusWordsTextAlign: {
+      type: String,
+      value: 'left'
+    },
+    // 审核文字颜色
+    statusWordsColor: {
+      type: String,
+      value: '#188AFC'
+    },
+    // 审核文字大小
+    statusWordsFontSize: {
+      type: Number,
+      value: 25
+    },
+    // 审核文字距离上外边距
+    statusWordsMarginTop: {
+      type: Number,
+      value: 20
     }
 
   },

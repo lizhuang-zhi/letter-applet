@@ -4,14 +4,12 @@
     content='{{complianObj.content}}'></yeo-text-content>
 </view>
 
-
 <!-- 评论组件 -->
 <yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent'
   initValue='{{initValue}}'>
   <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}' userName='{{item.userVo.penName}}'
-    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index'></yeo-message-card>
+    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index' contentPaddingBot='20' statusWords='待审核'></yeo-message-card>
 </yeo-comment>
-
 
 <!-- loading组件 -->
 <yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>
