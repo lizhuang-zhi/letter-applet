@@ -26,7 +26,6 @@ Page({
     // 记录当前请求页是否为最后一页（吐槽大会）
     isLastComplianPageNum: false,
 
-
     /* 
       loading-part组件
     */
@@ -72,6 +71,7 @@ Page({
       this.setData({
         isLoading: 'yeo-start-loading'
       })
+      // 刷新日记前十条内容
       this.onPullDownDiary();
       console.log('------------------ 下拉刷新 公开日记 ------------------');
     }
@@ -115,6 +115,8 @@ Page({
 
   // 跳转日记内容
   ToDiaryContent(e) {
+    // 获取日记数组
+    let diaryArr = this.data.diaryArr;
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
     // 获取点击的日记对象的浏览量
@@ -143,9 +145,7 @@ Page({
             viewNum: parseInt(viewNum) + 1
           };
           changeArr.push(obj);
-
         }
-
         wx.setStorage({
           key: 'changeDiaryArr',
           data: changeArr,
@@ -166,23 +166,35 @@ Page({
     /* 
       将对应日记浏览量修改，并存储至缓存
     */
-    wx.getStorage({
-      key: 'diaryView',
-      success: res => {
-        // 获取缓存数据
-        let dataObj = res.data;
-        // 为新增数据添加浏览量
-        dataObj[id]++;
+    // wx.getStorage({
+    //   key: 'diaryView',
+    //   success: res => {
+    //     // 获取缓存数据
+    //     let dataObj = res.data;
+    //     // 为新增数据添加浏览量
+    //     dataObj[id]++;
 
-        /* 将改动存入显示总缓存 */
-        wx.setStorage({
-          key: 'diaryView',
-          data: dataObj
-        });
-      },
-      fail: res => {
-        console.log(res);
+    //     /* 将改动存入显示总缓存 */
+    //     wx.setStorage({
+    //       key: 'diaryView',
+    //       data: dataObj
+    //     });
+    //   },
+    //   fail: res => {
+    //     console.log(res);
+    //   }
+    // })
+
+    
+    // 获取对应的日记，增加显示的浏览量
+    diaryArr.forEach(item => {
+      if(item.id == id) {
+        item.number++;
       }
+    });
+    // 重新渲染
+    this.setData({
+      diaryArr: diaryArr
     })
 
     wx.navigateTo({
@@ -267,15 +279,15 @@ Page({
       /* 
         日记浏览量 --> 数据存储至缓存
       */
-      let newObj = {};
-      for (let ele of diaryList) {
-        newObj[ele.id] = parseInt(ele.number);
-      };
-      console.log(newObj);
-      wx.setStorage({
-        key: 'diaryView',
-        data: newObj,
-      })
+      // let newObj = {};
+      // for (let ele of diaryList) {
+      //   newObj[ele.id] = parseInt(ele.number);
+      // };
+      // console.log(newObj);
+      // wx.setStorage({
+      //   key: 'diaryView',
+      //   data: newObj,
+      // })
     })
 
     // 吐槽大会请求数据
@@ -369,42 +381,37 @@ Page({
     this.setData({
       complianPageNum: 1
     })
-    //公开日记数据
-    requestData.squareDiary(1).then(res => {
-      return new Promise((resolve, reject) => {
-        // 日记对象
-        let diaryObj = res.data.data;
-        // 日记数组
-        let diaryList = diaryObj.list;
-        console.log(diaryObj);
-        diaryList.forEach(item => {
-          // 修改天气显示格式
-          item.weather = weather.weatherWordsToPic(item.weather);
-          // 修改日期显示格式
-          item.date = timeTools.squareDiaryTime(item.date);
-        });
-        this.setData({
-          // 记录公开日记是否为最后一页
-          isLastDiaryPage: diaryObj.isLastPage,
-          diaryArr: diaryList
+    // 更新日记浏览量
+    app.updateDiaryLooksNum().then(res => {
+      console.log(res);
+      if (res == 'success') {
+        //公开日记数据
+        return requestData.squareDiary(1).then(res => {
+          return new Promise((resolve, reject) => {
+            // 日记对象
+            let diaryObj = res.data.data;
+            // 日记数组
+            let diaryList = diaryObj.list;
+            console.log(diaryObj);
+            diaryList.forEach(item => {
+              // 修改天气显示格式
+              item.weather = weather.weatherWordsToPic(item.weather);
+              // 修改日期显示格式
+              item.date = timeTools.squareDiaryTime(item.date);
+            });
+            this.setData({
+              // 记录公开日记是否为最后一页
+              isLastDiaryPage: diaryObj.isLastPage,
+              diaryArr: diaryList
+            })
+            resolve('success');
+          })
         })
-
-        /* 
-          日记浏览量 --> 数据存储至缓存
-        */
-        let newObj = {};
-        for (let ele of diaryList) {
-          newObj[ele.id] = parseInt(ele.number);
-        };
-        console.log(newObj);
-        wx.setStorage({
-          key: 'diaryView',
-          data: newObj,
-        });
-
-        resolve('success')
-      })
+      } else {
+        console.log('---- 更新日记浏览量出错 ----');
+      }
     }).then(res => {
+      console.log(res);
       if (res == 'success') {
         // 结束刷新
         this.setData({
@@ -412,6 +419,7 @@ Page({
         })
       }
     })
+
   },
   // 下拉刷新（吐槽大会）
   onPullDownComplain() {
@@ -474,25 +482,25 @@ Page({
     /* 
       从缓存中获取改后的浏览量
     */
-    wx.getStorage({
-      key: 'diaryView',
-      success: res => {
-        // 获取缓存数据
-        let data = res.data;
-        console.log(data);
-        // 获取缓存数据中的属性值并转为数组
-        let changeViewArr = Object.values(data);
-        // 获取日记数组
-        let diaryArr = this.data.diaryArr;
-        for (let i = 0; i < diaryArr.length; i++) {
-          diaryArr[i].number = changeViewArr[i];
-        }
-        // 渲染到页面
-        this.setData({
-          diaryArr: diaryArr
-        })
-      }
-    })
+    // wx.getStorage({
+    //   key: 'diaryView',
+    //   success: res => {
+    //     // 获取缓存数据
+    //     let data = res.data;
+    //     console.log(data);
+    //     // 获取缓存数据中的属性值并转为数组
+    //     let changeViewArr = Object.values(data);
+    //     // 获取日记数组
+    //     let diaryArr = this.data.diaryArr;
+    //     for (let i = 0; i < diaryArr.length; i++) {
+    //       diaryArr[i].number = changeViewArr[i];
+    //     }
+    //     // 渲染到页面
+    //     this.setData({
+    //       diaryArr: diaryArr
+    //     })
+    //   }
+    // })
 
     /* 
       发布日记成功后,再次进入,拉取一次

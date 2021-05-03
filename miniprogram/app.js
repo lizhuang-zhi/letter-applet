@@ -243,7 +243,6 @@ App({
             })
             resolve('success');
           })
-
         },
         fail: res => {
           console.log(res);
