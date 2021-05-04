@@ -1,4 +1,4 @@
-// packageReleaseModule/pages/write/write.js
+import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
 let requestData = require('../../../utils/request');
 let app = getApp();
 Page({
@@ -24,6 +24,9 @@ Page({
   },
   // 跳转标签选择页面
   ToChooseTag(e) {
+    wx.showLoading({
+      title: '内容审核中..',
+    })
     // 获取输入内容
     let subvalue = e.currentTarget.dataset.value;
     // 获取类型选择
@@ -37,7 +40,7 @@ Page({
         title: '请输入内容',
         icon: 'none',
         image: '../../images/input.png'
-      })
+      });
     } else if (subvalue.length < 50) {
       wx.showToast({
         title: '多写几句吧',
@@ -76,14 +79,60 @@ Page({
       //   }
       // })
 
-    } else {
+    } else { // 文字先提交审核
       console.log(subvalue);
-      // Json传输内容
-      let JsonSubvalue = JSON.stringify(subvalue);
-      wx.navigateTo({
-        url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+      requestData.textLegal(subvalue).then(res => {
+        console.log(res.data);
+        // 返回信息
+        let resBackInfo = res.data.data;
+        if (resBackInfo == 1) {
+          // 内容合规
+          // Json传输内容
+          let JsonSubvalue = JSON.stringify(subvalue);
+          wx.navigateTo({
+            url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+          })
+          console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
+          // 关闭loading
+          wx.hideLoading({});
+        } else if (resBackInfo == 2 || resBackInfo == 3) {
+          // 关闭loading
+          wx.hideLoading({});
+          // 内容不合规
+          Dialog.confirm({
+              title: '内容审核结果',
+              message: '您发布的内容不当！请修改后重试',
+              confirmButtonText: '立即修改',
+              cancelButtonText: '继续提交'
+            })
+            .then(() => {
+              // 立即修改
+              return;
+            })
+            .catch(() => {
+              // 继续提交
+              // Json传输内容
+              let JsonSubvalue = JSON.stringify(subvalue);
+              wx.navigateTo({
+                url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
+              })
+              console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
+            });
+        } else if (resBackInfo == 4) {
+          // 关闭loading
+          wx.hideLoading({});
+          // 网络错误
+          Dialog.alert({
+            title: '网络错误',
+            message: '小主，请稍后再试~',
+            theme: 'round-button',
+          }).then(() => {
+            // on close
+          });
+        }
+
+
       })
-      console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
     }
 
   },

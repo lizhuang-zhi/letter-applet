@@ -501,6 +501,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 文字违规判断
+  textLegal(textContent) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getTextLegal(),
+        data: {
+          textContent: textContent
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

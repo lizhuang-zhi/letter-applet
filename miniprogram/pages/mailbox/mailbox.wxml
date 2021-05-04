@@ -1,3 +1,6 @@
+<!-- 消息通知 -->
+<van-notify id="van-notify" />
+
 <!-- 顶部文字 -->
 <view class="top-content-box">
   <view class="top-tit">收件箱</view>
@@ -34,5 +37,4 @@
       leftPic='https://z3.ax1x.com/2021/03/25/6OTSQH.png' infoDesc='电亮你的成就' boxBgColor='#E6F8F0' bindtap="ToMyAchievement" infoTime='04-15'>
     </yeo-message-notification>
   </view>
-
 </yeo-loading-part>

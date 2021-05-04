@@ -1,4 +1,4 @@
-// miniprogram/pages/mailbox/mailbox.js
+import Notify from '../../miniprogram_npm/@vant/weapp/notify/notify';
 let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
@@ -223,7 +223,7 @@ Page({
         this.setData({
           officialNewsNum: newsNum,
           // 获取记录时间
-          officialNewsLastTime: res.data.time,
+          // officialNewsLastTime: res.data.time,
           // 官方消息显示时间
           officialNewsTime: timeTools.mailboxShowMessageTime(res.data.time)
         })
@@ -285,6 +285,14 @@ Page({
                   reportList: res.data.reportList
                 },
               })
+              // 消息通知
+              Notify({
+                message: '您有新的月报已送达~',
+                color: '#E9F1FE',
+                background: '#4C84F6',
+                safeAreaInsetTop: true,
+                duration: 2000
+              });
             },
             fail: res => {
               console.log(res);
@@ -292,8 +300,6 @@ Page({
           })
         }
       })
-
-
 
     } else {
       console.log('--- 时间未满，不拉取月报 ---');
@@ -333,8 +339,16 @@ Page({
   timeToGetData(openId) {
     // 获取接口数据
     this.apiNumberData(openId);
-    // 拉取官方消息
-    this.isGetMonthReport(this.data.officialNewsLastTime);
+    // 获取缓存中的时间
+    wx.getStorage({
+      key: 'officialNewsReportList',
+      success: res => {
+        // 上一次获取月报的时间
+        let beforeTimeToGetMonthReport = res.data.time;
+        // 拉取官方消息
+        this.isGetMonthReport(beforeTimeToGetMonthReport);
+      }
+    })
   },
   // 置空消息列表数量
   setMessageListNum(index) {

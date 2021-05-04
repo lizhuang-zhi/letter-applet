@@ -246,7 +246,7 @@ App({
         },
         fail: res => {
           console.log(res);
-          resolve('fail');
+          resolve('refreshed');
         }
       })
     })

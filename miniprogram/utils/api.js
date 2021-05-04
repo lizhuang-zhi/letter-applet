@@ -61,6 +61,8 @@ const MonthReport = prefix + '/user/getDataAnalysis';
 
 // 获取历史信件
 const HistoryLetter = prefix + '/letter/getLetterOfHistory';
+// 文字违规判断
+const TextLegal = prefix + '/user/isTextLegal';
 
 // 返回对象
 let url = {
@@ -159,6 +161,10 @@ let url = {
   // 获取历史信件
   getHistoryLetter() {
     return HistoryLetter;
+  },
+  // 文字违规判断
+  getTextLegal() {
+    return TextLegal;
   }
 
 }

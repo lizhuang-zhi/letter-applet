@@ -89,6 +89,7 @@
     "keo-empty-display": "/components/EmptyDisplay/EmptyDisplay",
     "keo-notify": "/components/Notify/Notify",
     "keo-select-mode": "/components/SelectMode/SelectMode",
+
     "yeo-search": "/Yeo/YeoSearch/YeoSearch",
     "yeo-anima-search": "/Yeo/YeoAnimaSearch/YeoAnimaSearch",
     "yeo-rotate": "/Yeo/YeoRotate/YeoRotate",
@@ -128,8 +129,12 @@
     "yeo-title": "/Yeo/YeoTitle/YeoTitle",
     "yeo-frame-view": "/Yeo/YeoFrameView/YeoFrameView",
     "yeo-pull-refresh": "/Yeo/YeoPullRefresh/YeoPullRefresh",
+    
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "van-popup": "@vant/weapp/popup/index"
+    "van-popup": "@vant/weapp/popup/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-notify": "@vant/weapp/notify/index"
   }
 }

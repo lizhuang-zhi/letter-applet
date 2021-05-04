@@ -10,3 +10,8 @@
 <view class="btn-part">
   <keo-check-button data-value="{{textValue}}" BtnText="完成" bindtap="ToChooseTag"></keo-check-button>
 </view>
+
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />
+

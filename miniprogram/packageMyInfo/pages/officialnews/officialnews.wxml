@@ -5,11 +5,11 @@
 
 
 <view class="box">
-  <keo-notify SendTime='2021-04-11' Img='https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/b24250a49f87406ba230dcdf3367ad84.jpg!sswm'></keo-notify>
+  <keo-notify SendTime='2021-04-11' Img='https://z3.ax1x.com/2021/05/04/gnNB3F.jpg'></keo-notify>
 </view>
 <view class="box">
   <keo-notify SendTime='2021-03-25' ContentText="请注意文明用语，不含低俗、暴力、血腥、搞颜色等敏感词汇" Img="https://s1.ax1x.com/2020/10/24/BVq66f.jpg"></keo-notify>
 </view>
 <view class="box">
-  <keo-notify SendTime='2021-03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/bede418dde15429d97ad12d4ddd3adec.jpg!sswm"></keo-notify>
+  <keo-notify SendTime='2021-03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://z3.ax1x.com/2021/05/04/gnN43D.jpg"></keo-notify>
 </view>

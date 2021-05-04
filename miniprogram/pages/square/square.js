@@ -185,10 +185,10 @@ Page({
     //   }
     // })
 
-    
+
     // 获取对应的日记，增加显示的浏览量
     diaryArr.forEach(item => {
-      if(item.id == id) {
+      if (item.id == id) {
         item.number++;
       }
     });
@@ -407,6 +407,11 @@ Page({
             resolve('success');
           })
         })
+      } else if (res == 'refreshed') {
+        // 数据已经是最新
+        return new Promise((resolve, reject) => {
+          resolve('refreshed');
+        })
       } else {
         console.log('---- 更新日记浏览量出错 ----');
       }
@@ -416,6 +421,27 @@ Page({
         // 结束刷新
         this.setData({
           isLoading: 'yeo-end-loading'
+        });
+        wx.showToast({
+          title: '刷新成功'
+        })
+      } else if (res == 'refreshed') {
+        // 结束刷新
+        this.setData({
+          isLoading: 'yeo-end-loading'
+        });
+        wx.showToast({
+          title: '已是最新内容~',
+          icon: 'none'
+        })
+      } else {
+        // 结束刷新
+        this.setData({
+          isLoading: 'yeo-end-loading'
+        });
+        wx.showToast({
+          title: '刷新出错，请稍后再试',
+          icon: 'none'
         })
       }
     })

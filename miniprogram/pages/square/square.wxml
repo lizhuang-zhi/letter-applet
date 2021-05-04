@@ -3,6 +3,7 @@
   tab-class='tab-class' bind:change='changeTap'>
 
   <van-tab title="公开日记" name='0'>
+
     <view class="diary" bindtouchmove="touchDiaryMoveTap" bindtouchstart="touchDiaryStartTap">
       <!-- 公开日记 -->
       <yeo-flow-waterfall-box>
@@ -25,6 +26,7 @@
   </van-tab>
 
   <van-tab title="吐槽大会" name='1'>
+
     <!-- 吐槽大会 -->
     <view class="complain" bindtouchmove="touchComplainMoveTap" bindtouchstart="touchComplainStartTap">
 
@@ -37,8 +39,6 @@
 
 </van-tabs>
 
-
-
 <!-- 回到顶部按钮 -->
 <view class="bot-fix-group" wx:if="{{fixedInputPhone}}">
   <view class="back-top" bindtap="backToTop">
@@ -46,6 +46,6 @@
   </view>
 </view>
 
-
 <!-- loading组件 -->
-<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='../../images/loading-2.gif'></yeo-pull-refresh>
+<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='../../images/loading-2.gif'>
+</yeo-pull-refresh>

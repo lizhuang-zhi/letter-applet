@@ -12,7 +12,6 @@ const chooseTagColor = '#F0934F';
 // 标签选中时的边框
 const chooseTagBorder = '1rpx solid ' + chooseTagColor;
 
-
 // 邮票初始化边框
 const stampInitBorder = '8rpx solid #F7F7F7';
 // 邮票选择边框
@@ -288,7 +287,6 @@ Page({
     this.setData({
       weatherComplainArr: this.data.weatherComplainArr
     })
-
 
   },
   // 获取随机笔名
