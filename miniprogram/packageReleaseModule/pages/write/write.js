@@ -103,7 +103,7 @@ Page({
               title: '内容审核结果',
               message: '您发布的内容不当！请修改后重试',
               confirmButtonText: '立即修改',
-              cancelButtonText: '继续提交'
+              cancelButtonText: '交由审核'
             })
             .then(() => {
               // 立即修改

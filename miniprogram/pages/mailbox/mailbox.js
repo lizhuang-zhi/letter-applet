@@ -3,7 +3,7 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 60 * 3;
+const getReportTime = 1000 * 60 * 1;
 let app = getApp();
 /*
   设置论循定时器 
@@ -172,7 +172,7 @@ Page({
         'pull.pullText': '正在加载',
       })
       // 获取接口数据
-      this.apiNumberData(openId);
+      this.apiNumberData(app.globalData.openid);
     } else {
       wx.showToast({
         title: '请先完成授权',

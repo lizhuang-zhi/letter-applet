@@ -103,7 +103,7 @@ let publicTools = {
     let down = diaryArr[1] + sorrowArr[1] + complainArr[1];
     let normal = diaryArr[2] + sorrowArr[2] + complainArr[2];
     let happy = diaryArr[3] + sorrowArr[3] + complainArr[3];
-    
+
     // 获取最大值索引
     let bigestIndex = 0;
     let bigNum = angry;
