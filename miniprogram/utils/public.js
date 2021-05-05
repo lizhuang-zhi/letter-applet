@@ -103,17 +103,16 @@ let publicTools = {
     let down = diaryArr[1] + sorrowArr[1] + complainArr[1];
     let normal = diaryArr[2] + sorrowArr[2] + complainArr[2];
     let happy = diaryArr[3] + sorrowArr[3] + complainArr[3];
-
+    
     // 获取最大值索引
     let bigestIndex = 0;
     let bigNum = angry;
-    [angry, down,normal, happy].forEach((val,index) =>{
+    [normal, down, angry, happy].forEach((val,index) =>{
       if(val > bigNum) {
         bigestIndex = index;
         bigNum = val;
       }
     });
-
     return this.dataBaseString(bigestIndex);
   },
   // 情绪文字数据集
@@ -122,13 +121,13 @@ let publicTools = {
     let str = '';
     switch (index) {
       case 0:
-        str = '愤怒，状态过激，希望小主平和心态，调整状态，安抚情绪。';
+        str = '正常，状态良好，希望小主继续保持这样的情绪，适当娱乐，活跃心情。';
         break;
       case 1:
         str = '消极，状态不佳，希望小主调整作息，适当锻炼，恢复良好状态。';
         break;
       case 2:
-        str = '正常，状态良好，希望小主继续保持这样的情绪，适当娱乐，活跃心情。';
+        str = '愤怒，状态过激，希望小主平和心态，调整状态，安抚情绪。';
         break;
       case 3:
         str = '积极，状态良好，希望小主继续保持这样的情绪。';
