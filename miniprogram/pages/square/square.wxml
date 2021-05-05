@@ -47,5 +47,5 @@
 </view>
 
 <!-- loading组件 -->
-<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='../../images/loading-2.gif'>
+<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif'>
 </yeo-pull-refresh>

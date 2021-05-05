@@ -3,7 +3,7 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 60 * 1;
+const getReportTime = 1000 * 60 * 3;
 let app = getApp();
 /*
   设置论循定时器 
@@ -45,12 +45,12 @@ Page({
     // loading组件
     pull: {
       isLoading: false,
-      loading: '../../images/loading-2.gif',
+      loading: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif',
       pullText: '正在加载'
     },
     push: {
       isLoading: false,
-      loading: '../../images/loading-2.gif',
+      loading: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif',
       pullText: '-上拉加载更多-'
     },
     slideStart: [],
@@ -168,7 +168,7 @@ Page({
       // 下拉动作
       this.setData({
         'pull.isLoading': true,
-        'pull.loading': '../../images/loading-2.gif',
+        'pull.loading': 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif',
         'pull.pullText': '正在加载',
       })
       // 获取接口数据
@@ -186,16 +186,16 @@ Page({
       this.setData({
         'push.isLoading': true,
         'push.pullText': '正在加载',
-        'push.loading': '../../images/loading-2.gif',
+        'push.loading': 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif',
       })
     setTimeout(() => {
       this.setData({
         'push.isLoading': false,
         'push.pullText': '- 上拉加载更多 -',
-        'push.loading': '../../images/loading-2.gif',
+        'push.loading': 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif',
       })
       console.log('===== 加载完成 =====');
-    }, 2000)
+    }, 2300)
   },
   // 初始化数据
   Start(openId) {

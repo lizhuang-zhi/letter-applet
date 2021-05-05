@@ -21,7 +21,7 @@
             <!-- 解锁时间 -->
             <yeo-frame-view frameBgColor='{{boxColor}}' frameAlignItems='center'>
               <view class="lock-pic">
-                <image src="../../images/solve_lock.png"></image>
+                <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/solve_lock.png"></image>
               </view>
               <view class="cont">{{item.lockTime}}</view>
             </yeo-frame-view>

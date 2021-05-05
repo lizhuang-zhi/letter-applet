@@ -9,7 +9,7 @@
       <block wx:if="{{!item.isLock}}">
         <!-- 未解锁图片 -->
         <view class="left-pic">
-          <image src="../../images/lock.png"></image>
+          <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/lock.png"></image>
         </view>
         <!-- 右侧信息 -->
         <view class="right-info" style="width: 80%;">
@@ -22,7 +22,6 @@
           </yeo-frame-view>
         </view>
       </block>
-
 
       <!-- 已解锁成就 -->
       <block wx:else>
@@ -44,7 +43,7 @@
                 <!-- 解锁时间 -->
                 <yeo-frame-view frameBgColor='{{item.isLock == false ? "var(--LockBgColor)" : "var(--solveLockBgColor)"}}' frameAlignItems='center'>
                   <view class="lock-pic">
-                    <image src="../../images/solve_lock.png"></image>
+                    <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/solve_lock.png"></image>
                   </view>
                   <view class="cont">{{item.lockTime}}</view>
                 </yeo-frame-view>

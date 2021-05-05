@@ -46,12 +46,7 @@
         BtnBackColor="{{item.btnBgColor}}" BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx'
         BtnWidth='120rpx' BtnFontSize='27' BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap'
         btnBorder='{{item.btnBorder}}' bindtap="bindTapDiaryWeather" data-index="{{index}}"></keo-check-button>
-
-      <!-- 吐槽 -->
-      <!-- <keo-check-button wx:if="{{type == '吐槽'}}" wx:for="{{weatherComplainArr}}" wx:key='index' BtnText="{{item.tagName}}" BtnBackColor="{{item.btnBgColor}}"
-        BtnColor='{{item.BtnColor}}' BtnHeight='60rpx' LineHeight='60rpx' BtnWidth='120rpx' BtnFontSize='27'
-        BtnFontLetterSpacing='2' BtnMargin='0 0 25rpx' bind:clickevent='clickBtnTap' btnBorder='{{item.btnBorder}}'
-        bindtap="bindTapComplainWeather" data-index="{{index}}"></keo-check-button> -->
+        
     </yeo-frame>
   </view>
   <!-- 选择标签 -->

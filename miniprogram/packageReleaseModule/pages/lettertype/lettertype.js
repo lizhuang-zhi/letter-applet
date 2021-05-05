@@ -37,9 +37,10 @@ let swithArr = [{
     cont: '保存历史足迹'
   },
   {
-    isShow: true,
-    tit: '允许公开日记',
-    cont: '开放自我心路'
+    isShow: false
+    // isShow: true,
+    // tit: '允许公开日记',
+    // cont: '开放自我心路'
   },
   {
     isShow: false
@@ -597,7 +598,7 @@ Page({
               judgeTime: new Date(new Date().setHours(0, 0, 0, 0))
             }
           })
-        }else if(res.data.resultCode == 500){
+        } else if (res.data.resultCode == 500) {
           wx.showToast({
             title: '服务器出了个小差~',
             icon: 'none'

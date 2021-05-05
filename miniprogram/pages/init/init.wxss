@@ -11,7 +11,7 @@ page {
   --bg-8: 'https://z3.ax1x.com/2021/05/02/gZTEKs.jpg';
   --bg-9: 'https://z3.ax1x.com/2021/05/02/gZTZbq.jpg';
 
-  background-image: url('https://z3.ax1x.com/2021/05/02/gZTi8g.png');
+  background-image: url('https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/init-bg.png');
   background-size: cover;
 }
 
