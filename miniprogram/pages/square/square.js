@@ -474,6 +474,9 @@ Page({
       if (res == 'success') {
         this.setData({
           isLoading: 'yeo-end-loading'
+        });
+        wx.showToast({
+          title: '刷新成功'
         })
       }
     })
