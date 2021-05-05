@@ -13,5 +13,5 @@
 
 
 <!-- 弹出框 -->
-<van-dialog id="van-dialog" />
+<van-dialog id="van-dialog"/>
 
