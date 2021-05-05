@@ -135,6 +135,12 @@
         {
           "name": "历史信件",
           "pathName": "packageMyInfo/pages/historyletter/historyletter",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "历史信息（总的）",
+          "pathName": "packageMyInfo/pages/historyinfo/historyinfo",
           "scene": null
         }
       ]

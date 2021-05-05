@@ -1,0 +1,12 @@
+/* 标签样式类 */
+.tab-class {
+  font-size: 30rpx !important;
+  color: #888888 !important;
+}
+
+/* 标签激活样式 */
+.tab-active-class {
+  font-size: 40rpx !important;
+  font-weight: bold !important;
+  color: #444444 !important;
+}

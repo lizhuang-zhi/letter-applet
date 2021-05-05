@@ -1,0 +1,17 @@
+<van-tabs active="{{activeTabIndex}}" swipeable animated color="#FFA82E" line-height='10px' offset-top='0' title-active-color='#444444'
+  sticky='true' title-inactive-color='#888888' tab-active-class='tab-active-class'
+  tab-class='tab-class'>
+
+  <van-tab title="解忧">
+    123
+  </van-tab>
+
+  <van-tab title="日记">
+    456
+  </van-tab>
+
+  <van-tab title="吐槽">
+    789
+  </van-tab>
+
+</van-tabs>
