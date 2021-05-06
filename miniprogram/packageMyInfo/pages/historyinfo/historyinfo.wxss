@@ -10,7 +10,10 @@
   font-weight: bold !important;
   color: #444444 !important;
 }
-
+/* 解忧数组 */
+.sorrow {
+  margin: 30rpx 50rpx 60rpx;
+}
 
 /* 日记数组 */
 .diary {
@@ -19,7 +22,7 @@
 
 /* 吐槽数组 */
 .complain {
-  margin: 30rpx 40rpx 60rpx;
+  margin: 30rpx 50rpx 60rpx;
 }
 .right-delete {
   width: 120rpx;

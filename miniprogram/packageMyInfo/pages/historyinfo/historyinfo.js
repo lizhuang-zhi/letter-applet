@@ -1,5 +1,6 @@
 import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
 let weather = require('../../../utils/weatherTools');
+let timeTools = require('../../../utils/timeTools')
 let requestData = require('../../../utils/request');
 
 let app = getApp();
@@ -10,9 +11,10 @@ Page({
    */
   data: {
     // 活跃标签索引
-    activeTabIndex: 1,
+    activeTabIndex: 0,
     /* 解忧 */
     // 解忧数组
+    letterArr: [],
 
     /* 日记 */
     // 日记数组
@@ -43,6 +45,22 @@ Page({
     })
   },
   // 删除日记
+  deleteDiaryTap(e) {
+    // 获取日记对象id
+    let id = e.currentTarget.dataset.id;
+    Dialog.confirm({
+        title: '确认删除',
+        message: '小主，你确定要删除吗？',
+      })
+      .then(() => {
+        // on confirm
+        this.deleteDiary(id);
+      })
+      .catch(() => {
+        // on cancel
+      });
+  },
+  // 删除日记接口
   deleteDiary(id) {
     requestData.deleteDiary(id).then(res => {
       console.log(res);
@@ -86,13 +104,12 @@ Page({
       });
 
   },
-  // 删除吐槽
+  // 删除吐槽接口
   deleteComplain(id) {
     requestData.deleteComplain(id).then(res => {
-      console.log(res);
+      console.log(res.data.data);
     })
   },
-
 
   // 初始化数据
   Start(openId) {
@@ -105,29 +122,29 @@ Page({
         // 修改天气显示格式
         item.weather = weather.weatherWordsToPic(item.weather);
         // 修改日期显示格式
-        // item.date = timeTools.squareDiaryTime(item.date);
+        item.date = timeTools.squareDiaryTime(item.date);
+      });
+
+      infoObj.letterList.forEach(item => {
+        // 时间格式化
+        item.releaseTime = timeTools.indexPostBoxTime(item.releaseTime);
       });
 
       this.setData({
+        letterArr: infoObj.letterList,
         diaryArr: infoObj.diaryList,
         complainArr: infoObj.spittingGroovesList,
       })
     })
   },
 
-
-
-
-
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   activeTabIndex: 1
-    // })
+    this.setData({
+      activeTabIndex: parseInt(options.activeTabIndex)
+    })
 
     this.Start(app.globalData.openid);
 

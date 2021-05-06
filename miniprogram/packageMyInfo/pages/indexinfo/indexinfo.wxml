@@ -24,7 +24,7 @@
   <view class="right-info">
     <!-- data数据 -->
     <view class="data-info-num">
-      <view class="data-num" wx:for="{{releaseArr}}" wx:key='index'>
+      <view class="data-num" wx:for="{{releaseArr}}" wx:key='index' bindtap="infoTap" data-index="{{index}}">
         <view class="word">{{item.name}}</view>
         <view class="num">{{item.value}}</view>
       </view>

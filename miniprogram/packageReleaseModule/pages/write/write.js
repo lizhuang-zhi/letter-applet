@@ -115,7 +115,7 @@ Page({
               let JsonSubvalue = JSON.stringify(subvalue);
               wx.navigateTo({
                 url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
-              })
+              });
               console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
             });
         } else if (resBackInfo == 4) {

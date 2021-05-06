@@ -1,6 +1,6 @@
 <!-- 月报 -->
 <view class="box">
-  <keo-notify wx:for="{{monthReportList}}" wx:key='index' SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！" Img="https://s1.ax1x.com/2020/10/24/BVq66f.jpg" bindtap="ToCheckOutReport" data-index="{{index}}"></keo-notify>
+  <keo-notify wx:for="{{monthReportList}}" wx:key='index' SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！" Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/1.jpg" bindtap="ToCheckOutReport" data-index="{{index}}"></keo-notify>
 </view>
 
 

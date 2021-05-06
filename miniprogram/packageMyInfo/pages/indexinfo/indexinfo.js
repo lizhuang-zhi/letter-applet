@@ -23,6 +23,15 @@ Page({
     })
   },
 
+  // 跳转历史发布
+  infoTap(e) {
+    // 获取点击索引
+    let activeTabIndex = e.currentTarget.dataset.index;
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/historyinfo/historyinfo?activeTabIndex=' + activeTabIndex,
+    })
+  },
+
   //初始化图表
   init_echarts: function () {
     this.echartsComponnet.init((canvas, width, height) => {

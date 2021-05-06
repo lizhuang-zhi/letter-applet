@@ -3,7 +3,7 @@ let timeTools = require('../../../utils/timeTools.js');
 let yeoTools = require('../../../Yeo/utils/tools');
 
 // 发送评论的评论状态
-let state = 0;
+let state = 3;
 // 全局变量（判断用户登录）
 let app = getApp();
 Page({

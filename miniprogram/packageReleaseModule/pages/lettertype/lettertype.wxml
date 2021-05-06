@@ -12,7 +12,7 @@
       <yeo-dy-fun-bar distractWay='between'>
         <!-- 笔名输入框 -->
         <yeo-search slot='dy-center' isShowIcon='{{false}}' leftPadding='0' background='#FFFFFF' inputLeftMargin='0'
-          searBordRadius='10' initValue='{{initValue}}' bind:inputevent="inputeventTap"></yeo-search>
+          searBordRadius='10' initValue='{{initValue}}' bind:inputevent="inputeventTap" placeholder='请输入..'></yeo-search>
 
         <!-- 随机笔名 -->
         <view class="random" slot='dy-right' bindtap="RandomNameTap">

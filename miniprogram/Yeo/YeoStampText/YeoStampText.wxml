@@ -1,4 +1,4 @@
-<view class="yeo-stamp-text" style="width: {{boxWidth + 'rpx'}};height: {{boxHeight + 'rpx'}};padding: {{boxPadding}};background: {{boxBgColor}};border-radius: {{boxBordRadius + 'rpx'}};box-shadow: {{boxShadow}};font-family: {{fontFamily}};" bindtap="clickTap" data-name="{{name}}" data-content="{{content}}" data-date="{{date}}">
+<view class="yeo-stamp-text" style="width: {{boxWidth}};height: {{boxHeight}};padding: {{boxPadding}};background: {{boxBgColor}};border-radius: {{boxBordRadius + 'rpx'}};box-shadow: {{boxShadow}};font-family: {{fontFamily}};margin: {{boxMargin}};box-sizing: {{boxSizing}};" bindtap="clickTap" data-name="{{name}}" data-content="{{content}}" data-date="{{date}}">
   <!-- 顶部邮票栏 -->
   <view class="stamp-top" style="padding: {{stampTopPadding}};">
     <view class="left-pic" style="width: {{stampTopLeftPicSize + 'rpx'}};height: {{stampTopLeftPicSize + 'rpx'}};">

@@ -2,8 +2,6 @@ let requestData = require('../../../utils/request');
 let requestLetterline = require('../../../utils/public');
 let timeTools = require('../../../utils/timeTools');
 let app = getApp();
-// 设定定时器轮询今日解答次数
-// let backNumTimeOut = null;
 Page({
 
   /**

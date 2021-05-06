@@ -4,15 +4,25 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    // 外框boxSizing
+    boxSizing: {
+      type: String,
+      value: 'content-box'
+    },
     // 外框宽度
     boxWidth: {
-      type: Number,
-      value: 300
+      type: String,
+      value: '300rpx'
     },
     // 外框高度
     boxHeight: {
-      type: Number,
-      value: 410
+      type: String,
+      value: '410rpx'
+    },
+    // 外边距
+    boxMargin: {
+      type: String,
+      value: '0'
     },
     // 内边距
     boxPadding: {

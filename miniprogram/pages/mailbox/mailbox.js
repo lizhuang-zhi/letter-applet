@@ -127,7 +127,9 @@ Page({
   },
   //跳转到官方消息
   ToOfficialnews() {
-    /* 置0官方消息数量 */
+    /* 置0最新活动数量 */
+    this.setMessageListNum(1);
+    /* 置0官方消息的月报数量 */
     wx.getStorage({
       key: 'officialNewsReportList',
       success: res => {
@@ -143,7 +145,8 @@ Page({
           },
         })
       }
-    })
+    });
+
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/officialnews/officialnews');
   },

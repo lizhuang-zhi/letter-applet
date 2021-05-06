@@ -586,9 +586,10 @@ let requestData = {
         data: {
           id: id
         },
-        // header: {
-        //   'content-type':'application/x-www-form-urlencoded'
-        // },
+        header: {
+          'custom-header': 'put',
+	  			'content-type': 'application/json'
+        },
         method: "PUT",
         success: res => {
           resolve(res)

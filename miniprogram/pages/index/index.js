@@ -199,7 +199,7 @@ Page({
       if (res == 'error') {
         console.log('404 or 500，请检查请求');
       } else {
-        // 关闭loading覆盖层
+        // 关闭loading覆盖层 
         this.setData({
           isShowLoading: false
         })

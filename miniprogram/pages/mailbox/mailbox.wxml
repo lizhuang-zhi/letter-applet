@@ -25,7 +25,7 @@
     <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://z3.ax1x.com/2021/03/25/6O0PZn.png' infoTit='最新活动'
       infoDesc='公开日记、吐槽大会等你加入！' notifiNum='{{messageList[0]}}' bindtap="ToLatestevents" infoTime='04-05'></yeo-message-notification>
     <!-- 官方消息 -->
-    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='{{officialNewsNum}}'
+    <yeo-message-notification leftPic='https://z3.ax1x.com/2021/03/25/6O0FI0.png' notifiNum='{{officialNewsNum + messageList[1]}}'
       infoDesc='文明用语、理性回信，期待与你共同成长' bindtap="ToOfficialnews" infoTime='{{officialNewsTime}}'>
     </yeo-message-notification>
     <!-- 我的邮票 -->
