@@ -390,9 +390,9 @@ Page({
         })
       } else if (res == 'refreshed') {
         // 数据已经是最新
-        return new Promise((resolve, reject) => {
-          resolve('refreshed');
-        })
+        // return new Promise((resolve, reject) => {
+        //   resolve('refreshed');
+        // })
       } else {
         console.log('---- 更新日记浏览量出错 ----');
       }
@@ -408,13 +408,13 @@ Page({
         })
       } else if (res == 'refreshed') {
         // 结束刷新
-        this.setData({
-          isLoading: 'yeo-end-loading'
-        });
-        wx.showToast({
-          title: '已是最新内容~',
-          icon: 'none'
-        })
+        // this.setData({
+        //   isLoading: 'yeo-end-loading'
+        // });
+        // wx.showToast({
+        //   title: '已是最新内容~',
+        //   icon: 'none'
+        // })
       } else {
         // 结束刷新
         this.setData({

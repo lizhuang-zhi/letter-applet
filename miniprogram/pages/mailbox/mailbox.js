@@ -3,14 +3,14 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 20 * 1;
+const getReportTime = 1000 * 3600 * 24;
 let app = getApp();
 /*
   设置论循定时器 
 */
 let setTimeInterVal = null;
 // 轮循间隔时长（毫秒）
-let timeInterVal = 13 * 1000;
+let timeInterVal = 15 * 1000;
 Page({
 
   /**

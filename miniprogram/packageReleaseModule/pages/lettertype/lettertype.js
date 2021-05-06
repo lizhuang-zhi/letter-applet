@@ -188,7 +188,9 @@ Page({
     // 信件id
     letterId: '',
     // 接收者的openId
-    senderOpenId: ''
+    senderOpenId: '',
+    // 百度审核状态
+    baiduAiCheck: null
 
   },
 
@@ -356,6 +358,7 @@ Page({
       // 提交吐槽
       this.ConfirmSendComplain();
     } else if (type == '解答') {
+      // 提交解答
       this.ConfirmSendAnswer();
     } else {
       console.log('未知类型，未做处理！！！');
@@ -447,8 +450,7 @@ Page({
     // 用户openId
     let openId = app.globalData.openid;
     // 状态
-    // let state = this.data.switchVal == true ? 1 : 0;
-    let state = 3;
+    let state = this.data.baiduAiCheck == 1 ? 1 : 3;
     // 天气 
     let weather = selectDiaryWeatherArr.toString();
     // 日记对象
@@ -516,7 +518,7 @@ Page({
     // 笔名
     let penName = this.data.initValue;
     // 状态
-    let state = 3;
+    let state = this.data.baiduAiCheck == 1 ? 1 : 3;
     /* 
       天气 (这里需要第二版本更新时添加)
     */
@@ -633,7 +635,8 @@ Page({
     this.setData({
       inputValue: JSON.parse(decodeURIComponent(options.subvalue)),
       letterId: options.letterId,
-      senderOpenId: options.senderOpenId
+      senderOpenId: options.senderOpenId,
+      baiduAiCheck: options.baiduAiCheck
     });
     console.log(JSON.parse(decodeURIComponent(options.subvalue)));
     console.log('----> ' + options.senderOpenId);

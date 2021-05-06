@@ -90,8 +90,8 @@ Page({
           // Json传输内容
           let JsonSubvalue = JSON.stringify(subvalue);
           wx.navigateTo({
-            url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId,
-          })
+            url: '/packageReleaseModule/pages/lettertype/lettertype?subvalue=' + encodeURIComponent(JsonSubvalue) + '&type=' + chooseType + '&letterId=' + letterId + '&senderOpenId=' + senderOpenId + '&baiduAiCheck=' + resBackInfo,
+          });
           console.log('执行跳转 senderOpenId ---> ' + senderOpenId);
           // 关闭loading
           wx.hideLoading({});
@@ -130,7 +130,6 @@ Page({
             // on close
           });
         }
-
 
       })
     }
