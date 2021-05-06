@@ -21,6 +21,10 @@
           bindtap="ToDiaryContent">
         </yeo-diary-box-v2>
       </yeo-flow-waterfall-box>
+
+      <!-- 下拉触底的加载 -->
+      <van-loading type="spinner" wx:if="{{isDiaryLoading}}" />
+
     </view>
 
   </van-tab>
@@ -33,6 +37,9 @@
       <yeo-text-box wx:for="{{complianArr}}" wx:key='index' data-id="{{item.id}}" userName='{{item.penName}}'
         commentNum='{{item.number}}' headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap">
       </yeo-text-box>
+
+      <!-- 下拉触底的加载 -->
+      <van-loading type="spinner" wx:if="{{isComplainLoading}}" />
 
     </view>
   </van-tab>
@@ -47,5 +54,6 @@
 </view>
 
 <!-- loading组件 -->
-<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}' loadingPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif'>
+<yeo-pull-refresh loadingPicRadius='45' isLoading='{{isLoading}}'
+  loadingPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/loading-2.gif'>
 </yeo-pull-refresh>

@@ -63,6 +63,14 @@ const MonthReport = prefix + '/user/getDataAnalysis';
 const HistoryLetter = prefix + '/letter/getLetterOfHistory';
 // 文字违规判断
 const TextLegal = prefix + '/user/isTextLegal';
+// 获取历史发布内容
+const HistoryRelease = prefix + '/user/getDataOfHistory';
+// 根据吐槽id删除吐槽
+const DeleteComplain = prefix + '/spitting-grooves/delete';
+// 删除信件
+const DeleteSorrowLetter = prefix + '/letter/changeLetterStateToDeleteById';
+// 删除日记
+const DeleteDiary = prefix + '/diary/changeDiaryStateToDeleteById';
 
 // 返回对象
 let url = {
@@ -165,7 +173,24 @@ let url = {
   // 文字违规判断
   getTextLegal() {
     return TextLegal;
+  },
+  // 获取历史发布内容
+  getHistoryRelease() {
+    return HistoryRelease;
+  },
+  // 根据吐槽id删除吐槽
+  getDeleteComplain() {
+    return DeleteComplain;
+  },
+  // 删除信件
+  getDeleteSorrowLetter() {
+    return DeleteSorrowLetter;
+  },
+  // 删除日记
+  getDeleteDiary() {
+    return DeleteDiary;
   }
+
 
 }
 

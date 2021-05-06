@@ -1,5 +1,5 @@
-<van-tabs active="{{activeTabIndex}}" swipeable animated color="#FFA82E" line-height='10px' offset-top='0' title-active-color='#444444'
-  sticky='true' title-inactive-color='#888888' tab-active-class='tab-active-class'
+<van-tabs active="{{activeTabIndex}}" swipeable animated color="#FFA82E" line-height='10px' offset-top='0'
+  title-active-color='#444444' sticky='true' title-inactive-color='#888888' tab-active-class='tab-active-class'
   tab-class='tab-class'>
 
   <van-tab title="解忧">
@@ -7,11 +7,43 @@
   </van-tab>
 
   <van-tab title="日记">
-    456
+    <view class="diary">
+
+      <!-- 遍历日记数组 -->
+      <van-swipe-cell wx:for="{{diaryArr}}" right-width="{{ 65 }}" wx:key='index'>
+        <yeo-diary-box-v2 data-id="{{item.id}}" content='{{item.content}}' weatherPicUrl='{{item.weather}}'
+          looksNum='我是浏览量' date='我是时间' boxWidth='100%' bindtap="ToDiaryContent">
+        </yeo-diary-box-v2>
+        <view slot="right" class="right-delete" bindtap="deleteDiaryTap" data-id="{{item.id}}">
+          <van-icon name="delete" size="60rpx" color='#666' />
+          <view class="words" style="font-size: 30rpx;color: #666;">删除</view>
+        </view>
+      </van-swipe-cell>
+
+    </view>
   </van-tab>
 
   <van-tab title="吐槽">
-    789
+    <view class="complain">
+
+      <!-- 遍历吐槽数组 -->
+      <van-swipe-cell right-width="{{ 65 }}" wx:for="{{complainArr}}" wx:key='index'>
+        <yeo-text-box data-id="{{item.id}}" userName='{{item.penName}}' commentNum='{{item.number}}'
+          headPicUrl='{{item.avatarUrl}}' content='{{item.title}}' bindtap="ToComplainTap">
+        </yeo-text-box>
+        <view slot="right" class="right-delete" bindtap="deleteComplainTap" data-id="{{item.id}}">
+          <van-icon name="delete" size="60rpx" color='#666' />
+          <view class="words" style="font-size: 30rpx;color: #666;">删除</view>
+        </view>
+      </van-swipe-cell>
+
+    </view>
+
   </van-tab>
 
 </van-tabs>
+
+
+
+<!-- 弹出框 -->
+<van-dialog id="van-dialog" />

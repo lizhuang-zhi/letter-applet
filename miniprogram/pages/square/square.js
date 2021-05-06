@@ -163,28 +163,6 @@ Page({
         })
       }
     })
-    /* 
-      将对应日记浏览量修改，并存储至缓存
-    */
-    // wx.getStorage({
-    //   key: 'diaryView',
-    //   success: res => {
-    //     // 获取缓存数据
-    //     let dataObj = res.data;
-    //     // 为新增数据添加浏览量
-    //     dataObj[id]++;
-
-    //     /* 将改动存入显示总缓存 */
-    //     wx.setStorage({
-    //       key: 'diaryView',
-    //       data: dataObj
-    //     });
-    //   },
-    //   fail: res => {
-    //     console.log(res);
-    //   }
-    // })
-
 
     // 获取对应的日记，增加显示的浏览量
     diaryArr.forEach(item => {
@@ -276,18 +254,6 @@ Page({
         diaryArr: diaryList
       })
 
-      /* 
-        日记浏览量 --> 数据存储至缓存
-      */
-      // let newObj = {};
-      // for (let ele of diaryList) {
-      //   newObj[ele.id] = parseInt(ele.number);
-      // };
-      // console.log(newObj);
-      // wx.setStorage({
-      //   key: 'diaryView',
-      //   data: newObj,
-      // })
     })
 
     // 吐槽大会请求数据
@@ -311,6 +277,9 @@ Page({
 
   // 上拉触底事件（吐槽大会）
   onReachBottomComplain() {
+    this.setData({
+      isComplainLoading: true
+    })
     // 判断是否为最后一页数据并请求
     if (!this.data.isLastComplianPageNum) {
       // 再次请求下一页数据
@@ -329,7 +298,9 @@ Page({
           isLastComplianPageNum: complianObj.isLastPage,
           complianArr: complianArr.concat(complianList)
         })
-
+        this.setData({
+          isComplainLoading: false
+        })
       })
 
     } else {
@@ -337,11 +308,17 @@ Page({
         title: '没有更多吐槽了',
         icon: 'none'
       })
+      this.setData({
+        isComplainLoading: false
+      })
     }
 
   },
   // 上拉触底事件（公开日记）
   onReachBottomDiary() {
+    this.setData({
+      isDiaryLoading: true
+    })
     // 判断是否为最后一页数据并请求
     if (!this.data.isLastDiaryPage) {
       // 再次请求下一页数据
@@ -360,10 +337,11 @@ Page({
           isLastDiaryPage: diaryObj.isLastPage,
           diaryArr: this.data.diaryArr.concat(diaryList)
         });
-        /* 
-          缓存下拉刷新数据
-        */
-
+        setTimeout(() => {
+          this.setData({
+            isDiaryLoading: false
+          })
+        },2000)
 
       })
 
@@ -371,6 +349,9 @@ Page({
       wx.showToast({
         title: '没有更多日记了',
         icon: 'none'
+      })
+      this.setData({
+        isDiaryLoading: false
       })
     }
 
@@ -508,29 +489,6 @@ Page({
         selected: 1
       })
     }
-    /* 
-      从缓存中获取改后的浏览量
-    */
-    // wx.getStorage({
-    //   key: 'diaryView',
-    //   success: res => {
-    //     // 获取缓存数据
-    //     let data = res.data;
-    //     console.log(data);
-    //     // 获取缓存数据中的属性值并转为数组
-    //     let changeViewArr = Object.values(data);
-    //     // 获取日记数组
-    //     let diaryArr = this.data.diaryArr;
-    //     for (let i = 0; i < diaryArr.length; i++) {
-    //       diaryArr[i].number = changeViewArr[i];
-    //     }
-    //     // 渲染到页面
-    //     this.setData({
-    //       diaryArr: diaryArr
-    //     })
-    //   }
-    // })
-
     /* 
       发布日记成功后,再次进入,拉取一次
     */

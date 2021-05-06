@@ -518,6 +518,86 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取历史发布内容
+  historyRelease(openid) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getHistoryRelease(),
+        data: {
+          'open id': openid
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 根据吐槽id删除吐槽
+  deleteComplain(id) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getDeleteComplain(),
+        data: {
+          id: id
+        },
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 删除信件
+  deleteSorrowLetter(id) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getDeleteSorrowLetter(),
+        data: {
+          id: id
+        },
+        // header: {
+        //   'content-type':'application/x-www-form-urlencoded'
+        // },
+        method: "PUT",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 删除日记
+  deleteDiary(id) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getDeleteDiary(),
+        data: {
+          id: id
+        },
+        // header: {
+        //   'content-type':'application/x-www-form-urlencoded'
+        // },
+        method: "PUT",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

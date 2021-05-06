@@ -9,8 +9,6 @@ page {
   /* 日记和吐槽上内边距 */
   --padding-top: 10rpx;
 
-
-
 }
 
 /* 公开日记 */
@@ -33,21 +31,16 @@ page {
   font-size: 30rpx !important;
   color: #888888 !important;
 }
-
 /* 标签激活样式 */
 .tab-active-class {
   font-size: 40rpx !important;
   font-weight: bold !important;
   color: #444444 !important;
 }
-
-
 /* tab切换 */
 yeo-diary-box-v2 {
   display: inline-block;
 }
-
-
 
 /* 回到顶部高度 */
 .bot-fix-group {
@@ -59,4 +52,10 @@ yeo-diary-box-v2 {
 .bot-fix-group .back-top image {
   width: 60rpx;
   height: 60rpx;
+}
+
+van-loading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100rpx;
 }

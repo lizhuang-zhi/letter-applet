@@ -1,3 +1,8 @@
+import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
+let weather = require('../../../utils/weatherTools');
+let requestData = require('../../../utils/request');
+
+let app = getApp();
 Page({
 
   /**
@@ -5,10 +10,116 @@ Page({
    */
   data: {
     // 活跃标签索引
-    activeTabIndex: 0
+    activeTabIndex: 1,
+    /* 解忧 */
+    // 解忧数组
 
+    /* 日记 */
+    // 日记数组
+    diaryArr: [],
+
+
+    /* 吐槽 */
+    // 吐槽数组
+    complainArr: [],
 
   },
+
+  /* *************************解忧************************* */
+
+  // 删除解忧
+  deleteSorrow(id) {
+    requestData.deleteSorrowLetter(id).then(res => {
+      console.log(res);
+    })
+  },
+  /* *************************日记************************* */
+  // 跳转日记内容
+  ToDiaryContent(e) {
+    // 获取点击的日记对象的id
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
+    })
+  },
+  // 删除日记
+  deleteDiary(id) {
+    requestData.deleteDiary(id).then(res => {
+      console.log(res);
+    })
+  },
+  /* *************************吐槽************************* */
+  // 跳转吐槽内容
+  ToComplainTap(e) {
+    // 获取吐槽对象id
+    let id = e.currentTarget.dataset.id;
+    console.log(id);
+    // 未获取授权
+    if (!app.globalData.userInfo) {
+      // 弹窗用户授权
+      app.getUserProfile().then(res => {
+        wx.navigateTo({
+          url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+        })
+      })
+    } else { // 已授权
+      wx.navigateTo({
+        url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+      })
+    }
+  },
+  // 删除吐槽
+  deleteComplainTap(e) {
+    console.log(e);
+    // 获取吐槽对象id
+    let id = e.currentTarget.dataset.id;
+    Dialog.confirm({
+        title: '确认删除',
+        message: '小主，你确定要删除吗？',
+      })
+      .then(() => {
+        // on confirm
+        this.deleteComplain(id);
+      })
+      .catch(() => {
+        // on cancel
+      });
+
+  },
+  // 删除吐槽
+  deleteComplain(id) {
+    requestData.deleteComplain(id).then(res => {
+      console.log(res);
+    })
+  },
+
+
+  // 初始化数据
+  Start(openId) {
+    requestData.historyRelease(openId).then(res => {
+      console.log(res.data.data);
+      // 获取对象信息
+      let infoObj = res.data.data;
+
+      infoObj.diaryList.forEach(item => {
+        // 修改天气显示格式
+        item.weather = weather.weatherWordsToPic(item.weather);
+        // 修改日期显示格式
+        // item.date = timeTools.squareDiaryTime(item.date);
+      });
+
+      this.setData({
+        diaryArr: infoObj.diaryList,
+        complainArr: infoObj.spittingGroovesList,
+      })
+    })
+  },
+
+
+
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -17,6 +128,8 @@ Page({
     // this.setData({
     //   activeTabIndex: 1
     // })
+
+    this.Start(app.globalData.openid);
 
   },
 
