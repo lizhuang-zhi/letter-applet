@@ -447,7 +447,8 @@ Page({
     // 用户openId
     let openId = app.globalData.openid;
     // 状态
-    let state = this.data.switchVal == true ? 1 : 0;
+    // let state = this.data.switchVal == true ? 1 : 0;
+    let state = 3;
     // 天气 
     let weather = selectDiaryWeatherArr.toString();
     // 日记对象
@@ -515,7 +516,7 @@ Page({
     // 笔名
     let penName = this.data.initValue;
     // 状态
-    let state = 0;
+    let state = 3;
     /* 
       天气 (这里需要第二版本更新时添加)
     */
@@ -604,7 +605,6 @@ Page({
             icon: 'none'
           })
         }
-
         resolve('success');
       })
     }).then(res => {
