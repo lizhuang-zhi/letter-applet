@@ -12,6 +12,9 @@ Page({
   data: {
     // 活跃标签索引
     activeTabIndex: 0,
+    // 开始显示的滑动提示框
+    isShow: true,
+
     /* 解忧 */
     // 解忧数组
     letterArr: [],
@@ -113,6 +116,7 @@ Page({
 
   // 初始化数据
   Start(openId) {
+    // 请求后台数据
     requestData.historyRelease(openId).then(res => {
       console.log(res.data.data);
       // 获取对象信息

@@ -15,10 +15,19 @@ page {
 .diary {
   padding: var(--padding-top) var(--padding-size) var(--padding-bottom);
 }
+.diary .diary-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 100rpx;
+}
 
 /* 吐槽大会 */
 .complain {
   padding: var(--padding-top) var(--padding-size) var(--padding-bottom);
+}
+.complain .complain-box {
+  margin-bottom: 100rpx;
 }
 
 /* 顶部tab栏设置 */
@@ -36,10 +45,6 @@ page {
   font-size: 40rpx !important;
   font-weight: bold !important;
   color: #444444 !important;
-}
-/* tab切换 */
-yeo-diary-box-v2 {
-  display: inline-block;
 }
 
 /* 回到顶部高度 */

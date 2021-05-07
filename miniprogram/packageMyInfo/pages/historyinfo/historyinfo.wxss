@@ -32,3 +32,9 @@
   justify-content: center;
   align-items: center;
 }
+
+/* 滑动提示框 */
+.huadong {
+  padding: 80rpx 20rpx;
+  box-sizing: border-box;
+}

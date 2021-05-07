@@ -11,7 +11,7 @@
   </view>
 
   <!-- 内容栏 -->
-  <view class="content" style="font-size: 26rpx;color: #333333;letter-spacing: 2rpx;line-height: 1.4;color: #293939;">{{content}}</view>
+  <view class="content" style="font-size: 26rpx;color: #333333;letter-spacing: 2rpx;line-height: 1.4;color: #293939;height: 106rpx;">{{content}}</view>
 
   <!-- 底部栏 -->
   <view class="bot-part" style="margin: 20rpx 0 0;">

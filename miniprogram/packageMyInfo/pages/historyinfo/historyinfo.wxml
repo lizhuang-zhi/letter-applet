@@ -66,5 +66,16 @@
 
 
 
-<!-- 弹出框 -->
+<!-- 删除确认弹出框 -->
 <van-dialog id="van-dialog" />
+
+
+<!-- 滑动弹出框 -->
+<van-dialog
+  use-slot
+  title="滑动删除"
+  show="{{ isShow }}"
+  confirmButtonText='已知晓'
+>
+  <image class="huadong" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/滑动提示.gif" />
+</van-dialog>
