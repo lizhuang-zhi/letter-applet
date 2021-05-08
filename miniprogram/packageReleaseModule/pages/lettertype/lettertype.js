@@ -380,6 +380,8 @@ Page({
     let openId = app.globalData.openid;
     // 邮票图片地址
     let stampUrl = stampPic;
+    // 状态
+    let state = this.data.baiduAiCheck == 1 ? 1 : 3;
     // 	标签id集合
     let tapIds = selectSorrowArr.toString();
     // 声明对象保存上面的值
@@ -388,6 +390,7 @@ Page({
       content,
       stampUrl,
       tapIds,
+      state,
       openId
     };
     console.log(letterObj);

@@ -31,7 +31,34 @@ Page({
   },
 
   /* *************************解忧************************* */
+  // 跳转解忧内容
+  ToSorrowTap() {
 
+  },
+  // 删除解忧
+  deleteSorrowTap(e) {
+    // 获取日记对象id
+    let id = e.currentTarget.dataset.id;
+    Dialog.confirm({
+        title: '确认删除',
+        message: '小主，你确定要删除吗？',
+      })
+      .then(() => {
+        // on confirm
+        wx.showLoading({
+          title: '加载中..',
+        }).then(res => {
+          this.deleteSorrow(id);
+        }).then(res => {
+          // 刷新数据
+          this.Start(app.globalData.openid);
+          wx.hideLoading({});
+        })
+      })
+      .catch(() => {
+        // on cancel
+      });
+  },
   // 删除解忧
   deleteSorrow(id) {
     requestData.deleteSorrowLetter(id).then(res => {
@@ -64,7 +91,7 @@ Page({
         }).then(res => {
           // 刷新数据
           this.Start(app.globalData.openid);
-          wx.hideLoading({ });
+          wx.hideLoading({});
         })
       })
       .catch(() => {
@@ -115,7 +142,7 @@ Page({
         }).then(res => {
           // 刷新数据
           this.Start(app.globalData.openid);
-          wx.hideLoading({ });
+          wx.hideLoading({});
         })
       })
       .catch(() => {

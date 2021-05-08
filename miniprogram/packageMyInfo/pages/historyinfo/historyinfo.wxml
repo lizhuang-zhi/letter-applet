@@ -12,13 +12,14 @@
           boxWidth='100%' stampTopPadding='0 0 25rpx' contentPadding='0 0 30rpx' boxMargin='0 0 25rpx'
           boxSizing='border-box'>
         </yeo-stamp-text>
-        <view slot="right" class="right-delete" bindtap="deleteDiaryTap" data-id="{{item.id}}">
+        <view slot="right" class="right-delete" bindtap="deleteSorrowTap" data-id="{{item.id}}">
           <van-icon name="delete" size="60rpx" color='#666' />
           <view class="words" style="font-size: 30rpx;color: #666;">删除</view>
         </view>
       </van-swipe-cell>
 
-      <van-empty wx:if="{{letterArr.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布解忧信件" />
+      <van-empty wx:if="{{letterArr.length == 0}}" class="custom-image"
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布解忧信件" />
 
     </view>
   </van-tab>
@@ -37,7 +38,8 @@
         </view>
       </van-swipe-cell>
 
-      <van-empty wx:if="{{diaryArr.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布日记" />
+      <van-empty wx:if="{{diaryArr.length == 0}}" class="custom-image"
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布日记" />
 
     </view>
   </van-tab>
@@ -56,7 +58,8 @@
         </view>
       </van-swipe-cell>
 
-      <van-empty wx:if="{{complainArr.length == 0}}" class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布吐槽" />
+      <van-empty wx:if="{{complainArr.length == 0}}" class="custom-image"
+        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布吐槽" />
 
     </view>
 
@@ -71,11 +74,6 @@
 
 
 <!-- 滑动弹出框 -->
-<van-dialog
-  use-slot
-  title="滑动删除"
-  show="{{ isShow }}"
-  confirmButtonText='已知晓'
->
+<van-dialog use-slot title="滑动删除" show="{{ isShow }}" confirmButtonText='已知晓'>
   <image class="huadong" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/滑动提示.gif" />
 </van-dialog>
