@@ -3,8 +3,9 @@
 
   <!-- 月报item -->
   <keo-notify wx:for="{{monthReportList}}" wx:key='index' SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！"
-    Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/1.jpg" bindtap="ToCheckOutReport"
-    data-index="{{index}}" ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
+    ProImgSrc='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/铃铛.png' Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/月报.webp"
+    promulgatorText='系统推送' bindtap="ToCheckOutReport" data-index="{{index}}" ProorSize='30rpx' ProImgSrcWidth='30rpx' ProImgSrcHeight='30rpx' ProTopMargin='20rpx'>
+  </keo-notify>
 
   <!-- 审核item -->
   <view class="check-team">
@@ -13,7 +14,7 @@
       <view class="title">审核通知</view>
       <view class="content">您发布的“我是你大爷的打野，真厉害，你是个不好的人，你个人才中的天才..”审核通过!</view>
       <view class="checker">
-        <image src="https://tse2-mm.cn.bing.net/th/id/OIP.rHgPJPm_EuEWahGY8XE_BwAAAA?w=200&h=200&c=7&o=5&pid=1.7">
+        <image src="../../images/通知.png">
         </image>
         <view class="name">信栈审核团队</view>
       </view>
@@ -24,13 +25,14 @@
 
 <!-- 初始化 -->
 <view class="box">
-  <keo-notify SendTime='2021-04-11' Img='https://z3.ax1x.com/2021/05/04/gnNB3F.jpg' ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
+  <keo-notify SendTime='2021-04-11' Img='https://z3.ax1x.com/2021/05/04/gnNB3F.jpg' ProorSize='30rpx'
+    ProTopMargin='20rpx'></keo-notify>
 </view>
 <view class="box">
   <keo-notify SendTime='2021-03-25' ContentText="请注意文明用语，不含低俗、暴力、血腥等敏感词汇"
     Img="https://s1.ax1x.com/2020/10/24/BVq66f.jpg" ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
 </view>
 <view class="box">
-  <keo-notify SendTime='2021-03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！"
-    Img="https://z3.ax1x.com/2021/05/04/gnN43D.jpg" ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
+  <keo-notify SendTime='2021-03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://z3.ax1x.com/2021/05/04/gnN43D.jpg"
+    ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
 </view>

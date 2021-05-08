@@ -139,7 +139,7 @@
           "scene": null
         },
         {
-          "name": "历史信息（总的）",
+          "name": "历史发布",
           "pathName": "packageMyInfo/pages/historyinfo/historyinfo",
           "query": "",
           "scene": null
@@ -147,6 +147,7 @@
         {
           "name": "官方消息",
           "pathName": "packageMyInfo/pages/officialnews/officialnews",
+          "query": "",
           "scene": null
         }
       ]

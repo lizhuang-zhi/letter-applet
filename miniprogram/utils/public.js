@@ -1,5 +1,3 @@
-const { time } = require("console");
-
 let publicTools = {
 
   // 更改对象的'键名'
@@ -143,13 +141,25 @@ let publicTools = {
   // 我的页面的“解忧称号”
   indexInfoRank(times) {
     if(times < 5) {
-      return '解忧小白';
+      return {
+        rank: '解忧小白',
+        bgColor: '#FFC10A'
+      };
     }else if(times >= 5 && times < 15) {
-      return '解忧能手';
+      return {
+        rank: '解忧能手',
+        bgColor: '#FF9803'
+      };
     }else if(times >= 15 && times < 25) {
-      return '解忧专家';
+      return {
+        rank: '解忧专家',
+        bgColor: '#FE5722'
+      };
     }else {
-      return '解忧大师';
+      return {
+        rank: '解忧大师',
+        bgColor: '#795549'
+      };
     }
   }
 

@@ -57,7 +57,15 @@ Page({
       })
       .then(() => {
         // on confirm
-        this.deleteDiary(id);
+        wx.showLoading({
+          title: '加载中..',
+        }).then(res => {
+          this.deleteDiary(id);
+        }).then(res => {
+          // 刷新数据
+          this.Start(app.globalData.openid);
+          wx.hideLoading({ });
+        })
       })
       .catch(() => {
         // on cancel
@@ -100,12 +108,19 @@ Page({
       })
       .then(() => {
         // on confirm
-        this.deleteComplain(id);
+        wx.showLoading({
+          title: '加载中..',
+        }).then(res => {
+          this.deleteComplain(id);
+        }).then(res => {
+          // 刷新数据
+          this.Start(app.globalData.openid);
+          wx.hideLoading({ });
+        })
       })
       .catch(() => {
         // on cancel
       });
-
   },
   // 删除吐槽接口
   deleteComplain(id) {

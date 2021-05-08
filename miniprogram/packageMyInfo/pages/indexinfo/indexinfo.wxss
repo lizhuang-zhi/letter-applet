@@ -40,7 +40,6 @@
   border-radius: 10rpx;
   font-size: 24rpx;
   color: #ffffff;
-  background: #A0A0A0;
   text-align: center;
 }
 .my-info .right-info {

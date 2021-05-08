@@ -13,7 +13,7 @@
     </view>
     <view class="user">
       <view class="username">{{nickName}}</view>
-      <view class="rate">{{userRank}}</view>
+      <view class="rate" style="background: {{userRank.bgColor}};">{{userRank.rank}}</view>
     </view>
   </view>
   <!-- 右侧信息（点赞数、评论数、解忧数） -->
@@ -29,7 +29,6 @@
     <view class="more-info" bindtap="lookMore">查看更多 ></view>
   </view>
 </view>
-
 
 <!-- 图表展示用户数据 -->
 <view class="data-container">

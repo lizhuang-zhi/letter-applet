@@ -34,8 +34,8 @@
   margin-top: 25rpx;
 }
 .check-team .checker image{
-  width: 40rpx;
-  height: 40rpx;
+  width: 30rpx;
+  height: 30rpx;
   border-radius: 50%;
   letter-spacing: 3rpx;
 }

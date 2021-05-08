@@ -565,10 +565,10 @@ let requestData = {
         data: {
           id: id
         },
-        // header: {
-        //   'content-type':'application/x-www-form-urlencoded'
-        // },
-        method: "PUT",
+        header: {
+          'content-type':'application/x-www-form-urlencoded'
+        },
+        method: "POST",
         success: res => {
           resolve(res)
         },
@@ -587,10 +587,9 @@ let requestData = {
           id: id
         },
         header: {
-          'custom-header': 'put',
-	  			'content-type': 'application/json'
+          'content-type':'application/x-www-form-urlencoded'
         },
-        method: "PUT",
+        method: "POST",
         success: res => {
           resolve(res)
         },
