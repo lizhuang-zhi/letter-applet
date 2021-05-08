@@ -1,5 +1,6 @@
 import * as echarts from '../../ec-canvas/echarts';
 let requestData = require('../../../utils/request');
+let pubTools = require('../../../utils/public');
 
 let app = getApp();
 Page({
@@ -13,7 +14,10 @@ Page({
     },
     // 用户
     nickName: '',
-    avatarUrl: ''
+    avatarUrl: '',
+
+    // 用户头衔
+    userRank: ''
   },
 
   // 查看更多（时间线）
@@ -116,6 +120,10 @@ Page({
     this.echartsComponnet = this.selectComponent('#chart_all');
     // 异步请求数据
     this.getChartData(options.openId);
+    // 赋值头衔
+    this.setData({
+      userRank: pubTools.indexInfoRank(5)
+    })
   },
 
   /**

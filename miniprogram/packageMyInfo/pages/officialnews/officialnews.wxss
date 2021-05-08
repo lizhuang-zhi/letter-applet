@@ -1,3 +1,44 @@
 .box{
-  margin-bottom:60rpx;
+  margin-bottom: 60rpx;
+}
+
+/* 审核item */
+.check-team {
+  width: 90vw;
+  margin: 30rpx auto;
+}
+.check-team .check-time{
+  text-align: center;
+  font-size: 28rpx;
+  color: rgb(120,120,120);
+  margin-bottom: 26rpx;
+}
+.check-team .title {
+  font-size: 37rpx;
+  font-weight: bold;
+  color: #313131;
+  letter-spacing: 3rpx;
+  margin-bottom: 30rpx;
+}
+.check-team .content {
+  font-size: 30rpx;
+  color: #707070;
+  letter-spacing: 3rpx;
+}
+.check-team .checker {
+  font-size: 30rpx;
+  color: #AEAEAE;
+  letter-spacing: 3rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 25rpx;
+}
+.check-team .checker image{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  letter-spacing: 3rpx;
+}
+.check-team .checker .name{
+  margin-left: 10rpx;
 }

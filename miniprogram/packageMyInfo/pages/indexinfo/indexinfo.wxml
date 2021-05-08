@@ -4,10 +4,6 @@
 </view>
 
 <!-- 我的信息 -->
-<!-- 
-  1. 点赞数、评论数、解忧数、名字、等级 
-  2. 添加发布按钮（yeo-tools-bar组件）
--->
 <view class="my-info">
   <!-- 左侧信息（头像、昵称、等级） -->
   <view class="left-info">
@@ -17,7 +13,7 @@
     </view>
     <view class="user">
       <view class="username">{{nickName}}</view>
-      <view class="rate">解忧大师</view>
+      <view class="rate">{{userRank}}</view>
     </view>
   </view>
   <!-- 右侧信息（点赞数、评论数、解忧数） -->
