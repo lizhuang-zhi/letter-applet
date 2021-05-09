@@ -1,4 +1,5 @@
 let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools');
 let app = getApp();
 Page({
 
@@ -38,6 +39,11 @@ Page({
       let dataObj = res.data.data;
       // 获取对象中的列表数组
       let list = dataObj.list;
+
+      // 修改时间显示
+      list.forEach(item => {
+        item.senderTime = timeTools.historyLetterShowTime(item.senderTime);
+      })
       this.setData({
         isLastPage: dataObj.isLastPage,
         replyList: list

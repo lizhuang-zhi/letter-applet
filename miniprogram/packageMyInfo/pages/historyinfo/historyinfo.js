@@ -33,7 +33,9 @@ Page({
   /* *************************解忧************************* */
   // 跳转解忧内容
   ToSorrowTap() {
-
+    this.setData({
+      showContent: true
+    })
   },
   // 删除解忧
   deleteSorrowTap(e) {

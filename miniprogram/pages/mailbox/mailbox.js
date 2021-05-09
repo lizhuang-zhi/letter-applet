@@ -225,8 +225,6 @@ Page({
         console.log(timeTools.mailboxShowMessageTime(res.data.time));
         this.setData({
           officialNewsNum: newsNum,
-          // 获取记录时间
-          // officialNewsLastTime: res.data.time,
           // 官方消息显示时间
           officialNewsTime: timeTools.mailboxShowMessageTime(res.data.time)
         })

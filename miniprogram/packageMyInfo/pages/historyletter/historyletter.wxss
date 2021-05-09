@@ -2,3 +2,9 @@
 .message-box {
   margin: 30rpx 40rpx 20rpx;
 }
+.message-box .release-time {
+  text-align: center;
+  font-size: 30rpx;
+  margin: 50rpx 0 25rpx;
+  color: rgb(120,120,120)
+}

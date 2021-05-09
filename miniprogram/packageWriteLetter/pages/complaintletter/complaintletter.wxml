@@ -8,8 +8,13 @@
 <yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent'
   initValue='{{initValue}}'>
   <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}' userName='{{item.userVo.penName}}'
-    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index' contentPaddingBot='20' statusWords='待审核'></yeo-message-card>
+    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index' contentPaddingBot='20'
+    statusWords='待审核'></yeo-message-card>
 </yeo-comment>
+
+<!-- 评论空状态 -->
+<van-empty wx:if="{{commentArr.length == 0}}" class="custom-image"
+  image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还没有小伙伴评论呢~" />
 
 <!-- loading组件 -->
 <yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>

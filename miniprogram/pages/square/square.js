@@ -2,8 +2,6 @@ let weather = require('../../utils/weatherTools');
 let requestData = require('../../utils/request');
 let timeTools = require('../../utils/timeTools');
 
-// 存储修改的日记键值对数组
-// let changeDiary = {};
 let app = getApp();
 Page({
 
@@ -115,8 +113,6 @@ Page({
 
   // 跳转日记内容
   ToDiaryContent(e) {
-    // 获取日记数组
-    let diaryArr = this.data.diaryArr;
     // 获取点击的日记对象的id
     let id = e.currentTarget.dataset.id;
     // 获取点击的日记对象的浏览量
@@ -164,19 +160,13 @@ Page({
       }
     })
 
-    // 获取对应的日记，增加显示的浏览量
-    diaryArr.forEach(item => {
-      if (item.id == id) {
-        item.number++;
-      }
-    });
-    // 重新渲染
-    this.setData({
-      diaryArr: diaryArr
-    })
-
     wx.navigateTo({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
+      success: res => {
+        this.setData({
+          backId: id
+        })
+      }
     })
   },
   // 跳转吐槽内容
@@ -341,7 +331,7 @@ Page({
           this.setData({
             isDiaryLoading: false
           })
-        },2000)
+        }, 2000)
 
       })
 
@@ -462,6 +452,23 @@ Page({
       }
     })
   },
+  // 从日记内容页返回时浏览量+1
+  addOneFromDiaryContent() {
+    // 获取日记数组
+    let diaryArr = this.data.diaryArr;
+    // 获取之前点击的日记对象id
+    let id = this.data.backId;
+    // 获取对应的日记，增加显示的浏览量
+    diaryArr.forEach(item => {
+      if (item.id == id) {
+        item.number++;
+      }
+    });
+    // 重新渲染
+    this.setData({
+      diaryArr: diaryArr
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -489,6 +496,8 @@ Page({
         selected: 1
       })
     }
+    // 给日记浏览量+1
+    this.addOneFromDiaryContent();
     /* 
       发布日记成功后,再次进入,拉取一次
     */

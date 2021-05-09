@@ -19,7 +19,7 @@
       </van-swipe-cell>
 
       <van-empty wx:if="{{letterArr.length == 0}}" class="custom-image"
-        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布解忧信件" />
+        image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还未发布解忧信件" />
 
     </view>
   </van-tab>
@@ -39,7 +39,7 @@
       </van-swipe-cell>
 
       <van-empty wx:if="{{diaryArr.length == 0}}" class="custom-image"
-        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布日记" />
+        image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还未发布日记" />
 
     </view>
   </van-tab>
@@ -59,7 +59,7 @@
       </van-swipe-cell>
 
       <van-empty wx:if="{{complainArr.length == 0}}" class="custom-image"
-        image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="还未发布吐槽" />
+        image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还未发布吐槽" />
 
     </view>
 
@@ -68,12 +68,20 @@
 </van-tabs>
 
 
-
 <!-- 删除确认弹出框 -->
 <van-dialog id="van-dialog" />
-
 
 <!-- 滑动弹出框 -->
 <van-dialog use-slot title="滑动删除" show="{{ isShow }}" confirmButtonText='已知晓'>
   <image class="huadong" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/滑动提示.gif" />
 </van-dialog>
+
+
+
+<!-- 解忧内容弹出层 -->
+<van-popup show="{{ showContent }}" bind:close="" custom-style='border-radius: 20rpx;' catchtouchmove="{{true}}">
+  <!-- 弹出层解忧信件具体内容 -->
+  <view class=''>
+
+  </view>
+</van-popup>

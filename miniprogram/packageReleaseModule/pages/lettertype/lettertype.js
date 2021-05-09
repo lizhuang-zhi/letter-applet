@@ -604,6 +604,7 @@ Page({
               judgeTime: new Date(new Date().setHours(0, 0, 0, 0))
             }
           })
+
         } else if (res.data.resultCode == 500) {
           wx.showToast({
             title: '服务器出了个小差~',

@@ -3,6 +3,7 @@
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20rpx;
+  box-shadow: 10rpx 10rpx 20rpx #cccccc;
 }
 /* 内部 */
 .letter-inner {

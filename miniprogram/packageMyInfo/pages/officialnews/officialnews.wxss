@@ -13,19 +13,22 @@
   color: rgb(120,120,120);
   margin-bottom: 26rpx;
 }
-.check-team .title {
+.check-team .check-box {
+  box-shadow: 0 0 20rpx #cccccc;
+}
+.check-team .check-box .title {
   font-size: 37rpx;
   font-weight: bold;
   color: #313131;
   letter-spacing: 3rpx;
   margin-bottom: 30rpx;
 }
-.check-team .content {
+.check-team .check-box .content {
   font-size: 30rpx;
   color: #707070;
   letter-spacing: 3rpx;
 }
-.check-team .checker {
+.check-team .check-box .checker {
   font-size: 30rpx;
   color: #AEAEAE;
   letter-spacing: 3rpx;
@@ -33,12 +36,12 @@
   align-items: center;
   margin-top: 25rpx;
 }
-.check-team .checker image{
+.check-team .check-box .checker image{
   width: 30rpx;
   height: 30rpx;
   border-radius: 50%;
   letter-spacing: 3rpx;
 }
-.check-team .checker .name{
+.check-team .check-box .checker .name{
   margin-left: 10rpx;
 }

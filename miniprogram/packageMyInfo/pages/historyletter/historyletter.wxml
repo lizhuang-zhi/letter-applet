@@ -1,9 +1,15 @@
 <!-- 收件信息 -->
 <view class="message-box">
 
-  <keo-letter-simple wx:for='{{replyList}}' wx:key='index' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
-    InnerHeight='250rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}" data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}"  data-senderpenname="{{item.senderPenName}}" data-replyid="{{item.replyId}}" content='{{item.message}}' writer='{{item.senderPenName}}' consignee='{{item.recipientPenName + " 收"}}'></keo-letter-simple>
-  
+  <block wx:for='{{replyList}}' wx:key='index'>
+    <view class="release-time">{{item.senderTime}}</view>
+    <keo-letter-simple WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
+      InnerHeight='250rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}"
+      data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}"
+      data-senderpenname="{{item.senderPenName}}" data-replyid="{{item.replyId}}" content='{{item.message}}'
+      writer='{{item.senderPenName}}' consignee='{{item.recipientPenName + " 收"}}'></keo-letter-simple>
+  </block>
+
 </view>
 
 
@@ -12,4 +18,3 @@
 <view class="letter-empty">
   <keo-empty-display wx:if="{{replyList.length == 0 || replyList == null}}" Text='暂无历史信件'></keo-empty-display>
 </view>
-

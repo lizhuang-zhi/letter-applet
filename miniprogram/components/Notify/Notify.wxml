@@ -3,7 +3,7 @@
   <!-- 时间 -->
   <view class="time" style="font-size:{{TimeSize}};color:{{TimeColor}};text-align:center;margin-bottom:{{TimeMargin}}">{{SendTime}}</view>
   <!-- 盒子 -->
-  <view class="box" style="background-color:{{BoxBackColor}};border-radius:{{BoxRadius}};">
+  <view class="box" style="background-color:{{BoxBackColor}};border-radius:{{BoxRadius}};box-shadow: 0 0 20rpx #ccc;">
     <!-- 图片盒子 -->
     <view class="box-img" style="width:{{ImgWidth}};">
       <image mode="widthFix" src="{{Img}}" style="width:{{ImgWidth}};"></image>

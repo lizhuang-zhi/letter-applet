@@ -85,7 +85,6 @@ Page({
 
   },
 
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -130,12 +129,15 @@ Page({
       key: 'userBackLetterNum',
       success: res => {
         // 获取缓存时间
-        let beforeTime = res.data.judgeTime;
+        let beforeTime = new Date(res.data.judgeTime).getTime();
         // 获取缓存可解答次数
         let letterBackNum = res.data.letterBackNum;
+        if(letterBackNum == 1) {
+          return;
+        }
         // 获取当前时间
         let nowTime = new Date().getTime();
-        if (nowTime > beforeTime && letterBackNum == 0) {
+        if (nowTime > beforeTime) {
           console.log('-- 重刷新解答次数 --');
           wx.setStorage({
             key: 'userBackLetterNum',

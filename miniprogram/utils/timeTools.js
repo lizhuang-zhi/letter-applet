@@ -49,9 +49,9 @@ let tools = {
       return '上周' + this.changeWeekDaysToChinese(timeWeekDays) + judgeConcreteTime + ' ' + hours + ':' + minutes;
     } else if (disVal >= oneWeekStamp && disVal < oneWeekStamp * 2) {
       return '一周前';
-    } else if(argTime.getFullYear() == nowTime.getFullYear()){
+    } else if (argTime.getFullYear() == nowTime.getFullYear()) {
       return argTimeMonth + "-" + argTimeDate;
-    }else {
+    } else {
       return argTime.getFullYear() + "-" + argTimeMonth + "-" + argTimeDate;
     }
 
@@ -97,7 +97,7 @@ let tools = {
   */
   indexBeautyTime(time) {
     // 定义英文月份
-    let enMonthArr = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Spt","Oct","Nov","Dec"];  
+    let enMonthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Spt", "Oct", "Nov", "Dec"];
     // 获取传入时间并转化
     let showTime = new Date(time);
     let showYears = showTime.getFullYear();
@@ -157,14 +157,38 @@ let tools = {
     // 获取传入时间的日期
     let timeDate = new Date(time).getDate() < 10 ? '0' + new Date(time).getDate() : new Date(time).getDate();
 
-    if(timeYears != timeYearsNow) {
+    if (timeYears != timeYearsNow) {
       return timeYears + '-' + timeMonth + '-' + timeDate;
-    }else {
+    } else {
       return timeMonth + '-' + timeDate;
     }
 
   },
 
+  // 历史信件显示时间（示例显示时间为 05-06 12:32)
+  historyLetterShowTime(time) {
+    // 获取当前时间
+    let nowTime = new Date();
+    // 获取当前时间的年份
+    let timeYearsNow = nowTime.getFullYear();
+
+    // 获取传入时间的年份
+    let timeYears = new Date(time).getFullYear();
+    // 获取传入时间的月份
+    let timeMonth = (new Date(time).getMonth() + 1) < 10 ? '0' + (new Date(time).getMonth() + 1) : (new Date(time).getMonth() + 1);
+    // 获取传入时间的日期
+    let timeDate = new Date(time).getDate() < 10 ? '0' + new Date(time).getDate() : new Date(time).getDate();
+    // 获取传入时间的具体小时
+    let timeHours = new Date(time).getHours() < 10 ? '0' + new Date(time).getHours() : new Date(time).getHours();
+    // 获取传入时间的具体分钟
+    let timeMinutes = new Date(time).getMinutes() < 10 ? '0' + new Date(time).getMinutes() : new Date(time).getMinutes();
+
+    if (timeYears != timeYearsNow) {
+      return timeYears + '-' + timeMonth + '-' + timeDate + ' ' + timeHours + ':' + timeMinutes;
+    } else {
+      return timeMonth + '-' + timeDate + ' ' + timeHours + ':' + timeMinutes;
+    }
+  },
 
   /* 
     评论列表显示时间
@@ -179,7 +203,7 @@ let tools = {
     // 获取参数日期
     let initDate = initTime.getDate() < 10 ? ('0' + initTime.getDate()) : initTime.getDate();
     // 获取参数小时
-    let initHours = initTime.getHours() < 10 ? ('0' + initTime.getHours()) : initTime.getHours(); 
+    let initHours = initTime.getHours() < 10 ? ('0' + initTime.getHours()) : initTime.getHours();
     // 获取参数分钟
     let initMinutes = initTime.getMinutes() < 10 ? ('0' + initTime.getMinutes()) : initTime.getMinutes();
 
@@ -188,13 +212,13 @@ let tools = {
     // 获取当前时间年份
     let nowYears = nowTime.getFullYear();
 
-    if(initYears == nowYears) {
+    if (initYears == nowYears) {
       return initMonths + '/' + initDate + ' ' + initHours + ':' + initMinutes;
-    }else{
+    } else {
       return initYears + '/' + initMonths + '/' + initDate + ' ' + initHours + ':' + initMinutes;
     }
 
-  } 
+  }
 
 
 
