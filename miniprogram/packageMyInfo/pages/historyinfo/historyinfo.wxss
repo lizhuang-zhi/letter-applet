@@ -41,15 +41,24 @@
 
 /* 解忧内容弹出层 */
 .letter-box {
-  padding: 30rpx;
+  padding: 20rpx 34rpx;
+  background-image: url('https://cdn.pixabay.com/photo/2020/02/13/21/21/lighthouse-4846855_960_720.jpg');
+  background-size: cover;
+  height: inherit;
 }
 .letter-box .content{
-  font-size: 30rpx;
+  font-size: 32rpx;
   letter-spacing: 3rpx;
-  color: #444444;
+  color: #dddddd;
+  /* color: #222222; */
+  height: 700rpx;
+  margin: 50rpx 0 30rpx;
+  text-indent: 2em;
 }
 .letter-box .bottom{
-  font-size: 32rpx;
+  font-size: 30rpx;
   letter-spacing: 2rpx;
-  color: #222222;
+  color: #fff;
+  /* color: #444444; */
+  text-align: right;
 }
