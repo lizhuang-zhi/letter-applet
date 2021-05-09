@@ -67,6 +67,12 @@ Page({
       console.log(res);
     })
   },
+  // 关闭解忧
+  onCloseContent() {
+    this.setData({
+      showContent: false
+    })
+  },
   /* *************************日记************************* */
   // 跳转日记内容
   ToDiaryContent(e) {

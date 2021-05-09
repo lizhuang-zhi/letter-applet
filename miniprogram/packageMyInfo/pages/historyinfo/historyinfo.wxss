@@ -38,3 +38,18 @@
   padding: 80rpx 20rpx;
   box-sizing: border-box;
 }
+
+/* 解忧内容弹出层 */
+.letter-box {
+  padding: 30rpx;
+}
+.letter-box .content{
+  font-size: 30rpx;
+  letter-spacing: 3rpx;
+  color: #444444;
+}
+.letter-box .bottom{
+  font-size: 32rpx;
+  letter-spacing: 2rpx;
+  color: #222222;
+}
