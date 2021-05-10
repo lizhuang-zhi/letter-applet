@@ -77,16 +77,35 @@
 </van-dialog>
 
 
-
 <!-- 解忧内容弹出层 -->
 <van-popup show="{{ showContent }}" bind:close="onCloseContent" custom-style='border-radius: 20rpx;width: 600rpx;height: 1000rpx;'
   catchtouchmove="{{true}}">
   <!-- 弹出层解忧信件具体内容 -->
   <view class='letter-box'>
+    <!-- 内容 -->
     <view class="content">山大佛附近的佛但是附件的撒覅手动阀手动阀山大佛的说法 的说法的说法倒放倒放啊手动阀啊手动阀倒放倒放山大佛但是发大水发生的佛手动阀倒放手动阀手动阀手动阀</view>
+    <!-- 名字下部分 -->
     <view class="bottom">
       <view class="name">醉酒的蝴蝶</view>
       <view class="time">星期日中午11:35</view>
     </view>
+
+    <!-- 背景小装饰 -->
+    <view class="item small-beauty-1">
+      <image src="../../images/d-1.png"></image>
+    </view>
+    <view class="item small-beauty-2">
+      <image src="../../images/d-2.png"></image>
+    </view>
+    <view class="item small-beauty-3">
+      <image src="../../images/d-6.png"></image>
+    </view>
+    <view class="item small-beauty-4">
+      <image src="../../images/any.png"></image>
+    </view>
+    <view class="item small-beauty-5">
+      <image src="../../images/u-1.png"></image>
+    </view>
+
   </view>
 </van-popup>
