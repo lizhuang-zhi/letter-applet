@@ -23,11 +23,93 @@ Page({
     // 日记数组
     diaryArr: [],
 
-
     /* 吐槽 */
     // 吐槽数组
     complainArr: [],
 
+    // 动画对象
+    d_1_ani: {},
+    // 设置初始顶部位置
+    beforeScrollTop: 0
+
+  },
+
+  // 下滚动时动画效果
+  animationDownFunc() {
+    let d_1 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '55% 55% 0'
+    });
+    let u_5 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '90% 0 0'
+    });
+    let d_2 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '90% 0 0'
+    });
+    d_1.rotate(5).step();
+    u_5.rotate(5).step();
+    d_2.translate(-30,-30).step(); 
+    this.setData({
+      d_1_ani: d_1.export(),
+      u_5_ani: u_5.export(),
+      d_2_ani: d_2.export(),
+    })
+  },
+  // 上滚动时动画效果
+  animationUpFunc() {
+    let d_1 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '55% 55% 0'
+    });
+    let u_5 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '90% 0 0'
+    });
+    d_1.rotate(-15).step();
+    u_5.rotate(-15).step();
+    this.setData({
+      d_1_ani: d_1.export(),
+      u_5_ani: u_5.export()
+    })
+  },
+
+  // 滚动事件
+  scrollTap(e) {
+    // 获取上一次高度
+    let beforeScrollTop = this.data.beforeScrollTop;
+    let scrollTop = e.detail.scrollTop;
+
+    /* 下滚动 */
+    if (scrollTop - beforeScrollTop > 0) {
+      this.setData({
+        beforeScrollTop: scrollTop
+      });
+      // 下滚动动画事件
+      this.animationDownFunc();
+    } else if (scrollTop - beforeScrollTop < 0) { // 上滚动
+      this.setData({
+        beforeScrollTop: scrollTop
+      });
+      // 上滚动动画事件
+      this.animationUpFunc();
+    }
   },
 
   /* *************************解忧************************* */
