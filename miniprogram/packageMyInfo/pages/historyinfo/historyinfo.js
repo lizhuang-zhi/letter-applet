@@ -50,20 +50,19 @@ Page({
       duration: 700,
       transformOrigin: '90% 0 0'
     });
-    let d_2 = wx.createAnimation({
+    let d_6 = wx.createAnimation({
       delay: 0,
       // 先快后慢
       timingFunction: 'ease-out',
       duration: 700,
-      transformOrigin: '90% 0 0'
     });
     d_1.rotate(5).step();
     u_5.rotate(5).step();
-    d_2.translate(-30,-30).step(); 
+    d_6.translate(3,-3).step(); 
     this.setData({
       d_1_ani: d_1.export(),
       u_5_ani: u_5.export(),
-      d_2_ani: d_2.export(),
+      d_6_ani: d_6.export(),
     })
   },
   // 上滚动时动画效果
@@ -82,11 +81,19 @@ Page({
       duration: 700,
       transformOrigin: '90% 0 0'
     });
+    let d_6 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+    });
     d_1.rotate(-15).step();
     u_5.rotate(-15).step();
+    d_6.translate(-3,3).step(); 
     this.setData({
       d_1_ani: d_1.export(),
-      u_5_ani: u_5.export()
+      u_5_ani: u_5.export(),
+      d_6_ani: d_6.export(),
     })
   },
 

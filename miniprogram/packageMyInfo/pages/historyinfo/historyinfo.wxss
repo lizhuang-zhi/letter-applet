@@ -48,9 +48,7 @@
 .letter-box .content{
   font-size: 32rpx;
   letter-spacing: 3rpx;
-  /* color: #dddddd; */
-  color: #222222;
-  height: 700rpx;
+  color: #444444;
   margin: 50rpx 0 30rpx;
   text-indent: 2em;
   padding: 20rpx 34rpx;
@@ -61,8 +59,7 @@
 .letter-box .bottom{
   font-size: 30rpx;
   letter-spacing: 2rpx;
-  /* color: #fff; */
-  color: #444444;
+  color: #666666;
   text-align: right;
   padding: 20rpx 34rpx;
 
