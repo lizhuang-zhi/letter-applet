@@ -7,7 +7,7 @@
       {{consignee}}
     </view>
     <!-- 简略内容 -->
-    <view class="letter-content" style="color:{{ContentColor}};font-size:{{ContentSize}};font-weight: bold;">
+    <view class="letter-content" style="color:{{ContentColor}};font-size:{{ContentSize}};font-weight: bold;margin:{{ContentMargin}}">
       {{content}}
     </view>
     <!-- 信件logo -->

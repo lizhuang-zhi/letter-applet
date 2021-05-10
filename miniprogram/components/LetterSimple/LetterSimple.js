@@ -19,6 +19,11 @@ Component({
       type: String,
       value: "32rpx"
     },
+    //简略内容内边距
+    ContentMargin:{
+      type:String,
+      value:'20rpx 0 30rpx'
+    },
     // 作者名称
     writer: {
       type: String,

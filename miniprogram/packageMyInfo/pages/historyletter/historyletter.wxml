@@ -4,6 +4,7 @@
   <block wx:for='{{replyList}}' wx:key='index'>
     <view class="release-time">{{item.senderTime}}</view>
     <keo-letter-simple ContentColor='#111' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
+    IconTop='45rpx'
       InnerHeight='250rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}"
       data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}"
       data-senderpenname="{{item.senderPenName}}" data-replyid="{{item.replyId}}" content='{{item.message}}'

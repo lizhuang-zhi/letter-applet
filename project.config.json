@@ -4,7 +4,7 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": true,
+    "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -19,15 +19,13 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "useMultiFrameRuntime": true,
+    "useMultiFrameRuntime": false,
     "useApiHook": true,
-    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
@@ -225,6 +223,12 @@
         {
           "name": "pages/mailbox/mailbox",
           "pathName": "pages/mailbox/mailbox",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMyInfo/pages/historyletter/historyletter",
+          "pathName": "packageMyInfo/pages/historyletter/historyletter",
           "scene": null
         }
       ]
