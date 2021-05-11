@@ -15,7 +15,7 @@
       <image class="icon-img" src="{{IconImgSrc}}"></image>
     </view>
     <!-- 作者名称 -->
-    <view class="letter-writer" style="color:{{WriterColor}};font-size:{{WriterSize}};bottom:{{WriterBottom}};right:{{WriterRight}};margin: 40rpx 0 10rpx;">
+    <view class="letter-writer" style="color:{{WriterColor}};font-size:{{WriterSize}};bottom:{{WriterBottom}};right:{{WriterRight}};margin: 40rpx 0 30rpx;">
       {{writer}}
     </view>
   </view>

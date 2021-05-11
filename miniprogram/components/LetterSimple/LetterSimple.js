@@ -52,7 +52,7 @@ Component({
     // 内部高度
     InnerHeight: {
       type: String,
-      value: "330rpx"
+      value: "290rpx"
     },
     //内部内边距 
     InnerPadding:{
