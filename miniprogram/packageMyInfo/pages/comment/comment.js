@@ -38,8 +38,23 @@ Page({
   toComplainPage(e) {
     // 吐槽对象id
     let id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+
+    // 判断是否吐槽主体被删除
+    requestData.complainDetail(id).then(res => {
+      console.log(res.data.data);
+      // 获取评论对象信息
+      let backInfo = res.data.data;
+      if (backInfo == null) {
+        wx.showToast({
+          title: '该吐槽已被删除~',
+          icon: 'none'
+        })
+      } else {
+        wx.navigateTo({
+          url: '/packageWriteLetter/pages/complaintletter/complaintletter?id=' + id,
+        })
+      }
+
     })
   },
   // 上拉触底

@@ -92,11 +92,11 @@ App({
     wx.loadFontFace({
       global: true,
       family: 'custom',
-      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GABRIOLA.TTF")',
-      // desc: {
-      //   style: 'oblique',
-      //   weight: 900
-      // },
+      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GrandMontherFont.ttf")',
+      desc: {
+        style: 'oblique',
+        weight: 900
+      },
       success: res => {
         console.log('!!!!!!! 字体设置成功 !!!!!!!');
       },
