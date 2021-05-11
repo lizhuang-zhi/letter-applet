@@ -71,6 +71,8 @@ const DeleteComplain = prefix + '/spitting-grooves/delete';
 const DeleteSorrowLetter = prefix + '/letter/changeLetterStateToDeleteById';
 // 删除日记
 const DeleteDiary = prefix + '/diary/changeDiaryStateToDeleteById';
+// 获取官方审核推送
+const OfficialCheck = prefix + '/user/getOfficialMsg';
 
 // 返回对象
 let url = {
@@ -189,6 +191,10 @@ let url = {
   // 删除日记
   getDeleteDiary() {
     return DeleteDiary;
+  },
+  // 获取官方审核推送
+  getOfficialCheck() {
+    return OfficialCheck;
   }
 
 

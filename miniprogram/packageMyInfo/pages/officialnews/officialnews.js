@@ -32,8 +32,9 @@ Page({
         // 修改显示时间格式
         reportList.forEach(item => {
           item.time = timeTools.mailboxShowMessageTime(item.time);
-        }); 
-        // 设置月报数组
+        });
+        
+        // 设置月报和审核数组
         this.setData({
           monthReportList: reportList
         })

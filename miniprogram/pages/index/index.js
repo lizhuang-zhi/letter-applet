@@ -23,14 +23,96 @@ Page({
     showTipPop: false,
 
     // 弹出层
-    imgUrls: [
-      {title: '文明书写，不伤害他人', picUrl: '../../images/tips-send.png'},
-      {title: '正视他人言论，吸取有益之处', picUrl: '../../images/tips-mailbox.png'},
-      {title: '善于思考，学会日记', picUrl: '../../images/tips-diary.png'},
-      {title: '集邮票，解成就，完成你的历练之路', picUrl: '../../images/tips-achievement.png'}
+    imgUrls: [{
+        title: '文明书写，不伤害他人',
+        picUrl: '../../images/tips-send.png'
+      },
+      {
+        title: '正视他人言论，吸取有益之处',
+        picUrl: '../../images/tips-mailbox.png'
+      },
+      {
+        title: '善于思考，学会日记',
+        picUrl: '../../images/tips-diary.png'
+      },
+      {
+        title: '集邮票，解成就，完成你的历练之路',
+        picUrl: '../../images/tips-achievement.png'
+      }
     ],
     swiperIdx: 0,
 
+    // 上一次页面距顶距离
+    beforeScrollTop: 0,
+    d_1_ani: {},
+    flower: {}
+
+  },
+  // 下滚动时动画效果
+  animationDownFunc() {
+    let d_1 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '10% 90% 0'
+    });
+    let any = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 300,
+    });
+    d_1.rotate(11).step();
+    any.opacity(0.7).step();
+    this.setData({
+      d_1_ani: d_1.export(),
+      flower: any.export()
+    })
+  },
+  // 上滚动时动画效果
+  animationUpFunc() {
+    let d_1 = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 700,
+      transformOrigin: '10% 90% 0'
+    });
+    let any = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 300,
+    });
+    d_1.rotate(-15).step();
+    any.opacity(1).step();
+    this.setData({
+      d_1_ani: d_1.export(),
+      flower: any.export()
+    })
+  },
+
+  // 滚动事件
+  onPageScroll(e) {
+    // 获取上一次高度
+    let beforeScrollTop = this.data.beforeScrollTop;
+    let scrollTop = e.scrollTop;
+
+    /* 下滚动 */
+    if (scrollTop - beforeScrollTop > 0) {
+      this.setData({
+        beforeScrollTop: scrollTop
+      });
+      // 下滚动动画事件
+      this.animationDownFunc();
+    } else if (scrollTop - beforeScrollTop < 0) { // 上滚动
+      this.setData({
+        beforeScrollTop: scrollTop
+      });
+      // 上滚动动画事件
+      this.animationUpFunc();
+    }
   },
 
   // 去到美文内容页

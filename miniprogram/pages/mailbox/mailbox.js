@@ -311,18 +311,55 @@ Page({
     // 获取未读信件数量
     requestData.mailboxNumberOfLetter(openId).then(res => {
       console.log(res.data.data);
+      // 获取回信数量
+      let letterNum = res.data.data[1];
+      // 获取评论数量
+      let commentNum = res.data.data[2];
+      // 赋值消息提示数量
+      let dataList = this.data.dataList;
+      dataList[1].notifiNum = letterNum;
+      dataList[2].notifiNum = commentNum;
+      this.setData({
+        dataList: dataList
+      });
+
+      // 获取审核数据
+      return requestData.officialCheck(openId);
+
+    }).then(res => {
       return new Promise((resolve, reject) => {
-        // 获取回信数量
-        let letterNum = res.data.data[1];
-        // 获取评论数量
-        let commentNum = res.data.data[2];
-        // 赋值消息提示数量
-        let dataList = this.data.dataList;
-        dataList[1].notifiNum = letterNum;
-        dataList[2].notifiNum = commentNum;
-        this.setData({
-          dataList: dataList
-        });
+        console.log(res.data.data);
+        // 获取到的审核消息
+        let checkInfo = res.data.data;
+        if (checkInfo == null) {
+          console.log('------- 暂无审核信息返回 --------');
+        } else {
+          // 存储信息对象
+          let infoObj = {
+            time: new Date().getTime(),
+            data: checkInfo
+          };
+
+          wx.getStorage({
+            key: 'officialNewsReportList',
+            success: res => {
+              // 获取原数据
+              let reportList = res.data.reportList;
+              let time = res.data.time;
+              let unReadNum = res.data.unReadNum;
+              // 添加审核对象
+              let newList = reportList.concat(infoObj);
+              wx.setStorage({
+                key: 'officialNewsReportList',
+                data: {
+                  reportList: newList,
+                  time: time,
+                  unReadNum: unReadNum
+                },
+              })
+            }
+          });
+        }
         resolve('success');
       })
     }).then(res => {

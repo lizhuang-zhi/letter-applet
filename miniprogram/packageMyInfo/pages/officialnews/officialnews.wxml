@@ -1,29 +1,31 @@
 <!-- 消息通知 -->
 <view class="box">
 
-  <!-- 月报item -->
-  <keo-notify wx:for="{{monthReportList}}" wx:key='index' SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！"
-    ProImgSrc='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/铃铛.png'
-    Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/月报.webp" promulgatorText='系统推送'
-    bindtap="ToCheckOutReport" data-index="{{index}}" ProorSize='30rpx' ProImgSrcWidth='30rpx' ProImgSrcHeight='30rpx'
-    ProTopMargin='20rpx'>
-  </keo-notify>
+  <block wx:for="{{monthReportList}}" wx:key='index'>
+    <!-- 月报item -->
+    <keo-notify wx:if="{{item.data.logo == undefined}}" SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！"
+      ProImgSrc='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/铃铛.png'
+      Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/月报.webp" promulgatorText='系统推送'
+      bindtap="ToCheckOutReport" data-index="{{index}}" ProorSize='30rpx' ProImgSrcWidth='30rpx' ProImgSrcHeight='30rpx'
+      ProTopMargin='20rpx'>
+    </keo-notify>
 
-  <!-- 审核item -->
-  <view class="check-team">
-    <view class="check-time">04-21</view>
-    <view class="check-box">
-      <yeo-frame-view direction='row' frameBgColor='#FFFFFF' framePadding='20rpx' frameBoxSizing='border-box'>
-        <view class="title">审核通知</view>
-        <view class="content">您发布的“我是你大爷的打野，真厉害，你是个不好的人，你个人才中的天才..”审核通过!</view>
-        <view class="checker">
-          <image src="../../images/通知.png">
-          </image>
-          <view class="name">信栈审核团队</view>
-        </view>
-      </yeo-frame-view>
+    <!-- 审核item -->
+    <view class="check-team" wx:else>
+      <view class="check-time">{{item.time}}</view>
+      <view class="check-box">
+        <yeo-frame-view direction='row' frameBgColor='#FFFFFF' framePadding='20rpx' frameBoxSizing='border-box'>
+          <view class="title">{{item.data.logo}}审核通知</view>
+          <view class="content">您发布的“{{item.data.content}}..”{{item.data.msg}}!</view>
+          <view class="checker">
+            <image src="../../images/通知.png">
+            </image>
+            <view class="name">信栈审核团队</view>
+          </view>
+        </yeo-frame-view>
+      </view>
     </view>
-  </view>
+  </block>
 
 </view>
 

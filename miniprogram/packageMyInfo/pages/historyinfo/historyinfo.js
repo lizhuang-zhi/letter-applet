@@ -56,13 +56,21 @@ Page({
       timingFunction: 'ease-out',
       duration: 700,
     });
+    let any = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 300,
+    });
     d_1.rotate(5).step();
     u_5.rotate(5).step();
-    d_6.translate(3,-3).step(); 
+    d_6.translate(3, -3).step();
+    any.opacity(1).step();
     this.setData({
       d_1_ani: d_1.export(),
       u_5_ani: u_5.export(),
       d_6_ani: d_6.export(),
+      flower: any.export()
     })
   },
   // 上滚动时动画效果
@@ -87,13 +95,21 @@ Page({
       timingFunction: 'ease-out',
       duration: 700,
     });
+    let any = wx.createAnimation({
+      delay: 0,
+      // 先快后慢
+      timingFunction: 'ease-out',
+      duration: 300,
+    });
     d_1.rotate(-15).step();
     u_5.rotate(-15).step();
-    d_6.translate(-3,3).step(); 
+    d_6.translate(-3, 3).step();
+    any.opacity(0.5).step();
     this.setData({
       d_1_ani: d_1.export(),
       u_5_ani: u_5.export(),
       d_6_ani: d_6.export(),
+      flower: any.export()
     })
   },
 
@@ -121,9 +137,26 @@ Page({
 
   /* *************************解忧************************* */
   // 跳转解忧内容
-  ToSorrowTap() {
-    this.setData({
-      showContent: true
+  ToSorrowTap(e) {
+    // 获取点击信件id与用户openid
+    let openId = e.currentTarget.dataset.openId;
+    let id = e.currentTarget.dataset.id;
+    requestData.sorrowletter(id, openId).then(res => {
+      console.log(res.data.data);
+      return new Promise((resolve, reject) => {
+        // 获取信件信息
+        let letterObj = res.data.data;
+        letterObj.releaseTime = timeTools.indexPostBoxTime(letterObj.releaseTime);
+        // 渲染信息
+        this.setData({
+          letterObj: letterObj
+        });
+        resolve('success');
+      })
+    }).then(res => {
+      this.setData({
+        showContent: true
+      })
     })
   },
   // 删除解忧

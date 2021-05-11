@@ -599,6 +599,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取官方审核推送
+  officialCheck(openid) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getOfficialCheck(),
+        data: {
+          'open id': openid
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 
