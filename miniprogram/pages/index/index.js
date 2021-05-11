@@ -25,19 +25,19 @@ Page({
     // 弹出层
     imgUrls: [{
         title: '文明书写，不伤害他人',
-        picUrl: '../../images/tips-send.png'
+        picUrl: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/tips-send.png'
       },
       {
         title: '正视他人言论，吸取有益之处',
-        picUrl: '../../images/tips-mailbox.png'
+        picUrl: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/tips-mailbox.png'
       },
       {
         title: '善于思考，学会日记',
-        picUrl: '../../images/tips-diary.png'
+        picUrl: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/tips-diary.png'
       },
       {
         title: '集邮票，解成就，完成你的历练之路',
-        picUrl: '../../images/tips-achievement.png'
+        picUrl: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/tips-achievement.png'
       }
     ],
     swiperIdx: 0,

@@ -38,7 +38,7 @@
       <view class="notifi-box" style="display: {{isShowToastBox}};">
         <view class="desc">快来打开你的信箱</view>
         <view class="pic">
-          <image src="../../images/flower.png"></image>
+          <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/flower.png"></image>
         </view>
       </view>
     </view>
