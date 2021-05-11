@@ -41,24 +41,81 @@
 
 /* 解忧内容弹出层 */
 .letter-box {
-  padding: 20rpx 34rpx;
-  background-image: url('https://cdn.pixabay.com/photo/2020/02/13/21/21/lighthouse-4846855_960_720.jpg');
-  background-size: cover;
+  background: #FFEEE6;
   height: inherit;
+  position: relative;
 }
 .letter-box .content{
   font-size: 32rpx;
   letter-spacing: 3rpx;
-  color: #dddddd;
-  /* color: #222222; */
-  height: 700rpx;
+  color: #444444;
   margin: 50rpx 0 30rpx;
   text-indent: 2em;
+  padding: 20rpx 34rpx;
+
+  position: relative;
+  z-index: 999;
 }
 .letter-box .bottom{
   font-size: 30rpx;
   letter-spacing: 2rpx;
-  color: #fff;
-  /* color: #444444; */
+  color: #666666;
   text-align: right;
+  padding: 20rpx 34rpx;
+
+  position: relative;
+  z-index: 999;
 }
+
+
+/* 背景小装饰 */
+.letter-box .item image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.letter-box .small-beauty-2 image{
+  width: 120rpx;
+  height: 160rpx;
+}
+.letter-box .small-beauty-3 image{
+  width: 200rpx;
+  height: 260rpx;
+}
+.letter-box .small-beauty-5 image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.letter-box .small-beauty-1 {
+  position: fixed;
+  bottom: 320rpx;
+  right: -30rpx;
+}
+.letter-box .small-beauty-2 {
+  position: fixed;
+  bottom: 50rpx;
+  right: -30rpx;
+  z-index: 1;
+  opacity: 0.6;
+}
+.letter-box .small-beauty-3 {
+  position: fixed;
+  bottom: 470rpx;
+  left: -120rpx;
+  opacity: 0.8;
+}
+.letter-box .small-beauty-4 {
+  position: fixed;
+  bottom: 20%;
+  left: 40%;
+  z-index: 1;
+  opacity: 0.6;
+}
+.letter-box .small-beauty-5 {
+  position: fixed;
+  top: -30rpx;
+  right: 80rpx;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+

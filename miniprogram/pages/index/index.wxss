@@ -210,6 +210,31 @@ page {
   display: inline-block;
 }
 
+/* 左侧叶子 */
+.item-bg-yezi image{
+  width: 240rpx;
+  height: 220rpx;
+
+  position: absolute;
+  top: 730rpx;
+  left: -40rpx; 
+  z-index: -1;
+  
+  transform: rotate(15deg);
+}
+/* 花朵 */
+.item-bg-hua image{
+  width: 60rpx;
+  height: 60rpx;
+
+  position: absolute;
+  top: 1100rpx;
+  left: 70%; 
+  z-index: -1;
+  opacity: 0.5;
+}
+
+
 @keyframes upDown {
   0% {
     transform: translateY(0);
