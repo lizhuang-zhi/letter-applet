@@ -35,5 +35,6 @@
 }
 /* 作者名称 */
 .letter-inner .letter-writer {
+  height: 40rpx;
   position: absolute;
 }

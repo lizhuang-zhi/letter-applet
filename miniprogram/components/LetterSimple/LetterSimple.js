@@ -19,11 +19,6 @@ Component({
       type: String,
       value: "32rpx"
     },
-    //简略内容内边距
-    ContentMargin:{
-      type:String,
-      value:'20rpx 0 30rpx'
-    },
     // 作者名称
     writer: {
       type: String,
@@ -42,7 +37,7 @@ Component({
     //作者位置 距离底部的距离 rpx
     WriterBottom:{
       type:String,
-      value:"20rpx"
+      value:"0rpx"
     },
     //作者位置  离右边的距离 rpx
     WriterRight:{
@@ -57,7 +52,7 @@ Component({
     // 内部高度
     InnerHeight: {
       type: String,
-      value: "300rpx"
+      value: "330rpx"
     },
     //内部内边距 
     InnerPadding:{
