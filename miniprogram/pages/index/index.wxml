@@ -121,6 +121,6 @@
 <view class="item-bg-yezi" >
   <image animation='{{d_1_ani}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-yezi.png"></image>
 </view>
-<view class="item-bg-hua" animation='{{flower}}'>
-  <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-flower.png"></image>
+<view class="item-bg-hua" >
+  <image animation='{{flower}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-flower.png"></image>
 </view>

@@ -63,8 +63,8 @@ Page({
       timingFunction: 'ease-out',
       duration: 300,
     });
-    d_1.rotate(11).step();
-    any.opacity(0.7).step();
+    d_1.rotate(5).step();
+    any.opacity(0.5).step();
     this.setData({
       d_1_ani: d_1.export(),
       flower: any.export()
@@ -85,7 +85,7 @@ Page({
       timingFunction: 'ease-out',
       duration: 300,
     });
-    d_1.rotate(-15).step();
+    d_1.rotate(-5).step();
     any.opacity(1).step();
     this.setData({
       d_1_ani: d_1.export(),
