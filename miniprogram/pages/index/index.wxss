@@ -1,12 +1,14 @@
 page {
   /* 提示框颜色 */
   --notifi-box-bg-color: #FFFFFF;
+
 }
 
 /* 美文欣赏栏 */
 .beauty-article {
   margin: var(--index-tit-margin);
 }
+
 .beauty-article .info-left {
   font-size: 40rpx;
   font-family: 'Courier New', Courier, monospace;
@@ -18,18 +20,21 @@ page {
 .tit-sorrow {
   margin: var(--index-tit-margin);
 }
+
 .tit-sorrow .info-left {
   font-size: 40rpx;
   font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   width: 500rpx;
 }
+
 .tit-sorrow .info-right {
   font-size: 26rpx;
   letter-spacing: 2rpx;
 
   position: relative;
 }
+
 .tit-sorrow .info-right .letter-btn {
   border: 3rpx solid #FFA82E;
   padding: 5rpx 10rpx;
@@ -38,11 +43,13 @@ page {
   display: flex;
   align-items: center;
 }
+
 .tit-sorrow .info-right .letter-btn image {
   display: inline-block;
   width: 28rpx;
   height: 28rpx;
 }
+
 .tit-sorrow .info-right .letter-btn image text {
   display: inline-block;
 }
@@ -62,6 +69,7 @@ page {
   animation: upDown 1.2s ease-in-out 5;
   z-index: -1;
 }
+
 .tit-sorrow .info-right .notifi-box:before {
   content: "";
   position: absolute;
@@ -71,6 +79,7 @@ page {
   border-right: 13px solid transparent;
   border-bottom: 13px solid var(--notifi-box-bg-color);
 }
+
 .tit-sorrow .info-right .notifi-box .desc {
   font-size: 33rpx;
   color: #7F7F7F;
@@ -79,6 +88,7 @@ page {
   top: 40rpx;
   left: 50rpx;
 }
+
 .tit-sorrow .info-right .notifi-box .pic image {
   margin-top: 40rpx;
   width: 100%;
@@ -91,13 +101,16 @@ page {
 .tit-sorrow-box {
   margin: 20rpx 40rpx 10rpx;
 }
+
 .tit-sorrow-box .sorrow-list {
   height: 470rpx;
 }
+
 .tit-sorrow-box .sorrow-list yeo-stamp-text {
   display: inline-block;
   margin-right: 20rpx;
 }
+
 .tit-sorrow-box .sorrow-list .list-box {
   display: flex;
 }
@@ -114,6 +127,7 @@ page {
 .letter-station {
   margin: var(--index-tit-margin);
 }
+
 .letter-station .info-left {
   font-size: 40rpx;
   font-family: 'Courier New', Courier, monospace;
@@ -125,6 +139,7 @@ page {
 .tip-box {
   height: 400rpx;
 }
+
 .tip-box .tip-pic {
   position: absolute;
   top: 20rpx;
@@ -134,6 +149,7 @@ page {
   border: 4rpx solid #E8EAEA;
   padding: 10rpx 12rpx 5rpx;
 }
+
 .tip-box .tip-pic image {
   width: 40rpx;
   height: 40rpx;
@@ -144,10 +160,12 @@ page {
   letter-spacing: 3rpx;
   margin-top: 60rpx;
 }
+
 .tip-box .item-2 {
   letter-spacing: 3rpx;
   margin: 10rpx 0;
 }
+
 .tip-box .item-3 {
   font-size: 22rpx;
   letter-spacing: 3rpx;
@@ -161,17 +179,20 @@ page {
   width: 560rpx;
   margin: 50rpx 30rpx 20rpx;
 }
+
 .show-tip-pop .tips-title {
   margin-bottom: 30rpx;
   display: flex;
   align-items: center;
 }
+
 .show-tip-pop .tips-title image {
   width: 50rpx;
   height: 50rpx;
   margin-right: 12rpx;
   display: inline-block;
 }
+
 .show-tip-pop .tips-title text {
   font-size: 36rpx;
   color: #444444;
@@ -179,20 +200,24 @@ page {
   display: inline-block;
   margin-top: 5rpx;
 }
+
 .show-tip-pop .swiperClass {
   margin: 0;
   margin-top: 20rpx;
 }
+
 .show-tip-pop .swiperClass swiper-item {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
+
 .show-tip-pop .swiperClass swiper-item image {
   margin: 50rpx 0 0;
   width: 400rpx;
   height: 350rpx;
 }
+
 .show-tip-pop .swiperClass .slide-content {
   font-size: 30rpx;
   color: #8B8B8B;
@@ -206,28 +231,30 @@ page {
   margin: 30rpx auto 0;
   width: 500rpx;
 }
+
 .btn-part keo-check-button {
   display: inline-block;
 }
 
 /* 左侧叶子 */
-.item-bg-yezi image{
+.item-bg-yezi image {
   width: 240rpx;
   height: 220rpx;
 
   position: absolute;
   top: 730rpx;
-  left: -60rpx; 
+  left: -60rpx;
   z-index: -1;
 }
+
 /* 花朵 */
-.item-bg-hua image{
+.item-bg-hua image {
   width: 60rpx;
   height: 60rpx;
 
   position: absolute;
   top: 1100rpx;
-  left: 70%; 
+  left: 70%;
   z-index: -1;
   opacity: 0.5;
 }

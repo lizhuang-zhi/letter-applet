@@ -91,12 +91,12 @@ App({
     */
     wx.loadFontFace({
       global: true,
-      family: 'Bitstream Vera Serif Bold',
-      source: 'url("https://sungd.github.io/Pacifico.ttf")',
-      desc: {
-        style: 'oblique',
-        weight: 900
-      },
+      family: 'custom',
+      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GABRIOLA.TTF")',
+      // desc: {
+      //   style: 'oblique',
+      //   weight: 900
+      // },
       success: res => {
         console.log('!!!!!!! 字体设置成功 !!!!!!!');
       },

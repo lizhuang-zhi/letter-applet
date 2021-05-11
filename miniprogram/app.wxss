@@ -6,6 +6,9 @@ page {
 
   /* 首页标题margin */
   --index-tit-margin: 40rpx 40rpx 20rpx;
+
+    /* 全局字体设置 */
+    font-family: 'custom';
 }
 /* 顶部文字 */
 .top-content-box {
