@@ -41,9 +41,14 @@ Page({
         icon: 'none',
         image: '../../images/input.png'
       });
+    } else if (this.data.chooseType == '吐槽' && subvalue.length <= 10) {
+      wx.showToast({
+        title: '多写几句吧~',
+        icon: 'none',
+      })
     } else if (subvalue.length < 50) {
       wx.showToast({
-        title: '多写几句吧',
+        title: '小主，多写几句吧~',
         icon: 'none',
       })
     } else if (chooseType == '回信') {
