@@ -4,6 +4,28 @@ page {
 
 }
 
+.top-content-box .top-tit {
+  display: flex;
+  align-items: center;
+}
+.top-content-box .top-tit .top-name {
+  margin-left: 10rpx;
+}
+.top-content-box .top-tit .add-item {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #FF1D23;
+  display: flex;
+  align-items: center;
+}
+.top-content-box .top-tit .add-item image {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+
 /* 美文欣赏栏 */
 .beauty-article {
   margin: var(--index-tit-margin);
@@ -137,7 +159,7 @@ page {
 
 /* 小贴士图标 */
 .tip-box {
-  height: 400rpx;
+  height: 280rpx;
 }
 
 .tip-box .tip-pic {

@@ -187,34 +187,10 @@ Component({
 
   lifetimes: {
     attached() {
-      // dataArr数组
-      let dataArr = this.data.dataArr;
-      // 获取显示标题文字数量
-      let titNum = this.properties.titleFontNum;
-      dataArr.forEach(item => {
-        // time 
-        let time = new Date(item.time);
-        // year
-        let year = time.getFullYear();
-        // month
-        let month = time.toDateString().split(' ')[1];
-        // date
-        let date = time.getDate();
-        // 美化后的时间
-        let beautyTime = date + ' ' + month + '.' + year;
-        item.time = beautyTime;
-
-        // 砍掉多余title文字
-        item.title = item.title.length > titNum ? item.title.substring(0, titNum) : item.title;
-        console.log(item.title);
-      });
-      this.setData({
-        dataArr: this.data.dataArr
-      })
 
     },
     detached() {
-      this.sendDataArr();
+      // this.sendDataArr();
     },
     created() {
 
@@ -257,7 +233,6 @@ Component({
       this.setData({
         dataArr: this.data.dataArr
       })
-
     },
     // 点击（Item）事件
     tapItem(e) {

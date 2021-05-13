@@ -1,6 +1,12 @@
 <!-- 顶部文字 -->
 <view class="top-content-box">
-  <view class="top-tit">信意</view>
+  <view class="top-tit">
+    <!-- add图标 -->
+    <view class="add-item" bindtap="toRelease">
+      <image src="../../images/add.png"></image>
+    </view>
+    <view class="top-name" bindtap="toRelease">发布</view>
+  </view>
   <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
 </view>
 
@@ -89,7 +95,8 @@
 <yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>
 
 <!-- 信栈小贴士弹出层 -->
-<van-popup show="{{ showTipPop }}" bind:close="onTipClose" custom-style='border-radius: 20rpx;' catchtouchmove="{{true}}">
+<van-popup show="{{ showTipPop }}" bind:close="onTipClose" custom-style='border-radius: 20rpx;'
+  catchtouchmove="{{true}}">
   <!-- 弹出层轮播注意事项 -->
   <view class='show-tip-pop'>
     <!-- 提示标题 -->
@@ -99,8 +106,7 @@
     </view>
     <!-- 轮播图 -->
     <swiper class='swiperClass' indicator-color="#a39f99" indicator-active-color="#f49641" autoplay indicator-dots
-      interval="5000" duration="1500" circular bindchange="bindchange"
-      style='height: 600rpx'>
+      interval="5000" duration="1500" circular bindchange="bindchange" style='height: 600rpx'>
       <block wx:for="{{imgUrls}}" wx:key="index">
         <swiper-item>
           <image src="{{item.picUrl}}" class="slide-image" mode='aspectFill'>
@@ -111,16 +117,19 @@
     </swiper>
     <!-- 我已了解 -->
     <view class="btn-part" bindtap="understandTap">
-      <keo-check-button BtnText="我已了解" bindtap="ToWriteArea" BtnWidth='500rpx' BtnHeight='70rpx' LineHeight='70rpx' BtnRadius='20rpx'></keo-check-button>
+      <keo-check-button BtnText="我已了解" bindtap="ToWriteArea" BtnWidth='500rpx' BtnHeight='70rpx' LineHeight='70rpx'
+        BtnRadius='20rpx'></keo-check-button>
     </view>
   </view>
 </van-popup>
 
 
 <!-- 背景图标 -->
-<view class="item-bg-yezi" >
-  <image animation='{{d_1_ani}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-yezi.png"></image>
+<view class="item-bg-yezi">
+  <image animation='{{d_1_ani}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-yezi.png">
+  </image>
 </view>
-<view class="item-bg-hua" >
-  <image animation='{{flower}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-flower.png"></image>
+<view class="item-bg-hua">
+  <image animation='{{flower}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-flower.png">
+  </image>
 </view>

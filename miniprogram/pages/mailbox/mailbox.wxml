@@ -41,9 +41,3 @@
     </yeo-message-notification>
   </view>
 </yeo-loading-part>
-
-
-<!-- 背景图标 -->
-<view class="item-bg">
-  <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/yezi.png"></image>
-</view>

@@ -9,14 +9,4 @@ page {
   margin: 50rpx 40rpx 0;
 }
 
-/* 右上角叶子 */
-.item-bg image{
-  width: 200rpx;
-  height: 200rpx;
-
-  position: fixed;
-  top: -30rpx;
-  right: -60rpx;
-  z-index: -1;
-}
 

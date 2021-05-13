@@ -2,8 +2,6 @@
 
   <cover-view wx:for="{{list}}" wx:key="index" class="tab-bar-item" data-path="{{item.pagePath}}" data-index="{{index}}"
     bindtap="switchTab">
-    <!-- 回信提示数量 -->
-    <!-- <cover-view class="notifi-num" wx:if="{{notifinum != 0}}">{{item.notifinum}}</cover-view> -->
     <cover-image src="{{selected == index ? item.selectedIconPath : item.iconPath}}"></cover-image>
     <cover-view style="color: {{selected == index ? selectedColor : color}}">{{item.text}}</cover-view>
   </cover-view>
