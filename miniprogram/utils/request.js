@@ -616,6 +616,23 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取所有邮票
+  stampCollection(openId) {
+    return new Promise((resolve,reject) => {
+      wx.request({
+        url: apiUrl.getStampCollection(),
+        data: {
+          openId: openId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

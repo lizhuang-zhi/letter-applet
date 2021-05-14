@@ -7,7 +7,8 @@ Page({
   data: {
 
     // 成就信息数组
-    achievementsArr: [{
+    achievementsArr: [
+      {
         isLock: false,
         achievementsPic: '../../images/lock.png',
         tit: '解答专家',

@@ -45,9 +45,33 @@ Page({
     // 上一次页面距顶距离
     beforeScrollTop: 0,
     d_1_ani: {},
-    flower: {}
+    flower: {},
+
+    // 弹出测试
+    showShare: false,
+    options: [
+      { name: '微信', icon: 'wechat', openType: 'share' },
+      { name: '微博', icon: 'weibo' },
+      { name: '复制链接', icon: 'link' },
+      { name: '分享海报', icon: 'poster' },
+      { name: '二维码', icon: 'qrcode' },
+    ],
 
   },
+  onClick(event) {
+    this.setData({ showShare: true });
+  },
+
+  onClose() {
+    this.setData({ showShare: false });
+  },
+
+  onSelect(event) {
+    Toast(event.detail.name);
+    this.onClose();
+  },
+
+  
   // 跳转发布页面
   toRelease() {
     wx.navigateTo({

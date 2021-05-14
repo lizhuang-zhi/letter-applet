@@ -73,6 +73,8 @@ const DeleteSorrowLetter = prefix + '/letter/changeLetterStateToDeleteById';
 const DeleteDiary = prefix + '/diary/changeDiaryStateToDeleteById';
 // 获取官方审核推送
 const OfficialCheck = prefix + '/user/getOfficialMsg';
+// 获取所有邮票
+const StampCollection = prefix + '/getAllStampForAlbum';
 
 // 返回对象
 let url = {
@@ -195,7 +197,12 @@ let url = {
   // 获取官方审核推送
   getOfficialCheck() {
     return OfficialCheck;
+  },
+  // 获取所有邮票
+  getStampCollection() {
+    return StampCollection;
   }
+
 
 
 }

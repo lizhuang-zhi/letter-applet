@@ -1,11 +1,15 @@
 <view class="collection">
 
   <view class="collection-box">
-    <view class="show-stamp" wx:for="{{stampArr}}" wx:key='index' bindtap="showContent" data-index="{{index}}" data-tit="{{item.tit}}" data-desc="{{item.desc}}" data-edition="{{item.edition}}" data-pic="{{item.stampPic}}">
+    <view class="show-stamp" wx:for="{{stampArr}}" wx:key='index' bindtap="showContent" data-index="{{index}}"
+      data-tit="{{item.stampName}}" data-desc="{{item.stampDesc}}" data-edition="{{item.stampEdition}}"
+      data-pic="{{item.stampUrl}}">
       <!-- 显示解锁邮票 -->
-      <image wx:if="{{item.isLock}}" src="{{item.stampPic}}"></image>
+      <image wx:if="{{!item.lock}}" src="{{item.stampUrl}}"></image>
       <!-- 未解锁邮票 -->
-      <image wx:else src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/lock.png"></image>
+      <image wx:else
+        src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/stamp_collection_lock.png?versionId=CAEQFhiBgIDjyb.qyxciIDZkZjM1MjZkMGUxMDRiZGI5MDFlOTZiYzFjYzlkZWQy">
+      </image>
     </view>
   </view>
 
@@ -13,8 +17,8 @@
 
 
 <!-- 弹出邮票具体内容 -->
-<van-popup show="{{ isShowPop }}" closeable  bind:close="onStampClose"
-  close-icon="close" custom-style='border-radius: 25rpx;' catchtouchmove>
+<van-popup show="{{ isShowPop }}" closeable bind:close="onStampClose" close-icon="close"
+  custom-style='border-radius: 25rpx;' catchtouchmove>
   <!-- 展示邮票 -->
   <view class="showpop-box">
     <!-- 邮票图片 -->
@@ -28,7 +32,8 @@
       <view class="bot-part">
         <view class="edition">{{stampEdition}}</view>
         <view class="share">
-          <image bindtap="shareStamp" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/share.png"></image>
+          <image bindtap="shareStamp" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/share.png">
+          </image>
           <!-- 分享按钮 -->
           <button class="share-btn" open-type='share'></button>
         </view>
