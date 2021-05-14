@@ -40,7 +40,7 @@
       bindtap="ToMyAchievement" infoTime='04-15'>
     </yeo-message-notification>
     <!-- 集邮册 -->
-    <yeo-message-notification infoTit='集邮册' notifiNum='{{messageList[4]}}'
+    <yeo-message-notification infoTit='集邮册' notifiNum='0'
       leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/stampCollection.png' infoDesc='集齐邮票，获得丰厚奖励' boxBgColor='#ffeaf6'
       bindtap="ToStampCollection" infoTime='04-27'>
     </yeo-message-notification>

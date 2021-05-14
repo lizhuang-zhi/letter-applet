@@ -24,7 +24,6 @@ Page({
       url: '/packageMyInfo/pages/timeline/timeline',
     })
   },
-
   // 跳转历史发布
   infoTap(e) {
     // 获取点击索引
@@ -33,7 +32,6 @@ Page({
       url: '/packageMyInfo/pages/historyinfo/historyinfo?activeTabIndex=' + activeTabIndex,
     })
   },
-
   //初始化图表
   init_echarts: function () {
     this.echartsComponnet.init((canvas, width, height) => {
@@ -118,8 +116,6 @@ Page({
   onLoad: function (options) {
     // 获取dom元素
     this.echartsComponnet = this.selectComponent('#chart_all');
-    // 异步请求数据
-    this.getChartData(options.openId);
   },
 
   /**
@@ -133,7 +129,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    // 异步请求数据
+    this.getChartData(app.globalData.openid);
   },
 
   /**

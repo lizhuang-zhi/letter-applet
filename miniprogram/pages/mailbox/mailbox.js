@@ -93,7 +93,7 @@ Page({
       let openId = app.globalData.openid;
       if (index == 0) {
         wx.navigateTo({
-          url: '/packageMyInfo/pages/indexinfo/indexinfo?openId=' + openId,
+          url: '/packageMyInfo/pages/indexinfo/indexinfo',
         })
       } else if (index == 1) {
         wx.navigateTo({
