@@ -149,6 +149,11 @@
           "pathName": "packageMyInfo/pages/officialnews/officialnews",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "集邮册",
+          "pathName": "packageMyInfo/pages/stampcollection/stampcollection",
+          "scene": null
         }
       ]
     }

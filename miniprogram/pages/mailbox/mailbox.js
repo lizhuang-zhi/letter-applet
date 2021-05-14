@@ -164,6 +164,13 @@ Page({
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/myachievements/myachievements');
   },
+  // 跳转集邮册
+  ToStampCollection() {
+    /* 置0我的邮票数量 */
+    this.setMessageListNum(4);
+    // 判断用户登陆并跳转
+    this.judgeUserInfoToJump('/packageMyInfo/pages/stampcollection/stampcollection');
+  },
   // 监听下拉刷新事件
   refresh(openId) {
     // 授权成功

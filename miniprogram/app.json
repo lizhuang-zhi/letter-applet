@@ -38,7 +38,8 @@
         "pages/myachievements/myachievements",
         "pages/timeline/timeline",
         "pages/historyletter/historyletter",
-        "pages/historyinfo/historyinfo"
+        "pages/historyinfo/historyinfo",
+        "pages/stampcollection/stampcollection"
       ]
     }
   ],
