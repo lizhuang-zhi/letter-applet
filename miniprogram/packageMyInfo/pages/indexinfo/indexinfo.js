@@ -103,7 +103,7 @@ Page({
         nickName: releaseObj.nickname,
         avatarUrl: releaseObj.avatarUrl,
         // 赋值头衔
-        userRank: pubTools.indexInfoRank(releaseArr[0].value)
+        userRank: pubTools.indexInfoRank(releaseArr[3].value)
       })
       /* 初始化图表 */
       this.init_echarts();

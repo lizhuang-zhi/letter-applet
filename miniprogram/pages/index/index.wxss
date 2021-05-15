@@ -11,7 +11,6 @@ page {
 
 .beauty-article .info-left {
   font-size: 40rpx;
-  font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   width: 500rpx;
 }
@@ -23,7 +22,6 @@ page {
 
 .tit-sorrow .info-left {
   font-size: 40rpx;
-  font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   width: 500rpx;
 }
@@ -130,14 +128,13 @@ page {
 
 .letter-station .info-left {
   font-size: 40rpx;
-  font-family: 'Courier New', Courier, monospace;
   font-weight: bold;
   width: 500rpx;
 }
 
 /* 小贴士图标 */
 .tip-box {
-  height: 280rpx;
+  height: 380rpx;
 }
 
 .tip-box .tip-pic {

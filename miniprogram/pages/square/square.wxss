@@ -5,7 +5,7 @@ page {
   /* 日记和吐槽左右边距 */
   --padding-size: 40rpx;
   /* 日记和吐槽下内边距 */
-  --padding-bottom: 30rpx;
+  --padding-bottom: 150rpx;
   /* 日记和吐槽上内边距 */
   --padding-top: 10rpx;
 
@@ -19,7 +19,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 50rpx;
+  margin-bottom: 30rpx;
 }
 
 /* 吐槽大会 */
@@ -27,7 +27,7 @@ page {
   padding: var(--padding-top) var(--padding-size) var(--padding-bottom);
 }
 .complain .complain-box {
-  margin-bottom: 50rpx;
+  margin-bottom: 30rpx;
 }
 
 /* 顶部tab栏设置 */

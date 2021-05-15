@@ -31,7 +31,6 @@
   color: #293939;
   margin-bottom: 7rpx;
   letter-spacing: 4rpx;
-  font-family: 'Courier New', Courier, monospace;
 }
 .my-info .left-info .user .rate{
   width: 130rpx;
@@ -57,18 +56,15 @@
 .my-info .right-info .data-info-num .data-num .word{
   font-size: 28rpx;
   color: #A0A0A0;
-  font-family: 'Courier New', Courier, monospace;
 }
 .my-info .right-info .data-info-num .data-num .num{
   font-size: 40rpx;
   font-weight: bold;
   color: #444444;
-  font-family: 'Courier New', Courier, monospace;
 }
 .my-info .right-info .more-info {
   color: #A0A0A0;
   font-size: 26rpx;
-  font-family: 'Courier New', Courier, monospace;
 }
 
 

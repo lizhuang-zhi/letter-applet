@@ -88,11 +88,13 @@ App({
 
     /* 
       字体设置
+
+      
     */
     wx.loadFontFace({
       global: true,
       family: 'custom',
-      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GrandMontherFont.ttf?versionId=CAEQFhiBgIDRmursyhciIDFiMjEwOTMzZjU1MzRjY2I5NjU2ZWRiOTc4NjUzM2Q2")',
+      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/simkai.ttf?versionId=CAEQFhiBgICGk.K9yxciIDRmM2ZmNzI2MjRkMDRkMWI5MTkyYTdjZjg0ZDMyN2Ri")',
       success: res => {
         console.log('!!!!!!! 字体设置成功 !!!!!!!');
       },

@@ -6,7 +6,6 @@
   position: relative;
   width: 100%;
   display: flex;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .yeo-above{
   position: absolute;
@@ -26,7 +25,6 @@
 .yeo-overlap-fon{
   position: relative;
   width: 100%;
-  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .yeo-above-ol{
   position: relative;
@@ -50,7 +48,6 @@
   position: relative;
   width: 100%;
   display: flex;
-  font-family: 'Courier New', Courier, monospace;
 }
 .yeo-words{
   position: absolute;
@@ -59,5 +56,4 @@
 }
 .yeo-line{
   position: absolute;
-  /* height: 15rpx; */
 }

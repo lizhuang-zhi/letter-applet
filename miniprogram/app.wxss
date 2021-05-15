@@ -13,7 +13,6 @@ page {
 /* 顶部文字 */
 .top-content-box {
   margin: 60rpx 0 0 var(--margin-top);
-  font-family: 'Courier New', Courier, monospace;
 }
 .top-content-box .top-tit {
   font-size: 40rpx;
