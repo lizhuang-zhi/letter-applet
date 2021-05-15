@@ -150,31 +150,7 @@ Page({
       }
     ],
     // 邮票数组
-    stampArr: [{
-        picUrl: 'https://z3.ax1x.com/2021/04/20/c7Isb9.png',
-        title: '松鼠邮票',
-        description: '第一版',
-        picBorder: stampInitBorder
-      },
-      {
-        picUrl: 'https://z3.ax1x.com/2021/04/20/c7IrDJ.png',
-        title: '兔子邮票',
-        description: '第一版',
-        picBorder: stampInitBorder
-      },
-      {
-        picUrl: 'https://z3.ax1x.com/2021/04/20/c7IDu4.png',
-        title: '猫咪邮票',
-        description: '第一版',
-        picBorder: stampInitBorder
-      },
-      {
-        picUrl: 'https://z3.ax1x.com/2021/04/20/c7I6ER.png',
-        title: '小狗邮票',
-        description: '第一版',
-        picBorder: stampInitBorder
-      },
-    ],
+    stampArr: [],
 
     // 随机笔名
     initValue: '',
@@ -313,7 +289,7 @@ Page({
       // 给点击对象加边框
       stampArr[index].picBorder = stampChooseBorder;
       // 存储点击对象图片地址
-      stampPic = stampArr[index].picUrl;
+      stampPic = stampArr[index].stampUrl;
     } else if (stampPic != '' && stampArr[index].picBorder == stampInitBorder) {
       wx.showToast({
         title: '最多只能选择一张邮票',
@@ -627,6 +603,29 @@ Page({
     })
   },
 
+  // 初始化数据
+  Start(openId) {
+    wx.showLoading({
+      title: '加载中..',
+    })
+    requestData.userStamp(openId).then(res => {
+      return new Promise((resolve,reject) => {
+        console.log(res.data.data);
+        // 获取个人邮票数组
+        let stampArr = res.data.data;
+        stampArr.forEach(item => {
+          item.picBorder = stampInitBorder;
+        })
+        this.setData({
+          stampArr: stampArr
+        })
+        resolve('success');
+      })
+    }).then(res => {
+      wx.hideLoading({ });
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -668,6 +667,9 @@ Page({
     console.log(selectSorrowArr);
     console.log(selectDiaryWeatherArr);
     console.log(selectComplainWeatherArr);
+
+    // 初始化数据
+    this.Start(app.globalData.openid);
   },
 
   /**

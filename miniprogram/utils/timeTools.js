@@ -218,6 +218,27 @@ let tools = {
       return initYears + '/' + initMonths + '/' + initDate + ' ' + initHours + ':' + initMinutes;
     }
 
+  },
+
+
+  /* 
+    我的邮票、我的成就的解锁时间
+  */
+  lockTime(time) {
+    // 获取参数时间
+    let initTime = new Date(time);
+    // 获取参数时间年份
+    let initYears = initTime.getFullYear();
+    // 获取参数月份
+    let initMonths = (initTime.getMonth() + 1) < 10 ? ('0' + (initTime.getMonth() + 1)) : (initTime.getMonth() + 1);
+    // 获取参数日期
+    let initDate = initTime.getDate() < 10 ? ('0' + initTime.getDate()) : initTime.getDate();
+    // 获取参数小时
+    let initHours = initTime.getHours() < 10 ? ('0' + initTime.getHours()) : initTime.getHours();
+    // 获取参数分钟
+    let initMinutes = initTime.getMinutes() < 10 ? ('0' + initTime.getMinutes()) : initTime.getMinutes();
+
+    return initYears + '年' + initMonths + '月' + initDate + '日 ' + initHours + ':' + initMinutes;
   }
 
 

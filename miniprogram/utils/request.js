@@ -4,10 +4,10 @@ import apiUrl from '../utils/api';
 let requestData = {
   // 用户注册
   userAccount(userInfo) {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         url: apiUrl.userAccountApi(),
         method: "POST",
@@ -29,10 +29,10 @@ let requestData = {
   },
   // 用户退出，更新登陆时间
   userSignOut(openId) {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         url: apiUrl.getUserSignOut(),
         method: "POST",
@@ -50,7 +50,7 @@ let requestData = {
   },
   // 首页美文
   indexBeauty() {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getIndexBeautyUrl(),
         success: res => {
@@ -64,7 +64,7 @@ let requestData = {
   },
   // 首页三封信件
   indexLetters(openId) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getIndexLetters(),
         data: {
@@ -81,7 +81,7 @@ let requestData = {
   },
   // 获取美文内容
   beautyletter(articleIndex) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getBeautyletter(),
         data: {
@@ -98,7 +98,7 @@ let requestData = {
   },
   // 广场吐槽大会
   squareComplain(pageNum) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getSquareComplain(),
         data: {
@@ -115,7 +115,7 @@ let requestData = {
   },
   // 吐槽大会的内容详情页
   complainDetail(id) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getComplainletter(),
         data: {
@@ -131,8 +131,8 @@ let requestData = {
     })
   },
   // 吐槽大会的内容详情页评论集合
-  complainDetailComment(id,pageNum) {
-    return new Promise((resolve,reject) => {
+  complainDetailComment(id, pageNum) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getComplainletterComment(),
         data: {
@@ -149,8 +149,8 @@ let requestData = {
     })
   },
   // 广场页面公开日记
-  squareDiary(pageNum){
-    return new Promise((resolve,reject) => {
+  squareDiary(pageNum) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getSquareDiary(),
         data: {
@@ -168,10 +168,10 @@ let requestData = {
   // 吐槽大会的内容详情页中发送评论
   complainletterSendComment(commentObj) {
     console.log(commentObj);
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         url: apiUrl.getComplainletterSendComment(),
@@ -192,7 +192,7 @@ let requestData = {
   },
   // 广场日记具体内容
   squareDiaryDetail(id) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getSquareDiaryDetail(),
         data: {
@@ -209,10 +209,10 @@ let requestData = {
   },
   // 保存信件
   lettertypeLetterSend(letterObj) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         url: apiUrl.getLettertypeLetterSend(),
@@ -236,10 +236,10 @@ let requestData = {
   // 保存日记
   lettertypeDiarySend(diaryObj) {
     console.log(diaryObj.penName);
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         url: apiUrl.getLettertypeDiarySend(),
@@ -261,10 +261,10 @@ let requestData = {
   },
   // 保存吐槽
   lettertypeComplainSend(complainObj) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         url: apiUrl.getLettertypeComplainSend(),
@@ -287,20 +287,20 @@ let requestData = {
     })
   },
   //信箱页面回复信件
-  mailboxReplylist(replyObj){
-    return new Promise((resolve,reject) => {
+  mailboxReplylist(replyObj) {
+    return new Promise((resolve, reject) => {
       wx.request({
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         url: apiUrl.getMailboxReplylist(),
         data: {
-          letterId:replyObj.letterId,
-          message:replyObj.message,
-          penName:replyObj.penName,
-          recipient:replyObj.recipient,
-          sender:replyObj.sender
+          letterId: replyObj.letterId,
+          message: replyObj.message,
+          penName: replyObj.penName,
+          recipient: replyObj.recipient,
+          sender: replyObj.sender
         },
         success: res => {
           resolve(res)
@@ -313,7 +313,7 @@ let requestData = {
   },
   // 获取未读信件数量
   mailboxNumberOfLetter(userOpenId) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getMailboxNumberOfLetter(),
         data: {
@@ -331,7 +331,7 @@ let requestData = {
   },
   // 获取未读信件
   replylist(UserOpenId) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getReplylist(),
         data: {
@@ -347,8 +347,8 @@ let requestData = {
     })
   },
   // 获取具体信件信息（回信列表点进去的）
-  replyletter(openId,replyId,letterId) {
-    return new Promise((resolve,reject) => {
+  replyletter(openId, replyId, letterId) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getReplyletter(),
         data: {
@@ -368,14 +368,14 @@ let requestData = {
   // 广场日记浏览量
   squareDiaryLooksNum(infoArr) {
     // 将数据转为Json串
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getSquareDiaryLooksNum(),
         data: {
           diaryViewJson: JSON.stringify(infoArr)
         },
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         success: res => {
@@ -388,8 +388,8 @@ let requestData = {
     })
   },
   //获取评论信息
-  mailboxMessageList(openId,pageNum){
-    return new Promise((resolve,reject) => {
+  mailboxMessageList(openId, pageNum) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getMailboxMessageList(),
         data: {
@@ -408,7 +408,7 @@ let requestData = {
   },
   // 回复信件
   indexStampReply(infoObj) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getIndexStampReply(),
         data: {
@@ -420,7 +420,7 @@ let requestData = {
           senderPenName: infoObj.senderPenName
         },
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         success: res => {
@@ -433,8 +433,8 @@ let requestData = {
     })
   },
   // 首页点击信件（获取信件信息）
-  sorrowletter(letterId,openId) {
-    return new Promise((resolve,reject) => {
+  sorrowletter(letterId, openId) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getSorrowletter(),
         data: {
@@ -452,7 +452,7 @@ let requestData = {
   },
   // 获取历史发布数量
   packageMyInfoIndexInfo(openId) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getPackageMyInfoIndexInfo(),
         data: {
@@ -469,7 +469,7 @@ let requestData = {
   },
   // 获取个人数据分析内容
   monthReport(openId, currentTimeStamp) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getMonthReport(),
         data: {
@@ -486,8 +486,8 @@ let requestData = {
     })
   },
   // 获取历史信件
-  historyLetter(openId,pageNum) {
-    return new Promise((resolve,reject) => {
+  historyLetter(openId, pageNum) {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getHistoryLetter(),
         data: {
@@ -505,7 +505,7 @@ let requestData = {
   },
   // 文字违规判断
   textLegal(textContent) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getTextLegal(),
         data: {
@@ -522,7 +522,7 @@ let requestData = {
   },
   // 获取历史发布内容
   historyRelease(openid) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getHistoryRelease(),
         data: {
@@ -539,14 +539,14 @@ let requestData = {
   },
   // 根据吐槽id删除吐槽
   deleteComplain(id) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getDeleteComplain(),
         data: {
           id: id
         },
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         success: res => {
@@ -560,14 +560,14 @@ let requestData = {
   },
   // 删除信件
   deleteSorrowLetter(id) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getDeleteSorrowLetter(),
         data: {
           id: id
         },
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         success: res => {
@@ -581,14 +581,14 @@ let requestData = {
   },
   // 删除日记
   deleteDiary(id) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getDeleteDiary(),
         data: {
           id: id
         },
         header: {
-          'content-type':'application/x-www-form-urlencoded'
+          'content-type': 'application/x-www-form-urlencoded'
         },
         method: "POST",
         success: res => {
@@ -602,7 +602,7 @@ let requestData = {
   },
   // 获取官方审核推送
   officialCheck(openid) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getOfficialCheck(),
         data: {
@@ -619,9 +619,43 @@ let requestData = {
   },
   // 获取所有邮票
   stampCollection(openId) {
-    return new Promise((resolve,reject) => {
+    return new Promise((resolve, reject) => {
       wx.request({
         url: apiUrl.getStampCollection(),
+        data: {
+          openId: openId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 获取个人成就
+  userAchieve(openId) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: apiUrl.getUserAchieve(),
+        data: {
+          openId: openId
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
+  },
+  // 获取个人邮票
+  userStamp(openId) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: apiUrl.getUserStamp(),
         data: {
           openId: openId
         },
@@ -643,4 +677,3 @@ let requestData = {
 
 
 module.exports = requestData;
-

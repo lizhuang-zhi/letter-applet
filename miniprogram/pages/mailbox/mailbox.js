@@ -20,17 +20,17 @@ Page({
     //openid
     openId: '',
     dataList: [{
-      imgsrc: "https://z3.ax1x.com/2021/03/25/6OoQPO.png",
+      imgsrc: "https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-mine.png?versionId=CAEQFhiBgICQ4fG3yxciIDlmNDMxODA4MWE0YjRmMmViZjM1ZmZlMTRhZGU3OGE1",
       text: "我的",
       picBgColor: "#FEF7E2",
       notifiNum: 0
     }, {
-      imgsrc: "https://z3.ax1x.com/2021/03/25/6OofiT.png",
+      imgsrc: "https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-backletter.png?versionId=CAEQFhiBgMCC4fG3yxciIDFjMGY0MGUyYTI2MjRjOWY4MjcyOWNlNjg0N2JhNzI5",
       text: "回信",
       picBgColor: "#E9F1FE",
       notifiNum: 0
     }, {
-      imgsrc: "../../images/message.png",
+      imgsrc: "https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-comment.png?versionId=CAEQFhiCgMCC4fG3yxciIDBmOWY2ZDIwNGFmNjQwY2I4YThlOTVkMGU3MzIyYmY1",
       text: "评论",
       picBgColor: "#E6F8F0",
       notifiNum: 0
@@ -238,7 +238,6 @@ Page({
       }
     })
   },
-
 
   // 判断是否拉取官方消息月报
   isGetMonthReport(time) {
@@ -464,12 +463,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // if (typeof this.getTabBar === 'function' &&
-    //   this.getTabBar()) {
-    //   this.getTabBar().setData({
-    //     selected: 2
-    //   })
-    // }
+    if (typeof this.getTabBar === 'function' &&
+      this.getTabBar()) {
+      this.getTabBar().setData({
+        selected: 2
+      })
+    }
     console.log('mailbox页面  ------- 监听页面显示');
 
     // 页面显示时，若用户已登录授权则拉取一次信息

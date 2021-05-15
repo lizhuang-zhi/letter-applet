@@ -1,4 +1,6 @@
-// miniprogram/packageMyInfo/pages/mystamp/mystamp.js
+let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools');
+let app = getApp();
 Page({
 
   /**
@@ -76,8 +78,6 @@ Page({
         edition: 'Edition 3.0'
       },
     ],
-
-
   },
 
   // 弹出邮票详情框
@@ -102,11 +102,34 @@ Page({
     });
   },
 
+  // 初始化数据
+  Start(openId) {
+    wx.showLoading({
+      title: '加载中..',
+    });
+    requestData.userStamp(openId).then(res => {
+      return new Promise((resolve, reject) => {
+        console.log(res.data.data);
+        // 获取成就数组
+        let stampArr = res.data.data;
+        stampArr.forEach(item => {
+          item.obtainTime = timeTools.lockTime(item.obtainTime);
+        })
+        this.setData({
+          stampArr: stampArr
+        })
+        resolve('success');
+      })
+    }).then(res => {
+      wx.hideLoading({});
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start(app.globalData.openid);
   },
 
   /**

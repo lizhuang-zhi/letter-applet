@@ -89,21 +89,17 @@ App({
     /* 
       字体设置
     */
-    // wx.loadFontFace({
-    //   global: true,
-    //   family: 'custom',
-    //   source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GrandMontherFont.ttf")',
-    //   desc: {
-    //     style: 'oblique',
-    //     weight: 900
-    //   },
-    //   success: res => {
-    //     console.log('!!!!!!! 字体设置成功 !!!!!!!');
-    //   },
-    //   fail: res => {
-    //     console.log("------- 字体设置失败 --------");
-    //   }
-    // })
+    wx.loadFontFace({
+      global: true,
+      family: 'custom',
+      source: 'url("https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/GrandMontherFont.ttf?versionId=CAEQFhiBgIDRmursyhciIDFiMjEwOTMzZjU1MzRjY2I5NjU2ZWRiOTc4NjUzM2Q2")',
+      success: res => {
+        console.log('!!!!!!! 字体设置成功 !!!!!!!');
+      },
+      fail: res => {
+        console.log("------- 字体设置失败 --------");
+      }
+    })
 
   },
   onHide() {

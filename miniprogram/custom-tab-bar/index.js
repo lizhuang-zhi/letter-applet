@@ -1,6 +1,7 @@
 Component({
   data: {
-    selected: 0,
+    // selected: 0,
+    selected: null,
     color: "#7A7E83",
     selectedColor: "#450003",
     /* 补全list数组 */
@@ -37,12 +38,16 @@ Component({
   methods: {
     // tabbar装换
     switchTab(e) {
-      const data = e.currentTarget.dataset
-      const url = data.path
-      wx.switchTab({url})
-      this.setData({
-        selected: data.index
-      })
+      const data = e.currentTarget.dataset;
+      const url = data.path;
+
+      wx.switchTab({url});
+      /* 
+        解决图标闪动问题
+      */
+      // this.setData({
+      //   selected: data.index
+      // })
     },
     // 跳转发布页面
     toRelease() {

@@ -12,6 +12,9 @@
     statusWords='待审核'></yeo-message-card>
 </yeo-comment>
 
+<!-- 底部线条 -->
+<view class="bottom-line">- 我也是有底线的 -</view>
+
 <!-- 评论空状态 -->
 <van-empty wx:if="{{commentArr.length == 0}}" class="custom-image"
   image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还没有小伙伴评论呢~" />

@@ -1,7 +1,7 @@
 <!-- 选择 -->
-<view class="choose" style="padding:{{ChoosePadding}};border-radius:{{ChooseRadius}};margin-top:{{ChooseMargin}}">
+<view class="choose" style="padding:{{ChoosePadding}};border-radius:{{ChooseRadius}};margin-top:{{ChooseMargin}}" bindtap="NavTo">
   <!-- logo -->
-  <image bindtap="NavTo" style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img"
+  <image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img"
     src="{{ImageSrc}}"></image>
   <!-- 文字 -->
   <view class="content" style="padding-left:{{ContentPadding}}">

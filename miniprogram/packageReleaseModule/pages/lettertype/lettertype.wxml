@@ -22,10 +22,8 @@
           </yeo-dy-fun-bar>
         </view>
       </yeo-dy-fun-bar>
-
     </view>
   </view>
-
 
   <!-- 选择标签 -->
   <view class="choose-tag" wx:if="{{type == '解忧' || type == '日记'}}">

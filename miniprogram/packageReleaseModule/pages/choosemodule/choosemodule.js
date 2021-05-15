@@ -1,4 +1,3 @@
-// packageReleaseModule/pages/choosemodule/choosemodule.js
 let app = getApp();
 Page({
 

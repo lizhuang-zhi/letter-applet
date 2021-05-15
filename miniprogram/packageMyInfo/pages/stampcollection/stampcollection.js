@@ -54,8 +54,10 @@ Page({
     requestData.stampCollection(openId).then(res => {
       return new Promise((resolve, reject) =>  {
         console.log(res.data.data);
+        // 获取邮票数组
+        let stampArr = res.data.data;
         this.setData({
-          stampArr: res.data.data
+          stampArr: stampArr
         })
         resolve('success');
       })

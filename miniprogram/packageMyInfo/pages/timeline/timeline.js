@@ -21,15 +21,23 @@ Page({
         time: '2021-02-23 21:02',
         event: '你书写了一篇日记'
       },
-    ]
+    ],
 
+    // 是否最后一页
+    
+
+  },
+
+  // 初始化
+  Start() {
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.Start();
   },
 
   /**
@@ -71,7 +79,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

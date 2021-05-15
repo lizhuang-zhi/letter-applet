@@ -75,6 +75,10 @@ const DeleteDiary = prefix + '/diary/changeDiaryStateToDeleteById';
 const OfficialCheck = prefix + '/user/getOfficialMsg';
 // 获取所有邮票
 const StampCollection = prefix + '/getAllStampForAlbum';
+// 获取个人成就
+const UserAchieve = prefix + '/getAllAchieve';
+// 获取个人邮票
+const UserStamp = prefix + '/getAllStamp';
 
 // 返回对象
 let url = {
@@ -201,6 +205,14 @@ let url = {
   // 获取所有邮票
   getStampCollection() {
     return StampCollection;
+  },
+  // 获取个人成就
+  getUserAchieve() {
+    return UserAchieve;
+  },
+  // 获取个人邮票
+  getUserStamp() {
+    return UserStamp;
   }
 
 

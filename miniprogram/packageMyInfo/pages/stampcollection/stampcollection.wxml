@@ -8,7 +8,7 @@
       <image wx:if="{{!item.lock}}" src="{{item.stampUrl}}"></image>
       <!-- 未解锁邮票 -->
       <image wx:else
-        src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/stamp_collection_lock.png?versionId=CAEQFhiBgIDjyb.qyxciIDZkZjM1MjZkMGUxMDRiZGI5MDFlOTZiYzFjYzlkZWQy">
+        src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/stamp_collection_lock.png?versionId=CAEQFhiBgMDh8dO2yxciIDRhNzNhMDBhZWI5YjQ0ZGQ5MzBiYmZmMWEyZWM2OTMx">
       </image>
     </view>
   </view>
