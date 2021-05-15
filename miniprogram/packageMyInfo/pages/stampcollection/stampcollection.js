@@ -24,7 +24,7 @@ Page({
     let stampEdition = e.currentTarget.dataset.edition;
     let stampPic = e.currentTarget.dataset.pic;
     // 获取点击邮票是否解锁
-    if (stampArr[index].isLock) {
+    if (!stampArr[index].lock) {
       this.setData({
         isShowPop: true,
         stampTit: stampTit,
