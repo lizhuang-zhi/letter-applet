@@ -3,7 +3,7 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 24 * 3600;
+const getReportTime = 1000 * 24 * 3600 * 7;
 let app = getApp();
 /*
   设置论循定时器 

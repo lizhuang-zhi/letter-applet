@@ -1,28 +1,13 @@
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools')
+let app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    axis: [{
-        time: '2021-02-15 21:02',
-        event: '迷失的蝴蝶评论了你'
-      },
-      {
-        time: '2021-02-15 04:02',
-        event: '可爱的甜筒回复信件'
-      },
-      {
-        time: '2021-03-15 11:32',
-        event: '你评论了可爱的甜筒'
-      },
-      {
-        time: '2021-02-23 21:02',
-        event: '你书写了一篇日记'
-      },
-    ],
+    axis: [],
 
     // 是否最后一页
     isLastPage: null,
@@ -106,7 +91,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.Start();
+    this.Start(app.globalData.openid);
   },
 
   /**

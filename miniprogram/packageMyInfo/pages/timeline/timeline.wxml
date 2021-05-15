@@ -15,7 +15,7 @@
 
       <view class='weui-cell-line'>
         <view class='weui-cell-time'>{{item.eventTime}}</view>
-        <view class='weui-cell-event'>发布一篇{{item.eventType}}</view>
+        <view class='weui-cell-event'>小主您发布了一篇{{item.eventType}}</view>
       </view>
 
     </view>
