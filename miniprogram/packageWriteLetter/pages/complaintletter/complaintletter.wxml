@@ -9,7 +9,7 @@
   initValue='{{initValue}}'>
   <yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}' userName='{{item.userVo.penName}}'
     userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index' contentPaddingBot='20'
-    statusWords='待审核'></yeo-message-card>
+    statusWords='待审核' isShowStatus='{{false}}'></yeo-message-card>
 </yeo-comment>
 
 <!-- 底部线条 -->
@@ -21,3 +21,6 @@
 
 <!-- loading组件 -->
 <yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading>
+
+<!-- 审核弹出框 -->
+<van-dialog id="van-dialog" />

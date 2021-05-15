@@ -76,7 +76,6 @@
   <image class="huadong" src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/huadong.gif" />
 </van-dialog>
 
-
 <!-- 解忧内容弹出层 -->
 <van-popup show="{{ showContent }}" bind:close="onCloseContent" custom-style='border-radius: 20rpx;width: 600rpx;height: 1000rpx;'
   catchtouchmove="{{true}}">

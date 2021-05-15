@@ -79,6 +79,8 @@ const StampCollection = prefix + '/getAllStampForAlbum';
 const UserAchieve = prefix + '/getAllAchieve';
 // 获取个人邮票
 const UserStamp = prefix + '/getAllStamp';
+// 获取时间线数据
+const UserTimeLine = prefix + '/user/getTimelineData';
 
 // 返回对象
 let url = {
@@ -213,6 +215,10 @@ let url = {
   // 获取个人邮票
   getUserStamp() {
     return UserStamp;
+  },
+  // 获取时间线数据
+  getUserTimeLine() {
+    return UserTimeLine;
   }
 
 

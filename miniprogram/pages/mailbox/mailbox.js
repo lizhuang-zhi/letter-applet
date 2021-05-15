@@ -321,14 +321,21 @@ Page({
       let letterNum = res.data.data[1];
       // 获取评论数量
       let commentNum = res.data.data[2];
+      // 获取我的邮票数量
+      let stampNum = res.data.data[3];
+      // 获取我的成就数量
+      let achieveNum = res.data.data[4];
       // 赋值消息提示数量
       let dataList = this.data.dataList;
       dataList[1].notifiNum = letterNum;
       dataList[2].notifiNum = commentNum;
       this.setData({
-        dataList: dataList
+        dataList: dataList,
+        // 我的邮票（后台拉取）
+        myStampNewNum: stampNum,
+        // 我的成就（后台拉取）
+        myAchieveNewNum: achieveNum,
       });
-
       // 获取审核数据
       return requestData.officialCheck(openId);
 

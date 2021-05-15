@@ -60,27 +60,34 @@ Page({
 
   // 初始化数据
   Start(id) {
+    wx.showLoading({
+      title: '加载中..',
+    })
     // 获取用户的openId
     let openId = app.globalData.openid;
     requestData.sorrowletter(id, openId).then(res => {
-      console.log(res.data.data);
-      // 获取信件信息
-      let letterInfo = res.data.data;
-      // 处理显示时间
-      letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
-      /*
-        获取信件行信息  -----   keo
-      */
-      //获取信件行
-      let content = letterInfo.content;
-      let contentArr = this.data.lettercontentArr;
-      let linenum = this.data.lineNum;
-      let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
-      this.setData({
-        letterInfo: letterInfo,
-        lettercontentArr: resultArr
+      return new Promise((resolve, reject) => {
+        console.log(res.data.data);
+        // 获取信件信息
+        let letterInfo = res.data.data;
+        // 处理显示时间
+        letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
+        /*
+          获取信件行信息  -----   keo
+        */
+        //获取信件行
+        let content = letterInfo.content;
+        let contentArr = this.data.lettercontentArr;
+        let linenum = this.data.lineNum;
+        let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
+        this.setData({
+          letterInfo: letterInfo,
+          lettercontentArr: resultArr
+        })
+        resolve('success');
       })
-
+    }).then(res => {
+      wx.hideLoading({ });
     })
 
   },

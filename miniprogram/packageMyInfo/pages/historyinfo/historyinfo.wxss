@@ -55,6 +55,8 @@
 
   position: relative;
   z-index: 999;
+
+  word-wrap: break-word;
 }
 .letter-box .bottom{
   font-size: 30rpx;

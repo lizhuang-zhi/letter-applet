@@ -1,7 +1,7 @@
+import Dialog from '../../../miniprogram_npm/@vant/weapp/dialog/dialog';
 let requestData = require('../../../utils/request');
 let timeTools = require('../../../utils/timeTools.js');
 let yeoTools = require('../../../Yeo/utils/tools');
-
 // 发送评论的评论状态
 let state = 3;
 // 全局变量（判断用户登录）
@@ -89,6 +89,9 @@ Page({
     let nowTime = new Date();
     // 限制用户评论间隔时长 5000ms
     if (nowTime - preViousTime >= 3000) {
+      wx.showLoading({
+        title: '审核中..',
+      })
       // 新建评论对象
       let newCont = {
         content,
@@ -106,33 +109,27 @@ Page({
       };
       // 合并对象
       let finalSendObj = Object.assign(newCont, sendCommentObj);
-      // 插入评论数据到后台
-      requestData.complainletterSendComment(finalSendObj).then(res => {
-        console.log(res);
-        // 记录返回信息
-        let backInfoCode = res.data.resultCode;
-        // 获取评论数组
-        let commentArr = this.data.commentArr;
-        if (backInfoCode == 200) {
-          commentArr.unshift(newCont);
-          this.setData({
-            commentArr: commentArr,
-            preViousTime: new Date(),
-            initValue: '',
-            inputContent: ''
-          })
-          wx.showToast({
-            title: '发布成功',
-            icon: 'none'
-          })
-        } else {
-          wx.showToast({
-            title: '服务器开了个小差',
-            icon: 'none'
-          })
+      /* 
+        判断用户发布内容是否合规
+      */
+      requestData.textLegal(content).then(res => {
+        console.log(res.data.data);
+        // 记录返回值
+        let backInfo = res.data.data;
+        if(backInfo == 1) {
+          // 插入用户评论
+          this.userComment(newCont, finalSendObj);
+        }else {
+          wx.hideLoading({ });
+          Dialog.alert({
+            title: '审核结果',
+            message: '小主，您的内容有些不当哦！请修改后重试',
+            theme: 'round-button',
+          }).then(() => {
+            // on close
+          });
         }
-
-      });
+      })
 
     } else {
       wx.showToast({
@@ -141,6 +138,35 @@ Page({
       })
     }
 
+  },
+  // 用户插入评论
+  userComment(newCont, finalSendObj) {
+    // 插入评论数据到后台
+    requestData.complainletterSendComment(finalSendObj).then(res => {
+      console.log(res);
+      // 记录返回信息
+      let backInfoCode = res.data.resultCode;
+      // 获取评论数组
+      let commentArr = this.data.commentArr;
+      if (backInfoCode == 200) {
+        commentArr.unshift(newCont);
+        this.setData({
+          commentArr: commentArr,
+          preViousTime: new Date(),
+          initValue: '',
+          inputContent: ''
+        })
+        wx.showToast({
+          title: '发布成功',
+          icon: 'none'
+        })
+      } else {
+        wx.showToast({
+          title: '服务器开了个小差',
+          icon: 'none'
+        })
+      }
+    });
   },
   // 初始化数据
   Start(id) {

@@ -667,6 +667,24 @@ let requestData = {
         }
       })
     })
+  },
+  // 获取时间线数据
+  userTimeLine(openId, pageNum) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: apiUrl.getUserTimeLine(),
+        data: {
+          openId: openId,
+          pageNum: pageNum
+        },
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

@@ -1,3 +1,4 @@
+
 let tools = {
   // 时间戳转具体时间
   timestampToTime(timestamp) {
@@ -107,7 +108,6 @@ let tools = {
     return showDate + ' ' + showMonth + '.' + showYears;
   },
 
-
   /* 
     公开日记的时间显示
   */
@@ -116,7 +116,6 @@ let tools = {
     let date = new Date(time);
     return (date.getMonth() + 1) + '月' + date.getDate() + '日';
   },
-
 
   /* 
     美文内容页时间显示 
@@ -194,28 +193,17 @@ let tools = {
     评论列表显示时间
   */
   commentListShowTime(time) {
-    // 获取参数时间
-    let initTime = new Date(time);
-    // 获取参数时间年份
-    let initYears = initTime.getFullYear();
-    // 获取参数月份
-    let initMonths = (initTime.getMonth() + 1) < 10 ? ('0' + (initTime.getMonth() + 1)) : (initTime.getMonth() + 1);
-    // 获取参数日期
-    let initDate = initTime.getDate() < 10 ? ('0' + initTime.getDate()) : initTime.getDate();
-    // 获取参数小时
-    let initHours = initTime.getHours() < 10 ? ('0' + initTime.getHours()) : initTime.getHours();
-    // 获取参数分钟
-    let initMinutes = initTime.getMinutes() < 10 ? ('0' + initTime.getMinutes()) : initTime.getMinutes();
-
+    // 参数的年月日时间 
+    let timeObj = this.getTimeTools(time);
     // 获取当前时间
     let nowTime = new Date();
     // 获取当前时间年份
     let nowYears = nowTime.getFullYear();
 
-    if (initYears == nowYears) {
-      return initMonths + '/' + initDate + ' ' + initHours + ':' + initMinutes;
+    if (timeObj.year == nowYears) {
+      return timeObj.month + '/' + timeObj.date + ' ' + timeObj.hours + ':' + timeObj.minutes;
     } else {
-      return initYears + '/' + initMonths + '/' + initDate + ' ' + initHours + ':' + initMinutes;
+      return timeObj.year + '/' + timeObj.month + '/' + timeObj.date + ' ' + timeObj.hours + ':' + timeObj.minutes;
     }
 
   },
@@ -225,6 +213,24 @@ let tools = {
     我的邮票、我的成就的解锁时间
   */
   lockTime(time) {
+    // 参数的年月日时间 
+    let timeObj = this.getTimeTools(time);
+    return timeObj.year + '年' + timeObj.month + '月' + timeObj.date + '日 ' + timeObj.hours + ':' + timeObj.minutes;
+  },
+
+  /* 
+    时间线时间显示
+  */
+  timeline(time) {
+    // 参数的年月日时间 
+    let timeObj = this.getTimeTools(time);
+    return timeObj.year + '-' + timeObj.month + '-' + timeObj.date + ' ' + timeObj.hours + ':' + timeObj.minutes;
+  },
+
+  /* 
+    工具类 => 获取年月日时分
+  */
+  getTimeTools(time) {
     // 获取参数时间
     let initTime = new Date(time);
     // 获取参数时间年份
@@ -238,7 +244,13 @@ let tools = {
     // 获取参数分钟
     let initMinutes = initTime.getMinutes() < 10 ? ('0' + initTime.getMinutes()) : initTime.getMinutes();
 
-    return initYears + '年' + initMonths + '月' + initDate + '日 ' + initHours + ':' + initMinutes;
+    return {
+      year:  initYears,
+      month: initMonths,
+      date: initDate,
+      hours: initHours,
+      minutes: initMinutes
+    }
   }
 
 
