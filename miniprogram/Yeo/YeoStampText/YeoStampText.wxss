@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
 }
+.yeo-stamp-text .content {
+  word-wrap: break-word;
+}
 .yeo-stamp-text .stamp-top .left-pic image{
   width: 100%;
   height: 100%;

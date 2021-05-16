@@ -41,6 +41,8 @@
   overflow: hidden;
   /* 添加数字换行 */
   word-break: break-all;
+  /* 首行缩进 */
+  text-indent: 2em;
 }
 
 .yeo-diary-content .main-bottom {
