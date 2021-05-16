@@ -2,7 +2,9 @@
 <view class="message-box">
 
   <block wx:for='{{replyList}}' wx:key='index'>
+
     <view class="release-time">{{item.senderTime}}</view>
+
     <keo-letter-simple ContentColor='#111' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
     IconTop='45rpx'
       InnerHeight='290rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}"

@@ -144,6 +144,7 @@ Page({
         }
         // 获取当前时间
         let nowTime = new Date().getTime();
+        console.log(new Date(beforeTime));
         if (nowTime > beforeTime) {
           console.log('-- 重刷新解答次数 --');
           wx.setStorage({

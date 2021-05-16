@@ -40,7 +40,7 @@ App({
       fail: res => {
         console.log(res);
         // 存储消息列表数量
-        let messageList = [2, 3, 8, 1];
+        let messageList = [2, 3, 4, 0];
         // 存储当前的时间
         let nowTime = new Date();
         // 封存整体对象

@@ -33,8 +33,11 @@ Page({
 
   // 初始化数据
   Start(openId) {
+    // wx.showLoading({
+    //   title: '加载中..',
+    // })
     requestData.historyLetter(openId, 1).then(res => {
-      console.log(res.data.data);
+      console.log(res.data.data.list);
       // 获取对象
       let dataObj = res.data.data;
       // 获取对象中的列表数组
@@ -43,7 +46,7 @@ Page({
       // 修改时间显示
       list.forEach(item => {
         item.senderTime = timeTools.historyLetterShowTime(item.senderTime);
-      })
+      });
       this.setData({
         isLastPage: dataObj.isLastPage,
         replyList: list

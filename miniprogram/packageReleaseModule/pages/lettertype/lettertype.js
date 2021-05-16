@@ -498,10 +498,6 @@ Page({
     let penName = this.data.initValue;
     // 状态
     let state = this.data.baiduAiCheck == 1 ? 1 : 3;
-    /* 
-      天气 (这里需要第二版本更新时添加)
-    */
-    // let weather = selectComplainWeatherArr.toString();
     // 吐槽描述
     let title = content.substring(0, '。'.indexOf(content) == -1 ? 30 : '。'.indexOf(content));
     // 日记对象
@@ -577,7 +573,7 @@ Page({
             key: 'userBackLetterNum',
             data: {
               letterBackNum: 0,
-              judgeTime: new Date(new Date().setHours(0, 0, 0, 0))
+              judgeTime: new Date(new Date().setHours(24, 0, 0, 0))
             }
           })
 

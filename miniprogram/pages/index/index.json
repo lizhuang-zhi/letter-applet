@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationStyle": "custom"
+  "navigationStyle": "custom",
+  "backgroundColorBottom": "#E8EAEA",
+  "backgroundColorTop": "#E8EAEA"
 }

@@ -1,4 +1,6 @@
 let requestData = require('../../../utils/request');
+let timeTools = require('../../../utils/timeTools');
+
 let app = getApp();
 Page({
 
@@ -22,6 +24,9 @@ Page({
         console.log(res.data.data);
         // 获取成就数组
         let achieveArr = res.data.data;
+        achieveArr.forEach(item => {
+          item.obtainTime = timeTools.lockTime(item.obtainTime);
+        })
         this.setData({
           achievementsArr: achieveArr
         })

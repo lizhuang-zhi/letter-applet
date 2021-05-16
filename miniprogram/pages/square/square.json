@@ -2,5 +2,7 @@
   "usingComponents": {
   },
   "navigationStyle": "custom",
-  "backgroundTextStyle": "dark"
+  "backgroundTextStyle": "dark",
+  "backgroundColorBottom": "#E8EAEA",
+  "backgroundColorTop": "#E8EAEA"
 }

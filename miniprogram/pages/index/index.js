@@ -49,16 +49,38 @@ Page({
 
     // 弹出测试
     showShare: false,
-    options: [
-      { name: '微信', icon: 'wechat', openType: 'share' },
-      { name: '微博', icon: 'weibo' },
-      { name: '复制链接', icon: 'link' },
-      { name: '分享海报', icon: 'poster' },
-      { name: '二维码', icon: 'qrcode' },
+    options: [{
+        name: '微信',
+        icon: 'wechat',
+        openType: 'share'
+      },
+      {
+        name: '微博',
+        icon: 'weibo'
+      },
+      {
+        name: '复制链接',
+        icon: 'link'
+      },
+      {
+        name: '分享海报',
+        icon: 'poster'
+      },
+      {
+        name: '二维码',
+        icon: 'qrcode'
+      },
     ],
 
   },
-  
+
+  // 跳转发布页面
+  toRelease() {
+    wx.navigateTo({
+      url: '/packageReleaseModule/pages/choosemodule/choosemodule',
+    })
+  },
+
   // 下滚动时动画效果
   animationDownFunc() {
     let d_1 = wx.createAnimation({
@@ -321,12 +343,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 0
-      })
-    }
+    // if (typeof this.getTabBar === 'function' &&
+    //   this.getTabBar()) {
+    //   this.getTabBar().setData({
+    //     selected: 0
+    //   })
+    // }
   },
 
   /**

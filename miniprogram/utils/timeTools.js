@@ -1,4 +1,3 @@
-
 let tools = {
   // 时间戳转具体时间
   timestampToTime(timestamp) {
@@ -99,11 +98,14 @@ let tools = {
   indexBeautyTime(time) {
     // 定义英文月份
     let enMonthArr = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Spt", "Oct", "Nov", "Dec"];
-    // 获取传入时间并转化
-    let showTime = new Date(time);
-    let showYears = showTime.getFullYear();
-    let showMonth = enMonthArr[showTime.getMonth()];
-    let showDate = showTime.getDate();
+    /* 
+      这样写是为了解决ios的NaN一个bug
+    */
+    let showYears = 2021;
+    let month = Number(time.substring(5,7));
+    console.log(month);
+    let showMonth = enMonthArr[month];
+    let showDate = time.substring(8,10);
 
     return showDate + ' ' + showMonth + '.' + showYears;
   },
@@ -172,15 +174,15 @@ let tools = {
     let timeYearsNow = nowTime.getFullYear();
 
     // 获取传入时间的年份
-    let timeYears = new Date(time).getFullYear();
+    let timeYears = time.substring(0,4);
     // 获取传入时间的月份
-    let timeMonth = (new Date(time).getMonth() + 1) < 10 ? '0' + (new Date(time).getMonth() + 1) : (new Date(time).getMonth() + 1);
+    let timeMonth = time.substring(5,7);
     // 获取传入时间的日期
-    let timeDate = new Date(time).getDate() < 10 ? '0' + new Date(time).getDate() : new Date(time).getDate();
+    let timeDate = time.substring(8,10);
     // 获取传入时间的具体小时
-    let timeHours = new Date(time).getHours() < 10 ? '0' + new Date(time).getHours() : new Date(time).getHours();
+    let timeHours = time.substring(11,13);
     // 获取传入时间的具体分钟
-    let timeMinutes = new Date(time).getMinutes() < 10 ? '0' + new Date(time).getMinutes() : new Date(time).getMinutes();
+    let timeMinutes = time.substring(14,16);
 
     if (timeYears != timeYearsNow) {
       return timeYears + '-' + timeMonth + '-' + timeDate + ' ' + timeHours + ':' + timeMinutes;
@@ -245,7 +247,7 @@ let tools = {
     let initMinutes = initTime.getMinutes() < 10 ? ('0' + initTime.getMinutes()) : initTime.getMinutes();
 
     return {
-      year:  initYears,
+      year: initYears,
       month: initMonths,
       date: initDate,
       hours: initHours,

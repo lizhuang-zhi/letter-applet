@@ -3,6 +3,25 @@ page {
   --notifi-box-bg-color: #FFFFFF;
 
 }
+.top-content-box .top-tit {
+  display: flex;
+  align-items: center;
+}
+.top-content-box .top-tit .add-item {
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  background: #FF1D23;
+  margin-right: 6rpx;
+  display: flex;
+  align-items: center;
+}
+.top-content-box .top-tit .add-item image {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+}
+
 
 /* 美文欣赏栏 */
 .beauty-article {
@@ -134,7 +153,7 @@ page {
 
 /* 小贴士图标 */
 .tip-box {
-  height: 380rpx;
+  height: 280rpx;
 }
 
 .tip-box .tip-pic {

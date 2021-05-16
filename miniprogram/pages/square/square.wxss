@@ -5,7 +5,7 @@ page {
   /* 日记和吐槽左右边距 */
   --padding-size: 40rpx;
   /* 日记和吐槽下内边距 */
-  --padding-bottom: 150rpx;
+  --padding-bottom: 60rpx;
   /* 日记和吐槽上内边距 */
   --padding-top: 10rpx;
 

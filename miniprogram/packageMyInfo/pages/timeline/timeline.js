@@ -71,7 +71,7 @@ Page({
   // 返回数据显示转换
   changeFormTools(infoArr) {
     infoArr.forEach(item => {
-      item.eventTime = timeTools.timeline(item.eventTime);
+      // item.eventTime = timeTools.timeline(item.eventTime);
       item.eventType = this.changeEngToChina(item.eventType);
     })
     return infoArr;

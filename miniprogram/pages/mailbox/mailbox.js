@@ -470,12 +470,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (typeof this.getTabBar === 'function' &&
-      this.getTabBar()) {
-      this.getTabBar().setData({
-        selected: 2
-      })
-    }
+    // if (typeof this.getTabBar === 'function' &&
+    //   this.getTabBar()) {
+    //   this.getTabBar().setData({
+    //     selected: 2
+    //   })
+    // }
     console.log('mailbox页面  ------- 监听页面显示');
 
     // 页面显示时，若用户已登录授权则拉取一次信息
