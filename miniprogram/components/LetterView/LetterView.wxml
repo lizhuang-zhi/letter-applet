@@ -12,9 +12,9 @@
       <view class="consignee" style="line-height:{{HeadLineHeight}};font-size:{{HeadFont}};color:{{HeadColor}};">
         {{consignee}}</view>
       <!-- 问候语 -->
-      <view class="hello"
+      <!-- <view class="hello"
         style="line-height:{{HeadLineregardsHeight}};font-size:{{HeadregardsFont}};color:{{HeadRegardsColor}}">
-        {{regards}}</view>
+        {{regards}}</view> -->
     </view>
     <!-- 信件内容 -->
     <view class="LetterBody"

@@ -73,7 +73,8 @@ Page({
         // 处理显示时间
         letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
         // 分段显示文本内容
-        letterInfo.content = letterInfo.content.split('/n');
+        letterInfo.content = letterInfo.content.split('\n');
+
         /*
           获取信件行信息  -----   keo
         */
