@@ -31,11 +31,10 @@
 
 
 /* 中部分 */
-.yeo-diary-content .main-middle {
+.yeo-diary-content .cont-box .main-middle {
   font-size: 30rpx;
   color: #444647;
-  padding: 30rpx 40rpx 30rpx;
-  background: #F2F5F5;
+  padding: 0 40rpx;
   line-height: 2;
   letter-spacing: 1rpx;
   overflow: hidden;
@@ -43,6 +42,10 @@
   word-break: break-all;
   /* 首行缩进 */
   text-indent: 2em;
+}
+.yeo-diary-content .cont-box {
+  background: #F2F5F5;
+  padding-top: 30rpx;
 }
 
 .yeo-diary-content .main-bottom {

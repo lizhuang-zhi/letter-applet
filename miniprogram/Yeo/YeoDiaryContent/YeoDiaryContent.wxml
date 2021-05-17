@@ -16,8 +16,10 @@
 
   </view>
 
+  <view class="cont-box">
   <!-- 中部分（文字内容） -->
-  <view class="main-middle">{{content}}</view>
+  <view class="main-middle" wx:for="{{content}}" wx:key='index'>{{item}}</view>
+</view>
 
   <!-- 下部分（作者） -->
   <view class="main-bottom">{{authorName}}</view>

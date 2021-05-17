@@ -42,6 +42,8 @@ Page({
         image: '../../images/input.png'
       });
     } else if (this.data.chooseType == '吐槽' && subvalue.length >= 10) {
+      // 去除文本内空格
+      // subvalue = subvalue.replace(/\s+/g, "");
       requestData.textLegal(subvalue).then(res => {
         console.log(res.data);
         // 返回信息
@@ -101,6 +103,8 @@ Page({
       })
     } else { // 文字先提交审核
       console.log(subvalue);
+      // 去除文本内空格
+      // subvalue = subvalue.replace(/\s+/g, "");
       requestData.textLegal(subvalue).then(res => {
         console.log(res.data);
         // 返回信息

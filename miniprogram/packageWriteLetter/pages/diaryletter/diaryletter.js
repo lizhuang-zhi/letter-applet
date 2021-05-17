@@ -22,6 +22,8 @@ Page({
       // 修改时间显示格式
       diaryObj.weekDay = '星期' + tools.changeWeekDaysToChinese(new Date(diaryObj.date).getDay());
       diaryObj.dateNum = new Date(diaryObj.date).getDate();
+      // 读取文本换行
+      diaryObj.content = diaryObj.content.split('\n');
       
       this.setData({
         diaryObj: diaryObj
