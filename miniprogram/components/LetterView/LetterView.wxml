@@ -19,10 +19,9 @@
     <!-- 信件内容 -->
     <view class="LetterBody"
       style="line-height:{{contentLineHeight}};color:{{ContentLineColor}};letter-spacing:{{ContentSpacing}}">
-
-      <text class="LetterLine" wx:for="{{lettercontentArr}}" wx:key='index'>
+      <view class="LetterLine" wx:for="{{lettercontentArr}}" wx:key='index'>
         {{item}}
-      </text>
+      </view>
     </view>
     <!-- 信件结尾 -->
     <view class="LetterFoot">

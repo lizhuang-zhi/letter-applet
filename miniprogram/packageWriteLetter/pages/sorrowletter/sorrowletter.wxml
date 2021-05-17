@@ -1,5 +1,5 @@
 <!-- 信件内容组件 -->
-<keo-letter-view lettercontentArr='{{lettercontentArr}}' contentLineHeight='30rpx' writer='{{letterInfo.senderPenName}}' date='{{letterInfo.releaseTime}}' consignee='陌生人 收'></keo-letter-view>
+<keo-letter-view lettercontentArr='{{letterInfo.content}}' contentLineHeight='1' writer='{{letterInfo.senderPenName}}' date='{{letterInfo.releaseTime}}' consignee='陌生人 收'></keo-letter-view>
 
 <!-- 按钮组件 -->
 <view class="btn-part">

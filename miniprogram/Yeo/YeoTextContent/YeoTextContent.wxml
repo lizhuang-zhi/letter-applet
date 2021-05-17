@@ -20,7 +20,7 @@
   <!-- 下部分（内容） -->
   <view class="main-bottom">
     <view class="content-before">"</view>
-    <view class="content">{{content}}</view>
+    <view class="content" wx:for="{{content}}" wx:key='index'>{{item}}</view>
     <view class="content-after">"</view>
   </view>
 

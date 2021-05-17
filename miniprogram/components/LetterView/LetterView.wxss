@@ -39,8 +39,10 @@
 /* 信件内容 */
 .OuterBox .LetterContent .LetterBody {
   width: 100%;
-  padding-bottom: 10rpx;
-  /* text-align: center; */
+}
+.OuterBox .LetterContent .LetterBody .LetterLine {
+  /* padding-bottom: 12rpx; */
+  line-height: 1.4;
 }
 
 /* 信件结尾 */

@@ -34,18 +34,18 @@ Page({
   },
 
   // 回车事件
-  enterEvent(e) {
-    // 获取输入内容
-    let comment_cont = e.detail.comment_cont;
-    if (comment_cont == '') {
-      wx.showToast({
-        title: '请输入评论内容',
-        icon: 'none'
-      })
-    } else {
-      this.sendMsg(comment_cont);
-    }
-  },
+  // enterEvent(e) {
+  //   // 获取输入内容
+  //   let comment_cont = e.detail.comment_cont;
+  //   if (comment_cont == '') {
+  //     wx.showToast({
+  //       title: '请输入评论内容',
+  //       icon: 'none'
+  //     })
+  //   } else {
+  //     this.sendMsg(comment_cont);
+  //   }
+  // },
   // 键盘输入事件
   inputEvent(e) {
     // 获取输入内容
@@ -56,30 +56,42 @@ Page({
   },
   // 点击发送图片事件
   sendmessageEvent(e) {
+    let that = this;
     // 获取第一次点击的时间戳
-    let sendMsgBeforeTime = this.data.sendMsgBeforeTime;
+    let sendMsgBeforeTime = that.data.sendMsgBeforeTime;
     // 记录当前时间
     let nowTime = new Date().getTime();
-    if (nowTime - sendMsgBeforeTime >= 1000) {
-      // 获取输入内容
-      let input_cont = this.data.inputContent;
-      if (input_cont == '') {
-        wx.showToast({
-          title: '请输入评论内容',
-          icon: 'none'
-        })
-      } else {
-        this.setData({
-          sendMsgBeforeTime: new Date()
-        })
-        this.sendMsg(input_cont);
+    // 测试的订阅消息
+    wx.requestSubscribeMessage({
+      tmplIds: ['mghtoN9x1YBMmyWg9RtBlt8-XxHxMvEo8eAtHIazD34'],
+      success(res) {
+        console.log(res);
+        if (nowTime - sendMsgBeforeTime >= 1000) {
+          // 获取输入内容
+          let input_cont = that.data.inputContent;
+          if (input_cont == '') {
+            wx.showToast({
+              title: '请输入评论内容',
+              icon: 'none'
+            })
+          } else {
+            that.setData({
+              sendMsgBeforeTime: new Date()
+            })
+            that.sendMsg(input_cont);
+          }
+        } else {
+          wx.showToast({
+            title: '点击过于频繁',
+            icon: 'none'
+          })
+        }
+      },
+      fail: res => {
+        console.log(res);
       }
-    } else {
-      wx.showToast({
-        title: '点击过于频繁',
-        icon: 'none'
-      })
-    }
+    })
+
   },
   // 发送评论
   sendMsg(content) {
@@ -116,11 +128,11 @@ Page({
         console.log(res.data.data);
         // 记录返回值
         let backInfo = res.data.data;
-        if(backInfo == 1) {
+        if (backInfo == 1) {
           // 插入用户评论
           this.userComment(newCont, finalSendObj);
-        }else {
-          wx.hideLoading({ });
+        } else {
+          wx.hideLoading({});
           Dialog.alert({
             title: '审核结果',
             message: '小主，您的内容有些不当哦！请修改后重试',
@@ -178,6 +190,8 @@ Page({
         let complianObj = res.data.data;
         // 处理对象时间
         complianObj.date = timeTools.indexBeautyTime(complianObj.date);
+        // 分段换行内容
+        complianObj.content = complianObj.content.split('\n');
         // 处理数据
         this.setData({
           complianObj: complianObj

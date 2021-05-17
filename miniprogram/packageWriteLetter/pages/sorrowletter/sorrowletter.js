@@ -23,9 +23,9 @@ Page({
       keo ------------
     */
     // 行数组
-    lettercontentArr: [],
+    // lettercontentArr: [],
     // 行字数
-    lineNum: 17
+    // lineNum: 17
   },
 
   //点击跳转写信
@@ -72,17 +72,19 @@ Page({
         let letterInfo = res.data.data;
         // 处理显示时间
         letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
+        // 分段显示文本内容
+        letterInfo.content = letterInfo.content.split('/n');
         /*
           获取信件行信息  -----   keo
         */
         //获取信件行
-        let content = letterInfo.content;
-        let contentArr = this.data.lettercontentArr;
-        let linenum = this.data.lineNum;
-        let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
+        // let content = letterInfo.content;
+        // let contentArr = this.data.lettercontentArr;
+        // let linenum = this.data.lineNum;
+        // let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
         this.setData({
           letterInfo: letterInfo,
-          lettercontentArr: resultArr
+          // lettercontentArr: resultArr
         })
         resolve('success');
       })

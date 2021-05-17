@@ -55,7 +55,7 @@ Component({
     // 信件内容行高
     contentLineHeight:{
       type:String,
-      value:"30rpx"
+      value:"1"
     },
     //信件内容文字颜色
     ContentLineColor:{
@@ -154,6 +154,5 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
   },
 })
