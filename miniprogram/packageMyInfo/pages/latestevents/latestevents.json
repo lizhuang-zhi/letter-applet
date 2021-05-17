@@ -1,5 +1,7 @@
 {
   "usingComponents": {},
   "navigationBarBackgroundColor": "#E8EAEA",
-  "navigationBarTitleText":"最新活动"
+  "navigationBarTitleText":"最新活动",
+  "backgroundColorBottom": "#E8EAEA",
+  "backgroundColorTop": "#E8EAEA"
 }

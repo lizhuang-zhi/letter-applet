@@ -171,6 +171,17 @@ Page({
   },
   // 跳转吐槽内容
   ToComplainTap(e) {
+    // 测试的订阅消息
+    wx.requestSubscribeMessage({
+      tmplIds: ['mghtoN9x1YBMmyWg9RtBljqi7HCqgA-bxlEaXSW-BwA'],
+      success(res) {
+        console.log(res);
+      },
+      fail: res => {
+        console.log(res);
+      }
+    })
+
     // 获取吐槽对象id
     let id = e.currentTarget.dataset.id;
     // 未获取授权
@@ -496,7 +507,7 @@ Page({
     //     selected: 1
     //   })
     // }
-    
+
     // 给日记浏览量+1
     this.addOneFromDiaryContent();
     /* 

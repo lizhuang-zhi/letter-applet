@@ -205,7 +205,9 @@ App({
     let that = this;
     return new Promise((resolve, reject) => {
       wx.getSetting({
+        withSubscriptions: true,
         success(res) {
+          console.log(res.subscriptionsSetting);
           // 未授权用户信息
           if (!res.authSetting['scope.userInfo']) {
             wx.authorize({
