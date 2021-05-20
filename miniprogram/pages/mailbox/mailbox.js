@@ -154,6 +154,9 @@ Page({
   ToMyStamp() {
     /* 置0我的邮票数量 */
     this.setMessageListNum(2);
+    this.setData({
+      myStampNewNum: 0
+    })
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/mystamp/mystamp');
   },
@@ -161,6 +164,9 @@ Page({
   ToMyAchievement() {
     /* 置0我的邮票数量 */
     this.setMessageListNum(3);
+    this.setData({
+      myAchieveNewNum: 0
+    })
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/myachievements/myachievements');
   },
@@ -320,9 +326,9 @@ Page({
       // 获取评论数量
       let commentNum = res.data.data[2];
       // 获取我的邮票数量
-      let stampNum = res.data.data[3];
+      let stampNum = res.data.data[4];
       // 获取我的成就数量
-      let achieveNum = res.data.data[4];
+      let achieveNum = res.data.data[3];
       // 赋值消息提示数量
       let dataList = this.data.dataList;
       dataList[1].notifiNum = letterNum;
