@@ -166,8 +166,6 @@ Page({
   },
   // 跳转集邮册
   ToStampCollection() {
-    /* 置0我的邮票数量 */
-    this.setMessageListNum(4);
     // 判断用户登陆并跳转
     this.judgeUserInfoToJump('/packageMyInfo/pages/stampcollection/stampcollection');
   },
