@@ -472,7 +472,7 @@ Page({
         if (res == 'success') {
           setTimeout(() => {
             wx.switchTab({
-              url: '/pages/square/square',
+              url: '/pages/index/index',
             })
           }, 1000)
         }
@@ -536,7 +536,7 @@ Page({
       if (res == 'success') {
         setTimeout(() => {
           wx.switchTab({
-            url: '/pages/square/square',
+            url: '/pages/index/index',
           })
         }, 1000)
       }
