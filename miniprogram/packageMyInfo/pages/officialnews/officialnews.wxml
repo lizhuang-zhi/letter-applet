@@ -3,7 +3,7 @@
 
   <block wx:for="{{monthReportList}}" wx:key='index'>
     <!-- 月报item -->
-    <keo-notify wx:if="{{item.data.logo == undefined}}" SendTime='{{item.time}}' ContentText="小主，您上一周的月报已出炉，请查收！！"
+    <keo-notify wx:if="{{item.data.logo == undefined}}" SendTime='{{item.time}}' ContentText="小主，您上一月的月报已出炉，请查收！！"
       ProImgSrc='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/铃铛.png'
       Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/月报.webp" promulgatorText='系统推送'
       bindtap="ToCheckOutReport" data-index="{{index}}" ProorSize='30rpx' ProImgSrcWidth='30rpx' ProImgSrcHeight='30rpx'

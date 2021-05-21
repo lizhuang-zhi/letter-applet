@@ -1,4 +1,13 @@
+<!-- 骨架图 -->
+<view class="top-distance" wx:if="{{isShowSkeleton}}">
+  <view class="show-skeleton" wx:for="{{6}}" wx:key='index'>
+    <van-skeleton title row="3" />
+  </view>
+</view>
+
+<!-- 主体显示内容 -->
 <view class="stamp-container">
+
   <!-- 邮票item -->
   <yeo-frame-view class="item-stamp" framePadding='30rpx 30rpx' frameBgColor='{{boxColor}}' frameAlignItems='center'
     frameBoxSizing='border-box' frameBordRadius='0rpx' wx:for="{{stampArr}}" bindtap="showStampPopup" data-tit="{{item.stampName}}" data-desc="{{item.stampDesc}}" data-edition="{{item.stampEdition}}" data-pic="{{item.stampUrl}}">
@@ -32,6 +41,7 @@
       </yeo-frame-view>
     </view>
   </yeo-frame-view>
+
 </view>
 
 <!-- 底部线条 -->

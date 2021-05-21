@@ -14,6 +14,8 @@ Page({
 
     // 邮票信息数组
     stampArr: [],
+    // 显示骨架图
+    isShowSkeleton: true
   },
 
   // 弹出邮票详情框
@@ -40,9 +42,6 @@ Page({
 
   // 初始化数据
   Start(openId) {
-    wx.showLoading({
-      title: '加载中..',
-    });
     requestData.userStamp(openId).then(res => {
       return new Promise((resolve, reject) => {
         console.log(res.data.data);
@@ -57,7 +56,9 @@ Page({
         resolve('success');
       })
     }).then(res => {
-      wx.hideLoading({});
+      this.setData({
+        isShowSkeleton: false
+      })
     })
   },
 

@@ -10,6 +10,14 @@ page {
     /* 全局字体设置 */
     font-family: 'custom';
 }
+/* 骨架图 */
+.top-distance {
+  margin-top: 50rpx;
+}
+.top-distance .show-skeleton {
+  margin: 0 0 60rpx;
+}
+
 /* 顶部文字 */
 .top-content-box {
   margin: 60rpx 0 0 var(--margin-top);

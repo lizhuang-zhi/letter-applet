@@ -12,11 +12,15 @@ Page({
   data: {
     openid: '',
     // 评论列表数组
-    dataArr: []
+    dataArr: [],
 
   },
+
   //初始化数据
   Start(openId) {
+    wx.showLoading({
+      title: '加载中..',
+    })
     //获取评论列表信息
     requestData.mailboxMessageList(openId, pageNum).then(res => {
       return new Promise((resolve, reject) => {
@@ -32,8 +36,13 @@ Page({
         })
         resolve('success');
       })
+    }).then(res => {
+      if(res == 'success') {
+        wx.hideLoading({})
+      }
     })
   },
+
   // 点击具体评论组件对象
   toComplainPage(e) {
     // 吐槽对象id
