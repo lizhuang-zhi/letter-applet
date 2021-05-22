@@ -61,38 +61,29 @@ Page({
     let sendMsgBeforeTime = that.data.sendMsgBeforeTime;
     // 记录当前时间
     let nowTime = new Date().getTime();
-    // 测试的订阅消息
-    wx.requestSubscribeMessage({
-      tmplIds: ['mghtoN9x1YBMmyWg9RtBlt8-XxHxMvEo8eAtHIazD34'],
-      success(res) {
-        console.log(res);
-        if (nowTime - sendMsgBeforeTime >= 1000) {
-          // 获取输入内容
-          let input_cont = that.data.inputContent;
-          if (input_cont == '') {
-            wx.showToast({
-              title: '请输入评论内容',
-              icon: 'none'
-            })
-          } else {
-            that.setData({
-              sendMsgBeforeTime: new Date()
-            })
-            that.sendMsg(input_cont);
-          }
-        } else {
-          wx.showToast({
-            title: '点击过于频繁',
-            icon: 'none'
-          })
-        }
-      },
-      fail: res => {
-        console.log(res);
+    if (nowTime - sendMsgBeforeTime >= 1000) {
+      // 获取输入内容
+      let input_cont = that.data.inputContent;
+      if (input_cont == '') {
+        wx.showToast({
+          title: '请输入评论内容',
+          icon: 'none'
+        })
+      } else {
+        that.setData({
+          sendMsgBeforeTime: new Date()
+        })
+        that.sendMsg(input_cont);
       }
-    })
+    } else {
+      wx.showToast({
+        title: '点击过于频繁',
+        icon: 'none'
+      })
+    }
 
   },
+
   // 发送评论
   sendMsg(content) {
     // 获取以前的时间

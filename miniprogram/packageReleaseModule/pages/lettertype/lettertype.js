@@ -340,24 +340,24 @@ Page({
       console.log('未知类型，未做处理！！！');
     }
 
-
   },
 
   // 提交解忧信件
   ConfirmSendSorrow() {
+    let that = this;
     /* 
      ************ 保存信件 *************
      */
     // 笔名
-    let penName = this.data.initValue;
+    let penName = that.data.initValue;
     // 内容
-    let content = this.data.inputValue;
+    let content = that.data.inputValue;
     // 用户openId
     let openId = app.globalData.openid;
     // 邮票图片地址
     let stampUrl = stampPic;
     // 状态
-    let state = this.data.baiduAiCheck == 1 ? 1 : 3;
+    let state = that.data.baiduAiCheck == 1 ? 1 : 3;
     // 	标签id集合
     let tapIds = selectSorrowArr.toString();
     // 声明对象保存上面的值
@@ -370,6 +370,7 @@ Page({
       openId
     };
     console.log(letterObj);
+
     // 标签选择不能为空
     if (selectSorrowArr.length == 0) {
       wx.showToast({
@@ -382,41 +383,65 @@ Page({
         icon: 'none'
       })
     } else {
-      requestData.lettertypeLetterSend(letterObj).then(res => {
-        console.log(res.data);
-        return new Promise((resolve, reject) => {
-          // 发布返回信息
-          let resCode = res.data.resultCode;
-          if (resCode == 200) {
+      // 解忧订阅消息
+      wx.requestSubscribeMessage({
+        tmplIds: ['vuxCjKVvzbUWW1iHbMkSCmsBrpXWkXFPJ81S8nVWJdw'],
+        success(res) {
+          console.log(res);
+          // 执行提交
+          that.sendSorrow(letterObj);
+        },
+        fail: res => {
+          console.log(res);
+          if (res.errCode == 20004) {
             wx.showToast({
-              title: '发布成功',
-              icon: 'none',
-              duration: 1000,
-              image: '../../images/confirm.png'
-            });
-            resolve('success');
-          } else {
-            wx.showToast({
-              title: '服务器开了个小差',
+              title: '小主关闭了主开关，请在设置中打开~',
               icon: 'none'
             })
-            reject('error');
           }
-        })
-
-      }).then(res => {
-        if (res == 'success') {
-          setTimeout(() => {
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
-          }, 1000)
         }
       })
     }
 
   },
+  // 提交解忧信件接口方法
+  sendSorrow(letterObj) {
+    wx.showLoading({
+      title: '发布中..',
+    })
+    requestData.lettertypeLetterSend(letterObj).then(res => {
+      console.log(res.data);
+      return new Promise((resolve, reject) => {
+        // 发布返回信息
+        let resCode = res.data.resultCode;
+        if (resCode == 200) {
+          wx.showToast({
+            title: '发布成功',
+            icon: 'none',
+            duration: 1000,
+            image: '../../images/confirm.png'
+          });
+          resolve('success');
+        } else {
+          wx.showToast({
+            title: '服务器开了个小差',
+            icon: 'none'
+          })
+          reject('error');
+        }
+      })
 
+    }).then(res => {
+      if (res == 'success') {
+        wx.hideLoading({ });
+        setTimeout(() => {
+          wx.switchTab({
+            url: '/pages/index/index',
+          })
+        }, 1000)
+      }
+    })
+  },
   // 提交日记
   ConfirmSendDiary() {
     /* 
@@ -480,24 +505,24 @@ Page({
     }
 
   },
-
   // 提交吐槽 
   ConfirmSendComplain() {
+    let that = this;
     /* 
      ************ 提交吐槽 *************
      */
     // 吐槽人头像
     let avatarUrl = app.globalData.userInfo.avatarUrl;
     // 内容
-    let content = this.data.inputValue;
+    let content = that.data.inputValue;
     // 吐槽评论数量 
     let number = 0;
     // 用户openId
     let openId = app.globalData.openid;
     // 笔名
-    let penName = this.data.initValue;
+    let penName = that.data.initValue;
     // 状态
-    let state = this.data.baiduAiCheck == 1 ? 1 : 3;
+    let state = that.data.baiduAiCheck == 1 ? 1 : 3;
     // 吐槽描述
     let title = content.substring(0, '。'.indexOf(content) == -1 ? 30 : '。'.indexOf(content));
     // 日记对象
@@ -511,6 +536,31 @@ Page({
       openId
     };
     console.log(complainObj);
+
+    // 评论订阅消息
+    wx.requestSubscribeMessage({
+      tmplIds: ['mghtoN9x1YBMmyWg9RtBlt8-XxHxMvEo8eAtHIazD34'],
+      success(res) {
+        console.log(res);
+        // 执行提交
+        that.sendComplain(complainObj);
+      },
+      fail: res => {
+        console.log(res);
+        if (res.errCode == 20004) {
+          wx.showToast({
+            title: '小主关闭了主开关，请在设置中打开~',
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  // 提交吐槽接口方法
+  sendComplain(complainObj) {
+    wx.showLoading({
+      title: '发布中..',
+    })
     requestData.lettertypeComplainSend(complainObj).then(res => {
       console.log(res);
       return new Promise((resolve, reject) => {
@@ -534,6 +584,7 @@ Page({
       })
     }).then(res => {
       if (res == 'success') {
+        wx.hideLoading({ });
         setTimeout(() => {
           wx.switchTab({
             url: '/pages/index/index',
@@ -541,8 +592,6 @@ Page({
         }, 1000)
       }
     })
-
-
   },
 
   // 提交解答
@@ -605,7 +654,7 @@ Page({
       title: '加载中..',
     })
     requestData.userStamp(openId).then(res => {
-      return new Promise((resolve,reject) => {
+      return new Promise((resolve, reject) => {
         console.log(res.data.data);
         // 获取个人邮票数组
         let stampArr = res.data.data;
@@ -618,7 +667,7 @@ Page({
         resolve('success');
       })
     }).then(res => {
-      wx.hideLoading({ });
+      wx.hideLoading({});
     })
   },
 
