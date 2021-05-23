@@ -143,7 +143,7 @@ Page({
           duration: 1300
         });
         let time = setTimeout(() => {
-          wx.redirectTo({
+          wx.navigateBack({
             url: '/packageMyInfo/pages/latestevents/latestevents',
           })
           clearTimeout(time);
