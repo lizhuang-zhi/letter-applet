@@ -47,6 +47,7 @@
   line-height: 1.4;
   /* 首行缩进 */
   text-indent: 2em;
+  word-wrap: break-word;
 }
 
 /* 信件结尾 */

@@ -16,8 +16,6 @@ const chooseTagBorder = '1rpx solid ' + chooseTagColor;
 const stampInitBorder = '8rpx solid #F7F7F7';
 // 邮票选择边框
 const stampChooseBorder = '8rpx solid #F0934F'
-// 选中邮票
-let stampPic = '';
 
 // 声明解忧标签数组(存储选择的标签，最多三个)
 let selectSorrowArr = [];
@@ -166,8 +164,10 @@ Page({
     // 接收者的openId
     senderOpenId: '',
     // 百度审核状态
-    baiduAiCheck: null
+    baiduAiCheck: null,
 
+    // 选中邮票
+    stampPic: ''
   },
 
   // 解忧标签选择点击按钮
@@ -284,12 +284,17 @@ Page({
     let index = e.detail.clickObj.index;
     // 获取邮票数组
     let stampArr = this.data.stampArr;
+    // 获取选中邮票
+    let stampPic = this.data.stampPic;
+
     // 当没有选择时
     if (stampPic == '' && stampArr[index].picBorder == stampInitBorder) {
       // 给点击对象加边框
       stampArr[index].picBorder = stampChooseBorder;
       // 存储点击对象图片地址
-      stampPic = stampArr[index].stampUrl;
+      this.setData({
+        stampPic: stampArr[index].stampUrl
+      })
     } else if (stampPic != '' && stampArr[index].picBorder == stampInitBorder) {
       wx.showToast({
         title: '最多只能选择一张邮票',
@@ -299,8 +304,11 @@ Page({
       // 取消选中邮票
       stampArr[index].picBorder = stampInitBorder;
       // 消去点击对象图片地址
-      stampPic = '';
+      this.setData({
+        stampPic: ''
+      })
     }
+
     // 重新渲染stampArr
     this.setData({
       stampArr: stampArr
@@ -355,7 +363,7 @@ Page({
     // 用户openId
     let openId = app.globalData.openid;
     // 邮票图片地址
-    let stampUrl = stampPic;
+    let stampUrl = that.data.stampPic;
     // 状态
     let state = that.data.baiduAiCheck == 1 ? 1 : 3;
     // 	标签id集合

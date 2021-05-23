@@ -1,7 +1,7 @@
 {
   "usingComponents": {},
   "navigationBarTitleText": "时光机",
-  "navigationBarBackgroundColor": "#E8EAEA",
-  "backgroundColorBottom": "#E8EAEA",
-  "backgroundColorTop": "#E8EAEA"
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "backgroundColorBottom": "#FFFFFF",
+  "backgroundColorTop": "#FFFFFF"
 }

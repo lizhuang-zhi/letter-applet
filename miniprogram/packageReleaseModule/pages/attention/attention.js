@@ -16,6 +16,7 @@ Page({
     PromptData3: ['解答并非答案，仅供参考，自行斟酌', '遇到不良内容请投诉'],
     tipcontent: '谢谢您的信任，准备将心里话说给TA。但请注意，为了维护良好的环境，请遵循以下规则'
   },
+  
   //跳转页面
   ToWriteArea() {
     let type = this.data.chooseType;
@@ -37,6 +38,7 @@ Page({
       })
     }
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

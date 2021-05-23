@@ -81,6 +81,8 @@ const UserAchieve = prefix + '/getAllAchieve';
 const UserStamp = prefix + '/getAllStamp';
 // 获取时间线数据
 const UserTimeLine = prefix + '/user/getTimelineData';
+// 保存调查问卷
+const Investigate = prefix + '/user/saveQuestionnaire';
 
 // 返回对象
 let url = {
@@ -219,8 +221,12 @@ let url = {
   // 获取时间线数据
   getUserTimeLine() {
     return UserTimeLine;
+  },
+  // 保存调查问卷
+  getInvestigate() {
+    return Investigate;
   }
-
+  
 
 
 }

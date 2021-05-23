@@ -685,6 +685,32 @@ let requestData = {
         }
       })
     })
+  },
+  // 保存调查问卷
+  investigate({interestScore,isHelp,isIllegal,openId,otherSpeech,pageScore}) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: apiUrl.getInvestigate(),
+        data: {
+          interestScore,
+          isHelp,
+          isIllegal,
+          openId,
+          otherSpeech,
+          pageScore
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        method: "POST",
+        success: res => {
+          resolve(res)
+        },
+        fail: res => {
+          reject(res)
+        }
+      })
+    })
   }
 
 

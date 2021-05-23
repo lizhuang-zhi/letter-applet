@@ -1,0 +1,64 @@
+page {
+  /* 问题内容距离问题的上外边距 */
+  --cont-mar-top: 18rpx;
+}
+/* 顶部图 */
+.top-bgpic image {
+  width: 100%;
+}
+
+/* ****************调查问卷的标题**************** */
+/* 标题 */
+.invest-tit .info-left {
+  font-size: 40rpx;
+  font-weight: bold;
+  width: 500rpx;
+}
+/* 描述 */
+.invest-tit .invest-desc {
+  margin-top: 20rpx;
+  color: #404348;
+}
+/* 发起者 */
+.invest-tit .author {
+  margin-top: 20rpx;
+  color: #838485;
+}
+
+/* ****************问题内容**************** */
+.question-body {
+  margin-top: 50rpx;
+}
+/* 问题间距离 */
+.question-body .question-section {
+  margin-top: 40rpx;
+}
+.label-radio .radio-item {
+  margin-top: var(--cont-mar-top);
+}
+
+/* 第三个问题和第四个问题 */
+.rate {
+  margin-top: var(--cont-mar-top);
+}
+
+/* 第五个问题 */
+.advise-box {
+  width: 90%;
+  background: #ffffff;
+  padding: 40rpx 20rpx 40rpx 30rpx;
+  border-radius: 30rpx;
+  margin-top: 30rpx;
+  box-shadow: 0 0 20rpx #dddddd;
+}
+
+
+
+/* *****************提交按钮***************** */
+.submit-form {
+  margin: 40rpx auto 50rpx;
+  width: 240rpx;
+}
+.submit-form keo-check-button {
+  display: inline-block;
+}

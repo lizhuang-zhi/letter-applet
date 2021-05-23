@@ -153,6 +153,18 @@
         {
           "name": "集邮册",
           "pathName": "packageMyInfo/pages/stampcollection/stampcollection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "最新活动",
+          "pathName": "packageMyInfo/pages/latestevents/latestevents",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "调查问卷",
+          "pathName": "packageMyInfo/pages/investigate/investigate",
           "scene": null
         }
       ]

@@ -39,7 +39,8 @@
         "pages/timeline/timeline",
         "pages/historyletter/historyletter",
         "pages/historyinfo/historyinfo",
-        "pages/stampcollection/stampcollection"
+        "pages/stampcollection/stampcollection",
+        "pages/investigate/investigate"
       ]
     }
   ],
@@ -139,6 +140,7 @@
     "van-icon": "@vant/weapp/icon/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-button": "@vant/weapp/button/index",
-    "van-skeleton": "@vant/weapp/skeleton/index"
+    "van-skeleton": "@vant/weapp/skeleton/index",
+    "van-rate": "@vant/weapp/rate/index"
   }
 }

@@ -1,6 +1,9 @@
 page {
   /* 线条颜色 */
-  --line-color: #ccc;
+  /* --line-color: #ccc; */
+  --line-color: #ffe5c1;
+
+  background: #FFFFFF;
 }
 .weui-cell-box {
   margin-top: 40rpx;
@@ -8,8 +11,8 @@ page {
 .weui-cell-box .cell-start-line {
   width: 50rpx;
   height: 30rpx;
-  border-top: 1rpx solid var(--line-color);
-  border-right: 1rpx solid var(--line-color);
+  border-top: 2rpx solid var(--line-color);
+  border-right: 2rpx solid var(--line-color);
 }
 .weui-cell-list {
   margin: 0 0 8rpx 40rpx;
@@ -22,18 +25,28 @@ page {
   background: #FFA82E;
 }
 .weui-cell-line {
-  margin-left: 5px;
-  border-left: 1rpx solid var(--line-color);
-  height: 160rpx;
+  margin-left: 10rpx;
+  border-left: 2rpx solid var(--line-color);
   color: #444444;
 }
 .weui-cell-time {
   font-size: 14px;
   padding-left: 15px;
+  color: #AAAAAA;
 }
 .weui-cell-event {
   padding-top: 15px;
   padding-left: 15px;
   letter-spacing: 3rpx;
+}
+/* 来源 */
+.weui-cell-event .source {
+  padding-top: 20rpx;
+  color: #bbbbbb;
+}
+/* 发布内容 */
+.weui-cell-event .content {
+  color: #666666;
+  word-wrap: break-word;
 }
 

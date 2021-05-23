@@ -1,7 +1,7 @@
 page {
   /* 提示框颜色 */
   --notifi-box-bg-color: #FFFFFF;
-
+  background: #EEEEEE;
 }
 .top-content-box .top-tit {
   display: flex;

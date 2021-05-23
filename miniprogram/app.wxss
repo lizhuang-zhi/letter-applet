@@ -3,10 +3,8 @@ page {
 
   /* 页面左边距 */
   --margin-top: 40rpx;
-
   /* 首页标题margin */
   --index-tit-margin: 40rpx 40rpx 20rpx;
-
     /* 全局字体设置 */
     font-family: 'custom';
 }
@@ -34,11 +32,15 @@ page {
   margin-right: 70rpx;
 }
 
-
 /* 我也是有底线的 */
 .bottom-line {
   font-size: 24rpx;
   color: #666666;
   text-align: center;
   margin: 70rpx 0 40rpx;
+}
+
+/* 边距外框 */
+.container {
+  margin: 40rpx 40rpx 70rpx;
 }

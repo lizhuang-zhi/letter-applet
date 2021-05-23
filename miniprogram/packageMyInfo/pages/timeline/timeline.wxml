@@ -7,19 +7,29 @@
 <view class='weui-cell-box'>
   <!-- 开始线条 -->
   <view class="cell-start-line"></view>
+
   <!-- 主体列表 -->
   <block wx:for="{{axis}}" wx:key="index">
     <view class='weui-cell-list'>
 
+      <!-- 左上角小圆圈 -->
       <view class='weui-cell-circle'></view>
 
       <view class='weui-cell-line'>
         <view class='weui-cell-time'>{{item.eventTime}}</view>
-        <view class='weui-cell-event'>小主您发布了一篇{{item.eventType}}</view>
+
+        <view class='weui-cell-event'>
+          <yeo-frame-view direction='row' frameWidth='600rpx' frameBgColor='#F8F8F8' framePadding='50rpx 20rpx 35rpx' frameBoxSizing='border-box'>
+            <view class="content">{{item.content}}</view>
+            <view class="source">来源：{{item.eventType}}</view>
+          </yeo-frame-view>
+        </view>
+
       </view>
 
     </view>
   </block>
+
 </view>
 
 

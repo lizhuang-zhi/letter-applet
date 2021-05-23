@@ -8,6 +8,13 @@ Page({
 
   },
 
+  // 调查问卷 
+  clickEvent() {
+    wx.navigateTo({
+      url: '/packageMyInfo/pages/investigate/investigate',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

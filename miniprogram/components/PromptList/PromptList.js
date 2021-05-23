@@ -56,7 +56,7 @@ Component({
     // 箭头图片
     ArrowheadSrc:{
       type:String,
-      value:"https://s4.ax1x.com/2021/03/19/6fJ4df.png"
+      value:"https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/jiantou-up.png?versionId=CAEQFhiBgMDNuc7QzBciIGU5MzcwNGU2ZmM1NjQ4ZjZiYWY4YTA3Y2Q1NTA5OTE3"
     },
     // 箭头图片 宽度
     ImgWidth:{
@@ -118,11 +118,15 @@ Component({
       let lineH=this.properties.ListLineHeight;
       if(lineH==0){
         this.setData({
-          ListLineHeight:this.properties.ListFontSize+this.properties.AddSLength
+          ListLineHeight:this.properties.ListFontSize+this.properties.AddSLength,
+          opacityNum: 1,
+          ArrowheadSrc: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/jiantou-up.png?versionId=CAEQFhiBgMDNuc7QzBciIGU5MzcwNGU2ZmM1NjQ4ZjZiYWY4YTA3Y2Q1NTA5OTE3'
         })
       }else{
         this.setData({
-          ListLineHeight:0
+          ListLineHeight:0,
+          opacityNum: 0,
+          ArrowheadSrc: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/jiantou-down.png?versionId=CAEQFhiBgICj9trQzBciIDU4NzI3NWY1ZGRkOTQ2ZDc4ODY0Mjk1MzIwYTVlOGY2'
         })
       }
     }

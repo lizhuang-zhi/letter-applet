@@ -2,6 +2,7 @@
 <view class="top-tips">
   <view class="tip-text">{{tipcontent}}</view>
 </view>
+
 <!-- 规则建议列表 组件 -->
 <view class="prompt-list">
   <keo-prompt-list OuterWidth='100%' ListFontSize='29' ListFontColor='#777777' TextSize='34rpx' ImgWidth='25rpx' ImgHeight='25rpx'
@@ -14,6 +15,7 @@
     PromptText="跟随内心" PromptData="{{PromptData3}}">
   </keo-prompt-list>
 </view>
+
 <!-- 我已了解 -->
 <view class="btn-part">
   <keo-check-button BtnText="我已了解" bindtap="ToWriteArea" BtnWidth='240rpx'></keo-check-button>

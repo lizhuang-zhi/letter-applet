@@ -126,6 +126,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    // 点击组件主体
+    clickBox() {
+      this.triggerEvent('clickevent',{});
+    }
   }
 })

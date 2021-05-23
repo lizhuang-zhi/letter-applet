@@ -11,4 +11,5 @@
 /* 提示内容列表 */
 .outer-box .list-out .prompt-list .list{
   overflow:hidden ;
+  transition: all linear .3s;
 }
