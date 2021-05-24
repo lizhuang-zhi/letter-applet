@@ -27,7 +27,7 @@
     </yeo-message-notification>
     <!-- 官方消息 -->
     <yeo-message-notification leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-officialnews.png?versionId=CAEQFhiBgICe4fG3yxciIGRhZTFjNzc0NTMxODRhYTlhOWVhMzI5MjVjYzNmOGUx'
-      notifiNum='{{officialNewsNum + messageList[1]}}' infoDesc='信栈之旅，期待与你共同成长' bindtap="ToOfficialnews"
+      notifiNum='{{checkNum + officialNewsNum + messageList[1]}}' infoDesc='信栈之旅，期待与你共同成长' bindtap="ToOfficialnews"
       infoTime='{{officialNewsTime}}'>
     </yeo-message-notification>
     <!-- 我的邮票 -->

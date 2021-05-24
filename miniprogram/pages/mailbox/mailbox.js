@@ -127,7 +127,11 @@ Page({
   },
   //跳转到官方消息
   ToOfficialnews() {
-    /* 置0最新活动数量 */
+    // 置0审核数量
+    this.setData({
+      checkNum: 0
+    });
+    /* 置0官方消息初始数量（3） */
     this.setMessageListNum(1);
     /* 置0官方消息的月报数量 */
     wx.getStorage({
@@ -351,6 +355,11 @@ Page({
         if (checkInfo == null) {
           console.log('------- 暂无审核信息返回 --------');
         } else {
+          // 页面显示审核通知
+          this.setData({
+            checkNum: 1
+          });
+
           // 存储信息对象
           let infoObj = {
             time: new Date().getTime(),
