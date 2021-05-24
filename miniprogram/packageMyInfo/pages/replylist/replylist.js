@@ -29,11 +29,6 @@ Page({
       success: res => {
         // 获取未读信件数组
         let unReadList = res.data;
-        /* 
-          1. 找到对应信件
-          2. 将其isRead属性设置为true
-          3. 存入缓存
-        */
         unReadList.forEach((item,index) => {
           if (item.letterId == letterId && item.sender == senderOpenId) {
             // 删除具体的信件

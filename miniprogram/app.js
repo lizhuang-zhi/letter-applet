@@ -88,8 +88,6 @@ App({
 
     /* 
       字体设置
-
-      
     */
     wx.loadFontFace({
       global: true,

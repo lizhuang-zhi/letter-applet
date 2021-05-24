@@ -1,6 +1,8 @@
 page {
   /* 问题内容距离问题的上外边距 */
   --cont-mar-top: 18rpx;
+
+  background: #f0f0f0;
 }
 /* 顶部图 */
 .top-bgpic image {
