@@ -23,7 +23,7 @@
     </yeo-message-notification>
     <!-- 最新活动 -->
     <yeo-message-notification boxBgColor='#FBEBEA' leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-lastestact.png?versionId=CAEQFhiBgICO4fG3yxciIDNhODFhMjdlMTc1MDQ5OTM5ZDg3ODFlMzMwYjIyYmNk' infoTit='最新活动'
-      infoDesc='公开日记、吐槽大会等你加入！' notifiNum='{{messageList[0]}}' bindtap="ToLatestevents" infoTime='04-05'>
+      infoDesc='公开日记、吐槽大会等你加入！' notifiNum='{{messageList[0]}}' bindtap="ToLatestevents" infoTime='05-15'>
     </yeo-message-notification>
     <!-- 官方消息 -->
     <yeo-message-notification leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-officialnews.png?versionId=CAEQFhiBgICe4fG3yxciIGRhZTFjNzc0NTMxODRhYTlhOWVhMzI5MjVjYzNmOGUx'

@@ -15,6 +15,7 @@
 }
 .check-team .check-box {
   box-shadow: 0 0 20rpx #cccccc;
+  border-radius: 20rpx;
 }
 .check-team .check-box .title {
   font-size: 37rpx;

@@ -3,7 +3,7 @@ let timeTools = require('../../utils/timeTools');
 // 接口Api
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
-const getReportTime = 1000 * 24 * 3600 * 7;
+const getReportTime = 1000 * 24 * 3600 * 28;
 let app = getApp();
 /*
   设置论循定时器 
@@ -229,6 +229,7 @@ Page({
         this.setData({
           messageList: res.data.messageList
         })
+        console.log(this.data.messageList[1]);
       }
     });
     // 获取官方消息的缓存
@@ -241,7 +242,9 @@ Page({
         this.setData({
           officialNewsNum: newsNum,
           // 官方消息显示时间
-          officialNewsTime: timeTools.mailboxShowMessageTime(res.data.time)
+          officialNewsTime: timeTools.mailboxShowMessageTime(res.data.time),
+          // 初始化审核消息数量
+          checkNum: 0
         })
       }
     })
@@ -374,11 +377,11 @@ Page({
               let time = res.data.time;
               let unReadNum = res.data.unReadNum;
               // 添加审核对象
-              let newList = reportList.concat(infoObj);
+              reportList.unshift(infoObj);
               wx.setStorage({
                 key: 'officialNewsReportList',
                 data: {
-                  reportList: newList,
+                  reportList: reportList,
                   time: time,
                   unReadNum: unReadNum
                 },
