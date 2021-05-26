@@ -81,7 +81,7 @@ Component({
     //发布者图片
     ProImgSrc:{
       type:String,
-      value:'https://z3.ax1x.com/2021/04/03/cunM2d.png'
+      value:'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/official-pic.png?versionId=CAEQFhiBgMDj8uOOzRciIDhlNmVjNzVmOTJmODRlNmI4Y2RhYTczZWJkZDZjMDIw'
     },
     //发布者图片大小 宽度
     ProImgSrcWidth:{

@@ -17,7 +17,7 @@
         <!-- 随机笔名 -->
         <view class="random" slot='dy-right' bindtap="RandomNameTap">
           <yeo-dy-fun-bar distractWay='between'>
-            <yeo-icon IconSize='35' slot='dy-left' iconUrl='https://z3.ax1x.com/2021/03/28/cSqgMt.png'></yeo-icon>
+            <yeo-icon IconSize='35' slot='dy-left' iconUrl='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/random-name.png?versionId=CAEQFhiBgMDL8uOOzRciIGQwZjAxODc2MWZjZjRmYWY5ODA4ZTI2YjQ2ZTA5MTU5'></yeo-icon>
             <view class="words" slot='dy-right'>随机笔名</view>
           </yeo-dy-fun-bar>
         </view>

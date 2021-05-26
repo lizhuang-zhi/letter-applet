@@ -39,6 +39,6 @@
     ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
 </view>
 <view class="box">
-  <keo-notify SendTime='03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://z3.ax1x.com/2021/05/04/gnN43D.jpg"
+  <keo-notify SendTime='03-10' ContentText="第一版邮票已发布，快去发布一篇解忧试试吧！！" Img="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/pen-pic.jpg?versionId=CAEQFhiBgMDc8eOOzRciIDdlODY4ZWM5YzE5NzRjZWM4ZDQ1MGRhODg5OGY2Nzkz"
     ProorSize='30rpx' ProTopMargin='20rpx'></keo-notify>
 </view>

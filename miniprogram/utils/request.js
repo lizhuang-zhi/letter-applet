@@ -526,7 +526,7 @@ let requestData = {
       wx.request({
         url: apiUrl.getHistoryRelease(),
         data: {
-          'open id': openid
+          openid: openid
         },
         success: res => {
           resolve(res)
@@ -606,7 +606,7 @@ let requestData = {
       wx.request({
         url: apiUrl.getOfficialCheck(),
         data: {
-          'open id': openid
+          openid: openid
         },
         success: res => {
           resolve(res)

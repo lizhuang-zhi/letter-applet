@@ -2,7 +2,7 @@
 <view class="choose" style="padding:{{ChoosePadding}};border-radius:{{ChooseRadius}};margin-top:{{ChooseMargin}}" bindtap="NavTo">
   <!-- logo -->
   <image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img"
-    src="{{ImageSrc}}"></image>
+    src="{{ImageSrc}}" mode='aspectFill'></image>
   <!-- 文字 -->
   <view class="content" style="padding-left:{{ContentPadding}}">
     <view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">{{ChooseType}}</view>

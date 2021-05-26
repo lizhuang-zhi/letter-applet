@@ -71,6 +71,7 @@ Component({
           alpha: _alpha
         })
         _index = _index == _dotNum ? 0 : _index + 1;
+        clearInterval(timer);
       }, _speed);
     }
   },
