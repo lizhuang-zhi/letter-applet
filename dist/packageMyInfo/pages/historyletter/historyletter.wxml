@@ -1,0 +1,6 @@
+<!-- 收件信息 --><view class="message-box"><block wx:for='{{replyList}}' wx:key='index'><view class="release-time">{{item.senderTime}}</view><keo-letter-simple ContentColor='#111' WriterColor='#606572' bgColor='#ffffff' IconHeightSize='80rpx' IconWidthSize='80rpx'
+    IconTop='45rpx'
+      InnerHeight='290rpx' bind:clickevent='clickEvent' data-letterid="{{item.letterId}}" data-index="{{index}}"
+      data-senderopenid="{{item.sender}}" data-recipientpenname="{{item.recipientPenName}}"
+      data-senderpenname="{{item.senderPenName}}" data-replyid="{{item.replyId}}" content='{{item.message}}'
+      writer='{{item.senderPenName}}' consignee='{{item.recipientPenName + " 收"}}'></keo-letter-simple></block></view><!-- 当信件为空时 --><view class="letter-empty"><keo-empty-display wx:if="{{replyList.length == 0 || replyList == null}}" Text='暂无历史信件'></keo-empty-display></view>

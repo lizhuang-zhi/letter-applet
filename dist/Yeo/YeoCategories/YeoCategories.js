@@ -1,0 +1,1 @@
+Component({properties:{paddingTop:{type:Number,value:70},paddingSide:{type:Number,value:95},paddingBottom:{type:Number,value:40}},data:{},methods:{}});

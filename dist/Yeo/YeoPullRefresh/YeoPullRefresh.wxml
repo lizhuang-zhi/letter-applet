@@ -1,0 +1,2 @@
+<view class="yeo-pull-refresh {{isLoading}}"><!-- loading图标 --><image src="{{loadingPic}}"
+    style="width: {{loadingPicWidth + 'rpx'}};height: {{loadingPicHeight + 'rpx'}};border-radius: {{loadingPicRadius + 'rpx'}};"></image></view>

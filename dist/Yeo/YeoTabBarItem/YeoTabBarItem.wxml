@@ -1,0 +1,1 @@
+<navigator url='{{jumpUrl}}' open-type='navigate'><view class="yeo-tab-bar-item"><view class="item-pic"><slot wx:if="{{isSelect}}" name='pic-select'></slot><slot wx:else name='pic'></slot></view><view class="item-tit" style="color: {{isSelect ? selectWordsCol : '#A7A7A7'}};"><slot name='tit'></slot></view></view></navigator>

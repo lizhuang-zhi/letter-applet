@@ -1,0 +1,1 @@
+<view class="yeo-simple-card" style="background: {{BackgroundColor}};box-shadow: 8rpx 8rpx 20rpx {{BackgroundColor}};" bindtap="clickMain"><view class="card-pic" catchtap="clickPic"><image src="{{imgUrl}}"></image></view><view class="card-content"><view class="tit">{{title}}</view><view class="desc">{{description}}</view></view></view>

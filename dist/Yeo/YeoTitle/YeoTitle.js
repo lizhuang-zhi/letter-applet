@@ -1,0 +1,1 @@
+Component({properties:{title:{type:String,value:"选择标签"},description:{type:String,value:"用于匹配最佳解答者"},titleMargin:{type:String,value:"0 20rpx 0 0"},titleColor:{type:String,value:"#222222"}},data:{},methods:{}});

@@ -1,0 +1,1 @@
+.info-bar{margin:30rpx 40rpx 0}.info-bar .info-left{font-size:27rpx;letter-spacing:5rpx;color:#555}.info-bar .info-right{width:130rpx;height:40rpx;font-size:25rpx;letter-spacing:1rpx;border:1rpx solid #ccc;border-radius:7rpx;text-align:center;line-height:40rpx;color:#666}.message-box{margin:30rpx 40rpx 20rpx}

@@ -1,0 +1,1 @@
+<view class="yeo-title"><!-- 左大标题 --><view class="left-part" style="margin: {{titleMargin}};color: {{titleColor}};letter-spacing: 2rpx;font-weight: bold;font-size: 35rpx;">{{title}}</view><!-- 右标题描述 --><view class="right-desc" style="color: #828282;font-size: 25rpx;letter-spacing: 2rpx;">{{description}}</view></view>

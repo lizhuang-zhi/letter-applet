@@ -1,0 +1,1 @@
+.yeo-tab-bar{position:fixed;bottom:34rpx;left:20rpx;width:540rpx;height:90rpx;padding:0 50rpx;border-radius:50rpx;box-shadow:0 0 20rpx #999;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center}

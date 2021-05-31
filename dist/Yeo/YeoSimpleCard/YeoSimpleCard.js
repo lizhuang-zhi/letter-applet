@@ -1,0 +1,1 @@
+Component({properties:{imgUrl:{type:String,value:"https://s3.ax1x.com/2021/03/09/63FF1O.jpg"},title:{type:String,value:"云顶犀开发社区"},description:{type:String,value:"致力于打造多元化生态系统"},BackgroundColor:{type:String,value:"orange"}},data:{},methods:{clickPic(){this.triggerEvent("picevent",{name:"图片事件"},{})},clickMain(){this.triggerEvent("mainevent",{name:"其他事件"},{})}}});

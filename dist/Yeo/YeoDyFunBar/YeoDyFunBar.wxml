@@ -1,0 +1,1 @@
+<view class="yeo-dy-fun-bar" style="justify-content: {{distractWay}};padding: 0 {{sideDistance + 'rpx'}};"><slot name='dy-left' bindtap="leftTap"></slot><slot name='dy-center' bindtap="centerTap"></slot><slot name='dy-right' bindtap="rightTap"></slot></view>

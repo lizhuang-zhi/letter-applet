@@ -1,0 +1,6 @@
+<view class="yeo-circle-all"><view class="yeo-item yeo-cir-start" 
+  bindtap="clickItem_1" animation="{{ani_last}}"
+  style="height: {{ImgSize + 'rpx'}};width: {{ImgSize + 'rpx'}};transform: translateY({{ImgSize*2 + 'rpx'}});"><image src="{{ImgItem1}}"></image></view><view class="yeo-item yeo-cir-item-1" 
+  bindtap="clickItem_2" animation="{{ani}}"
+  style="height: {{ImgSize + 'rpx'}};width: {{ImgSize + 'rpx'}};transform: translateY({{ImgSize + 'rpx'}});"><image src="{{ImgItem2}}"></image></view><!-- 底部显现图标 --><view class="yeo-item yeo-cir-end"
+  style="height: {{ImgSize + 'rpx'}};width: {{ImgSize + 'rpx'}};"><image bindtap="toggleShow" src="{{ImgBot}}"></image></view></view>

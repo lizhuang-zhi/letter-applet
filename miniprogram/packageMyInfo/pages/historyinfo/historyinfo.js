@@ -172,11 +172,11 @@ Page({
         wx.showLoading({
           title: '加载中..',
         }).then(res => {
-          this.deleteSorrow(id);
-        }).then(res => {
-          // 刷新数据
-          this.Start(app.globalData.openid);
-          wx.hideLoading({});
+          this.deleteSorrow(id).then(res => {
+            // 刷新数据
+            this.Start(app.globalData.openid);
+            wx.hideLoading({});
+          });
         })
       })
       .catch(() => {
@@ -185,9 +185,7 @@ Page({
   },
   // 删除解忧
   deleteSorrow(id) {
-    requestData.deleteSorrowLetter(id).then(res => {
-      console.log(res);
-    })
+    return requestData.deleteSorrowLetter(id);
   },
   // 关闭解忧
   onCloseContent() {
@@ -217,11 +215,12 @@ Page({
         wx.showLoading({
           title: '加载中..',
         }).then(res => {
-          this.deleteDiary(id);
-        }).then(res => {
-          // 刷新数据
-          this.Start(app.globalData.openid);
-          wx.hideLoading({});
+          this.deleteDiary(id).then(res => {
+            console.log(res);
+            // 刷新数据
+            this.Start(app.globalData.openid);
+            wx.hideLoading({});
+          });
         })
       })
       .catch(() => {
@@ -230,9 +229,7 @@ Page({
   },
   // 删除日记接口
   deleteDiary(id) {
-    requestData.deleteDiary(id).then(res => {
-      console.log(res);
-    })
+    return requestData.deleteDiary(id);
   },
   /* *************************吐槽************************* */
   // 跳转吐槽内容
@@ -268,11 +265,11 @@ Page({
         wx.showLoading({
           title: '加载中..',
         }).then(res => {
-          this.deleteComplain(id);
-        }).then(res => {
-          // 刷新数据
-          this.Start(app.globalData.openid);
-          wx.hideLoading({});
+          this.deleteComplain(id).then(res => {
+            // 刷新数据
+            this.Start(app.globalData.openid);
+            wx.hideLoading({});
+          });
         })
       })
       .catch(() => {
@@ -281,9 +278,7 @@ Page({
   },
   // 删除吐槽接口
   deleteComplain(id) {
-    requestData.deleteComplain(id).then(res => {
-      console.log(res.data.data);
-    })
+    return requestData.deleteComplain(id);
   },
 
   // 初始化数据

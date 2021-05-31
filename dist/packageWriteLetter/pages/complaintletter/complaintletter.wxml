@@ -1,0 +1,6 @@
+<!-- 吐槽内容 --><view class="complaint"><yeo-text-content userPic='{{complianObj.avatarUrl}}' userName='{{complianObj.penName}}' time='{{complianObj.date}}'
+    content='{{complianObj.content}}'></yeo-text-content></view><!-- 评论组件 --><yeo-comment bind:sendenterevent='enterEvent' bind:inputevent='inputEvent' bind:sendmessageevent='sendmessageEvent'
+  initValue='{{initValue}}'><yeo-message-card wx:for="{{commentArr}}" time='{{item.date}}' headPendant='{{0}}' userName='{{item.userVo.penName}}'
+    userImg='{{item.userVo.avatarUrl}}' content="{{item.content}}" wx:key='index' contentPaddingBot='20'
+    statusWords='待审核' isShowStatus='{{false}}'></yeo-message-card></yeo-comment><!-- 底部线条 --><view class="bottom-line" wx:if="{{commentArr.length != 0}}">- 我也是有底线的 -</view><!-- 评论空状态 --><van-empty wx:if="{{commentArr.length == 0}}" class="custom-image"
+  image="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/暂无数据.png" description="还没有小伙伴评论呢~" /><!-- loading组件 --><yeo-loading isShowLoading='{{isShowLoading}}'></yeo-loading><!-- 审核弹出框 --><van-dialog id="van-dialog" />

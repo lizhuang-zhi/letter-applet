@@ -1,0 +1,1 @@
+.outer-box .list-out .prompt-list,.outer-box .prompt-title{display:flex;align-items:center}.outer-box .list-out .prompt-list .list{overflow:hidden;transition:all linear .3s}

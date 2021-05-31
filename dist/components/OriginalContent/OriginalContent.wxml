@@ -1,0 +1,3 @@
+<!-- 以前的内容盒子 --><view class="box" style="width:{{BoxWidth}};margin:{{BoxMargin}};padding:{{BoxPadding}};border-radius:{{BoxRadius}};background-color:{{BoxBackColor}};box-style:border-style"><!-- 盒子内容 --><view class="box-text" style="font-size:{{TextSize}};color:{{TextColor}}">
+    {{OriginalText}}
+  </view></view>

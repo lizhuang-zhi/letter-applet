@@ -1,0 +1,11 @@
+<!-- 卡片外部 --><view class="card-out" style="width:{{CardWidth}};margin:{{CardMargin}}" bindtap="bindTap" data-TipOwnerName="{{TipOwnerName}}" data-StarLetter="{{StarLetter}}"><!-- 点赞时间 --><view class="star-time" style="color:{{TimeColor}};margin:{{TimeMargin}}">{{StarTime}}</view><!-- 点赞卡片 --><view class="card"
+    style="width:{{StarCardWidth}};background-color:{{StarBackColor}};border-radius:{{StarCardRadius}};padding:{{StarCardPadding}};"><!-- 点赞信息 --><view class="tip" style="padding:{{TipPadding}};margin-bottom:{{TipMargin}}"><!-- 图标 --><view wx:if="{{IconSrc!=''}}" class="tip-icon" style="width:{{IconWidth}};height:{{IconHeight}};"><image class="icon" src="{{IconSrc}}"></image></view><!-- 点赞的人 --><view class="tip-owner" style="font-weight:800;padding-left:16rpx">
+        {{TipOwnerName}}
+      </view><!-- 提示内容 --><view class="tip-text" style="padding-left:16rpx">
+        {{TipContent}}
+      </view></view><!-- 评论具体内容 --><view class="comment-content">
+      {{commentContent}}
+    </view><!-- 点赞信件简略内容 --><view class="star-letter"
+      style="background-color:{{StarLetterBackColor}};color:{{StarLetterColor}};padding:{{StarLetterPadding}};border-radius:{{StarLetterRadius}};box-style:border-box">
+      {{StarLetter}}
+    </view></view></view>

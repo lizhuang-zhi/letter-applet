@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.link=void 0,exports.link=Behavior({properties:{url:String,linkType:{type:String,value:"navigateTo"}},methods:{jumpLink:function(e){e=this.data[e=void 0===e?"url":e];e&&wx[this.data.linkType]({url:e})}}});

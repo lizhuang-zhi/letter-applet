@@ -1,0 +1,1 @@
+<view class="van-sidebar custom-class"><slot /></view>

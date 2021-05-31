@@ -1,0 +1,1 @@
+let tools={RandomPenName(){let e="";switch(Math.floor(12*Math.random())){case 0:e="消失的胡辣汤";break;case 1:e="周一的蚂蚁";break;case 2:e="惆怅的兰花";break;case 3:e="忐忑的乌龟";break;case 4:e="飞翔的土拨鼠";break;case 5:e="盛夏的垂柳";break;case 6:e="难过的豆腐";break;case 7:e="迷人的代码";break;case 8:e="漫步的巴比龙";break;case 9:e="伤心的蝴蝶";break;case 10:e="快乐的小飞侠";break;case 11:e="坚韧的犀牛"}return e}};module.exports=tools;

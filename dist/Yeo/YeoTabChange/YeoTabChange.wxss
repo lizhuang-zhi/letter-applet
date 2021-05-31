@@ -1,0 +1,1 @@
+.yeo-tab-change-outbox{position:fixed;width:100%}.yeo-tab-change{display:flex;flex-direction:row;position:relative}.yeo-tab-change .line,.yeo-tab-change .title{transition:all .3s linear}.yeo-tab-change .line{position:absolute}

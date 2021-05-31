@@ -1,0 +1,3 @@
+<keo-original-content OriginalText='"{{letterInfo.lastContent}}'></keo-original-content><keo-letter-view TopTipDisplay="none" lettercontentArr="{{lettercontentArr}}"
+  consignee="{{letterInfo.recipientPenName+ ' 收'}}" writer='{{letterInfo.senderPenName}}'
+  date='{{letterInfo.releaseTime}}'></keo-letter-view>

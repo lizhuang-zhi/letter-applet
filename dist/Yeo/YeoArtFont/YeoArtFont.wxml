@@ -1,0 +1,38 @@
+<!-- 
+  公共参数：
+    fonType: 字体类型
+    FonSize: 字体大小
+    abCol: 上层字体颜色（默认值：#000000） 
+    blCol: 下层字体颜色（默认值：#A5ADB5）   
+--><!-- 
+  上下结构字体
+
+  独有参数：
+    udFonConUp：上面内容
+    udFonConDown：下面内容
+    udPosp：位置（可选值：center<居中>、unset<未设置，默认值>）
+--><!-- ----------上下结构---------- --><view class="{{fonType == 'udFon' ? 'yeo-updown-fon' : 'donShow'}} "
+style="font-size: {{fonSize + 'rpx'}};justify-content: {{udPosp}};height: {{getudHeight + 'rpx'}};"><view class="yeo-above"
+  style="color:{{abCol}};">{{udFonConUp}}</view><view class="yeo-below"
+  style="color:{{blCol}};">{{udFonConDown}}</view></view><!-- 
+  重叠结构字体
+
+  独有参数：
+    olFonCon：内容
+    olFromLeft：
+      距离屏幕左边的百分比距离(默认值：40)
+--><!-- ----------重叠结构---------- --><view class="{{fonType == 'olFon' ? 'yeo-overlap-fon' : 'donShow'}} "
+style="font-size: {{fonSize + 'rpx'}};height: {{getolHeight + 'rpx'}};"><view class="yeo-above-ol"
+  style="color:{{abCol}};left:{{olFromLeft + '%'}};">
+    {{olFonCon}}
+    <view class="yeo-below-ol"
+    style="color:{{blCol}};">
+      {{olFonCon}}
+    </view></view></view><!-- 
+  重叠结构字体
+
+  独有参数：
+    见文档！！
+--><!-- ------------字线结构------------ --><view class="{{fonType == 'worLineFon' ? 'yeo-word-line-fon' : 'donShow'}} "
+style="font-size: {{fonSize + 'rpx'}};justify-content: {{worLinePosp}};height: {{getudHeight + 'rpx'}};"><view class="yeo-words"
+  style="color:{{abCol}};font-weight:{{wordWieight}};">{{worLineFonCon}}</view><view class="yeo-line" style="top: {{lineDistanceOfTop + 'em'}};width: {{lineWidthOfScreen}};border-bottom: {{lineHeight + 'rpx'}} solid {{lineColor}};border-bottom-right-radius: {{lineRightRadius + 'rpx'}};border-bottom-left-radius: {{lineLeftRadius + 'rpx'}};"></view></view>

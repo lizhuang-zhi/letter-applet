@@ -1,0 +1,1 @@
+Component({properties:{iconUrl:{type:String,value:"https://s3.ax1x.com/2021/03/09/63FJBj.png"},IconSize:{type:Number,value:160}},data:{},methods:{}});

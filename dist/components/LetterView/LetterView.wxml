@@ -1,0 +1,11 @@
+<!-- 外部容器 --><view class="OuterBox" style="background:{{BckColor}}"><!-- 顶部小提示 --><view class="TopTip" style="display:{{TopTipDisplay}}"><view class="TipCont">{{TopTip}}</view></view><!-- 信件 --><view class="LetterContent" style="font-size:{{contentFont}}"><!-- 信件头部 --><view class="LetterHead"><!-- 收件人 --><view class="consignee" style="line-height:{{HeadLineHeight}};font-size:{{HeadFont}};color:{{HeadColor}};">
+        {{consignee}}</view><!-- 问候语 --><!-- <view class="hello"
+        style="line-height:{{HeadLineregardsHeight}};font-size:{{HeadregardsFont}};color:{{HeadRegardsColor}}">
+        {{regards}}</view> --></view><!-- 信件内容 --><view class="LetterBody"
+      style="line-height:{{contentLineHeight}};color:{{ContentLineColor}};letter-spacing:{{ContentSpacing}}"><view class="LetterLine" wx:for="{{lettercontentArr}}" wx:key='index'>
+        {{item}}
+      </view></view><!-- 信件结尾 --><view class="LetterFoot"><!-- 作者 --><view class="writer"
+        style="right:{{FootWriterPsitionX}};bottom:{{FootWriterPsitionY}};font-size:{{FootWriterFontSize}};color:{{WriterColor}}">
+        {{writer}}</view><!-- 日期 --><view class="SendTime"
+        style="right:{{FootDaterPsitionX}};bottom:{{FootDatePsitionY}};font-size:{{FootDateFontSize}};color:{{FootDateColor}}">
+        {{date}}</view></view></view><view></view></view>

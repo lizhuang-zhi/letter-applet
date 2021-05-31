@@ -1,0 +1,1 @@
+<!-- 外框 --><view class="yeo-frame-view {{direction == 'row' ? 'yeo-row' : 'yeo-col'}}" style="width: {{frameWidth}};height: {{frameHeight}};background: {{frameBgColor}};margin: {{frameMargin}};padding: {{framePadding}};box-sizing: {{frameBoxSizing}};border-radius: {{frameBordRadius}};align-items: {{frameAlignItems}};"><!-- 插入的行或者列 --><slot></slot></view>

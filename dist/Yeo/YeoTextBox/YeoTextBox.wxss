@@ -1,0 +1,1 @@
+.yeo-text-box{width:100%;box-sizing:border-box}.yeo-text-box .bot-bar,.yeo-text-box .bot-bar .comment-num,.yeo-text-box .bot-bar .user{display:flex;align-items:center}.yeo-text-box .bot-bar .user .head-pic image{width:100%;height:100%}

@@ -1,0 +1,1 @@
+<view class="yeo-label-box" style="border-radius: {{bordRadius + 'rpx'}}; background: {{bgColor}};" bindtap="ClickBox"><view class="box-up"><view class="tit"><text class="sym">#</text><text class="words">{{titleWords}}</text></view><view class="looks" style="color: {{looksCol}};">{{looks}} 浏览</view></view><view class="box-down"><slot name='content'></slot></view></view>

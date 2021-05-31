@@ -1,0 +1,1 @@
+.yeo-diary-box-v2{box-sizing:border-box}.yeo-diary-box-v2 .content{word-wrap:break-word}.yeo-diary-box-v2 .top-part{display:flex;justify-content:space-between;align-items:center}.yeo-diary-box-v2 .bot-part{text-align:right}.yeo-diary-box-v2 .bot-part .bot-part-out{display:inline-block}.yeo-diary-box-v2 .bot-part .bot-part-out .bot-part-inner{display:flex;align-items:center}

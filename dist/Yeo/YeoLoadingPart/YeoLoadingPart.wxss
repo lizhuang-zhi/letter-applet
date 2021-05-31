@@ -1,0 +1,1 @@
+.scroll-view{position:absolute;left:0;right:0;bottom:0}.pull-refresh{height:140rpx;display:flex;justify-content:center;align-items:center;transition:all .5s ease-in-out;overflow:hidden}.chu-110{height:110rpx}.chu-200{height:200rpx}.chu-300{height:300rpx}.chu-400{height:400rpx}.jin{height:0rpx}.f-color-666{color:#666}.fs24{font-size:24rpx}

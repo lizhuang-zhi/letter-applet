@@ -1,0 +1,1 @@
+.top-content-box{width:98%;margin:60rpx 0 0 var(--margin-top)}.top-content-box .top-content{font-size:25rpx;color:#a0a0a0;margin-top:15rpx;margin-right:70rpx;line-height:1.6}.choose-type{width:var(--width--);margin:70rpx var(--margin-top) 40rpx}

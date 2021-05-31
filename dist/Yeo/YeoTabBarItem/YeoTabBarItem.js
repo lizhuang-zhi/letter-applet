@@ -1,0 +1,1 @@
+Component({properties:{isSelect:{type:Number,value:null},selectWordsCol:{type:String,value:null},jumpUrl:{type:String,value:""}},options:{multipleSlots:!0},lifetimes:{attached:function(){},detached:function(){}},data:{},methods:{}});

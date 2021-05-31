@@ -1,0 +1,1 @@
+Component({properties:{isLoading:{type:String,value:"yeo-start-loading"},loadingPic:{type:String,value:"https://z3.ax1x.com/2021/04/29/gk5PEQ.gif"},loadingPicWidth:{type:Number,value:130},loadingPicHeight:{type:Number,value:100},loadingPicRadius:{type:Number,value:30}},data:{},methods:{}});

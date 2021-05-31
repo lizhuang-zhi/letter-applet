@@ -1,0 +1,1 @@
+Component({properties:{backgroundCol:{type:String,value:"#2E3B4A"}},options:{multipleSlots:!0},data:{},methods:{}});

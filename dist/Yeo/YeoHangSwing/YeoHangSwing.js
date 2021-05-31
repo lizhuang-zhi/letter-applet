@@ -1,0 +1,1 @@
+Component({properties:{swingSpeed:{type:Number,value:1.5},imgUrl:{type:String,value:"https://s3.ax1x.com/2021/03/09/63FwCV.png"},imgSize:{type:Number,value:100}},data:{},methods:{clickTap(){this.triggerEvent("clickevent",{})}}});

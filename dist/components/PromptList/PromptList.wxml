@@ -1,0 +1,5 @@
+<!-- 外层容器 --><view class="outer-box"
+  style="width:{{OuterWidth}};margin:{{OuterMargin}};border-radius:{{OuterRadius}};background-color:{{OuterBackColor}}"><!-- 提示主题 --><view class="prompt-title" style="padding:{{TitlePadding}};justify-content:{{FlexType}}"><!-- 主题文字 --><view class="title-text" style="font-size:{{TextSize}}">{{PromptText}}</view><!-- 展开收起图标 --><image class="titleimg-src" src="{{ArrowheadSrc}}" style="width:{{ImgWidth}};height:{{ImgHeight}}"
+      bindtap="showList" /></view><!-- 提示内容外层盒子 --><view class="list-out" animation="{{current2}}" style="padding:{{LitsPadding}}"><!-- 提示内容循环列表 --><view class="prompt-list" wx:for="{{PromptData}}" wx:key="index"
+      style="font-size:{{ListFontSize+'rpx'}};"><!-- 内容列表 --><view class="list" style="line-height:{{ListLineHeight+'rpx'}};color: {{ListFontColor}};font-size: {{ListFontSize + 'rpx'}};opacity: {{opacityNum}};">{{item}}
+      </view></view></view></view>

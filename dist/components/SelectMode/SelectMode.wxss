@@ -1,0 +1,1 @@
+.choose{display:flex;justify-content:left;align-items:center;box-shadow:0rpx 10rpx 10rpx 2rpx #ccc}.content{text-align:left}.img{border-radius:50%;box-shadow:2rpx 2rpx 2rpx 2rpx .8}

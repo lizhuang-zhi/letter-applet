@@ -1,0 +1,1 @@
+Component({properties:{sliderArr:{type:Array,value:null},isShowContent:{type:Boolean,value:!0},boxMargin:{type:String,value:"0 0 0 34rpx"}},data:{},methods:{clickObject(e){let t=e.currentTarget.dataset.item;e=e.currentTarget.dataset.index;t.index=e,this.triggerEvent("clickevent",{clickObj:t})}}});

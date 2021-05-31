@@ -1,0 +1,2 @@
+<scroll-view class="yeo-horizon-slider" scroll-x style="margin: {{boxMargin}};"><view class="singleBox" wx:for="{{sliderArr}}" wx:key='index'
+  bindtap="clickObject" data-item="{{item}}" data-index="{{index}}"><!-- 图片 --><view class="pic"><image src="{{item.stampUrl}}" style="border: {{item.picBorder}};"></image></view><!-- 文字内容 --><view class="content" wx:if="{{isShowContent}}"><view class="tit">{{item.stampName}}</view><view class="desc">{{item.stampDesc}}</view></view></view></scroll-view>

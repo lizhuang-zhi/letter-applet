@@ -1,0 +1,2 @@
+<!-- 选择 --><view class="choose" style="padding:{{ChoosePadding}};border-radius:{{ChooseRadius}};margin-top:{{ChooseMargin}}" bindtap="NavTo"><!-- logo --><image style="width:{{ImgWidth}};height:{{ImgHeight}}" class="img"
+    src="{{ImageSrc}}" mode='aspectFill'></image><!-- 文字 --><view class="content" style="padding-left:{{ContentPadding}}"><view class="text" type="color:{{TextColor}};font-size:{{TextSize}}">{{ChooseType}}</view><view class="text2" style="color:{{Text2Color}};font-size:{{Text2Size}};padding-top:{{Text2Padding}}">{{ChooseText}}</view></view></view>

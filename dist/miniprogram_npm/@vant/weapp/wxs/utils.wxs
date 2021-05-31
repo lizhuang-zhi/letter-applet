@@ -1,0 +1,12 @@
+'use strict';
+
+/* eslint-disable */
+var bem = require('./bem.wxs').bem;
+var memoize = require('./memoize.wxs').memoize;
+var addUnit = require('./add-unit.wxs').addUnit;
+
+module.exports = {
+  bem: memoize(bem),
+  memoize: memoize,
+  addUnit: addUnit
+};

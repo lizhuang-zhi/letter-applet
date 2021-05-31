@@ -1,0 +1,1 @@
+<view class="yeo-icon" style="width: {{IconSize + 'rpx'}};height: {{IconSize + 'rpx'}};"><image src="{{iconUrl}}"></image></view>
