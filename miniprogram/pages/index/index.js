@@ -246,6 +246,9 @@ Page({
   },
   // 初始化数据
   Start() {
+    wx.showLoading({
+      title: '奋力加载中..',
+    })
     // 获取美文集合
     requestData.indexBeauty().then(res => {
       console.log(res.data.data);
@@ -290,9 +293,10 @@ Page({
         console.log('404 or 500，请检查请求');
       } else {
         // 关闭loading覆盖层 
-        this.setData({
-          isShowLoading: false
-        })
+        // this.setData({
+        //   isShowLoading: false
+        // })
+        wx.hideLoading({ })
       }
     })
 

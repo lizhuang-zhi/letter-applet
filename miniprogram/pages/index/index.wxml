@@ -91,7 +91,7 @@
 </view>
 
 <!-- loading组件 -->
-<yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading>
+<!-- <yeo-loading isShowLoading='{{isShowLoading}}' dotColor='#FD8F00'></yeo-loading> -->
 
 <!-- 信栈小贴士弹出层 -->
 <van-popup show="{{ showTipPop }}" bind:close="onTipClose" custom-style='border-radius: 20rpx;'
