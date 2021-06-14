@@ -21,15 +21,7 @@ Page({
     // 信件id
     letterId: '',
     // 用户openId
-    openId: '',
-
-    /* 
-      keo ------------
-    */
-    // 行数组
-    lettercontentArr: [],
-    // 行字数
-    lineNum: 17
+    openId: ''
   },
   //点击跳转写信
   replyLetter() {
@@ -49,23 +41,15 @@ Page({
   // 初始化数据
   Start(openId, replyId, letterId) {
     requestData.replyletter(openId, replyId, letterId).then(res => {
-      console.log(res);
+      console.log(res.data.data);
       // 获取信件信息
       let letterInfo = res.data.data;
       // 修改展示时间
       letterInfo.releaseTime = timeTools.squareDiaryTime(letterInfo.releaseTime);
-      /*
-        获取信件行信息  -----   keo
-      */
-      //获取信件行
-      let content = letterInfo.replyContent;
-      console.log(content);
-      let contentArr = this.data.lettercontentArr;
-      let linenum = this.data.lineNum;
-      let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
+      // 分段显示文本内容
+      letterInfo.replyContent = letterInfo.replyContent.split('\n');
       this.setData({
         letterInfo: letterInfo,
-        lettercontentArr: resultArr
       })
 
     })

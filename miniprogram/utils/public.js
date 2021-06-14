@@ -18,9 +18,16 @@ let publicTools = {
     let end = lineNum;
     // 截取每行，放入数组中
     for (var i = 0; i < lettercontent.length / lineNum; i++) {
-      lettercontentArr[i] = lettercontent.substring(start, end);
-      start += lineNum;
-      end += lineNum;
+      // 第一行首行缩进两个字符
+      if(i == 0) {
+        lettercontentArr[i] = lettercontent.substring(start, end - 2);
+        start += lineNum - 2;
+        end += lineNum;
+      }else {
+        lettercontentArr[i] = lettercontent.substring(start, end);
+        start += lineNum;
+        end += lineNum;
+      }
     }
     return lettercontentArr;
   },

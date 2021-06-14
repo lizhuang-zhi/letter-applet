@@ -75,17 +75,8 @@ Page({
         // 分段显示文本内容
         letterInfo.content = letterInfo.content.split('\n');
 
-        /*
-          获取信件行信息  -----   keo
-        */
-        //获取信件行
-        // let content = letterInfo.content;
-        // let contentArr = this.data.lettercontentArr;
-        // let linenum = this.data.lineNum;
-        // let resultArr = requestLetterline.Interceptletterline(content, contentArr, linenum);
         this.setData({
           letterInfo: letterInfo,
-          // lettercontentArr: resultArr
         })
         resolve('success');
       })

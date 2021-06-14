@@ -45,9 +45,9 @@
 .OuterBox .LetterContent .LetterBody .LetterLine {
   /* padding-bottom: 12rpx; */
   line-height: 1.4;
-  /* 首行缩进 */
-  text-indent: 2em;
   word-wrap: break-word;
+    /* 首行缩进 */
+    text-indent: 2em;
 }
 
 /* 信件结尾 */
