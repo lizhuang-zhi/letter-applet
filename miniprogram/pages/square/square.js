@@ -35,7 +35,12 @@ Page({
     // isLoading: '',
     slideStart_Complain: [],
     // 记录上一次的touchMove时间戳
-    beforeTime_Complain: 0
+    beforeTime_Complain: 0,
+
+    // 跳转日记内容id
+    backId: null,
+    // 是否跳转进入日记内容
+    isGoDiaryCont: false
 
   },
 
@@ -164,8 +169,10 @@ Page({
       url: '/packageWriteLetter/pages/diaryletter/diaryletter?id=' + id,
       success: res => {
         this.setData({
-          backId: id
+          backId: id,
+          isGoDiaryCont: true
         })
+        console.log('0000000000000 :' + this.data.backId, this.data.isGoDiaryCont);
       }
     })
   },
@@ -454,10 +461,18 @@ Page({
   },
   // 从日记内容页返回时浏览量+1
   addOneFromDiaryContent() {
+    // 进入日记内容后，重置判断条件
+    this.setData({
+      isGoDiaryCont: false
+    })
     // 获取日记数组
     let diaryArr = this.data.diaryArr;
     // 获取之前点击的日记对象id
     let id = this.data.backId;
+    console.log('------------》' + id);
+    if(id == null) {
+      return;
+    }
     // 获取对应的日记，增加显示的浏览量
     diaryArr.forEach(item => {
       if (item.id == id) {
@@ -511,6 +526,12 @@ Page({
   onHide: function () {
     console.log('广场 -- 监听页面隐藏');
 
+    // 如果不是进入日记内容，置空存储的跳转日记内容的id
+    if(!this.data.isGoDiaryCont) {
+      this.setData({
+        backId: null,
+      })
+    }
   },
 
   /**
