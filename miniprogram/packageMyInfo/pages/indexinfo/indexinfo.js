@@ -15,9 +15,46 @@ Page({
     nickName: '',
     avatarUrl: '',
     // 用户头衔
-    userRank: ''
+    userRank: '',
+    // 头衔是否弹出
+    showTipPop: false,
+    // 头衔等级展示数组
+    rankArr: [
+      {
+        rank: '解忧小白',
+        bgColor: '#FFC10A',
+        detail: '解忧次数<5'
+      },
+      {
+        rank: '解忧能手',
+        bgColor: '#FF9803',
+        detail: '5<=解忧次数<15'
+      },
+      {
+        rank: '解忧专家',
+        bgColor: '#FE5722',
+        detail: '15<=解忧次数<25'
+      },
+      {
+        rank: '解忧大师',
+        bgColor: '#795549',
+        detail: '25<=解忧次数'
+      }
+    ]
   },
 
+  // 查看头衔详情介绍
+  showRankDetail() {
+    this.setData({
+      showTipPop: true
+    })
+  },
+  // 关闭头衔弹出层
+  onRankDetailClose() {
+    this.setData({
+      showTipPop: false
+    })
+  },
   // 查看更多（时间线）
   lookMore() {
     wx.navigateTo({

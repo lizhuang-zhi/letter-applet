@@ -64,6 +64,9 @@ Page({
       return preVal + curVal.value;
     }, 0);
 
+    // 调用工具类，返回对象
+    let pubToolObj = pubTools.dataAnalysisBackString(dataObj);
+
     this.setData({
       emotionArr: [{
           tit: '解忧',
@@ -79,9 +82,11 @@ Page({
         },
         {
           tit: '小结',
-          cont: '亲爱的小主，通过数据分析，上月您的情绪倾向为' + pubTools.dataAnalysisBackString(dataObj)
+          cont: '亲爱的小主，通过数据分析，上月您的情绪倾向为' + pubToolObj.str
         }
-      ]
+      ],
+      // 如果 index 为1则显示“给出建议”
+      isShowAdvise: pubToolObj.index
     })
   },
   //初始化图表
@@ -314,6 +319,13 @@ Page({
       fail: res => {
         console.log(res);
       }
+    })
+  },
+
+  // 立即咨询
+  submitTap() {
+    wx.navigateToMiniProgram({
+      appId: 'wx8afd72b51ec0f092'
     })
   },
 

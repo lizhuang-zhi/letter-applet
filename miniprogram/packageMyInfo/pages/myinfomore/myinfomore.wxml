@@ -52,3 +52,29 @@
     <view class="cont">{{item.cont}}</view>
   </view>
 </view>
+
+<!-- 给出建议标题 -->
+<!-- 如果 isShowAdvise 为 1 则显示“给出建议”, 表示用户情绪消极 -->
+<block wx:if="{{isShowAdvise === 1}}">
+  <view class="top-content-box">
+    <view class="top-tit">给出建议</view>
+  </view>
+  <!-- 给出建议内容 -->
+  <view class="advise">
+    <!-- 医生建议 -->
+    <view class="doctor-advise">
+      <yeo-frame-view direction='col' frameBgColor='#E8EAEA'>
+        <view class="left-pic">
+          <image
+            src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/doctor.png?versionId=CAEQGRiBgICesoLC1BciIDY0N2Q1YWNhOGFhODQwNTk4MGM1MzZhMmZlMWVkZjFh">
+          </image>
+        </view>
+        <view class="advise-cont">为了小主您的健康，我们认为需要找寻更加专业的心里咨询师为您解答近期忧愁与困惑。</view>
+      </yeo-frame-view>
+    </view>
+    <!-- 跳转医生小程序 -->
+    <view class="jump-btn">
+      <van-button round type="primary" size='large' color='#F0934F' bind:click="submitTap">立即咨询</van-button>
+    </view>
+  </view>
+</block>

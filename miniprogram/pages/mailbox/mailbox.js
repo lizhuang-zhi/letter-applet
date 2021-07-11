@@ -4,6 +4,7 @@ let timeTools = require('../../utils/timeTools');
 let requestData = require('../../utils/request')
 // 月报拉取的间隔时间（毫秒）
 const getReportTime = 1000 * 24 * 3600 * 28;
+// const getReportTime = 1000 * 7;
 let app = getApp();
 /*
   设置论循定时器 

@@ -142,7 +142,10 @@ let publicTools = {
       default:
         break;
     }
-    return str;
+    return {
+      str: str,
+      index: index
+    };
   },
 
   // 我的页面的“解忧称号”

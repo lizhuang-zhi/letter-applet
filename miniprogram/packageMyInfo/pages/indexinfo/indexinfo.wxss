@@ -74,6 +74,54 @@
   height: 700rpx;
 }
 
-
-
-
+/* 头衔说明弹出层 */
+.honor-detail {
+  width: 500rpx;
+  height: 780rpx;
+}
+.honor-detail .top-icon {
+  margin: 40rpx 0;
+  text-align: center;
+}
+.honor-detail .top-icon image{
+  width: 180rpx;
+  height: 175rpx;
+}
+.honor-detail .explain .explain-tit,.honor-detail .detail .detail-tit {
+  font-size: 32rpx;
+  text-align: center;
+  margin-bottom: 30rpx;
+  position: relative;
+  color: #ED6D65;
+  font-weight: bold;
+}
+.honor-detail .explain .explain-tit::after,.honor-detail .detail .detail-tit::after {
+  content: "";
+  width: 50rpx;
+  height: 3rpx;
+  background: #bbbbbb;
+  position: absolute;
+  top: 50rpx;
+  left: 45%;
+}
+.honor-detail .explain .explain-cont {
+  margin: 10rpx 40rpx 40rpx;
+  font-size: 28rpx;
+}
+.honor-detail .detail .detail-box {
+  margin: 50rpx 40rpx 40rpx;
+}
+.honor-detail .detail .detail-box .item-rank {
+  margin-bottom: 15rpx;
+  color: #ffffff;
+  border-radius: 10rpx;
+  width: 130rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+.honor-detail .detail .detail-box .detail-words {
+  letter-spacing: 2rpx;
+  font-size: 28rpx;
+}

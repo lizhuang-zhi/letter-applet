@@ -122,7 +122,6 @@
   </view>
 </van-popup>
 
-
 <!-- 背景图标 -->
 <view class="item-bg-yezi">
   <image animation='{{d_1_ani}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-yezi.png">

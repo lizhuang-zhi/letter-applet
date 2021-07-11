@@ -15,3 +15,25 @@
   margin: 0 0 20rpx;
   padding-left: 15rpx;
 }
+.emotion-analysis .item-emotion .cont {
+  line-height: 1.45;
+}
+
+/* 给出建议 */
+.advise {
+  margin: 45rpx 40rpx 70rpx;
+}
+.advise .doctor-advise .left-pic {
+  margin-right: 40rpx;
+}
+.advise .doctor-advise .left-pic image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.advise .doctor-advise .advise-cont {
+  display: flex;
+  align-items: center;
+}
+.advise .jump-btn {
+  margin: 60rpx 120rpx 50rpx;
+}
