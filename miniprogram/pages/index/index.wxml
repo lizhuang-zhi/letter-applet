@@ -1,11 +1,11 @@
+<!-- 发布 -->
+<view class="add-item" bindtap="toRelease">
+  <image src="../../images/add.png"></image>
+</view>
+
 <!-- 顶部文字 -->
 <view class="top-content-box">
-  <view class="top-tit">
-    <view class="add-item" bindtap="toRelease">
-      <image src="../../images/add.png"></image>
-    </view>
-    <view class="top-name" bindtap="toRelease">发布</view>
-  </view>
+  <view class="top-tit">信意</view>
   <view class="top-content">在每封简单朴质的信件中，承载着每一个写信人的真挚情感，是信念的象征，是复古的体现</view>
 </view>
 

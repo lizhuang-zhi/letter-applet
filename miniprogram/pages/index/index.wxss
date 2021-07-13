@@ -3,25 +3,30 @@ page {
   --notifi-box-bg-color: #FFFFFF;
   background: #EEEEEE;
 }
-.top-content-box .top-tit {
-  display: flex;
-  align-items: center;
-}
-.top-content-box .top-tit .add-item {
-  width: 45rpx;
-  height: 45rpx;
+/* 发布 */
+.add-item {
+  width: 95rpx;
+  height: 95rpx;
   border-radius: 50%;
   background: #FF1D23;
-  margin-right: 6rpx;
   display: flex;
   align-items: center;
+  position: fixed;
+  bottom: 90rpx;
+  right: 70rpx;
+  z-index: 99999;
 }
-.top-content-box .top-tit .add-item image {
+.add-item image {
   width: 50%;
   height: 50%;
   margin: 0 auto;
 }
 
+/* 顶部文字 */
+.top-content-box .top-tit {
+  display: flex;
+  align-items: center;
+}
 
 /* 美文欣赏栏 */
 .beauty-article {

@@ -269,7 +269,7 @@ Page({
       reportItem.time = nowTime;
       requestData.monthReport(openId, nowTime).then(res => {
         return new Promise((resolve, reject) => {
-          console.log(res);
+          console.log(res.data.data);
           // 获取数据集合
           reportItem.data = res.data.data;
           // 赋值数据

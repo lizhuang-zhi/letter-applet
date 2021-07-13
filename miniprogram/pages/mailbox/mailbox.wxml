@@ -36,7 +36,7 @@
       bindtap="ToMyStamp" infoTime='04-22'></yeo-message-notification>
     <!-- 我的成就 -->
     <yeo-message-notification infoTit='我的成就' notifiNum='{{myAchieveNewNum + messageList[3]}}'
-      leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-myachieve.png?versionId=CAEQFhiBgICC4fG3yxciIDk0MTY0YzM1Zjc0OTQ3ZjlhMDdjZDNhMDRjZTIyOTZk' infoDesc='电亮你的成就' boxBgColor='#E6F8F0'
+      leftPic='https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/mailbox-myachieve.png?versionId=CAEQFhiBgICC4fG3yxciIDk0MTY0YzM1Zjc0OTQ3ZjlhMDdjZDNhMDRjZTIyOTZk' infoDesc='点亮你的成就' boxBgColor='#E6F8F0'
       bindtap="ToMyAchievement" infoTime='04-15'>
     </yeo-message-notification>
     <!-- 集邮册 -->
