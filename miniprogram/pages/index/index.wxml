@@ -131,3 +131,44 @@
   <image animation='{{flower}}' src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/index-flower.png">
   </image>
 </view>
+
+
+<!-- 陈旧信箱标题 -->
+<view class="old-letter">
+  <yeo-dy-fun-bar distractWay='between'>
+    <view class="info-left" slot='dy-left'>
+      <yeo-art-font abCol='#293939' fonType='worLineFon' worLineFonCon='陈旧信箱' worLinePosp='unset'
+        lineWidthOfScreen='76%' lineLeftRadius='3' lineRightRadius='3' lineHeight='6' lineDistanceOfTop='1.5'
+        wordWieight='bold'></yeo-art-font>
+    </view>
+  </yeo-dy-fun-bar>
+</view>
+<!-- 陈旧信箱主体 -->
+<view class="old-letter-main">
+  <yeo-frame-view direction='row' frameBgColor='#FFFFFF'>
+    <!-- 顶部栏（展示图标与标语） -->
+    <view class="top-part">
+      <yeo-frame-view direction='col' frameBgColor='null' frameAlignItems='center'>
+        <view class="left-post">
+          <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/old_post.png?versionId=CAEQGRiBgIDe36.W1RciIGQ3YmZlMzliMGY5YjRjNTFiOThkMjUwNmYyZDc0Zjc2"></image>
+          <view class="words">
+            <view class="top-tit">信中相遇</view>
+            <view class="bot-cont">我有陌生的烦恼，你有熟悉的见解</view>
+          </view>
+        </view>
+        <view class="right-plane" animation='{{planeFly}}'>
+          <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/papper_plane.png?versionId=CAEQGRiBgMCPpa6W1RciIGVmMThjNjkzNTllMTQxMzg4ZDYxOWE0YjMwOGQ1NWQz"></image>
+        </view>
+      </yeo-frame-view>
+    </view>
+    <!-- 信件栏 -->
+    <view class="show-letter-part">
+      <view class="item-letter" wx:for="{{oldletterArr}}" wx:key='index'>
+        <view class="letter">{{item.content}}</view>
+        <view class="all-page">全文</view>
+      </view>
+    </view>
+    <!-- 查看更多 -->
+    <view class="check-more" bindtap="toOldLetterPost">查看更多</view>
+  </yeo-frame-view>
+</view>

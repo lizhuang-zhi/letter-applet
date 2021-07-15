@@ -137,14 +137,6 @@ page {
   display: flex;
 }
 
-/* 小提示 */
-.tip-box {
-  margin: var(--index-tit-margin);
-  color: #FFEAD9;
-  font-size: 32rpx;
-  position: relative;
-}
-
 /* 信栈小贴士 */
 .letter-station {
   margin: var(--index-tit-margin);
@@ -158,7 +150,11 @@ page {
 
 /* 小贴士图标 */
 .tip-box {
+  margin: var(--index-tit-margin);
   height: 280rpx;
+  color: #FFEAD9;
+  font-size: 32rpx;
+  position: relative;
 }
 
 .tip-box .tip-pic {
@@ -279,6 +275,84 @@ page {
   z-index: -1;
   opacity: 0.5;
 }
+
+/* 陈旧信箱标题 */
+.old-letter {
+  margin: var(--index-tit-margin);
+}
+.old-letter .info-left {
+  font-size: 40rpx;
+  font-weight: bold;
+  width: 500rpx;
+}
+/* 陈旧信箱主体 */
+.old-letter-main {
+  margin: var(--index-tit-margin);
+
+}
+.old-letter-main .top-part {
+  padding: 30rpx 20rpx;
+  border-top-right-radius: 12rpx;
+  border-top-left-radius: 12rpx;
+  background-image: url('https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/old_post_background.webp?versionId=CAEQGRiBgMCW0rGW1RciIDJmNGNiZGUzMDAxYjRiNzI5MGI5MDgwNGYwNDJlZTVi');
+  background-repeat: no-repeat;
+  background-position: 50% 22%;
+}
+.old-letter-main .top-part .left-post {
+  display: flex;
+  align-items: center;
+}
+.old-letter-main .top-part .left-post image{
+  width: 70rpx;
+  height: 70rpx;
+}
+.old-letter-main .top-part .left-post .words {
+  color: #EEEEEE;
+  margin-left: 20rpx;
+}
+.old-letter-main .top-part .left-post .words .top-tit {
+  font-size: 33rpx;
+}
+.old-letter-main .top-part .left-post .words .bot-cont {
+  font-size: 25rpx;
+  font-weight: lighter;
+  margin-top: 7rpx;
+  letter-spacing: 1rpx;
+}
+.old-letter-main .top-part .right-plane image{
+  width: 70rpx;
+  height: 70rpx;
+  transform: rotate(42deg);
+}
+/* 陈旧信箱主体 --- 信件栏 */
+.old-letter-main .show-letter-part {
+  margin: 10rpx 20rpx;
+}
+.old-letter-main .show-letter-part .item-letter {
+  border-bottom: 2rpx #444444 dashed;
+  padding: 20rpx 0;
+  position: relative;
+}
+.old-letter-main .show-letter-part .item-letter .letter {
+  line-height: 1.4;
+  font-size: 29rpx;
+}
+.old-letter-main .show-letter-part .item-letter .all-page {
+  position: absolute;
+  bottom: 20rpx;
+  right: 12rpx;
+  color: rgb(120, 120, 212);
+  font-size: 30rpx;
+}
+/* 陈旧信箱主体 --- 查看更多 */
+.old-letter-main .check-more {
+  text-align: right;
+  color: rgb(120, 120, 212);
+  font-size: 28rpx;
+  margin: 30rpx 30rpx 20rpx 0;
+}
+
+
 
 
 @keyframes upDown {

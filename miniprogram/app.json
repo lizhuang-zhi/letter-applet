@@ -12,7 +12,8 @@
         "pages/sorrowletter/sorrowletter",
         "pages/diaryletter/diaryletter",
         "pages/complaintletter/complaintletter",
-        "pages/beautyletter/beautyletter"
+        "pages/beautyletter/beautyletter",
+        "pages/oldletter/oldletter"
       ]
     },
     {

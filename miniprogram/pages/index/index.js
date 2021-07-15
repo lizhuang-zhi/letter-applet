@@ -47,6 +47,42 @@ Page({
     d_1_ani: {},
     flower: {},
 
+    // 陈旧信箱中纸飞机加动画
+    planeFly: {},
+
+    // 陈旧信箱的信件数组
+    oldletterArr: [
+      {content: '我大概是个傻瓜吧，专门做吃力不讨好的事。做了这么多，结果人家一句话就推翻了。这种傻事，我以后不要在做了，做好自己该做的，不要想着帮人家，人家未必感激你。这么多次的教训怎么学不会？'},
+      {content: '我今年都39岁了，我从几年前突然产生了一种无法实现就非常痛苦的心里，这个想法就是我非常渴望用自己的财产来寻求一位真正的人来管教我，我不知道该如何是好，该如何面对'}
+    ]
+
+  },
+
+  // 跳转陈旧信箱
+  toOldLetterPost() {
+    console.log('各个大根深蒂固第三个');
+    let planeFly = wx.createAnimation({
+      delay: 0,
+      timingFunction: 'ease'
+    });
+    planeFly.translateX(-250).step();
+    this.setData({
+      planeFly: planeFly.export()
+    });
+
+    // 跳转页面
+    wx.navigateTo({
+      url: '/packageWriteLetter/pages/oldletter/oldletter',
+      success: res => {
+        let backtimeout = setTimeout(() => {
+          planeFly.translateX(0).step();
+          this.setData({
+            planeFly: planeFly.export()
+          });
+          clearTimeout(backtimeout);
+        }, 500);
+      }
+    })
   },
 
   // 跳转发布页面

@@ -165,6 +165,12 @@
         {
           "name": "调查问卷",
           "pathName": "packageMyInfo/pages/investigate/investigate",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "陈旧信箱页",
+          "pathName": "packageWriteLetter/pages/oldletter/oldletter",
           "scene": null
         }
       ]
