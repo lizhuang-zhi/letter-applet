@@ -54,7 +54,15 @@ Page({
     oldletterArr: [
       {content: '我大概是个傻瓜吧，专门做吃力不讨好的事。做了这么多，结果人家一句话就推翻了。这种傻事，我以后不要在做了，做好自己该做的，不要想着帮人家，人家未必感激你。这么多次的教训怎么学不会？'},
       {content: '我今年都39岁了，我从几年前突然产生了一种无法实现就非常痛苦的心里，这个想法就是我非常渴望用自己的财产来寻求一位真正的人来管教我，我不知道该如何是好，该如何面对'}
-    ]
+    ],
+    // 陈旧信箱顶部背景图
+    oldletterBgArr: [
+      'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/oldletterBg1.webp?versionId=CAEQGRiBgIDpy7io1RciIGQ5ZGNkZjA4OTJjNDQyN2JiN2E4MTIwZGZjMzEzMGI1', 
+      'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/oldletterBg2.webp?versionId=CAEQGRiBgMDkzbio1RciIDFmODk0OWZmOTYwYzRhZTE4Nzc4NzQ1YTIyMzczMDky', 
+      'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/oldletterBg3.webp?versionId=CAEQGRiBgMD.y7io1RciIDk0Y2FjZmQ4Zjg1NzRiZWZiZTM1YTQwZjc1MjBhNWY2', 
+      'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/oldletterBg4.jpg?versionId=CAEQGRiBgMDatrmo1RciIDFmYTQzOGE5MzFlNjQ1YjA5YzY5MjRiNDcxM2RiMjNi'
+    ],
+    oldletterBg: 'https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/oldletterBg4.jpg?versionId=CAEQGRiBgMDatrmo1RciIDFmYTQzOGE5MzFlNjQ1YjA5YzY5MjRiNDcxM2RiMjNi',
 
   },
 
@@ -345,6 +353,9 @@ Page({
     console.log('index页面 ======> 监听页面加载');
     // 初始化美文集合
     this.Start();
+    this.setData({
+      oldletterBg: this.data.oldletterBgArr[Math.floor(Math.random() * 4)]
+    })
   },
 
   /**

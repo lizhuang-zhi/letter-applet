@@ -147,7 +147,7 @@
 <view class="old-letter-main">
   <yeo-frame-view direction='row' frameBgColor='#FFFFFF'>
     <!-- 顶部栏（展示图标与标语） -->
-    <view class="top-part">
+    <view class="top-part" style="background-image: url({{oldletterBg}})">
       <yeo-frame-view direction='col' frameBgColor='null' frameAlignItems='center'>
         <view class="left-post">
           <image src="https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/old_post.png?versionId=CAEQGRiBgIDe36.W1RciIGQ3YmZlMzliMGY5YjRjNTFiOThkMjUwNmYyZDc0Zjc2"></image>

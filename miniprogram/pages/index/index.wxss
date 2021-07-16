@@ -294,7 +294,16 @@ page {
   padding: 30rpx 20rpx;
   border-top-right-radius: 12rpx;
   border-top-left-radius: 12rpx;
-  background-image: url('https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/old_post_background.webp?versionId=CAEQGRiBgMCW0rGW1RciIDJmNGNiZGUzMDAxYjRiNzI5MGI5MDgwNGYwNDJlZTVi');
+  /* background-image: url('https://cdn.pixabay.com/photo/2021/07/07/13/11/landscape-6394314__340.jpg'); */
+  /* 
+    https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/old_post_background.webp?versionId=CAEQGRiBgMCW0rGW1RciIDJmNGNiZGUzMDAxYjRiNzI5MGI5MDgwNGYwNDJlZTVi
+
+    https://cdn.pixabay.com/photo/2021/07/11/14/50/mountains-6403935__340.jpg
+
+    https://cdn.pixabay.com/photo/2021/07/01/08/57/safari-6378792__340.jpg
+
+    https://cdn.pixabay.com/photo/2021/07/08/19/38/poppy-6397603__340.jpg
+  */
   background-repeat: no-repeat;
   background-position: 50% 22%;
 }
