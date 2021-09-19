@@ -1,1 +1,54 @@
-page{--bg-0:'https://z3.ax1x.com/2021/05/02/gZT958.jpg';--bg-1:'https://z3.ax1x.com/2021/05/02/gZTpUf.jpg';--bg-2:'https://z3.ax1x.com/2021/05/02/gZTSVP.jpg';--bg-3:'https://z3.ax1x.com/2021/05/02/gZTPPS.jpg';--bg-4:'https://z3.ax1x.com/2021/05/02/gZTi8g.png';--bg-5:'https://z3.ax1x.com/2021/05/02/gZTVrn.png';--bg-6:'https://z3.ax1x.com/2021/05/02/gZTkvj.jpg';--bg-7:'https://z3.ax1x.com/2021/05/02/gZTF2Q.jpg';--bg-8:'https://z3.ax1x.com/2021/05/02/gZTEKs.jpg';--bg-9:'https://z3.ax1x.com/2021/05/02/gZTZbq.jpg';background-image:url(https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/init-bg.png);background-size:cover}.bottom-bar,.go-index{position:fixed;text-align:center}.go-index{width:100rpx;height:50rpx;background:#717879;border-radius:30rpx;color:#f4f4f4;opacity:.7;letter-spacing:3rpx;font-size:26rpx;line-height:50rpx;bottom:230rpx;right:35rpx}.bottom-bar{width:100%;height:200rpx;background:#cb3f2e;bottom:0}.bottom-bar .title{font-size:37rpx;color:#fefdfd;margin:35rpx 0 10rpx;letter-spacing:7rpx}.bottom-bar .tech{font-size:23rpx;color:#e1968f;letter-spacing:5rpx}
+page {
+  --bg-0: 'https://z3.ax1x.com/2021/05/02/gZT958.jpg';
+  --bg-1: 'https://z3.ax1x.com/2021/05/02/gZTpUf.jpg';
+  --bg-2: 'https://z3.ax1x.com/2021/05/02/gZTSVP.jpg';
+  --bg-3: 'https://z3.ax1x.com/2021/05/02/gZTPPS.jpg';
+  --bg-4: 'https://z3.ax1x.com/2021/05/02/gZTi8g.png';
+  --bg-5: 'https://z3.ax1x.com/2021/05/02/gZTVrn.png';
+  --bg-6: 'https://z3.ax1x.com/2021/05/02/gZTkvj.jpg';
+  --bg-7: 'https://z3.ax1x.com/2021/05/02/gZTF2Q.jpg';
+  --bg-8: 'https://z3.ax1x.com/2021/05/02/gZTEKs.jpg';
+  --bg-9: 'https://z3.ax1x.com/2021/05/02/gZTZbq.jpg';
+  background-image: url(https://yundingxikj.oss-cn-beijing.aliyuncs.com/LetterStation/init-bg.png);
+  background-size: cover
+}
+
+.bottom-bar,
+.go-index {
+  position: fixed;
+  text-align: center
+}
+
+.go-index {
+  width: 100rpx;
+  height: 50rpx;
+  background: #717879;
+  border-radius: 30rpx;
+  color: #f4f4f4;
+  opacity: .7;
+  letter-spacing: 3rpx;
+  font-size: 26rpx;
+  line-height: 50rpx;
+  bottom: 230rpx;
+  right: 35rpx
+}
+
+.bottom-bar {
+  width: 100%;
+  height: 200rpx;
+  background: #cb3f2e;
+  bottom: 0
+}
+
+.bottom-bar .title {
+  font-size: 37rpx;
+  color: #fefdfd;
+  margin: 35rpx 0 10rpx;
+  letter-spacing: 7rpx
+}
+
+.bottom-bar .tech {
+  font-size: 23rpx;
+  color: #e1968f;
+  letter-spacing: 5rpx
+}

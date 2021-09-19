@@ -41,8 +41,8 @@ function wxmlTask() {
 // 压缩js
 function jsTask() {
     return gulp.src(`${client}/**/*.js`)
-    .pipe(uglify())
-    .pipe(gulp.dest(dist))
+        .pipe(uglify())
+        .pipe(gulp.dest(dist))
 }
 
 /** 将px转换成 rpx  **/
@@ -50,7 +50,9 @@ function scssTask() {
     return gulp.src(`${client}/**/*.scss`)
         .pipe(scss())
         .pipe(postCss([px2rpx()]))
-        .pipe(minifyCSS({keepBreaks:true}))
+        .pipe(minifyCSS({
+            keepBreaks: true
+        }))
         .pipe(rename({
             extname: '.wxss'
         }))
@@ -88,7 +90,7 @@ function wxsTask() {
 /** 将client 下的 图片（主包）复制到 dist目录目录下 **/
 function imgTask() {
     return gulp.src(`${client}/images/*`)
-    .pipe(gulp.dest(dist + '/images/'))
+        .pipe(gulp.dest(dist + '/images/'))
 }
 /** 将client 下的 子包中的图片复制到 对应目录下 **/
 function imgTaskInner() {

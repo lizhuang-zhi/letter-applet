@@ -1,1 +1,7 @@
-page{background:#fff}.message-info-box{margin:50rpx 40rpx 0}
+page {
+  background: #fff
+}
+
+.message-info-box {
+  margin: 50rpx 40rpx 0
+}
